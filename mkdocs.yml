@@ -1,0 +1,97 @@
+# Project info
+site_name: IBM Bob Level 3
+site_description: IBM Bob Level 3
+site_author: Christopher Bienko (cdbienko@us.ibm.com)
+copyright: Copyright &copy; 2026 IBM
+
+# Repository
+repo_name: IBM/bob-l3
+#repo_url: https://github.com/IBM/bob-l3
+#edit_uri: edit/master/docs
+docs_dir: docs
+
+nav:
+  - Introduction: 'index.md'
+  - Chapter 1:
+    - 1. "Galaxium Travels" App: chapter1/galaxium.md
+  - Chapter 2:
+    - 1. Next Edit Prediction: chapter2/prediction.md
+    - 2. Literate Coding: chapter2/literate.md
+    - 3. The Agentic Sidebar: chapter2/agentic.md 
+  - Chapter 3:
+    - 1. The init Command & Agents: chapter3/agents.md
+    - 2. Bob Rules: chapter3/rules.md
+    - 3. Custom Modes: chapter3/modes.md
+  - Chapter 4:
+    - 1. Understanding the Context Window: chapter4/context.md
+    - 2. Bob Shell: chapter4/shell.md
+  - Chapter 5:
+    - 1. Model Context Protocol: chapter5/mcp.md
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - navigation.footer
+  palette:
+      scheme: default
+  color_mode: auto
+
+plugins:
+  - mkdocs-video:
+      is_video: True
+      video_autoplay: False
+  - macros
+  - search
+  - glightbox
+  - print-site:
+      add_to_navigation: false
+      print_page_title: 'IBM watsonx Code Assistant Level 4 Lab Guide'
+      add_print_site_banner: false
+      # Table of contents
+      add_table_of_contents: false
+      toc_title: 'Table of Contents'
+      toc_depth: 6
+      # Content-related
+      add_full_urls: false
+      enumerate_headings: false
+      enumerate_figures: false
+      add_cover_page: false
+      cover_page_template: ""
+      path_to_pdf: ""
+      include_css: true
+      enabled: true
+
+markdown_extensions:
+  - markdown_fenced_code_tabs
+  - sane_lists
+  - pymdownx.details
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+
+extra_css:
+  - styles/override-print.css
+
+extra_javascript:
+  - _static/hide-toc-nav.js
