@@ -247,7 +247,7 @@
   
     <li class="md-nav__item">
       <a href="../chapter1/galaxium/" class="md-nav__link">
-        1. Galaxium Travels - Demo App
+        1. "Galaxium Travels" Application
       </a>
     </li>
   
@@ -295,7 +295,7 @@
   
     <li class="md-nav__item">
       <a href="../chapter2/prediction/" class="md-nav__link">
-        1. Next Edit Prediction and Tab Completion
+        1. Next Edit Prediction
       </a>
     </li>
   
@@ -563,7 +563,7 @@
         
           <li class="md-nav__item">
   <a href="#chapter1-galaxium" class="md-nav__link">
-    1. Galaxium Travels - Demo App
+    1. "Galaxium Travels" Application
   </a>
   
 </li>
@@ -583,7 +583,7 @@
         
           <li class="md-nav__item">
   <a href="#chapter2-prediction" class="md-nav__link">
-    1. Next Edit Prediction and Tab Completion
+    1. Next Edit Prediction
   </a>
   
 </li>
@@ -702,7 +702,7 @@
                 
 
 
-<div id="print-site-page" class=""><section class="print-page" id="index"><h1 id="index-ibm-bob-level-3-lab-guide"><strong>IBM Bob | Level 3 Lab Guide</strong></h1>
+<div id="print-site-page" class=""><section class="print-page" id="index"><h1 id="index-ibm-bobbrlevel-3-lab-guide">IBM Bob&lt;\br&gt;<strong>Level 3 Lab Guide</strong></h1>
 <hr />
 <h2 id="index-what-is-ibm-bob">What is IBM Bob?</h2>
 <p>IBM Bob is an AI-powered software development lifecycle (SDLC) partner that integrates directly into the development environment. Bob operates across the full development lifecycle — not just as a code generator, but as a partner that supports planning, implementation, and automation throughout a project.</p>
@@ -828,6 +828,7 @@
 <li>User registration and authentication</li>
 <li>Flight booking</li>
 </ul>
+<hr />
 <h2 id="chapter1-galaxium-purpose-in-this-learning-path">Purpose in This Learning Path</h2>
 <p>The Galaxium Travels codebase serves as the consistent demonstration target throughout all chapters. Features added to this application across the learning path include:</p>
 <ul>
@@ -836,6 +837,7 @@
 <li>Seat class tiers: Economy, Business, Galaxium (Chapter 2.3 — Agentic Sidebar)</li>
 </ul>
 <p>Using a single, consistent codebase allows the demonstrations to show how Bob interacts with real-world, production-style code rather than isolated snippets.</p>
+<hr />
 <h2 id="chapter1-galaxium-key-takeaways">Key Takeaways</h2>
 <ul>
 <li>Galaxium Travels is a full-stack demo application: React/TypeScript frontend, Python backend, SQLite database</li>
@@ -849,18 +851,24 @@
                         <section class="print-page" id="chapter2-prediction"><h1 id="chapter2-prediction-next-edit-prediction-and-tab-completion">Next Edit Prediction and Tab Completion</h1>
 <h2 id="chapter2-prediction-overview">Overview</h2>
 <p>Bob provides AI-assisted code completion through two integrated features: tab completion and next edit prediction. These features work together to accelerate development by suggesting code based on context and automatically navigating to likely edit locations.</p>
+<hr />
 <h2 id="chapter2-prediction-tab-completion">Tab Completion</h2>
 <h3 id="chapter2-prediction-how-it-works">How It Works</h3>
-<p>Tab completion in Bob differs from traditional autocomplete by analyzing the entire codebase context, including:
-- Comments describing intended functionality
-- Existing code patterns and structure
-- Project conventions and style
-- Related code in other files</p>
+<p>Tab completion in Bob differs from traditional autocomplete by analyzing the entire codebase context, including:</p>
+<ul>
+<li>Comments describing intended functionality</li>
+<li>Existing code patterns and structure</li>
+<li>Project conventions and style</li>
+<li>Related code in other files</li>
+</ul>
 <h3 id="chapter2-prediction-accepting-suggestions">Accepting Suggestions</h3>
-<p>When Bob suggests code:
-- Press <strong>Tab</strong> to accept the suggestion
-- Continue typing to override the suggestion
-- The suggestion updates dynamically as you type</p>
+<p>When Bob suggests code:</p>
+<ul>
+<li>Press <strong>Tab</strong> to accept the suggestion</li>
+<li>Continue typing to override the suggestion</li>
+<li>The suggestion updates dynamically as you type</li>
+</ul>
+<hr />
 <h2 id="chapter2-prediction-next-edit-prediction">Next Edit Prediction</h2>
 <h3 id="chapter2-prediction-feature-description">Feature Description</h3>
 <p>Next edit prediction anticipates where you'll need to make related changes after accepting a code suggestion. This feature recognizes that code modifications typically require updates in multiple locations.</p>
@@ -874,6 +882,7 @@
 </ol></section><section class="print-page" id="chapter2-literate"><h1 id="chapter2-literate-literate-coding">Literate Coding</h1>
 <h2 id="chapter2-literate-overview">Overview</h2>
 <p>Literate coding is a targeted code modification feature in IBM Bob that allows developers to write natural language instructions directly within code files. This provides precise, localized changes by describing modifications inline, similar to writing comments.</p>
+<hr />
 <h2 id="chapter2-literate-accessing-literate-coding-mode">Accessing Literate Coding Mode</h2>
 <p>Access literate coding through the magic wand icon in the VS Code editor. This enables you to:</p>
 <ul>
@@ -881,6 +890,7 @@
 <li>Target exact sections of code for modification</li>
 <li>Handle changes across multiple locations within a single file</li>
 </ul>
+<hr />
 <h2 id="chapter2-literate-how-it-works">How It Works</h2>
 <ol>
 <li>Position your cursor at the code location requiring modification</li>
@@ -889,7 +899,8 @@
 <li>For changes spanning multiple locations, add additional instruction lines at each position</li>
 <li>Click "Generate" to produce the modifications</li>
 </ol>
-<h3 id="chapter2-literate-the-diff-view">The Diff View</h3>
+<hr />
+<h2 id="chapter2-literate-the-diff-view">The Diff View</h2>
 <p>Bob presents changes in a diff view interface showing:</p>
 <ul>
 <li><strong>Added code</strong>: New lines introduced</li>
@@ -897,6 +908,7 @@
 <li><strong>Context</strong>: Surrounding code for understanding scope</li>
 </ul>
 <p>Review all changes before accepting or rejecting them.</p>
+<hr />
 <h2 id="chapter2-literate-use-cases">Use Cases</h2>
 <p>Literate coding is effective for:</p>
 <ul>
@@ -904,6 +916,7 @@
 <li><strong>Refactoring specific blocks</strong>: Modifying targeted sections while preserving surrounding logic</li>
 <li><strong>Quick targeted modifications</strong>: Precise changes to specific functions without affecting broader structure</li>
 </ul>
+<hr />
 <h2 id="chapter2-literate-example-scenario">Example Scenario</h2>
 <p><strong>Problem</strong>: Backend timeouts when fetching flight information.</p>
 <p><strong>Solution</strong>: Use literate coding to add retry logic.</p>
@@ -914,6 +927,7 @@
 <li>Review the generated diff</li>
 <li>Accept if requirements are met</li>
 </ol>
+<hr />
 <h2 id="chapter2-literate-best-practices">Best Practices</h2>
 <ul>
 <li><strong>Be specific</strong>: Provide clear, detailed instructions</li>
@@ -921,6 +935,7 @@
 <li><strong>Use for localized changes</strong>: Best for single-file modifications</li>
 <li><strong>Commit first</strong>: Use version control for easy rollback</li>
 </ul>
+<hr />
 <h2 id="chapter2-literate-key-takeaways">Key Takeaways</h2>
 <ul>
 <li>Literate coding enables precise, natural language-driven code modifications</li>
