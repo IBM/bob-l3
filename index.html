@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#introduction-to-ibm-bob" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              Introduction to IBM Bob
             
           </span>
         </div>
@@ -234,22 +234,8 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter1/introduction/" class="md-nav__link">
-        1. Introduction to IBM Bob
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="chapter1/galaxium/" class="md-nav__link">
-        2. Demo Application - Galaxium Travels
+        1. Demo Application - Galaxium Travels
       </a>
     </li>
   
@@ -544,28 +530,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -578,21 +542,84 @@
                 
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+<h1 id="introduction-to-ibm-bob">Introduction to IBM Bob</h1>
+<h1 id="level-3-lab-guide">Level 3 Lab Guide</h1>
+<h2 id="what-is-ibm-bob">What is IBM Bob?</h2>
+<p>IBM Bob is an AI-powered software development lifecycle (SDLC) partner that integrates directly into the development environment. Bob operates across the full development lifecycle — not just as a code generator, but as a partner that supports planning, implementation, and automation throughout a project.</p>
+<p>Bob's core capabilities:</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><strong>Code writing and modification</strong>: Writes new code and modifies existing code across the entire codebase based on natural language instructions</li>
+<li><strong>Codebase understanding</strong>: Reads and reasons about complex project structures, dependencies, and architectural patterns</li>
+<li><strong>Development task automation</strong>: Automates repetitive tasks such as documentation, commit message generation, and test scaffolding</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<div class="highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h2 id="bob-as-an-sdlc-partner">Bob as an SDLC Partner</h2>
+<p>The distinction between Bob and a traditional code generator is scope. Bob is designed to support the entire software development lifecycle, not just the moment of writing a function or fixing a bug. This includes:</p>
+<ul>
+<li>Helping plan features before implementation begins</li>
+<li>Understanding the full context of a project before making changes</li>
+<li>Keeping the developer in control at every step</li>
+</ul>
+<p>Bob augments existing workflows rather than replacing developer judgment.</p>
+<h2 id="interfaces">Interfaces</h2>
+<p>Bob is available in two primary form factors:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bob IDE</strong></td>
+<td>VS Code extension providing an agentic sidebar, inline code assistance, and mode-based interaction</td>
+</tr>
+<tr>
+<td><strong>Bob Shell</strong></td>
+<td>Terminal-based interface offering the same capabilities in a keyboard-driven, automation-friendly form factor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="learning-path-structure">Learning Path Structure</h2>
+<p>This learning path covers IBM Bob across five chapters:</p>
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Demo setup and environment introduction</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Core interaction patterns: tab completion, next edit prediction, and the agentic chat</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Customization: project context, custom rules, and custom modes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Advanced topics: context window management and Bob Shell</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Extending Bob's capabilities with the Model Context Protocol (MCP)</td>
+</tr>
+</tbody>
+</table>
+<p>Each chapter builds on the previous, progressing from basic interactions to advanced configuration and integration.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>Bob supports the full software development lifecycle, not just code generation</li>
+<li>Two interfaces are available: Bob IDE (VS Code) and Bob Shell (terminal)</li>
+<li>The developer remains in control — Bob assists with reasoning and implementation, but does not replace developer judgment</li>
+<li>This learning path progresses from beginner to advanced topics across five chapters</li>
+</ul>
 
 
 
