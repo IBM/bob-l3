@@ -509,7 +509,7 @@
   
     <li class="md-nav__item">
       <a href="../chapter5/mcp/" class="md-nav__link">
-        1. Model Context Protocol (MCP)
+        1. Model Context Protocol
       </a>
     </li>
   
@@ -678,7 +678,7 @@
         
           <li class="md-nav__item">
   <a href="#chapter5-mcp" class="md-nav__link">
-    1. Model Context Protocol (MCP)
+    1. Model Context Protocol
   </a>
   
 </li>
@@ -1462,9 +1462,11 @@
                         <section class="print-page" id="chapter4-context"><h1 id="chapter4-context-understanding-the-context-window">Understanding the Context Window</h1>
 <h2 id="chapter4-context-overview">Overview</h2>
 <p>The context window is the total amount of information a large language model can hold in memory during a single conversation. Understanding how the context window fills up — and how to manage it — is essential for getting consistent, high-quality results from Bob, particularly on complex or long-running tasks.</p>
+<hr />
 <h2 id="chapter4-context-what-is-a-context-window">What Is a Context Window?</h2>
 <p>The models powering Bob provide a context window of <strong>200,000 tokens</strong>, which is approximately <strong>150,000 words</strong> — roughly the length of <em>The Fellowship of the Ring</em>. Every new conversation starts with this full capacity available.</p>
 <p>The context window holds everything: instructions, file contents, conversation history, and Bob's responses. Once the window fills, the oldest content must be dropped or summarized to make room for new content.</p>
+<hr />
 <h2 id="chapter4-context-what-fills-the-context-window">What Fills the Context Window</h2>
 <p>Content is loaded into the context window in the following order at the start of every conversation:</p>
 <table>
@@ -1509,6 +1511,7 @@
 </tbody>
 </table>
 <p>MCP tool definitions deserve special attention — they can consume a significant portion of the context window before the first message is sent, depending on how many MCP servers are configured.</p>
+<hr />
 <h2 id="chapter4-context-what-happens-when-the-context-window-fills">What Happens When the Context Window Fills</h2>
 <p>When the 200,000-token limit is reached, Bob does not stop or error. Instead:</p>
 <ol>
@@ -1518,6 +1521,7 @@
 <li>Bob seamlessly continues responding</li>
 </ol>
 <p>This process is transparent to the user but has important implications for quality and cost.</p>
+<hr />
 <h2 id="chapter4-context-why-context-management-matters">Why Context Management Matters</h2>
 <h3 id="chapter4-context-token-cost">Token Cost</h3>
 <p>Tokens are the unit of consumption for Bob (measured in Bob coins). Longer conversations and larger file reads consume more tokens. Keeping conversations focused reduces cost.</p>
@@ -1526,6 +1530,7 @@
 <p>This can affect implementation quality if critical constraints or edge cases were discussed earlier in the conversation but are not faithfully preserved in the summary.</p>
 <h3 id="chapter4-context-quality-degrades-above-100k-tokens">Quality Degrades Above ~100K Tokens</h3>
 <p>Models do not maintain uniform quality across the full 200,000-token range. As the context window fills, response quality noticeably declines — particularly past the ~100,000-token mark. A conversation that uses 50,000 tokens will generally produce better output than one that uses 180,000 tokens, all else being equal.</p>
+<hr />
 <h2 id="chapter4-context-strategy-persistent-artifacts">Strategy: Persistent Artifacts</h2>
 <p>The most effective approach to context management is the <strong>persistent artifacts</strong> pattern:</p>
 <ol>
@@ -1558,6 +1563,7 @@
 </tbody>
 </table>
 <p>Result: The implementation conversation consumed <strong>88,000 of 200,000 tokens</strong> — well within the range where quality remains high. The two-conversation split prevented the planning discussion from competing with the implementation for context space.</p>
+<hr />
 <h2 id="chapter4-context-practical-guidelines">Practical Guidelines</h2>
 <ul>
 <li><strong>Start new conversations when switching tasks.</strong> A conversation about planning should not bleed into implementation.</li>
@@ -1565,6 +1571,7 @@
 <li><strong>Keep MCP configurations lean.</strong> Every MCP server's tool definitions consume context on every conversation start.</li>
 <li><strong>Monitor token usage.</strong> Review conversation token consumption to identify which interactions are most expensive and adjust workflows accordingly.</li>
 </ul>
+<hr />
 <h2 id="chapter4-context-key-takeaways">Key Takeaways</h2>
 <ul>
 <li>The context window is 200,000 tokens (~150,000 words) — every conversation starts fresh with this capacity</li>
@@ -1576,11 +1583,13 @@
 </ul></section><section class="print-page" id="chapter4-shell"><h1 id="chapter4-shell-bob-shell">Bob Shell</h1>
 <h2 id="chapter4-shell-overview">Overview</h2>
 <p>Bob Shell is a terminal-based interface for IBM Bob that provides the same core capabilities as Bob IDE in a keyboard-driven, command-line form factor. It is installed separately from the VS Code extension and runs in any standard terminal. For developers comfortable in the terminal, Bob Shell offers workflows that are difficult or impossible to replicate in the IDE, including headless automation and running multiple Bob instances in parallel.</p>
+<hr />
 <h2 id="chapter4-shell-installation">Installation</h2>
 <p>Bob Shell is installed separately from Bob IDE. Installation instructions are available in the Bob documentation. Once installed, Bob Shell is invoked by running:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#chapter4-shell-__codelineno-0-1"></a>bob
 </code></pre></div>
 <p>Bob Shell prompts for IBM login credentials on first use. After successful authentication, the interactive shell session begins.</p>
+<hr />
 <h2 id="chapter4-shell-basic-usage">Basic Usage</h2>
 <p>Bob Shell operates similarly to the Bob IDE chat interface. Natural language prompts are entered directly at the shell prompt, and Bob reads and modifies files in the current working directory.</p>
 <p><strong>Example:</strong>
@@ -1598,9 +1607,11 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#chapter4-shell-__codelineno-3-1"></a>/help
 </code></pre></div>
 <p>The <code>/help</code> command lists all available Bob Shell commands and options. This is the recommended starting point for new users navigating the interface for the first time.</p>
+<hr />
 <h2 id="chapter4-shell-auto-approval-settings">Auto-Approval Settings</h2>
 <p>By default, Bob Shell applies <strong>stricter auto-approval settings</strong> than Bob IDE. File writes and shell commands require explicit confirmation before proceeding. To allow a specific action, approve it when prompted. To allow all actions for the session, select the "always allow" option when prompted.</p>
 <p>This default is intentional — Bob Shell is often used in environments (servers, CI pipelines, scripts) where unreviewed changes can have broader consequences than in a local IDE session.</p>
+<hr />
 <h2 id="chapter4-shell-three-reasons-to-use-bob-shell">Three Reasons to Use Bob Shell</h2>
 <h3 id="chapter4-shell-1-keyboard-efficiency">1. Keyboard Efficiency</h3>
 <p>Bob Shell eliminates mouse-driven interaction entirely. The entire workflow — navigating files, issuing commands, reviewing output, and prompting Bob — happens through the keyboard. For developers who have internalized terminal workflows, this creates a faster, more direct path from thought to action.</p>
@@ -1640,12 +1651,15 @@
 <p>Headless mode makes Bob a programmable component rather than only an interactive assistant. Combined with shell scripting, it opens a broad range of automation possibilities.</p>
 <h3 id="chapter4-shell-3-parallelization">3. Parallelization</h3>
 <p>Because Bob Shell runs in a terminal, multiple independent instances can run simultaneously — one per terminal tab, pane, or multiplexer window. This is trivially simple to set up compared to any IDE-based approach.</p>
-<p><strong>Example parallel setup:</strong>
-- Bob IDE with the normal agentic sidebar for exploratory work
-- Bob Shell instance 1: implementing a backend change
-- Bob Shell instance 2: writing tests for a separate component
-- Bob Shell instance 3: generating documentation</p>
+<p><strong>Example parallel setup:</strong></p>
+<ul>
+<li>Bob IDE with the normal agentic sidebar for exploratory work</li>
+<li>Bob Shell instance 1: implementing a backend change</li>
+<li>Bob Shell instance 2: writing tests for a separate component</li>
+<li>Bob Shell instance 3: generating documentation</li>
+</ul>
 <p>Different tasks benefit from parallelization to varying degrees. Tasks with no shared state or file dependencies are ideal candidates. Bob Shell's terminal-based form factor makes this architecture practical without additional tooling.</p>
+<hr />
 <h2 id="chapter4-shell-choosing-between-bob-ide-and-bob-shell">Choosing Between Bob IDE and Bob Shell</h2>
 <table>
 <thead>
@@ -1684,6 +1698,7 @@
 </tbody>
 </table>
 <p>The two interfaces are complementary. Many workflows benefit from running Bob IDE alongside one or more Bob Shell instances.</p>
+<hr />
 <h2 id="chapter4-shell-key-takeaways">Key Takeaways</h2>
 <ul>
 <li>Bob Shell provides the same capabilities as Bob IDE in a terminal form factor</li>
@@ -1700,6 +1715,7 @@
                         <section class="print-page" id="chapter5-mcp"><h1 id="chapter5-mcp-model-context-protocol-mcp">Model Context Protocol (MCP)</h1>
 <h2 id="chapter5-mcp-overview">Overview</h2>
 <p>The Model Context Protocol (MCP) is a standardized interface that allows large language model applications to connect to external tools, services, and data sources through a consistent integration layer. By adding MCP servers to Bob, developers can extend Bob's capabilities beyond file operations and terminal commands to include any external service that provides an MCP server.</p>
+<hr />
 <h2 id="chapter5-mcp-what-is-mcp">What Is MCP?</h2>
 <p>MCP defines a standard interface for connecting LLM-powered applications with external systems. Before MCP, integrating an LLM with an external tool required building a custom connection layer specific to each tool — a significant effort that varied widely in implementation across teams and organizations.</p>
 <p>MCP addresses this by establishing a single protocol that both LLM applications and external services can implement. Once a service provides an MCP server, any MCP-compatible client (including Bob) can connect to it immediately without custom integration work.</p>
@@ -1708,6 +1724,7 @@
 <blockquote>
 <p>MCP's impact is not primarily a technical innovation — it is a coordination innovation. A shared standard eliminated duplicated integration effort across the industry.</p>
 </blockquote>
+<hr />
 <h2 id="chapter5-mcp-adding-an-mcp-server-to-bob">Adding an MCP Server to Bob</h2>
 <p>MCP servers are configured in Bob's settings using a JSON configuration file.</p>
 <p><strong>To add an MCP server:</strong></p>
@@ -1745,9 +1762,11 @@
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="chapter5-mcp-using-mcp-tools-in-bob">Using MCP Tools in Bob</h2>
 <p>MCP tools are only available in <strong>Advanced mode</strong>. When Advanced mode is active, Bob automatically recognizes the tools provided by all configured MCP servers and can invoke them in response to natural language requests.</p>
 <p>No additional syntax is required — Bob determines which MCP tools to call based on the task described.</p>
+<hr />
 <h2 id="chapter5-mcp-example-github-mcp-server">Example: GitHub MCP Server</h2>
 <p>The GitHub MCP server demonstrates the breadth of capabilities a single MCP integration can add to Bob.</p>
 <h3 id="chapter5-mcp-setup">Setup</h3>
@@ -1779,6 +1798,7 @@
    - Bob calls the GitHub MCP comment and close tools</li>
 </ol>
 <p>The result: a complete development cycle — from issue to closed resolution — managed through natural language without leaving the Bob interface.</p>
+<hr />
 <h2 id="chapter5-mcp-the-mcp-ecosystem">The MCP Ecosystem</h2>
 <p>The GitHub MCP server is one example of a rapidly growing ecosystem. MCP servers are available for:</p>
 <ul>
@@ -1789,6 +1809,7 @@
 <li>Internal enterprise systems</li>
 </ul>
 <p>The breadth of available servers means that most external integrations a development team relies on can be connected to Bob through MCP, without custom development.</p>
+<hr />
 <h2 id="chapter5-mcp-key-takeaways">Key Takeaways</h2>
 <ul>
 <li>MCP (Model Context Protocol) is a standardized interface for connecting Bob to external tools and services</li>

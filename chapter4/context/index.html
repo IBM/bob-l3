@@ -644,7 +644,7 @@
   
     <li class="md-nav__item">
       <a href="../../chapter5/mcp/" class="md-nav__link">
-        1. Model Context Protocol (MCP)
+        1. Model Context Protocol
       </a>
     </li>
   
@@ -796,9 +796,11 @@
 <h1 id="understanding-the-context-window">Understanding the Context Window</h1>
 <h2 id="overview">Overview</h2>
 <p>The context window is the total amount of information a large language model can hold in memory during a single conversation. Understanding how the context window fills up — and how to manage it — is essential for getting consistent, high-quality results from Bob, particularly on complex or long-running tasks.</p>
+<hr />
 <h2 id="what-is-a-context-window">What Is a Context Window?</h2>
 <p>The models powering Bob provide a context window of <strong>200,000 tokens</strong>, which is approximately <strong>150,000 words</strong> — roughly the length of <em>The Fellowship of the Ring</em>. Every new conversation starts with this full capacity available.</p>
 <p>The context window holds everything: instructions, file contents, conversation history, and Bob's responses. Once the window fills, the oldest content must be dropped or summarized to make room for new content.</p>
+<hr />
 <h2 id="what-fills-the-context-window">What Fills the Context Window</h2>
 <p>Content is loaded into the context window in the following order at the start of every conversation:</p>
 <table>
@@ -843,6 +845,7 @@
 </tbody>
 </table>
 <p>MCP tool definitions deserve special attention — they can consume a significant portion of the context window before the first message is sent, depending on how many MCP servers are configured.</p>
+<hr />
 <h2 id="what-happens-when-the-context-window-fills">What Happens When the Context Window Fills</h2>
 <p>When the 200,000-token limit is reached, Bob does not stop or error. Instead:</p>
 <ol>
@@ -852,6 +855,7 @@
 <li>Bob seamlessly continues responding</li>
 </ol>
 <p>This process is transparent to the user but has important implications for quality and cost.</p>
+<hr />
 <h2 id="why-context-management-matters">Why Context Management Matters</h2>
 <h3 id="token-cost">Token Cost</h3>
 <p>Tokens are the unit of consumption for Bob (measured in Bob coins). Longer conversations and larger file reads consume more tokens. Keeping conversations focused reduces cost.</p>
@@ -860,6 +864,7 @@
 <p>This can affect implementation quality if critical constraints or edge cases were discussed earlier in the conversation but are not faithfully preserved in the summary.</p>
 <h3 id="quality-degrades-above-100k-tokens">Quality Degrades Above ~100K Tokens</h3>
 <p>Models do not maintain uniform quality across the full 200,000-token range. As the context window fills, response quality noticeably declines — particularly past the ~100,000-token mark. A conversation that uses 50,000 tokens will generally produce better output than one that uses 180,000 tokens, all else being equal.</p>
+<hr />
 <h2 id="strategy-persistent-artifacts">Strategy: Persistent Artifacts</h2>
 <p>The most effective approach to context management is the <strong>persistent artifacts</strong> pattern:</p>
 <ol>
@@ -892,6 +897,7 @@
 </tbody>
 </table>
 <p>Result: The implementation conversation consumed <strong>88,000 of 200,000 tokens</strong> — well within the range where quality remains high. The two-conversation split prevented the planning discussion from competing with the implementation for context space.</p>
+<hr />
 <h2 id="practical-guidelines">Practical Guidelines</h2>
 <ul>
 <li><strong>Start new conversations when switching tasks.</strong> A conversation about planning should not bleed into implementation.</li>
@@ -899,6 +905,7 @@
 <li><strong>Keep MCP configurations lean.</strong> Every MCP server's tool definitions consume context on every conversation start.</li>
 <li><strong>Monitor token usage.</strong> Review conversation token consumption to identify which interactions are most expensive and adjust workflows accordingly.</li>
 </ul>
+<hr />
 <h2 id="key-takeaways">Key Takeaways</h2>
 <ul>
 <li>The context window is 200,000 tokens (~150,000 words) — every conversation starts fresh with this capacity</li>

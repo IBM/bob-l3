@@ -17,7 +17,7 @@
     
     
       
-        <title>1. Model Context Protocol (MCP) - IBM Bob Level 3</title>
+        <title>1. Model Context Protocol - IBM Bob Level 3</title>
       
     
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Model Context Protocol (MCP)
+              1. Model Context Protocol
             
           </span>
         </div>
@@ -523,12 +523,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          1. Model Context Protocol (MCP)
+          1. Model Context Protocol
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        1. Model Context Protocol (MCP)
+        1. Model Context Protocol
       </a>
       
         
@@ -808,6 +808,7 @@
 <h1 id="model-context-protocol-mcp">Model Context Protocol (MCP)</h1>
 <h2 id="overview">Overview</h2>
 <p>The Model Context Protocol (MCP) is a standardized interface that allows large language model applications to connect to external tools, services, and data sources through a consistent integration layer. By adding MCP servers to Bob, developers can extend Bob's capabilities beyond file operations and terminal commands to include any external service that provides an MCP server.</p>
+<hr />
 <h2 id="what-is-mcp">What Is MCP?</h2>
 <p>MCP defines a standard interface for connecting LLM-powered applications with external systems. Before MCP, integrating an LLM with an external tool required building a custom connection layer specific to each tool — a significant effort that varied widely in implementation across teams and organizations.</p>
 <p>MCP addresses this by establishing a single protocol that both LLM applications and external services can implement. Once a service provides an MCP server, any MCP-compatible client (including Bob) can connect to it immediately without custom integration work.</p>
@@ -816,6 +817,7 @@
 <blockquote>
 <p>MCP's impact is not primarily a technical innovation — it is a coordination innovation. A shared standard eliminated duplicated integration effort across the industry.</p>
 </blockquote>
+<hr />
 <h2 id="adding-an-mcp-server-to-bob">Adding an MCP Server to Bob</h2>
 <p>MCP servers are configured in Bob's settings using a JSON configuration file.</p>
 <p><strong>To add an MCP server:</strong></p>
@@ -853,9 +855,11 @@
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="using-mcp-tools-in-bob">Using MCP Tools in Bob</h2>
 <p>MCP tools are only available in <strong>Advanced mode</strong>. When Advanced mode is active, Bob automatically recognizes the tools provided by all configured MCP servers and can invoke them in response to natural language requests.</p>
 <p>No additional syntax is required — Bob determines which MCP tools to call based on the task described.</p>
+<hr />
 <h2 id="example-github-mcp-server">Example: GitHub MCP Server</h2>
 <p>The GitHub MCP server demonstrates the breadth of capabilities a single MCP integration can add to Bob.</p>
 <h3 id="setup">Setup</h3>
@@ -887,6 +891,7 @@
    - Bob calls the GitHub MCP comment and close tools</li>
 </ol>
 <p>The result: a complete development cycle — from issue to closed resolution — managed through natural language without leaving the Bob interface.</p>
+<hr />
 <h2 id="the-mcp-ecosystem">The MCP Ecosystem</h2>
 <p>The GitHub MCP server is one example of a rapidly growing ecosystem. MCP servers are available for:</p>
 <ul>
@@ -897,6 +902,7 @@
 <li>Internal enterprise systems</li>
 </ul>
 <p>The breadth of available servers means that most external integrations a development team relies on can be connected to Bob through MCP, without custom development.</p>
+<hr />
 <h2 id="key-takeaways">Key Takeaways</h2>
 <ul>
 <li>MCP (Model Context Protocol) is a standardized interface for connecting Bob to external tools and services</li>
