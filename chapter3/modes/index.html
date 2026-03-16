@@ -376,7 +376,7 @@
   
     <li class="md-nav__item">
       <a href="../agents/" class="md-nav__link">
-        1. The init Command and Agents
+        1. The init Command & Agents
       </a>
     </li>
   
@@ -754,6 +754,7 @@
 <h1 id="custom-modes">Custom Modes</h1>
 <h2 id="overview">Overview</h2>
 <p>Bob's built-in modes (Code, Plan, Ask, Advanced) cover the most common development workflows. Custom modes extend this system by allowing teams and developers to define specialized personas with tailored instructions and specific tool access. A custom mode combines a role definition, behavioral instructions, and a deterministic set of permitted tools.</p>
+<hr />
 <h2 id="anatomy-of-a-mode">Anatomy of a Mode</h2>
 <p>Every mode — built-in or custom — is defined by the same set of fields:</p>
 <table>
@@ -808,6 +809,7 @@
 <li><strong>Tools</strong> are deterministic: Bob is strictly limited to the tools listed. It cannot use tools outside this list, regardless of instructions.</li>
 </ul>
 <p>Tool restrictions are enforced — not suggested. This makes the tools section the primary mechanism for constraining what Bob can do in a given mode.</p>
+<hr />
 <h2 id="creating-a-custom-mode">Creating a Custom Mode</h2>
 <p>Custom modes are created through the mode settings panel in Bob IDE:</p>
 <ol>
@@ -843,6 +845,7 @@
 <li>Committed to the repository so all team members have access to the same custom modes</li>
 <li>Used as a starting point for asking Bob to generate additional modes</li>
 </ul>
+<hr />
 <h2 id="example-product-management-mode">Example: Product Management Mode</h2>
 <p>The following example demonstrates a custom mode designed for product planning tasks.</p>
 <p><strong>Purpose</strong>: Transform feature ideas into a structured, prioritized product plan</p>
@@ -877,15 +880,19 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Rationale for tool selection:</strong>
-- <strong>Read</strong> is needed to understand existing features and the current state of the codebase
-- <strong>Edit</strong> is needed to produce output documents (markdown plans)
-- <strong>MCP</strong> is included to allow communication with GitHub (reading issues, creating plans linked to issues)
-- <strong>Execute</strong> is excluded — product management tasks do not require running code
-- <strong>Browser</strong> is excluded — not relevant for this workflow</p>
+<p><strong>Rationale for tool selection:</strong></p>
+<ul>
+<li><strong>Read</strong> is needed to understand existing features and the current state of the codebase</li>
+<li><strong>Edit</strong> is needed to produce output documents (markdown plans)</li>
+<li><strong>MCP</strong> is included to allow communication with GitHub (reading issues, creating plans linked to issues)</li>
+<li><strong>Execute</strong> is excluded — product management tasks do not require running code</li>
+<li><strong>Browser</strong> is excluded — not relevant for this workflow</li>
+</ul>
+<hr />
 <h2 id="rules-apply-across-all-modes">Rules Apply Across All Modes</h2>
 <p>Rules defined in <code>.bob/rules/</code> are injected into every conversation regardless of mode. A custom mode does not override or bypass rules. For example, an internal monologue rule configured globally will continue to generate summaries even when using a custom Product Management mode.</p>
 <p>This makes rules the correct mechanism for cross-cutting behaviors, while mode instructions handle mode-specific behaviors.</p>
+<hr />
 <h2 id="key-takeaways">Key Takeaways</h2>
 <ul>
 <li>Custom modes combine non-deterministic instructions with deterministic tool constraints</li>

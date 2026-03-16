@@ -17,7 +17,7 @@
     
     
       
-        <title>1. The init Command and Agents - IBM Bob Level 3</title>
+        <title>1. The init Command & Agents - IBM Bob Level 3</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-init-command-and-agentsmd" class="md-skip">
+        <a href="#the-init-command-and-agents" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. The init Command and Agents
+              1. The init Command & Agents
             
           </span>
         </div>
@@ -385,12 +385,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          1. The init Command and Agents
+          1. The init Command & Agents
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        1. The init Command and Agents
+        1. The init Command & Agents
       </a>
       
         
@@ -713,12 +713,14 @@
                 
 
 
-<h1 id="the-init-command-and-agentsmd">The /init Command and agents.md</h1>
+<h1 id="the-init-command-and-agents">The /init Command and Agents</h1>
 <h2 id="overview">Overview</h2>
 <p>The <code>/init</code> command scans a project and generates a structured summary file that Bob uses as persistent context in every conversation. This is the primary mechanism for giving Bob durable knowledge about a project's structure, conventions, and codebase, without requiring Bob to re-read every file at the start of each interaction.</p>
+<hr />
 <h2 id="why-project-context-matters">Why Project Context Matters</h2>
 <p>Large language models are stateless by nature. Each new conversation starts with no memory of previous interactions. Without explicit project context, Bob must rediscover the codebase from scratch every time — an approach that is inefficient and becomes impractical at scale.</p>
 <p>The <code>/init</code> command addresses this by producing a persistent context file that is automatically included in every Bob conversation.</p>
+<hr />
 <h2 id="running-init">Running /init</h2>
 <p>To initialize project context:</p>
 <ol>
@@ -728,6 +730,7 @@
 <li>Bob generates the <code>agents.md</code> context file</li>
 </ol>
 <p>The command completes in seconds for most projects. No additional configuration is required.</p>
+<hr />
 <h2 id="the-agentsmd-file">The agents.md File</h2>
 <p>The primary output of <code>/init</code> is <code>agents.md</code> — a plain text markdown file placed at <code>.bob/agents.md</code> in the project root.</p>
 <p>This file functions like onboarding documentation for Bob: a concise, actionable summary that provides everything Bob needs to understand the project's structure and conventions. Contents typically include:</p>
@@ -739,6 +742,7 @@
 <li>Development workflows</li>
 </ul>
 <p>From this point forward, <code>agents.md</code> is automatically prepended to every new conversation, giving Bob immediate project context without requiring manual file reads.</p>
+<hr />
 <h2 id="mode-specific-agentsmd-files">Mode-Specific agents.md Files</h2>
 <p>In addition to the main <code>agents.md</code>, <code>/init</code> also generates mode-specific context files for each built-in mode:</p>
 <table>
@@ -772,6 +776,7 @@
 </tbody>
 </table>
 <p>Each mode-specific file extends the base context with information relevant to that mode's purpose. For example, the plan mode context might emphasize architectural conventions, while the code mode context highlights file structure and naming patterns.</p>
+<hr />
 <h2 id="scaling-considerations">Scaling Considerations</h2>
 <table>
 <thead>
@@ -792,6 +797,7 @@
 </tbody>
 </table>
 <p>As codebases grow, the value of a well-maintained <code>agents.md</code> increases proportionally.</p>
+<hr />
 <h2 id="maintaining-agentsmd">Maintaining agents.md</h2>
 <p>Re-run <code>/init</code> after significant project changes:</p>
 <ul>
@@ -801,6 +807,7 @@
 <li>Onboarding new team members who will use Bob</li>
 </ul>
 <p>The file can also be edited manually to add context that Bob's automated scan may not capture, such as business rules, deployment conventions, or team-specific practices.</p>
+<hr />
 <h2 id="key-takeaways">Key Takeaways</h2>
 <ul>
 <li>LLMs are stateless — each conversation starts fresh without persistent memory</li>

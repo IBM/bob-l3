@@ -371,7 +371,7 @@
   
     <li class="md-nav__item">
       <a href="../chapter3/agents/" class="md-nav__link">
-        1. The init Command and Agents
+        1. The init Command & Agents
       </a>
     </li>
   
@@ -617,7 +617,7 @@
         
           <li class="md-nav__item">
   <a href="#chapter3-agents" class="md-nav__link">
-    1. The init Command and Agents
+    1. The init Command & Agents
   </a>
   
 </li>
@@ -1122,12 +1122,14 @@
                         <h1 class='nav-section-title' id='section-chapter-3'>
                             Chapter 3 <a class='headerlink' href='#section-chapter-3' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="chapter3-agents"><h1 id="chapter3-agents-the-init-command-and-agentsmd">The /init Command and agents.md</h1>
+                        <section class="print-page" id="chapter3-agents"><h1 id="chapter3-agents-the-init-command-and-agents">The /init Command and Agents</h1>
 <h2 id="chapter3-agents-overview">Overview</h2>
 <p>The <code>/init</code> command scans a project and generates a structured summary file that Bob uses as persistent context in every conversation. This is the primary mechanism for giving Bob durable knowledge about a project's structure, conventions, and codebase, without requiring Bob to re-read every file at the start of each interaction.</p>
+<hr />
 <h2 id="chapter3-agents-why-project-context-matters">Why Project Context Matters</h2>
 <p>Large language models are stateless by nature. Each new conversation starts with no memory of previous interactions. Without explicit project context, Bob must rediscover the codebase from scratch every time — an approach that is inefficient and becomes impractical at scale.</p>
 <p>The <code>/init</code> command addresses this by producing a persistent context file that is automatically included in every Bob conversation.</p>
+<hr />
 <h2 id="chapter3-agents-running-init">Running /init</h2>
 <p>To initialize project context:</p>
 <ol>
@@ -1137,6 +1139,7 @@
 <li>Bob generates the <code>agents.md</code> context file</li>
 </ol>
 <p>The command completes in seconds for most projects. No additional configuration is required.</p>
+<hr />
 <h2 id="chapter3-agents-the-agentsmd-file">The agents.md File</h2>
 <p>The primary output of <code>/init</code> is <code>agents.md</code> — a plain text markdown file placed at <code>.bob/agents.md</code> in the project root.</p>
 <p>This file functions like onboarding documentation for Bob: a concise, actionable summary that provides everything Bob needs to understand the project's structure and conventions. Contents typically include:</p>
@@ -1148,6 +1151,7 @@
 <li>Development workflows</li>
 </ul>
 <p>From this point forward, <code>agents.md</code> is automatically prepended to every new conversation, giving Bob immediate project context without requiring manual file reads.</p>
+<hr />
 <h2 id="chapter3-agents-mode-specific-agentsmd-files">Mode-Specific agents.md Files</h2>
 <p>In addition to the main <code>agents.md</code>, <code>/init</code> also generates mode-specific context files for each built-in mode:</p>
 <table>
@@ -1181,6 +1185,7 @@
 </tbody>
 </table>
 <p>Each mode-specific file extends the base context with information relevant to that mode's purpose. For example, the plan mode context might emphasize architectural conventions, while the code mode context highlights file structure and naming patterns.</p>
+<hr />
 <h2 id="chapter3-agents-scaling-considerations">Scaling Considerations</h2>
 <table>
 <thead>
@@ -1201,6 +1206,7 @@
 </tbody>
 </table>
 <p>As codebases grow, the value of a well-maintained <code>agents.md</code> increases proportionally.</p>
+<hr />
 <h2 id="chapter3-agents-maintaining-agentsmd">Maintaining agents.md</h2>
 <p>Re-run <code>/init</code> after significant project changes:</p>
 <ul>
@@ -1210,6 +1216,7 @@
 <li>Onboarding new team members who will use Bob</li>
 </ul>
 <p>The file can also be edited manually to add context that Bob's automated scan may not capture, such as business rules, deployment conventions, or team-specific practices.</p>
+<hr />
 <h2 id="chapter3-agents-key-takeaways">Key Takeaways</h2>
 <ul>
 <li>LLMs are stateless — each conversation starts fresh without persistent memory</li>
@@ -1221,8 +1228,10 @@
 </ul></section><section class="print-page" id="chapter3-rules"><h1 id="chapter3-rules-bob-rules">Bob Rules</h1>
 <h2 id="chapter3-rules-overview">Overview</h2>
 <p>Bob rules are plain text files that define standing instructions applied to every Bob conversation. Rules allow teams and individual developers to enforce coding standards, communication preferences, workflow constraints, and custom behaviors across all interactions with Bob — without repeating instructions in every prompt.</p>
+<hr />
 <h2 id="chapter3-rules-how-rules-work">How Rules Work</h2>
 <p>Rules are stored as files in a designated folder within the project or at the global user level. The content of every file in the rules folder is automatically injected into each conversation Bob has. Rules apply across all modes (Code, Plan, Ask, Advanced, and any custom modes).</p>
+<hr />
 <h2 id="chapter3-rules-file-location">File Location</h2>
 <p><strong>Project-level rules</strong> (apply only to the current project):
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#chapter3-rules-__codelineno-0-1"></a>.bob/rules/
@@ -1230,6 +1239,7 @@
 <p>Place any plain text or markdown file in this directory. Bob reads all files in the folder on every conversation start.</p>
 <p><strong>Global rules</strong> (apply across all projects on the machine):</p>
 <p>Global rules use a different directory path at the user level. Consult the Bob documentation for the exact global rules location for your operating system.</p>
+<hr />
 <h2 id="chapter3-rules-example-rules">Example Rules</h2>
 <h3 id="chapter3-rules-documentation-standard">Documentation Standard</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#chapter3-rules-__codelineno-1-1"></a>Always include concise JSDoc strings for every public function.
@@ -1251,6 +1261,7 @@
 <li><strong>Cross-session continuity</strong>: Bob can reference the internal monologue folder in future conversations to understand prior work</li>
 <li><strong>Team transparency</strong>: In shared repositories, the monologue shows what different team members have done with Bob</li>
 </ul>
+<hr />
 <h2 id="chapter3-rules-project-vs-global-scope">Project vs. Global Scope</h2>
 <table>
 <thead>
@@ -1274,6 +1285,7 @@
 </tbody>
 </table>
 <p>Rules from both locations are combined and applied simultaneously.</p>
+<hr />
 <h2 id="chapter3-rules-rules-are-committed-to-the-repository">Rules Are Committed to the Repository</h2>
 <p>Project-level rules in <code>.bob/rules/</code> are version-controlled alongside the code. This means:</p>
 <ul>
@@ -1281,6 +1293,7 @@
 <li>Changes to rules go through the normal code review process</li>
 <li>The rules history is tracked in git</li>
 </ul>
+<hr />
 <h2 id="chapter3-rules-key-takeaways">Key Takeaways</h2>
 <ul>
 <li>Rules are plain text files in <code>.bob/rules/</code> that Bob reads at the start of every conversation</li>
@@ -1295,6 +1308,7 @@
 </blockquote></section><section class="print-page" id="chapter3-modes"><h1 id="chapter3-modes-custom-modes">Custom Modes</h1>
 <h2 id="chapter3-modes-overview">Overview</h2>
 <p>Bob's built-in modes (Code, Plan, Ask, Advanced) cover the most common development workflows. Custom modes extend this system by allowing teams and developers to define specialized personas with tailored instructions and specific tool access. A custom mode combines a role definition, behavioral instructions, and a deterministic set of permitted tools.</p>
+<hr />
 <h2 id="chapter3-modes-anatomy-of-a-mode">Anatomy of a Mode</h2>
 <p>Every mode — built-in or custom — is defined by the same set of fields:</p>
 <table>
@@ -1349,6 +1363,7 @@
 <li><strong>Tools</strong> are deterministic: Bob is strictly limited to the tools listed. It cannot use tools outside this list, regardless of instructions.</li>
 </ul>
 <p>Tool restrictions are enforced — not suggested. This makes the tools section the primary mechanism for constraining what Bob can do in a given mode.</p>
+<hr />
 <h2 id="chapter3-modes-creating-a-custom-mode">Creating a Custom Mode</h2>
 <p>Custom modes are created through the mode settings panel in Bob IDE:</p>
 <ol>
@@ -1384,6 +1399,7 @@
 <li>Committed to the repository so all team members have access to the same custom modes</li>
 <li>Used as a starting point for asking Bob to generate additional modes</li>
 </ul>
+<hr />
 <h2 id="chapter3-modes-example-product-management-mode">Example: Product Management Mode</h2>
 <p>The following example demonstrates a custom mode designed for product planning tasks.</p>
 <p><strong>Purpose</strong>: Transform feature ideas into a structured, prioritized product plan</p>
@@ -1418,15 +1434,19 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Rationale for tool selection:</strong>
-- <strong>Read</strong> is needed to understand existing features and the current state of the codebase
-- <strong>Edit</strong> is needed to produce output documents (markdown plans)
-- <strong>MCP</strong> is included to allow communication with GitHub (reading issues, creating plans linked to issues)
-- <strong>Execute</strong> is excluded — product management tasks do not require running code
-- <strong>Browser</strong> is excluded — not relevant for this workflow</p>
+<p><strong>Rationale for tool selection:</strong></p>
+<ul>
+<li><strong>Read</strong> is needed to understand existing features and the current state of the codebase</li>
+<li><strong>Edit</strong> is needed to produce output documents (markdown plans)</li>
+<li><strong>MCP</strong> is included to allow communication with GitHub (reading issues, creating plans linked to issues)</li>
+<li><strong>Execute</strong> is excluded — product management tasks do not require running code</li>
+<li><strong>Browser</strong> is excluded — not relevant for this workflow</li>
+</ul>
+<hr />
 <h2 id="chapter3-modes-rules-apply-across-all-modes">Rules Apply Across All Modes</h2>
 <p>Rules defined in <code>.bob/rules/</code> are injected into every conversation regardless of mode. A custom mode does not override or bypass rules. For example, an internal monologue rule configured globally will continue to generate summaries even when using a custom Product Management mode.</p>
 <p>This makes rules the correct mechanism for cross-cutting behaviors, while mode instructions handle mode-specific behaviors.</p>
+<hr />
 <h2 id="chapter3-modes-key-takeaways">Key Takeaways</h2>
 <ul>
 <li>Custom modes combine non-deterministic instructions with deterministic tool constraints</li>
