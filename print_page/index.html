@@ -790,6 +790,7 @@
                         <section class="print-page" id="chapter1-galaxium"><h1 id="chapter1-galaxium-demo-application-galaxium-travels">Demo Application: Galaxium Travels</h1>
 <h2 id="chapter1-galaxium-overview">Overview</h2>
 <p>The demo application used throughout this learning path is <strong>Galaxium Travels</strong>, a fictional luxury space travel booking system. The source code is publicly available on GitHub. All examples and feature implementations in this course are performed against this codebase.</p>
+<hr />
 <h2 id="chapter1-galaxium-architecture">Architecture</h2>
 <p>Galaxium Travels follows a standard full-stack architecture:</p>
 <table>
@@ -953,14 +954,18 @@
 <hr />
 <h2 id="chapter2-agentic-plan-mode">Plan Mode</h2>
 <p>Plan mode is the starting point for any complex feature or architectural change. In this mode, Bob has read-only access to the codebase and focuses on generating a detailed plan before any code is written.</p>
-<p><strong>When to use Plan mode:</strong>
-- Implementing features that touch multiple files or layers (frontend, backend, database)
-- Designing new system components or data models
-- Investigating the scope of a change before committing to it</p>
-<p><strong>How to enter Plan mode:</strong>
-1. Open the agentic sidebar in VS Code
-2. Select <strong>Plan</strong> from the mode selector
-3. Describe the feature or change in natural language</p>
+<p><strong>When to use Plan mode:</strong></p>
+<ul>
+<li>Implementing features that touch multiple files or layers (frontend, backend, database)</li>
+<li>Designing new system components or data models</li>
+<li>Investigating the scope of a change before committing to it</li>
+</ul>
+<p><strong>How to enter Plan mode:</strong></p>
+<ol>
+<li>Open the agentic sidebar in VS Code</li>
+<li>Select <strong>Plan</strong> from the mode selector</li>
+<li>Describe the feature or change in natural language</li>
+</ol>
 <h3 id="chapter2-agentic-what-happens-in-plan-mode">What Happens in Plan Mode</h3>
 <p>After receiving a request, Bob:</p>
 <ol>
@@ -974,11 +979,13 @@
 <hr />
 <h2 id="chapter2-agentic-developer-responsibility-reading-the-plans">Developer Responsibility: Reading the Plans</h2>
 <p>The planning documents Bob generates are not suggestions — they are what Bob will actually build. Approving a plan without reading it transfers responsibility for incorrect or misaligned implementations to the developer.</p>
-<p><strong>Required before proceeding:</strong>
-- Read both the implementation plan and the architecture plan in full
-- Verify that the described behavior matches the intended feature
-- Check that testing requirements are appropriate
-- Correct any misunderstandings by revising the prompt or asking follow-up questions</p>
+<p><strong>Required before proceeding:</strong></p>
+<ul>
+<li>Read both the implementation plan and the architecture plan in full</li>
+<li>Verify that the described behavior matches the intended feature</li>
+<li>Check that testing requirements are appropriate</li>
+<li>Correct any misunderstandings by revising the prompt or asking follow-up questions</li>
+</ul>
 <blockquote>
 <p>"Read those plans. That is where your responsibility as a developer comes in."</p>
 </blockquote>
@@ -996,11 +1003,13 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#chapter2-agentic-__codelineno-0-2"></a>@/path/to/architecture-plan.md
 </code></pre></div>
 <p>Bob reads the referenced documents and implements the feature according to the approved specification.</p>
-<p><strong>To switch to Code mode:</strong>
-1. Start a new conversation in the agentic sidebar
-2. Select <strong>Code</strong> from the mode selector
-3. Reference the planning documents using <code>@/path/to/file</code>
-4. Send the implementation request</p>
+<p><strong>To switch to Code mode:</strong></p>
+<ol>
+<li>Start a new conversation in the agentic sidebar</li>
+<li>Select <strong>Code</strong> from the mode selector</li>
+<li>Reference the planning documents using <code>@/path/to/file</code></li>
+<li>Send the implementation request</li>
+</ol>
 <p>In Code mode, Bob has full access to file operations and command execution, allowing it to create, modify, and run code across the entire codebase.</p>
 <hr />
 <h2 id="chapter2-agentic-auto-approval-settings">Auto-Approval Settings</h2>
@@ -1031,10 +1040,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Risks of full auto-approval:</strong>
-- Bob can execute arbitrary terminal commands without review
-- Mistakes in the plan propagate to the codebase without intervention points
-- Unintended file deletions or overwrites may occur</p>
+<p><strong>Risks of full auto-approval:</strong></p>
+<ul>
+<li>Bob can execute arbitrary terminal commands without review</li>
+<li>Mistakes in the plan propagate to the codebase without intervention points</li>
+<li>Unintended file deletions or overwrites may occur</li>
+</ul>
 <p>For most development work, a hybrid approach is recommended: auto-approve file reads and writes while requiring confirmation for command execution.</p>
 <blockquote>
 <p>Configure auto-approval settings in Bob's settings panel based on the sensitivity of the project and the level of trust placed in the approved plan.</p>
@@ -1051,14 +1062,10 @@
 </blockquote>
 </li>
 <li>Bob reads relevant files and asks clarifying questions about behavior, pricing logic, and UI presentation</li>
-<li>
-<p>Bob generates:
+<li>Bob generates:
    - <code>seat-class-implementation-plan.md</code> — ~160 lines covering data model, API changes, frontend components, and test cases
-   - <code>seat-class-architecture.md</code> — structural overview of how seat class data flows through the system</p>
-</li>
-<li>
-<p><strong>Read both documents</strong> and verify the plan matches the intended behavior</p>
-</li>
+   - <code>seat-class-architecture.md</code> — structural overview of how seat class data flows through the system</li>
+<li><strong>Read both documents</strong> and verify the plan matches the intended behavior</li>
 </ol>
 <h3 id="chapter2-agentic-implementation-phase">Implementation Phase</h3>
 <ol>
