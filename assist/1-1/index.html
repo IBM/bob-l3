@@ -304,19 +304,6 @@
     i. Tab Completion &amp; Next Edit Prediction
   </a>
   
-    <nav class="md-nav" aria-label="i. Tab Completion &amp; Next Edit Prediction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bob-in-your-flow" class="md-nav__link">
-    Bob in your flow
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -620,19 +607,6 @@
     i. Tab Completion &amp; Next Edit Prediction
   </a>
   
-    <nav class="md-nav" aria-label="i. Tab Completion &amp; Next Edit Prediction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bob-in-your-flow" class="md-nav__link">
-    Bob in your flow
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -692,7 +666,7 @@
 
 <h1 id="module-1-assist"><strong>Module 1 — ASSIST</strong></h1>
 <h2 id="i-tab-completion-next-edit-prediction"><strong>i. Tab Completion &amp; Next Edit Prediction</strong></h2>
-<h4 id="bob-in-your-flow"><em>Bob in your flow</em></h4>
+<p><strong><em>Bob in your flow</em></strong></p>
 <hr />
 <p>This is the first (and most gentle) stage of the AI maturity curve, and therefore a natural sweet spot for building your understanding of IBM Bob. Across this module, you'll work shoulder to shoulder with Bob from the perspective of a software developer paired with the Bob editor. As you work, Bob will be anticipating the next keystroke, drafting the next few lines, and making targeted edits upon your request — all the while keeping the developer (<em>you</em>) in control of accepting or rejecting every AI-generated proposed change.</p>
 <p>The value that IBM Bob provides in this will be apparenty right from the onset: teams can move faster without breaking their train of thought, and nothing lands in the codebase that they did not explicitly choose to include. It is the most logical on-ramp to working with an AI partner, and it pays off from the very first session.</p>
@@ -714,7 +688,7 @@
 <p>Tab completion is a familiar idea executed unusually well. Where conventional autocomplete reacts to the few characters you have just typed, Bob reads the surrounding context to make a genuinely informed suggestion — drawing on the comments describing your intent, the patterns and structure already present in the code, your project's conventions and style, and related code in other files. The result feels less like word-completion and more like a colleague finishing your thought.</p>
 <hr />
 <h4 id="accepting-suggestions">Accepting suggestions</h4>
-<p>When Bob offers a suggestion, you stay in charge of it:</p>
+<p>When Bob offers a suggestion, the human in the loop retains control and has the last word on what is implemented:</p>
 <ul>
 <li>Press <strong>Tab</strong> to accept it</li>
 <li>Keep typing to override it</li>
@@ -723,9 +697,10 @@
 <hr />
 <h4 id="next-edit-prediction">Next edit prediction</h4>
 <p>Real code changes are rarely confined to one spot. Add a field, and you often need to use it elsewhere; introduce a function, and something downstream has to call it. <strong>Next edit prediction</strong> is built around that reality: after you accept a suggestion, Bob anticipates the <em>related</em> edit you are likely to need and moves you there. The rhythm is simple — describe what you want in a comment, let Bob suggest the code, press <strong>Tab</strong> to accept, and press <strong>Tab</strong> again to jump to the next predicted location, where Bob positions your cursor exactly where the new code needs to be used.</p>
-<p>!!! warning "<strong>EXPECT SOME VARIABILITY</strong></p>
-<div class="highlight"><pre><span></span><code>Generative AI is non-deterministic, so your results may differ from what you see here. If an output diverges, refine the prompt, follow up with another, or adjust the code by hand — or simply carry on if what you have works.
-</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
+<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
+</div>
 <h2 id="ii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>ii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
 <hr />
 <blockquote>
