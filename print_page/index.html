@@ -769,6 +769,7 @@ At its core, Bob does three things exceptionally well:</p>
 <li>
 <p>Drill down into <code>galaxium-travels</code> folder contents and locate the <strong>UserIdentification.tsx</strong> file. It will be nestled inside the following directory hierarchy:</p>
 <div class="admonition warning">
+<p class="admonition-title"><strong>Filepath:</strong></p>
 <p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>components</code><strong>/</strong><code>user</code><strong>/</strong><code>UserIdentification.tsx</code></p>
 </div>
 </li>
@@ -799,9 +800,32 @@ At its core, Bob does three things exceptionally well:</p>
 <p>Place the cursor on <strong>line 19</strong> of the file (within the <code>UserIdentification</code> function) and type the following, including the forward-slash (<code>/</code>) characters:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#assist-1-1-__codelineno-0-1"></a>//validate email addresses
 </code></pre></div>
-<p>Then add a blank (empty) line <em>before</em> and <em>after</em> this commented line.</p>
+<p>Then add a blank (empty) line <em>before</em> and <em>after</em> this commented line. The result should appear as the following:</p>
 </li>
 </ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="assist-1-1-__tabbed_1_1" name="assist-1-1-__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="assist-1-1-__tabbed_1_1">USERIDENTIFICATION.TSX</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-1-__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-1-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-17" name="__codelineno-1-17"></a>const [isLoading, setIsLoading] = useState(false);
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>const [isNewUser, setIsNewUser] = useState(false);
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="hll">
+</span><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="hll">//validate email addresses
+</span><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="hll">
+</span><a id="__codelineno-1-22" name="__codelineno-1-22"></a>const handleSubmit = async (e: React.FormEvent) =&gt; {
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>    e.preventDefaut();
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>}
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p></br></p>
 <p align="center">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa00fc56-debe-4660-9560-de00400ed10e/File_b68b1ec47df44292a1c7397c8c71dbef_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa00fc56-debe-4660-9560-de00400ed10e/File_b68b1ec47df44292a1c7397c8c71dbef_text_export.jpeg" alt="" width="600" /></a>
 </p>
@@ -886,15 +910,15 @@ You should see "Galaxium Travels is running!" (amongst the other success message
 On Windows, first, execute the following commands. Send them one-by-one, all in the same terminal window.\
 \
 <em>These are the same manual backend startup steps as per the Registration Guide, but without the step of installing requirements.txt.</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#assist-1-1-__codelineno-1-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#assist-1-1-__codelineno-2-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#assist-1-1-__codelineno-2-1"></a>cd booking_system_backend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#assist-1-1-__codelineno-3-1"></a>cd booking_system_backend
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#assist-1-1-__codelineno-3-1"></a>python -m venv .venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#assist-1-1-__codelineno-4-1"></a>python -m venv .venv
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#assist-1-1-__codelineno-4-1"></a>.venv\Scripts\activate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#assist-1-1-__codelineno-5-1"></a>.venv\Scripts\activate
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#assist-1-1-__codelineno-5-1"></a>python server.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#assist-1-1-__codelineno-6-1"></a>python server.py
 </code></pre></div>
 <p align="center">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9693dc88-b869-4dd4-96d2-57f5d689ef8b/File_1fb9a0d9760b4b34970271f1c7fc4bb0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9693dc88-b869-4dd4-96d2-57f5d689ef8b/File_1fb9a0d9760b4b34970271f1c7fc4bb0_text_export.jpeg" alt="" width="600" /></a>
@@ -908,11 +932,11 @@ On Windows, first, execute the following commands. Send them one-by-one, all in 
 
 <p><strong>WINDOWS ONLY</strong> </p>
 <p>In the new Terminal window, next, execute the following commands. Send them one-by-one, all in the same terminal window.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#assist-1-1-__codelineno-6-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#assist-1-1-__codelineno-7-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#assist-1-1-__codelineno-7-1"></a>cd booking_system_frontend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#assist-1-1-__codelineno-8-1"></a>cd booking_system_frontend
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#assist-1-1-__codelineno-8-1"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#assist-1-1-__codelineno-9-1"></a>npm run dev
 </code></pre></div>
 <p align="center">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" alt="" width="600" /></a>
