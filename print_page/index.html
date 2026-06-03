@@ -730,7 +730,7 @@ At its core, Bob does three things exceptionally well:</p>
 <h4 id="assist-1-1-next-edit-prediction">Next edit prediction</h4>
 <p>Real code changes are rarely confined to a single line within the codebase. Add a new field or variable to the code, and you'll oftentime find yourself needing to use it again elsewhere; introduce a function, and something downstream will need to call it. <strong>Next edit prediction</strong> is built around that practical reality: after you accept an AI-generated suggestion, Bob anticipates the <em>related</em> edit you are likely to need as a follow-up and moves you there.</p>
 <p>You can conceptualize this as a <em>rhythm</em> between the developer and their AI partner. The developer describes what they want in a comment, allows Bob to suggest the code fix, presses <strong>Tab</strong> to accept the suggestion, and presses <strong>Tab</strong> again to jump to the next predicted location — where Bob positions the cursor exactly where the new code needs to be invoked.</p>
-<h2 id="assist-1-1-ii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>ii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
+<h2 id="assist-1-1-iii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>iii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
 <hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
@@ -788,7 +788,7 @@ At its core, Bob does three things exceptionally well:</p>
 
 <hr />
 <ol start="6">
-<li>Navigate to the <code>UserIdentification</code> function (<strong>line 19</strong> of <code>UserIdentification.tsx</code> source file).</li>
+<li>Navigate to the <code>UserIdentification</code> function (<strong>line 19</strong> of <code>UserIdentification.tsx</code>).</li>
 </ol>
 <p align="center">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/74243ab6-12d1-48ad-a204-8a51bdc1911e/File_004b5c8a04414381ab2c503aff811b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/74243ab6-12d1-48ad-a204-8a51bdc1911e/File_004b5c8a04414381ab2c503aff811b0c_text_export.jpeg" alt="" width="600" /></a>
@@ -823,7 +823,6 @@ At its core, Bob does three things exceptionally well:</p>
 </div>
 </div>
 </div>
-<p></br></p>
 </li>
 </ol>
 <p align="center">
@@ -832,27 +831,25 @@ At its core, Bob does three things exceptionally well:</p>
 
 <hr />
 <ol start="8">
-<li>With //validate email addresses in place, press <strong>Enter</strong>, then <strong>Tab</strong>.</li>
+<li>
+<p>Move your cursor to the <strong>end</strong> of the newly-created <code>//validate email addresses</code> comment on <strong>line 19</strong>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> followed by <span class="keys"><kbd class="key-tab">Tab</kbd></span> to invoke Bob's <em>Tab Completion</em> feature.</p>
+<p>Tab Completion will immediately insert greyed-out, italicized text — this represents the AI-suggested code completion based on the natural language "validate email addresses" comment. At this stage, the code suggestion is still <em>only</em> a suggestion: you, as the operator at the helm, have the option to: accept; modify; or reject and move on.</p>
+</li>
 </ol>
-<p>When Tab Completion is working, you will see this greyed-out text.</p>
-<blockquote>
-<p><strong>If nothing appears</strong>, simply repeat the process: return to the commented line, press <strong>Enter</strong>, and press <strong>Tab</strong> again.</p>
-</blockquote>
 <p align="center">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
 <hr />
 <ol start="9">
-<li>Press <strong>Tab</strong> once more, and the greyed-out suggestion is committed to your file as working code.</li>
+<li>Press <strong>Tab</strong> once more to <strong>accept</strong> the suggested code. Note that the grey italics are replaced by <em>normal</em> characters after accepting the suggestion. This denotes that the AI-suggested code has been committed to your file as working code.</li>
 </ol>
 <p align="center">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ac7f40b-63ae-4f97-82c1-524d9d2f2dd2/File_9f963909fc9c4cf48bda0a1f83bd114d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ac7f40b-63ae-4f97-82c1-524d9d2f2dd2/File_9f963909fc9c4cf48bda0a1f83bd114d_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
-<p>Because Bob's suggestions are non-deterministic, your generated function may look quite different from the one shown here.</p>
-<p>Even if the result is unexpected, you can keep going as long as your code runs.</p>
-<p>If the generated code does not compile, first compare the inserted function with the example shown in the lab, then either correct the function manually or delete the generated code and repeat the prediction step. If necessary, use the Agentic Sidebar to diagnose the error.</p>
+<div class="highlight"><pre><span></span><code>As a reminder, because Bob&#39;s suggestions are non-deterministic, your generated function may look slightly different from the code documented. If the generated code does not compile, first compare the inserted function with the example shown in the lab documentation. You may either manually correct the function by hand to make the documented solution, or delete the generated code and repeat the prediction step (using ++tab++ as before) once again.
+</code></pre></div>
 <p align="center">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4654eea3-7c0a-44c2-bf27-01374b64a907/File_26a1660c3e1c4c0e94930590a1961d22_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4654eea3-7c0a-44c2-bf27-01374b64a907/File_26a1660c3e1c4c0e94930590a1961d22_text_export.jpeg" alt="" width="600" /></a>
 </p>
