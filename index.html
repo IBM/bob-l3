@@ -318,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter1/galaxium/" class="md-nav__link">
+      <a href="chapter1/galaxium.md" class="md-nav__link">
         1. "Galaxium Travels" App
       </a>
     </li>
@@ -366,7 +366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter2/prediction/" class="md-nav__link">
+      <a href="chapter2/prediction.md" class="md-nav__link">
         1. Next Edit Prediction
       </a>
     </li>
@@ -380,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter2/literate/" class="md-nav__link">
+      <a href="chapter2/literate.md" class="md-nav__link">
         2. Literate Coding
       </a>
     </li>
@@ -394,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter2/agentic/" class="md-nav__link">
+      <a href="chapter2/agentic.md" class="md-nav__link">
         3. The Agentic Sidebar
       </a>
     </li>
@@ -442,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter3/agents/" class="md-nav__link">
+      <a href="chapter3/agents.md" class="md-nav__link">
         1. The init Command & Agents
       </a>
     </li>
@@ -456,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter3/rules/" class="md-nav__link">
+      <a href="chapter3/rules.md" class="md-nav__link">
         2. Bob Rules
       </a>
     </li>
@@ -470,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter3/modes/" class="md-nav__link">
+      <a href="chapter3/modes.md" class="md-nav__link">
         3. Custom Modes
       </a>
     </li>
@@ -518,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter4/context/" class="md-nav__link">
+      <a href="chapter4/context.md" class="md-nav__link">
         1. Understanding the Context Window
       </a>
     </li>
@@ -532,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter4/shell/" class="md-nav__link">
+      <a href="chapter4/shell.md" class="md-nav__link">
         2. Bob Shell
       </a>
     </li>
@@ -580,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter5/mcp/" class="md-nav__link">
+      <a href="chapter5/mcp.md" class="md-nav__link">
         1. Model Context Protocol
       </a>
     </li>
@@ -628,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chapter6/workshop/" class="md-nav__link">
+      <a href="chapter6/workshop.md" class="md-nav__link">
         1. Workshop Test
       </a>
     </li>
@@ -803,6 +803,447 @@
 <li>The developer remains in control — Bob assists with reasoning and implementation, but does not replace developer judgment</li>
 <li>This learning path progresses from beginner to advanced topics across five chapters</li>
 </ul>
+<hr />
+<h1 id="ibm-bob-l3-lab-guide"><strong>IBM Bob L3 Lab Guide</strong></h1>
+<p>::toc{}</p>
+<h1 id="before-you-begin">Before You Begin</h1>
+<h4 id="a-word-on-working-with-generative-ai">A word on working with generative AI</h4>
+<p>IBM Bob is powered by generative AI and large language models (LLMs), and a defining trait of these systems is that they are <em>non-deterministic</em> — unlike the <em>deterministic</em> tools most developers are accustomed to. In practice, that means the same prompt can produce different code from one run to the next. This is both a strength and a quirk of the technology, and it is something to work <em>with</em> rather than against.</p>
+<p>Precision is what tips the odds in your favor. The more clearly you describe what you want, the more closely Bob's output will mirror your intent; conversely, the smallest change in wording can meaningfully change the generated code. Throughout this lab, your results may differ from the solutions shown — and that is expected, not a defect. Whenever an output diverges, you have three good options: refine the prompt and try again, edit the generated code by hand, or simply proceed if the variation still compiles and runs. Human review remains essential at every step, and never more so than while you are still learning the tool.</p>
+<h4 id="about-the-videos-in-this-course">About the videos in this course</h4>
+<p>Throughout the modules ahead you will find short videos, hosted on Seismic and linked inline. These are not optional viewing. They show — on screen and in real time — exactly how each feature behaves, a level of detail that text alone struggles to convey. We strongly encourage you to watch each one as you reach the corresponding section.</p>
+<h1 id="prologue-setting-the-scene">Prologue — Setting the Scene</h1>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCCRJXV8W3hjPG9VH7cMbm2p7PT3">Welcome to IBM Bob [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> introduces IBM Bob and previews the hands-on demonstration that follows. <em>[1 min]</em></p>
+</blockquote>
+<h2 id="i-what-ibm-bob-is-and-why-its-a-partner-not-just-a-code-generator"><strong>i. What IBM Bob is — and why it's a partner, not just a code generator</strong></h2>
+<p>IBM Bob is an AI-powered partner for the entire software development lifecycle (SDLC), and it lives where your developers already work: inside the development environment itself. It is tempting to file Bob alongside the many code-completion assistants that have flooded the marketplace since LLMs arrived — but that comparison sells it short. A code generator helps at the single moment a function gets written. Bob is built to help across the whole arc of a project: planning a feature before a line of code exists, reasoning about an unfamiliar codebase, implementing changes, and automating the repetitive work that surrounds real development.</p>
+<p>At its core, Bob does three things exceptionally well:</p>
+<ul>
+<li><strong>Writes and modifies code</strong> across an entire codebase, from natural language instructions</li>
+<li><strong>Understands codebases</strong> — reading and reasoning about complex project structures, dependencies, and architectural patterns</li>
+<li><strong>Automates the busywork</strong> of development, from documentation to commit messages to test scaffolding</li>
+</ul>
+<h2 id="ii-bob-across-the-software-development-lifecycle"><strong>ii. Bob across the software development lifecycle</strong></h2>
+<p>The distinction worth holding onto is <em>scope</em>. Where a traditional assistant is anchored to the moment of writing or fixing code, Bob is designed to support the lifecycle around it — helping you plan features before implementation begins, understand the full context of a project before making changes, and keep the developer in control at every step. Bob augments the way your teams already work; it does not replace their judgment. Hold on to that last idea, because it is the thread that runs through everything in this course.</p>
+<h2 id="iii-where-bob-meets-you-the-ide-and-the-shell"><strong>iii. Where Bob meets you: the IDE and the Shell</strong></h2>
+<p>Bob comes in two form factors, so it can meet developers wherever they are most productive:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob IDE</td>
+<td>A VS Code extension providing an agentic sidebar, inline code assistance, and mode-based interaction</td>
+</tr>
+<tr>
+<td>Bob Shell</td>
+<td>A terminal-based interface offering the same capabilities in a keyboard-driven, automation-friendly form</td>
+</tr>
+</tbody>
+</table>
+<p>You will spend most of this course in the Bob IDE, where the visuals make each capability easy to see. In the final module we will step over to Bob Shell — and you will find that everything you have learned carries over.</p>
+<h2 id="iv-the-journey-ahead-the-ai-assisted-code-maturity-curve"><strong>iv. The journey ahead: the AI-assisted code maturity curve</strong></h2>
+<p>Most product tours are really just feature inventories — a parade of buttons and panels with no story tying them together. This course is organized differently. The four modules ahead trace the <em>AI-assisted code maturity curve</em> — and as you shift right along it, you hand Bob progressively more responsibility, with Bob earning that trust by keeping you in command the entire way.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Stage</th>
+<th>What it means for your developers — and your clients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>Assist</strong></td>
+<td>Bob accelerates everyday work in the editor, and you accept or reject every change. Velocity from day one, at near-zero risk.</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>Delegate</strong></td>
+<td>Bob takes a whole feature from idea to working code — but builds only what you reviewed and approved first.</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Tailor</strong></td>
+<td>Bob learns your codebase, enforces your standards, and adapts to each role, so it behaves like a teammate who already knows how you work.</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>Scale &amp; Extend</strong></td>
+<td>Bob stays reliable on large, long-running work and plugs into the tools your enterprise already runs.</td>
+</tr>
+</tbody>
+</table>
+<p>Notice the single idea that recurs at every stage: <strong>the developer stays in control.</strong> What changes is only the stakes. At the <em>Assist</em> stage, control means accepting each suggestion keystroke by keystroke. At <em>Delegate</em>, it means approving the plan before a line is written. At <em>Tailor</em>, it means encoding the very rules Bob must obey. At <em>Scale &amp; Extend</em>, it means governing context, credentials, and tool access. Same promise; rising trust. That escalation <em>is</em> the story — and it is the story your sellers can carry into a C-suite conversation: not "here are some features," but "here is how your teams grow into an AI partner without ever losing the wheel."</p>
+<h2 id="v-the-world-well-build-in-galaxium-travels"><strong>v. The world we'll build in: Galaxium Travels</strong></h2>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCB6f2CRCCpcJ8TMpgH8Dd33T8D3">Chapter 1: Demo Application: Galaxium Travels [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> walks through the demo scenario that ties the hands-on modules together. <em>[2 min]</em></p>
+</blockquote>
+<p>Every good demonstration needs a believable world to unfold in, and ours is <strong>Galaxium Travels</strong> — a fictional luxury space-travel booking system whose source code is publicly available on GitHub. Rather than show Bob against throwaway snippets, we will work against this single, production-style codebase from start to finish. It is the consistent backdrop against which each stage of the curve comes to life.</p>
+<p>Galaxium Travels follows a familiar full-stack shape:</p>
+<ul>
+<li><strong>Frontend:</strong> React and TypeScript</li>
+<li><strong>Backend:</strong> Python, exposing both REST and MCP interfaces</li>
+<li><strong>Database:</strong> SQLite, with seed data for development and testing</li>
+</ul>
+<p>The backend is organized around a SQLite database containing the domain's data models (flights, users, bookings), the schemas that validate them, and seed data to work with. It exposes the application two ways: a <strong>REST API</strong> of standard HTTP endpoints for the frontend and other clients, and an <strong>MCP interface</strong> — a Model Context Protocol interface that lets Bob interact with the backend directly, as a tool. A local API browser is also available, so you can exercise endpoints (retrieving flights, registering users, making bookings) without the frontend in the way. The React/TypeScript frontend, for its part, connects to those same REST endpoints and presents the experience an end user would see: browsing available flights, registering and signing in, and booking a seat.</p>
+<p>As you move through the course, you will add real features to this application — and the order is deliberate, because each builds on the last:</p>
+<ul>
+<li><strong>Email validation</strong> — Module 1.1, Next Edit Prediction</li>
+<li><strong>Retry logic for API calls</strong> — Module 1.2, Literate Coding</li>
+<li><strong>Seat-class tiers</strong> (Economy, Business, Galaxium) — Module 2, the Agentic Sidebar</li>
+</ul>
+<p>Working in one continuous codebase is the point: it lets you watch Bob operate the way it would inside a client's real project, not in the tidy isolation of a toy example. The full source is on GitHub if you would like to explore it independently.</p>
+<h1 id="module-1-assist-bob-in-your-flow">Module 1 — ASSIST · <em>Bob in Your Flow</em></h1>
+<p>This is the first stage of the curve, and the gentlest. Here, Bob works shoulder to shoulder with the developer inside the editor — anticipating the next keystroke, drafting the next few lines, making targeted edits on request — while the developer accepts or rejects every single change. The value to pitch here is immediate and low-risk: your teams move faster without breaking their train of thought, and nothing lands in the codebase that they did not explicitly choose. It is the most natural possible on-ramp to working with an AI partner, and it pays off from the very first session.</p>
+<h2 id="11-staying-in-flow-tab-completion-next-edit-prediction"><strong>1.1 — Staying in Flow: Tab Completion &amp; Next Edit Prediction</strong></h2>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's tab completion and next edit predictions. <em>[1 min]</em></p>
+</blockquote>
+<h4 id="why-this-matters">Why this matters</h4>
+<p>The quickest way to lose a developer's confidence in an AI tool is to pull them out of their flow. Bob's first two capabilities are designed to do the opposite — to keep a developer <em>in</em> the work while quietly removing friction from it. They are <strong>tab completion</strong> and <strong>next edit prediction</strong>, and they operate as a pair: the first suggests code from context, the second anticipates where you will need to go next.</p>
+<h4 id="how-tab-completion-works">How tab completion works</h4>
+<p>Tab completion is a familiar idea executed unusually well. Where conventional autocomplete reacts to the few characters you have just typed, Bob reads the surrounding context to make a genuinely informed suggestion — drawing on the comments describing your intent, the patterns and structure already present in the code, your project's conventions and style, and related code in other files. The result feels less like word-completion and more like a colleague finishing your thought.</p>
+<h4 id="accepting-suggestions">Accepting suggestions</h4>
+<p>When Bob offers a suggestion, you stay in charge of it:</p>
+<ul>
+<li>Press <strong>Tab</strong> to accept it</li>
+<li>Keep typing to override it</li>
+<li>Watch it update dynamically as you continue</li>
+</ul>
+<h4 id="next-edit-prediction">Next edit prediction</h4>
+<p>Real code changes are rarely confined to one spot. Add a field, and you often need to use it elsewhere; introduce a function, and something downstream has to call it. <strong>Next edit prediction</strong> is built around that reality: after you accept a suggestion, Bob anticipates the <em>related</em> edit you are likely to need and moves you there. The rhythm is simple — describe what you want in a comment, let Bob suggest the code, press <strong>Tab</strong> to accept, and press <strong>Tab</strong> again to jump to the next predicted location, where Bob positions your cursor exactly where the new code needs to be used.</p>
+<blockquote>
+<p><strong>Expect some variation.</strong> Generative AI is non-deterministic, so your results may differ from what you see here. If an output diverges, refine the prompt, follow up with another, or adjust the code by hand — or simply carry on if what you have works.</p>
+</blockquote>
+<h4 id="hands-on-adding-email-validation-with-next-edit-prediction">Hands-on: adding email validation with Next Edit Prediction</h4>
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
+</blockquote>
+<p>A reminder before you start: because you are working with generative AI, your results may not match the screenshots exactly — and that is perfectly fine. Better still, most hiccups can be resolved without touching a line of code yourself. If you notice a discrepancy between this guide and what you see on screen, describe it to Bob in plain language; more often than not, it will sort the problem out for you.</p>
+<p>Let's give Galaxium Travels a feature it is currently missing — validation of the email addresses users type when they sign in.</p>
+<ol>
+<li>In the VS Code activity bar, click <strong>Explorer (Ctrl+Shift+E)</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dc6e0bb9-8bc5-444b-aae7-c8ef5eb02b33/File_d58a9ab512c241e9ae42c81d4e710a29_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dc6e0bb9-8bc5-444b-aae7-c8ef5eb02b33/File_d58a9ab512c241e9ae42c81d4e710a29_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Click <strong>Open Folder</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50832c90-ba15-40ca-b57c-2611e7902f6f/File_ad5aec0080304e5d9114f804aa079dd2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50832c90-ba15-40ca-b57c-2611e7902f6f/File_ad5aec0080304e5d9114f804aa079dd2_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>The File Explorer window opens...</li>
+</ol>
+<p>In your File Explorer view, highlight the galaxium-travels folder and select the folder.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50787f12-e1dd-410b-89f0-145df966f8c8/File_68c498ba382f4b529983a0a0980f01ab_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50787f12-e1dd-410b-89f0-145df966f8c8/File_68c498ba382f4b529983a0a0980f01ab_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>Our galaxium-travels folder appears.</li>
+</ol>
+<p>The file we'll work on for Module 1.1 is <strong>UserIdentification.tsx</strong>. Navigate to it at:</p>
+<p>\
+booking_system_frontend &gt; src &gt; components &gt; user &gt; UserIdentification.tsx</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/688b5e85-07db-4269-bb3c-8dca639c135e/File_3ee96a2bb1684cfb9017cc440c241a21_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/688b5e85-07db-4269-bb3c-8dca639c135e/File_3ee96a2bb1684cfb9017cc440c241a21_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>Now, we see UserIdentification.tsx has been opened.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/01d1cb46-0ae0-4f02-872d-62824119a3ae/File_f9ca68765fed45b8a4af0d9a7ad8ec53_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/01d1cb46-0ae0-4f02-872d-62824119a3ae/File_f9ca68765fed45b8a4af0d9a7ad8ec53_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>Navigate under the UserIdentification function (this should be around line 19 in UserIdentification.tsx)</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/74243ab6-12d1-48ad-a204-8a51bdc1911e/File_004b5c8a04414381ab2c503aff811b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/74243ab6-12d1-48ad-a204-8a51bdc1911e/File_004b5c8a04414381ab2c503aff811b0c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>Navigate under the UserIdentification function (this should be around line 19-21 in UserIdentification.tsx), and type:</li>
+</ol>
+<p>//validate email addresses</p>
+<p>Then add a blank line before and after this commented line.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa00fc56-debe-4660-9560-de00400ed10e/File_b68b1ec47df44292a1c7397c8c71dbef_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa00fc56-debe-4660-9560-de00400ed10e/File_b68b1ec47df44292a1c7397c8c71dbef_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="8">
+<li>With //validate email addresses in place, press <strong>Enter</strong>, then <strong>Tab</strong>.</li>
+</ol>
+<p>When Tab Completion is working, you will see this greyed-out text.</p>
+<blockquote>
+<p><strong>If nothing appears</strong>, simply repeat the process: return to the commented line, press <strong>Enter</strong>, and press <strong>Tab</strong> again.</p>
+</blockquote>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="9">
+<li>Press <strong>Tab</strong> once more, and the greyed-out suggestion is committed to your file as working code.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ac7f40b-63ae-4f97-82c1-524d9d2f2dd2/File_9f963909fc9c4cf48bda0a1f83bd114d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ac7f40b-63ae-4f97-82c1-524d9d2f2dd2/File_9f963909fc9c4cf48bda0a1f83bd114d_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p>Because Bob's suggestions are non-deterministic, your generated function may look quite different from the one shown here.</p>
+<p>Even if the result is unexpected, you can keep going as long as your code runs.</p>
+<p>If the generated code does not compile, first compare the inserted function with the example shown in the lab, then either correct the function manually or delete the generated code and repeat the prediction step. If necessary, use the Agentic Sidebar to diagnose the error.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4654eea3-7c0a-44c2-bf27-01374b64a907/File_26a1660c3e1c4c0e94930590a1961d22_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4654eea3-7c0a-44c2-bf27-01374b64a907/File_26a1660c3e1c4c0e94930590a1961d22_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p>In this run, Next Edit Prediction took a different route — rather than offering the whole function at once, it suggested the code line by line.\
+\
+Press <strong>Tab</strong> when each suggestion appears.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2e694506-5a94-4997-a492-033f5c71b5a6/File_879a5409f76e472fa0b3f2a632bce2a6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2e694506-5a94-4997-a492-033f5c71b5a6/File_879a5409f76e472fa0b3f2a632bce2a6_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p>Another single-line suggestion appears. Press <strong>Tab</strong> to accept it.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a32ffe33-13de-4d3a-8df3-59c0dd7fe844/File_fa18e32c1d6043f2b679acc1a1121180_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a32ffe33-13de-4d3a-8df3-59c0dd7fe844/File_fa18e32c1d6043f2b679acc1a1121180_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p>A return statement appears; press <strong>Tab</strong> once more to accept it.</p>
+<p>With that return statement, the function is complete. Bob happened to reach for a regular expression (regex) here, much as a developer might — but your version may differ, or take an entirely different approach. That is expected and entirely acceptable; the only test that matters is whether your code runs.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/e7f4283e-e948-4f72-b19f-fa3fc0e9d0e1/File_c39ef2bfdf4d4ea486420bc2d3035938_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/e7f4283e-e948-4f72-b19f-fa3fc0e9d0e1/File_c39ef2bfdf4d4ea486420bc2d3035938_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>Now let's return to the Galaxium Travels web app and confirm the change took effect.</li>
+</ol>
+<p>To do so, we will need to reboot our web app.</p>
+<p>Return to your already-open terminal window — the one running Vite — and open a new terminal there by pressing the <strong>Plus</strong> icon.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="11">
+<li>Next, close the other Terminal windows. Depending on your operating system, upon closing the tabs you may receive a pop-up message saying that you will terminate a process. This is expected; and it's okay to proceed with closing the window.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3e8c13c9-804d-4f5b-82fb-c22c7f2c6c7f/File_71fc7f999bc94cea99bb60f51032950e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3e8c13c9-804d-4f5b-82fb-c22c7f2c6c7f/File_71fc7f999bc94cea99bb60f51032950e_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p><strong>MAC AND LINUX ONLY</strong>\
+\
+With all the previously-running Terminal windows closed, we are now ready to reload the app.</p>
+<p>On macOS or Linux, run the following commands one at a time:</p>
+<p>cd ~/galaxium-travels</p>
+<p>./start.sh\
+\
+You should see "Galaxium Travels is running!" (amongst the other success messages) once the app starts running. Proceed to Step 22 (move to opening the web app on your browser, skip the Windows parts)</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6cf431b0-2db0-42a9-a43d-33b1abf1c3e5/File_852235e4905447ef9c691dbceaf81c0e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6cf431b0-2db0-42a9-a43d-33b1abf1c3e5/File_852235e4905447ef9c691dbceaf81c0e_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p><strong>WINDOWS ONLY</strong> \
+\
+On Windows, first, execute the following commands. Send them one-by-one, all in the same terminal window.\
+\
+<em>These are the same manual backend startup steps as per the Registration Guide, but without the step of installing requirements.txt.</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cd $HOME\galaxium-travels
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cd booking_system_backend
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python -m venv .venv
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>.venv\Scripts\activate
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python server.py
+</code></pre></div>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9693dc88-b869-4dd4-96d2-57f5d689ef8b/File_1fb9a0d9760b4b34970271f1c7fc4bb0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9693dc88-b869-4dd4-96d2-57f5d689ef8b/File_1fb9a0d9760b4b34970271f1c7fc4bb0_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p><strong>WINDOWS ONLY</strong> </p>
+<p>Upon executing all of these commands, open a new Terminal window by pressing the Plus button (<em>do not close the current Terminal window</em>).</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f6061f0e-30c8-4a9a-bb28-070277563c63/File_c80bec31c3ce4804a4b013fe419df79d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f6061f0e-30c8-4a9a-bb28-070277563c63/File_c80bec31c3ce4804a4b013fe419df79d_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p><strong>WINDOWS ONLY</strong> </p>
+<p>In the new Terminal window, next, execute the following commands. Send them one-by-one, all in the same terminal window.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cd $HOME\galaxium-travels
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cd booking_system_frontend
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npm run dev
+</code></pre></div>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="12">
+<li>Open your web browser and return to the Galaxium Travels site by typing the following in your search bar:</li>
+</ol>
+<p>\
+http://localhost:5173/</p>
+<p>\
+and pressing Enter.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c3a8a5bb-9a57-4471-9e36-052baa221569/File_bd89b43df4a4435190abe1e56962204a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c3a8a5bb-9a57-4471-9e36-052baa221569/File_bd89b43df4a4435190abe1e56962204a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="13">
+<li>You're back on the Galaxium Travels site.</li>
+</ol>
+<p>Click <strong>Flights</strong>.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0197eae9-d0a5-49fb-bac9-c212a1fe0b5e/File_259715da67bd4610b6b4c06890714e3b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0197eae9-d0a5-49fb-bac9-c212a1fe0b5e/File_259715da67bd4610b6b4c06890714e3b_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="14">
+<li>Click <strong>Book Now</strong> under any of the listed flights.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b01e69cd-2fd9-48f5-b88a-9add15f22157/File_327f11f3cb8a426ea6596675dc948f82_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b01e69cd-2fd9-48f5-b88a-9add15f22157/File_327f11f3cb8a426ea6596675dc948f82_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="15">
+<li>Clicking <strong>Book Now</strong> opens a <strong>Sign In</strong> window.</li>
+</ol>
+<p>Now let's confirm your email-validation logic is doing its job.</p>
+<p>Put any text that would be improperly formatted email address in the Email field - for instance, a random sequence of symbols like: $$$$$$$$$$$$$$$$$$</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0ff143f3-106c-452e-b224-0e56ab1ee1c5/File_0f0397e204e4480c84c1c74c9bb3e50e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0ff143f3-106c-452e-b224-0e56ab1ee1c5/File_0f0397e204e4480c84c1c74c9bb3e50e_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="16">
+<li>Notice that you can't proceed — that string of dollar signs is plainly not a valid email address.</li>
+</ol>
+<p>So what happens if we add an <strong>@</strong> symbol?</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cd99f6f1-4a1f-45b0-a422-de913f16b583/File_92f024001ef142779e931ab43d2e532d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cd99f6f1-4a1f-45b0-a422-de913f16b583/File_92f024001ef142779e931ab43d2e532d_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="17">
+<li>Still rejected — symbols like $$$$$$$$ aren't permitted in a domain name.</li>
+</ol>
+<p><em>The function you generated with Next Edit Prediction may lead to different behaviour.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/efd525be-3acb-48c8-b0d6-1a80e5d48281/File_a3f80360cff646edae6a7bf64fc34b5f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/efd525be-3acb-48c8-b0d6-1a80e5d48281/File_a3f80360cff646edae6a7bf64fc34b5f_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<h2 id="12-editing-by-intent-literate-coding"><strong>1.2 — Editing by Intent: Literate Coding</strong></h2>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's literate coding capabilities. <em>[2 min]</em></p>
+</blockquote>
+<h4 id="why-this-matters_1">Why this matters</h4>
+<p>Tab completion and next edit prediction shine while you are writing <em>new</em> code. But much of a developer's day is spent making a precise, deliberate change to code that already exists — and for that, <strong>literate coding</strong> is the tool. It lets you write a natural-language instruction directly inside a file, exactly where the change belongs, much as you would jot a comment. Bob reads the instruction in place and produces a targeted, localized modification. The developer is still describing intent in plain language; the difference is that here you are pointing at a specific spot and saying "change <em>this</em>."</p>
+<h4 id="entering-literate-coding-mode">Entering literate coding mode</h4>
+<p>You enter literate coding through the magic wand icon in the VS Code editor. Once active, it lets you:</p>
+<ul>
+<li>Write natural-language instructions at a precise code location</li>
+<li>Target the exact section you want changed</li>
+<li>Place several instructions, at several locations, within a single file</li>
+</ul>
+<h4 id="how-it-works">How it works</h4>
+<p>The workflow is deliberately simple:</p>
+<ol>
+<li>Position your cursor where the change belongs</li>
+<li>Click the magic wand icon to enter literate coding mode</li>
+<li>Type a natural-language instruction describing the change you want</li>
+<li>For changes that span several places, add an instruction line at each one</li>
+<li>Click <strong>Generate</strong> to produce the modifications</li>
+</ol>
+<h4 id="the-diff-view-change-with-full-visibility">The diff view: change with full visibility</h4>
+<p>This is where the <em>control</em> in the Assist stage becomes tangible. Bob never silently rewrites your file. Instead, it presents every change in a diff view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide. Nothing is committed until you say so.</p>
+<h4 id="where-literate-coding-shines">Where literate coding shines</h4>
+<p>Literate coding is at its best for focused, in-place work:</p>
+<ul>
+<li><strong>Wrapping logic</strong> around existing code — retry mechanisms, error handling, or logging</li>
+<li><strong>Refactoring a specific block</strong> while leaving the surrounding logic untouched</li>
+<li><strong>Quick, targeted modifications</strong> to a single function without disturbing the broader structure</li>
+</ul>
+<p>For sweeping, multi-file changes or architectural restructuring, you will reach for Code mode instead — which is exactly where Module 2 picks up.</p>
+<blockquote>
+<p><strong>A note on this scenario.</strong> Generative AI is non-deterministic, so your results may vary. If an output differs, refine the prompt or adjust the code — or proceed if what you have works.</p>
+</blockquote>
+<h4 id="hands-on-adding-retry-logic-with-literate-coding">Hands-on: adding retry logic with Literate Coding</h4>
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
+</blockquote>
+<p>Galaxium's backend can be slow to respond when fetching flight information, and occasional timeouts are the result. It is a perfect candidate for a small, surgical fix: we will use literate coding to wrap the flight-fetching call in retry logic — without hand-writing any of it.</p>
+<ol>
+<li>Back in the IDE, open <strong>Flights.tsx</strong>\
+\
+(booking_system_frontend &gt; src &gt; pages &gt; Flights.tsx)</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Click the magic wand icon near the top of the editor — or press <strong>Ctrl + I</strong> — to activate literate coding mode.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>A bar appears at the bottom-center of the screen with two arrows, <strong>Clear All</strong>, and <strong>Generate</strong> — you are now in literate coding mode!</li>
+</ol>
+<p>On line 43 in Flights.tsx, type:</p>
+<p>the backend is unreliable at times. We need a retry logic here</p>
+<p>The text should highlight to show the mode is active. <em>Treat the visible mode state and the Generate button as your primary indicators, since the exact highlight color can vary by release.</em></p>
+<p><em>Unlike tab completion, there is no need to comment this instruction out.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>With the instruction written, press the <strong>Generate</strong> button.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>A diff view appears. Removed code is shown in red, and added code in whatever highlight your build uses for additions (yellow in this capture; some versions use green). Review the on-screen diff carefully before accepting.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>If everything looks right, press <strong>Accept All</strong>.</li>
+</ol>
+<p>The red lines are removed, and the new highlighted lines are written into the file.</p>
+<p>This particular change may not produce anything visible in the running app — and that is by design; the point is to watch targeted code generation happen <em>in context</em>, against real code.</p>
+<p>Take a moment to read what Bob produced, and then we will move on.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<h4 id="key-takeaways_1">Key takeaways</h4>
+<ul>
+<li>Literate coding turns a plain-language instruction, written in place, into a precise code change.</li>
+<li>The diff view keeps you in full control — you see every change before it lands.</li>
+<li>It is most powerful for focused, single-file modifications.</li>
+<li>For multi-file or architectural changes, Code mode is the right tool — and that is where we go next.</li>
+</ul>
 
 
 
@@ -816,27 +1257,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-      
-        
-        <a href="chapter1/galaxium/" class="md-footer__link md-footer__link--next" aria-label="Next: 1. &#34;Galaxium Travels&#34; App" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              1. "Galaxium Travels" App
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
