@@ -730,17 +730,16 @@ At its core, Bob does three things exceptionally well:</p>
 <h4 id="assist-1-1-next-edit-prediction">Next edit prediction</h4>
 <p>Real code changes are rarely confined to a single line within the codebase. Add a new field or variable to the code, and you'll oftentime find yourself needing to use it again elsewhere; introduce a function, and something downstream will need to call it. <strong>Next edit prediction</strong> is built around that practical reality: after you accept an AI-generated suggestion, Bob anticipates the <em>related</em> edit you are likely to need as a follow-up and moves you there.</p>
 <p>You can conceptualize this as a <em>rhythm</em> between the developer and their AI partner. The developer describes what they want in a comment, allows Bob to suggest the code fix, presses <strong>Tab</strong> to accept the suggestion, and presses <strong>Tab</strong> again to jump to the next predicted location — where Bob positions the cursor exactly where the new code needs to be invoked.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
-<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
-</div>
 <h2 id="assist-1-1-ii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>ii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
 <hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
 </blockquote>
 <p>Let's begin by adding to <em>Galaxium Travels</em>' set of capabilities a new feature that's currently missing: validation of email addresses that a user types when they sign in.</p>
-<hr />
+<div class="admonition warning">
+<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
+<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
+</div>
 <ol>
 <li>In the VS Code activity bar, click <strong>Explorer (Ctrl+Shift+E)</strong>.</li>
 </ol>
