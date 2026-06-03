@@ -567,7 +567,7 @@
 <p><strong>IBM Bob is an AI-powered partner for the entire software development lifecycle (SDLC)</strong>, and it lives where your developers already work: inside the development environment itself. It is tempting to file Bob alongside the many code-completion assistants that have flooded the marketplace since LLMs arrived — but that comparison sells it short. Bob is not simply a code generator, but a partner for every step in your weekly workflow (for developers and sellers, alike.)</p>
 <p>A code generator helps at the exact point in time that a function gets written. Bob is built to help across the whole arc of a project: planning a feature before a line of code exists, reasoning about an unfamiliar codebase, implementing changes, and automating the repetitive work that surrounds real development.</p>
 <div class="admonition note">
-<p class="admonition-title"><strong>A word on working with generative AI</strong></p>
+<p class="admonition-title"><strong>A WORD ON WORKING WITH GENERATIVE AI</strong></p>
 <p>IBM Bob is powered by generative AI and LLMs, and a defining trait of these systems is that they are <em>non-deterministic</em> — unlike the <em>deterministic</em> tools most developers are accustomed to. In practice, that means the same prompt can produce different code from one run to the next. This is both a strength and a quirk of the technology, and it is something to work <em>with</em> rather than against.</p>
 <p><strong>Precision is what tips the odds in your favor.</strong> The more clearly you describe what you want, the more closely Bob's output will mirror your intent; conversely, the smallest change in wording can meaningfully change the generated code. Throughout this lab, your results may differ from the solutions shown — and that is expected, not a defect. Whenever an output diverges, you have three good options: refine the prompt and try again, edit the generated code by hand, or simply proceed if the variation still compiles and runs. Human review remains essential at every step, and never more so than while you are still learning the tool.</p>
 </div>
@@ -697,10 +697,11 @@ At its core, Bob does three things exceptionally well:</p>
                             1. Assist <a class='headerlink' href='#section-1-assist' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="assist-1-1"><h1 id="assist-1-1-module-1-assist"><strong>Module 1 — ASSIST</strong></h1>
-<h2 id="assist-1-1-i-bob-in-your-flow-tab-completion-next-edit-prediction"><strong>i. Bob in your flow — Tab Completion &amp; Next Edit Prediction</strong></h2>
+<h2 id="assist-1-1-i-tab-completion-next-edit-prediction"><strong>i. Tab Completion &amp; Next Edit Prediction</strong></h2>
+<h4 id="assist-1-1-bob-in-your-flow"><em>Bob in your flow</em></h4>
 <hr />
 <p>This is the first (and most gentle) stage of the AI maturity curve, and therefore a natural sweet spot for building your understanding of IBM Bob. Across this module, you'll work shoulder to shoulder with Bob from the perspective of a software developer paired with the Bob editor. As you work, Bob will be anticipating the next keystroke, drafting the next few lines, and making targeted edits upon your request — all the while keeping the developer (<em>you</em>) in control of accepting or rejecting every AI-generated proposed change.</p>
-<p>The value that IBM Bob provides in this will be apparenty right from the onset: teams can move faster without breaking their train of thought, and nothing lands in the codebase that they did not explicitly choose to include. It is the most natural possible on-ramp to working with an AI partner, and it pays off from the very first session.</p>
+<p>The value that IBM Bob provides in this will be apparenty right from the onset: teams can move faster without breaking their train of thought, and nothing lands in the codebase that they did not explicitly choose to include. It is the most logical on-ramp to working with an AI partner, and it pays off from the very first session.</p>
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's tab completion and next edit predictions. <em>[1 min]</em></p>
@@ -708,12 +709,16 @@ At its core, Bob does three things exceptionally well:</p>
 <h2 id="assist-1-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
 <p>The quickest way to lose a developer's confidence in an AI tool is to pull them out of their flow.</p>
-<p>Bob's first two capabilities are designed to do exactly the opposite: it keeps a developer <em>in</em> the work, while quietly removing friction from the process. These two features are:
-1. <strong>Tab completion</strong>
-2. <strong>Next edit prediction</strong></p>
+<p>Bob's first two capabilities are designed to do exactly the opposite: it keeps a developer <em>in</em> the work, while quietly removing friction from the process. These two features are:</p>
+<ol>
+<li><strong>Tab completion</strong></li>
+<li><strong>Next edit prediction</strong></li>
+</ol>
 <p>The two capabilities operate as a unified pair: the first suggests code from context; the second anticipates where you will need to go next.</p>
+<hr />
 <h4 id="assist-1-1-how-tab-completion-works">How tab completion works</h4>
 <p>Tab completion is a familiar idea executed unusually well. Where conventional autocomplete reacts to the few characters you have just typed, Bob reads the surrounding context to make a genuinely informed suggestion — drawing on the comments describing your intent, the patterns and structure already present in the code, your project's conventions and style, and related code in other files. The result feels less like word-completion and more like a colleague finishing your thought.</p>
+<hr />
 <h4 id="assist-1-1-accepting-suggestions">Accepting suggestions</h4>
 <p>When Bob offers a suggestion, you stay in charge of it:</p>
 <ul>
@@ -721,12 +726,14 @@ At its core, Bob does three things exceptionally well:</p>
 <li>Keep typing to override it</li>
 <li>Watch it update dynamically as you continue</li>
 </ul>
+<hr />
 <h4 id="assist-1-1-next-edit-prediction">Next edit prediction</h4>
 <p>Real code changes are rarely confined to one spot. Add a field, and you often need to use it elsewhere; introduce a function, and something downstream has to call it. <strong>Next edit prediction</strong> is built around that reality: after you accept a suggestion, Bob anticipates the <em>related</em> edit you are likely to need and moves you there. The rhythm is simple — describe what you want in a comment, let Bob suggest the code, press <strong>Tab</strong> to accept, and press <strong>Tab</strong> again to jump to the next predicted location, where Bob positions your cursor exactly where the new code needs to be used.</p>
-<blockquote>
-<p><strong>Expect some variation.</strong> Generative AI is non-deterministic, so your results may differ from what you see here. If an output diverges, refine the prompt, follow up with another, or adjust the code by hand — or simply carry on if what you have works.</p>
-</blockquote>
-<h4 id="assist-1-1-hands-on-adding-email-validation-with-next-edit-prediction">Hands-on: adding email validation with Next Edit Prediction</h4>
+<p>!!! warning "<strong>EXPECT SOME VARIABILITY</strong></p>
+<div class="highlight"><pre><span></span><code>Generative AI is non-deterministic, so your results may differ from what you see here. If an output diverges, refine the prompt, follow up with another, or adjust the code by hand — or simply carry on if what you have works.
+</code></pre></div>
+<h2 id="assist-1-1-ii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>ii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
+<hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
 </blockquote>
