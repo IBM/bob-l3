@@ -992,8 +992,8 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <h2 id="assist-1-2-i-editing-with-intent"><strong>i. Editing with intent</strong></h2>
 <hr />
-<p>Tab completion and next edit prediction shine while you are writing <em>new</em> code. But much of a developer's day is spent making a precise, deliberate change to code that already exists — and for that, <strong>literate coding</strong> is the tool. It lets you write a natural-language instruction directly inside a file, exactly where the change belongs, much as you would jot a comment.</p>
-<p>IBM Bob reads the instruction in place and produces a targeted, localized modification. The developer is still describing intent in plain language; the difference is that here you are pointing at a specific spot and saying "change <em>this</em>."</p>
+<p>Tab completion and next edit prediction shine while you are writing <em>new</em> code. But much of a developer's day is spent making precise, surgical change to code that already exists. To that end, <strong>literate coding</strong> is the tool of choice. It lets you annotate— using plain, natural language instructions — direct inside of a file where you needed the changes to occur. Bob then takes care of the heavy lifting by ensuring that every change is accounted for and that no instructions are missed. </p>
+<p>IBM Bob reads the instruction in place and produces a targeted, localized modification. The developer is still describing intent in plain language; the difference is that here you are pointing at a specific spot and saying "change <em>this</em>." Think of it like annotating changes in a collaborative Word document, where you can delegate the modifications to a trusted colleague who will shoulder the workload.</p>
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's literate coding capabilities. <em>[2 min]</em></p>
@@ -1011,17 +1011,19 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p class="admonition-title">AI MATURITY CURVE</p>
 <p>Literate Coding is a prime example of where the <em>control</em> that the human in the loop retains with IBM Bob — as part of the <strong>early Assist stage along the AI maturity curve</strong> — becomes tangible and truly valuable. IBM Bob never silently rewrites your files or codebase. Instead, it presents every change in a <em>diff</em> view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide on whether to implement the suggestion or disregard it. Nothing is committed until you say so.</p>
 </div>
+<hr />
 <p><strong>How it works</strong></p>
 <p>The workflow is deliberately simple:</p>
 <ol>
 <li>Position your cursor within the codebase where the change belongs</li>
 <li>Click the magic wand icon to enter literate coding mode</li>
 <li>Type a natural-language instruction describing the change you want to implement</li>
-<li>For changes that span several places within the codebase, add an instruction line at each location</li>
+<li>For changes that span several places, add an instruction line at each location</li>
 <li>Click generate to produce the modifications (across one or many instructions)</li>
 </ol>
+<hr />
 <p><strong>Going further</strong></p>
-<p>For sweeping, multi-file changes or architectural restructuring, you will reach for IBM Bob's <strong>Code mode</strong> instead. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>, which follows this section.</p>
+<p>For sweeping, multi-file changes or architectural restructuring, you will instead want to reach for IBM Bob's <strong>Code mode</strong>. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>, which follows this section.</p>
 <div class="admonition warning">
 <p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
 <p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
@@ -1031,41 +1033,61 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
 </blockquote>
-<p>Galaxium's backend can be slow to respond when fetching flight information, and occasional timeouts are the result. It is a perfect candidate for a small, surgical fix: we will use literate coding to wrap the flight-fetching call in retry logic — without hand-writing any of it.</p>
+<p>Galaxium's backend can be slow to respond when fetching flight information. If you test on this, you'll discover that occasional timeouts are often the result. This underforming feature is an ideal candidate for showcasing the small, surgical fixes that literate coding excels at. In the following section, you will apply literate coding to wrap the flight-fetching call in <code>retry</code> logic — and do so with minimal coding work on your part.</p>
+<hr />
 <ol>
-<li>Back in the IDE, open <strong>Flights.tsx</strong>\
-\
-(booking_system_frontend &gt; src &gt; pages &gt; Flights.tsx)</li>
+<li>
+<p>Within the Bob IDE, open the <strong>Flights.tsx</strong> file by navigating to the following directory location:</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Filepath:</strong></p>
+<p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>pages</code><strong>/</strong> <code>Flights.tsx</code></p>
+</div>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<hr />
 <ol start="2">
-<li>Click the magic wand icon near the top of the editor — or press <strong>Ctrl + I</strong> — to activate literate coding mode.</li>
+<li>
+<p>Click the <strong>magic wand icon</strong> near the top of the editor (or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span>) to activate literate coding mode.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<hr />
 <ol start="3">
-<li>A bar appears at the bottom-center of the screen with two arrows, <strong>Clear All</strong>, and <strong>Generate</strong> — you are now in literate coding mode!</li>
+<li>
+<p>A bar will at the bottom-center of the UI with two arrows, <strong>Clear All</strong> and <strong>Generate</strong>, to indicate that you have now activated literate coding mode. Treat the visible mode state and the Generate button as your primary indicators, since the exact highlight color can vary by release.</p>
+<ul>
+<li>
+<p>On <strong>line 43</strong> of <code>Flights.tsx</code>, copy and paste the following statement:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#assist-1-2-__codelineno-0-1"></a>the backend is unreliable at times. We need a retry logic here
+</code></pre></div>
+</li>
+<li>
+<p>The text should highlight to show that the literate coding mode is active.</p>
+</li>
+<li>
+<p>Unlike the Tab Completion feature showcased in the previous section, with Literate Coding there is no need to <em>"comment out"</em> the instruction sets.</p>
+</li>
+</ul>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p>On line 43 in Flights.tsx, type:</p>
-<p>the backend is unreliable at times. We need a retry logic here</p>
-<p>The text should highlight to show the mode is active. <em>Treat the visible mode state and the Generate button as your primary indicators, since the exact highlight color can vary by release.</em></p>
-<p><em>Unlike tab completion, there is no need to comment this instruction out.</em></p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<hr />
 <ol start="4">
-<li>With the instruction written, press the <strong>Generate</strong> button.</li>
+<li>
+<p>With the instruction set now inserted at the desired location, click the <strong>Generate</strong> button.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<hr />
 <ol start="5">
 <li>A diff view appears. Removed code is shown in red, and added code in whatever highlight your build uses for additions (yellow in this capture; some versions use green). Review the on-screen diff carefully before accepting.</li>
 </ol>
