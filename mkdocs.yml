@@ -12,21 +12,20 @@ docs_dir: docs
 
 nav:
   - Introduction: 'index.md'
-  - Chapter 1:
-    - 1. "Galaxium Travels" App: chapter1/galaxium.md
-  - Chapter 2:
-    - 1. Next Edit Prediction: chapter2/prediction.md
-    - 2. Literate Coding: chapter2/literate.md
-    - 3. The Agentic Sidebar: chapter2/agentic.md 
-  - Chapter 3:
-    - 1. The init Command & Agents: chapter3/agents.md
-    - 2. Bob Rules: chapter3/rules.md
-    - 3. Custom Modes: chapter3/modes.md
-  - Chapter 4:
-    - 1. Understanding the Context Window: chapter4/context.md
-    - 2. Bob Shell: chapter4/shell.md
-  - Chapter 5:
-    - 1. Model Context Protocol: chapter5/mcp.md
+  - Setup: 'setup.md'
+  - 1. Assist:
+    - Bob in your workflow | Tab Completion & Next Edit Prediction: assist/1-1.md
+    - Editing with intent | Literate Coding: assist/1-2.md
+  - 2. Delegate:
+    - From assistant to partner | The Agentic Sidebar: delegate/2-1.md
+  - 3. Tailor:
+    - Teaching Bob your codebase | /init & agents.md: tailor/3-1.md
+    - Encoding your standards | Bob Rules: tailor/3-2.md
+    - Shaping Bob to every role | Custom Modes: tailor/3-3.md
+  - 4. Scale & Extend:
+    - Keeping Bob reliable at scale | The Context Window: scale/4-1.md
+    - Moving beyond the IDE | Bob Shell: scale/4-2.md
+    - Connecting Bob to everything | Extending with MCP: scale/4-3.md
 
 theme:
   name: material
