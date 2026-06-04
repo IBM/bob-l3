@@ -262,7 +262,7 @@
   
     <li class="md-nav__item">
       <a href="../assist/1-1/" class="md-nav__link">
-        1.1 Bob in your workflow - Tab Completion & Next Edit Prediction
+        Bob in your workflow | Tab Completion & Next Edit Prediction
       </a>
     </li>
   
@@ -276,7 +276,7 @@
   
     <li class="md-nav__item">
       <a href="../assist/1-2/" class="md-nav__link">
-        1.2 Editing with intent - Literate Coding
+        Editing with intent | Literate Coding
       </a>
     </li>
   
@@ -324,7 +324,7 @@
   
     <li class="md-nav__item">
       <a href="../delegate/2-1.md" class="md-nav__link">
-        2.1 From assistant to partner - The Agentic Sidebar
+        From assistant to partner | The Agentic Sidebar
       </a>
     </li>
   
@@ -372,7 +372,7 @@
   
     <li class="md-nav__item">
       <a href="../tailor/3-1.md" class="md-nav__link">
-        3.1 Teaching Bob your codebase - /init & agents.md
+        Teaching Bob your codebase | /init & agents.md
       </a>
     </li>
   
@@ -386,7 +386,7 @@
   
     <li class="md-nav__item">
       <a href="../tailor/3-2.md" class="md-nav__link">
-        3.2 Encoding your standards - Bob Rules
+        Encoding your standards | Bob Rules
       </a>
     </li>
   
@@ -400,7 +400,7 @@
   
     <li class="md-nav__item">
       <a href="../tailor/3-3.md" class="md-nav__link">
-        3.3 Shaping Bob to every role - Custom Modes
+        Shaping Bob to every role | Custom Modes
       </a>
     </li>
   
@@ -448,7 +448,7 @@
   
     <li class="md-nav__item">
       <a href="../scale/4-1.md" class="md-nav__link">
-        4.1 Keeping Bob reliable at scale - The Context Window
+        Keeping Bob reliable at scale | The Context Window
       </a>
     </li>
   
@@ -462,7 +462,7 @@
   
     <li class="md-nav__item">
       <a href="../scale/4-2.md" class="md-nav__link">
-        4.2 Moving beyond the IDE - Bob Shell
+        Moving beyond the IDE | Bob Shell
       </a>
     </li>
   
@@ -476,7 +476,7 @@
   
     <li class="md-nav__item">
       <a href="../scale/4-3.md" class="md-nav__link">
-        4.3 Connecting Bob to everything - Extending with MCP
+        Connecting Bob to everything | Extending with MCP
       </a>
     </li>
   
@@ -530,14 +530,14 @@
         
           <li class="md-nav__item">
   <a href="#assist-1-1" class="md-nav__link">
-    1.1 Bob in your workflow - Tab Completion & Next Edit Prediction
+    Bob in your workflow | Tab Completion & Next Edit Prediction
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#assist-1-2" class="md-nav__link">
-    1.2 Editing with intent - Literate Coding
+    Editing with intent | Literate Coding
   </a>
   
 </li>
@@ -699,7 +699,7 @@ At its core, Bob does three things exceptionally well:</p>
                         <section class="print-page" id="assist-1-1"><h1 id="assist-1-1-module-1-assist"><strong>Module 1 — ASSIST</strong></h1>
 <h2 id="assist-1-1-i-tab-completion-next-edit-prediction"><strong>i. Tab Completion &amp; Next Edit Prediction</strong></h2>
 <hr />
-<h4 id="assist-1-1-bob-in-your-workflow">Bob in your workflow</h4>
+<p><strong>Bob in your workflow</strong></p>
 <p>This is the first (and most gentle) stage of the AI maturity curve, and therefore a natural sweet spot for building your understanding of IBM Bob. Across this module, you'll work shoulder to shoulder with Bob from the perspective of a software developer paired with the Bob editor. As you work, Bob will be anticipating the next keystroke, drafting the next few lines, and making targeted edits upon your request — all the while keeping the developer (<em>you</em>) in control of accepting or rejecting every AI-generated proposed change.</p>
 <p>The value that IBM Bob provides in this will be apparenty right from the onset: teams can move faster without breaking their train of thought, and nothing lands in the codebase that they did not explicitly choose to include. It is the most logical on-ramp to working with an AI partner, and it pays off from the very first session.</p>
 <blockquote>
@@ -716,10 +716,10 @@ At its core, Bob does three things exceptionally well:</p>
 </ol>
 <p>The two capabilities operate as a unified pair: the first suggests code from context; the second anticipates where you will need to go next.</p>
 <hr />
-<h4 id="assist-1-1-how-tab-completion-works">How tab completion works</h4>
+<p><strong>How tab completion works</strong></p>
 <p>Tab completion is a familiar idea executed unusually well. Where conventional autocomplete reacts to the few characters you have just typed, Bob reads the surrounding context to make a genuinely informed suggestion — drawing on the comments describing your intent, the patterns and structure already present in the code, your project's conventions and style, and related code in other files. The result feels less like word-completion and more like a colleague finishing your thought.</p>
 <hr />
-<h4 id="assist-1-1-accepting-suggestions">Accepting suggestions</h4>
+<p><strong>Accepting suggestions</strong></p>
 <p>When Bob offers a suggestion, the human in the loop retains control and has the last word on what is implemented:</p>
 <ul>
 <li>Press <strong>Tab</strong> to accept it</li>
@@ -727,7 +727,7 @@ At its core, Bob does three things exceptionally well:</p>
 <li>Watch it update dynamically as you continue your train of thought</li>
 </ul>
 <hr />
-<h4 id="assist-1-1-next-edit-prediction">Next edit prediction</h4>
+<p><strong>Next edit predictions</strong></p>
 <p>Real code changes are rarely confined to a single line within the codebase. Add a new field or variable to the code, and you'll oftentime find yourself needing to use it again elsewhere; introduce a function, and something downstream will need to call it. <strong>Next edit prediction</strong> is built around that practical reality: after you accept an AI-generated suggestion, Bob anticipates the <em>related</em> edit you are likely to need as a follow-up and moves you there.</p>
 <p>You can conceptualize this as a <em>rhythm</em> between the developer and their AI partner. The developer describes what they want in a comment, allows Bob to suggest the code fix, presses <strong>Tab</strong> to accept the suggestion, and presses <strong>Tab</strong> again to jump to the next predicted location — where Bob positions the cursor exactly where the new code needs to be invoked.</p>
 <h2 id="assist-1-1-iii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>iii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
@@ -940,7 +940,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>
 <p>Open a web browser on your local machine and visit the following URL to access the Galaxium Travels application:</p>
 <div class="admonition warning">
-<p class="admonition-title">WEB BROWSER:</p>
+<p class="admonition-title">WEB BROWSER</p>
 <p>http://localhost:5173/</p>
 </div>
 <p><p align="left">
@@ -975,6 +975,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>Within the <em>Email</em> field, try any combination of <strong>improperly</strong> formatted text that you like. Remember: you want to test that the tool is rejecting any inputs that don't match a standard email address. You can even test with a random string of characters like <code>$$$$$</code>, as an example.</li>
 <li>The expected behavior of the function should be to reject any inproper addresses (<code>$$$$$</code>) and accept a standard address (<code>bienko@ibm.com</code>).</li>
 </ul>
+<p></br></p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0ff143f3-106c-452e-b224-0e56ab1ee1c5/File_0f0397e204e4480c84c1c74c9bb3e50e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0ff143f3-106c-452e-b224-0e56ab1ee1c5/File_0f0397e204e4480c84c1c74c9bb3e50e_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -985,7 +986,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/efd525be-3acb-48c8-b0d6-1a80e5d48281/File_a3f80360cff646edae6a7bf64fc34b5f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/efd525be-3acb-48c8-b0d6-1a80e5d48281/File_a3f80360cff646edae6a7bf64fc34b5f_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
-</ol></section><section class="print-page" id="assist-1-2"><h1 id="assist-1-2-1-2-editing-with-intent-literate-coding">1.2 Editing with intent - Literate Coding</h1><h2 id="12-editing-by-intent-literate-coding"><strong>1.2 — Editing by Intent: Literate Coding</strong></h2>
+</ol></section><section class="print-page" id="assist-1-2"><h1 id="assist-1-2-editing-with-intent-literate-coding">Editing with intent | Literate Coding</h1><h2 id="12-editing-by-intent-literate-coding"><strong>1.2 — Editing by Intent: Literate Coding</strong></h2>
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's literate coding capabilities. <em>[2 min]</em></p>
@@ -1031,14 +1032,14 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 \
 (booking_system_frontend &gt; src &gt; pages &gt; Flights.tsx)</li>
 </ol>
-<p align="center">
+<p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
 <ol start="2">
 <li>Click the magic wand icon near the top of the editor — or press <strong>Ctrl + I</strong> — to activate literate coding mode.</li>
 </ol>
-<p align="center">
+<p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
@@ -1049,21 +1050,21 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p>the backend is unreliable at times. We need a retry logic here</p>
 <p>The text should highlight to show the mode is active. <em>Treat the visible mode state and the Generate button as your primary indicators, since the exact highlight color can vary by release.</em></p>
 <p><em>Unlike tab completion, there is no need to comment this instruction out.</em></p>
-<p align="center">
+<p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
 <ol start="4">
 <li>With the instruction written, press the <strong>Generate</strong> button.</li>
 </ol>
-<p align="center">
+<p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
 <ol start="5">
 <li>A diff view appears. Removed code is shown in red, and added code in whatever highlight your build uses for additions (yellow in this capture; some versions use green). Review the on-screen diff carefully before accepting.</li>
 </ol>
-<p align="center">
+<p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
@@ -1073,7 +1074,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p>The red lines are removed, and the new highlighted lines are written into the file.</p>
 <p>This particular change may not produce anything visible in the running app — and that is by design; the point is to watch targeted code generation happen <em>in context</em>, against real code.</p>
 <p>Take a moment to read what Bob produced, and then we will move on.</p>
-<p align="center">
+<p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
