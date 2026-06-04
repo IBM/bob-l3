@@ -852,7 +852,7 @@ At its core, Bob does three things exceptionally well:</p>
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ac7f40b-63ae-4f97-82c1-524d9d2f2dd2/File_9f963909fc9c4cf48bda0a1f83bd114d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ac7f40b-63ae-4f97-82c1-524d9d2f2dd2/File_9f963909fc9c4cf48bda0a1f83bd114d_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 <p>As a reminder, because Bob's suggestions are non-deterministic, your generated function may look slightly different from the code documented. If the generated code does not compile, first compare the inserted function with the example shown in the lab documentation.</p>
-<p>You may either manually correct the function by hand to make the documented solution, or delete the generated code and repeat the prediction step (using <span class="keys"><kbd class="key-tab">Tab</kbd></span> as before) once again.</p>
+<p>You may either manually correct the function by hand to make the documented solution, or delete the generated code and repeat the prediction step (using <span class="keys"><kbd class="key-tab">Tab</kbd></span> as before) again.</p>
 </li>
 </ol>
 <hr />
@@ -860,11 +860,10 @@ At its core, Bob does three things exceptionally well:</p>
 <li>
 <p>Now let's return to the Galaxium Travels web app and confirm the change took effect. To do so, you will first need to reboot the web app service.</p>
 <ul>
-<li>To open a Terminal window, either click the <strong>Terminal</strong> button at the bottom-center portion of the Bob IDE interface <em>or</em> navigate using the top menu bar into <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (which will open a fresh Terminal screen at the bottom-center portion of the UI).</li>
+<li>To open a Terminal window, click the <strong>Terminal</strong> button at the bottom-center portion of the Bob IDE interface <em>or</em> navigate using the top menu bar into <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (which will open a fresh Terminal screen at the bottom-center portion of the UI).</li>
 <li>Within the Terminal window, locate and click the <strong>+</strong> icon, along the right-hand side of the Terminal window. This will launch a new Terminal connection into which you will next input additional commands.</li>
 </ul>
-<p></br>
-<p align="left">
+<p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
@@ -874,90 +873,63 @@ At its core, Bob does three things exceptionally well:</p>
 <li>
 <p>The commands to be issued to the Terminal console depending on the operating system your machine is running upon.</p>
 <p>From the expandable options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows). After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
-<details class="tip">
+<details class="note">
 <summary>MAC OR LINUX</summary>
-<p>On macOS or Linux, run the following commands one at a time:
-<strong>Step 1:</strong>
+<p>On macOS or Linux, run the following commands one at a time.</p>
+<p><strong>Step 1:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#assist-1-1-__codelineno-2-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
 </code></pre></div></p>
 <p><strong>Step 2:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#assist-1-1-__codelineno-3-1"></a>./start.sh
 </code></pre></div></p>
-<p>You should see "Galaxium Travels is running!" printed to the console (amongst the other success messages) once the application has deployed successfully.</p>
+<p>You should see a <em>"Galaxium Travels is running!"</em> prompt returned to the console (amongst other messages) once the application has deployed successfully.</p>
 <p></br>
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6cf431b0-2db0-42a9-a43d-33b1abf1c3e5/File_852235e4905447ef9c691dbceaf81c0e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6cf431b0-2db0-42a9-a43d-33b1abf1c3e5/File_852235e4905447ef9c691dbceaf81c0e_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </details>
-<details class="note">
+<details class="quote">
 <summary>WINDOWS OS</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-1-__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-4-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cm">&lt;!-- ejb-jar.xml --&gt;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nt">&lt;ejb-jar&gt;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="nt">&lt;enterprise-beans&gt;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="nt">&lt;session&gt;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>            <span class="nt">&lt;ejb-name&gt;</span>LegacySessionBean<span class="nt">&lt;/ejb-name&gt;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>            <span class="nt">&lt;home&gt;</span>com.lariat.ejb.LegacyHome<span class="nt">&lt;/home&gt;</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>            <span class="nt">&lt;remote&gt;</span>com.lariat.ejb.LegacyRemote<span class="nt">&lt;/remote&gt;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>            <span class="nt">&lt;ejb-class&gt;</span>com.lariat.ejb.LegacySessionBean<span class="nt">&lt;/ejb-class&gt;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a>            <span class="nt">&lt;session-type&gt;</span>Stateless<span class="nt">&lt;/session-type&gt;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a>            <span class="nt">&lt;transaction-type&gt;</span>Container<span class="nt">&lt;/transaction-type&gt;</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a>        <span class="nt">&lt;/session&gt;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a>    <span class="nt">&lt;/enterprise-beans&gt;</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="nt">&lt;/ejb-jar&gt;</span>
-</code></pre></div></td></tr></table></div>
+<p>On Windows, run the following commands one at a time.</p>
+<p><strong>Step 1:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#assist-1-1-__codelineno-4-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
+</code></pre></div></p>
+<p><strong>Step 2:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#assist-1-1-__codelineno-5-1"></a><span class="nb">cd</span> booking_system_backend
+</code></pre></div></p>
+<p><strong>Step 3:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#assist-1-1-__codelineno-6-1"></a>python -m venv .venv
+</code></pre></div></p>
+<p><strong>Step 4:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#assist-1-1-__codelineno-7-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</code></pre></div></p>
+<p><strong>Step 5:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#assist-1-1-__codelineno-8-1"></a>python server.py
+</code></pre></div></p>
+<p><strong>Step 6:</strong>
+Upon executing all of these commands, open a new Terminal window by pressing the <strong>Plus</strong> button (<strong>*do not</strong> close the current Terminal window).</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9693dc88-b869-4dd4-96d2-57f5d689ef8b/File_1fb9a0d9760b4b34970271f1c7fc4bb0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9693dc88-b869-4dd4-96d2-57f5d689ef8b/File_1fb9a0d9760b4b34970271f1c7fc4bb0_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f6061f0e-30c8-4a9a-bb28-070277563c63/File_c80bec31c3ce4804a4b013fe419df79d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f6061f0e-30c8-4a9a-bb28-070277563c63/File_c80bec31c3ce4804a4b013fe419df79d_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+<p><strong>Step 7:</strong>
+Within the new Terminal window, execute the following commands one-by-one in sequence:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#assist-1-1-__codelineno-9-1"></a>cd $HOME\galaxium-travels
+</code></pre></div>
+<p><strong>Step 8:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#assist-1-1-__codelineno-10-1"></a>cd booking_system_frontend
+</code></pre></div></p>
+<p><strong>Step 9:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#assist-1-1-__codelineno-11-1"></a>npm run dev
+</code></pre></div></p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
 </details>
-<p></br></p>
 </li>
 </ol>
-<p><strong>WINDOWS ONLY</strong> \
-\
-On Windows, first, execute the following commands. Send them one-by-one, all in the same terminal window.\
-\
-<em>These are the same manual backend startup steps as per the Registration Guide, but without the step of installing requirements.txt.</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#assist-1-1-__codelineno-5-1"></a>cd $HOME\galaxium-travels
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#assist-1-1-__codelineno-6-1"></a>cd booking_system_backend
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#assist-1-1-__codelineno-7-1"></a>python -m venv .venv
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#assist-1-1-__codelineno-8-1"></a>.venv\Scripts\activate
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#assist-1-1-__codelineno-9-1"></a>python server.py
-</code></pre></div>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9693dc88-b869-4dd4-96d2-57f5d689ef8b/File_1fb9a0d9760b4b34970271f1c7fc4bb0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9693dc88-b869-4dd4-96d2-57f5d689ef8b/File_1fb9a0d9760b4b34970271f1c7fc4bb0_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<p><strong>WINDOWS ONLY</strong> </p>
-<p>Upon executing all of these commands, open a new Terminal window by pressing the Plus button (<em>do not close the current Terminal window</em>).</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f6061f0e-30c8-4a9a-bb28-070277563c63/File_c80bec31c3ce4804a4b013fe419df79d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f6061f0e-30c8-4a9a-bb28-070277563c63/File_c80bec31c3ce4804a4b013fe419df79d_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<p><strong>WINDOWS ONLY</strong> </p>
-<p>In the new Terminal window, next, execute the following commands. Send them one-by-one, all in the same terminal window.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#assist-1-1-__codelineno-10-1"></a>cd $HOME\galaxium-travels
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#assist-1-1-__codelineno-11-1"></a>cd booking_system_frontend
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#assist-1-1-__codelineno-12-1"></a>npm run dev
-</code></pre></div>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
 <hr />
 <ol start="12">
 <li>Open your web browser and return to the Galaxium Travels site by typing the following in your search bar:</li>
