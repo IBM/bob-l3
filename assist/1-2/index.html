@@ -648,7 +648,6 @@
 <p class="admonition-title">AI MATURITY CURVE</p>
 <p>Literate Coding is a prime example of where the <em>control</em> that the human in the loop retains with IBM Bob — as part of the <strong>early Assist stage along the AI maturity curve</strong> — becomes tangible and truly valuable. IBM Bob never silently rewrites your files or codebase. Instead, it presents every change in a <em>diff</em> view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide on whether to implement the suggestion or disregard it. Nothing is committed until you say so.</p>
 </div>
-<hr />
 <p><strong>How it works</strong></p>
 <p>The workflow is deliberately simple:</p>
 <ol>
@@ -737,9 +736,33 @@
 <p>Code that IBM Bob is proposing to <em>add</em> will be highlighted in a contrasting color. With some builds of the Bob IDE it may be highlighted in yellow, in other versions it may show as green — the key thing is that it is <em>not</em> red.</p>
 </li>
 <li>
-<p>Review the on-screen <em>diff</em> carefully before <strong>accepting</strong> the proposed changes.</p>
+<p>Review the on-screen <em>diff</em> carefully before <strong>accepting</strong> the proposed changes. Note that your generated code may differ slightly from the code documented here.</p>
 </li>
 </ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Flights.tsx</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-57">57</a></span>
+<span class="normal"><a href="#__codelineno-1-58">58</a></span>
+<span class="normal"><a href="#__codelineno-1-59">59</a></span>
+<span class="normal"><a href="#__codelineno-1-60">60</a></span>
+<span class="normal"><a href="#__codelineno-1-61">61</a></span>
+<span class="normal"><a href="#__codelineno-1-62">62</a></span>
+<span class="normal"><a href="#__codelineno-1-63">63</a></span>
+<span class="normal"><a href="#__codelineno-1-64">64</a></span>
+<span class="normal"><a href="#__codelineno-1-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-57" name="__codelineno-1-57"></a>if (retryCount &lt; MAX_RETRIES) {
+<a id="__codelineno-1-58" name="__codelineno-1-58"></a>    // Retry after delay
+<a id="__codelineno-1-59" name="__codelineno-1-59"></a>    toast.error(&#39;Failed to load flights. Retrying... (${retryCount + 1}/${MAX_RETRIES})&#39;);
+<a id="__codelineno-1-60" name="__codelineno-1-60"></a>    await new Promise(resolve =&gt; setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
+<a id="__codelineno-1-61" name="__codelineno-1-61"></a>    return loadFlights(retryCount + 1);
+<a id="__codelineno-1-62" name="__codelineno-1-62"></a>} else {
+<a id="__codelineno-1-63" name="__codelineno-1-63"></a>    toast.error(&#39;Failed to load flights after multiple attempts&#39;);
+<a id="__codelineno-1-64" name="__codelineno-1-64"></a>    console.error(error);
+<a id="__codelineno-1-65" name="__codelineno-1-65"></a>}
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -755,9 +778,6 @@
 </li>
 <li>
 <p>This particular change may not produce anything visible within the running app — and that is by design. The point is to watch targeted code generation happen <em>in context</em> against real code.</p>
-</li>
-<li>
-<p>Take a moment to read over what Bob produced and then proceed to <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>.</p>
 </li>
 </ul>
 <p><p align="left">
