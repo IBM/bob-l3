@@ -1185,32 +1185,62 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <h2 id="delegate-2-1-i-from-assistant-to-partner"><strong>i. From assistant to partner</strong></h2>
 <hr />
 <p>In the previous <strong>Assist</strong> module, you engaged with IBM Bob in its most "manual" and "hands-on" form: it finished lines of code for you, predicted the next set of edits to be performed, and made surgical changes (with your approval) sequentially throughout a codebase. From the end-user (your) perspective, the experience thus far has felt closely watched and tightly chaperoned. Every action Bob has taken has been directly instrumented by you, or at the very least required your direct sign-off at every step in the sequence, to ensure no changes were made to the code base without your expressed permission.</p>
-<p>This makes sense when viewed through the lens of the <strong>AI Maturity Curve</strong> that was discussed previously. Where you are currently in your journey with IBM Bob— the nascent <strong>Assist</strong> stage on the left-most portion of the curve —is at a point where trust in the AI technology <em>should</em> be low. Coordinating code changes with IBM Bob with a healthy degree of skepticism is a valid way to safely vet the AI partner's capabilities, build trust in its ability to deliver the results you seek, and gradually begin delegating more responsibility to that agent.</p>
-<p>The <strong>Delegate</strong> module raises those stakes considerably and asks for a much higher degree of trust on the user's (your) part. The work ahead will transform your perspective of IBM Bob from an assistant into a trusted partner. To earn that trust, Bob will demonstrate taking an entire feature of the Galaxium travel app— one that spans the frontend, the backend, and the database —and shephard it from <em>idea</em> to <em>working code</em>, largely on its own.</p>
+<div class="admonition note">
+<p class="admonition-title">AI MATURITY CURVE</p>
+<p>This makes sense when viewed through the lens of the <strong>AI Maturity Curve</strong> that was discussed previously. Where you are currently in your journey with IBM Bob— progressing from the nascent <strong>Assist</strong> stage on the left-most portion of the curve, moving further to the right into the <strong>Delegate</strong> phase —is at a point where trust in the AI technology <em>should</em> be low. Coordinating code changes with IBM Bob with a healthy degree of skepticism is a valid way to safely vet the AI partner's capabilities, build trust in its ability to deliver the results you seek, and gradually begin delegating more responsibility to that agent.</p>
+</div>
+<p>The <strong>Delegate</strong> module ahead raises those stakes considerably and asks for a much higher degree of trust on the user's (your) part. The work ahead will transform your perspective of IBM Bob from an assistant into a trusted partner. To earn that trust, Bob will demonstrate taking an entire feature of the Galaxium travel app— one that spans the frontend, the backend, and the database —and shephard it from <em>idea</em> to <em>working code</em>, largely on its own.</p>
 <p>The reason delegation of this magnitude remains safe— and why you should feel confident in demonstrating this to even a cautious or skeptical prospective enterprise audience —is the core discipline of IBM Bob that was introduced earlier, and will be reinforced here: <strong>Bob builds only what you have reviewed and approved in a plan <em>first</em>.</strong> Human control does not degrade as the stakes rise. Control remains anchored from the start of the process and at the onset of the AI Maturity Curve, with the plan of execution you establish for Bob, your AI partner.</p>
-<h2 id="delegate-2-1-21-from-assistant-to-partner-the-agentic-sidebar"><strong>2.1 — From Assistant to Partner: The Agentic Sidebar</strong></h2>
+<h2 id="delegate-2-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCJFMppc4M7DPG7TC3h73QpdmB3j">Chapter 2.3: The Agentic Sidebar [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> showcases how to work with Bob's agentic chat. <em>[5 min]</em></p>
 </blockquote>
-<h4 id="delegate-2-1-why-this-matters">Why this matters</h4>
-<p>Everything you have done so far has been <em>inline</em> — Bob helping at the exact spot your cursor sits. The <strong>agentic sidebar</strong> is a different proposition altogether. It is the primary interface for complex, multi-step work, and it is what allows Bob to read files, reason across the entire codebase, ask clarifying questions, and implement a feature end to end. Where next edit prediction and literate coding assist you keystroke by keystroke, the sidebar lets you hand over a whole objective. It is the most capable way to work with Bob — and the stage where the partnership truly begins.</p>
-<p>The sidebar offers several <strong>modes</strong>, each tuned to a phase of development. For substantial feature work, the recommended workflow is a deliberate sequence: <strong>Plan mode → review → new conversation → Code mode.</strong> Each step exists for a reason, and the reasons are worth understanding before you run them.</p>
-<h4 id="delegate-2-1-plan-mode-think-before-building">Plan mode: think before building</h4>
+<p>All work you have performed across the hands-on lab so far has been <em>inline</em> coding modifications: IBM Bob performing work at the exact spot your cursor sits. Bob's <strong>Agentic Sidebar</strong> functionality is a different proposition altogether. It is the primary interface for complex, multi-step work. It also enables Bob to:</p>
+<ul>
+<li>Read through files</li>
+<li>Reason across entire codebases</li>
+<li>Ask clarifying questions in follow-up to user prompts</li>
+<li>Implement a requested feature end-to-end.</li>
+</ul>
+<p>Where the Next Edit Prediction and Literate Coding assist functionality that was showcased in the previous module required your direct input— keystroke by keystroke —the Agentic Sidebar allow you hand over and delegate entire objectives (and very complex workflows) with a single request. It is the most productive way to work with Bob. The point at which you have sufficient trust and confidence in Bob to faithfully execute this work is where the AI partnership truly begins, further progressing you along the AI Maturity Curve journey.</p>
+<div class="admonition note">
+<p class="admonition-title">UNDERSTANDING THE VARIOUS AGENTIC SIDEBAR <em>MODES</em></p>
+<p>The agentic sidebar offers several <strong>modes</strong>, each tuned for a specific phase of development and code lifecycle management.</p>
+<p>For substantial feature work, the recommended workflow is a deliberate sequence:
+</br><strong>Plan mode</strong> → <strong>review</strong> → <strong>new conversation</strong> → <strong>Code mode</strong></p>
+<p>Each step exists for a reason, and the reasons are worth understanding before you run them.</p>
+</div>
+<hr />
+<p><strong>Plan mode | <em>think before building</em></strong></p>
 <p>Plan mode is the starting point for any feature or architectural change of consequence. In this mode Bob has <em>read-only</em> access to the codebase — it cannot change anything — and its sole job is to produce a detailed plan before a single line of code is written. Reach for it whenever a change touches multiple files or layers, when you are designing new components or data models, or when you simply want to understand the scope of a change before committing to it.</p>
 <p>Entering it is straightforward: open the agentic sidebar in VS Code, select <strong>Plan</strong> from the mode selector, and describe the feature in natural language. From there, Bob reads the relevant files to understand the existing structure, asks clarifying questions to resolve ambiguity before planning, and then generates planning documents — typically two: an <strong>implementation plan</strong> (a detailed specification of what the feature does, how it will be built, how it will be tested, and how it should behave — often 100 to 200-plus lines) and an <strong>architecture plan</strong> (a higher-level account of structural decisions, component interactions, and data flow). These documents are saved to the project and become the authoritative specification for the build.</p>
-<h4 id="delegate-2-1-the-developers-responsibility-read-the-plans">The developer's responsibility: read the plans</h4>
+<hr />
+<p><strong>Review and plan | <em>a developer's responsibility</em></strong></p>
 <p>Here is the crux of the entire stage, so it bears stating plainly. The plans Bob generates are not loose suggestions — <em>they are exactly what Bob will build.</em> Approving a plan you have not read hands responsibility for any misaligned or incorrect implementation squarely to you. So before you proceed, read both the implementation plan and the architecture plan in full; verify that the described behavior matches the feature you intended; confirm that the testing requirements make sense; and correct any misunderstanding now, by revising your prompt or asking a follow-up, while correction is cheap.</p>
-<blockquote>
-<p><strong>This is where your responsibility as a developer lives.</strong> Read the plans. This review is the single most important quality gate in the agentic workflow — the quality of the final implementation is directly tied to the quality of the plan you approve.</p>
-</blockquote>
-<h4 id="delegate-2-1-code-mode-implementing-the-approved-plan">Code mode: implementing the approved plan</h4>
-<p>Once the plan is reviewed and approved, the implementation happens in a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears the context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance that Bob conflates planning talk with implementation instructions. To carry the specification into the new conversation, you reference the planning documents with context mentions:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-1-__codelineno-0-1"></a>@/path/to/implementation-plan.md
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#delegate-2-1-__codelineno-0-2"></a>@/path/to/architecture-plan.md
+<div class="admonition warning">
+<p class="admonition-title">THIS IS WHERE YOUR RESPONSIBILITY AS A DEVELOPER LIVES</p>
+<p><strong>Read the plans.</strong> This review is the single most important quality gate in the agentic workflow. The quality of the final implementation is directly tied to the quality of the plan you approve.</p>
+</div>
+<hr />
+<p><strong>Code mode | <em>implementing the approved plan</em></strong></p>
+<p>In Code mode, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
+<p>Once the plan is reviewed and approved, the implementation happens withinin a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions. For example, the following two <em>paths</em> specify contextual details about a (hypothethical) implementation and architecture plan.</p>
+<div class="highlight"><pre><span></span><code>``` bash
+@/path/to/implementation-plan.md
+@/path/to/architecture-plan.md
+```
 </code></pre></div>
-<p>To make the switch: start a new conversation, select <strong>Code</strong> from the mode selector, reference the planning documents with <code>@/path/to/file</code>, and send the implementation request. In Code mode, Bob has full access to file operations and command execution — it can create, modify, and run code across the whole codebase.</p>
-<h4 id="delegate-2-1-auto-approval-control-dialed-to-taste">Auto-approval: control, dialed to taste</h4>
+<p>The process for "switching" into Code mode is straightforward and simple— and you'll have the opportunity to practice this yourself in the following hands-on steps — for reference:</p>
+<ul>
+<li>Start a new conversation</li>
+<li>Select <strong>Code</strong> from the mode selector</li>
+<li><em>Optionally</em> reference any relevant planning documents or context with <code>@/path/to/file</code></li>
+<li>Send the implementation request to Bob, which will carry out the task.</li>
+</ul>
+<hr />
+<p><strong>Auto-approval | <em>control, dialed to taste</em></strong></p>
 <p>By default, Bob asks permission before consequential actions — writing files, running terminal commands, executing tests. The auto-approval setting governs whether those actions proceed automatically or pause for your review, and it is the most direct dial you have on how much autonomy to grant:</p>
 <table>
 <thead>
