@@ -698,14 +698,15 @@ At its core, Bob does three things exceptionally well:</p>
                         </h1>
                         <section class="print-page" id="assist-1-1"><h1 id="assist-1-1-tab-completion-next-edit-prediction"><strong>TAB COMPLETION &amp; NEXT EDIT PREDICTION</strong></h1>
 <hr />
-<p><strong>Bob in your workflow</strong></p>
+<h2 id="assist-1-1-i-bob-in-your-workflow"><strong>i. Bob in your workflow</strong></h2>
+<hr />
 <p>This is the first (and most gentle) stage of the AI maturity curve, and therefore a natural sweet spot for building your understanding of IBM Bob. Across this module, you'll work shoulder to shoulder with Bob from the perspective of a software developer paired with the Bob editor. As you work, Bob will be anticipating the next keystroke, drafting the next few lines, and making targeted edits upon your request — all the while keeping the developer (<em>you</em>) in control of accepting or rejecting every AI-generated proposed change.</p>
 <p>The value that IBM Bob provides in this will be apparenty right from the onset: teams can move faster without breaking their train of thought, and nothing lands in the codebase that they did not explicitly choose to include. It is the most logical on-ramp to working with an AI partner, and it pays off from the very first session.</p>
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's tab completion and next edit predictions. <em>[1 min]</em></p>
 </blockquote>
-<h2 id="assist-1-1-i-why-this-matters"><strong>i. Why this matters</strong></h2>
+<h2 id="assist-1-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
 <p>The quickest way to lose a developer's confidence in an AI tool is to pull them out of their workflow.</p>
 <p>Bob's first two capabilities are designed to do precisely the opposite: it keeps a developer <em>in</em> the work, while quietly removing friction from the process. These two features are:</p>
@@ -729,7 +730,7 @@ At its core, Bob does three things exceptionally well:</p>
 <p><strong>Next edit predictions</strong></p>
 <p>Real code changes are rarely confined to a single line within the codebase. Add a new field or variable to the code, and you'll oftentime find yourself needing to use it again elsewhere; introduce a function, and something downstream will need to call it. <strong>Next edit prediction</strong> is built around that practical reality: after you accept an AI-generated suggestion, Bob anticipates the <em>related</em> edit you are likely to need as a follow-up and moves you there.</p>
 <p>You can conceptualize this as a <em>rhythm</em> between the developer and their AI partner. The developer describes what they want in a comment, allows Bob to suggest the code fix, presses <strong>Tab</strong> to accept the suggestion, and presses <strong>Tab</strong> again to jump to the next predicted location — where Bob positions the cursor exactly where the new code needs to be invoked.</p>
-<h2 id="assist-1-1-ii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>ii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
+<h2 id="assist-1-1-iii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>iii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
 <hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
@@ -985,17 +986,16 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/efd525be-3acb-48c8-b0d6-1a80e5d48281/File_a3f80360cff646edae6a7bf64fc34b5f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/efd525be-3acb-48c8-b0d6-1a80e5d48281/File_a3f80360cff646edae6a7bf64fc34b5f_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
-</ol></section><section class="print-page" id="assist-1-2"><h1 id="assist-1-2-module-1-assist">Module 1 | <strong>ASSIST</strong></h1>
-<h1 id="assist-1-2-editing-with-intent-literate-coding">Editing with intent | <strong>LITERATE CODING</strong></h1>
+</ol></section><section class="print-page" id="assist-1-2"><h1 id="assist-1-2-literate-coding"><strong>LITERATE CODING</strong></h1>
 <hr />
-<p><strong>Bob in your workflow</strong></p>
-<h2 id="assist-1-2-12-editing-by-intent-literate-coding"><strong>1.2 — Editing by Intent: Literate Coding</strong></h2>
+<h2 id="assist-1-2-i-editing-with-intent"><strong>i. Editing with intent</strong></h2>
+<hr />
+<p>Tab completion and next edit prediction shine while you are writing <em>new</em> code. But much of a developer's day is spent making a precise, deliberate change to code that already exists — and for that, <strong>literate coding</strong> is the tool. It lets you write a natural-language instruction directly inside a file, exactly where the change belongs, much as you would jot a comment. Bob reads the instruction in place and produces a targeted, localized modification. The developer is still describing intent in plain language; the difference is that here you are pointing at a specific spot and saying "change <em>this</em>."</p>
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's literate coding capabilities. <em>[2 min]</em></p>
 </blockquote>
 <h4 id="assist-1-2-why-this-matters">Why this matters</h4>
-<p>Tab completion and next edit prediction shine while you are writing <em>new</em> code. But much of a developer's day is spent making a precise, deliberate change to code that already exists — and for that, <strong>literate coding</strong> is the tool. It lets you write a natural-language instruction directly inside a file, exactly where the change belongs, much as you would jot a comment. Bob reads the instruction in place and produces a targeted, localized modification. The developer is still describing intent in plain language; the difference is that here you are pointing at a specific spot and saying "change <em>this</em>."</p>
 <h4 id="assist-1-2-entering-literate-coding-mode">Entering literate coding mode</h4>
 <p>You enter literate coding through the magic wand icon in the VS Code editor. Once active, it lets you:</p>
 <ul>
