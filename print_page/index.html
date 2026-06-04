@@ -860,10 +860,11 @@ At its core, Bob does three things exceptionally well:</p>
 <li>
 <p>Now let's return to the Galaxium Travels web app and confirm the change took effect. To do so, you will first need to reboot the web app service.</p>
 <ul>
-<li>To open a Terminal window, either click the <strong>Terminal</strong> button at the bottom-center portion of the Bob IDE interface <em>or</em> navigate using the top menu bar into <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (which will open a fresh Terminal screen at the bottom-center portion of the interface).</li>
+<li>To open a Terminal window, either click the <strong>Terminal</strong> button at the bottom-center portion of the Bob IDE interface <em>or</em> navigate using the top menu bar into <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (which will open a fresh Terminal screen at the bottom-center portion of the UI).</li>
 <li>Within the Terminal window, locate and click the <strong>+</strong> icon, along the right-hand side of the Terminal window. This will launch a new Terminal connection into which you will next input additional commands.</li>
 </ul>
-<p><p align="left">
+<p></br>
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
@@ -872,10 +873,9 @@ At its core, Bob does three things exceptionally well:</p>
 <ol start="11">
 <li>
 <p>The commands to be issued to the Terminal console depending on the operating system your machine is running upon.</p>
-<p>From the tabbed options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows). After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="assist-1-1-__tabbed_2_1" name="assist-1-1-__tabbed_2" type="radio" /><input id="assist-1-1-__tabbed_2_2" name="assist-1-1-__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="assist-1-1-__tabbed_2_1">WEBSPHERE LIBERTY</label><label for="assist-1-1-__tabbed_2_2">WEBSPHERE APPLICATION SERVER</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p>From the expandable options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows). After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
+<details class="tip">
+<summary>MAC OR LINUX</summary>
 <p>On macOS or Linux, run the following commands one at a time:
 <strong>Step 1:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#assist-1-1-__codelineno-2-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
@@ -884,11 +884,13 @@ At its core, Bob does three things exceptionally well:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#assist-1-1-__codelineno-3-1"></a>./start.sh
 </code></pre></div></p>
 <p>You should see "Galaxium Travels is running!" printed to the console (amongst the other success messages) once the application has deployed successfully.</p>
-<p><p align="left">
+<p></br>
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6cf431b0-2db0-42a9-a43d-33b1abf1c3e5/File_852235e4905447ef9c691dbceaf81c0e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6cf431b0-2db0-42a9-a43d-33b1abf1c3e5/File_852235e4905447ef9c691dbceaf81c0e_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
-</div>
-<div class="tabbed-block">
+</details>
+<details class="note">
+<summary>WINDOWS OS</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-1-__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#assist-1-1-__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#assist-1-1-__codelineno-4-3"> 3</a></span>
@@ -915,9 +917,7 @@ At its core, Bob does three things exceptionally well:</p>
 <a id="__codelineno-4-12" name="__codelineno-4-12"></a>    <span class="nt">&lt;/enterprise-beans&gt;</span>
 <a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="nt">&lt;/ejb-jar&gt;</span>
 </code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
+</details>
 <p></br></p>
 </li>
 </ol>
