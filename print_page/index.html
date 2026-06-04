@@ -1245,7 +1245,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p></br></p>
 <p><strong>Auto-approval | <em>control, dialed to taste</em></strong></p>
 <hr />
-<p>By default, Bob asks permission before consequential actions — writing files, running terminal commands, executing tests. The auto-approval setting governs whether those actions proceed automatically or pause for your review, and it is the most direct dial you have on how much autonomy to grant:</p>
+<p>By default, Bob will ask for permission before performing consequential actions like writing files, running Terminal commands, or executing tests. The auto-approval setting governs whether those actions proceed automatically or pause for your review, with various configurations you can set to determine the level of autonomy (and trust) you are comfortable delegating to Bob.</p>
 <table>
 <thead>
 <tr>
@@ -1272,7 +1272,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </tr>
 </tbody>
 </table>
-<p>The convenience of full auto-approval comes with real exposure: Bob can run arbitrary terminal commands without review, mistakes in the plan can propagate unchecked, and unintended file deletions or overwrites become possible. For most work, a hybrid posture is the sensible default — auto-approve file reads and writes, but require confirmation before command execution.</p>
+<p>The convenience of full auto-approval comes at the trade-off of escalating exposure risk. If autonomy is dialed up to the highest degree, Bob will be able to run arbitrary Terminal commands without human review — reducing the management overhead on human users, but potentially introducing mistakes into a plan that can propagate unchecked. For most work, a hybrid and balanced posture is the sensible default — auto-approve file reads and writes, but require confirmation before command execution.</p>
 <blockquote>
 <p>Set auto-approval in Bob's settings panel according to the sensitivity of the project and the trust you place in the approved plan.</p>
 </blockquote>
