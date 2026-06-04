@@ -332,18 +332,12 @@
     iii. Hands-on: adding retry logic with Literate Coding
   </a>
   
-    <nav class="md-nav" aria-label="iii. Hands-on: adding retry logic with Literate Coding">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
-    Key takeaways
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#iv-key-takeaways" class="md-nav__link">
+    iv. Key takeaways
+  </a>
   
 </li>
       
@@ -607,18 +601,12 @@
     iii. Hands-on: adding retry logic with Literate Coding
   </a>
   
-    <nav class="md-nav" aria-label="iii. Hands-on: adding retry logic with Literate Coding">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
-    Key takeaways
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#iv-key-takeaways" class="md-nav__link">
+    iv. Key takeaways
+  </a>
   
 </li>
       
@@ -682,7 +670,8 @@
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
 </blockquote>
-<p>Galaxium's backend can be slow to respond when fetching flight information. If you test on this, you'll discover that occasional timeouts are often the result. This underforming feature is an ideal candidate for showcasing the small, surgical fixes that literate coding excels at. In the following section, you will apply literate coding to wrap the flight-fetching call in <code>retry</code> logic — and do so with minimal coding work on your part.</p>
+<p>Galaxium's backend can be slow to respond when fetching flight information. If you test on this, you'll discover that occasional timeouts are often the result. This underforming feature is an ideal candidate for showcasing the small, surgical fixes that literate coding excels at.</p>
+<p>In the following section, you will apply literate coding to wrap the flight-fetching call in <code>retry</code> logic — and do so with minimal coding work on your part.</p>
 <hr />
 <ol>
 <li>
@@ -738,28 +727,51 @@
 </ol>
 <hr />
 <ol start="5">
-<li>A diff view appears. Removed code is shown in red, and added code in whatever highlight your build uses for additions (yellow in this capture; some versions use green). Review the on-screen diff carefully before accepting.</li>
-</ol>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<ol start="6">
-<li>If everything looks right, press <strong>Accept All</strong>.</li>
-</ol>
-<p>The red lines are removed, and the new highlighted lines are written into the file.</p>
-<p>This particular change may not produce anything visible in the running app — and that is by design; the point is to watch targeted code generation happen <em>in context</em>, against real code.</p>
-<p>Take a moment to read what Bob produced, and then we will move on.</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<h4 id="key-takeaways">Key takeaways</h4>
+<li>
+<p>A <strong><em>diff</em> view</strong> will render in-line at the insertion point.</p>
 <ul>
-<li>Literate coding turns a plain-language instruction, written in place, into a precise code change.</li>
-<li>The diff view keeps you in full control — you see every change before it lands.</li>
-<li>It is most powerful for focused, single-file modifications.</li>
-<li>For multi-file or architectural changes, Code mode is the right tool — and that is where we go next.</li>
+<li>
+<p>Code that IBM Bob is proposing to <em>remove</em> will be highlighted in red.</p>
+</li>
+<li>
+<p>Code that IBM Bob is proposing to <em>add</em> will be highlighted in a contrasting color. With some builds of the Bob IDE it may be highlighted in yellow, in other versions it may show as green — the key thing is that it is <em>not</em> red.</p>
+</li>
+<li>
+<p>Review the on-screen <em>diff</em> carefully before <strong>accepting</strong> the proposed changes.</p>
+</li>
+</ul>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>
+<p>If everything looks fine, press <strong>Accept All</strong> to confirm the proposed code changes.</p>
+<ul>
+<li>
+<p>All red lines are automatically removed and the new (color-highlighted) lines are written into the file.</p>
+</li>
+<li>
+<p>This particular change may not produce anything visible within the running app — and that is by design. The point is to watch targeted code generation happen <em>in context</em> against real code.</p>
+</li>
+<li>
+<p>Take a moment to read over what Bob produced and then proceed to <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>.</p>
+</li>
+</ul>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<h2 id="iv-key-takeaways"><strong>iv. Key takeaways</strong></h2>
+<ul>
+<li>Literate coding turns plain-language instructions, written in place, into precise code change.</li>
+<li>The <em>diff</em> view keeps you in full control, allowing you to inspect and understand every change before it is committed to code.</li>
+<li>The literate coding mode is most effective for focused, single-file modifications.</li>
+<li>For multi-file or architectural changes, Code mode is the more appropriate tool for the job — and the topic we'll explore next.</li>
 </ul>
 
 
