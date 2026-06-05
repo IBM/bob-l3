@@ -1217,39 +1217,42 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </div>
 <p>Each step of this sequence (from plan, review, converse, and code) exists deliberately as part of a methodical workflow. Before going hands-on with the agentic sidebar, it's worth taking a moment first to explore the "sweet spot" use cases for each mode.</p>
 <hr />
-<h2 id="delegate-2-1-iv-plan-mode-think-before-building"><strong>iv. Plan Mode | <em>think before building</em></strong></h2>
+<h2 id="delegate-2-1-iv-plan-mode">**iv. Plan Mode</h2>
 <hr />
-<p>Plan mode is the starting point for any feature or architectural change of consequence. In this mode Bob has <em>read-only</em> access to the codebase — it cannot change anything — and its sole job is to produce a detailed plan before a single line of code is written. Reach for it whenever a change touches multiple files or layers, when you are designing new components or data models, or when you simply want to understand the scope of a change before committing to it.</p>
+<p><strong>THINK BEFORE BUILDING</strong></p>
+<p><strong>Plan mode</strong> is the starting point for any feature or architectural change of consequence. In this mode Bob has <em>read-only</em> access to the codebase — it cannot change anything — and its sole job is to produce a detailed plan before a single line of code is written. Reach for it whenever a change touches multiple files or layers, when you are designing new components or data models, or when you simply want to understand the scope of a change before committing to it.</p>
 <p>Entering it is straightforward: open the agentic sidebar in VS Code, select <strong>Plan</strong> from the mode selector, and describe the feature in natural language. From there, Bob reads the relevant files to understand the existing structure, asks clarifying questions to resolve ambiguity before planning, and then generates planning documents — typically two: an <strong>implementation plan</strong> (a detailed specification of what the feature does, how it will be built, how it will be tested, and how it should behave — often 100 to 200-plus lines) and an <strong>architecture plan</strong> (a higher-level account of structural decisions, component interactions, and data flow). These documents are saved to the project and become the authoritative specification for the build.</p>
 <hr />
-<h2 id="delegate-2-1-v-review-and-plan-a-developers-responsibility"><strong>v. Review and Plan | <em>a developer's responsibility</em></strong></h2>
+<h2 id="delegate-2-1-v-review-and-plan">**v. Review and Plan</h2>
 <hr />
-<p>The review and planning process is at the core of everything you (the user) performs with the service. The plans that IBM Bob generates are not loose suggestions — <em>they are exactly what Bob will build, verbatim.</em> Approving a plan you have not adequately reviewed or read ahead of time will hand full responsibility for any misaligned or incorrect implementation squarely to <em>you</em>. Bob, as they say, was only following orders.</p>
+<p><strong>A DEVELOPER'S RESPONSIBILITY</strong></p>
+<p>The <strong>review and planning process</strong> is at the core of everything you (the user) performs with the service. The plans that IBM Bob generates are not loose suggestions — <em>they are exactly what Bob will build, verbatim.</em> Approving a plan you have not adequately reviewed or read ahead of time will hand full responsibility for any misaligned or incorrect implementation squarely to <em>you</em>. Bob, as they say, was only following orders.</p>
 <p>Before you proceed with delegating tasks to Bob, it's imperative that you read both the implementation plan and the architecture plan in full. Verify that the described behavior matches the feature you intended. Confirm that the testing requirements make sense. Correct any misunderstanding now, by revising your prompt or asking a follow-up, while correction is cheap (and far less costly a fix than after post-implementation.)</p>
 <div class="admonition note">
 <p class="admonition-title">RESPONSIBILITY AS A DEVELOPER AND END-USER</p>
 <p><strong>Read the plans.</strong> To re-emphasize (and this is true across all LLMs): human-in-the-loop review is the single most important quality gate in any agentic workflow. The quality of the final implementation is directly tied to the quality of the plan you approve.</p>
 </div>
 <hr />
-<h2 id="delegate-2-1-vi-code-mode-implementing-the-approved-plan"><strong>vi. Code Mode | <em>implementing the approved plan</em></strong></h2>
+<h2 id="delegate-2-1-vi-code-mode">**vi. Code Mode</h2>
 <hr />
-<p>In Code mode, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
-<p>Once the plan is reviewed and approved, the implementation happens withinin a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions. For example, the following two <em>paths</em> specify contextual details about a (hypothethical) implementation and architecture plan.</p>
-<div class="highlight"><pre><span></span><code>``` bash
-@/path/to/implementation-plan.md
-@/path/to/architecture-plan.md
-```
+<p><strong>IMPLEMENT APPROVED PLANS</strong></p>
+<p>In <strong>Code mode</strong>, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
+<p>Once the plan is reviewed and approved, the implementation happens withinin a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions.</p>
+<p>For example, the following two <em>paths</em> specify contextual details about a (hypothethical) implementation and architecture plan.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-1-__codelineno-0-1"></a>@/path/to/implementation-plan.md
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#delegate-2-1-__codelineno-0-2"></a>@/path/to/architecture-plan.md
 </code></pre></div>
 <p>The process for "switching" into Code mode is straightforward and simple— and you'll have the opportunity to practice this yourself in the following hands-on steps — for reference:</p>
 <ul>
 <li>Start a new conversation</li>
 <li>Select <strong>Code</strong> from the mode selector</li>
 <li><em>Optionally</em> reference any relevant planning documents or context with <code>@/path/to/file</code></li>
-<li>Send the implementation request to Bob, which will carry out the task.</li>
+<li>Send the implementation request to Bob, which will carry out the task</li>
 </ul>
 <hr />
-<h2 id="delegate-2-1-vii-auto-approval-control-dialed-to-taste"><strong>vii. Auto-Approval | <em>control, dialed to taste</em></strong></h2>
+<h2 id="delegate-2-1-vii-auto-approval">**vii. Auto-Approval</h2>
 <hr />
+<p><strong>CONTROL, DIALED TO TASTE</strong></p>
 <p>By default, Bob will ask for permission before performing consequential actions like writing files, running Terminal commands, or executing tests. The auto-approval setting governs whether those actions proceed automatically or pause for your review, with various configurations you can set to determine the level of autonomy (and trust) you are comfortable delegating to Bob.</p>
 <table>
 <thead>
@@ -1281,7 +1284,10 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <blockquote>
 <p>Set auto-approval in Bob's settings panel according to the sensitivity of the project and the trust you place in the approved plan.</p>
 </blockquote>
-<h2 id="delegate-2-1-viii-referencing-files-context-mentions"><strong>viii. Referencing files | <em>context mentions</em></strong></h2>
+<hr />
+<h2 id="delegate-2-1-viii-referencing-files">**viii. Referencing files</h2>
+<hr />
+<p><strong>CONTEXTUALIZED MENTIONS</strong></p>
 <p>When you point Bob at files in the sidebar, use context mentions rather than copying and pasting their contents:</p>
 <table>
 <thead>
@@ -1310,7 +1316,9 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </tbody>
 </table>
 <p>Mentions are resolved at the moment you send the message, giving Bob precise, targeted information without burning context on unrelated files.</p>
+<hr />
 <h2 id="delegate-2-1-ix-hands-on-implementing-seat-classes-in-galaxium-travels">**ix. Hands-on: implementing seat classes in Galaxium Travels</h2>
+<hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCJFMppc4M7DPG7TC3h73QpdmB3j">Chapter 2.3: The Agentic Sidebar [IBM Bob L3]</a></p>
 </blockquote>
