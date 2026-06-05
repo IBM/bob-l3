@@ -675,6 +675,7 @@
 <li>Ask clarifying questions in follow-up to user prompts</li>
 <li>Implement a requested feature end-to-end.</li>
 </ul>
+<hr />
 <p><strong>THE AGENTIC SIDEBAR</strong></p>
 <hr />
 <p>Where the Next Edit Prediction and Literate Coding assist functionality that was showcased in the previous module required your direct input— keystroke by keystroke —the <strong>Agentic Sidebar</strong> allows you hand over and delegate entire objectives (and very complex workflows) with a single request. It is the most productive way to work with Bob. The point at which you have sufficient trust and confidence in Bob to faithfully execute this work is where the AI partnership truly begins, further progressing you along the AI Maturity Curve journey.</p>
@@ -685,11 +686,12 @@
 </br><strong>Plan mode</strong> → <strong>review</strong> → <strong>new conversation</strong> → <strong>Code mode</strong></p>
 </div>
 <p>Each step of this sequence (from plan, review, converse, and code) exists deliberately as part of a methodical workflow. Before going hands-on with the agentic sidebar, it's worth taking a moment first to explore the "sweet spot" use cases for each mode.</p>
+<hr />
 <p><strong>PLAN MODE | <em>think before building</em></strong></p>
 <hr />
 <p>Plan mode is the starting point for any feature or architectural change of consequence. In this mode Bob has <em>read-only</em> access to the codebase — it cannot change anything — and its sole job is to produce a detailed plan before a single line of code is written. Reach for it whenever a change touches multiple files or layers, when you are designing new components or data models, or when you simply want to understand the scope of a change before committing to it.</p>
 <p>Entering it is straightforward: open the agentic sidebar in VS Code, select <strong>Plan</strong> from the mode selector, and describe the feature in natural language. From there, Bob reads the relevant files to understand the existing structure, asks clarifying questions to resolve ambiguity before planning, and then generates planning documents — typically two: an <strong>implementation plan</strong> (a detailed specification of what the feature does, how it will be built, how it will be tested, and how it should behave — often 100 to 200-plus lines) and an <strong>architecture plan</strong> (a higher-level account of structural decisions, component interactions, and data flow). These documents are saved to the project and become the authoritative specification for the build.</p>
-<p></br></p>
+<hr />
 <p><strong>REVIEW &amp; PLAN | <em>a developer's responsibility</em></strong></p>
 <hr />
 <p>The review and planning process is at the core of everything you (the user) performs with the service. The plans that IBM Bob generates are not loose suggestions — <em>they are exactly what Bob will build, verbatim.</em> Approving a plan you have not adequately reviewed or read ahead of time will hand full responsibility for any misaligned or incorrect implementation squarely to <em>you</em>. Bob, as they say, was only following orders.</p>
@@ -698,7 +700,7 @@
 <p class="admonition-title">RESPONSIBILITY AS A DEVELOPER AND END-USER</p>
 <p><strong>Read the plans.</strong> To re-emphasize (and this is true across all LLMs): human-in-the-loop review is the single most important quality gate in any agentic workflow. The quality of the final implementation is directly tied to the quality of the plan you approve.</p>
 </div>
-<p></br></p>
+<hr />
 <p><strong>CODE MODE | <em>implementing the approved plan</em></strong></p>
 <hr />
 <p>In Code mode, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
@@ -715,7 +717,7 @@
 <li><em>Optionally</em> reference any relevant planning documents or context with <code>@/path/to/file</code></li>
 <li>Send the implementation request to Bob, which will carry out the task.</li>
 </ul>
-<p></br></p>
+<hr />
 <p><strong>AUTO-APPROVAL | <em>control, dialed to taste</em></strong></p>
 <hr />
 <p>By default, Bob will ask for permission before performing consequential actions like writing files, running Terminal commands, or executing tests. The auto-approval setting governs whether those actions proceed automatically or pause for your review, with various configurations you can set to determine the level of autonomy (and trust) you are comfortable delegating to Bob.</p>
