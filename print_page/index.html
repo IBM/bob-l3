@@ -1418,7 +1418,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>
 <p>For now, allow every action to be executed by Bob automatically by <strong>toggling on</strong> (checking) all available options within the panel.</p>
 <div class="admonition warning">
-<p><strong>For real-world projects</strong>, set auto-approval deliberately, according to how much control you're willing to hand Bob.</p>
+<p><strong>For real-world projects</strong>, set auto-approval deliberately, according to how much control you're willing to delegate directly over to Bob.</p>
 </div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/da4353ec-4e33-4ea2-9930-d77153fd9a7d/File_955dadf2856b4b2c921b45fe6b8a04a0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/da4353ec-4e33-4ea2-9930-d77153fd9a7d/File_955dadf2856b4b2c921b45fe6b8a04a0_text_export.jpeg" alt="" width="600" /></a>
@@ -1429,7 +1429,9 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <ol start="5">
 <li>
 <p>With <strong>Plan mode</strong> active and auto-approval enabled, <strong>type</strong> the following task into the agentic sidebar chat window:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-2-__codelineno-0-1"></a>I want different classes of seats for Galaxium Travels. There is supposed to be an Economy class, a Business class, and a Galaxium class. Help me make a plan to implement this.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-2-__codelineno-0-1"></a>I want different classes of seats for Galaxium Travels.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#delegate-2-2-__codelineno-0-2"></a>There is supposed to be an Economy class, a Business class, and a Galaxium class.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#delegate-2-2-__codelineno-0-3"></a>Help me make a plan to implement this.
 </code></pre></div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fbfbfb98-261d-453d-8314-61a14e078978/File_d6cd31f4863c475e8274ec430f299676_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fbfbfb98-261d-453d-8314-61a14e078978/File_d6cd31f4863c475e8274ec430f299676_text_export.jpeg" alt="" width="600" /></a>
@@ -1449,9 +1451,9 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <ol start="7">
 <li>
 <p>Bob will now undertake the job of planning how to implement the requested features. It may ask follow-up questions to pin down exactly what you want.</p>
-<p>In this example, Bob wants to better understand how pricing and seat classes should be structured.</p>
+<p>In this example, Bob wants to better understand how pricing according to seat classes should be structured.</p>
 <div class="admonition warning">
-<p>Bob's responses are non-deterministic, so questions posed to you within your Bob IDE may differ from those shown here. It's also possible you may receive no clarifying questions at all.</p>
+<p>Bob's responses are <strong>non-deterministic</strong>, so questions posed to you within your Bob IDE may differ from those shown here. It's also possible you may receive no clarifying questions at all.</p>
 </div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/756e5047-4de2-4e58-b870-a5703c162688/File_608f202a495e498ca6757a7b8eb59b11_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/756e5047-4de2-4e58-b870-a5703c162688/File_608f202a495e498ca6757a7b8eb59b11_text_export.jpeg" alt="" width="600" /></a>
@@ -1479,10 +1481,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>If you don't see these files generated yet, continue answering Bob's questions in the Agentic Sidebar until you Bob has sufficient context to generate the requested <code>.md</code> files for the execution plan</li>
 </ul>
 <div class="admonition warning">
-<p>Bob may also generate <em>other</em>, unrelated files in addition to the implementation plan — such as architecture diagrams.</p>
+<p>Bob may also generate <em>other</em>, unrelated files in addition to the implementation plan (such as architecture diagrams.)</p>
 </div>
 <p>Once the implementation plan document(s) appear, the <strong>Plan mode</strong> phase is essentially complete. Bob might pose a final question to you— essentially <em>"Are you happy with these results, or do you wish to revise things further?"</em> —to which you may answer (if you agree):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#delegate-2-2-__codelineno-2-1"></a>The plan looks great. Let&#39;s switch to Code mode and start implementing the seat classes.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#delegate-2-2-__codelineno-2-1"></a>The plan looks great.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#delegate-2-2-__codelineno-2-2"></a>Let&#39;s switch to Code mode and start implementing the seat classes.
 </code></pre></div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/655e06ad-5c53-4538-8bd5-a067aea2fc70/File_a716739de322423fb1707939ce765752_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/655e06ad-5c53-4538-8bd5-a067aea2fc70/File_a716739de322423fb1707939ce765752_text_export.jpeg" alt="" width="600" /></a>
@@ -1499,11 +1502,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <ul>
 <li>Using the <strong>File Explorer</strong> tab on the left side of the interface, <strong>open</strong> (double-click) the Markdown (<code>.md</code>) file for deeper inspection of its contents</li>
 <li>Review what you and Bob have together planned for implementation of your requested application features</li>
-<li>Bob will have detailed the prices and amenities for the fictional seat classes that are to be added to the Galaxium Travels application</li>
-</ul>
-<p><p align="left">
+<li>Bob will have detailed the prices and amenities for the fictional seat classes that are to be added to the Galaxium Travels application
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f71a23c2-806a-405a-8b63-e84dea8f95da/File_99d6f7fda505424a818eaafdd676cd70_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f71a23c2-806a-405a-8b63-e84dea8f95da/File_99d6f7fda505424a818eaafdd676cd70_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+</p></li>
+</ul>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ec40c46f-d8ee-405f-8a94-92e472560331/File_b837497f88a64281a3350f1d8c7f2f29_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ec40c46f-d8ee-405f-8a94-92e472560331/File_b837497f88a64281a3350f1d8c7f2f29_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
