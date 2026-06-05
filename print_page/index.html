@@ -1217,13 +1217,13 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </div>
 <p>Each step of this sequence (from plan, review, converse, and code) exists deliberately as part of a methodical workflow. Before going hands-on with the agentic sidebar, it's worth taking a moment first to explore the "sweet spot" use cases for each mode.</p>
 <hr />
-<h2 id="delegate-2-1-iv-plan-mode">**iv. Plan Mode</h2>
+<h2 id="delegate-2-1-iv-plan-mode"><strong>iv. Plan Mode</strong></h2>
 <hr />
 <p><strong>THINK BEFORE BUILDING</strong></p>
 <p><strong>Plan mode</strong> is the starting point for any feature or architectural change of consequence. In this mode Bob has <em>read-only</em> access to the codebase — it cannot change anything — and its sole job is to produce a detailed plan before a single line of code is written. Reach for it whenever a change touches multiple files or layers, when you are designing new components or data models, or when you simply want to understand the scope of a change before committing to it.</p>
 <p>Entering it is straightforward: open the agentic sidebar in VS Code, select <strong>Plan</strong> from the mode selector, and describe the feature in natural language. From there, Bob reads the relevant files to understand the existing structure, asks clarifying questions to resolve ambiguity before planning, and then generates planning documents — typically two: an <strong>implementation plan</strong> (a detailed specification of what the feature does, how it will be built, how it will be tested, and how it should behave — often 100 to 200-plus lines) and an <strong>architecture plan</strong> (a higher-level account of structural decisions, component interactions, and data flow). These documents are saved to the project and become the authoritative specification for the build.</p>
 <hr />
-<h2 id="delegate-2-1-v-review-and-plan">**v. Review and Plan</h2>
+<h2 id="delegate-2-1-v-review-and-plan"><strong>v. Review and Plan</strong></h2>
 <hr />
 <p><strong>A DEVELOPER'S RESPONSIBILITY</strong></p>
 <p>The <strong>review and planning process</strong> is at the core of everything you (the user) performs with the service. The plans that IBM Bob generates are not loose suggestions — <em>they are exactly what Bob will build, verbatim.</em> Approving a plan you have not adequately reviewed or read ahead of time will hand full responsibility for any misaligned or incorrect implementation squarely to <em>you</em>. Bob, as they say, was only following orders.</p>
@@ -1232,7 +1232,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p class="admonition-title">RESPONSIBILITY AS A DEVELOPER AND END-USER</p>
 <p><strong>Read the plans.</strong> To re-emphasize (and this is true across all LLMs): human-in-the-loop review is the single most important quality gate in any agentic workflow. The quality of the final implementation is directly tied to the quality of the plan you approve.</p>
 </div>
-<h2 id="delegate-2-1-vi-code-mode">**vi. Code Mode</h2>
+<h2 id="delegate-2-1-vi-code-mode"><strong>vi. Code Mode</strong></h2>
 <hr />
 <p><strong>IMPLEMENT APPROVED PLANS</strong></p>
 <p>In <strong>Code mode</strong>, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
@@ -1249,7 +1249,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>Send the implementation request to Bob, which will carry out the task</li>
 </ul>
 <hr />
-<h2 id="delegate-2-1-vii-auto-approval">**vii. Auto-Approval</h2>
+<h2 id="delegate-2-1-vii-auto-approval"><strong>vii. Auto-Approval</strong></h2>
 <hr />
 <p><strong>CONTROL, DIALED TO TASTE</strong></p>
 <p>By default, Bob will ask for permission before performing consequential actions like writing files, running Terminal commands, or executing tests. The auto-approval setting governs whether those actions proceed automatically or pause for your review, with various configurations you can set to determine the level of autonomy (and trust) you are comfortable delegating to Bob.</p>
@@ -1284,7 +1284,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p>Set auto-approval in Bob's settings panel according to the sensitivity of the project and the trust you place in the approved plan.</p>
 </blockquote>
 <hr />
-<h2 id="delegate-2-1-viii-referencing-files">**viii. Referencing files</h2>
+<h2 id="delegate-2-1-viii-referencing-files"><strong>viii. Referencing files</strong></h2>
 <hr />
 <p><strong>CONTEXTUALIZED MENTIONS</strong></p>
 <p>When you point Bob at files in the sidebar, use context mentions rather than copying and pasting their contents:</p>
@@ -1316,7 +1316,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </table>
 <p>Mentions are resolved at the moment you send the message, giving Bob precise, targeted information without burning context on unrelated files.</p>
 <hr />
-<h2 id="delegate-2-1-ix-hands-on-implementing-seat-classes-in-galaxium-travels">**ix. Hands-on: implementing seat classes in Galaxium Travels</h2>
+<h2 id="delegate-2-1-ix-hands-on-implementing-seat-classes-in-galaxium-travels"><strong>ix. Hands-on: implementing seat classes in Galaxium Travels</strong></h2>
 <hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCJFMppc4M7DPG7TC3h73QpdmB3j">Chapter 2.3: The Agentic Sidebar [IBM Bob L3]</a></p>
