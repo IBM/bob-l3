@@ -1232,15 +1232,14 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p class="admonition-title">RESPONSIBILITY AS A DEVELOPER AND END-USER</p>
 <p><strong>Read the plans.</strong> To re-emphasize (and this is true across all LLMs): human-in-the-loop review is the single most important quality gate in any agentic workflow. The quality of the final implementation is directly tied to the quality of the plan you approve.</p>
 </div>
-<hr />
 <h2 id="delegate-2-1-vi-code-mode">**vi. Code Mode</h2>
 <hr />
 <p><strong>IMPLEMENT APPROVED PLANS</strong></p>
 <p>In <strong>Code mode</strong>, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
 <p>Once the plan is reviewed and approved, the implementation happens withinin a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions.</p>
 <p>For example, the following two <em>paths</em> specify contextual details about a (hypothethical) implementation and architecture plan.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-1-__codelineno-0-1"></a>@/path/to/implementation-plan.md
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#delegate-2-1-__codelineno-0-2"></a>@/path/to/architecture-plan.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-1-__codelineno-0-1"></a>  @/path/to/implementation-plan.md
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#delegate-2-1-__codelineno-0-2"></a>  @/path/to/architecture-plan.md
 </code></pre></div>
 <p>The process for "switching" into Code mode is straightforward and simple— and you'll have the opportunity to practice this yourself in the following hands-on steps — for reference:</p>
 <ul>
