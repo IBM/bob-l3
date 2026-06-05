@@ -1568,7 +1568,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>
 <p>Scroll the down list of files and find the implementation plan that was generated in <strong>Step 9</strong>.</p>
 <ul>
-<li>Upon locating the <code>.md</code> file, double-click to select it</li>
+<li>Upon locating the <code>.md</code> file, <strong>double-click</strong> to select it</li>
 <li>In the documented case below, a file called <code>SEAT_CLASSES_IMPLEMENTATION_PLAN.md</code> was selected
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3b31ce07-6c0b-4d9b-a904-bee8c836f241/File_d35140c272794604a25336e8103087b3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3b31ce07-6c0b-4d9b-a904-bee8c836f241/File_d35140c272794604a25336e8103087b3_text_export.jpeg" alt="" width="600" /></a>
@@ -1579,7 +1579,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="18">
 <li>
-<p>Notice that <code>@SEAT_CLASSES_IMPLEMENTATION_PLAN</code> now appears in the chat window with a grey highlight. Bob is treating it as a <em>file reference</em> rather than <em>plain text</em>, which indicates to you that Bob knows exactly what you're pointing it at (an implementation file, specifically.)</p>
+<p>Notice that <code>@/SEAT_CLASSES_IMPLEMENTATION_PLAN</code> now appears in the chat window with a grey highlight. Bob is treating it as a <em>file reference</em> rather than <em>plain text</em>, which indicates to you that Bob knows exactly what you're pointing it at (an implementation file, specifically.)</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/89809bf1-6114-4f22-b746-cd1772742b4e/File_f5a1022d8d5e4fa0b74bc5978dd92938_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/89809bf1-6114-4f22-b746-cd1772742b4e/File_f5a1022d8d5e4fa0b74bc5978dd92938_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1597,7 +1597,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="20">
 <li>
-<p>Bob will immediately get to work. It will first construct for itself a <em>TODO</em> list in order to track execution of its own implementation steps.</p>
+<p>Bob will immediately get to work. It will first construct for itself a <em>Todo List</em> in order to track execution of the implementation plan.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d1e55cad-e951-4388-b33b-b209088fd1a0/File_9542ddde991b467cbd0dd2bac32d0b0f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d1e55cad-e951-4388-b33b-b209088fd1a0/File_9542ddde991b467cbd0dd2bac32d0b0f_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1605,52 +1605,69 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </ol>
 <hr />
 <ol start="21">
-<li>As ever, the non-deterministic workflow means your run may differ. In ours, Bob hit an error.</li>
-</ol>
-<p>It begins debugging on its own — here, asking permission first. If you see something similar, simply press <strong>Run</strong>.</p>
+<li>
+<p>As ever, the non-deterministic workflow means your run may differ from the documented lab guide. In the example below, Bob hit an <strong>error</strong>. To showcase how you might work through a similar close:</p>
+<ul>
+<li>Note that Bob begins debugging on its own (in this case, asking first for permission to do so)</li>
+<li>Should you encounter an error or debugging question yourself, simply press <strong>Run</strong> to continue
 <p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f9aa58b2-9143-4bbb-985e-69a4f839bf2b/File_ce941fcbcfbc488e835c3433d9662d08_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f9aa58b2-9143-4bbb-985e-69a4f839bf2b/File_ce941fcbcfbc488e835c3433d9662d08_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f9aa58b2-9143-4bbb-985e-69a4f839bf2b/File_ce941fcbcfbc488e835c3433d9662d08_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f9aa58b2-9143-4bbb-985e-69a4f839bf2b/File_ce941fcbcfbc488e835c3433d9662d08_text_export.jpeg" alt="" width="600" /></a>
+</p></li>
+</ul>
+</li>
+</ol>
 <hr />
 <ol start="22">
-<li>Carry on in the agentic sidebar, pressing <strong>Run</strong> when prompted. Bob hit an error in our run, but it's diagnosing and fixing it entirely on its own.</li>
-</ol>
-<blockquote>
-<p><strong>If the app still misbehaves</strong>, just describe the problem in the sidebar — or even simply say "my app is not working, diagnose and fix it" and follow along — and Bob will diagnose and repair it.</p>
-</blockquote>
+<li>
+<p>Carry on within the agentic sidebar, pressing <strong>Run</strong> when prompted to do so.</p>
+<ul>
+<li>If Bob hits an error, it will likely diagnose (and potentially even fix) the error on its own
 <p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/745dee44-f43d-46ad-8e99-8f410b96e249/File_d93eb4f854ad4af681edbe6d3a021ea8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/745dee44-f43d-46ad-8e99-8f410b96e249/File_d93eb4f854ad4af681edbe6d3a021ea8_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/745dee44-f43d-46ad-8e99-8f410b96e249/File_d93eb4f854ad4af681edbe6d3a021ea8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/745dee44-f43d-46ad-8e99-8f410b96e249/File_d93eb4f854ad4af681edbe6d3a021ea8_text_export.jpeg" alt="" width="600" /></a>
+</p></li>
+</ul>
+</li>
+</ol>
 <hr />
 <ol start="23">
-<li>On rare occasions Bob may get stuck running a command. If that happens, wait a minute, then press the X inside the octagon — <strong>(Abort)</strong> — and it should resume automatically.\
-\
-If Bob doesn't start up again, simply send a prompt like "Your work was interrupted, please proceed" in that chat box in the same chat session.</li>
-</ol>
+<li>
+<p>On rare occasions, Bob may get stuck running a command. If that happens, <strong>wait</strong> a minute and then press the <span class="keys"><kbd class="key-x">X</kbd></span> inside the octagon (as shown) to invoke the <strong>Abort</strong> command.</p>
+<ul>
+<li>After aborting the command execution, Bob should resume the workflow automatically</li>
+<li>If Bob refuss to automatically restart the workflow, simply send a prompt such as the following within the chat interface:
+ <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#delegate-2-2-__codelineno-4-1"></a>Your work was interrupted, please proceed.
+</code></pre></div>
 <p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/035e0543-efae-4fcb-9e4c-c80bc2dfda1f/File_519c1a2773e04b01a6d5337768b8176f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/035e0543-efae-4fcb-9e4c-c80bc2dfda1f/File_519c1a2773e04b01a6d5337768b8176f_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/035e0543-efae-4fcb-9e4c-c80bc2dfda1f/File_519c1a2773e04b01a6d5337768b8176f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/035e0543-efae-4fcb-9e4c-c80bc2dfda1f/File_519c1a2773e04b01a6d5337768b8176f_text_export.jpeg" alt="" width="600" /></a>
+</p></li>
+</ul>
+</li>
+</ol>
 <hr />
 <ol start="24">
-<li>Keep pressing <strong>Run</strong> if you're prompted further.</li>
-</ol>
-<p>When Bob finishes, you'll see a summary message like this one. Now we'll restart the app — open a new Terminal window.</p>
+<li>
+<p>Continue pressing <strong>Run</strong> until Bob has completed the workflow. When ready, Bob will return a similar message to the one documented below.</p>
+<ul>
+<li>Once a confirmation of the plan's full execution has been returned to the chat interface, you will want to restart the application</li>
+<li>Open a new <strong>Terminal</strong> window
 <p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd7b3fc2-dfcb-4fee-a37b-8b4e5e891a53/File_164540959fdf4d2998f6ae514d6b941f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd7b3fc2-dfcb-4fee-a37b-8b4e5e891a53/File_164540959fdf4d2998f6ae514d6b941f_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd7b3fc2-dfcb-4fee-a37b-8b4e5e891a53/File_164540959fdf4d2998f6ae514d6b941f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd7b3fc2-dfcb-4fee-a37b-8b4e5e891a53/File_164540959fdf4d2998f6ae514d6b941f_text_export.jpeg" alt="" width="600" /></a>
+</p></li>
+</ul>
+</li>
+</ol>
 <hr />
 <ol start="25">
-<li>If you haven't already, open a new Terminal window and close all the older ones (those we used to run the app earlier).</li>
+<li>
+<p>Close all the previously open Terminal windows (such as those from Module 1 - if you haven't closed those already.)</p>
+<div class="admonition warning">
+<p>Depending on your operating system, closing those tabs may warn you that a process will be terminated. That's expecte and such warnings can safely be ignored.</p>
+</div>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b6011550-20df-4fa9-9126-235c2ac8ffd1/File_65089c18bc604186ba329d3ca3a1615d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b6011550-20df-4fa9-9126-235c2ac8ffd1/File_65089c18bc604186ba329d3ca3a1615d_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p>Depending on your OS, closing those tabs may warn you that a process will be terminated. That's expected — go ahead and terminate it and close the window.</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b6011550-20df-4fa9-9126-235c2ac8ffd1/File_65089c18bc604186ba329d3ca3a1615d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b6011550-20df-4fa9-9126-235c2ac8ffd1/File_65089c18bc604186ba329d3ca3a1615d_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
 <p><strong>MAC AND LINUX ONLY</strong>\
 \
 With every previously-running Terminal window closed, we're ready to reload the app.</p>
@@ -1668,15 +1685,15 @@ cd ~/galaxium-travels \
 <p>On Windows, first, execute the following commands. Send them one-by-one, all in the same terminal window.\
 \
 <em>These are the same manual backend startup steps, without the step of installing requirements.txt</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#delegate-2-2-__codelineno-4-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#delegate-2-2-__codelineno-5-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#delegate-2-2-__codelineno-5-1"></a>cd booking_system_backend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#delegate-2-2-__codelineno-6-1"></a>cd booking_system_backend
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#delegate-2-2-__codelineno-6-1"></a>python -m venv .venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#delegate-2-2-__codelineno-7-1"></a>python -m venv .venv
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#delegate-2-2-__codelineno-7-1"></a>.venv\Scripts\activate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#delegate-2-2-__codelineno-8-1"></a>.venv\Scripts\activate
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#delegate-2-2-__codelineno-8-1"></a>python server.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#delegate-2-2-__codelineno-9-1"></a>python server.py
 </code></pre></div>
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3162d757-bc82-4888-9315-013e290f1689/File_fd694384806346e4904987608686d969_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3162d757-bc82-4888-9315-013e290f1689/File_fd694384806346e4904987608686d969_text_export.jpeg" alt="" width="600" /></a>
@@ -1690,11 +1707,11 @@ cd ~/galaxium-travels \
 
 <p><strong>WINDOWS ONLY</strong></p>
 <p>In the new Terminal window, next, execute the following commands. Send them one-by-one, all in the same terminal window.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#delegate-2-2-__codelineno-9-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#delegate-2-2-__codelineno-10-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#delegate-2-2-__codelineno-10-1"></a>cd booking_system_frontend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#delegate-2-2-__codelineno-11-1"></a>cd booking_system_frontend
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#delegate-2-2-__codelineno-11-1"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#delegate-2-2-__codelineno-12-1"></a>npm run dev
 </code></pre></div>
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb8bb981-84b0-4210-9501-16da16649ed4/File_746a74395467495989809c235fd75ec7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb8bb981-84b0-4210-9501-16da16649ed4/File_746a74395467495989809c235fd75ec7_text_export.jpeg" alt="" width="600" /></a>
