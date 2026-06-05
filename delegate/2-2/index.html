@@ -627,49 +627,54 @@
 <h2 id="ii-hands-on-implementing-seat-classes-in-galaxium-travels"><strong>ii. Hands-on: Implementing seat classes in Galaxium Travels</strong></h2>
 <hr />
 <ol>
-<li>The agentic sidebar is Bob's most capable interface — the place it can read files, reason across the whole codebase, ask clarifying questions, and implement a feature end to end.</li>
-</ol>
-<p>You will use multiple modes when creating new features in the Galaxium Travels application. Each mode is designed for a specific phase of development.</p>
-<p>Let's put it to work adding seat classes to Galaxium Travels.</p>
-<p>We'll begin, as always, by planning — letting Bob draft the implementation plan with us before any code is written.</p>
+<li>
+<p>As discussed already, the <strong>agentic sidebar</strong> is Bob's most capable interface: the place it can read files, reason across the whole codebase, ask clarifying questions, and implement a new feature end-to-end.</p>
+<p>You will use multiple modes when creating new features in the Galaxium Travels application. Each mode is designed for a specific phase of development. Let's put it to work adding seat classes to Galaxium Travels.</p>
+<p>Begin, as always, by <em>planning</em>: letting Bob draft the implementation plan with us before any code is written.</p>
 <p>Near the bottom of the agentic sidebar, expand the mode pop-up by pressing the blue <strong>Code</strong> button.</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1a91fba1-bd5b-4376-8691-c66e0777ece5/File_ef068e8eed30440bb7413bb30658d940_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1a91fba1-bd5b-4376-8691-c66e0777ece5/File_ef068e8eed30440bb7413bb30658d940_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1a91fba1-bd5b-4376-8691-c66e0777ece5/File_ef068e8eed30440bb7413bb30658d940_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1a91fba1-bd5b-4376-8691-c66e0777ece5/File_ef068e8eed30440bb7413bb30658d940_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
 <hr />
 <ol start="2">
-<li>Bob's modes tailor its assistance to the task at hand — planning, implementing, debugging, or learning — and add a measure of safety, since a more constrained mode helps prevent unintended file changes.</li>
+<li>
+<p>Bob's modes tailor its level (and forms of) assistance to the task at hand: planning, implementing, debugging, or learning.</p>
+<p>Click on <strong>Plan</strong> from the selected of <em>Modes</em> inside the agentic sidebar panel.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d2a7ae2d-d8ad-4a71-8119-74ede01d4182/File_58ea5234d12e4f8aad4dfe8cff9247c0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d2a7ae2d-d8ad-4a71-8119-74ede01d4182/File_58ea5234d12e4f8aad4dfe8cff9247c0_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p>Click on:</p>
-<p>📝 Plan</p>
-<p>in the Modes window.</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d2a7ae2d-d8ad-4a71-8119-74ede01d4182/File_58ea5234d12e4f8aad4dfe8cff9247c0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d2a7ae2d-d8ad-4a71-8119-74ede01d4182/File_58ea5234d12e4f8aad4dfe8cff9247c0_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
 <hr />
 <ol start="3">
-<li>You're now in Plan mode — confirmed near the bottom of the screen.</li>
+<li>
+<p>The IDE will automatically engage <em>Plan</em> mode, which can be confirmed by inspecting the bottom of the screen. For the convenience of the hands-on demo, let's enable auto-approval so that not every interaction you have with Bob from this point onwards needs to be manually approved in order to proceed.</p>
+<ul>
+<li>Click the greyed-out selection box next to <strong>"Auto-approval disabled"</strong></li>
+<li>A window will appear listing all the actions that you can allow (or deny) Bob from performing autonomously</li>
+</ul>
+<div class="admonition warning">
+<p>If you prefer to still manually approve or deny actions, or if you are uncomfortable with enabling auto-approval on your device, you can leave all <strong>Auto-approval</strong> options set to the default <code>disabled</code> value and proceed to <strong>Step 5</strong> at this time.</p>
+</div>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/79002c69-e67a-4bb1-9272-4774d5e8218b/File_cd693c81053c4fbc85a0de2900530576_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/79002c69-e67a-4bb1-9272-4774d5e8218b/File_cd693c81053c4fbc85a0de2900530576_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p>Purely for convenience in this demo, let's enable auto-approval. Click the greyed-out selection box next to <strong>"Auto-approval disabled"</strong>, and a window opens listing all the actions you can let Bob take automatically.\
-\
-<strong>If you aren't comfortable enabling auto-approval on your device, there is no need to - simply proceed to step 5 (pasting the prompt). Enabling auto-approval is done purely for convenience's sake.</strong></p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/79002c69-e67a-4bb1-9272-4774d5e8218b/File_cd693c81053c4fbc85a0de2900530576_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/79002c69-e67a-4bb1-9272-4774d5e8218b/File_cd693c81053c4fbc85a0de2900530576_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
 <hr />
 <ol start="4">
-<li>For now, let's allow every action automatically — click each one that appears to enable it.</li>
-</ol>
-<blockquote>
+<li>
+<p>For now, allow every action to be executed by Bob automatically by <strong>toggling on</strong> (checking) all available options within the panel.</p>
+<div class="admonition note">
 <p><strong>In real projects</strong>, set auto-approval deliberately, according to how much control you're willing to hand Bob.</p>
-</blockquote>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/da4353ec-4e33-4ea2-9930-d77153fd9a7d/File_955dadf2856b4b2c921b45fe6b8a04a0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/da4353ec-4e33-4ea2-9930-d77153fd9a7d/File_955dadf2856b4b2c921b45fe6b8a04a0_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+</div>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/da4353ec-4e33-4ea2-9930-d77153fd9a7d/File_955dadf2856b4b2c921b45fe6b8a04a0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/da4353ec-4e33-4ea2-9930-d77153fd9a7d/File_955dadf2856b4b2c921b45fe6b8a04a0_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
 <hr />
 <ol start="5">
 <li>With Plan mode active and auto-approval enabled, type your task into the agentic sidebar chat window.</li>
