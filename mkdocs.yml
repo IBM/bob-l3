@@ -14,18 +14,19 @@ nav:
   - Introduction: 'index.md'
   - Setup: 'setup.md'
   - 1. Assist:
-    - Bob in your workflow | Tab Completion & Next Edit Prediction: assist/1-1.md
-    - Editing with intent | Literate Coding: assist/1-2.md
+    - Tab Completion & Next Edit Prediction | Bob in your workflow: assist/1-1.md
+    - Literate Coding | Editing with intent: assist/1-2.md
   - 2. Delegate:
-    - From assistant to partner | The Agentic Sidebar: delegate/2-1.md
+    - The Agentic Sidebar | From assistant to partner: delegate/2-1.md
+    - Applying Agentic Modes | Implementing seat classes in Galaxium Travels: delegate/2-2.md
   - 3. Tailor:
-    - Teaching Bob your codebase | /init & agents.md: tailor/3-1.md
-    - Encoding your standards | Bob Rules: tailor/3-2.md
-    - Shaping Bob to every role | Custom Modes: tailor/3-3.md
+    - init & agents.md | Teaching Bob your codebase: tailor/3-1.md
+    - Bob Rules | Encoding your standards: tailor/3-2.md
+    - Custom Modes | Shaping Bob to every role: tailor/3-3.md
   - 4. Scale & Extend:
-    - Keeping Bob reliable at scale | The Context Window: scale/4-1.md
-    - Moving beyond the IDE | Bob Shell: scale/4-2.md
-    - Connecting Bob to everything | Extending with MCP: scale/4-3.md
+    - The Context Window | Keeping Bob reliable at scale: scale/4-1.md
+    - Bob Shell | Moving beyond the IDE: scale/4-2.md
+    - Extending with MCP | Connecting Bob to everything: scale/4-3.md
 
 theme:
   name: material

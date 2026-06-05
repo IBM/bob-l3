@@ -1,5 +1,7 @@
 # **IBM Bob Level 3**
 
+---
+
 ## **i. What is IBM Bob?**
 
 ---
@@ -21,12 +23,15 @@ At its core, Bob does three things exceptionally well:
 - **Understands codebases** by reading and reasoning about complex project structures, dependencies, and architectural patterns
 - **Automates the busy-work of development:** from documentation, to commit messages, to test scaffolding
 
+---
 
 ## **ii. Bob across the software development lifecycle**
 
 ---
 
 A distinction worth holding onto is *scope*. Where a traditional AI assistant is anchored to the moment of writing or fixing code, Bob is designed to support the lifecycle around it — helping you plan features before implementation begins, understand the full context of a project before making changes, and keep the developer in control at every step. Bob augments the way your teams already work; it does not replace their judgment. Keep ahold of that last point as you work your way through the remainder of the hands-on material, as it is the thread that weaves together so many of Bob's strengths and its value to IBM clients.
+
+---
 
 ## **iii. Where Bob meets you: the IDE and the Shell**
 
@@ -40,6 +45,8 @@ Bob comes in two form factors to meet developers wherever they are most producti
 | `Bob Shell` | A terminal-based interface offering the same capabilities in a keyboard-driven, automation-friendly form |
 
 You will spend most of this course in the Bob IDE, where the Visual Studio Code-like user interface of the Bob IDE will already feel at-home to many developers and users. In the final module of the hands-on lab, you'll have the opportunity to briefly touch upon the Bob Shell interface — where you will find that everything learned up to that point also applies programatically as well.
+
+---
 
 ## **iv. Curriculum: AI-assisted code maturity curve**
 
@@ -57,6 +64,8 @@ The four modules constituting the hands-on work ahead trace the **AI-assisted co
 A core, unifying theme of the journey you're embarking upon: **the developer always stays in control.** At the *Assist* stage, control is regulated as you choose to accept (or reject) each generative AI-suggested code recommendation, keystroke by keystroke. Within the *Delegate* module, control is maintained through approval of Bob-generated plans before a single line of AI-generated code is written. At *Tailor*, it means encoding the very rules Bob must adhere to. Within the *Scale & Extend* module, it means governing context, credentials, and tool access.
 
 As you and Bob together progress right along the maturity curve, capabilities will expand as trust grows. That escalation *is* the story — and it is the story your sellers can carry into a C-suite conversation: not "here are some features," but "here is how your teams grow into an AI partner without losing agency to an AI agent."
+
+---
 
 ## **v. Environment: Galaxium Travels**
 
@@ -89,6 +98,8 @@ As you move through the curriculum, you will continuously add new features to th
 - **Email validation** — Module 1.1, Next Edit Prediction
 - **Retry logic for API calls** — Module 1.2, Literate Coding
 - **Seat-class tiers** (Economy, Business, Galaxium) — Module 2, the Agentic Sidebar
+
+---
 
 ## **vi. Next steps**
 
