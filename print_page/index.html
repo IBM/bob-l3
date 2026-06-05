@@ -262,7 +262,7 @@
   
     <li class="md-nav__item">
       <a href="../assist/1-1/" class="md-nav__link">
-        Bob in your workflow | Tab Completion & Next Edit Prediction
+        Tab Completion & Next Edit Prediction | Bob in your workflow
       </a>
     </li>
   
@@ -276,7 +276,7 @@
   
     <li class="md-nav__item">
       <a href="../assist/1-2/" class="md-nav__link">
-        Editing with intent | Literate Coding
+        Literate Coding | Editing with intent
       </a>
     </li>
   
@@ -324,7 +324,21 @@
   
     <li class="md-nav__item">
       <a href="../delegate/2-1/" class="md-nav__link">
-        From assistant to partner | The Agentic Sidebar
+        The Agentic Sidebar | From assistant to partner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delegate/2-2/" class="md-nav__link">
+        Applying Agentic Modes | Implementing seat classes in Galaxium Travels
       </a>
     </li>
   
@@ -372,7 +386,7 @@
   
     <li class="md-nav__item">
       <a href="../tailor/3-1.md" class="md-nav__link">
-        Teaching Bob your codebase | /init & agents.md
+        init & agents.md | Teaching Bob your codebase
       </a>
     </li>
   
@@ -386,7 +400,7 @@
   
     <li class="md-nav__item">
       <a href="../tailor/3-2.md" class="md-nav__link">
-        Encoding your standards | Bob Rules
+        Bob Rules | Encoding your standards
       </a>
     </li>
   
@@ -400,7 +414,7 @@
   
     <li class="md-nav__item">
       <a href="../tailor/3-3.md" class="md-nav__link">
-        Shaping Bob to every role | Custom Modes
+        Custom Modes | Shaping Bob to every role
       </a>
     </li>
   
@@ -448,7 +462,7 @@
   
     <li class="md-nav__item">
       <a href="../scale/4-1.md" class="md-nav__link">
-        Keeping Bob reliable at scale | The Context Window
+        The Context Window | Keeping Bob reliable at scale
       </a>
     </li>
   
@@ -462,7 +476,7 @@
   
     <li class="md-nav__item">
       <a href="../scale/4-2.md" class="md-nav__link">
-        Moving beyond the IDE | Bob Shell
+        Bob Shell | Moving beyond the IDE
       </a>
     </li>
   
@@ -476,7 +490,7 @@
   
     <li class="md-nav__item">
       <a href="../scale/4-3.md" class="md-nav__link">
-        Connecting Bob to everything | Extending with MCP
+        Extending with MCP | Connecting Bob to everything
       </a>
     </li>
   
@@ -530,14 +544,14 @@
         
           <li class="md-nav__item">
   <a href="#assist-1-1" class="md-nav__link">
-    Bob in your workflow | Tab Completion & Next Edit Prediction
+    Tab Completion & Next Edit Prediction | Bob in your workflow
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#assist-1-2" class="md-nav__link">
-    Editing with intent | Literate Coding
+    Literate Coding | Editing with intent
   </a>
   
 </li>
@@ -557,7 +571,14 @@
         
           <li class="md-nav__item">
   <a href="#delegate-2-1" class="md-nav__link">
-    From assistant to partner | The Agentic Sidebar
+    The Agentic Sidebar | From assistant to partner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delegate-2-2" class="md-nav__link">
+    Applying Agentic Modes | Implementing seat classes in Galaxium Travels
   </a>
   
 </li>
@@ -1316,7 +1337,20 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </table>
 <p>Mentions are resolved at the moment you send the message, giving Bob precise, targeted information without burning context on unrelated files.</p>
 <hr />
-<h2 id="delegate-2-1-ix-hands-on-implementing-seat-classes-in-galaxium-travels"><strong>ix. Hands-on: implementing seat classes in Galaxium Travels</strong></h2>
+<h2 id="delegate-2-1-ix-key-takeaways"><strong>ix. Key takeaways</strong></h2>
+<ul>
+<li>The agentic sidebar is Bob's most capable interface — the right tool for complex, multi-file features.</li>
+<li>Always begin substantial work in <strong>Plan mode</strong>, producing a specification before any code is written.</li>
+<li><strong>Read the generated plans in full</strong> — they define exactly what Bob will build.</li>
+<li>Start a <strong>new conversation</strong> before switching to Code mode, to keep the context window clean and focused.</li>
+<li>Use <strong>context mentions</strong> (<code>@/path/to/file</code>) to carry the planning documents into the implementation conversation.</li>
+<li>Set <strong>auto-approval</strong> deliberately, according to the sensitivity of the project and the complexity of the task.</li>
+<li><strong>Plan → new conversation → Code</strong> is the standard pattern for feature development with Bob — and the discipline that keeps delegation safe.</li>
+</ul>
+<p>In the following section, you will apply this deeper understanding of the agentic sidebar using Bob to further enrich the Galaxium Travels application.</p></section><section class="print-page" id="delegate-2-2"><p><strong>MODULE 2 | DELEGATE</strong></p>
+<h1 id="delegate-2-2-applying-agentic-modes"><strong>APPLYING AGENTIC MODES</strong></h1>
+<hr />
+<h2 id="delegate-2-2-i-hands-on-implementing-seat-classes-in-galaxium-travels"><strong>i. Hands-on: Implementing seat classes in Galaxium Travels</strong></h2>
 <hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCJFMppc4M7DPG7TC3h73QpdmB3j">Chapter 2.3: The Agentic Sidebar [IBM Bob L3]</a></p>
@@ -1573,15 +1607,15 @@ cd ~/galaxium-travels \
 <p>On Windows, first, execute the following commands. Send them one-by-one, all in the same terminal window.\
 \
 <em>These are the same manual backend startup steps, without the step of installing requirements.txt</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#delegate-2-1-__codelineno-1-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-2-__codelineno-0-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#delegate-2-1-__codelineno-2-1"></a>cd booking_system_backend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#delegate-2-2-__codelineno-1-1"></a>cd booking_system_backend
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#delegate-2-1-__codelineno-3-1"></a>python -m venv .venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#delegate-2-2-__codelineno-2-1"></a>python -m venv .venv
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#delegate-2-1-__codelineno-4-1"></a>.venv\Scripts\activate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#delegate-2-2-__codelineno-3-1"></a>.venv\Scripts\activate
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#delegate-2-1-__codelineno-5-1"></a>python server.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#delegate-2-2-__codelineno-4-1"></a>python server.py
 </code></pre></div>
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3162d757-bc82-4888-9315-013e290f1689/File_fd694384806346e4904987608686d969_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3162d757-bc82-4888-9315-013e290f1689/File_fd694384806346e4904987608686d969_text_export.jpeg" alt="" width="600" /></a>
@@ -1595,11 +1629,11 @@ cd ~/galaxium-travels \
 
 <p><strong>WINDOWS ONLY</strong></p>
 <p>In the new Terminal window, next, execute the following commands. Send them one-by-one, all in the same terminal window.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#delegate-2-1-__codelineno-6-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#delegate-2-2-__codelineno-5-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#delegate-2-1-__codelineno-7-1"></a>cd booking_system_frontend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#delegate-2-2-__codelineno-6-1"></a>cd booking_system_frontend
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#delegate-2-1-__codelineno-8-1"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#delegate-2-2-__codelineno-7-1"></a>npm run dev
 </code></pre></div>
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb8bb981-84b0-4210-9501-16da16649ed4/File_746a74395467495989809c235fd75ec7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb8bb981-84b0-4210-9501-16da16649ed4/File_746a74395467495989809c235fd75ec7_text_export.jpeg" alt="" width="600" /></a>
@@ -1682,18 +1716,7 @@ There's no email verification here, so no need to use a real address — any sam
 </ol>
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b433f228-3108-4c45-b1d5-490cdec07f74/File_74dd0941098a4977846b4927a3ce52c1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b433f228-3108-4c45-b1d5-490cdec07f74/File_74dd0941098a4977846b4927a3ce52c1_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<h4 id="delegate-2-1-key-takeaways">Key takeaways</h4>
-<ul>
-<li>The agentic sidebar is Bob's most capable interface — the right tool for complex, multi-file features.</li>
-<li>Always begin substantial work in <strong>Plan mode</strong>, producing a specification before any code is written.</li>
-<li><strong>Read the generated plans in full</strong> — they define exactly what Bob will build.</li>
-<li>Start a <strong>new conversation</strong> before switching to Code mode, to keep the context window clean and focused.</li>
-<li>Use <strong>context mentions</strong> (<code>@/path/to/file</code>) to carry the planning documents into the implementation conversation.</li>
-<li>Set <strong>auto-approval</strong> deliberately, according to the sensitivity of the project and the complexity of the task.</li>
-<li><strong>Plan → new conversation → Code</strong> is the standard pattern for feature development with Bob — and the discipline that keeps delegation safe.</li>
-</ul></section><h1 class='nav-section-title-end'>Ended: 2. Delegate</h1>
+</p></section><h1 class='nav-section-title-end'>Ended: 2. Delegate</h1>
                         <h1 class='nav-section-title' id='section-3-tailor'>
                             3. Tailor <a class='headerlink' href='#section-3-tailor' title='Permanent link'>↵</a>
                         </h1>
