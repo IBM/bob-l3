@@ -767,8 +767,8 @@
 <p>In <strong>Code mode</strong>, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
 <p>Once the plan is reviewed and approved, the implementation happens withinin a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions.</p>
 <p>For example, the following two <em>paths</em> specify contextual details about a (hypothethical) implementation and architecture plan.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  @/path/to/implementation-plan.md
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  @/path/to/architecture-plan.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@/path/to/implementation-plan.md
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>@/path/to/architecture-plan.md
 </code></pre></div>
 <p>The process for "switching" into Code mode is straightforward and simple— and you'll have the opportunity to practice this yourself in the following hands-on steps — for reference:</p>
 <ul>
@@ -781,7 +781,7 @@
 <h2 id="vii-auto-approval"><strong>vii. Auto-Approval</strong></h2>
 <hr />
 <p><strong>CONTROL, DIALED TO TASTE</strong></p>
-<p>By default, Bob will ask for permission before performing consequential actions like writing files, running Terminal commands, or executing tests. The auto-approval setting governs whether those actions proceed automatically or pause for your review, with various configurations you can set to determine the level of autonomy (and trust) you are comfortable delegating to Bob.</p>
+<p>By default, Bob will ask for permission before performing consequential actions such as writing files, running Terminal commands, or executing tests. The auto-approval setting governs whether those actions proceed automatically or pause for your review, with various configurations you can set to determine the level of autonomy (and trust) you are comfortable delegating to Bob.</p>
 <table>
 <thead>
 <tr>
@@ -847,13 +847,13 @@
 <hr />
 <h2 id="ix-key-takeaways"><strong>ix. Key takeaways</strong></h2>
 <ul>
-<li>The agentic sidebar is Bob's most capable interface — the right tool for complex, multi-file features.</li>
-<li>Always begin substantial work in <strong>Plan mode</strong>, producing a specification before any code is written.</li>
-<li><strong>Read the generated plans in full</strong> — they define exactly what Bob will build.</li>
+<li>The agentic sidebar is Bob's most capable interface for complex, multi-file features.</li>
+<li>Always begin substantial work in <strong>Plan mode</strong> to define a specification before any code is written.</li>
+<li><strong>Read the generated plans in full</strong>, as these define exactly what Bob will build.</li>
 <li>Start a <strong>new conversation</strong> before switching to Code mode, to keep the context window clean and focused.</li>
 <li>Use <strong>context mentions</strong> (<code>@/path/to/file</code>) to carry the planning documents into the implementation conversation.</li>
 <li>Set <strong>auto-approval</strong> deliberately, according to the sensitivity of the project and the complexity of the task.</li>
-<li><strong>Plan → new conversation → Code</strong> is the standard pattern for feature development with Bob — and the discipline that keeps delegation safe.</li>
+<li><strong>Plan → new conversation → Code</strong> is the standard pattern for feature development with Bob and the discipline that ensures AI delegation remains safe.</li>
 </ul>
 <p>In the following section, you will apply this deeper understanding of the agentic sidebar using Bob to further enrich the Galaxium Travels application.</p>
 
