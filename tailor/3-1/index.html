@@ -661,7 +661,7 @@
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how Bob's init command summarizes a large, complex codebase. <em>[2 min]</em></p>
 </blockquote>
 <p>Large language models (LLM) are <strong>stateless</strong> and therefore every new conversation, without intervening strategies or techniques, will begin with no memory of the last interaction. Left to its own devices, Bob would need to rediscover your codebase from scratch at the start of each interaction — an inefficient approach for a small project and an impractically cumbersome approach for a large one.</p>
-<p>The <code>**/init**</code> command solves this challenge. It scans your project and generates a structured summary that Bob loads as <em>persistent context</em> for every new conversation. The <code>/init</code> command thus becomes the primary mechanism for giving Bob durable knowledge of your project's structure, conventions, and code. All without needing to re-read every file with each new invocation.</p>
+<p>The <strong><code>/init</code></strong> command solves this challenge. It scans your project and generates a structured summary that Bob loads as <em>persistent context</em> for every new conversation. The <code>/init</code> command thus becomes the primary mechanism for giving Bob durable knowledge of your project's structure, conventions, and code. All without needing to re-read every file with each new invocation.</p>
 <hr />
 <p><strong>RUNNING <code>/init</code></strong></p>
 <hr />
@@ -672,11 +672,11 @@
 <li>Bob reads the relevant files in the project</li>
 <li>Bob generates the <code>agents.md</code> context file</li>
 </ol>
-<p>You'll have plenty of opportunities to practice this yourself when the hands-on portion of Module 3 kicks off. Beforehand, however, it's important to understand more about the complementary <code>**agents.md**</code> file.</p>
+<p>You'll have plenty of opportunities to practice this yourself when the hands-on portion of Module 3 kicks off. Beforehand, however, it's important to understand more about the complementary <strong><code>agents.md</code></strong> file.</p>
 <hr />
 <p><strong>THE <code>AGENTS.MD</code> FILE</strong></p>
 <hr />
-<p>The primary output of the <code>/init</code> command is <strong>agents.md</strong>: a plain-text Markdown file placed as <strong><code>.bob/agents.md</code></strong> in the project root directory.</p>
+<p>The primary output of the <code>/init</code> command is <strong>agents.md</strong>: a plain-text Markdown file placed in the project root directory.</p>
 <p>Think of <code>agents.md</code> as onboarding documentation written for specifically for Bob. It provides a concise, actionable summary of everything Bob needs to understand about the project in order to work effectively with it. The documentation typically covers: the project's overview and purpose; its directory structure and key file locations; the technology stack and dependencies; architectural patterns and conventions; and development workflows.</p>
 <p>From the point it is first introduced and defined, <code>agents.md</code> is automatically prepended to every new conversation a user has with Bob, ensuring the LLM has immediate project context without requiring any manual file read efforts.</p>
 <hr />
@@ -739,7 +739,7 @@
 <ol start="2">
 <li>
 <p>Within the Agentic Sidebar, type the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/init<span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/init
 </code></pre></div>
 <p>Once you have finished typing, you will be presented with a <strong>Bob Commands</strong> window pop-up with the <code>/init</code> command displayed.</p>
 <p><p align="left">
