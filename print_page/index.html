@@ -2051,29 +2051,38 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how defined rule sets enforce consistency and cut down on repeated instructions. <em>[3 min]</em></p>
 </blockquote>
-<p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>. Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
-<p><strong>Project-level Rules</strong> apply only to the <em>current</em> project that Bob is engaged with and are stored within the following directory structure:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#tailor-3-2-__codelineno-0-1"></a>.bob/rules/
+<p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>.</p>
+<p>Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
+<hr />
+<h2 id="tailor-3-2-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
+<p>A <strong>documentation standard</strong> keeps generated code consistently commented:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#tailor-3-2-__codelineno-0-1"></a>Always include concise `JSDoc` strings for every public function.
+</code></pre></div>
+<p>A <strong>communication-style rule</strong> shapes how Bob phrases responses and comments (useful for teams that prefer terse output):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#tailor-3-2-__codelineno-1-1"></a>Be very concise in your wording.
+</code></pre></div>
+<p>And one particularly powerful pattern is the <strong>internal monologue</strong> rule which instructs Bob to log a summary of every interaction:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#tailor-3-2-__codelineno-2-1"></a>Write a summary of every interaction into the folder `internal-monologue/`.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#tailor-3-2-__codelineno-2-2"></a>Name the file starting with a timestamp, followed by a concise description of the interaction.
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#tailor-3-2-__codelineno-2-3"></a>Example: `2026-01-15_update-readme.md`
+</code></pre></div>
+<div class="admonition note">
+<p>This singular rule produces a persistent record of everything Bob has done:</p>
+<ul>
+<li>An <strong>audit trail</strong> of what changed across a project's codebase and when</li>
+<li><strong>Cross-section continuity</strong> that Bob can refer back to in future conversations</li>
+<li><strong>Team transparency</strong> in shared repositories, where the monologue details what each teammate has done with Bob</li>
+</ul>
+</div>
+<p><strong>iii. Project vs. global scope rules</strong></p>
+<p><strong>Project-level rules</strong> apply only to the <em>current</em> project that Bob is engaged with and are stored within the following directory structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#tailor-3-2-__codelineno-3-1"></a>.bob/rules/
 </code></pre></div>
 <p>Drop any plain-text or Markdown file into this endpoint and Bob will guarantee that each artifact is ingested prior to the start of every conversation.</p>
 <p><strong>Global rules</strong> apply across <em>all projects</em> on the local machine that the Bob IDE is acting upon. Such rules live in a separate, user-level directory, the exact path of which depends on your local machine's operating system.</p>
 <hr />
-<h2 id="tailor-3-2-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
-<hr />
-<p>A <em>documentation standard</em> keeps generated code consistently commented:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#tailor-3-2-__codelineno-1-1"></a>Always include concise `JSDoc` strings for every public function.
-</code></pre></div>
-<p>A <em>communication-style rule</em> shapes how Bob phrases responses and comments (useful for teams that prefer terse output):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#tailor-3-2-__codelineno-2-1"></a>Be very concise in your wording.
-</code></pre></div>
-<p>And one particularly powerful pattern is the <strong><em>internal monologue</em></strong> rule which instructs Bob to log a summary of every interaction:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#tailor-3-2-__codelineno-3-1"></a>Write a summary of every interaction into the folder `internal-monologue/`.
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#tailor-3-2-__codelineno-3-2"></a>Name the file starting with a timestamp, followed by a concise description of the interaction.
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#tailor-3-2-__codelineno-3-3"></a>Example: `2026-01-15_update-readme.md`
-</code></pre></div>
-<p>That single rule produces a persistent record of everything Bob has done — an <strong>audit trail</strong> of what changed and when, <strong>cross-session continuity</strong> that Bob can refer back to in future conversations, and <strong>team transparency</strong> in shared repositories, where the monologue shows what each teammate has done with Bob.</p>
-<h4 id="tailor-3-2-project-vs-global-scope">Project vs. global scope</h4>
-<p>Rules from both locations are combined and applied together:</p>
+<p>Rules from both locations can be combined and applied together:</p>
 <table>
 <thead>
 <tr>
@@ -2095,9 +2104,20 @@ In the chapter ahead, you will examine strategies for encoding your organization
 </tr>
 </tbody>
 </table>
-<h4 id="tailor-3-2-rules-are-committed-to-the-repository">Rules are committed to the repository</h4>
-<p>This is the heart of the <em>Tailor</em> stage. Project-level rules in <strong>.bob/rules/</strong> are version-controlled alongside the code — which means they propagate automatically to every teammate who clones the repository, changes to them go through normal code review, and their full history is tracked in git. The control you exercised live in earlier modules becomes a durable, shared, reviewable artifact.</p>
-<h4 id="tailor-3-2-hands-on-setting-standards-with-bob-rules">Hands-on: setting standards with Bob Rules</h4>
+<div class="admonition note">
+<p class="admonition-title">AI MATURITY CURVE</p>
+<p><strong>Rules are committed to the repository.</strong> This is the heart of the <em>Tailor</em> stage in your progression towards the right-side of the <strong>AI Maturity Curve</strong>.</p>
+<p>Project-level rules in <strong><code>.bob/rules/</code></strong> are version-controlled, much in the same way as the actual project code. This means that rules you define will automatically:</p>
+<ul>
+<li>Propagate to every teammate who clones the shared repository</li>
+<li>Performs changes to repositories as they go through normal code review processes</li>
+<li>Tracked in <em>git</em> for trace-back on the complete version history.</li>
+</ul>
+<p>The control that you manually exercised in <strong>Assist</strong>— which you then later entrusted with more autonomy to Bob in the <strong>Delegate</strong> phase —now becomes a durable, shared, and reviewable artifact in the <strong>Tailor</strong> phase of the journey.</p>
+</div>
+<hr />
+<h2 id="tailor-3-2-iv-hands-on-setting-standards-with-bob-rules"><strong>iv. Hands-on: setting standards with Bob Rules</strong></h2>
+<hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
 </blockquote>
