@@ -463,29 +463,29 @@
     ii. Why this matters
   </a>
   
-    <nav class="md-nav" aria-label="ii. Why this matters">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-creating-a-custom-mode" class="md-nav__link">
+    iii. Creating a custom Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-a-sample-custom-mode" class="md-nav__link">
+    iv. A sample Custom Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-hands-on-building-a-product-management-custom-mode" class="md-nav__link">
+    v. Hands-on: Building a Product Management Custom Mode
+  </a>
+  
+    <nav class="md-nav" aria-label="v. Hands-on: Building a Product Management Custom Mode">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-custom-mode" class="md-nav__link">
-    Creating a custom Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#an-example-a-product-management-mode" class="md-nav__link">
-    An example: a Product Management Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hands-on-building-a-product-manager-mode" class="md-nav__link">
-    Hands-on: building a Product Manager Mode
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#key-takeaways" class="md-nav__link">
@@ -628,29 +628,29 @@
     ii. Why this matters
   </a>
   
-    <nav class="md-nav" aria-label="ii. Why this matters">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-creating-a-custom-mode" class="md-nav__link">
+    iii. Creating a custom Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-a-sample-custom-mode" class="md-nav__link">
+    iv. A sample Custom Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-hands-on-building-a-product-management-custom-mode" class="md-nav__link">
+    v. Hands-on: Building a Product Management Custom Mode
+  </a>
+  
+    <nav class="md-nav" aria-label="v. Hands-on: Building a Product Management Custom Mode">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-custom-mode" class="md-nav__link">
-    Creating a custom Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#an-example-a-product-management-mode" class="md-nav__link">
-    An example: a Product Management Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hands-on-building-a-product-manager-mode" class="md-nav__link">
-    Hands-on: building a Product Manager Mode
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#key-takeaways" class="md-nav__link">
@@ -725,7 +725,7 @@
 <tr>
 <td><code>When-to-use</code></td>
 <td>Non-deterministic</td>
-<td>Guidance for Mode orchestration — when other Modes should switch to this one</td>
+<td>Guidance for Mode orchestration (when other Modes should switch to this one)</td>
 </tr>
 <tr>
 <td><code>Custom instructions</code></td>
@@ -739,51 +739,68 @@
 </tr>
 </tbody>
 </table>
-<p>The distinction between <em>non-deterministic</em> and <em>deterministic</em> fields matters. The instruction fields (description, role, when-to-use, custom instructions) <em>guide</em> Bob's behavior, but it interprets and applies them probabilistically. The <strong>Tools</strong> field is different: it is strictly enforced. Bob can use only the tools listed, no matter what any instruction says. That makes the tools section — not the prose — the real mechanism for constraining what Bob can do in a Mode.</p>
-<h4 id="creating-a-custom-mode">Creating a custom Mode</h4>
-<p>Custom Modes are created through the Mode settings panel in Bob IDE:</p>
+<div class="admonition note">
+<p class="admonition-title">DETERMINISTIC VS. NON-DETERMINISTIC</p>
+<p>The distinction between <strong>non-deterministic</strong> and <strong>deterministic</strong> fields matters when defining Custom Modes. The instruction fields <em>guide</em> Bob's behavior, but how Bob interprets and applies these fields is determined <em>probabilistically</em>.</p>
+<p>The <strong><code>Tools</code></strong> field is different: it is strictly enforced. Bob is prohibited from using tools unless they are <em>explicitly</em> stated (permissioned) within the <code>Tools</code> field. For example, if a <code>Custom instructions</code> entry calls for use of a tool not inventoried within the <code>Tools</code> field, that instruction will be <strong>ignored</strong>. This property makes the <code>Tools</code> field— not the prose or contents of the user prompt —the real mechanism for constraining what Bob can do in a Mode.</p>
+</div>
+<h2 id="iii-creating-a-custom-mode"><strong>iii. Creating a custom Mode</strong></h2>
+<hr />
+<p>Custom Modes are created through the Mode settings panel in Bob IDE. You will have plenty of opportunity to try this yourself shortly in the hands-on materials. For reference, however:</p>
+<hr />
 <ol>
-<li>Click the gear icon in the Mode selector to open Mode settings</li>
+<li>Click the <strong>gear icon</strong> in the Mode selector to open Mode settings</li>
 <li>Select the <strong>Custom Modes</strong> tab</li>
 <li>Click the <strong>+</strong> icon to create a new Mode</li>
 <li>Fill in the slug, name, scope, custom instructions, and tool permissions</li>
 <li>Save the Mode</li>
 </ol>
-<p>You can scope a Mode to a single <strong>Project</strong> (stored in .bobmodes) or make it <strong>Global</strong> across all projects. Creating a Mode through the UI generates a <code>.bobmodes</code> YAML file in the project root, which you can edit directly, commit to the repository so the whole team shares the same Modes, or use as a starting point for asking Bob to generate further Modes.</p>
-<h4 id="an-example-a-product-management-mode">An example: a Product Management Mode</h4>
-<p>To make this concrete, consider a Mode built for product planning — turning feature ideas into a structured, prioritized plan:</p>
+<hr />
+<p>You can scope a Mode to a single <strong>Project</strong>-level (stored in <code>.bobmodes</code>), or make it <strong>Global</strong>-level across all Bob projects and interactions. Creating a Mode through the UI generates a <code>.bobmodes</code> YAML file in the project root, which you can edit directly, commit to the repository so the whole team shares the same Modes, or use as a starting point for asking Bob to generate further Modes.</p>
+<hr />
+<h2 id="iv-a-sample-custom-mode"><strong>iv. A sample Custom Mode</strong></h2>
+<hr />
+<p>To bridge the theoretical aspects discussed so far into a concrete example, consider a Mode built for Product Management planning that aims to transform feature ideas into a structured, prioritized plan:</p>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Value</th>
+<th>FIELD</th>
+<th>VALUE</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Slug</td>
+<td><code>Slug</code></td>
 <td>product-management</td>
 </tr>
 <tr>
-<td>Scope</td>
+<td><code>Scope</code></td>
 <td>Project</td>
 </tr>
 <tr>
-<td>Instructions</td>
-<td>Transform ideas into a simple prioritized product plan</td>
+<td><code>Instructions</code></td>
+<td>Transform ideas into a simple, prioritized product plan</td>
 </tr>
 <tr>
-<td>Tools</td>
+<td><code>Tools</code></td>
 <td>Read, Edit, MCP (GitHub integration)</td>
 </tr>
 <tr>
-<td>Excluded tools</td>
+<td><code>Excluded tools</code></td>
 <td>Execute (terminal commands), Browser</td>
 </tr>
 </tbody>
 </table>
-<p>The tool choices tell the story: <strong>Read</strong> lets it understand existing features and the current state of the code; <strong>Edit</strong> lets it produce output documents like Markdown plans; <strong>MCP</strong> lets it talk to GitHub (reading issues, linking plans to them). <strong>Execute</strong> is excluded because product work doesn't require running code, and <strong>Browser</strong> simply isn't relevant here. And because rules in <strong>.bob/rules/</strong> are injected into every conversation regardless of Mode, a custom Mode never overrides them — an internal-monologue rule keeps producing summaries even inside this Product Management Mode. Rules handle cross-cutting behavior; Mode instructions handle the Mode-specific kind.</p>
-<h4 id="hands-on-building-a-product-manager-mode">Hands-on: building a Product Manager Mode</h4>
+<p>The configuration of <code>Tools</code> speaks to the true capabilities of the <em>Product Management</em> Custom Mode:</p>
+<ul>
+<li><strong>Read</strong> allows Bob to understand existing features and the current state of the code</li>
+<li><strong>Edit</strong> allows Bob to produce output documents, such as Markdown plans</li>
+<li><strong>MCP</strong> allows Bob to talk to GitHub (reading issues, linking plans to them)</li>
+<li><strong>Execute</strong> capabilities are <em>excluded</em> under the <code>Excluded tools</code> field because product work doesn't require running code (and limiting access to only as much as necessary is a security best-practice)</li>
+</ul>
+<hr />
+<h2 id="v-hands-on-building-a-product-management-custom-mode"><strong>v. Hands-on: Building a Product Management Custom Mode</strong></h2>
+<hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DC46497j6QjGF8QTV4HDB3fgWJ4G">Chapter 3.3: Custom Modes [IBM Bob L3]</a></p>
 </blockquote>
