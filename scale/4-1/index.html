@@ -746,21 +746,23 @@
 <hr />
 <h2 id="iv-context-window-strategies-persistent-artifacts"><strong>iv. Context window strategies: persistent artifacts</strong></h2>
 <hr />
-<p>The most effective way to manage all of this is the <strong>persistent artifacts</strong> pattern: break a complex task into discrete steps, have each step produce a saved output (a file on disk), and start a new conversation for each major step, referencing the saved output. No single conversation balloons, and every important decision is preserved as a durable file you can point back to later.</p>
-<p>You have already seen this in action. The seat-class feature from Module 2 was built exactly this way:</p>
+<p>The most effective way to manage all of this is with <strong>persistent artifacts</strong>. This strategy and pattern of work can be achieved in a variety of ways. Generally speaking, the most effective route involves breaking complex tasks into smaller, more discrete steps. This is, of course, a balancing act: one of the strengths of large language models (LLM) is being able to chain complex tasks into a single request or line of thought; however, the "art" in good prompting is balancing the complexity of those requests with the context window size available to the LLM.</p>
+<p>One way to achieve this is having each step in an otherwise-complex workfow produce a saved output (such as a file on disk) and starting a new conversation for each major step with reference to those saved outputs. This keeps conversations and instructions <em>contained</em> in terms of size: no single conversation balloons too large in scale and every important decision is preserved as a durable file that you can point back to later.</p>
+<hr />
+<p>You have already seen this in action. The seat-class feature from <a href="https://ibm.github.io/bob-l3/delegate/2-2/" target="_blank"><strong>Module 2</strong></a> was built exactly this way:</p>
 <table>
 <thead>
 <tr>
-<th>Conversation</th>
-<th>Task</th>
-<th>Output</th>
+<th>CONVERSATION</th>
+<th>TASK</th>
+<th>OUTPUT</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
 <td>Plan the feature</td>
-<td>seat-class-implementation-plan.md, seat-class-architecture.md</td>
+<td><code>seat-class-implementation-plan.md</code>, <code>seat-class-architecture.md</code></td>
 </tr>
 <tr>
 <td>2</td>
@@ -769,18 +771,24 @@
 </tr>
 </tbody>
 </table>
-<p>The implementation conversation consumed just <strong>88,000 of 200,000 tokens</strong> — comfortably within the high-quality range — because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
-<p>A few practical guidelines fall out of all this: start new conversations when you switch tasks (planning shouldn't bleed into implementation); prefer direct file references (<code>@/path/to/file</code>) over pasting contents; keep MCP configurations lean, since every server's definitions cost context on every start; and monitor token usage to see which interactions are most expensive and adjust accordingly.</p>
+<p>The implementation conversation consumed just <strong>88,000 of 200,000 tokens</strong>— comfortably within the high quality range —because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
+<p>Several practical guidelines to keep in mind as you work with Bob's (and any other LLM's) context window:</p>
+<ol>
+<li>Start new conversations when you switch tasks (planning shouldn't bleed into implementation)</li>
+<li>Give preference to direct file references (<code>@/path/to/file</code>) over copy &amp; paste from clipboard contents</li>
+<li>Keep MCP configurations lean, since every server's definitions will ultimately eat into the context window with every invocation</li>
+<li>Monitor token usage to see which interactions are most expensive and adjust accordingly.</li>
+</ol>
 <hr />
 <h2 id="v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>
-<li>The context window is 200,000 tokens (~150,000 words) — every conversation starts fresh with this capacity.</li>
-<li>Context fills in order: system prompt → mode description → rules → MCP tools → messages → file reads/writes.</li>
-<li>When context is exhausted, Bob auto-summarizes and continues — but summarization is lossy.</li>
-<li>Quality noticeably degrades beyond ~100,000 tokens.</li>
-<li>The persistent-artifacts pattern (plan → save → new conversation → implement) is the primary strategy for managing context.</li>
-<li>Less context used means better output quality and lower cost.</li>
+<li>As of June 2026, Bob's context window is 200,000 tokens (~150,000 words) and every new conversation starts with a full allocation of this 200K capacity</li>
+<li>Context fills according to a hierarchy: <strong>system prompts → mode description → rules → MCP tools → messages → file reads/writes</strong></li>
+<li>When the context window is exhausted, Bob auto-summarizes and seamlessly creates a new conversation under the covers (but summarization can be lossy)</li>
+<li>Quality noticeably degrades beyond ~100,000 tokens</li>
+<li>The <em>persistent artifacts</em> pattern (<strong>plan → save → new conversation → implement</strong>) is the primary strategy for managing context</li>
+<li>The less context window that is consumed, the higher quality of outputs and the lower costs for generation</li>
 </ul>
 <hr />
 
