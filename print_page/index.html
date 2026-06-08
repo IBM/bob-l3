@@ -2831,7 +2831,8 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
+<div class="admonition note">
+<p class="admonition-title">THE IMPORTANCE OF GOVERNANCE</p>
 <p><strong>MCP tool definitions</strong> deserve special attention. The more external servers connected via MCP to Bob, the more rapidly that a significant slice of Bob's context window is exhausted before the user (you) send even a single message. This is why the importance of good <em>governance</em> and <em>planning</em> are emphasized again and again throughout this module.</p>
 </div>
 <h2 id="scale-4-1-iv-what-happens-when-the-context-window-is-full"><strong>iv. What happens when the context window is full?</strong></h2>
@@ -2869,6 +2870,8 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 </tbody>
 </table>
 <p>The implementation conversation consumed just <strong>88,000 of 200,000 tokens</strong>— comfortably within the high quality range —because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
+<div class="admonition note">
+<p class="admonition-title">CONTEXT WINDOW GUIDELINES</p>
 <p>Several practical guidelines to keep in mind as you work with Bob's (and any other LLM's) context window:</p>
 <ol>
 <li>Start new conversations when you switch tasks (planning shouldn't bleed into implementation)</li>
@@ -2876,7 +2879,7 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 <li>Keep MCP configurations lean, since every server's definitions will ultimately eat into the context window with every invocation</li>
 <li>Monitor token usage to see which interactions are most expensive and adjust accordingly.</li>
 </ol>
-<hr />
+</div>
 <h2 id="scale-4-1-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>
