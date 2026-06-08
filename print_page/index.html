@@ -2767,7 +2767,103 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 <h1 id="scale-4-1-the-context-window"><strong>THE CONTEXT WINDOW</strong></h1>
 <hr />
 <h2 id="scale-4-1-i-keeping-bob-reliable-at-scale"><strong>i. Keeping Bob reliable at scale</strong></h2>
-<hr /></section><h1 class='nav-section-title-end'>Ended: 4. Scale & Extend</h1></div>
+<hr />
+<h1 id="scale-4-1-module-4-scale-extend-bob-across-the-enterprise">Module 4 — SCALE &amp; EXTEND · <em>Bob Across the Enterprise</em></h1>
+<p>By the end of Module 3, Bob knew your project, obeyed your standards, and adapted to each role on your team — and all of that was committed to the repository, shared and enforced automatically. This final stage is about the two things that separate a promising demo from a dependable enterprise partner: staying <em>reliable</em> on the largest, longest-running work, and <em>connecting</em> to everything else your organization already runs.</p>
+<p>We'll get there in three steps. First we'll look under the hood at the <strong>context window</strong> — the single biggest factor in keeping Bob's output high-quality on large tasks — and the habits that keep it healthy. Then we'll take Bob out of the IDE entirely and into the terminal with <strong>Bob Shell</strong>, unlocking automation, scripting, and parallel work. Finally, we'll connect Bob to your existing systems through <strong>MCP</strong>, the open standard that lets it reach the tools your teams use every day. The control beat at this stage is governance: you decide what context Bob carries, what credentials it holds, and which tools it may reach.</p>
+<h2 id="scale-4-1-41-keeping-bob-reliable-at-scale-the-context-window"><strong>4.1 — Keeping Bob Reliable at Scale: The Context Window</strong></h2>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC4hp8R9Pm8mTGcFWTGGBRhjXqGG">Chapter 4.1: Context Window [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the details of Bob's context window. <em>[4 min]</em></p>
+</blockquote>
+<h4 id="scale-4-1-why-this-matters">Why this matters</h4>
+<p>The <strong>context window</strong> is the total amount of information a large language model can hold in mind during a single conversation. It is also the quiet determinant of quality on any substantial task — so understanding how it fills, and how to manage it, is what separates a polished demo from one that degrades halfway through. This lesson is conceptual; there are no steps to run, but the habits it instills will shape every other interaction you have with Bob.</p>
+<h4 id="scale-4-1-what-a-context-window-is">What a context window is</h4>
+<p>The models powering Bob offer a context window of <strong>200,000 tokens</strong> — roughly <strong>150,000 words</strong>, about the length of <em>The Fellowship of the Ring</em>. Every conversation begins with that full capacity available, and it holds <em>everything</em>: instructions, file contents, conversation history, and Bob's own responses. Once the window fills, the oldest content has to be dropped or summarized to make room.</p>
+<h4 id="scale-4-1-what-fills-it-and-in-what-order">What fills it, and in what order</h4>
+<p>At the start of every conversation, content loads in a predictable sequence:</p>
+<table>
+<thead>
+<tr>
+<th>Order</th>
+<th>Content</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob system prompt</td>
+<td>Hidden from the user; contains Bob's core instructions</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mode description</td>
+<td>The definition of the currently active mode (Code, Plan, custom, etc.)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Rules</td>
+<td>Content from all files in .bob/rules/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>MCP tool definitions</td>
+<td>Can be very large, depending on the number and complexity of connected MCP servers</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Conversation messages</td>
+<td>User prompts and Bob's responses</td>
+</tr>
+<tr>
+<td>6</td>
+<td>File reads and writes</td>
+<td>Contents of files Bob reads or produces during the conversation</td>
+</tr>
+</tbody>
+</table>
+<p>MCP tool definitions deserve special attention: depending on how many servers you've connected, they can consume a significant slice of the window before you send a single message — a direct link to the governance theme of this module.</p>
+<h4 id="scale-4-1-what-happens-when-it-fills">What happens when it fills</h4>
+<p>Reaching the 200,000-token limit doesn't stop Bob or throw an error. Instead, a new conversation starts automatically in the background, Bob generates a summary of the previous one, that summary is prepended to the new conversation, and Bob carries on responding seamlessly. The process is invisible to you — but it has real consequences for quality and cost, and that is precisely why it's worth understanding.</p>
+<h4 id="scale-4-1-the-two-things-to-watch">The two things to watch</h4>
+<p>First, <strong>summarization is lossy.</strong> When a conversation overflows and gets summarized, specific technical details, intermediate reasoning, and nuanced context can be lost — a summary is always less precise than the original exchange. If a critical constraint or edge case was discussed early on, it may not survive into the summary, and implementation quality can suffer.</p>
+<p>Second, <strong>quality degrades above roughly 100,000 tokens.</strong> Models don't hold uniform quality across the full range; as the window fills, responses noticeably decline, particularly past the ~100,000-token mark. A conversation using 50,000 tokens will generally produce better output than one using 180,000, all else being equal. And because tokens are the unit of consumption (measured in Bob coins), longer conversations and larger file reads also simply cost more. Less context used means both better output <em>and</em> lower cost.</p>
+<h4 id="scale-4-1-the-strategy-persistent-artifacts">The strategy: persistent artifacts</h4>
+<p>The most effective way to manage all of this is the <strong>persistent artifacts</strong> pattern: break a complex task into discrete steps, have each step produce a saved output (a file on disk), and start a new conversation for each major step, referencing the saved output. No single conversation balloons, and every important decision is preserved as a durable file you can point back to later.</p>
+<p>You have already seen this in action. The seat-class feature from Module 2 was built exactly this way:</p>
+<table>
+<thead>
+<tr>
+<th>Conversation</th>
+<th>Task</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Plan the feature</td>
+<td>seat-class-implementation-plan.md, seat-class-architecture.md</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Implement based on plan</td>
+<td>Code changes across frontend, backend, and database</td>
+</tr>
+</tbody>
+</table>
+<p>The implementation conversation consumed just <strong>88,000 of 200,000 tokens</strong> — comfortably within the high-quality range — because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
+<p>A few practical guidelines fall out of all this: start new conversations when you switch tasks (planning shouldn't bleed into implementation); prefer direct file references (<code>@/path/to/file</code>) over pasting contents; keep MCP configurations lean, since every server's definitions cost context on every start; and monitor token usage to see which interactions are most expensive and adjust accordingly.</p>
+<h4 id="scale-4-1-key-takeaways">Key takeaways</h4>
+<ul>
+<li>The context window is 200,000 tokens (~150,000 words) — every conversation starts fresh with this capacity.</li>
+<li>Context fills in order: system prompt → mode description → rules → MCP tools → messages → file reads/writes.</li>
+<li>When context is exhausted, Bob auto-summarizes and continues — but summarization is lossy.</li>
+<li>Quality noticeably degrades beyond ~100,000 tokens.</li>
+<li>The persistent-artifacts pattern (plan → save → new conversation → implement) is the primary strategy for managing context.</li>
+<li>Less context used means better output quality and lower cost.</li>
+</ul></section><h1 class='nav-section-title-end'>Ended: 4. Scale & Extend</h1></div>
 
 
 
