@@ -2432,7 +2432,7 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <p>The distinction between <strong>non-deterministic</strong> and <strong>deterministic</strong> fields matters when defining Custom Modes. The instruction fields <em>guide</em> Bob's behavior, but how Bob interprets and applies these fields is determined <em>probabilistically</em>.</p>
 <p>The <strong><code>Tools</code></strong> field is different: it is strictly enforced. Bob is prohibited from using tools unless they are <em>explicitly</em> stated (permissioned) within the <code>Tools</code> field. For example, if a <code>Custom instructions</code> entry calls for use of a tool not inventoried within the <code>Tools</code> field, that instruction will be <strong>ignored</strong>. This property makes the <code>Tools</code> field— not the prose or contents of the user prompt —the real mechanism for constraining what Bob can do in a Mode.</p>
 </div>
-<h2 id="tailor-3-3-iii-creating-a-custom-mode"><strong>iii. Creating a custom Mode</strong></h2>
+<h2 id="tailor-3-3-iii-how-to-define-and-create"><strong>iii. How to define and create</strong></h2>
 <hr />
 <p>Custom Modes are created through the Mode settings panel in Bob IDE. You will have plenty of opportunity to try this yourself shortly in the hands-on materials. For reference, however:</p>
 <hr />
@@ -2622,7 +2622,7 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <hr />
 <ol start="12">
 <li>
-<p>Now comes the point where you can set limitations on which <code>Tools</code> that Bob (and the Custom Mode) are authorized to use.</p>
+<p>Now comes the point where you can set limitations on which <strong>Tools</strong> that Bob (and the Custom Mode) are authorized to use.</p>
 <ul>
 <li>Select <strong>Read files</strong></li>
 <li>Then select <strong>Edit files</strong></li>
@@ -2736,6 +2736,7 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <li>Modes are created either through the UI or by editing <code>.bobmodes</code> directly</li>
 <li>Project-scoped Modes are stored in <code>.bobmodes</code> and are committed to a repository</li>
 </ul>
+<hr />
 <p>As the <strong>Tailor</strong> module wraps up, take a moment to trace back through your progression along the <strong>AI Maturity Curve</strong>: from conceptualizing IBM Bob as an <strong>Assistant</strong>; to being able to fully <strong>Delegate</strong> critical workloads to Bob; to now fully customizing a <strong>Tailored</strong> Bob workflow that adapts to users and use cases.</p>
 <p>The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/scale/4-1.md" target="_blank">Module 4 | Scale &amp; Extend</a></strong> —awaits.</p></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
                         <h1 class='nav-section-title' id='section-4-scale-extend'>
