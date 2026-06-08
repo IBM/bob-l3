@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#teaching-bob-your-codebase" class="md-skip">
+        <a href="#init-and-agentsmd" class="md-skip">
           Skip to content
         </a>
       
@@ -424,8 +424,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#i-making-ibm-bob-yours" class="md-nav__link">
-    i. Making IBM Bob "Yours"
+  <a href="#i-teaching-bob-your-codebase" class="md-nav__link">
+    i. Teaching Bob your codebase
   </a>
   
 </li>
@@ -466,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3-2.md" class="md-nav__link">
+      <a href="../3-2/" class="md-nav__link">
         Bob Rules | Encoding your standards
       </a>
     </li>
@@ -597,8 +597,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#i-making-ibm-bob-yours" class="md-nav__link">
-    i. Making IBM Bob "Yours"
+  <a href="#i-teaching-bob-your-codebase" class="md-nav__link">
+    i. Teaching Bob your codebase
   </a>
   
 </li>
@@ -638,10 +638,10 @@
                 
 
 
-<p><strong>MODULE 3 | INIT AND AGENTS.MD</strong></p>
-<h1 id="teaching-bob-your-codebase"><strong>TEACHING BOB YOUR CODEBASE</strong></h1>
+<p><strong>MODULE 3 | TAILOR</strong></p>
+<h1 id="init-and-agentsmd"><strong>/INIT AND AGENTS.MD</strong></h1>
 <hr />
-<h2 id="i-making-ibm-bob-yours"><strong>i. Making IBM Bob "Yours"</strong></h2>
+<h2 id="i-teaching-bob-your-codebase"><strong>i. Teaching Bob your codebase</strong></h2>
 <hr />
 <p>Across the first two modules (<a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank"><strong>Assist</strong></a> and <a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank"><strong>Delegate</strong></a>), Bob was put to work with minimal-to-no background or context about your codebase. Bob proved itself to be capable, but operating and working only from what it could read and infer based in the moment. Module 3 (<a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank"><strong>Tailor</strong></a>) will change that approach markedly. Here you will teach Bob about <em>your</em> project and <em>your</em> standards, so that Bob begins behaving like a teammate who already knows how your team works.</p>
 <p>There are three ways to tailor Bob which build on one another:</p>
@@ -676,7 +676,7 @@
 <hr />
 <p><strong>THE <code>AGENTS.MD</code> FILE</strong></p>
 <hr />
-<p>The primary output of the <code>/init</code> command is <strong>agents.md</strong>: a plain-text Markdown file placed in the project root directory.</p>
+<p>The primary output of the <code>/init</code> command is <strong><code>agents.md</code></strong>: a plain-text Markdown file placed in the project root directory.</p>
 <p>Think of <code>agents.md</code> as onboarding documentation written for specifically for Bob. It provides a concise, actionable summary of everything Bob needs to understand about the project in order to work effectively with it. The documentation typically covers: the project's overview and purpose; its directory structure and key file locations; the technology stack and dependencies; architectural patterns and conventions; and development workflows.</p>
 <p>From the point it is first introduced and defined, <code>agents.md</code> is automatically prepended to every new conversation a user has with Bob, ensuring the LLM has immediate project context without requiring any manual file read efforts.</p>
 <hr />
@@ -810,13 +810,14 @@
 <hr />
 <ul>
 <li>LLMs are stateless by default: every conversation starts fresh, with no memory of the last session or chat</li>
-<li>The <strong><code>/init</code></strong> command scans your project(s) and generates <strong>agents.md</strong> documentation, a context file that will subsequently be included with every new Bob conversation</li>
+<li>The <strong><code>/init</code></strong> command scans your project(s) and generates <strong><code>agents.md</code></strong> documentation, a context file that will subsequently be included with every new Bob conversation</li>
 <li><code>agents.md</code> functions like onboarding documentation: a structured summary that Bob utilizes to navigate your project(s)</li>
 <li>Mode-specific <code>agents.md</code> files give targeted context for IBM Bob's <strong>Code</strong>, <strong>Plan</strong>, <strong>Ask</strong>, and <strong>Advanced</strong> modes</li>
 <li>For large-scale projects, <code>agents.md</code> is essential: Bob cannot feasibly read every file at the start of each conversation without exhausting its (sizeable) context window</li>
-<li>Re-run the <code>/init</code> command after major changes to capture the current context of your project(s)</li>
+<li>Re-run the <code>/init</code> command after major changes to capture the latest context for project(s)</li>
 </ul>
-<p>In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p>
+<p></br>
+In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p>
 
 
 
@@ -849,6 +850,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../3-2/" class="md-footer__link md-footer__link--next" aria-label="Next: Bob Rules | Encoding your standards" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Bob Rules | Encoding your standards
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
