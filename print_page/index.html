@@ -2186,7 +2186,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <ol start="7">
 <li>
 <p>Double left-click on <strong><code>basic_rules.md</code></strong> to expose its contents (which for now are empty).</p>
-<div class="admonition note">
+<div class="admonition warning">
 <p>Bob supports several <em>"priority levels"</em> of rules. You may configure them by hand by copy and pasting directly into the Markdown file; alternatively, and more simply, you can also configure them through Bob's <strong>Agentic Sidebar</strong>.</p>
 </div>
 <p><p align="left">
@@ -2296,11 +2296,10 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <ol start="17">
 <li>
 <p>Continue through the Agentic Sidebar workflow as you would during a typical interaction.</p>
-<ul>
-<li>From time to time, a prompt may appear requesting a text response (rather than one of the blue action buttons)</li>
-<li>For example, Bob may ask for additional details about how the <code>README</code> file should be updated</li>
-<li>If you receive a prompt such as this, the specific response you provide is <strong>not</strong> consequential for this lab, so feel free to enter any option or details you prefer</li>
-</ul>
+<div class="admonition warning">
+<p>From time to time, a prompt may appear requesting a text response (rather than one of the blue action buttons.) For example, Bob may ask for additional details about how the <code>README</code> file should be updated.</p>
+<p>If you receive a prompt such as this, the specific response you provide is <strong>not</strong> consequential for this lab, so feel free to enter any option or details you prefer.</p>
+</div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -2312,17 +2311,17 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <p>Eventually, a <em>diff view</em> will appear containing the proposed changes to the <code>README</code> file.</p>
 <ul>
 <li>Red text indicates content that is now scheduled to be removed</li>
-<li>Color-highlighed text indicates new content that is scheduled to be added</li>
-</ul>
-<p><p align="left">
+<li>Color-highlighed text indicates new content that is scheduled to be added
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+</p></li>
+</ul>
 </li>
 </ol>
 <hr />
 <ol start="19">
 <li>
-<p>An internal-monologue (<code>Interaction Summary</code>) document is also created exactly as you specified in the <code>basic_rules.md</code> file.</p>
+<p>An internal-monologue (<strong><code># Interaction Summary</code></strong>) entry is also created within the <code>basic_rules.md</code> file, exactly to the specifications requested in the new ruleset.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -2334,11 +2333,11 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <p>On completion of the workflow, Bob will return a <strong><code>Task Completed</code></strong> message to the console.</p>
 <ul>
 <li>As requested by the "update the <code>README</code>" prompt, the <code>README</code> file has been modified as an internal-monologue document</li>
-<li>Note that this new <code>.md</code> file adheres to the <code>yyyy-mm-dd_NAME.md</code> naming format that was specified in the new ruleset</li>
-</ul>
-<p><p align="left">
+<li>Note that this new <code>.md</code> file adheres to the <code>yyyy-mm-dd_NAME.md</code> naming format that was specified in the new ruleset
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+</p></li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">DEBUGGING RULESETS</p>
 <p>Recall that IBM Bob supports two rule scopes— <strong>Global</strong> and <strong>Workspace</strong> —and within each, mode-specific rules can also be applied. Bob may occasionally overlook Workspace-level rules. Global rules and agent-specific project rules tend to be followed more strictly.</p>
