@@ -83,7 +83,7 @@ Galaxium Travels follows a familiar full-stack shape:
 - **Backend:** Python, exposing both REST and MCP interfaces
 - **Database:** SQLite, with seed data for development and testing
 
-!!! warning ""
+!!! note ""
     The backend is organized around a SQLite database containing the domain's data models (flights, users, bookings), the schemas that validate them, and seed data to work with. It exposes the application two ways:
 
     1. A **REST API** of standard HTTP endpoints for the frontend and other clients

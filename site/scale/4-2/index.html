@@ -1,0 +1,1092 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM Bob Level 3">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Bob Shell | Moving beyond the IDE - IBM Bob Level 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../styles/override-print.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bob-shell" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM Bob Level 3" class="md-header__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM Bob Level 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bob Shell | Moving beyond the IDE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM Bob Level 3" class="md-nav__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM Bob Level 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup.md" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          1. Assist
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1. Assist" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1. Assist
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-1/" class="md-nav__link">
+        Tab Completion & Next Edit Prediction | Bob in your workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-2/" class="md-nav__link">
+        Literate Coding | Editing with intent
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          2. Delegate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Delegate" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2. Delegate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-1/" class="md-nav__link">
+        The Agentic Sidebar | From assistant to partner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-2/" class="md-nav__link">
+        Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3. Tailor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3. Tailor" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3. Tailor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-1/" class="md-nav__link">
+        init & agents.md | Teaching Bob your codebase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-2/" class="md-nav__link">
+        Bob Rules | Encoding your standards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-3/" class="md-nav__link">
+        Custom Modes | Shaping Bob to every role
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          4. Scale & Extend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4. Scale & Extend" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4. Scale & Extend
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-1/" class="md-nav__link">
+        The Context Window | Keeping Bob reliable at scale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Bob Shell | Moving beyond the IDE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Bob Shell | Moving beyond the IDE
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-moving-beyond-the-ide" class="md-nav__link">
+    i. Moving beyond the IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-why-this-matters" class="md-nav__link">
+    ii. Why this matters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-three-reasons-to-reach-for-bob-shell" class="md-nav__link">
+    iii. Three reasons to reach for Bob Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-getting-started-and-navigation-tips" class="md-nav__link">
+    iv. Getting started and navigation tips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-hands-on-installing-and-using-bob-shell" class="md-nav__link">
+    v. Hands-on: Installing and using Bob Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-key-takeaways" class="md-nav__link">
+    vi. Key takeaways
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-3.md" class="md-nav__link">
+        Extending with MCP | Connecting Bob to everything
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-moving-beyond-the-ide" class="md-nav__link">
+    i. Moving beyond the IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-why-this-matters" class="md-nav__link">
+    ii. Why this matters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-three-reasons-to-reach-for-bob-shell" class="md-nav__link">
+    iii. Three reasons to reach for Bob Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-getting-started-and-navigation-tips" class="md-nav__link">
+    iv. Getting started and navigation tips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-hands-on-installing-and-using-bob-shell" class="md-nav__link">
+    v. Hands-on: Installing and using Bob Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-key-takeaways" class="md-nav__link">
+    vi. Key takeaways
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><strong>MODULE 4 | SCALE &amp; EXTEND</strong></p>
+<h1 id="bob-shell"><strong>BOB SHELL</strong></h1>
+<hr />
+<h2 id="i-moving-beyond-the-ide"><strong>i. Moving beyond the IDE</strong></h2>
+<hr />
+<p>Everything so far has lived inside the IDE. <strong>Bob Shell</strong> brings the same core capabilities to a terminal — a keyboard-driven, command-line form factor installed separately from the VS Code extension and runnable in any standard terminal. For developers who live in the terminal, it unlocks workflows that are difficult or impossible in the IDE: headless automation, scripting, and running several Bob instances in parallel. This is what taking Bob to enterprise scale looks like in practice.</p>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCQ74Gg3VjCHmGCG7D4JDmXppWFj">Chapter 4.2: Bob Shell [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> showcases how to work with Bob's shell and shell commands. <em>[4 min]</em></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">ADDITIONAL DOCUMENTATION</p>
+<p><strong>Heads-up:</strong> completing this lesson may require additional guidance from IBM Bob's full product documentation to install Bob Shell. Detailed documentation is available from <strong><a href="https://bob.ibm.com/docs/shell/getting-started/install-and-setup?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">IBM.com</a></strong></p>
+</div>
+<h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
+<p>The <strong>Bob IDE</strong> and <strong>Bob Shell</strong> are complementary vectors for working with IBM Bob. In practice, you will discover that many workflows run both the IDE and the Shell side-by-side. Some additional points of comparison on where and when to leverage either (or both) interfaces:</p>
+<table>
+<thead>
+<tr>
+<th>USE CASE</th>
+<th>BOB IDE</th>
+<th>BOB SHELL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visual file exploration</td>
+<td>Better</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Keyboard-driven workflows</td>
+<td>Good</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Automation and scripting</td>
+<td>Not supported</td>
+<td>Supported (headless mode)</td>
+</tr>
+<tr>
+<td>Parallel instances</td>
+<td>Difficult</td>
+<td>Trivial</td>
+</tr>
+<tr>
+<td>Getting started</td>
+<td>Easier</td>
+<td>Steeper learning curve</td>
+</tr>
+</tbody>
+</table>
+<h2 id="iii-three-reasons-to-reach-for-bob-shell"><strong>iii. Three reasons to reach for Bob Shell</strong></h2>
+<hr />
+<ol>
+<li>
+<p><strong>Keyboard efficiency.</strong> Bob Shell removes mouse-driven interaction entirely — navigating files, issuing commands, reviewing output, and prompting Bob all happen through the keyboard. For developers who have internalized terminal workflows, the path from thought to action is faster, and the efficiency compounds; many adopt Bob Shell as a full daily-driver replacement for the IDE once it's familiar.</p>
+</li>
+<li>
+<p><strong>Parallelization.</strong> Because Bob Shell runs in a terminal, multiple independent instances can run at once — one per tab, pane, or multiplexer window — which is trivial to set up compared with any IDE-based approach. You might run the IDE sidebar for exploratory work while one shell instance implements a backend change, another writes tests for a separate component, and a third generates documentation. Tasks with no shared state are the ideal candidates.</p>
+</li>
+<li>
+<p><strong>Headless mode.</strong> Bob Shell supports a headless mode where input is piped directly to Bob rather than entered interactively. This single capability turns Bob into a programmable component rather than just an interactive assistant. Pipe compiler output to it for diagnosis, pipe log files to it for incident triage, generate summaries or reports as part of a script, or let it attempt minor fixes autonomously and escalate the complex ones. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cat error.log <span class="p">|</span> bob <span class="s2">&quot;explain this&quot;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">A NOTE ON SAFETY</p>
+<p><strong>Governance, as always, is paramount.</strong> By default, Bob Shell applies <strong>stricter auto-approval settings</strong> than the Bob IDE. For example, file writes and shell commands require explicit confirmation by the user. The stricter default behavior is deliberate given that Bob Shell is often used in environments (servers, continuous integration pipelines, or scripts) where unreviewed changes can carry broader consequences, compared to within the constraints of a local IDE session.</p>
+</div>
+</li>
+</ol>
+<h2 id="iv-getting-started-and-navigation-tips"><strong>iv. Getting started and navigation tips</strong></h2>
+<hr />
+<p>Once installed, invoke Bob Shell by running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bob
+</code></pre></div>
+<p>On first use, Shell prompts for IBM login credentials. After successfully authenticating, it behaves much like the Bob IDE Chat interface: you type natural-language prompts directly at into the Shell prompt, with Bob reading and modifying files in the current working directory based upon those requests.</p>
+<div class="admonition note">
+<p class="admonition-title">INVOKING REGULAR (NON-BOB) SHELL COMMANDS</p>
+<p>Within a Bob Shell session, prefix any command with <strong>!</strong> to invoke regular (non-Bob) shell commands. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>!git diff
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>!cat README.md
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>!ls -la
+</code></pre></div>
+<p>The net result for the developer (you) is being able to alternate between AI-assisted workflows (with Bob Shell) and standard bash shell operations seamlessly, without needing to leave or create a separate session. </p>
+</div>
+<h2 id="v-hands-on-installing-and-using-bob-shell"><strong>v. Hands-on: Installing and using Bob Shell</strong></h2>
+<hr />
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCQ74Gg3VjCHmGCG7D4JDmXppWFj">Chapter 4.2: Bob Shell [IBM Bob L3]</a>
+</p>
+</blockquote>
+<p>To begin, you will first need to follow the directions below for setting up Bob Shell within your Windows or MacOS environment. Follow the instruction set specific to your operating system.</p>
+<p>Afterwards, you will go hands-on with using Bob Shell to programmatically send a prompt, drop into Shell Mode, and explore various commands.</p>
+<hr />
+<ol>
+<li>
+<p>Open a new Terminal window by pressing the <strong>Terminal</strong> button at the top of Bob IDE.</p>
+<p>Alternatively, you can use the <strong>Terminal</strong> application on MacOS or the <strong>PowerShell</strong> application on Windows.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9d651d19-fe8e-4673-82b5-dd0be10c76dd/File_118cbf024fdf4510b8a252aac4665a4c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9d651d19-fe8e-4673-82b5-dd0be10c76dd/File_118cbf024fdf4510b8a252aac4665a4c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="2">
+<li>
+<p>Click <strong>New Terminal</strong> to launch a new console instance.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/34d1efbc-144c-49cf-a287-f37137ee9579/File_c3a03750d7004241b5995360cbc92721_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/34d1efbc-144c-49cf-a287-f37137ee9579/File_c3a03750d7004241b5995360cbc92721_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>To download the Bob Shell to your local machine, follow the instruction set below that matches your machine's operating system.</p>
+<details class="quote">
+<summary>MAC OR LINUX</summary>
+<ol>
+<li>
+<p>Copy the following command and paste into the Terminal console, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl -fsSL https://bob.ibm.com/download/bobshell.sh <span class="p">|</span> sudo bash
+</code></pre></div></p>
+</li>
+<li>
+<p>You will be prompted for your machine's <strong>system password</strong> to complete the install. For security, no characters appear on screen as you type — but your input is being registered.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/61805013-8390-4b5a-bda1-574372a4d131/File_03ea6bc8262341f0bf6dbea5bbf477ba_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/61805013-8390-4b5a-bda1-574372a4d131/File_03ea6bc8262341f0bf6dbea5bbf477ba_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+<li>
+<p>Wait for the Terminal console to report back a successful installation of the Bob Shell. The message should look similar to the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bobshell x.x.x has been succesfully installed
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>You can now run: bob
+</code></pre></div></p>
+</li>
+<li>
+<p>When ready, proceed to <strong>Step 4</strong>.</p>
+</li>
+</ol>
+</details>
+<details class="quote">
+<summary>WINDOWS OS</summary>
+<ol>
+<li>
+<p>Copy the following command and paste into the PowerShell console, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>powershell -ep Bypass <span class="s1">&#39;irm -Uri &quot;https://bob.ibm.com/download/bobshell.ps1&quot; | iex&#39;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Wait for the PowerShell console to report back a successful installation of the Bob Shell. The message should look similar to the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>bobshell x.x.x has been succesfully installed
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>You can now run: bob
+</code></pre></div></p>
+</li>
+<li>
+<p>When ready, proceed to <strong>Step 4</strong>.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b919babe-df77-4912-8ba7-0ab8c8279ac7/File_b5d01bc881064fa882fe6888ed88dd8c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b919babe-df77-4912-8ba7-0ab8c8279ac7/File_b5d01bc881064fa882fe6888ed88dd8c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+</details>
+</li>
+</ol>
+<hr />
+<ol start="4">
+<li>
+<p>With the Bob Shell now successfully installed, copy and paste the following instruction into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>bob
+</code></pre></div>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa9269aa-a2c8-42be-8164-1357462ea5de/File_2edfe3c7a2a94285b85895d1821ce6aa_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa9269aa-a2c8-42be-8164-1357462ea5de/File_2edfe3c7a2a94285b85895d1821ce6aa_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="5">
+<li>
+<p>The console will launch an external "Log in to IBM" page via your web browser.</p>
+<p>Complete the SSO sign-in using your <strong>w3ID</strong> credentials (also tied to your IBM Bob account.)
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/411f30f6-d6b8-4783-b754-d5ab9a8e4c1c/File_74e33d9126bf4d90a62618f480df6661_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/411f30f6-d6b8-4783-b754-d5ab9a8e4c1c/File_74e33d9126bf4d90a62618f480df6661_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>
+<p>Once signed in, you will be redirected to an <strong>"Authentication Successful!"</strong> page.</p>
+<p>You may safely close the web browser at this time.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/560e3f5f-4a9e-411b-ad88-351b32b07e6f/File_6d464fd0dee34a298a97b46b11af1fe7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/560e3f5f-4a9e-411b-ad88-351b32b07e6f/File_6d464fd0dee34a298a97b46b11af1fe7_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>If this is your first time using Bob Shell, there's a small amount of configuration and bookkeeping to do beforehand.</p>
+<p>If prompted to <strong>accept the license agreement</strong>, review the contents and then type <span class="keys"><kbd class="key-y">Y</kbd></span> (followed by <span class="keys"><kbd class="key-enter">Enter</kbd></span>) if you agree to the terms and conditions.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>When prompted to connect the Bob IDE to Bob Shell, use the arrow keys to highlight <strong>1. Yes</strong> (or type <span class="keys"><kbd class="key-1">1</kbd></span>) and then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6308c1e9-c992-49e0-9af4-bf272d614e55/File_ec5a443cce7145ffa005837dda0a8119_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6308c1e9-c992-49e0-9af4-bf272d614e55/File_ec5a443cce7145ffa005837dda0a8119_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+<details class="warning">
+<summary>ERROR: Failed to automatically enable IDE integration...</summary>
+<p>If you receive this error:</p>
+<ul>
+<li>Locate the currently-running process within the Terminal sidebar and press the <strong>bin</strong> icon to terminate it</li>
+<li>Create a new Terminal console selecting <strong>Terminal</strong> &gt; <strong>New Terminal</strong> from the top-line menu bar</li>
+<li>Return to <strong>Step 4</strong> and execute the steps a second time
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c8e19d6b-927e-4b4e-8dbf-971a821be43d/File_9e17bea709574a02806ced70ab1eec74_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c8e19d6b-927e-4b4e-8dbf-971a821be43d/File_9e17bea709574a02806ced70ab1eec74_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c1595a45-da06-463d-aed5-652dbb5524c3/File_4b8691e8ac2f4081a9df489c8065b77b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c1595a45-da06-463d-aed5-652dbb5524c3/File_4b8691e8ac2f4081a9df489c8065b77b_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1686d6fb-72f3-496e-9928-adf1bc145d86/File_5434d2548735411ca0a66c7aafee5a20_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1686d6fb-72f3-496e-9928-adf1bc145d86/File_5434d2548735411ca0a66c7aafee5a20_text_export.jpeg" alt="" width="600" /></a>
+</p></li>
+</ul>
+</details>
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>The Bob Shell introduction screen appears — current version and a few details. Scroll down until you reach the input field.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b5cef49-cdaf-47ff-9132-3151423c6bfa/File_e40d4fa44f9448ba9c0e72c817f7640c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b5cef49-cdaf-47ff-9132-3151423c6bfa/File_e40d4fa44f9448ba9c0e72c817f7640c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="10">
+<li>Here's the Bob Shell input field — and you can see Bob Shell is currently in Code mode.</li>
+</ol>
+<p>Let's send a prompt to test it.</p>
+<p>Type or paste:</p>
+<p>check the readme and see if you can make any improvements</p>
+<p>and press Enter on your keyboard.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/239584c1-8606-455e-b66c-bfb5f89c9340/File_8c25943ac7024958b149e38c55c8af86_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/239584c1-8606-455e-b66c-bfb5f89c9340/File_8c25943ac7024958b149e38c55c8af86_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="11">
+<li>Just as in the agentic sidebar, Bob narrates the task in progress and occasionally asks for approval. </li>
+</ol>
+<p>The difference is that this work happens in the <strong>Terminal</strong> via <strong>Bob Shell</strong>, rather than the agentic sidebar of <strong>Bob Desktop/IDE</strong> we've used throughout the course.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f4fc846d-fdfd-4581-af68-f8b459720345/File_b46144a6f7564eb484ef733a693caa04_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f4fc846d-fdfd-4581-af68-f8b459720345/File_b46144a6f7564eb484ef733a693caa04_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="12">
+<li>Here's how Bob prompts for approval in Shell mode.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4789ee90-edd8-49ae-a38b-c9a3d557b13d/File_0dcc4cea6675453aaa10cc6d00c5199a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4789ee90-edd8-49ae-a38b-c9a3d557b13d/File_0dcc4cea6675453aaa10cc6d00c5199a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="13">
+<li>This view highlights Bob's proposed updates to the README — red for content to be removed, green for content to be added.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5c382e4a-edb4-43cc-bf83-61d52c962ca1/File_1b4a41b3697f4ece82f97e22c071032f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5c382e4a-edb4-43cc-bf83-61d52c962ca1/File_1b4a41b3697f4ece82f97e22c071032f_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="14">
+<li>Prefixing your input with an exclamation mark, <strong>!</strong>, drops Bob Shell into shell mode, where you can run ordinary shell commands.</li>
+</ol>
+<p>Let's try it. Type:</p>
+<p>!cat readme</p>
+<p>...and press Enter.</p>
+<p><em>The cat (concatenate) command is used to view, create, and combine file contents directly from the terminal.</em>\
+\
+<em>The exclamation mark will appear on the leftmost side of the text box, disjointed from the rest of the text. This is to indicate that Bob is working in Shell mode.</em></p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4d530932-bacd-4c06-be2b-5cce28186b41/File_24ae9131a0b142de82b3f0342bbef069_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4d530932-bacd-4c06-be2b-5cce28186b41/File_24ae9131a0b142de82b3f0342bbef069_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="15">
+<li>As you can see, the cat command simply prints the README in the Terminal window.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/868594fd-e2c7-49bf-a74b-57f5e234659e/File_fbdd75552e8c4f55a4d963ea09411ebc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/868594fd-e2c7-49bf-a74b-57f5e234659e/File_fbdd75552e8c4f55a4d963ea09411ebc_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="16">
+<li>Now let's run another Terminal command.</li>
+</ol>
+<p>git diff README.md shows the difference between your working copy of README.md and the version tracked in the local Git repository — typically the last commit.</p>
+<p>To run it, type:</p>
+<p>git diff README.md</p>
+<p><em>You should already be in Shell mode, as mentioned, indicated by the exclamation mark ! to the left side of the text box. If not, begin this "git diff README.md" command with the exclamation mark - as in,</em> !git diff README.md</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a629b121-1218-4cd3-8ca7-019b1d92152f/File_ae5c30e4ca204aee92fc96849d56ec9f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a629b121-1218-4cd3-8ca7-019b1d92152f/File_ae5c30e4ca204aee92fc96849d56ec9f_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="17">
+<li>Here's the diff view. It's small and a little hard to read, but the + or − at the left of each line shows what changed between the two versions.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2614073b-6ec7-4964-acb4-0976622630e8/File_81e99cf808a8420eb480624c65d67823_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2614073b-6ec7-4964-acb4-0976622630e8/File_81e99cf808a8420eb480624c65d67823_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="18">
+<li>To learn more about Bob Shell's commands, press <strong>Escape (Esc)</strong> to leave Shell mode, then type:</li>
+</ol>
+<p>/help</p>
+<p>...and press Enter on your keyboard.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/63f13645-593d-42d7-8330-feb5371c9d0e/File_01e30cbda6ac4ed9bf217560eea0bd31_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/63f13645-593d-42d7-8330-feb5371c9d0e/File_01e30cbda6ac4ed9bf217560eea0bd31_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="19">
+<li>And here's the full list of commands available within Bob Shell.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4a5d91f9-ec4d-4149-b8ff-662f21bd1e26/File_64a8eff9922440a192f520c18b62e93c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4a5d91f9-ec4d-4149-b8ff-662f21bd1e26/File_64a8eff9922440a192f520c18b62e93c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<h2 id="vi-key-takeaways"><strong>vi. Key takeaways</strong></h2>
+<hr />
+<ul>
+<li>Bob Shell provides the same capabilities as Bob IDE in a terminal form factor.</li>
+<li>Invoke it with <code>bob</code>; use the <code>!</code> prefix for normal shell commands within a session.</li>
+<li>Auto-approval is strict by default in Bob Shell — confirm actions as prompted.</li>
+<li><strong>Keyboard efficiency</strong>: faster for terminal-native developers once the interface is learned.</li>
+<li><strong>Headless mode</strong>: <code>cat file | bob "prompt"</code> enables automation, pipeline integration, and scripted workflows.</li>
+<li><strong>Parallelization</strong>: multiple Bob Shell instances can run simultaneously for independent tasks.</li>
+<li>Bob Shell and Bob IDE are complementary — use both for different parts of the workflow.</li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../4-1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The Context Window | Keeping Bob reliable at scale" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              The Context Window | Keeping Bob reliable at scale
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/hide-toc-nav.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

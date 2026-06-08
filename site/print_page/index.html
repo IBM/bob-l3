@@ -461,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scale/4-1.md" class="md-nav__link">
+      <a href="../scale/4-1/" class="md-nav__link">
         The Context Window | Keeping Bob reliable at scale
       </a>
     </li>
@@ -475,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scale/4-2.md" class="md-nav__link">
+      <a href="../scale/4-2/" class="md-nav__link">
         Bob Shell | Moving beyond the IDE
       </a>
     </li>
@@ -622,6 +622,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#section-4-scale-extend" class="md-nav__link">
+    4. Scale & Extend
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Scale & Extend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scale-4-1" class="md-nav__link">
+    The Context Window | Keeping Bob reliable at scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-4-2" class="md-nav__link">
+    Bob Shell | Moving beyond the IDE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -732,7 +759,7 @@ At its core, Bob does three things exceptionally well:</p>
 <li><strong>Backend:</strong> Python, exposing both REST and MCP interfaces</li>
 <li><strong>Database:</strong> SQLite, with seed data for development and testing</li>
 </ul>
-<div class="admonition warning">
+<div class="admonition note">
 <p>The backend is organized around a SQLite database containing the domain's data models (flights, users, bookings), the schemas that validate them, and seed data to work with. It exposes the application two ways:</p>
 <ol>
 <li>A <strong>REST API</strong> of standard HTTP endpoints for the frontend and other clients</li>
@@ -2648,8 +2675,8 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <li>
 <p>After saving, you'll be returned to the Modes sub-menu of the <em>Settings</em> interface.</p>
 <ul>
-<li>Take note of the new tile for the <code>product-manager</code> Custom Mode that has appeared from the list of Modes
-— Press the <strong>All</strong> button next to Search Modes
+<li>Take note of the new tile for the <code>product-manager</code> Custom Mode that has appeared from the list of Modes</li>
+<li>Press the <strong>All</strong> button next to Search Modes
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b7560696-ee53-4dea-a06e-6e439335fae5/File_e966e2e1660c4a358a462e69cacfc50f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b7560696-ee53-4dea-a06e-6e439335fae5/File_e966e2e1660c4a358a462e69cacfc50f_text_export.jpeg" alt="" width="600" /></a>
 </p></li>
@@ -2729,6 +2756,7 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <hr />
 <h2 id="tailor-3-3-vi-key-takeaways"><strong>vi. Key takeaways</strong></h2>
 <hr />
+<p>As the <strong>Tailor</strong> module wraps up, take a moment to trace back through your progression along the <strong>AI Maturity Curve</strong>: from conceptualizing IBM Bob as an <strong>Assistant</strong>; to being able to fully <strong>Delegate</strong> critical workloads to Bob; to now fully customizing a <strong>Tailored</strong> Bob workflow that adapts to users and use cases.</p>
 <ul>
 <li>Custom Modes combine non-deterministic instructions with deterministic tool constraints</li>
 <li>Tool restrictions are enforced, not suggested (they are the primary safety mechanism for Custom Modes)</li>
@@ -2736,13 +2764,492 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <li>Modes are created either through the UI or by editing <code>.bobmodes</code> directly</li>
 <li>Project-scoped Modes are stored in <code>.bobmodes</code> and are committed to a repository</li>
 </ul>
-<hr />
-<p>As the <strong>Tailor</strong> module wraps up, take a moment to trace back through your progression along the <strong>AI Maturity Curve</strong>: from conceptualizing IBM Bob as an <strong>Assistant</strong>; to being able to fully <strong>Delegate</strong> critical workloads to Bob; to now fully customizing a <strong>Tailored</strong> Bob workflow that adapts to users and use cases.</p>
-<p>The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/scale/4-1.md" target="_blank">Module 4 | Scale &amp; Extend</a></strong> —awaits.</p></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
+<p></br>
+The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/scale/4-1.md" target="_blank">Module 4 | Scale &amp; Extend</a></strong> —awaits.</p>
+<hr /></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
                         <h1 class='nav-section-title' id='section-4-scale-extend'>
                             4. Scale & Extend <a class='headerlink' href='#section-4-scale-extend' title='Permanent link'>↵</a>
                         </h1>
-                        <h1 class='nav-section-title-end'>Ended: 4. Scale & Extend</h1></div>
+                        <section class="print-page" id="scale-4-1"><p><strong>MODULE 4 | SCALE &amp; EXTEND</strong></p>
+<h1 id="scale-4-1-the-context-window"><strong>THE CONTEXT WINDOW</strong></h1>
+<hr />
+<h2 id="scale-4-1-i-keeping-bob-reliable-at-scale"><strong>i. Keeping Bob reliable at scale</strong></h2>
+<hr />
+<p>Across this module, you will first look under the hood at the <strong>context window</strong> mechanics that make Bob tick. Arguably, the context window might be the single biggest factor in keeping Bob's output at the highest quality across the most ambitious tasks. The habits and best practices that developers (you) adopt in maximizing the utility of this resource can have tremendous impacts on the quality of work that Bob is able to perform.</p>
+<p>Afterwards, you'll take Bob out of the IDE entirely and into the Terminal console: <strong>Bob Shell</strong>. This programmatic interface for Bob unlocks automation, scripting, and parallelized workstreams.</p>
+<p>Finally, you will experiment with connecting Bob to your existing systems through <strong>Model Context Protocol <em>(MCP)</em></strong>, the open source standard that lets Bob interact directly with the external tools your teams use daily. <em>Governance</em> remains paramount at this stage. As the human-in-the-loop and final arbiter of control, you must decide what context Bob carries, what credentials it holds, and which tools it is permissioned to reach.</p>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC4hp8R9Pm8mTGcFWTGGBRhjXqGG">Chapter 4.1: Context Window [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the details of Bob's context window. <em>[4 min]</em></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">AI MATURITY CURVE</p>
+<p>By the end of <a href="https://ibm.github.io/bob-l3/tailor/3-3/" target="_blank"><strong>Module 3 | Tailor</strong></a>, IBM Bob knew nearly every facet about your project, adhered to your organization's coding standards, and had adapted itself to each role on your team — and all of that was committed to the repository, shared, and automatically enforced. The final stage along the <strong>AI Maturity Curve</strong> journey reflects the two things that separate a <em>promising demo</em> from a <em>dependable enterprise partner</em>: staying <em>reliable</em> on the largest, longest-running workloads; ultimately, <em>connecting</em> to everything else that your organization already runs today.</p>
+<p>In other words, addressing the enterprise challenges of <strong>Scale and Extensibility</strong>.</p>
+</div>
+<h2 id="scale-4-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
+<p>The <strong>context window</strong> represents the total amount of information a large language model (LLM) can hold "in mind" during a single session or conversation. It is also sets the potential limit of how much work any given LLM can perform: the larger the context window, the more substantial scale of task that can be performed (and likely the higher quality output that can be achieved.) Understanding how a context window "fills" (and how to manage these finite resources effectively) is what separates a polished technology demonstration from one that degrades in quality halfway through the work.</p>
+<p>This lesson is conceptual. There are no steps to run, but the habits it instills will shape every other interaction you have with Bob. In the following chapter, you will go hands-on once again and put this theory in practice.</p>
+<hr />
+<h2 id="scale-4-1-iii-what-is-a-context-window"><strong>iii. What is a context window?</strong></h2>
+<hr />
+<p>The models powering Bob offer a context window of <strong>200,000 tokens</strong> — roughly <strong>150,000 words</strong>, about the length of <em>The Fellowship of the Ring</em>. Every conversation begins with that full capacity available, and it holds <em>everything</em>: instructions, file contents, conversation history, and Bob's own responses. Once the window fills, the oldest content within the context window has to either be dropped from memory or summarized to make room.</p>
+<p>At the start of every conversation, content loads in a predictable sequence:</p>
+<table>
+<thead>
+<tr>
+<th>ORDER OF OPERATIONS</th>
+<th>CONTENT</th>
+<th>NOTES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob system prompt</td>
+<td>Hidden from the user; contains Bob's core instructions</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mode description</td>
+<td>The definition of the currently active Bob Mode (<em>Code</em>, <em>Plan</em>, <em>Custom</em>, etc.)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Rules</td>
+<td>Content from all files in <code>.bob/rules/</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>MCP tool definitions</td>
+<td>Can be very large, depending on the number and complexity of connected MCP servers</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Conversation messages</td>
+<td>User prompts and Bob's responses</td>
+</tr>
+<tr>
+<td>6</td>
+<td>File reads and writes</td>
+<td>Contents of files Bob reads or produces during the conversation</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">THE IMPORTANCE OF GOVERNANCE</p>
+<p><strong>MCP tool definitions</strong> deserve special attention. The more external servers connected via MCP to Bob, the more rapidly that a significant slice of Bob's context window is exhausted before the user (you) send even a single message. This is why the importance of good <em>governance</em> and <em>planning</em> are emphasized again and again throughout this module.</p>
+</div>
+<h2 id="scale-4-1-iv-what-happens-when-the-context-window-is-full"><strong>iv. What happens when the context window is full?</strong></h2>
+<hr />
+<p>Reaching the 200,000-token limit doesn't stop Bob or throw an error. Instead, a new conversation starts automatically in the background.</p>
+<p>Bob generates a summary of the previous conversation or session, and then that summary is pre-pended as context to the new conversation. Bob will carry on its responses and workflow seamlessly. The process is invisible to you — but it has real consequences for quality and cost, and that is precisely why it's worth understanding how to govern this resource allocation in detail.</p>
+<p>The first cost: <strong>summarization is lossy.</strong> When a conversation overflows the context window size and needs to be summarized, the precision and fidelity of the original conversation are compromised. Specific technical details, intermediate reasoning, and nuanced context can be lost within the new Bob conversation. If a critical constraint or edge case was discussed early on, it may not persist into the summary or new conversation's memory, and as such implementation quality can suffer.</p>
+<p>The second cost: <strong>quality degrades above roughly 100,000 tokens.</strong> Models don't hold uniform quality across the full range; as the window fills, responses noticeably decline, particularly past the ~100,000-token mark. A conversation using 50,000 tokens will generally produce better output than one using 180,000, all other things being equal. And because tokens are the unit of consumption (measured in <em>Bob Coins</em>), longer conversations and larger file reads also simply cost more of the finite context window. Less context used equates both <em>better output</em> and <em>lower costs</em>.</p>
+<hr />
+<h2 id="scale-4-1-iv-context-window-strategies-persistent-artifacts"><strong>iv. Context window strategies: persistent artifacts</strong></h2>
+<hr />
+<p>The most effective way to manage all of this is with <strong>persistent artifacts</strong>. This strategy and pattern of work can be achieved in a variety of ways. Generally speaking, the most effective route involves breaking complex tasks into smaller, more discrete steps. This is, of course, a balancing act: one of the strengths of large language models (LLM) is being able to chain complex tasks into a single request or line of thought; however, the "art" in good prompting is balancing the complexity of those requests with the context window size available to the LLM.</p>
+<p>One way to achieve this is having each step in an otherwise-complex workfow produce a saved output (such as a file on disk) and starting a new conversation for each major step with reference to those saved outputs. This keeps conversations and instructions <em>contained</em> in terms of size: no single conversation balloons too large in scale and every important decision is preserved as a durable file that you can point back to later.</p>
+<hr />
+<p>You have already seen this in action. The seat-class feature from <a href="https://ibm.github.io/bob-l3/delegate/2-2/" target="_blank"><strong>Module 2</strong></a> was built exactly this way:</p>
+<table>
+<thead>
+<tr>
+<th>CONVERSATION</th>
+<th>TASK</th>
+<th>OUTPUT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Plan the feature</td>
+<td><code>seat-class-implementation-plan.md</code>, <code>seat-class-architecture.md</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Implement based on plan</td>
+<td>Code changes across frontend, backend, and database</td>
+</tr>
+</tbody>
+</table>
+<p>The implementation conversation consumed just <strong>88,000 of 200,000 tokens</strong>— comfortably within the high quality range —because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
+<div class="admonition note">
+<p class="admonition-title">CONTEXT WINDOW GUIDELINES</p>
+<p>Several practical guidelines to keep in mind as you work with Bob's (and any other LLM's) context window:</p>
+<ol>
+<li>Start new conversations when you switch tasks (planning shouldn't bleed into implementation)</li>
+<li>Give preference to direct file references (<code>@/path/to/file</code>) over copy &amp; paste from clipboard contents</li>
+<li>Keep MCP configurations lean, since every server's definitions will ultimately eat into the context window with every invocation</li>
+<li>Monitor token usage to see which interactions are most expensive and adjust accordingly.</li>
+</ol>
+</div>
+<h2 id="scale-4-1-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
+<hr />
+<ul>
+<li>As of June 2026, Bob's context window is 200,000 tokens (~150,000 words) and every new conversation starts with a full allocation of this 200K capacity</li>
+<li>Context fills according to a hierarchy: <strong>system prompts → mode description → rules → MCP tools → messages → file reads/writes</strong></li>
+<li>When the context window is exhausted, Bob auto-summarizes and seamlessly creates a new conversation under the covers (but summarization can be lossy)</li>
+<li>Quality noticeably degrades beyond ~100,000 tokens</li>
+<li>The <em>persistent artifacts</em> pattern (<strong>plan → save → new conversation → implement</strong>) is the primary strategy for managing context</li>
+<li>The less context window that is consumed, the higher quality of outputs and the lower costs for generation</li>
+</ul>
+<p></br>
+In the following section, you will step away from theory (and the Bob IDE altogether) to go hands-on with the <strong>Bob Shell</strong> programmatic interface.</p>
+<hr /></section><section class="print-page" id="scale-4-2"><p><strong>MODULE 4 | SCALE &amp; EXTEND</strong></p>
+<h1 id="scale-4-2-bob-shell"><strong>BOB SHELL</strong></h1>
+<hr />
+<h2 id="scale-4-2-i-moving-beyond-the-ide"><strong>i. Moving beyond the IDE</strong></h2>
+<hr />
+<p>Everything so far has lived inside the IDE. <strong>Bob Shell</strong> brings the same core capabilities to a terminal — a keyboard-driven, command-line form factor installed separately from the VS Code extension and runnable in any standard terminal. For developers who live in the terminal, it unlocks workflows that are difficult or impossible in the IDE: headless automation, scripting, and running several Bob instances in parallel. This is what taking Bob to enterprise scale looks like in practice.</p>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCQ74Gg3VjCHmGCG7D4JDmXppWFj">Chapter 4.2: Bob Shell [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> showcases how to work with Bob's shell and shell commands. <em>[4 min]</em></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">ADDITIONAL DOCUMENTATION</p>
+<p><strong>Heads-up:</strong> completing this lesson may require additional guidance from IBM Bob's full product documentation to install Bob Shell. Detailed documentation is available from <strong><a href="https://bob.ibm.com/docs/shell/getting-started/install-and-setup?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">IBM.com</a></strong></p>
+</div>
+<h2 id="scale-4-2-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
+<p>The <strong>Bob IDE</strong> and <strong>Bob Shell</strong> are complementary vectors for working with IBM Bob. In practice, you will discover that many workflows run both the IDE and the Shell side-by-side. Some additional points of comparison on where and when to leverage either (or both) interfaces:</p>
+<table>
+<thead>
+<tr>
+<th>USE CASE</th>
+<th>BOB IDE</th>
+<th>BOB SHELL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visual file exploration</td>
+<td>Better</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Keyboard-driven workflows</td>
+<td>Good</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Automation and scripting</td>
+<td>Not supported</td>
+<td>Supported (headless mode)</td>
+</tr>
+<tr>
+<td>Parallel instances</td>
+<td>Difficult</td>
+<td>Trivial</td>
+</tr>
+<tr>
+<td>Getting started</td>
+<td>Easier</td>
+<td>Steeper learning curve</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scale-4-2-iii-three-reasons-to-reach-for-bob-shell"><strong>iii. Three reasons to reach for Bob Shell</strong></h2>
+<hr />
+<ol>
+<li>
+<p><strong>Keyboard efficiency.</strong> Bob Shell removes mouse-driven interaction entirely — navigating files, issuing commands, reviewing output, and prompting Bob all happen through the keyboard. For developers who have internalized terminal workflows, the path from thought to action is faster, and the efficiency compounds; many adopt Bob Shell as a full daily-driver replacement for the IDE once it's familiar.</p>
+</li>
+<li>
+<p><strong>Parallelization.</strong> Because Bob Shell runs in a terminal, multiple independent instances can run at once — one per tab, pane, or multiplexer window — which is trivial to set up compared with any IDE-based approach. You might run the IDE sidebar for exploratory work while one shell instance implements a backend change, another writes tests for a separate component, and a third generates documentation. Tasks with no shared state are the ideal candidates.</p>
+</li>
+<li>
+<p><strong>Headless mode.</strong> Bob Shell supports a headless mode where input is piped directly to Bob rather than entered interactively. This single capability turns Bob into a programmable component rather than just an interactive assistant. Pipe compiler output to it for diagnosis, pipe log files to it for incident triage, generate summaries or reports as part of a script, or let it attempt minor fixes autonomously and escalate the complex ones. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#scale-4-2-__codelineno-0-1"></a>cat error.log <span class="p">|</span> bob <span class="s2">&quot;explain this&quot;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">A NOTE ON SAFETY</p>
+<p><strong>Governance, as always, is paramount.</strong> By default, Bob Shell applies <strong>stricter auto-approval settings</strong> than the Bob IDE. For example, file writes and shell commands require explicit confirmation by the user. The stricter default behavior is deliberate given that Bob Shell is often used in environments (servers, continuous integration pipelines, or scripts) where unreviewed changes can carry broader consequences, compared to within the constraints of a local IDE session.</p>
+</div>
+</li>
+</ol>
+<h2 id="scale-4-2-iv-getting-started-and-navigation-tips"><strong>iv. Getting started and navigation tips</strong></h2>
+<hr />
+<p>Once installed, invoke Bob Shell by running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#scale-4-2-__codelineno-1-1"></a>bob
+</code></pre></div>
+<p>On first use, Shell prompts for IBM login credentials. After successfully authenticating, it behaves much like the Bob IDE Chat interface: you type natural-language prompts directly at into the Shell prompt, with Bob reading and modifying files in the current working directory based upon those requests.</p>
+<div class="admonition note">
+<p class="admonition-title">INVOKING REGULAR (NON-BOB) SHELL COMMANDS</p>
+<p>Within a Bob Shell session, prefix any command with <strong>!</strong> to invoke regular (non-Bob) shell commands. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#scale-4-2-__codelineno-2-1"></a>!git diff
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#scale-4-2-__codelineno-2-2"></a>!cat README.md
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#scale-4-2-__codelineno-2-3"></a>!ls -la
+</code></pre></div>
+<p>The net result for the developer (you) is being able to alternate between AI-assisted workflows (with Bob Shell) and standard bash shell operations seamlessly, without needing to leave or create a separate session. </p>
+</div>
+<h2 id="scale-4-2-v-hands-on-installing-and-using-bob-shell"><strong>v. Hands-on: Installing and using Bob Shell</strong></h2>
+<hr />
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCQ74Gg3VjCHmGCG7D4JDmXppWFj">Chapter 4.2: Bob Shell [IBM Bob L3]</a>
+</p>
+</blockquote>
+<p>To begin, you will first need to follow the directions below for setting up Bob Shell within your Windows or MacOS environment. Follow the instruction set specific to your operating system.</p>
+<p>Afterwards, you will go hands-on with using Bob Shell to programmatically send a prompt, drop into Shell Mode, and explore various commands.</p>
+<hr />
+<ol>
+<li>
+<p>Open a new Terminal window by pressing the <strong>Terminal</strong> button at the top of Bob IDE.</p>
+<p>Alternatively, you can use the <strong>Terminal</strong> application on MacOS or the <strong>PowerShell</strong> application on Windows.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9d651d19-fe8e-4673-82b5-dd0be10c76dd/File_118cbf024fdf4510b8a252aac4665a4c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9d651d19-fe8e-4673-82b5-dd0be10c76dd/File_118cbf024fdf4510b8a252aac4665a4c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="2">
+<li>
+<p>Click <strong>New Terminal</strong> to launch a new console instance.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/34d1efbc-144c-49cf-a287-f37137ee9579/File_c3a03750d7004241b5995360cbc92721_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/34d1efbc-144c-49cf-a287-f37137ee9579/File_c3a03750d7004241b5995360cbc92721_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>To download the Bob Shell to your local machine, follow the instruction set below that matches your machine's operating system.</p>
+<details class="quote">
+<summary>MAC OR LINUX</summary>
+<ol>
+<li>
+<p>Copy the following command and paste into the Terminal console, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#scale-4-2-__codelineno-3-1"></a>curl -fsSL https://bob.ibm.com/download/bobshell.sh <span class="p">|</span> sudo bash
+</code></pre></div></p>
+</li>
+<li>
+<p>You will be prompted for your machine's <strong>system password</strong> to complete the install. For security, no characters appear on screen as you type — but your input is being registered.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/61805013-8390-4b5a-bda1-574372a4d131/File_03ea6bc8262341f0bf6dbea5bbf477ba_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/61805013-8390-4b5a-bda1-574372a4d131/File_03ea6bc8262341f0bf6dbea5bbf477ba_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+<li>
+<p>Wait for the Terminal console to report back a successful installation of the Bob Shell. The message should look similar to the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#scale-4-2-__codelineno-4-1"></a>bobshell x.x.x has been succesfully installed
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#scale-4-2-__codelineno-4-2"></a>You can now run: bob
+</code></pre></div></p>
+</li>
+<li>
+<p>When ready, proceed to <strong>Step 4</strong>.</p>
+</li>
+</ol>
+</details>
+<details class="quote">
+<summary>WINDOWS OS</summary>
+<ol>
+<li>
+<p>Copy the following command and paste into the PowerShell console, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#scale-4-2-__codelineno-5-1"></a>powershell -ep Bypass <span class="s1">&#39;irm -Uri &quot;https://bob.ibm.com/download/bobshell.ps1&quot; | iex&#39;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Wait for the PowerShell console to report back a successful installation of the Bob Shell. The message should look similar to the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#scale-4-2-__codelineno-6-1"></a>bobshell x.x.x has been succesfully installed
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#scale-4-2-__codelineno-6-2"></a>You can now run: bob
+</code></pre></div></p>
+</li>
+<li>
+<p>When ready, proceed to <strong>Step 4</strong>.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b919babe-df77-4912-8ba7-0ab8c8279ac7/File_b5d01bc881064fa882fe6888ed88dd8c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b919babe-df77-4912-8ba7-0ab8c8279ac7/File_b5d01bc881064fa882fe6888ed88dd8c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+</details>
+</li>
+</ol>
+<hr />
+<ol start="4">
+<li>
+<p>With the Bob Shell now successfully installed, copy and paste the following instruction into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#scale-4-2-__codelineno-7-1"></a>bob
+</code></pre></div>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa9269aa-a2c8-42be-8164-1357462ea5de/File_2edfe3c7a2a94285b85895d1821ce6aa_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa9269aa-a2c8-42be-8164-1357462ea5de/File_2edfe3c7a2a94285b85895d1821ce6aa_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="5">
+<li>
+<p>The console will launch an external "Log in to IBM" page via your web browser.</p>
+<p>Complete the SSO sign-in using your <strong>w3ID</strong> credentials (also tied to your IBM Bob account.)
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/411f30f6-d6b8-4783-b754-d5ab9a8e4c1c/File_74e33d9126bf4d90a62618f480df6661_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/411f30f6-d6b8-4783-b754-d5ab9a8e4c1c/File_74e33d9126bf4d90a62618f480df6661_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>
+<p>Once signed in, you will be redirected to an <strong>"Authentication Successful!"</strong> page.</p>
+<p>You may safely close the web browser at this time.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/560e3f5f-4a9e-411b-ad88-351b32b07e6f/File_6d464fd0dee34a298a97b46b11af1fe7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/560e3f5f-4a9e-411b-ad88-351b32b07e6f/File_6d464fd0dee34a298a97b46b11af1fe7_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>If this is your first time using Bob Shell, there's a small amount of configuration and bookkeeping to do beforehand.</p>
+<p>If prompted to <strong>accept the license agreement</strong>, review the contents and then type <span class="keys"><kbd class="key-y">Y</kbd></span> (followed by <span class="keys"><kbd class="key-enter">Enter</kbd></span>) if you agree to the terms and conditions.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>When prompted to connect the Bob IDE to Bob Shell, use the arrow keys to highlight <strong>1. Yes</strong> (or type <span class="keys"><kbd class="key-1">1</kbd></span>) and then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6308c1e9-c992-49e0-9af4-bf272d614e55/File_ec5a443cce7145ffa005837dda0a8119_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6308c1e9-c992-49e0-9af4-bf272d614e55/File_ec5a443cce7145ffa005837dda0a8119_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+<details class="warning">
+<summary>ERROR: Failed to automatically enable IDE integration...</summary>
+<p>If you receive this error:</p>
+<ul>
+<li>Locate the currently-running process within the Terminal sidebar and press the <strong>bin</strong> icon to terminate it</li>
+<li>Create a new Terminal console selecting <strong>Terminal</strong> &gt; <strong>New Terminal</strong> from the top-line menu bar</li>
+<li>Return to <strong>Step 4</strong> and execute the steps a second time
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c8e19d6b-927e-4b4e-8dbf-971a821be43d/File_9e17bea709574a02806ced70ab1eec74_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c8e19d6b-927e-4b4e-8dbf-971a821be43d/File_9e17bea709574a02806ced70ab1eec74_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c1595a45-da06-463d-aed5-652dbb5524c3/File_4b8691e8ac2f4081a9df489c8065b77b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c1595a45-da06-463d-aed5-652dbb5524c3/File_4b8691e8ac2f4081a9df489c8065b77b_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1686d6fb-72f3-496e-9928-adf1bc145d86/File_5434d2548735411ca0a66c7aafee5a20_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1686d6fb-72f3-496e-9928-adf1bc145d86/File_5434d2548735411ca0a66c7aafee5a20_text_export.jpeg" alt="" width="600" /></a>
+</p></li>
+</ul>
+</details>
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>The Bob Shell introduction screen appears — current version and a few details. Scroll down until you reach the input field.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b5cef49-cdaf-47ff-9132-3151423c6bfa/File_e40d4fa44f9448ba9c0e72c817f7640c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b5cef49-cdaf-47ff-9132-3151423c6bfa/File_e40d4fa44f9448ba9c0e72c817f7640c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="10">
+<li>Here's the Bob Shell input field — and you can see Bob Shell is currently in Code mode.</li>
+</ol>
+<p>Let's send a prompt to test it.</p>
+<p>Type or paste:</p>
+<p>check the readme and see if you can make any improvements</p>
+<p>and press Enter on your keyboard.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/239584c1-8606-455e-b66c-bfb5f89c9340/File_8c25943ac7024958b149e38c55c8af86_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/239584c1-8606-455e-b66c-bfb5f89c9340/File_8c25943ac7024958b149e38c55c8af86_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="11">
+<li>Just as in the agentic sidebar, Bob narrates the task in progress and occasionally asks for approval. </li>
+</ol>
+<p>The difference is that this work happens in the <strong>Terminal</strong> via <strong>Bob Shell</strong>, rather than the agentic sidebar of <strong>Bob Desktop/IDE</strong> we've used throughout the course.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f4fc846d-fdfd-4581-af68-f8b459720345/File_b46144a6f7564eb484ef733a693caa04_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f4fc846d-fdfd-4581-af68-f8b459720345/File_b46144a6f7564eb484ef733a693caa04_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="12">
+<li>Here's how Bob prompts for approval in Shell mode.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4789ee90-edd8-49ae-a38b-c9a3d557b13d/File_0dcc4cea6675453aaa10cc6d00c5199a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4789ee90-edd8-49ae-a38b-c9a3d557b13d/File_0dcc4cea6675453aaa10cc6d00c5199a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="13">
+<li>This view highlights Bob's proposed updates to the README — red for content to be removed, green for content to be added.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5c382e4a-edb4-43cc-bf83-61d52c962ca1/File_1b4a41b3697f4ece82f97e22c071032f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5c382e4a-edb4-43cc-bf83-61d52c962ca1/File_1b4a41b3697f4ece82f97e22c071032f_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="14">
+<li>Prefixing your input with an exclamation mark, <strong>!</strong>, drops Bob Shell into shell mode, where you can run ordinary shell commands.</li>
+</ol>
+<p>Let's try it. Type:</p>
+<p>!cat readme</p>
+<p>...and press Enter.</p>
+<p><em>The cat (concatenate) command is used to view, create, and combine file contents directly from the terminal.</em>\
+\
+<em>The exclamation mark will appear on the leftmost side of the text box, disjointed from the rest of the text. This is to indicate that Bob is working in Shell mode.</em></p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4d530932-bacd-4c06-be2b-5cce28186b41/File_24ae9131a0b142de82b3f0342bbef069_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4d530932-bacd-4c06-be2b-5cce28186b41/File_24ae9131a0b142de82b3f0342bbef069_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="15">
+<li>As you can see, the cat command simply prints the README in the Terminal window.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/868594fd-e2c7-49bf-a74b-57f5e234659e/File_fbdd75552e8c4f55a4d963ea09411ebc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/868594fd-e2c7-49bf-a74b-57f5e234659e/File_fbdd75552e8c4f55a4d963ea09411ebc_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="16">
+<li>Now let's run another Terminal command.</li>
+</ol>
+<p>git diff README.md shows the difference between your working copy of README.md and the version tracked in the local Git repository — typically the last commit.</p>
+<p>To run it, type:</p>
+<p>git diff README.md</p>
+<p><em>You should already be in Shell mode, as mentioned, indicated by the exclamation mark ! to the left side of the text box. If not, begin this "git diff README.md" command with the exclamation mark - as in,</em> !git diff README.md</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a629b121-1218-4cd3-8ca7-019b1d92152f/File_ae5c30e4ca204aee92fc96849d56ec9f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a629b121-1218-4cd3-8ca7-019b1d92152f/File_ae5c30e4ca204aee92fc96849d56ec9f_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="17">
+<li>Here's the diff view. It's small and a little hard to read, but the + or − at the left of each line shows what changed between the two versions.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2614073b-6ec7-4964-acb4-0976622630e8/File_81e99cf808a8420eb480624c65d67823_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2614073b-6ec7-4964-acb4-0976622630e8/File_81e99cf808a8420eb480624c65d67823_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="18">
+<li>To learn more about Bob Shell's commands, press <strong>Escape (Esc)</strong> to leave Shell mode, then type:</li>
+</ol>
+<p>/help</p>
+<p>...and press Enter on your keyboard.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/63f13645-593d-42d7-8330-feb5371c9d0e/File_01e30cbda6ac4ed9bf217560eea0bd31_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/63f13645-593d-42d7-8330-feb5371c9d0e/File_01e30cbda6ac4ed9bf217560eea0bd31_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<ol start="19">
+<li>And here's the full list of commands available within Bob Shell.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4a5d91f9-ec4d-4149-b8ff-662f21bd1e26/File_64a8eff9922440a192f520c18b62e93c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4a5d91f9-ec4d-4149-b8ff-662f21bd1e26/File_64a8eff9922440a192f520c18b62e93c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<hr />
+<h2 id="scale-4-2-vi-key-takeaways"><strong>vi. Key takeaways</strong></h2>
+<hr />
+<ul>
+<li>Bob Shell provides the same capabilities as Bob IDE in a terminal form factor.</li>
+<li>Invoke it with <code>bob</code>; use the <code>!</code> prefix for normal shell commands within a session.</li>
+<li>Auto-approval is strict by default in Bob Shell — confirm actions as prompted.</li>
+<li><strong>Keyboard efficiency</strong>: faster for terminal-native developers once the interface is learned.</li>
+<li><strong>Headless mode</strong>: <code>cat file | bob "prompt"</code> enables automation, pipeline integration, and scripted workflows.</li>
+<li><strong>Parallelization</strong>: multiple Bob Shell instances can run simultaneously for independent tasks.</li>
+<li>Bob Shell and Bob IDE are complementary — use both for different parts of the workflow.</li>
+</ul></section><h1 class='nav-section-title-end'>Ended: 4. Scale & Extend</h1></div>
 
 
 
