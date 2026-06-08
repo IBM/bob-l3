@@ -1863,10 +1863,10 @@ Within the new Terminal window, execute the following commands one-by-one in seq
                         <h1 class='nav-section-title' id='section-3-tailor'>
                             3. Tailor <a class='headerlink' href='#section-3-tailor' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="tailor-3-1"><p><strong>MODULE 3 | INIT AND AGENTS.MD</strong></p>
-<h1 id="tailor-3-1-teaching-bob-your-codebase"><strong>TEACHING BOB YOUR CODEBASE</strong></h1>
+                        <section class="print-page" id="tailor-3-1"><p><strong>MODULE 3 | TAILOR</strong></p>
+<h1 id="tailor-3-1-init-and-agentsmd"><strong>/INIT AND AGENTS.MD</strong></h1>
 <hr />
-<h2 id="tailor-3-1-i-making-ibm-bob-your-own"><strong>i. Making IBM Bob "Your Own"</strong></h2>
+<h2 id="tailor-3-1-i-teaching-bob-your-codebase"><strong>i. Teaching Bob your codebase</strong></h2>
 <hr />
 <p>Across the first two modules (<a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank"><strong>Assist</strong></a> and <a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank"><strong>Delegate</strong></a>), Bob was put to work with minimal-to-no background or context about your codebase. Bob proved itself to be capable, but operating and working only from what it could read and infer based in the moment. Module 3 (<a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank"><strong>Tailor</strong></a>) will change that approach markedly. Here you will teach Bob about <em>your</em> project and <em>your</em> standards, so that Bob begins behaving like a teammate who already knows how your team works.</p>
 <p>There are three ways to tailor Bob which build on one another:</p>
@@ -2042,10 +2042,10 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>Re-run the <code>/init</code> command after major changes to capture the latest context for project(s)</li>
 </ul>
 <p></br>
-In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p></section><section class="print-page" id="tailor-3-2"><p><strong>MODULE 3 | BOB RULES</strong></p>
-<h1 id="tailor-3-2-encoding-your-standards"><strong>ENCODING YOUR STANDARDS</strong></h1>
+In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p></section><section class="print-page" id="tailor-3-2"><p><strong>MODULE 3 | TAILOR</strong></p>
+<h1 id="tailor-3-2-bob-rules"><strong>BOB RULES</strong></h1>
 <hr />
-<h2 id="tailor-3-2-i-a-few-rules-worth-knowing"><strong>i. A few rules worth knowing</strong></h2>
+<h2 id="tailor-3-2-i-encoding-bob-with-your-standards"><strong>i. Encoding Bob with your standards</strong></h2>
 <hr />
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
@@ -2053,9 +2053,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
 </blockquote>
 <p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>. Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
 <p><strong>Project-level Rules</strong> apply only to the <em>current</em> project that Bob is engaged with and are stored within the following directory structure:</p>
-<div class="highlight"><pre><span></span><code>```
-.bob/rules/
-```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#tailor-3-2-__codelineno-0-1"></a>.bob/rules/
 </code></pre></div>
 <p>Drop any plain-text or Markdown file into this endpoint and Bob will guarantee that each artifact is ingested prior to the start of every conversation.</p>
 <p><strong>Global rules</strong> apply across <em>all projects</em> on the local machine that the Bob IDE is acting upon. Such rules live in a separate, user-level directory, the exact path of which depends on your local machine's operating system.</p>
@@ -2063,21 +2061,15 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <h2 id="tailor-3-2-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
 <p>A <em>documentation standard</em> keeps generated code consistently commented:</p>
-<div class="highlight"><pre><span></span><code>```
-Always include concise `JSDoc` strings for every public function.
-```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#tailor-3-2-__codelineno-1-1"></a>Always include concise `JSDoc` strings for every public function.
 </code></pre></div>
 <p>A <em>communication-style rule</em> shapes how Bob phrases responses and comments (useful for teams that prefer terse output):</p>
-<div class="highlight"><pre><span></span><code>```
-Be very concise in your wording.
-```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#tailor-3-2-__codelineno-2-1"></a>Be very concise in your wording.
 </code></pre></div>
 <p>And one particularly powerful pattern is the <strong><em>internal monologue</em></strong> rule which instructs Bob to log a summary of every interaction:</p>
-<div class="highlight"><pre><span></span><code>```
-Write a summary of every interaction into the folder `internal-monologue/`.
-Name the file starting with a timestamp, followed by a concise description of the interaction.
-Example: `2026-01-15_update-readme.md`
-```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#tailor-3-2-__codelineno-3-1"></a>Write a summary of every interaction into the folder `internal-monologue/`.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#tailor-3-2-__codelineno-3-2"></a>Name the file starting with a timestamp, followed by a concise description of the interaction.
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#tailor-3-2-__codelineno-3-3"></a>Example: `2026-01-15_update-readme.md`
 </code></pre></div>
 <p>That single rule produces a persistent record of everything Bob has done — an <strong>audit trail</strong> of what changed and when, <strong>cross-session continuity</strong> that Bob can refer back to in future conversations, and <strong>team transparency</strong> in shared repositories, where the monologue shows what each teammate has done with Bob.</p>
 <h4 id="tailor-3-2-project-vs-global-scope">Project vs. global scope</h4>
