@@ -2919,8 +2919,8 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <thead>
 <tr>
 <th>USE CASE</th>
-<th>Bob IDE</th>
-<th>Bob Shell</th>
+<th>BOB IDE</th>
+<th>BOB SHELL</th>
 </tr>
 </thead>
 <tbody>
@@ -2951,7 +2951,6 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="scale-4-2-iii-three-reasons-to-reach-for-bob-shell"><strong>iii. Three reasons to reach for Bob Shell</strong></h2>
 <hr />
 <ol>
@@ -2992,113 +2991,125 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCQ74Gg3VjCHmGCG7D4JDmXppWFj">Chapter 4.2: Bob Shell [IBM Bob L3]</a>
 </p>
 </blockquote>
-<p>Let's install Bob Shell, authenticate, and put it through its paces — sending a prompt, dropping into shell mode, and exploring its commands.</p>
+<p>To begin, you will first need to follow the directions below for setting up Bob Shell within your Windows or MacOS environment. Follow the instruction set specific to your operating system.</p>
+<p>Afterwards, you will go hands-on with using Bob Shell to programmatically send a prompt, drop into Shell Mode, and explore various commands.</p>
 <hr />
 <ol>
-<li>Open a new Terminal window by pressing the <strong>Terminal</strong> button at the top of Bob Desktop.\
-\<blockquote>
-<p><em>These steps work in any standard terminal too; for convenience we'll run them inside the IDE here.</em></p>
-</blockquote>
+<li>
+<p>Open a new Terminal window by pressing the <strong>Terminal</strong> button at the top of Bob IDE.</p>
+<p>Alternatively, you can use the <strong>Terminal</strong> application on MacOS or the <strong>PowerShell</strong> application on Windows.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9d651d19-fe8e-4673-82b5-dd0be10c76dd/File_118cbf024fdf4510b8a252aac4665a4c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9d651d19-fe8e-4673-82b5-dd0be10c76dd/File_118cbf024fdf4510b8a252aac4665a4c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
 </li>
 </ol>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9d651d19-fe8e-4673-82b5-dd0be10c76dd/File_118cbf024fdf4510b8a252aac4665a4c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9d651d19-fe8e-4673-82b5-dd0be10c76dd/File_118cbf024fdf4510b8a252aac4665a4c_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
 <hr />
 <ol start="2">
-<li>Click <strong>New Terminal</strong>.</li>
+<li>
+<p>Click <strong>New Terminal</strong> to launch a new console instance.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/34d1efbc-144c-49cf-a287-f37137ee9579/File_c3a03750d7004241b5995360cbc92721_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/34d1efbc-144c-49cf-a287-f37137ee9579/File_c3a03750d7004241b5995360cbc92721_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/34d1efbc-144c-49cf-a287-f37137ee9579/File_c3a03750d7004241b5995360cbc92721_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/34d1efbc-144c-49cf-a287-f37137ee9579/File_c3a03750d7004241b5995360cbc92721_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
 <hr />
 <ol start="3">
-<li>A new Terminal window opens.</li>
+<li>
+<p>To download the Bob Shell to your local machine, follow the instruction set below that matches your machine's operating system.</p>
+<details class="quote">
+<summary>MAC OR LINUX</summary>
+<ol>
+<li>
+<p>Copy the following command and paste into the Terminal console, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#scale-4-2-__codelineno-3-1"></a>curl -fsSL https://bob.ibm.com/download/bobshell.sh <span class="p">|</span> sudo bash
+</code></pre></div></p>
+</li>
+<li>
+<p>You will be prompted for your machine's <strong>system password</strong> to complete the install. For security, no characters appear on screen as you type — but your input is being registered.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/61805013-8390-4b5a-bda1-574372a4d131/File_03ea6bc8262341f0bf6dbea5bbf477ba_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/61805013-8390-4b5a-bda1-574372a4d131/File_03ea6bc8262341f0bf6dbea5bbf477ba_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+<li>
+<p>Wait for the Terminal console to report back a successful installation of the Bob Shell. The message should look similar to the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#scale-4-2-__codelineno-4-1"></a>bobshell x.x.x has been succesfully installed <span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#scale-4-2-__codelineno-4-2"></a>You can now run: bob
+</code></pre></div></p>
+</li>
+<li>
+<p>When ready, proceed to <strong>Step 4</strong>.</p>
+</li>
 </ol>
+</details>
+<details class="quote">
+<summary>WINDOWS OS</summary>
+<ol>
+<li>
+<p>Copy the following command and paste into the PowerShell console, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#scale-4-2-__codelineno-5-1"></a>powershell -ep Bypass <span class="s1">&#39;irm -Uri &quot;https://bob.ibm.com/download/bobshell.ps1&quot; | iex&#39;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Wait for the PowerShell console to report back a successful installation of the Bob Shell. The message should look similar to the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#scale-4-2-__codelineno-6-1"></a>bobshell x.x.x has been succesfully installed <span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#scale-4-2-__codelineno-6-2"></a>You can now run: bob
+</code></pre></div></p>
+</li>
+<li>
+<p>When ready, proceed to <strong>Step 4</strong>.
 <p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5fa60c43-2d19-4a7a-b70d-11194f808947/File_1ec73ec8f9564734be187493165ef7e9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5fa60c43-2d19-4a7a-b70d-11194f808947/File_1ec73ec8f9564734be187493165ef7e9_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<p><strong>MAC / LINUX USERS ONLY</strong></p>
-<p>On macOS or Linux, paste the following command into the Terminal window:</p>
-<p>curl -fsSL https://bob.ibm.com/download/bobshell.sh | sudo bash</p>
-<p>...and press enter</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/61805013-8390-4b5a-bda1-574372a4d131/File_03ea6bc8262341f0bf6dbea5bbf477ba_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/61805013-8390-4b5a-bda1-574372a4d131/File_03ea6bc8262341f0bf6dbea5bbf477ba_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<p><strong>MAC / LINUX USERS ONLY</strong></p>
-<p>On macOS or Linux you'll also be prompted for a password to complete the install. <strong>Use your w3id account password — type it and press Enter.</strong> \
-\
-For security, no characters appear on screen as you type — but your input is being registered.</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b9531c97-ff9f-4cc3-a7e0-da47099058ed/File_e46a6b0f924f44b6bc969ba48b78edc6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b9531c97-ff9f-4cc3-a7e0-da47099058ed/File_e46a6b0f924f44b6bc969ba48b78edc6_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<p><strong>WINDOWS USERS ONLY</strong></p>
-<p>On Windows, paste the command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#scale-4-2-__codelineno-3-1"></a>powershell -ep Bypass &#39;irm -Uri &quot;https://bob.ibm.com/download/bobshell.ps1&quot; | iex&#39;
-</code></pre></div>
-<p>and press Enter on your keyboard.</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b919babe-df77-4912-8ba7-0ab8c8279ac7/File_b5d01bc881064fa882fe6888ed88dd8c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b919babe-df77-4912-8ba7-0ab8c8279ac7/File_b5d01bc881064fa882fe6888ed88dd8c_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b919babe-df77-4912-8ba7-0ab8c8279ac7/File_b5d01bc881064fa882fe6888ed88dd8c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b919babe-df77-4912-8ba7-0ab8c8279ac7/File_b5d01bc881064fa882fe6888ed88dd8c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+</details>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5fa60c43-2d19-4a7a-b70d-11194f808947/File_1ec73ec8f9564734be187493165ef7e9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5fa60c43-2d19-4a7a-b70d-11194f808947/File_1ec73ec8f9564734be187493165ef7e9_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
 <hr />
 <ol start="4">
-<li>Once you've pasted the command for your OS (and entered your w3 password on Mac), the install begins. Give it a few minutes.</li>
-</ol>
-<p><em>Bob is a new product and the installation methods are updated and refined frequently. This one-line install method tends to be the quickest, but if you are experiencing issues, there are several other install methods for IBM Bob detailed on the documentation here:</em> <a href="https://bob.ibm.com/docs/shell/getting-started/install-and-setup?utm_source=skills_network&amp;utm_content=in_lab_content_link&amp;utm_id=Lab-Bob+L3+Standalone+Steps+May31+PLEASE+DO+NOT+EDIT-v1_1780341278">https://bob.ibm.com/docs/shell/getting-started/install-and-setup</a></p>
+<li>
+<p>With the Bob Shell now successfully installed, copy and paste the following instruction into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#scale-4-2-__codelineno-7-1"></a>bob
+</code></pre></div>
 <p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2588fe16-776d-40ce-b186-904f0bbd5378/File_b8d3214dccfe48af9663c069f5690144_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2588fe16-776d-40ce-b186-904f0bbd5378/File_b8d3214dccfe48af9663c069f5690144_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa9269aa-a2c8-42be-8164-1357462ea5de/File_2edfe3c7a2a94285b85895d1821ce6aa_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa9269aa-a2c8-42be-8164-1357462ea5de/File_2edfe3c7a2a94285b85895d1821ce6aa_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
 <hr />
 <ol start="5">
-<li>When it finishes, you'll see this message: \
-\
-bobshell x.x.x has been succesfully installed \
-You can now run: bob</li>
-</ol>
-<p>Installation is complete, and you can start Bob Shell.</p>
-<p><strong>In the same terminal window, type:</strong></p>
-<p>bob</p>
-<p>... and press enter.</p>
+<li>
+<p>The console will automatically launch an external "Log in to IBM" web page via your web browser.</p>
+<p>Complete the SSO sign-in using your <strong>w3ID</strong> credentials (which are also tied to your IBM Bob account.)
 <p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa9269aa-a2c8-42be-8164-1357462ea5de/File_2edfe3c7a2a94285b85895d1821ce6aa_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa9269aa-a2c8-42be-8164-1357462ea5de/File_2edfe3c7a2a94285b85895d1821ce6aa_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/411f30f6-d6b8-4783-b754-d5ab9a8e4c1c/File_74e33d9126bf4d90a62618f480df6661_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/411f30f6-d6b8-4783-b754-d5ab9a8e4c1c/File_74e33d9126bf4d90a62618f480df6661_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
 <hr />
 <ol start="6">
-<li>Typing <strong>bob</strong> opens a "Log in to IBM" web page. Complete the usual SSO sign-in.</li>
+<li>
+<p>Once signed in, you will be redirected to an <strong>"Authentication Successful!"</strong> page.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/560e3f5f-4a9e-411b-ad88-351b32b07e6f/File_6d464fd0dee34a298a97b46b11af1fe7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/560e3f5f-4a9e-411b-ad88-351b32b07e6f/File_6d464fd0dee34a298a97b46b11af1fe7_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/411f30f6-d6b8-4783-b754-d5ab9a8e4c1c/File_74e33d9126bf4d90a62618f480df6661_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/411f30f6-d6b8-4783-b754-d5ab9a8e4c1c/File_74e33d9126bf4d90a62618f480df6661_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
 <hr />
 <ol start="7">
-<li>Once signed in, you're redirected to an <strong>"Authentication Successful!"</strong> page.</li>
-</ol>
+<li>
+<p>If this is your first time using Bob Shell, there's a small amount of configuration to do beforehand.</p>
+<p>If prompted to <strong>accept the license agreement</strong>, review the contents and then type <span class="keys"><kbd class="key-y">Y</kbd></span> (followed by <span class="keys"><kbd class="key-enter">Enter</kbd></span>) if you agree to the terms and conditions.
 <p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/560e3f5f-4a9e-411b-ad88-351b32b07e6f/File_6d464fd0dee34a298a97b46b11af1fe7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/560e3f5f-4a9e-411b-ad88-351b32b07e6f/File_6d464fd0dee34a298a97b46b11af1fe7_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
 <hr />
 <ol start="8">
-<li>If this is your first time using Bob Shell, there's a little configuration to do.</li>
-</ol>
-<p>When prompted to accept the license agreement, review it if you like, then type:</p>
-<p>y</p>
-<p>...and press enter</p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<hr />
-<ol start="9">
 <li>When prompted to connect Bob IDE to Bob Shell, use the arrow keys to highlight <strong>1. Yes</strong>, then press Enter.</li>
 </ol>
 <p align="left">
@@ -3106,7 +3117,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="10">
+<ol start="9">
 <li>You may see an error: <strong>"Failed to automatically enable IDE integration..."</strong></li>
 </ol>
 <p>If so, find the running terminal process in the sidebar and press the garbage-can icon — <strong>"Kill (Delete)"</strong> — to close it.</p>
@@ -3115,7 +3126,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="11">
+<ol start="10">
 <li>Click <strong>Terminal</strong>.</li>
 </ol>
 <p align="left">
@@ -3123,7 +3134,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="12">
+<ol start="11">
 <li>Click <strong>New Terminal</strong>.</li>
 </ol>
 <p align="left">
@@ -3131,7 +3142,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="13">
+<ol start="12">
 <li>Finally, if you hit that error, run the following in the new Terminal window:</li>
 </ol>
 <p>bob</p>
@@ -3141,7 +3152,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="14">
+<ol start="13">
 <li>The Bob Shell introduction screen appears — current version and a few details. Scroll down until you reach the input field.</li>
 </ol>
 <p align="left">
@@ -3149,7 +3160,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="15">
+<ol start="14">
 <li>Here's the Bob Shell input field — and you can see Bob Shell is currently in Code mode.</li>
 </ol>
 <p>Let's send a prompt to test it.</p>
@@ -3161,7 +3172,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="16">
+<ol start="15">
 <li>Just as in the agentic sidebar, Bob narrates the task in progress and occasionally asks for approval. </li>
 </ol>
 <p>The difference is that this work happens in the <strong>Terminal</strong> via <strong>Bob Shell</strong>, rather than the agentic sidebar of <strong>Bob Desktop/IDE</strong> we've used throughout the course.</p>
@@ -3170,7 +3181,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="17">
+<ol start="16">
 <li>Here's how Bob prompts for approval in Shell mode.</li>
 </ol>
 <p align="left">
@@ -3178,7 +3189,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="18">
+<ol start="17">
 <li>This view highlights Bob's proposed updates to the README — red for content to be removed, green for content to be added.</li>
 </ol>
 <p align="left">
@@ -3186,7 +3197,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="19">
+<ol start="18">
 <li>Prefixing your input with an exclamation mark, <strong>!</strong>, drops Bob Shell into shell mode, where you can run ordinary shell commands.</li>
 </ol>
 <p>Let's try it. Type:</p>
@@ -3200,7 +3211,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="20">
+<ol start="19">
 <li>As you can see, the cat command simply prints the README in the Terminal window.</li>
 </ol>
 <p align="left">
@@ -3208,7 +3219,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="21">
+<ol start="20">
 <li>Now let's run another Terminal command.</li>
 </ol>
 <p>git diff README.md shows the difference between your working copy of README.md and the version tracked in the local Git repository — typically the last commit.</p>
@@ -3220,7 +3231,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="22">
+<ol start="21">
 <li>Here's the diff view. It's small and a little hard to read, but the + or − at the left of each line shows what changed between the two versions.</li>
 </ol>
 <p align="left">
@@ -3228,7 +3239,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="23">
+<ol start="22">
 <li>To learn more about Bob Shell's commands, press <strong>Escape (Esc)</strong> to leave Shell mode, then type:</li>
 </ol>
 <p>/help</p>
@@ -3238,7 +3249,7 @@ You can now run: bob</li>
 </p>
 
 <hr />
-<ol start="24">
+<ol start="23">
 <li>And here's the full list of commands available within Bob Shell.</li>
 </ol>
 <p align="left">
