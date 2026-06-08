@@ -1894,7 +1894,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <p><strong>THE <code>AGENTS.MD</code> FILE</strong></p>
 <hr />
-<p>The primary output of the <code>/init</code> command is <strong>agents.md</strong>: a plain-text Markdown file placed in the project root directory.</p>
+<p>The primary output of the <code>/init</code> command is <strong><code>agents.md</code></strong>: a plain-text Markdown file placed in the project root directory.</p>
 <p>Think of <code>agents.md</code> as onboarding documentation written for specifically for Bob. It provides a concise, actionable summary of everything Bob needs to understand about the project in order to work effectively with it. The documentation typically covers: the project's overview and purpose; its directory structure and key file locations; the technology stack and dependencies; architectural patterns and conventions; and development workflows.</p>
 <p>From the point it is first introduced and defined, <code>agents.md</code> is automatically prepended to every new conversation a user has with Bob, ensuring the LLM has immediate project context without requiring any manual file read efforts.</p>
 <hr />
@@ -2028,11 +2028,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ul>
 <li>LLMs are stateless by default: every conversation starts fresh, with no memory of the last session or chat</li>
-<li>The <strong><code>/init</code></strong> command scans your project(s) and generates <strong>agents.md</strong> documentation, a context file that will subsequently be included with every new Bob conversation</li>
+<li>The <strong><code>/init</code></strong> command scans your project(s) and generates <strong><code>agents.md</code></strong> documentation, a context file that will subsequently be included with every new Bob conversation</li>
 <li><code>agents.md</code> functions like onboarding documentation: a structured summary that Bob utilizes to navigate your project(s)</li>
 <li>Mode-specific <code>agents.md</code> files give targeted context for IBM Bob's <strong>Code</strong>, <strong>Plan</strong>, <strong>Ask</strong>, and <strong>Advanced</strong> modes</li>
 <li>For large-scale projects, <code>agents.md</code> is essential: Bob cannot feasibly read every file at the start of each conversation without exhausting its (sizeable) context window</li>
-<li>Re-run the <code>/init</code> command after major changes to capture the current context of your project(s)</li>
+<li>Re-run the <code>/init</code> command after major changes to capture the latest context for project(s)</li>
 </ul>
 <p>In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
                         <h1 class='nav-section-title' id='section-4-scale-extend'>
