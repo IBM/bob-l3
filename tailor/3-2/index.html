@@ -1,0 +1,998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM Bob Level 3">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Bob Rules | Encoding your standards - IBM Bob Level 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../styles/override-print.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#encoding-your-standards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM Bob Level 3" class="md-header__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM Bob Level 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bob Rules | Encoding your standards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM Bob Level 3" class="md-nav__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM Bob Level 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup.md" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          1. Assist
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1. Assist" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1. Assist
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-1/" class="md-nav__link">
+        Tab Completion & Next Edit Prediction | Bob in your workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-2/" class="md-nav__link">
+        Literate Coding | Editing with intent
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          2. Delegate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Delegate" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2. Delegate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-1/" class="md-nav__link">
+        The Agentic Sidebar | From assistant to partner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-2/" class="md-nav__link">
+        Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3. Tailor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3. Tailor" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3. Tailor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-1/" class="md-nav__link">
+        init & agents.md | Teaching Bob your codebase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Bob Rules | Encoding your standards
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Bob Rules | Encoding your standards
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-a-few-rules-worth-knowing" class="md-nav__link">
+    i. A few rules worth knowing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-why-this-matters" class="md-nav__link">
+    ii. Why this matters
+  </a>
+  
+    <nav class="md-nav" aria-label="ii. Why this matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-vs-global-scope" class="md-nav__link">
+    Project vs. global scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-are-committed-to-the-repository" class="md-nav__link">
+    Rules are committed to the repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-setting-standards-with-bob-rules" class="md-nav__link">
+    Hands-on: setting standards with Bob Rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    Key takeaways
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-3.md" class="md-nav__link">
+        Custom Modes | Shaping Bob to every role
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          4. Scale & Extend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4. Scale & Extend" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4. Scale & Extend
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-1.md" class="md-nav__link">
+        The Context Window | Keeping Bob reliable at scale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-2.md" class="md-nav__link">
+        Bob Shell | Moving beyond the IDE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-3.md" class="md-nav__link">
+        Extending with MCP | Connecting Bob to everything
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-a-few-rules-worth-knowing" class="md-nav__link">
+    i. A few rules worth knowing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-why-this-matters" class="md-nav__link">
+    ii. Why this matters
+  </a>
+  
+    <nav class="md-nav" aria-label="ii. Why this matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-vs-global-scope" class="md-nav__link">
+    Project vs. global scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-are-committed-to-the-repository" class="md-nav__link">
+    Rules are committed to the repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-setting-standards-with-bob-rules" class="md-nav__link">
+    Hands-on: setting standards with Bob Rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    Key takeaways
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><strong>MODULE 3 | BOB RULES</strong></p>
+<h1 id="encoding-your-standards"><strong>ENCODING YOUR STANDARDS</strong></h1>
+<hr />
+<h2 id="i-a-few-rules-worth-knowing"><strong>i. A few rules worth knowing</strong></h2>
+<hr />
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how defined rule sets enforce consistency and cut down on repeated instructions. <em>[3 min]</em></p>
+</blockquote>
+<p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>. Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
+<p><strong>Project-level Rules</strong> apply only to the <em>current</em> project that Bob is engaged with and are stored within the following directory structure:</p>
+<div class="highlight"><pre><span></span><code>```
+.bob/rules/
+```
+</code></pre></div>
+<p>Drop any plain-text or Markdown file into this endpoint and Bob will guarantee that each artifact is ingested prior to the start of every conversation.</p>
+<p><strong>Global rules</strong> apply across <em>all projects</em> on the local machine that the Bob IDE is acting upon. Such rules live in a separate, user-level directory, the exact path of which depends on your local machine's operating system.</p>
+<hr />
+<h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
+<p>A <em>documentation standard</em> keeps generated code consistently commented:</p>
+<div class="highlight"><pre><span></span><code>```
+Always include concise `JSDoc` strings for every public function.
+```
+</code></pre></div>
+<p>A <em>communication-style rule</em> shapes how Bob phrases responses and comments (useful for teams that prefer terse output):</p>
+<div class="highlight"><pre><span></span><code>```
+Be very concise in your wording.
+```
+</code></pre></div>
+<p>And one particularly powerful pattern is the <strong><em>internal monologue</em></strong> rule which instructs Bob to log a summary of every interaction:</p>
+<div class="highlight"><pre><span></span><code>```
+Write a summary of every interaction into the folder `internal-monologue/`.
+Name the file starting with a timestamp, followed by a concise description of the interaction.
+Example: `2026-01-15_update-readme.md`
+```
+</code></pre></div>
+<p>That single rule produces a persistent record of everything Bob has done — an <strong>audit trail</strong> of what changed and when, <strong>cross-session continuity</strong> that Bob can refer back to in future conversations, and <strong>team transparency</strong> in shared repositories, where the monologue shows what each teammate has done with Bob.</p>
+<h4 id="project-vs-global-scope">Project vs. global scope</h4>
+<p>Rules from both locations are combined and applied together:</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Location</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project</td>
+<td>.bob/rules/ in project root</td>
+<td>Rules specific to one codebase (framework conventions, project documentation standards)</td>
+</tr>
+<tr>
+<td>Global</td>
+<td>User-level rules directory</td>
+<td>Rules that apply everywhere (internal monologue, personal communication preferences)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="rules-are-committed-to-the-repository">Rules are committed to the repository</h4>
+<p>This is the heart of the <em>Tailor</em> stage. Project-level rules in <strong>.bob/rules/</strong> are version-controlled alongside the code — which means they propagate automatically to every teammate who clones the repository, changes to them go through normal code review, and their full history is tracked in git. The control you exercised live in earlier modules becomes a durable, shared, reviewable artifact.</p>
+<h4 id="hands-on-setting-standards-with-bob-rules">Hands-on: setting standards with Bob Rules</h4>
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
+</blockquote>
+<p>Let's create a rules file for Galaxium Travels, configure three standing rules — including that internal-monologue audit trail — and then watch Bob obey them in a fresh conversation.</p>
+<ol>
+<li>In the File Explorer, right-click <strong>.bob</strong> (just under the GALAXIUM-TRAVELS folder header).</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/626bc3f1-9dbf-44a5-afd1-ddda4ceca804/File_d8c397f436734e10be2080e0ba0937b1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/626bc3f1-9dbf-44a5-afd1-ddda4ceca804/File_d8c397f436734e10be2080e0ba0937b1_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Click <strong>New Folder...</strong></li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a0ba5618-ddcc-47a3-98e8-ba71a27c4ebd/File_df520dc508134826bfa49942c9002c11_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a0ba5618-ddcc-47a3-98e8-ba71a27c4ebd/File_df520dc508134826bfa49942c9002c11_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>A text box appears for you to name the folder. Name the folder:</li>
+</ol>
+<p>rules</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d655cad1-a84c-481a-b32a-33d0fc826511/File_26e0960ca1eb4e8e86fe8383b57b4c1a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d655cad1-a84c-481a-b32a-33d0fc826511/File_26e0960ca1eb4e8e86fe8383b57b4c1a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>Right-click the newly created <strong>rules</strong> folder again.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/542f541f-0b1f-4ee3-a143-2776fe56ce4b/File_6d349631de794dc9b57458ed1e743a5d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/542f541f-0b1f-4ee3-a143-2776fe56ce4b/File_6d349631de794dc9b57458ed1e743a5d_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>Click <strong>New File...</strong></li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2558d5e0-59c1-4705-8389-7934b8a54c4c/File_13ca10714474430eb308eb7dbda798a3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2558d5e0-59c1-4705-8389-7934b8a54c4c/File_13ca10714474430eb308eb7dbda798a3_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>A text box appears for you to name the file. Name the file:</li>
+</ol>
+<p>basic_rules.md</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4b4c4622-7db1-46d6-875d-4c1521dd9717/File_59fd165de9c2408fa3d26057f380ced5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4b4c4622-7db1-46d6-875d-4c1521dd9717/File_59fd165de9c2408fa3d26057f380ced5_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>Click the new file to open it — a blank file at .bob/rules/basic_rules.md.</li>
+</ol>
+<p>Bob supports several "priority levels" of rules. You can configure them by hand, pasting directly into these Markdown files — or, more simply, configure them through the agentic sidebar.</p>
+<blockquote>
+<p><em>Configuring rules through the sidebar makes testing and later edits easier — though configuring them manually works just as well.</em></p>
+</blockquote>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="8">
+<li>With the agentic sidebar in <strong>Code mode</strong>, send the following prompt:</li>
+</ol>
+<p>Please add the following rules to @/.bob/rules/basic_rules.md and configure them so they work:</p>
+<p>- Always include concise JSDoc strings for every public function. \
+-Be very concise in your wording.\
+-Write a summary of every interaction into the folder <code>internal-monologue/</code>.Name the file starting with a timestamp, followed by a concise description of the interaction. Example: 2026-01-15_update-readme.md</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="9">
+<li>If prompted along the way, just click the blue action button shown — <strong>Save</strong>, <strong>Approve</strong>, <strong>Approve All</strong>, or <strong>Run</strong> — to keep things moving.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>As usual, the Todo list appears and Bob begins working. Keep selecting <strong>Approve All</strong> (or whichever blue button appears) to let it continue.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="11">
+<li>As expected, Bob asks permission to edit the protected configuration file you just made — the empty <strong>basic_rules.md</strong>.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="12">
+<li>Continue through the workflow as usual. You'll watch basic_rules.md fill with the rules and reformat itself automatically.</li>
+</ol>
+<p>Keep clicking <strong>Approve</strong> — or whichever blue button appears — until the success message shows.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="13">
+<li>On completion, you'll see <strong>"Task Completed"</strong>!</li>
+</ol>
+<p>Now let's test the rules in a fresh chat. Press the <strong>X</strong> in the top corner to close this session.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="14">
+<li>In a new chat session, type out the prompt:</li>
+</ol>
+<p>update the readme</p>
+<p>and press the Send button (with the purple arrow).</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="15">
+<li>As usual, the Todo list is created.</li>
+</ol>
+<p>Work through the flow as normal — pressing <strong>Approve</strong>, <strong>Approve All</strong>, <strong>Run</strong>, and so on.\
+\</p>
+<blockquote>
+<p><em>Notice the Todo list now includes creating the internal-monologue summary — a sign your new rules are being obeyed.</em></p>
+</blockquote>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="16">
+<li>If prompted further, keep working through the flow — <strong>Approve</strong>, <strong>Approve All</strong>, <strong>Run</strong>, as before.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="17">
+<li>Continue through the Agentic Sidebar workflow as you would during a typical interaction.</li>
+</ol>
+<p>From time to time, a prompt may appear requesting a text response rather than one of the blue action buttons you have used so far. For example, Bob may ask for additional details about how the README file should be updated. If you receive a prompt like this, the specific response is not important for this lab, so feel free to enter any option or details you prefer.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="18">
+<li>Before long, a diff view appears with the proposed changes to the README — red for content to be removed, the highlight color for content to be added.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="19">
+<li>Next, the internal-monologue (Interaction Summary) document is created — exactly as specified in the basic_rules.md file you just wrote!</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="20">
+<li>Finally, the Task Completed summary appears again. As requested by the "update the readme" prompt, the README has been updated — and you can see the completed internal-monologue document, following the "yyyy-mm-dd_NAME.md" naming format.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p>Bob supports two rule scopes — Global and Workspace — and within each, mode-specific rules can also be applied.</p>
+<p>Bob may occasionally overlook workspace-level rules; global rules and agent-specific project rules tend to be followed more strictly.</p>
+<p>If your rules aren't being honored as expected, send a prompt in the agentic sidebar such as: \
+\
+My project level rules in @/.bob/rules/basic_rules.md are not being listened to, please configure them properly</p>
+<p>...then proceed through the workflow. Bob may add the rules to each AGENTS.md file, apply them for a single instance, or take another approach.</p>
+<h4 id="key-takeaways">Key takeaways</h4>
+<ul>
+<li>Rules are plain-text files in <code>.bob/rules/</code> that Bob reads at the start of every conversation.</li>
+<li>They apply across all modes — not mode-specific unless placed in mode-specific rule directories.</li>
+<li>They enforce consistent behavior without repeating instructions in every prompt.</li>
+<li>The internal-monologue pattern gives you an audit trail of Bob's actions across all sessions.</li>
+<li>Project-level rules are committed to the repository, making them available to the whole team.</li>
+<li>Global rules apply across every project on the machine.</li>
+</ul>
+<blockquote>
+<p>Bob is endlessly malleable: you can make it behave the way you want — the way that fits your work and your team.</p>
+</blockquote>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../3-1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: init &amp; agents.md | Teaching Bob your codebase" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              init & agents.md | Teaching Bob your codebase
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/hide-toc-nav.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

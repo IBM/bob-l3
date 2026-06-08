@@ -399,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tailor/3-2.md" class="md-nav__link">
+      <a href="../tailor/3-2/" class="md-nav__link">
         Bob Rules | Encoding your standards
       </a>
     </li>
@@ -599,6 +599,13 @@
           <li class="md-nav__item">
   <a href="#tailor-3-1" class="md-nav__link">
     init & agents.md | Teaching Bob your codebase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailor-3-2" class="md-nav__link">
+    Bob Rules | Encoding your standards
   </a>
   
 </li>
@@ -1859,7 +1866,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
                         <section class="print-page" id="tailor-3-1"><p><strong>MODULE 3 | INIT AND AGENTS.MD</strong></p>
 <h1 id="tailor-3-1-teaching-bob-your-codebase"><strong>TEACHING BOB YOUR CODEBASE</strong></h1>
 <hr />
-<h2 id="tailor-3-1-i-making-ibm-bob-yours"><strong>i. Making IBM Bob "Yours"</strong></h2>
+<h2 id="tailor-3-1-i-making-ibm-bob-your-own"><strong>i. Making IBM Bob "Your Own"</strong></h2>
 <hr />
 <p>Across the first two modules (<a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank"><strong>Assist</strong></a> and <a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank"><strong>Delegate</strong></a>), Bob was put to work with minimal-to-no background or context about your codebase. Bob proved itself to be capable, but operating and working only from what it could read and infer based in the moment. Module 3 (<a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank"><strong>Tailor</strong></a>) will change that approach markedly. Here you will teach Bob about <em>your</em> project and <em>your</em> standards, so that Bob begins behaving like a teammate who already knows how your team works.</p>
 <p>There are three ways to tailor Bob which build on one another:</p>
@@ -2035,7 +2042,252 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>Re-run the <code>/init</code> command after major changes to capture the latest context for project(s)</li>
 </ul>
 <p></br>
-In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
+In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p></section><section class="print-page" id="tailor-3-2"><p><strong>MODULE 3 | BOB RULES</strong></p>
+<h1 id="tailor-3-2-encoding-your-standards"><strong>ENCODING YOUR STANDARDS</strong></h1>
+<hr />
+<h2 id="tailor-3-2-i-a-few-rules-worth-knowing"><strong>i. A few rules worth knowing</strong></h2>
+<hr />
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how defined rule sets enforce consistency and cut down on repeated instructions. <em>[3 min]</em></p>
+</blockquote>
+<p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>. Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
+<p><strong>Project-level Rules</strong> apply only to the <em>current</em> project that Bob is engaged with and are stored within the following directory structure:</p>
+<div class="highlight"><pre><span></span><code>```
+.bob/rules/
+```
+</code></pre></div>
+<p>Drop any plain-text or Markdown file into this endpoint and Bob will guarantee that each artifact is ingested prior to the start of every conversation.</p>
+<p><strong>Global rules</strong> apply across <em>all projects</em> on the local machine that the Bob IDE is acting upon. Such rules live in a separate, user-level directory, the exact path of which depends on your local machine's operating system.</p>
+<hr />
+<h2 id="tailor-3-2-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
+<p>A <em>documentation standard</em> keeps generated code consistently commented:</p>
+<div class="highlight"><pre><span></span><code>```
+Always include concise `JSDoc` strings for every public function.
+```
+</code></pre></div>
+<p>A <em>communication-style rule</em> shapes how Bob phrases responses and comments (useful for teams that prefer terse output):</p>
+<div class="highlight"><pre><span></span><code>```
+Be very concise in your wording.
+```
+</code></pre></div>
+<p>And one particularly powerful pattern is the <strong><em>internal monologue</em></strong> rule which instructs Bob to log a summary of every interaction:</p>
+<div class="highlight"><pre><span></span><code>```
+Write a summary of every interaction into the folder `internal-monologue/`.
+Name the file starting with a timestamp, followed by a concise description of the interaction.
+Example: `2026-01-15_update-readme.md`
+```
+</code></pre></div>
+<p>That single rule produces a persistent record of everything Bob has done — an <strong>audit trail</strong> of what changed and when, <strong>cross-session continuity</strong> that Bob can refer back to in future conversations, and <strong>team transparency</strong> in shared repositories, where the monologue shows what each teammate has done with Bob.</p>
+<h4 id="tailor-3-2-project-vs-global-scope">Project vs. global scope</h4>
+<p>Rules from both locations are combined and applied together:</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Location</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project</td>
+<td>.bob/rules/ in project root</td>
+<td>Rules specific to one codebase (framework conventions, project documentation standards)</td>
+</tr>
+<tr>
+<td>Global</td>
+<td>User-level rules directory</td>
+<td>Rules that apply everywhere (internal monologue, personal communication preferences)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tailor-3-2-rules-are-committed-to-the-repository">Rules are committed to the repository</h4>
+<p>This is the heart of the <em>Tailor</em> stage. Project-level rules in <strong>.bob/rules/</strong> are version-controlled alongside the code — which means they propagate automatically to every teammate who clones the repository, changes to them go through normal code review, and their full history is tracked in git. The control you exercised live in earlier modules becomes a durable, shared, reviewable artifact.</p>
+<h4 id="tailor-3-2-hands-on-setting-standards-with-bob-rules">Hands-on: setting standards with Bob Rules</h4>
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
+</blockquote>
+<p>Let's create a rules file for Galaxium Travels, configure three standing rules — including that internal-monologue audit trail — and then watch Bob obey them in a fresh conversation.</p>
+<ol>
+<li>In the File Explorer, right-click <strong>.bob</strong> (just under the GALAXIUM-TRAVELS folder header).</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/626bc3f1-9dbf-44a5-afd1-ddda4ceca804/File_d8c397f436734e10be2080e0ba0937b1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/626bc3f1-9dbf-44a5-afd1-ddda4ceca804/File_d8c397f436734e10be2080e0ba0937b1_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Click <strong>New Folder...</strong></li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a0ba5618-ddcc-47a3-98e8-ba71a27c4ebd/File_df520dc508134826bfa49942c9002c11_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a0ba5618-ddcc-47a3-98e8-ba71a27c4ebd/File_df520dc508134826bfa49942c9002c11_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>A text box appears for you to name the folder. Name the folder:</li>
+</ol>
+<p>rules</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d655cad1-a84c-481a-b32a-33d0fc826511/File_26e0960ca1eb4e8e86fe8383b57b4c1a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d655cad1-a84c-481a-b32a-33d0fc826511/File_26e0960ca1eb4e8e86fe8383b57b4c1a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>Right-click the newly created <strong>rules</strong> folder again.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/542f541f-0b1f-4ee3-a143-2776fe56ce4b/File_6d349631de794dc9b57458ed1e743a5d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/542f541f-0b1f-4ee3-a143-2776fe56ce4b/File_6d349631de794dc9b57458ed1e743a5d_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>Click <strong>New File...</strong></li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2558d5e0-59c1-4705-8389-7934b8a54c4c/File_13ca10714474430eb308eb7dbda798a3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2558d5e0-59c1-4705-8389-7934b8a54c4c/File_13ca10714474430eb308eb7dbda798a3_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>A text box appears for you to name the file. Name the file:</li>
+</ol>
+<p>basic_rules.md</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4b4c4622-7db1-46d6-875d-4c1521dd9717/File_59fd165de9c2408fa3d26057f380ced5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4b4c4622-7db1-46d6-875d-4c1521dd9717/File_59fd165de9c2408fa3d26057f380ced5_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>Click the new file to open it — a blank file at .bob/rules/basic_rules.md.</li>
+</ol>
+<p>Bob supports several "priority levels" of rules. You can configure them by hand, pasting directly into these Markdown files — or, more simply, configure them through the agentic sidebar.</p>
+<blockquote>
+<p><em>Configuring rules through the sidebar makes testing and later edits easier — though configuring them manually works just as well.</em></p>
+</blockquote>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="8">
+<li>With the agentic sidebar in <strong>Code mode</strong>, send the following prompt:</li>
+</ol>
+<p>Please add the following rules to @/.bob/rules/basic_rules.md and configure them so they work:</p>
+<p>- Always include concise JSDoc strings for every public function. \
+-Be very concise in your wording.\
+-Write a summary of every interaction into the folder <code>internal-monologue/</code>.Name the file starting with a timestamp, followed by a concise description of the interaction. Example: 2026-01-15_update-readme.md</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="9">
+<li>If prompted along the way, just click the blue action button shown — <strong>Save</strong>, <strong>Approve</strong>, <strong>Approve All</strong>, or <strong>Run</strong> — to keep things moving.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>As usual, the Todo list appears and Bob begins working. Keep selecting <strong>Approve All</strong> (or whichever blue button appears) to let it continue.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="11">
+<li>As expected, Bob asks permission to edit the protected configuration file you just made — the empty <strong>basic_rules.md</strong>.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="12">
+<li>Continue through the workflow as usual. You'll watch basic_rules.md fill with the rules and reformat itself automatically.</li>
+</ol>
+<p>Keep clicking <strong>Approve</strong> — or whichever blue button appears — until the success message shows.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="13">
+<li>On completion, you'll see <strong>"Task Completed"</strong>!</li>
+</ol>
+<p>Now let's test the rules in a fresh chat. Press the <strong>X</strong> in the top corner to close this session.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="14">
+<li>In a new chat session, type out the prompt:</li>
+</ol>
+<p>update the readme</p>
+<p>and press the Send button (with the purple arrow).</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="15">
+<li>As usual, the Todo list is created.</li>
+</ol>
+<p>Work through the flow as normal — pressing <strong>Approve</strong>, <strong>Approve All</strong>, <strong>Run</strong>, and so on.\
+\</p>
+<blockquote>
+<p><em>Notice the Todo list now includes creating the internal-monologue summary — a sign your new rules are being obeyed.</em></p>
+</blockquote>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="16">
+<li>If prompted further, keep working through the flow — <strong>Approve</strong>, <strong>Approve All</strong>, <strong>Run</strong>, as before.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="17">
+<li>Continue through the Agentic Sidebar workflow as you would during a typical interaction.</li>
+</ol>
+<p>From time to time, a prompt may appear requesting a text response rather than one of the blue action buttons you have used so far. For example, Bob may ask for additional details about how the README file should be updated. If you receive a prompt like this, the specific response is not important for this lab, so feel free to enter any option or details you prefer.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="18">
+<li>Before long, a diff view appears with the proposed changes to the README — red for content to be removed, the highlight color for content to be added.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="19">
+<li>Next, the internal-monologue (Interaction Summary) document is created — exactly as specified in the basic_rules.md file you just wrote!</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="20">
+<li>Finally, the Task Completed summary appears again. As requested by the "update the readme" prompt, the README has been updated — and you can see the completed internal-monologue document, following the "yyyy-mm-dd_NAME.md" naming format.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<p>Bob supports two rule scopes — Global and Workspace — and within each, mode-specific rules can also be applied.</p>
+<p>Bob may occasionally overlook workspace-level rules; global rules and agent-specific project rules tend to be followed more strictly.</p>
+<p>If your rules aren't being honored as expected, send a prompt in the agentic sidebar such as: \
+\
+My project level rules in @/.bob/rules/basic_rules.md are not being listened to, please configure them properly</p>
+<p>...then proceed through the workflow. Bob may add the rules to each AGENTS.md file, apply them for a single instance, or take another approach.</p>
+<h4 id="tailor-3-2-key-takeaways">Key takeaways</h4>
+<ul>
+<li>Rules are plain-text files in <code>.bob/rules/</code> that Bob reads at the start of every conversation.</li>
+<li>They apply across all modes — not mode-specific unless placed in mode-specific rule directories.</li>
+<li>They enforce consistent behavior without repeating instructions in every prompt.</li>
+<li>The internal-monologue pattern gives you an audit trail of Bob's actions across all sessions.</li>
+<li>Project-level rules are committed to the repository, making them available to the whole team.</li>
+<li>Global rules apply across every project on the machine.</li>
+</ul>
+<blockquote>
+<p>Bob is endlessly malleable: you can make it behave the way you want — the way that fits your work and your team.</p>
+</blockquote></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
                         <h1 class='nav-section-title' id='section-4-scale-extend'>
                             4. Scale & Extend <a class='headerlink' href='#section-4-scale-extend' title='Permanent link'>↵</a>
                         </h1>
