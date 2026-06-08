@@ -2783,17 +2783,19 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 <hr />
 <h2 id="scale-4-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<p>The <strong>context window</strong> is the total amount of information a large language model can hold in mind during a single conversation. It is also the quiet determinant of quality on any substantial task — so understanding how it fills, and how to manage it, is what separates a polished demo from one that degrades halfway through. This lesson is conceptual; there are no steps to run, but the habits it instills will shape every other interaction you have with Bob.</p>
-<h4 id="scale-4-1-what-a-context-window-is">What a context window is</h4>
-<p>The models powering Bob offer a context window of <strong>200,000 tokens</strong> — roughly <strong>150,000 words</strong>, about the length of <em>The Fellowship of the Ring</em>. Every conversation begins with that full capacity available, and it holds <em>everything</em>: instructions, file contents, conversation history, and Bob's own responses. Once the window fills, the oldest content has to be dropped or summarized to make room.</p>
-<h4 id="scale-4-1-what-fills-it-and-in-what-order">What fills it, and in what order</h4>
+<p>The <strong>context window</strong> represents the total amount of information a large language model (LLM) can hold "in mind" during a single session or conversation. It is also sets the potential limit of how much work any given LLM can perform: the larger the context window, the more substantial scale of task that can be performed (and likely the higher quality output that can be achieved.) Understanding how a context window "fills" (and how to manage these finite resources effectively) is what separates a polished technology demonstration from one that degrades in quality halfway through the work.</p>
+<p>This lesson is conceptual. There are no steps to run, but the habits it instills will shape every other interaction you have with Bob. In the following chapter, you will go hands-on once again and put this theory in practice.</p>
+<hr />
+<h2 id="scale-4-1-iii-what-is-a-context-window"><strong>iii. What is a context window?</strong></h2>
+<hr />
+<p>The models powering Bob offer a context window of <strong>200,000 tokens</strong> — roughly <strong>150,000 words</strong>, about the length of <em>The Fellowship of the Ring</em>. Every conversation begins with that full capacity available, and it holds <em>everything</em>: instructions, file contents, conversation history, and Bob's own responses. Once the window fills, the oldest content within the context window has to either be dropped from memory or summarized to make room.</p>
 <p>At the start of every conversation, content loads in a predictable sequence:</p>
 <table>
 <thead>
 <tr>
-<th>Order</th>
-<th>Content</th>
-<th>Notes</th>
+<th>ORDER OF OPERATIONS</th>
+<th>CONTENT</th>
+<th>NOTES</th>
 </tr>
 </thead>
 <tbody>
@@ -2805,12 +2807,12 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 <tr>
 <td>2</td>
 <td>Mode description</td>
-<td>The definition of the currently active mode (Code, Plan, custom, etc.)</td>
+<td>The definition of the currently active Bob Mode (<em>Code</em>, <em>Plan</em>, <em>Custom</em>, etc.)</td>
 </tr>
 <tr>
 <td>3</td>
 <td>Rules</td>
-<td>Content from all files in .bob/rules/</td>
+<td>Content from all files in <code>.bob/rules/</code></td>
 </tr>
 <tr>
 <td>4</td>
@@ -2829,13 +2831,18 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 </tr>
 </tbody>
 </table>
-<p>MCP tool definitions deserve special attention: depending on how many servers you've connected, they can consume a significant slice of the window before you send a single message — a direct link to the governance theme of this module.</p>
-<h4 id="scale-4-1-what-happens-when-it-fills">What happens when it fills</h4>
-<p>Reaching the 200,000-token limit doesn't stop Bob or throw an error. Instead, a new conversation starts automatically in the background, Bob generates a summary of the previous one, that summary is prepended to the new conversation, and Bob carries on responding seamlessly. The process is invisible to you — but it has real consequences for quality and cost, and that is precisely why it's worth understanding.</p>
-<h4 id="scale-4-1-the-two-things-to-watch">The two things to watch</h4>
-<p>First, <strong>summarization is lossy.</strong> When a conversation overflows and gets summarized, specific technical details, intermediate reasoning, and nuanced context can be lost — a summary is always less precise than the original exchange. If a critical constraint or edge case was discussed early on, it may not survive into the summary, and implementation quality can suffer.</p>
-<p>Second, <strong>quality degrades above roughly 100,000 tokens.</strong> Models don't hold uniform quality across the full range; as the window fills, responses noticeably decline, particularly past the ~100,000-token mark. A conversation using 50,000 tokens will generally produce better output than one using 180,000, all else being equal. And because tokens are the unit of consumption (measured in Bob coins), longer conversations and larger file reads also simply cost more. Less context used means both better output <em>and</em> lower cost.</p>
-<h4 id="scale-4-1-the-strategy-persistent-artifacts">The strategy: persistent artifacts</h4>
+<div class="admonition warning">
+<p><strong>MCP tool definitions</strong> deserve special attention. The more external servers connected via MCP to Bob, the more rapidly that a significant slice of Bob's context window is exhausted before the user (you) send even a single message. This is why the importance of good <em>governance</em> and <em>planning</em> are emphasized again and again throughout this module.</p>
+</div>
+<h2 id="scale-4-1-iv-what-happens-when-the-context-window-is-full"><strong>iv. What happens when the context window is full?</strong></h2>
+<hr />
+<p>Reaching the 200,000-token limit doesn't stop Bob or throw an error. Instead, a new conversation starts automatically in the background.</p>
+<p>Bob generates a summary of the previous conversation or session, and then that summary is pre-pended as context to the new conversation. Bob will carry on its responses and workflow seamlessly. The process is invisible to you — but it has real consequences for quality and cost, and that is precisely why it's worth understanding how to govern this resource allocation in detail.</p>
+<p>The first cost: <strong>summarization is lossy.</strong> When a conversation overflows the context window size and needs to be summarized, the precision and fidelity of the original conversation are compromised. Specific technical details, intermediate reasoning, and nuanced context can be lost within the new Bob conversation. If a critical constraint or edge case was discussed early on, it may not persist into the summary or new conversation's memory, and as such implementation quality can suffer.</p>
+<p>The second cost: <strong>quality degrades above roughly 100,000 tokens.</strong> Models don't hold uniform quality across the full range; as the window fills, responses noticeably decline, particularly past the ~100,000-token mark. A conversation using 50,000 tokens will generally produce better output than one using 180,000, all other things being equal. And because tokens are the unit of consumption (measured in <em>Bob Coins</em>), longer conversations and larger file reads also simply cost more of the finite context window. Less context used equates both <em>better output</em> and <em>lower costs</em>.</p>
+<hr />
+<h2 id="scale-4-1-iv-context-window-strategies-persistent-artifacts"><strong>iv. Context window strategies: persistent artifacts</strong></h2>
+<hr />
 <p>The most effective way to manage all of this is the <strong>persistent artifacts</strong> pattern: break a complex task into discrete steps, have each step produce a saved output (a file on disk), and start a new conversation for each major step, referencing the saved output. No single conversation balloons, and every important decision is preserved as a durable file you can point back to later.</p>
 <p>You have already seen this in action. The seat-class feature from Module 2 was built exactly this way:</p>
 <table>
@@ -2861,7 +2868,9 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 </table>
 <p>The implementation conversation consumed just <strong>88,000 of 200,000 tokens</strong> — comfortably within the high-quality range — because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
 <p>A few practical guidelines fall out of all this: start new conversations when you switch tasks (planning shouldn't bleed into implementation); prefer direct file references (<code>@/path/to/file</code>) over pasting contents; keep MCP configurations lean, since every server's definitions cost context on every start; and monitor token usage to see which interactions are most expensive and adjust accordingly.</p>
-<h4 id="scale-4-1-key-takeaways">Key takeaways</h4>
+<hr />
+<h2 id="scale-4-1-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
+<hr />
 <ul>
 <li>The context window is 200,000 tokens (~150,000 words) — every conversation starts fresh with this capacity.</li>
 <li>Context fills in order: system prompt → mode description → rules → MCP tools → messages → file reads/writes.</li>
@@ -2869,7 +2878,8 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 <li>Quality noticeably degrades beyond ~100,000 tokens.</li>
 <li>The persistent-artifacts pattern (plan → save → new conversation → implement) is the primary strategy for managing context.</li>
 <li>Less context used means better output quality and lower cost.</li>
-</ul></section><h1 class='nav-section-title-end'>Ended: 4. Scale & Extend</h1></div>
+</ul>
+<hr /></section><h1 class='nav-section-title-end'>Ended: 4. Scale & Extend</h1></div>
 
 
 
