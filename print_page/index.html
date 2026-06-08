@@ -413,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tailor/3-3.md" class="md-nav__link">
+      <a href="../tailor/3-3/" class="md-nav__link">
         Custom Modes | Shaping Bob to every role
       </a>
     </li>
@@ -606,6 +606,13 @@
           <li class="md-nav__item">
   <a href="#tailor-3-2" class="md-nav__link">
     Bob Rules | Encoding your standards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailor-3-3" class="md-nav__link">
+    Custom Modes | Shaping Bob to every role
   </a>
   
 </li>
@@ -2359,7 +2366,307 @@ Submit the prompt and then proceed through the workflow. Bob may add the rules t
 <li>Global rules apply across every project on the machine</li>
 </ul>
 <p></br>
-IBM Bob is endlessly malleable. You can tailor it behave the way you want, according to the pattern of work that fits your team. In the chapter ahead, you will explore the ways that <strong>Custom Modes</strong> can further shape Bob's behavior to every role within your organization.</p></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
+IBM Bob is endlessly malleable. You can tailor it behave the way you want, according to the pattern of work that fits your team. In the chapter ahead, you will explore the ways that <strong>Custom Modes</strong> can further shape Bob's behavior to every role within your organization.</p></section><section class="print-page" id="tailor-3-3"><p><strong>MODULE 3 | TAILOR</strong></p>
+<h1 id="tailor-3-3-custom-modes"><strong>CUSTOM MODES</strong></h1>
+<hr />
+<h2 id="tailor-3-3-i-shaping-bob-to-every-role"><strong>i. Shaping Bob to every role</strong></h2>
+<hr />
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC46497j6QjGF8QTV4HDB3fgWJ4G">Chapter 3.3: Custom Modes [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how to use Bob's Modes for custom workflows. <em>[4 min]</em></p>
+</blockquote>
+<p>IBM Bob's standardized, built-in Modes— <em>Code</em>, <em>Plan</em>, <em>Ask</em>, and <em>Advanced</em> —cover the most commonly found workflows and use cases that IBM's clients will encounter. But when pushing new frontiers and working at the scale of enterprise, there will inevitably be edge cases and bespoke cases requiring a tailored solution.</p>
+<p><strong>Custom Modes</strong> allow clients to define their own specialized agentic workflows with Bob: it combines a role definition, behavioral instructions, and a deterministic set of permitted tools. The net result for Bob clients is that, regardless of whether the end-user happens to be a product manager or a senior engineer, the Custom Mode "version" (persona) of Bob they interact with has been pre-tuned and shaped to how they actually work.</p>
+<hr />
+<h2 id="tailor-3-3-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
+<p>For every Bob Mode, whether selected from the built-in Modes or client-tailored Custom Mode, is defined by a universal set of fields:</p>
+<table>
+<thead>
+<tr>
+<th>FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Slug</code></td>
+<td>Identifier</td>
+<td>Unique machine-readable name used to reference the Mode</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td>Display name</td>
+<td>Human-readable label shown in the Mode selector</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td>Non-deterministic</td>
+<td>High-level summary of what the Mode does</td>
+</tr>
+<tr>
+<td><code>Role definition</code></td>
+<td>Non-deterministic</td>
+<td>Defines how Bob should think and behave in this Mode</td>
+</tr>
+<tr>
+<td><code>When-to-use</code></td>
+<td>Non-deterministic</td>
+<td>Guidance for Mode orchestration — when other Modes should switch to this one</td>
+</tr>
+<tr>
+<td><code>Custom instructions</code></td>
+<td>Non-deterministic</td>
+<td>Detailed behavioral instructions for how Bob performs tasks</td>
+</tr>
+<tr>
+<td><code>Tools</code></td>
+<td>Deterministic</td>
+<td>The set of tools Bob is permitted to use in this Mode</td>
+</tr>
+</tbody>
+</table>
+<p>The distinction between <em>non-deterministic</em> and <em>deterministic</em> fields matters. The instruction fields (description, role, when-to-use, custom instructions) <em>guide</em> Bob's behavior, but it interprets and applies them probabilistically. The <strong>Tools</strong> field is different: it is strictly enforced. Bob can use only the tools listed, no matter what any instruction says. That makes the tools section — not the prose — the real mechanism for constraining what Bob can do in a Mode.</p>
+<h4 id="tailor-3-3-creating-a-custom-mode">Creating a custom Mode</h4>
+<p>Custom Modes are created through the Mode settings panel in Bob IDE:</p>
+<ol>
+<li>Click the gear icon in the Mode selector to open Mode settings</li>
+<li>Select the <strong>Custom Modes</strong> tab</li>
+<li>Click the <strong>+</strong> icon to create a new Mode</li>
+<li>Fill in the slug, name, scope, custom instructions, and tool permissions</li>
+<li>Save the Mode</li>
+</ol>
+<p>You can scope a Mode to a single <strong>Project</strong> (stored in .bobmodes) or make it <strong>Global</strong> across all projects. Creating a Mode through the UI generates a <code>.bobmodes</code> YAML file in the project root, which you can edit directly, commit to the repository so the whole team shares the same Modes, or use as a starting point for asking Bob to generate further Modes.</p>
+<h4 id="tailor-3-3-an-example-a-product-management-mode">An example: a Product Management Mode</h4>
+<p>To make this concrete, consider a Mode built for product planning — turning feature ideas into a structured, prioritized plan:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slug</td>
+<td>product-management</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>Project</td>
+</tr>
+<tr>
+<td>Instructions</td>
+<td>Transform ideas into a simple prioritized product plan</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>Read, Edit, MCP (GitHub integration)</td>
+</tr>
+<tr>
+<td>Excluded tools</td>
+<td>Execute (terminal commands), Browser</td>
+</tr>
+</tbody>
+</table>
+<p>The tool choices tell the story: <strong>Read</strong> lets it understand existing features and the current state of the code; <strong>Edit</strong> lets it produce output documents like Markdown plans; <strong>MCP</strong> lets it talk to GitHub (reading issues, linking plans to them). <strong>Execute</strong> is excluded because product work doesn't require running code, and <strong>Browser</strong> simply isn't relevant here. And because rules in <strong>.bob/rules/</strong> are injected into every conversation regardless of Mode, a custom Mode never overrides them — an internal-monologue rule keeps producing summaries even inside this Product Management Mode. Rules handle cross-cutting behavior; Mode instructions handle the Mode-specific kind.</p>
+<h4 id="tailor-3-3-hands-on-building-a-product-manager-mode">Hands-on: building a Product Manager Mode</h4>
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DC46497j6QjGF8QTV4HDB3fgWJ4G">Chapter 3.3: Custom Modes [IBM Bob L3]</a></p>
+</blockquote>
+<p>Let's build that Product Manager Mode end to end — defining its persona, granting it a deliberate set of tools, and then putting it to work on a real product question.</p>
+<ol>
+<li>Click the Mode button (set to <strong>💻 Code</strong> in this capture).</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1dd5e0aa-6af3-4703-935e-eb0de99eac1a/File_dfc2a31c66c14cfd9aed3e9503b937c1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1dd5e0aa-6af3-4703-935e-eb0de99eac1a/File_dfc2a31c66c14cfd9aed3e9503b937c1_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Click the gear icon to open <strong>Mode Settings</strong>.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/75ce2a06-0dc1-43ec-abbd-f4823397402f/File_2b9ee6170f574158a272681f87edf8c5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/75ce2a06-0dc1-43ec-abbd-f4823397402f/File_2b9ee6170f574158a272681f87edf8c5_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>The <strong>Settings</strong> screen opens.</li>
+</ol>
+<p>Click <strong>Open</strong> next to Project Modes.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d740b7a0-c762-4f0b-b0a9-69dc192c52a0/File_49dabdb09359462fbaa529b68bb3a800_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d740b7a0-c762-4f0b-b0a9-69dc192c52a0/File_49dabdb09359462fbaa529b68bb3a800_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>The <strong>Create new Mode</strong> window opens.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0410da9b-d5c1-4f4b-9dc0-284735e2f3a5/File_01b405c48621457f8bfc9a9286ceb060_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0410da9b-d5c1-4f4b-9dc0-284735e2f3a5/File_01b405c48621457f8bfc9a9286ceb060_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>In the <strong>Slug</strong> field, enter:</li>
+</ol>
+<p>product-manager</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/88581c7a-a1e1-49dd-b91d-cf199be70f5b/File_4a9dc937d31643ca912de82f32f4e17b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/88581c7a-a1e1-49dd-b91d-cf199be70f5b/File_4a9dc937d31643ca912de82f32f4e17b_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>In the <strong>Name</strong> field, enter the same:</li>
+</ol>
+<p>product-manager</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/179bb1e5-4452-4c03-9d92-1bb41b6adfa1/File_ba708d2e397f491aadaa05e2be7822b3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/179bb1e5-4452-4c03-9d92-1bb41b6adfa1/File_ba708d2e397f491aadaa05e2be7822b3_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>In the <strong>Description</strong> field, paste:</li>
+</ol>
+<p>Turns fuzzy ideas into a simple, prioritized product plan with clear outcomes. Creates an MVP scope, user stories, success metrics, and a lightweight roadmap that a team can execute.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/22e28437-e4df-47eb-bdea-4c87b8a3864c/File_c807fb6fab0b48cd93afff1743c9b49c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/22e28437-e4df-47eb-bdea-4c87b8a3864c/File_c807fb6fab0b48cd93afff1743c9b49c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="8">
+<li>Change the <strong>Scope</strong> to:</li>
+</ol>
+<p>Project</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8977aca4-62c6-4d16-ae28-f99f9d875282/File_f4c970e5d14b4bf69f6529711da72037_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8977aca4-62c6-4d16-ae28-f99f9d875282/File_f4c970e5d14b4bf69f6529711da72037_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="9">
+<li>In the <strong>Role definition</strong> field, enter:</li>
+</ol>
+<p>You are Product Manager Mode. You help define what to build and why. You clarify the user problem, propose an MVP, prioritize work, define success metrics, and produce simple, shareable artifacts (MVP card, roadmap, user stories, risks). You keep it practical and relatable for demos—minimal jargon, fast decisions, explicit tradeoffs.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/507651d7-bd31-480e-885e-d152a1c79802/File_11a9a6d533f643da856edccaf9047db0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/507651d7-bd31-480e-885e-d152a1c79802/File_11a9a6d533f643da856edccaf9047db0_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>In the <strong>When to use (optional)</strong> field, paste:</li>
+</ol>
+<p>Use this Mode when you need to decide what to build (or build next), define an MVP, create a simple roadmap, write user stories/acceptance criteria, or define success metrics. Not for coding or deep technical architecture.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0d80c737-0419-4b1c-9179-5015e05a784c/File_6715b5286d124acd8275b99723d39432_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0d80c737-0419-4b1c-9179-5015e05a784c/File_6715b5286d124acd8275b99723d39432_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="11">
+<li>In <strong>Mode-specific Custom Instructions (optional)</strong>, paste the following:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#tailor-3-3-__codelineno-0-1"></a>Start by summarizing the request in 2–3 lines and extract:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#tailor-3-3-__codelineno-0-2"></a>• Target user
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#tailor-3-3-__codelineno-0-3"></a>• Problem/pain
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#tailor-3-3-__codelineno-0-4"></a>• Desired outcome
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#tailor-3-3-__codelineno-0-5"></a>• Constraints (time, scope, dependencies)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#tailor-3-3-__codelineno-0-6"></a>2.  Ask up to 5 clarifying questions max. If answers are missing, make reasonable assumptions and label them clearly.
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#tailor-3-3-__codelineno-0-7"></a>3.  Produce these demo-friendly outputs every time (keep each section short):
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#tailor-3-3-__codelineno-0-8"></a>• MVP Card: Goal, User, Pain, In Scope (3–6 bullets), Out of Scope (2–4 bullets)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#tailor-3-3-__codelineno-0-9"></a>• Now / Next / Later roadmap (3–5 bullets per column)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#tailor-3-3-__codelineno-0-10"></a>• Top 5 user stories with “Done when…” (2–3 acceptance checks each)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#tailor-3-3-__codelineno-0-11"></a>• Success metrics: 1 Primary, 1–2 Secondary, 1 Guardrail
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#tailor-3-3-__codelineno-0-12"></a>• Risks &amp; open questions (2–4 each)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#tailor-3-3-__codelineno-0-13"></a>4.  Make tradeoffs explicit: if something is added to MVP, something else must move to Next/Later.
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#tailor-3-3-__codelineno-0-14"></a>5.  End with a single recommended next decision the user should approve (e.g., confirm MVP scope or pick between two options).
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#tailor-3-3-__codelineno-0-15"></a>6.  Keep language simple and relatable; avoid framework names unless the user asks (no RICE/PRD jargon by default).
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#tailor-3-3-__codelineno-0-16"></a>7.  If helpful, include one small diagram (optional), e.g. a simple flow of the user journey.
+</code></pre></div>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ecf71424-cad9-4324-9c5f-91b1b9c70c76/File_35a003d908ac4e19b0976db6841bca1a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ecf71424-cad9-4324-9c5f-91b1b9c70c76/File_35a003d908ac4e19b0976db6841bca1a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="12">
+<li>Now grant the Mode its tools.</li>
+</ol>
+<p>Select <strong>Read files</strong>, <strong>Edit files</strong>, and <strong>Use MCP</strong>.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9409e892-f7d0-45a1-8e7e-9918b6c5fd99/File_bf32696ce7bb4c5baf1d26792c9561c9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9409e892-f7d0-45a1-8e7e-9918b6c5fd99/File_bf32696ce7bb4c5baf1d26792c9561c9_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="13">
+<li>Finally, press the blue <strong>Save</strong> button to finish creating the custom product-manager Mode.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/313ed214-5b99-4d72-a18a-7bafdbc83615/File_9e3fea1d8fcf480f99548811ee8bb9cb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/313ed214-5b99-4d72-a18a-7bafdbc83615/File_9e3fea1d8fcf480f99548811ee8bb9cb_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="14">
+<li>Saving returns you to the Modes submenu on the Settings screen.</li>
+</ol>
+<p>A tile for the product-manager Mode has appeared — press the <strong>All</strong> button next to Search Modes.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b7560696-ee53-4dea-a06e-6e439335fae5/File_e966e2e1660c4a358a462e69cacfc50f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b7560696-ee53-4dea-a06e-6e439335fae5/File_e966e2e1660c4a358a462e69cacfc50f_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="15">
+<li>From the drop-down, select <strong>Project Modes</strong>.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a81d942b-94e3-4be7-8a3d-ca94a81bcbbb/File_a1f4877925d9422c92cdf2cdf7844e43_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a81d942b-94e3-4be7-8a3d-ca94a81bcbbb/File_a1f4877925d9422c92cdf2cdf7844e43_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="16">
+<li>In the <strong>Project Modes</strong> view, the product-manager tile appears with its description — confirming the new Mode was created!</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ec5feed5-9f3b-405b-bf89-c3337bfad468/File_9e3f0404d5fb4f84b183bcce55942bf0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ec5feed5-9f3b-405b-bf89-c3337bfad468/File_9e3f0404d5fb4f84b183bcce55942bf0_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="17">
+<li>You use the new <strong>product-manager</strong> Mode just as you used Code and Plan.</li>
+</ol>
+<p>First, select it in the agentic sidebar: click the <strong>Modes</strong> button again (<em>this capture shows Plan Mode; yours may differ, or may already be on product-manager</em>).</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e4357c8-49fd-49f6-b294-39718acaf92f/File_a88dc03207924d828bcf2ff0d5c4289c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e4357c8-49fd-49f6-b294-39718acaf92f/File_a88dc03207924d828bcf2ff0d5c4289c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="18">
+<li>In the Modes pop-up, select <strong>product-manager</strong>.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cc605df-68d7-4be8-861c-d811aef2da1a/File_83a74378475843e4a54eec469f2471cc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cc605df-68d7-4be8-861c-d811aef2da1a/File_83a74378475843e4a54eec469f2471cc_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="19">
+<li>You're now in product-manager Mode.</li>
+</ol>
+<p>Let's test it — type the prompt:</p>
+<p>What feature should we build next?</p>
+<p>...and press Send.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/331bb578-5933-4ddd-b0f0-39e4f3a34192/File_1dd8c488542e42bfb0ef103e76b55755_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/331bb578-5933-4ddd-b0f0-39e4f3a34192/File_1dd8c488542e42bfb0ef103e76b55755_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="20">
+<li>Proceed through the workflow as usual. \
+\
+If they appear, press <strong>Approve</strong>, <strong>Approve All</strong>, <strong>Save</strong>, or <strong>Run</strong> — whatever blue button prompts you onward.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/93160a09-90e2-471b-b9c6-4cb9d33db776/File_ff2b0a13b78a4cd2a5ccfcd0accd1063_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/93160a09-90e2-471b-b9c6-4cb9d33db776/File_ff2b0a13b78a4cd2a5ccfcd0accd1063_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="21">
+<li>Finally, recall the workspace-level rules you created earlier — they apply to this new Mode too.</li>
+</ol>
+<blockquote>
+<p><em>Bob can occasionally get muddled about rules, especially across permission levels. If yours aren't behaving, a quick follow-up like</em> <strong>"Listen to the rules in .bob/rules/basic_rules.md"</strong> <em>usually sorts it out.</em></p>
+</blockquote>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f459f265-6d26-46c0-bbd3-75c9bf5abda6/File_3e7b9654ae4845c7b3bc8a72b50bf7ca_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f459f265-6d26-46c0-bbd3-75c9bf5abda6/File_3e7b9654ae4845c7b3bc8a72b50bf7ca_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<h4 id="tailor-3-3-key-takeaways">Key takeaways</h4>
+<ul>
+<li>Custom Modes combine non-deterministic instructions with deterministic tool constraints.</li>
+<li>Tool restrictions are enforced, not suggested — they are the primary safety mechanism in a Mode.</li>
+<li>Modes are created through the UI or by editing <code>.bobmodes</code> directly.</li>
+<li>Project-scoped Modes are stored in <code>.bobmodes</code> and committed to the repository.</li>
+<li>Rules apply across all Modes — they are not overridden by custom Mode instructions.</li>
+<li>A Mode marketplace (coming soon) will offer community-contributed Modes for common workflows.</li>
+</ul></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
                         <h1 class='nav-section-title' id='section-4-scale-extend'>
                             4. Scale & Extend <a class='headerlink' href='#section-4-scale-extend' title='Permanent link'>↵</a>
                         </h1>

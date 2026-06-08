@@ -1,0 +1,1053 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM Bob Level 3">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Custom Modes | Shaping Bob to every role - IBM Bob Level 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../styles/override-print.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#custom-modes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM Bob Level 3" class="md-header__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM Bob Level 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Custom Modes | Shaping Bob to every role
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM Bob Level 3" class="md-nav__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM Bob Level 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup.md" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          1. Assist
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1. Assist" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1. Assist
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-1/" class="md-nav__link">
+        Tab Completion & Next Edit Prediction | Bob in your workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-2/" class="md-nav__link">
+        Literate Coding | Editing with intent
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          2. Delegate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Delegate" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2. Delegate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-1/" class="md-nav__link">
+        The Agentic Sidebar | From assistant to partner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-2/" class="md-nav__link">
+        Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3. Tailor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3. Tailor" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3. Tailor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-1/" class="md-nav__link">
+        init & agents.md | Teaching Bob your codebase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-2/" class="md-nav__link">
+        Bob Rules | Encoding your standards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Custom Modes | Shaping Bob to every role
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Custom Modes | Shaping Bob to every role
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-shaping-bob-to-every-role" class="md-nav__link">
+    i. Shaping Bob to every role
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-why-this-matters" class="md-nav__link">
+    ii. Why this matters
+  </a>
+  
+    <nav class="md-nav" aria-label="ii. Why this matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-custom-mode" class="md-nav__link">
+    Creating a custom Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-example-a-product-management-mode" class="md-nav__link">
+    An example: a Product Management Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-building-a-product-manager-mode" class="md-nav__link">
+    Hands-on: building a Product Manager Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    Key takeaways
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          4. Scale & Extend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4. Scale & Extend" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4. Scale & Extend
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-1.md" class="md-nav__link">
+        The Context Window | Keeping Bob reliable at scale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-2.md" class="md-nav__link">
+        Bob Shell | Moving beyond the IDE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-3.md" class="md-nav__link">
+        Extending with MCP | Connecting Bob to everything
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-shaping-bob-to-every-role" class="md-nav__link">
+    i. Shaping Bob to every role
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-why-this-matters" class="md-nav__link">
+    ii. Why this matters
+  </a>
+  
+    <nav class="md-nav" aria-label="ii. Why this matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-custom-mode" class="md-nav__link">
+    Creating a custom Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-example-a-product-management-mode" class="md-nav__link">
+    An example: a Product Management Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-building-a-product-manager-mode" class="md-nav__link">
+    Hands-on: building a Product Manager Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    Key takeaways
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><strong>MODULE 3 | TAILOR</strong></p>
+<h1 id="custom-modes"><strong>CUSTOM MODES</strong></h1>
+<hr />
+<h2 id="i-shaping-bob-to-every-role"><strong>i. Shaping Bob to every role</strong></h2>
+<hr />
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC46497j6QjGF8QTV4HDB3fgWJ4G">Chapter 3.3: Custom Modes [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how to use Bob's Modes for custom workflows. <em>[4 min]</em></p>
+</blockquote>
+<p>IBM Bob's standardized, built-in Modes— <em>Code</em>, <em>Plan</em>, <em>Ask</em>, and <em>Advanced</em> —cover the most commonly found workflows and use cases that IBM's clients will encounter. But when pushing new frontiers and working at the scale of enterprise, there will inevitably be edge cases and bespoke cases requiring a tailored solution.</p>
+<p><strong>Custom Modes</strong> allow clients to define their own specialized agentic workflows with Bob: it combines a role definition, behavioral instructions, and a deterministic set of permitted tools. The net result for Bob clients is that, regardless of whether the end-user happens to be a product manager or a senior engineer, the Custom Mode "version" (persona) of Bob they interact with has been pre-tuned and shaped to how they actually work.</p>
+<hr />
+<h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
+<hr />
+<p>For every Bob Mode, whether selected from the built-in Modes or client-tailored Custom Mode, is defined by a universal set of fields:</p>
+<table>
+<thead>
+<tr>
+<th>FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Slug</code></td>
+<td>Identifier</td>
+<td>Unique machine-readable name used to reference the Mode</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td>Display name</td>
+<td>Human-readable label shown in the Mode selector</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td>Non-deterministic</td>
+<td>High-level summary of what the Mode does</td>
+</tr>
+<tr>
+<td><code>Role definition</code></td>
+<td>Non-deterministic</td>
+<td>Defines how Bob should think and behave in this Mode</td>
+</tr>
+<tr>
+<td><code>When-to-use</code></td>
+<td>Non-deterministic</td>
+<td>Guidance for Mode orchestration — when other Modes should switch to this one</td>
+</tr>
+<tr>
+<td><code>Custom instructions</code></td>
+<td>Non-deterministic</td>
+<td>Detailed behavioral instructions for how Bob performs tasks</td>
+</tr>
+<tr>
+<td><code>Tools</code></td>
+<td>Deterministic</td>
+<td>The set of tools Bob is permitted to use in this Mode</td>
+</tr>
+</tbody>
+</table>
+<p>The distinction between <em>non-deterministic</em> and <em>deterministic</em> fields matters. The instruction fields (description, role, when-to-use, custom instructions) <em>guide</em> Bob's behavior, but it interprets and applies them probabilistically. The <strong>Tools</strong> field is different: it is strictly enforced. Bob can use only the tools listed, no matter what any instruction says. That makes the tools section — not the prose — the real mechanism for constraining what Bob can do in a Mode.</p>
+<h4 id="creating-a-custom-mode">Creating a custom Mode</h4>
+<p>Custom Modes are created through the Mode settings panel in Bob IDE:</p>
+<ol>
+<li>Click the gear icon in the Mode selector to open Mode settings</li>
+<li>Select the <strong>Custom Modes</strong> tab</li>
+<li>Click the <strong>+</strong> icon to create a new Mode</li>
+<li>Fill in the slug, name, scope, custom instructions, and tool permissions</li>
+<li>Save the Mode</li>
+</ol>
+<p>You can scope a Mode to a single <strong>Project</strong> (stored in .bobmodes) or make it <strong>Global</strong> across all projects. Creating a Mode through the UI generates a <code>.bobmodes</code> YAML file in the project root, which you can edit directly, commit to the repository so the whole team shares the same Modes, or use as a starting point for asking Bob to generate further Modes.</p>
+<h4 id="an-example-a-product-management-mode">An example: a Product Management Mode</h4>
+<p>To make this concrete, consider a Mode built for product planning — turning feature ideas into a structured, prioritized plan:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slug</td>
+<td>product-management</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>Project</td>
+</tr>
+<tr>
+<td>Instructions</td>
+<td>Transform ideas into a simple prioritized product plan</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>Read, Edit, MCP (GitHub integration)</td>
+</tr>
+<tr>
+<td>Excluded tools</td>
+<td>Execute (terminal commands), Browser</td>
+</tr>
+</tbody>
+</table>
+<p>The tool choices tell the story: <strong>Read</strong> lets it understand existing features and the current state of the code; <strong>Edit</strong> lets it produce output documents like Markdown plans; <strong>MCP</strong> lets it talk to GitHub (reading issues, linking plans to them). <strong>Execute</strong> is excluded because product work doesn't require running code, and <strong>Browser</strong> simply isn't relevant here. And because rules in <strong>.bob/rules/</strong> are injected into every conversation regardless of Mode, a custom Mode never overrides them — an internal-monologue rule keeps producing summaries even inside this Product Management Mode. Rules handle cross-cutting behavior; Mode instructions handle the Mode-specific kind.</p>
+<h4 id="hands-on-building-a-product-manager-mode">Hands-on: building a Product Manager Mode</h4>
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DC46497j6QjGF8QTV4HDB3fgWJ4G">Chapter 3.3: Custom Modes [IBM Bob L3]</a></p>
+</blockquote>
+<p>Let's build that Product Manager Mode end to end — defining its persona, granting it a deliberate set of tools, and then putting it to work on a real product question.</p>
+<ol>
+<li>Click the Mode button (set to <strong>💻 Code</strong> in this capture).</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1dd5e0aa-6af3-4703-935e-eb0de99eac1a/File_dfc2a31c66c14cfd9aed3e9503b937c1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1dd5e0aa-6af3-4703-935e-eb0de99eac1a/File_dfc2a31c66c14cfd9aed3e9503b937c1_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Click the gear icon to open <strong>Mode Settings</strong>.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/75ce2a06-0dc1-43ec-abbd-f4823397402f/File_2b9ee6170f574158a272681f87edf8c5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/75ce2a06-0dc1-43ec-abbd-f4823397402f/File_2b9ee6170f574158a272681f87edf8c5_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>The <strong>Settings</strong> screen opens.</li>
+</ol>
+<p>Click <strong>Open</strong> next to Project Modes.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d740b7a0-c762-4f0b-b0a9-69dc192c52a0/File_49dabdb09359462fbaa529b68bb3a800_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d740b7a0-c762-4f0b-b0a9-69dc192c52a0/File_49dabdb09359462fbaa529b68bb3a800_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>The <strong>Create new Mode</strong> window opens.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0410da9b-d5c1-4f4b-9dc0-284735e2f3a5/File_01b405c48621457f8bfc9a9286ceb060_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0410da9b-d5c1-4f4b-9dc0-284735e2f3a5/File_01b405c48621457f8bfc9a9286ceb060_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>In the <strong>Slug</strong> field, enter:</li>
+</ol>
+<p>product-manager</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/88581c7a-a1e1-49dd-b91d-cf199be70f5b/File_4a9dc937d31643ca912de82f32f4e17b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/88581c7a-a1e1-49dd-b91d-cf199be70f5b/File_4a9dc937d31643ca912de82f32f4e17b_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>In the <strong>Name</strong> field, enter the same:</li>
+</ol>
+<p>product-manager</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/179bb1e5-4452-4c03-9d92-1bb41b6adfa1/File_ba708d2e397f491aadaa05e2be7822b3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/179bb1e5-4452-4c03-9d92-1bb41b6adfa1/File_ba708d2e397f491aadaa05e2be7822b3_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>In the <strong>Description</strong> field, paste:</li>
+</ol>
+<p>Turns fuzzy ideas into a simple, prioritized product plan with clear outcomes. Creates an MVP scope, user stories, success metrics, and a lightweight roadmap that a team can execute.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/22e28437-e4df-47eb-bdea-4c87b8a3864c/File_c807fb6fab0b48cd93afff1743c9b49c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/22e28437-e4df-47eb-bdea-4c87b8a3864c/File_c807fb6fab0b48cd93afff1743c9b49c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="8">
+<li>Change the <strong>Scope</strong> to:</li>
+</ol>
+<p>Project</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8977aca4-62c6-4d16-ae28-f99f9d875282/File_f4c970e5d14b4bf69f6529711da72037_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8977aca4-62c6-4d16-ae28-f99f9d875282/File_f4c970e5d14b4bf69f6529711da72037_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="9">
+<li>In the <strong>Role definition</strong> field, enter:</li>
+</ol>
+<p>You are Product Manager Mode. You help define what to build and why. You clarify the user problem, propose an MVP, prioritize work, define success metrics, and produce simple, shareable artifacts (MVP card, roadmap, user stories, risks). You keep it practical and relatable for demos—minimal jargon, fast decisions, explicit tradeoffs.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/507651d7-bd31-480e-885e-d152a1c79802/File_11a9a6d533f643da856edccaf9047db0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/507651d7-bd31-480e-885e-d152a1c79802/File_11a9a6d533f643da856edccaf9047db0_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>In the <strong>When to use (optional)</strong> field, paste:</li>
+</ol>
+<p>Use this Mode when you need to decide what to build (or build next), define an MVP, create a simple roadmap, write user stories/acceptance criteria, or define success metrics. Not for coding or deep technical architecture.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0d80c737-0419-4b1c-9179-5015e05a784c/File_6715b5286d124acd8275b99723d39432_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0d80c737-0419-4b1c-9179-5015e05a784c/File_6715b5286d124acd8275b99723d39432_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="11">
+<li>In <strong>Mode-specific Custom Instructions (optional)</strong>, paste the following:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Start by summarizing the request in 2–3 lines and extract:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>• Target user
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>• Problem/pain
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>• Desired outcome
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>• Constraints (time, scope, dependencies)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>2.  Ask up to 5 clarifying questions max. If answers are missing, make reasonable assumptions and label them clearly.
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>3.  Produce these demo-friendly outputs every time (keep each section short):
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>• MVP Card: Goal, User, Pain, In Scope (3–6 bullets), Out of Scope (2–4 bullets)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>• Now / Next / Later roadmap (3–5 bullets per column)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>• Top 5 user stories with “Done when…” (2–3 acceptance checks each)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>• Success metrics: 1 Primary, 1–2 Secondary, 1 Guardrail
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>• Risks &amp; open questions (2–4 each)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>4.  Make tradeoffs explicit: if something is added to MVP, something else must move to Next/Later.
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>5.  End with a single recommended next decision the user should approve (e.g., confirm MVP scope or pick between two options).
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>6.  Keep language simple and relatable; avoid framework names unless the user asks (no RICE/PRD jargon by default).
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>7.  If helpful, include one small diagram (optional), e.g. a simple flow of the user journey.
+</code></pre></div>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ecf71424-cad9-4324-9c5f-91b1b9c70c76/File_35a003d908ac4e19b0976db6841bca1a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ecf71424-cad9-4324-9c5f-91b1b9c70c76/File_35a003d908ac4e19b0976db6841bca1a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="12">
+<li>Now grant the Mode its tools.</li>
+</ol>
+<p>Select <strong>Read files</strong>, <strong>Edit files</strong>, and <strong>Use MCP</strong>.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9409e892-f7d0-45a1-8e7e-9918b6c5fd99/File_bf32696ce7bb4c5baf1d26792c9561c9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9409e892-f7d0-45a1-8e7e-9918b6c5fd99/File_bf32696ce7bb4c5baf1d26792c9561c9_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="13">
+<li>Finally, press the blue <strong>Save</strong> button to finish creating the custom product-manager Mode.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/313ed214-5b99-4d72-a18a-7bafdbc83615/File_9e3fea1d8fcf480f99548811ee8bb9cb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/313ed214-5b99-4d72-a18a-7bafdbc83615/File_9e3fea1d8fcf480f99548811ee8bb9cb_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="14">
+<li>Saving returns you to the Modes submenu on the Settings screen.</li>
+</ol>
+<p>A tile for the product-manager Mode has appeared — press the <strong>All</strong> button next to Search Modes.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b7560696-ee53-4dea-a06e-6e439335fae5/File_e966e2e1660c4a358a462e69cacfc50f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b7560696-ee53-4dea-a06e-6e439335fae5/File_e966e2e1660c4a358a462e69cacfc50f_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="15">
+<li>From the drop-down, select <strong>Project Modes</strong>.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a81d942b-94e3-4be7-8a3d-ca94a81bcbbb/File_a1f4877925d9422c92cdf2cdf7844e43_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a81d942b-94e3-4be7-8a3d-ca94a81bcbbb/File_a1f4877925d9422c92cdf2cdf7844e43_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="16">
+<li>In the <strong>Project Modes</strong> view, the product-manager tile appears with its description — confirming the new Mode was created!</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ec5feed5-9f3b-405b-bf89-c3337bfad468/File_9e3f0404d5fb4f84b183bcce55942bf0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ec5feed5-9f3b-405b-bf89-c3337bfad468/File_9e3f0404d5fb4f84b183bcce55942bf0_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="17">
+<li>You use the new <strong>product-manager</strong> Mode just as you used Code and Plan.</li>
+</ol>
+<p>First, select it in the agentic sidebar: click the <strong>Modes</strong> button again (<em>this capture shows Plan Mode; yours may differ, or may already be on product-manager</em>).</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e4357c8-49fd-49f6-b294-39718acaf92f/File_a88dc03207924d828bcf2ff0d5c4289c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e4357c8-49fd-49f6-b294-39718acaf92f/File_a88dc03207924d828bcf2ff0d5c4289c_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="18">
+<li>In the Modes pop-up, select <strong>product-manager</strong>.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cc605df-68d7-4be8-861c-d811aef2da1a/File_83a74378475843e4a54eec469f2471cc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cc605df-68d7-4be8-861c-d811aef2da1a/File_83a74378475843e4a54eec469f2471cc_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="19">
+<li>You're now in product-manager Mode.</li>
+</ol>
+<p>Let's test it — type the prompt:</p>
+<p>What feature should we build next?</p>
+<p>...and press Send.</p>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/331bb578-5933-4ddd-b0f0-39e4f3a34192/File_1dd8c488542e42bfb0ef103e76b55755_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/331bb578-5933-4ddd-b0f0-39e4f3a34192/File_1dd8c488542e42bfb0ef103e76b55755_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="20">
+<li>Proceed through the workflow as usual. \
+\
+If they appear, press <strong>Approve</strong>, <strong>Approve All</strong>, <strong>Save</strong>, or <strong>Run</strong> — whatever blue button prompts you onward.</li>
+</ol>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/93160a09-90e2-471b-b9c6-4cb9d33db776/File_ff2b0a13b78a4cd2a5ccfcd0accd1063_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/93160a09-90e2-471b-b9c6-4cb9d33db776/File_ff2b0a13b78a4cd2a5ccfcd0accd1063_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<ol start="21">
+<li>Finally, recall the workspace-level rules you created earlier — they apply to this new Mode too.</li>
+</ol>
+<blockquote>
+<p><em>Bob can occasionally get muddled about rules, especially across permission levels. If yours aren't behaving, a quick follow-up like</em> <strong>"Listen to the rules in .bob/rules/basic_rules.md"</strong> <em>usually sorts it out.</em></p>
+</blockquote>
+<p align="left">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f459f265-6d26-46c0-bbd3-75c9bf5abda6/File_3e7b9654ae4845c7b3bc8a72b50bf7ca_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f459f265-6d26-46c0-bbd3-75c9bf5abda6/File_3e7b9654ae4845c7b3bc8a72b50bf7ca_text_export.jpeg" alt="" width="600" /></a>
+</p>
+
+<h4 id="key-takeaways">Key takeaways</h4>
+<ul>
+<li>Custom Modes combine non-deterministic instructions with deterministic tool constraints.</li>
+<li>Tool restrictions are enforced, not suggested — they are the primary safety mechanism in a Mode.</li>
+<li>Modes are created through the UI or by editing <code>.bobmodes</code> directly.</li>
+<li>Project-scoped Modes are stored in <code>.bobmodes</code> and committed to the repository.</li>
+<li>Rules apply across all Modes — they are not overridden by custom Mode instructions.</li>
+<li>A Mode marketplace (coming soon) will offer community-contributed Modes for common workflows.</li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../3-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bob Rules | Encoding your standards" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Bob Rules | Encoding your standards
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/hide-toc-nav.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
