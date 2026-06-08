@@ -2108,14 +2108,14 @@ In the chapter ahead, you will examine strategies for encoding your organization
 </table>
 <div class="admonition note">
 <p class="admonition-title">AI MATURITY CURVE</p>
-<p><strong>Rules are committed to the repository.</strong> This is the heart of the <em>Tailor</em> stage in your progression towards the right-side of the <strong>AI Maturity Curve</strong>.</p>
-<p>Project-level rules in <strong><code>.bob/rules/</code></strong> are version-controlled, much in the same way as the actual project code. This means that rules you define will automatically:</p>
+<p><strong>Rules are committed to the repository.</strong> This is the heart of the <strong><em>Tailor</em></strong> stage in your progression towards the right-side of the <strong>AI Maturity Curve</strong>.</p>
+<p>Project-level rules in <strong><code>.bob/rules/</code></strong> are version-controlled, much in the same way as the actual project code. This means that Bob Rules that you define will automatically:</p>
 <ul>
 <li>Propagate to every teammate who clones the shared repository</li>
 <li>Performs changes to repositories as they go through normal code review processes</li>
 <li>Tracked in <em>git</em> for trace-back on the complete version history.</li>
 </ul>
-<p>The control that you manually exercised in <strong>Assist</strong>— which you then later entrusted with more autonomy to Bob in the <strong>Delegate</strong> phase —now becomes a durable, shared, and reviewable artifact in the <strong>Tailor</strong> phase of the journey.</p>
+<p>The control that you manually exercised in <strong><em>Assist</em></strong>— which you then later entrusted with more autonomy to Bob in the <strong><em>Delegate</em></strong> phase —now becomes a durable, shared, and reviewable artifact in the <strong><em>Tailor</em></strong> phase of the journey.</p>
 </div>
 <hr />
 <h2 id="tailor-3-2-iv-hands-on-setting-standards-with-bob-rules"><strong>iv. Hands-on: setting standards with Bob Rules</strong></h2>
@@ -2123,7 +2123,8 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
 </blockquote>
-<p>Let's create a rules file for Galaxium Travels, configure three standing rules — including that internal-monologue audit trail — and then watch Bob obey them in a fresh conversation.</p>
+<p>In the steps ahead, you will create a Rules file for Galaxium Travels and configure a set three standing rules. Afterwards you will test and validate the efficacy of these rules by initiating a fresh conversation with Bob.</p>
+<hr />
 <ol>
 <li>In the File Explorer, right-click <strong>.bob</strong> (just under the GALAXIUM-TRAVELS folder header).</li>
 </ol>
@@ -2131,6 +2132,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/626bc3f1-9dbf-44a5-afd1-ddda4ceca804/File_d8c397f436734e10be2080e0ba0937b1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/626bc3f1-9dbf-44a5-afd1-ddda4ceca804/File_d8c397f436734e10be2080e0ba0937b1_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="2">
 <li>Click <strong>New Folder...</strong></li>
 </ol>
@@ -2138,6 +2140,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a0ba5618-ddcc-47a3-98e8-ba71a27c4ebd/File_df520dc508134826bfa49942c9002c11_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a0ba5618-ddcc-47a3-98e8-ba71a27c4ebd/File_df520dc508134826bfa49942c9002c11_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="3">
 <li>A text box appears for you to name the folder. Name the folder:</li>
 </ol>
@@ -2146,6 +2149,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d655cad1-a84c-481a-b32a-33d0fc826511/File_26e0960ca1eb4e8e86fe8383b57b4c1a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d655cad1-a84c-481a-b32a-33d0fc826511/File_26e0960ca1eb4e8e86fe8383b57b4c1a_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="4">
 <li>Right-click the newly created <strong>rules</strong> folder again.</li>
 </ol>
@@ -2153,6 +2157,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/542f541f-0b1f-4ee3-a143-2776fe56ce4b/File_6d349631de794dc9b57458ed1e743a5d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/542f541f-0b1f-4ee3-a143-2776fe56ce4b/File_6d349631de794dc9b57458ed1e743a5d_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="5">
 <li>Click <strong>New File...</strong></li>
 </ol>
@@ -2160,6 +2165,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2558d5e0-59c1-4705-8389-7934b8a54c4c/File_13ca10714474430eb308eb7dbda798a3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2558d5e0-59c1-4705-8389-7934b8a54c4c/File_13ca10714474430eb308eb7dbda798a3_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="6">
 <li>A text box appears for you to name the file. Name the file:</li>
 </ol>
@@ -2168,6 +2174,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4b4c4622-7db1-46d6-875d-4c1521dd9717/File_59fd165de9c2408fa3d26057f380ced5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4b4c4622-7db1-46d6-875d-4c1521dd9717/File_59fd165de9c2408fa3d26057f380ced5_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="7">
 <li>Click the new file to open it — a blank file at .bob/rules/basic_rules.md.</li>
 </ol>
@@ -2179,6 +2186,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="8">
 <li>With the agentic sidebar in <strong>Code mode</strong>, send the following prompt:</li>
 </ol>
@@ -2190,6 +2198,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="9">
 <li>If prompted along the way, just click the blue action button shown — <strong>Save</strong>, <strong>Approve</strong>, <strong>Approve All</strong>, or <strong>Run</strong> — to keep things moving.</li>
 </ol>
@@ -2197,6 +2206,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="10">
 <li>As usual, the Todo list appears and Bob begins working. Keep selecting <strong>Approve All</strong> (or whichever blue button appears) to let it continue.</li>
 </ol>
@@ -2204,6 +2214,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="11">
 <li>As expected, Bob asks permission to edit the protected configuration file you just made — the empty <strong>basic_rules.md</strong>.</li>
 </ol>
@@ -2211,6 +2222,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="12">
 <li>Continue through the workflow as usual. You'll watch basic_rules.md fill with the rules and reformat itself automatically.</li>
 </ol>
@@ -2219,6 +2231,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="13">
 <li>On completion, you'll see <strong>"Task Completed"</strong>!</li>
 </ol>
@@ -2227,6 +2240,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="14">
 <li>In a new chat session, type out the prompt:</li>
 </ol>
@@ -2236,6 +2250,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="15">
 <li>As usual, the Todo list is created.</li>
 </ol>
@@ -2248,6 +2263,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="16">
 <li>If prompted further, keep working through the flow — <strong>Approve</strong>, <strong>Approve All</strong>, <strong>Run</strong>, as before.</li>
 </ol>
@@ -2255,6 +2271,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="17">
 <li>Continue through the Agentic Sidebar workflow as you would during a typical interaction.</li>
 </ol>
@@ -2263,6 +2280,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="18">
 <li>Before long, a diff view appears with the proposed changes to the README — red for content to be removed, the highlight color for content to be added.</li>
 </ol>
@@ -2270,6 +2288,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="19">
 <li>Next, the internal-monologue (Interaction Summary) document is created — exactly as specified in the basic_rules.md file you just wrote!</li>
 </ol>
@@ -2277,6 +2296,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" alt="" width="600" /></a>
 </p>
 
+<hr />
 <ol start="20">
 <li>Finally, the Task Completed summary appears again. As requested by the "update the readme" prompt, the README has been updated — and you can see the completed internal-monologue document, following the "yyyy-mm-dd_NAME.md" naming format.</li>
 </ol>
@@ -2290,18 +2310,19 @@ In the chapter ahead, you will examine strategies for encoding your organization
 \
 My project level rules in @/.bob/rules/basic_rules.md are not being listened to, please configure them properly</p>
 <p>...then proceed through the workflow. Bob may add the rules to each AGENTS.md file, apply them for a single instance, or take another approach.</p>
-<h4 id="tailor-3-2-key-takeaways">Key takeaways</h4>
+<hr />
+<h2 id="tailor-3-2-v-key-takeaways">**v. Key takeaways</h2>
+<hr />
 <ul>
-<li>Rules are plain-text files in <code>.bob/rules/</code> that Bob reads at the start of every conversation.</li>
-<li>They apply across all modes — not mode-specific unless placed in mode-specific rule directories.</li>
-<li>They enforce consistent behavior without repeating instructions in every prompt.</li>
-<li>The internal-monologue pattern gives you an audit trail of Bob's actions across all sessions.</li>
-<li>Project-level rules are committed to the repository, making them available to the whole team.</li>
-<li>Global rules apply across every project on the machine.</li>
+<li>Rules are plain-text files in <code>.bob/rules/</code> that Bob reads and internalizes at the start of every conversation</li>
+<li>These rules apply across all Bob Modes (but can be made Mode-specific if placed in particular rule directories)</li>
+<li>Rules enforce consistent behavior without needing to re-introduce or repeat instructions with every session</li>
+<li>Internal-monologue pattern rules give you an audit trail of Bob's actions across all sessions</li>
+<li>Project-level rules are committed to the repository, making them available to the whole team</li>
+<li>Global rules apply across every project on the machine</li>
 </ul>
-<blockquote>
-<p>Bob is endlessly malleable: you can make it behave the way you want — the way that fits your work and your team.</p>
-</blockquote></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
+<p></br>
+IBM Bob is endlessly malleable. You can tailor it behave the way you want, according to the pattern of work that fits your team. In the chapter ahead, you will explore the ways that <strong>Custom Modes</strong> can further shape Bob's behavior to every role within your organization.</p></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
                         <h1 class='nav-section-title' id='section-4-scale-extend'>
                             4. Scale & Extend <a class='headerlink' href='#section-4-scale-extend' title='Permanent link'>↵</a>
                         </h1>
