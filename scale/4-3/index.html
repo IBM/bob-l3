@@ -535,26 +535,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-mcp-is" class="md-nav__link">
-    What MCP is
+  <a href="#ii-what-is-mcp" class="md-nav__link">
+    ii. What is MCP?
   </a>
   
-    <nav class="md-nav" aria-label="What MCP is">
+    <nav class="md-nav" aria-label="ii. What is MCP?">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-coordination-innovation-not-just-a-technical-one" class="md-nav__link">
-    A coordination innovation, not just a technical one
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-an-mcp-server" class="md-nav__link">
-    Adding an MCP server
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#using-mcp-tools" class="md-nav__link">
@@ -565,13 +551,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ii-why-this-matters" class="md-nav__link">
-    ii. Why this matters
-  </a>
   
 </li>
       
@@ -638,26 +617,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-mcp-is" class="md-nav__link">
-    What MCP is
+  <a href="#ii-what-is-mcp" class="md-nav__link">
+    ii. What is MCP?
   </a>
   
-    <nav class="md-nav" aria-label="What MCP is">
+    <nav class="md-nav" aria-label="ii. What is MCP?">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-coordination-innovation-not-just-a-technical-one" class="md-nav__link">
-    A coordination innovation, not just a technical one
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-an-mcp-server" class="md-nav__link">
-    Adding an MCP server
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#using-mcp-tools" class="md-nav__link">
@@ -668,13 +633,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ii-why-this-matters" class="md-nav__link">
-    ii. Why this matters
-  </a>
   
 </li>
       
@@ -711,7 +669,7 @@
 <hr />
 <h2 id="i-connecting-everything-back-to-bob"><strong>i. Connecting everything back to Bob</strong></h2>
 <hr />
-<p>A partner that can only touch files and run terminal commands is powerful, but it is still an island. The <strong>Model Context Protocol (MCP)</strong> is what connects Bob to the rest of your world — a standardized interface that lets LLM-powered applications reach external tools, services, and data sources through one consistent integration layer. Add MCP servers to Bob, and its reach extends to any external service that provides one. This is the final move in scaling Bob across an enterprise: making it a participant in the systems your teams already use.</p>
+<p>The <strong>Model Context Protocol (MCP)</strong> is what connects IBM Bob to the rest of your business and the systems your organization spans: a standardized interface that lets LLM-powered applications reach external tools, services, and data sources through one consistent integration layer. Any external service that can provide an MCP server can potentially serve as another endpoint for Bob to work with. This is the final (and most consequential) step in scaling Bob across an enterprise- making Bob a participant in the systems your teams already use —and serves as an effective capstone to the work you've performed thus far.</p>
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCDRFd2HQdRc3G4WB866f2HHVQCG">Chapter 5.1: MCP [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the Model Context Protocol (MCP) and how it relates to Bob. <em>[5 min]</em></p>
@@ -726,22 +684,26 @@
 <p>A common thread across all of these modules and discussions has been the core value that <strong>the developer stays in control.</strong> Only the stakes changed (and escalated) across the journey from the nascent phases to the right-most portions of the curve. At <strong>Assist</strong>, control was apparent — the user (you) accepting each suggestion in sequence with a high degree of oversight. At <strong>Delegate</strong>, it was approving the plans that Bob put in place and trusting it to carry on the work beyond that point. At <strong>Tailor</strong>, it was encoding the rules and committing them to repositories that would ensure Bob adhered to your coding and organizational standards. Currently, at the <strong>Scale &amp; Extend</strong> phase, trust becomes more about governing context, credentials, and tool access.</p>
 <p>Follow this progression with any conversation or demonstration you have with clients about IBM Bob. Don't limit your planning to only a parade of features. Build out the storyline presented here to demonstrate a trustworthy path by which a team grows into working with an AI partner, without ever feeling like they've relinquished control or made shortcuts to their organization's established ways of winning.</p>
 </div>
-<h2 id="what-mcp-is">What MCP is</h2>
-<p>MCP defines a standard interface for connecting LLM applications to external systems. Before it existed, wiring an LLM to an external tool meant building a custom connection layer for each one — a significant, inconsistent effort that varied across teams and organizations. MCP replaces that with a single protocol both sides implement: once a service offers an MCP server, any MCP-compatible client (Bob included) can connect to it immediately, with no custom integration work.</p>
-<h4 id="a-coordination-innovation-not-just-a-technical-one">A coordination innovation, not just a technical one</h4>
-<p>MCP originated at Anthropic and has since been transferred to the <strong>Linux Foundation</strong>, making it a vendor-neutral, openly governed standard — and that governance is what accelerated its adoption. Most major external services and developer tools now ship MCP servers, creating an extensive ecosystem of ready-to-use integrations.</p>
-<blockquote>
-<p>MCP's real impact isn't primarily technical — it's a coordination innovation. A shared standard eliminated duplicated integration effort across the whole industry.</p>
-</blockquote>
-<h4 id="adding-an-mcp-server">Adding an MCP server</h4>
-<p>MCP servers are configured in Bob's settings through a JSON configuration file. The flow is: open Bob settings via the three-dot menu (⋯), navigate to <strong>MCP Servers</strong>, add the server configuration in JSON, and supply credentials as required. Most services publish their configuration snippet in their official documentation — and Bob itself can insert the JSON for you, handling indentation and brackets automatically.</p>
+<h2 id="ii-what-is-mcp"><strong>ii. What is MCP?</strong></h2>
+<hr />
+<p>The <strong>Model Context Protocol (MCP)</strong> defines an open standards interface for connecting large language model (LLM) applications to external systems. Before it existed, wiring an LLM to an external tool meant building a custom connection layer for each potential endpoint — a significant, inconsistent level of effort that varied across teams and organizations. MCP replaces those old methods with a single protocol, both-sides implementation: <em>once a service offers an MCP server, any MCP-compatible client (Bob included) can connect to it immediately, with no custom integration work.</em></p>
+<p>MCP originated at Anthropic and has since been transferred to the <strong>Linux Foundation</strong>, making it a vendor-neutral, <em>openly governed standard</em>. This governance, more than anything else, is what has accelerated its widespread adoption across the industry. Most major external services and developer tools now ship MCP servers, creating an extensive ecosystem of ready-to-use integrations.</p>
+<hr />
+<p>MCP servers are configured in Bob's settings through a JSON configuration file. The simplified flow is:</p>
+<ol>
+<li>Open Bob settings via the three-dot menu (<strong>⋯</strong>),</li>
+<li>Navigate to <strong>MCP Servers</strong></li>
+<li>Add the server configuration in JSON</li>
+<li>Supply credentials as required.</li>
+</ol>
+<p>Most services publish their own configuration snippets within their official documentation. Furthermore, Bob itself can insert the JSON for you, handling indentation and brackets automatically.</p>
 <p>How you handle credentials is a governance decision in itself:</p>
 <table>
 <thead>
 <tr>
-<th>Method</th>
-<th>Description</th>
-<th>Best for</th>
+<th>METHOD</th>
+<th>DESCRIPTION</th>
+<th>USE CASE</th>
 </tr>
 </thead>
 <tbody>
@@ -764,8 +726,6 @@
 </table>
 <h4 id="using-mcp-tools">Using MCP tools</h4>
 <p>MCP tools are available only in <strong>Advanced mode</strong>. With Advanced mode active, Bob automatically recognizes the tools exposed by every configured server and invokes them in response to natural-language requests — no special syntax required. Bob simply decides which MCP tools to call based on the task you describe.</p>
-<hr />
-<h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
 <p>The GitHub MCP server shows how much a single integration can add. Configure it — paste GitHub's configuration snippet into the JSON config, then add a personal access token whose permissions match the operations Bob will perform (reading issues, creating commits, adding comments, closing issues) — and with Advanced mode active, Bob can list and read issues, create commits and push changes, add comments, close issues, and link commits to issues. A token with insufficient permissions will simply cause the affected operation to fail, and Bob will report the permission error so you can update the token.</p>
 <p>Strung together, those capabilities make a complete issue-resolution loop possible entirely through natural language: ask Bob to list open issues (it calls the GitHub MCP tool to retrieve them), describe the one to fix (Bob reads the relevant code and implements the change), instruct it to commit and push (it calls the right MCP tools and git commands), then have it comment on the issue with a link to the commit and close it. A full development cycle — from issue to closed resolution — without ever leaving the Bob interface.</p>
