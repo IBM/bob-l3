@@ -682,7 +682,7 @@
 </div>
 <h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<p>The <strong>Bob IDE</strong> and <strong>Bob Shell</strong> are complementary vectors for working with IBM Bob. In practice, you will discover that many workflows run both the IDE and the Shell side-by-side. Some additional points of comparison on where and when to leverage either (or both) interfaces:</p>
+<p>The <strong>Bob IDE</strong> and <strong>Bob Shell</strong> are complementary vectors for working with IBM Bob. In practice, you will discover that many workflows run both the Bob IDE and <em>Bob Shell</em> side-by-side. Some additional points of comparison on where and when to leverage either (or both) interfaces:</p>
 <table>
 <thead>
 <tr>
@@ -723,35 +723,35 @@
 <hr />
 <ol>
 <li>
-<p><strong>Keyboard efficiency.</strong> Bob Shell removes mouse-driven interaction entirely — navigating files, issuing commands, reviewing output, and prompting Bob all happen through the keyboard. For developers who have internalized terminal workflows, the path from thought to action is faster, and the efficiency compounds; many adopt Bob Shell as a full daily-driver replacement for the IDE once it's familiar.</p>
+<p><strong>Keyboard efficiency.</strong> <em>Bob Shell</em> removes mouse-driven interaction entirely — navigating files, issuing commands, reviewing output, and prompting Bob all happen through the keyboard. For developers who have internalized terminal workflows, the path from thought to action is faster, and the efficiency compounds; many adopt <em>Bob Shell</em> as a full daily-driver replacement for the IDE once it's familiar.</p>
 </li>
 <li>
-<p><strong>Parallelization.</strong> Because Bob Shell runs in a terminal, multiple independent instances can run at once — one per tab, pane, or multiplexer window — which is trivial to set up compared with any IDE-based approach. You might run the IDE sidebar for exploratory work while one shell instance implements a backend change, another writes tests for a separate component, and a third generates documentation. Tasks with no shared state are the ideal candidates.</p>
+<p><strong>Parallelization.</strong> Because <em>Bob Shell</em> runs in a terminal, multiple independent instances can run at once — one per tab, pane, or multiplexer window — which is trivial to set up compared with any IDE-based approach. You might run the IDE sidebar for exploratory work while one shell instance implements a backend change, another writes tests for a separate component, and a third generates documentation. Tasks with no shared state are the ideal candidates.</p>
 </li>
 <li>
-<p><strong>Headless mode.</strong> Bob Shell supports a headless mode where input is piped directly to Bob rather than entered interactively. This single capability turns Bob into a programmable component rather than just an interactive assistant. Pipe compiler output to it for diagnosis, pipe log files to it for incident triage, generate summaries or reports as part of a script, or let it attempt minor fixes autonomously and escalate the complex ones. For example:</p>
+<p><strong>Headless mode.</strong> <em>Bob Shell</em> supports a headless mode where input is piped directly to Bob rather than entered interactively. This single capability turns Bob into a programmable component rather than just an interactive assistant. Pipe compiler output to it for diagnosis, pipe log files to it for incident triage, generate summaries or reports as part of a script, or let it attempt minor fixes autonomously and escalate the complex ones. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cat error.log <span class="p">|</span> bob <span class="s2">&quot;explain this&quot;</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">A NOTE ON SAFETY</p>
-<p><strong>Governance, as always, is paramount.</strong> By default, Bob Shell applies <strong>stricter auto-approval settings</strong> than the Bob IDE. For example, file writes and shell commands require explicit confirmation by the user. The stricter default behavior is deliberate given that Bob Shell is often used in environments (servers, continuous integration pipelines, or scripts) where unreviewed changes can carry broader consequences, compared to within the constraints of a local IDE session.</p>
+<p><strong>Governance, as always, is paramount.</strong> By default, <em>Bob Shell</em> applies <strong>stricter auto-approval settings</strong> than the Bob IDE. For example, file writes and shell commands require explicit confirmation by the user. The stricter default behavior is deliberate given that <em>Bob Shell</em> is often used in environments (servers, continuous integration pipelines, or scripts) where unreviewed changes can carry broader consequences, compared to within the constraints of a local IDE session.</p>
 </div>
 </li>
 </ol>
 <h2 id="iv-getting-started-and-navigation-tips"><strong>iv. Getting started and navigation tips</strong></h2>
 <hr />
-<p>Once installed, invoke Bob Shell by running:</p>
+<p>Once installed, invoke <em>Bob Shell</em> by running:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bob
 </code></pre></div>
 <p>On first use, Shell prompts for IBM login credentials. After successfully authenticating, it behaves much like the Bob IDE Chat interface: you type natural-language prompts directly at into the Shell prompt, with Bob reading and modifying files in the current working directory based upon those requests.</p>
 <div class="admonition note">
 <p class="admonition-title">INVOKING REGULAR (NON-BOB) SHELL COMMANDS</p>
-<p>Within a Bob Shell session, prefix any command with <strong>!</strong> to invoke regular (non-Bob) shell commands. For example:</p>
+<p>Within a <em>Bob Shell</em> session, prefix any command with <strong>!</strong> to invoke regular (non-Bob) shell commands. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>!git diff
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>!cat README.md
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>!ls -la
 </code></pre></div>
-<p>The net result for the developer (you) is being able to alternate between AI-assisted workflows (with Bob Shell) and standard bash shell operations seamlessly, without needing to leave or create a separate session. </p>
+<p>The net result for the developer (you) is being able to alternate between AI-assisted workflows (with <em>Bob Shell</em>) and standard bash shell operations seamlessly, without needing to leave or create a separate session. </p>
 </div>
 <h2 id="v-hands-on-installing-and-using-bob-shell"><strong>v. Hands-on: Installing and using Bob Shell</strong></h2>
 <hr />
@@ -759,8 +759,8 @@
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCQ74Gg3VjCHmGCG7D4JDmXppWFj">Chapter 4.2: Bob Shell [IBM Bob L3]</a>
 </p>
 </blockquote>
-<p>To begin, you will first need to follow the directions below for setting up Bob Shell within your Windows or MacOS environment. Follow the instruction set specific to your operating system.</p>
-<p>Afterwards, you will go hands-on with using Bob Shell to programmatically send a prompt, drop into Shell Mode, and explore various commands.</p>
+<p>To begin, you will first need to follow the directions below for setting up <em>Bob Shell</em> within your Windows or MacOS environment. Follow the instruction set specific to your operating system.</p>
+<p>Afterwards, you will go hands-on with using <em>Bob Shell</em> to programmatically send a prompt, drop into Shell Mode, and explore various commands.</p>
 <hr />
 <ol>
 <li>
@@ -783,7 +783,7 @@
 <hr />
 <ol start="3">
 <li>
-<p>To download the Bob Shell to your local machine, follow the instruction set below that matches your machine's operating system.</p>
+<p>To download the <em>Bob Shell</em> to your local machine, follow the instruction set below that matches your machine's operating system.</p>
 <details class="quote">
 <summary>MAC OR LINUX</summary>
 <ol>
@@ -836,7 +836,7 @@
 <hr />
 <ol start="4">
 <li>
-<p>With the Bob Shell now successfully installed, copy and paste the following instruction into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
+<p>With the <em>Bob Shell</em> now successfully installed, copy and paste the following instruction into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>bob
 </code></pre></div>
 <p align="left">
@@ -867,7 +867,7 @@
 <hr />
 <ol start="7">
 <li>
-<p>If this is your first time using Bob Shell, there's a small amount of configuration and bookkeeping to do beforehand.</p>
+<p>If this is your first time using <em>Bob Shell</em>, there's a small amount of configuration and bookkeeping to do beforehand.</p>
 <p>If prompted to <strong>accept the license agreement</strong>, review the contents and then type <span class="keys"><kbd class="key-y">Y</kbd></span> (followed by <span class="keys"><kbd class="key-enter">Enter</kbd></span>) if you agree to the terms and conditions.
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0436b889-e32d-445d-bf1c-ef6ebfb2883c/File_7344d57a308a4b77b473d9f35ac0e68e_text_export.jpeg" alt="" width="600" /></a>
@@ -877,7 +877,7 @@
 <hr />
 <ol start="8">
 <li>
-<p>When prompted to connect the Bob IDE to Bob Shell, use the arrow keys to highlight option <strong>1. Yes</strong> (or type <span class="keys"><kbd class="key-1">1</kbd></span>), and then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the command.</p>
+<p>When prompted to connect the Bob IDE to <em>Bob Shell</em>, use the arrow keys to highlight option <strong>1. Yes</strong> (or type <span class="keys"><kbd class="key-1">1</kbd></span>), and then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the command.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6308c1e9-c992-49e0-9af4-bf272d614e55/File_ec5a443cce7145ffa005837dda0a8119_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6308c1e9-c992-49e0-9af4-bf272d614e55/File_ec5a443cce7145ffa005837dda0a8119_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -903,14 +903,14 @@
 </ol>
 <hr />
 <ol start="9">
-<li>Within the Terminal console, a <code>Welcome to Bob Shell</code> splash screen will appear to confirm a successful connection has been established to the service.</li>
-</ol>
+<li>
+<p>Within the Terminal console, a <code>Welcome to Bob Shell</code> splash screen will appear to confirm a successful connection has been established to the service.</p>
 <p>Scroll down until you reach the <strong>input field</strong>, denoted by the <span class="keys"><kbd class="key-greater">&gt;</kbd></span> ("greater than") brace.
-<br />
 <p align="left">
-    <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b5cef49-cdaf-47ff-9132-3151423c6bfa/File_e40d4fa44f9448ba9c0e72c817f7640c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b5cef49-cdaf-47ff-9132-3151423c6bfa/File_e40d4fa44f9448ba9c0e72c817f7640c_text_export.jpeg" alt="" width="600" /></a>
-  </p>
-</p>
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b5cef49-cdaf-47ff-9132-3151423c6bfa/File_e40d4fa44f9448ba9c0e72c817f7640c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b5cef49-cdaf-47ff-9132-3151423c6bfa/File_e40d4fa44f9448ba9c0e72c817f7640c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
 <hr />
 <ol start="10">
 <li>
@@ -925,9 +925,9 @@
 <hr />
 <ol start="11">
 <li>
-<p>In the same way that it did using the Agentic Sidebar within the Bob IDE, the Bob Shell narrates its progression through a <em>Todo List</em> as it executes upon the work.</p>
+<p>In the same way that it did using the Agentic Sidebar within the Bob IDE, the <em>Bob Shell</em> narrates its progression through a <em>Todo List</em> as it executes upon the work.</p>
 <ul>
-<li>Occasionally, Bob will ask for <strong>approval</strong> to complete tasks or actions as it traverses the workflow. </li>
+<li>Occasionally, Bob will ask for <strong>approval</strong> to complete tasks or actions as operates </li>
 <li>The difference with Bob Shell is such check-ins with the human-in-the-loop happen via the Terminal console
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f4fc846d-fdfd-4581-af68-f8b459720345/File_b46144a6f7564eb484ef733a693caa04_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f4fc846d-fdfd-4581-af68-f8b459720345/File_b46144a6f7564eb484ef733a693caa04_text_export.jpeg" alt="" width="600" /></a>
@@ -937,7 +937,7 @@
 </ol>
 <hr />
 <ol start="12">
-<li>If asked for approvals, Bob Shell will present you with a numerated list as you saw previously.<ul>
+<li>If asked for approvals, <em>Bob Shell</em> will present you with a numerated list as you saw previously.<ul>
 <li>Either use the arrows on your keyboard to move up and down the list, or press the corresponding number on your keyboard, to highlight one of the options</li>
 <li>Confirm the selection by hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span></li>
 <li>Recommended that in all cases (for the hands-on lab) you opt for:
@@ -952,7 +952,7 @@
 <hr />
 <ol start="13">
 <li>
-<p>The <em>diff view</em> captured in the screenshot below highlights Bob's proposed updates to the <code>README</code> file.</p>
+<p>The <em>diff view</em> captured in the screenshot below highlights Bob's proposed updates to the <code>README.md</code> file.</p>
 <p>As before: <em>red</em> highlights denote content marked for removal; <em>green</em> highlights denote content scheduled to be added.
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5c382e4a-edb4-43cc-bf83-61d52c962ca1/File_1b4a41b3697f4ece82f97e22c071032f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5c382e4a-edb4-43cc-bf83-61d52c962ca1/File_1b4a41b3697f4ece82f97e22c071032f_text_export.jpeg" alt="" width="600" /></a>
@@ -962,7 +962,7 @@
 <hr />
 <ol start="14">
 <li>
-<p>Prefixing any input into the Bob Shell console with an exclamation mark <span class="keys"><kbd class="key-exclam">!</kbd></span> drops <em>Bob Shell</em> into <strong>shell mode</strong> (akin to a <code>bash</code> shell), where you can run ordinary shell commands.</p>
+<p>Prefixing any input into the <em>Bob Shell</em> console with an exclamation mark <span class="keys"><kbd class="key-exclam">!</kbd></span> drops <em>Bob Shell</em> into <strong>shell mode</strong> (akin to a <code>bash</code> shell), where you can run ordinary shell commands.</p>
 <p>Test this by copy and pasting the following command into the Terminal console, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>!cat readme
 </code></pre></div></p>
@@ -976,7 +976,7 @@
 <hr />
 <ol start="15">
 <li>
-<p>As a result of executing the <code>cat</code> command, the Terminal console simply prints the <code>README</code> contents to the window.</p>
+<p>As a result of executing the <code>cat</code> command, the Terminal console simply prints the <code>README.md</code> contents to the window.</p>
 <div class="admonition warning">
 <p class="admonition-title">EXITING <span class="keys"><kbd class="key-exclam">!</kbd></span> SHELL MODE</p>
 <p>Note that the <span class="keys"><kbd class="key-exclam">!</kbd></span> exclamation marker remains on the left-hand side of the Terminal console. This indicates that the console remains in the generic <strong>shell mode</strong>.</p>
@@ -1007,7 +1007,7 @@
 <ol start="17">
 <li>
 <p><strong>To exit</strong> generic shell mode, and return to the <em>Bob Shell</em>, press <span class="keys"><kbd class="key-escape">Esc</kbd></span> at any time.</p>
-<p>Press <span class="keys"><kbd class="key-escape">Esc</kbd></span> now to return to the Bob Shell, where you will investigate more of the commands available before progressing to the next chapter.
+<p>Press <span class="keys"><kbd class="key-escape">Esc</kbd></span> now to return to the <em>Bob Shell</em>, where you will investigate more of the commands available before progressing to the next chapter.
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/63f13645-593d-42d7-8330-feb5371c9d0e/File_01e30cbda6ac4ed9bf217560eea0bd31_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/63f13645-593d-42d7-8330-feb5371c9d0e/File_01e30cbda6ac4ed9bf217560eea0bd31_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1016,8 +1016,8 @@
 <hr />
 <ol start="18">
 <li>
-<p>There are a multitude of commands and operations you can perform using the Bob Shell, which we have just barely scratched the surface of here.</p>
-<p>Copy and paste the following command, followed by <span class="keys"><kbd class="key-enter">Enter</kbd></span>, to display a full list of ways that you can interact with the Bob Shell:
+<p>There are a multitude of commands and operations you can perform using the <em>Bob Shell</em>, which we have just barely scratched the surface of here.</p>
+<p>Copy and paste the following command, followed by <span class="keys"><kbd class="key-enter">Enter</kbd></span>, to display a full list of ways that you can interact with the <em>Bob Shell</em>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/help
 </code></pre></div>
 <p align="left">
