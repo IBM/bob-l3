@@ -3307,12 +3307,13 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <p>The <strong>Model Context Protocol (MCP)</strong> defines an open standards interface for connecting large language model (LLM) applications to external systems. Before it existed, wiring an LLM to an external tool meant building a custom connection layer for each potential endpoint — a significant, inconsistent level of effort that varied across teams and organizations. MCP replaces those old methods with a single protocol, both-sides implementation: <em>once a service offers an MCP server, any MCP-compatible client (Bob included) can connect to it immediately, with no custom integration work.</em></p>
 <p>MCP originated at Anthropic and has since been transferred to the <strong>Linux Foundation</strong>, making it a vendor-neutral, <em>openly governed standard</em>. This governance, more than anything else, is what has accelerated its widespread adoption across the industry. Most major external services and developer tools now ship MCP servers, creating an extensive ecosystem of ready-to-use integrations.</p>
 <hr />
-<p>MCP servers are configured in Bob's settings through a JSON configuration file. The simplified flow is:</p>
+<p>MCP servers are configured in Bob's settings through a JSON configuration file.</p>
+<p>The simplified flow is as follows:</p>
 <ol>
 <li>Open Bob settings via the three-dot menu (<strong>⋯</strong>),</li>
 <li>Navigate to <strong>MCP Servers</strong></li>
 <li>Add the server configuration in JSON</li>
-<li>Supply credentials as required.</li>
+<li>Supply credentials as required</li>
 </ol>
 <p>Most services publish their own configuration snippets within their official documentation. Furthermore, Bob itself can insert the JSON for you, handling indentation and brackets automatically.</p>
 <p>How you handle credentials is a governance decision in itself:</p>
@@ -3326,48 +3327,66 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 </thead>
 <tbody>
 <tr>
-<td>Inline in config</td>
+<td><strong>Inline with config</strong></td>
 <td>Personal access token written directly in the JSON file</td>
 <td>Quick setup, local development only</td>
 </tr>
 <tr>
-<td>Environment variable</td>
+<td><strong>Environment variable</strong></td>
 <td>Token stored as an OS environment variable, referenced in config</td>
 <td>Cleaner setup, avoids token in config file</td>
 </tr>
 <tr>
-<td>Context Forage</td>
-<td>Open-source MCP gateway for managing complex, multi-server setups</td>
+<td><strong>Context forage</strong></td>
+<td>Open source MCP gateway for managing complex, multi-server setups</td>
 <td>Teams, production environments, multiple credentials</td>
 </tr>
 </tbody>
 </table>
-<h4 id="scale-4-3-using-mcp-tools">Using MCP tools</h4>
-<p>MCP tools are available only in <strong>Advanced mode</strong>. With Advanced mode active, Bob automatically recognizes the tools exposed by every configured server and invokes them in response to natural-language requests — no special syntax required. Bob simply decides which MCP tools to call based on the task you describe.</p>
 <hr />
-<p>The GitHub MCP server shows how much a single integration can add. Configure it — paste GitHub's configuration snippet into the JSON config, then add a personal access token whose permissions match the operations Bob will perform (reading issues, creating commits, adding comments, closing issues) — and with Advanced mode active, Bob can list and read issues, create commits and push changes, add comments, close issues, and link commits to issues. A token with insufficient permissions will simply cause the affected operation to fail, and Bob will report the permission error so you can update the token.</p>
-<p>Strung together, those capabilities make a complete issue-resolution loop possible entirely through natural language: ask Bob to list open issues (it calls the GitHub MCP tool to retrieve them), describe the one to fix (Bob reads the relevant code and implements the change), instruct it to commit and push (it calls the right MCP tools and git commands), then have it comment on the issue with a link to the commit and close it. A full development cycle — from issue to closed resolution — without ever leaving the Bob interface.</p>
-<p>And GitHub is just one server in a fast-growing ecosystem that already spans version-control and code-review platforms, project-management and issue-tracking tools, databases and data services, cloud-infrastructure providers, and internal enterprise systems. In practice, most of the external integrations a development team relies on can be connected to Bob through MCP, with no custom development.</p>
+<div class="admonition quote">
+<p class="admonition-title">USING MCP TOOLS</p>
+<p><strong>MCP tools</strong> are available only in Bob's <strong>Advanced Mode</strong>. With Advanced Mode active, Bob automatically recognizes the tools exposed by every configured server and invokes them in response to natural-language requests.</p>
+<p>No special syntax is quired required. Bob simply decides which MCP tools to call based on the task you describe.</p>
+<p>The GitHub MCP server shows how much a single integration can add:</p>
+<ul>
+<li><em>Configuration:</em> paste GitHub's configuration snippet into the JSON config, then add a personal access token whose permissions match the operations Bob will perform (reading issues, creating commits, adding comments, closing issues)</li>
+<li><em>Advanced Mode capabilities enabled:</em> with Advanced Mode active, Bob can list and read issues, create commits and push changes, add comments, close issues, and link commits to issues</li>
+<li><em>Testing:</em> a token with insufficient permissions will simply cause the affected operation to fail and Bob will report the permission error so that you know to update the token</li>
+</ul>
+<p>Strung together, Bob's Advanced Mode capabilities make a complete <strong>issue-resolution loop</strong> possible entirely through natural language expressions. A full development cycle— from issue to closed resolution —is possible, without ever leaving the Bob interface:</p>
+<ul>
+<li><em>Ask</em> Bob to list open issues (Bob will call the GitHub MCP tool to retrieve them)</li>
+<li><em>Describe</em> the one issue to fix (Bob reads the relevant code and implements the change)</li>
+<li><em>Instruct</em> Bob to commit and push the fixed code (Bob calls the right MCP tools and git commands)</li>
+<li><em>Comment</em> (via Bob, at your behest) on the issue with a link to the commit and close the issue.</li>
+</ul>
+<p>And GitHub is just one server in a fast-growing ecosystem that already spans version control and code review platforms, project management and issue-tracking tools, databases and data services, cloud infrastructure providers, and internal enterprise systems. In practice, most of the external integrations a development team relies upon can be connected to Bob through MCP, with no custom development required.</p>
+</div>
 <hr />
 <h2 id="scale-4-3-iii-hands-on-optional-the-github-mcp-server"><strong>iii. Hands-on (optional): the GitHub MCP server</strong></h2>
 <hr />
+<div class="admonition warning">
+<p class="admonition-title">OPTIONAL MATERIAL</p>
+<p>The following section is <strong>NOT</strong> required to complete accreditation for the Level 3 hands-on material. However, it is nevertheless valuable to understand the workings of and recommended as worthy of your time.</p>
+</div>
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCDRFd2HQdRc3G4WB866f2HHVQCG">Chapter 5.1: MCP [IBM Bob L3]</a></p>
 </blockquote>
 <p>The following walkthrough connects the GitHub MCP server end to end. Note that it is <strong>entirely optional</strong> — you're welcome to simply read through it rather than perform the steps, especially since it involves creating a credential.</p>
 <hr />
 <ol>
-<li><strong>THIS MCP SECTION IS OPTIONAL!</strong></li>
-</ol>
-<p><strong>You can simply read through the steps to complete this - you do not need to take action or actually proceed through these steps.</strong> \
-\
-This optional section is subject to change. Validate the current GitHub MCP server steps against the latest product and provider documentation before attempting to implement this with clients.</p>
+<li>
+<p>The <code>GitHub MCP Server</code> repository that this <strong>optional</strong> module is built upon is subject to frequent and continuous change. Validate the current GitHub MCP server steps (via the latest product and provider documentation) before attempting to implement this with clients.</p>
 <p>Navigate to the following page:</p>
-<p><a href="https://github.com/github/github-mcp-server">https://github.com/github/github-mcp-server</a></p>
-<p align="left">
-  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7f7316c1-4e88-4f49-8401-3a5ed8eeae79/File_6a95a696ca1c4a6c8819bb3f654145e1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7f7316c1-4e88-4f49-8401-3a5ed8eeae79/File_6a95a696ca1c4a6c8819bb3f654145e1_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+<div class="admonition warning">
+<p><strong>URL:</strong> <a href="https://github.com/github/github-mcp-server">https://github.com/github/github-mcp-server</a></p>
+</div>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7f7316c1-4e88-4f49-8401-3a5ed8eeae79/File_6a95a696ca1c4a6c8819bb3f654145e1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7f7316c1-4e88-4f49-8401-3a5ed8eeae79/File_6a95a696ca1c4a6c8819bb3f654145e1_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
 <hr />
 <ol start="2">
 <li>Scroll down to the <strong>"Local GitHub MCP Server"</strong> section and click the hyperlink:</li>
