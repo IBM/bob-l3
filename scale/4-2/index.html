@@ -877,7 +877,7 @@
 <hr />
 <ol start="8">
 <li>
-<p>When prompted to connect the Bob IDE to Bob Shell, use the arrow keys to highlight <strong>1. Yes</strong> (or type <span class="keys"><kbd class="key-1">1</kbd></span>) and then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.</p>
+<p>When prompted to connect the Bob IDE to Bob Shell, use the arrow keys to highlight option <strong>1. Yes</strong> (or type <span class="keys"><kbd class="key-1">1</kbd></span>), and then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the command.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6308c1e9-c992-49e0-9af4-bf272d614e55/File_ec5a443cce7145ffa005837dda0a8119_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6308c1e9-c992-49e0-9af4-bf272d614e55/File_ec5a443cce7145ffa005837dda0a8119_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -967,7 +967,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>!cat readme
 </code></pre></div></p>
 <div class="admonition quote"></div>
-<p>The <strong><code>cat</code></strong> (concatenate) command is used to view, create, and combine file contents directly from the terminal.
+<p>The <strong><code>cat</code></strong> (concatenate) command is used to view, create, and combine file contents directly from the console.
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4d530932-bacd-4c06-be2b-5cce28186b41/File_24ae9131a0b142de82b3f0342bbef069_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4d530932-bacd-4c06-be2b-5cce28186b41/File_24ae9131a0b142de82b3f0342bbef069_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -978,12 +978,9 @@
 <li>
 <p>As a result of executing the <code>cat</code> command, the Terminal console simply prints the <code>README</code> contents to the window.</p>
 <div class="admonition warning">
-<p class="admonition-title">REMAINING IN <span class="keys"><kbd class="key-exclam">!</kbd></span> SHELL MODE</p>
-<p>Note that the <span class="keys"><kbd class="key-exclam">!</kbd></span> exclamation marker remains on the left-hand side of the Terminal console.</p>
-<ul>
-<li>This indicates that the console remains in the generic <strong>shell mode</strong></li>
-<li>The terminal will remain in this mode until you type <code>bob</code> or prefix an instruction with <code>bob</code></li>
-</ul>
+<p class="admonition-title">EXITING <span class="keys"><kbd class="key-exclam">!</kbd></span> SHELL MODE</p>
+<p>Note that the <span class="keys"><kbd class="key-exclam">!</kbd></span> exclamation marker remains on the left-hand side of the Terminal console. This indicates that the console remains in the generic <strong>shell mode</strong>.</p>
+<p><strong>To exit</strong> generic shell mode, and return to the <em>Bob Shell</em>, press <span class="keys"><kbd class="key-escape">Esc</kbd></span> at any time.</p>
 </div>
 <p><p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/868594fd-e2c7-49bf-a74b-57f5e234659e/File_fbdd75552e8c4f55a4d963ea09411ebc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/868594fd-e2c7-49bf-a74b-57f5e234659e/File_fbdd75552e8c4f55a4d963ea09411ebc_text_export.jpeg" alt="" width="600" /></a>
@@ -992,53 +989,61 @@
 </ol>
 <hr />
 <ol start="16">
-<li></li>
-</ol>
-<p>git diff README.md shows the difference between your working copy of README.md and the version tracked in the local Git repository — typically the last commit.</p>
-<p>To run it, type:</p>
-<p>git diff README.md</p>
+<li>
+<p>Next, try using the <code>git diff ...</code> command to compare differences across the working copy of <code>README.md</code> (on your machine) and the version tracked within the local Git repository (typically the last commit.)</p>
+<p>Copy and paste the following instruction into the console, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git diff README.md
+</code></pre></div></p>
+<p>Take note of the <span class="keys"><kbd class="key-plus">+</kbd></span> and <span class="keys"><kbd class="key-minus">-</kbd></span> symbols on the left-side edge of each line: these denote changed lines between the two versions (indicating a new line <em>added</em> or existing line <em>removed</em>, respectively.)
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a629b121-1218-4cd3-8ca7-019b1d92152f/File_ae5c30e4ca204aee92fc96849d56ec9f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a629b121-1218-4cd3-8ca7-019b1d92152f/File_ae5c30e4ca204aee92fc96849d56ec9f_text_export.jpeg" alt="" width="600" /></a>
 </p>
-
-<hr />
-<ol start="17">
-<li>Here's the diff view. It's small and a little hard to read, but the + or − at the left of each line shows what changed between the two versions.</li>
-</ol>
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2614073b-6ec7-4964-acb4-0976622630e8/File_81e99cf808a8420eb480624c65d67823_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2614073b-6ec7-4964-acb4-0976622630e8/File_81e99cf808a8420eb480624c65d67823_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<hr />
-<ol start="18">
-<li>To learn more about Bob Shell's commands, press <strong>Escape (Esc)</strong> to leave Shell mode, then type:</li>
+</p></p>
+</li>
 </ol>
-<p>/help</p>
-<p>...and press Enter on your keyboard.</p>
+<hr />
+<ol start="17">
+<li>
+<p><strong>To exit</strong> generic shell mode, and return to the <em>Bob Shell</em>, press <span class="keys"><kbd class="key-escape">Esc</kbd></span> at any time.</p>
+<p>Press <span class="keys"><kbd class="key-escape">Esc</kbd></span> now to return to the Bob Shell, where you will investigate more of the commands available before progressing to the next chapter.
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/63f13645-593d-42d7-8330-feb5371c9d0e/File_01e30cbda6ac4ed9bf217560eea0bd31_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/63f13645-593d-42d7-8330-feb5371c9d0e/File_01e30cbda6ac4ed9bf217560eea0bd31_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
-<hr />
-<ol start="19">
-<li>And here's the full list of commands available within Bob Shell.</li>
+</p></p>
+</li>
 </ol>
+<hr />
+<ol start="18">
+<li>
+<p>There are a multitude of commands and operations you can perform using the Bob Shell, which we have just barely scratched the surface of here.</p>
+<p>Copy and paste the following command, followed by <span class="keys"><kbd class="key-enter">Enter</kbd></span>, to display a full list of ways that you can interact with the Bob Shell:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/help
+</code></pre></div>
 <p align="left">
   <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4a5d91f9-ec4d-4149-b8ff-662f21bd1e26/File_64a8eff9922440a192f520c18b62e93c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4a5d91f9-ec4d-4149-b8ff-662f21bd1e26/File_64a8eff9922440a192f520c18b62e93c_text_export.jpeg" alt="" width="600" /></a>
-</p>
-
+</p></p>
+</li>
+</ol>
 <hr />
 <h2 id="vi-key-takeaways"><strong>vi. Key takeaways</strong></h2>
 <hr />
 <ul>
-<li>Bob Shell provides the same capabilities as Bob IDE in a terminal form factor.</li>
-<li>Invoke it with <code>bob</code>; use the <code>!</code> prefix for normal shell commands within a session.</li>
-<li>Auto-approval is strict by default in Bob Shell — confirm actions as prompted.</li>
-<li><strong>Keyboard efficiency</strong>: faster for terminal-native developers once the interface is learned.</li>
-<li><strong>Headless mode</strong>: <code>cat file | bob "prompt"</code> enables automation, pipeline integration, and scripted workflows.</li>
-<li><strong>Parallelization</strong>: multiple Bob Shell instances can run simultaneously for independent tasks.</li>
-<li>Bob Shell and Bob IDE are complementary — use both for different parts of the workflow.</li>
+<li><em>Bob Shell</em> provides the same capabilities as Bob IDE, but within a console for programmatic access</li>
+<li><em>Bob Shell</em> and Bob IDE are complementary tools for different parts of the workflow (use both as needed)</li>
+<li>Invoke the <em>Bob Shell</em> with <code>bob</code>; use the <code>!</code> prefix for normal shell commands within a session</li>
+<li>Exit the normal shell (<span class="keys"><kbd class="key-exclam">!</kbd></span>) shell mode and return to <em>Bob Shell</em> by typing <span class="keys"><kbd class="key-escape">Esc</kbd></span></li>
+<li>Auto-approval is strict by default in <em>Bob Shell</em>, requiring you to confirm actions as prompted
+<strong>- Additional benefits of <em>Bob Shell</em>:</strong><ul>
+<li><strong>Keyboard efficiency</strong>: faster for Terminal-native developers once the interface is learned</li>
+<li><strong>Headless mode</strong>: <code>cat file | bob "prompt"</code> enables automation, pipeline integration, and scripted workflows</li>
+<li><strong>Parallelization</strong>: multiple <em>Bob Shell</em> instances can run simultaneously for independent tasks</li>
 </ul>
+</li>
+</ul>
+<p></br>
+To conclude the hands-on modules, you will next examine Bob's open standards <strong>Model Context Protocol (MCP)</strong> as a means for connecting Bob to everything else within your enterprise.</p>
+<hr />
 
 
 
