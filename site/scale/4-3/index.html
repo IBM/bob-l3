@@ -1,0 +1,1075 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM Bob Level 3">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Extending with MCP | Connecting Bob to everything - IBM Bob Level 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../styles/override-print.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#extending-with-mcp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM Bob Level 3" class="md-header__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM Bob Level 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Extending with MCP | Connecting Bob to everything
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM Bob Level 3" class="md-nav__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM Bob Level 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup.md" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          1. Assist
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1. Assist" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1. Assist
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-1/" class="md-nav__link">
+        Tab Completion & Next Edit Prediction | Bob in your workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-2/" class="md-nav__link">
+        Literate Coding | Editing with intent
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          2. Delegate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Delegate" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2. Delegate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-1/" class="md-nav__link">
+        The Agentic Sidebar | From assistant to partner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-2/" class="md-nav__link">
+        Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3. Tailor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3. Tailor" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3. Tailor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-1/" class="md-nav__link">
+        init & agents.md | Teaching Bob your codebase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-2/" class="md-nav__link">
+        Bob Rules | Encoding your standards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-3/" class="md-nav__link">
+        Custom Modes | Shaping Bob to every role
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          4. Scale & Extend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4. Scale & Extend" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4. Scale & Extend
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-1/" class="md-nav__link">
+        The Context Window | Keeping Bob reliable at scale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-2/" class="md-nav__link">
+        Bob Shell | Moving beyond the IDE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Extending with MCP | Connecting Bob to everything
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Extending with MCP | Connecting Bob to everything
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-connecting-everything-back-to-bob" class="md-nav__link">
+    i. Connecting everything back to Bob
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-what-is-mcp" class="md-nav__link">
+    ii. What is MCP?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-hands-on-optional-the-github-mcp-server" class="md-nav__link">
+    iii. Hands-on (optional): the GitHub MCP server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-key-takeaways" class="md-nav__link">
+    iv. Key takeaways
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-connecting-everything-back-to-bob" class="md-nav__link">
+    i. Connecting everything back to Bob
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-what-is-mcp" class="md-nav__link">
+    ii. What is MCP?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-hands-on-optional-the-github-mcp-server" class="md-nav__link">
+    iii. Hands-on (optional): the GitHub MCP server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-key-takeaways" class="md-nav__link">
+    iv. Key takeaways
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><strong>MODULE 4 | SCALE &amp; EXTEND</strong></p>
+<h1 id="extending-with-mcp"><strong>EXTENDING WITH MCP</strong></h1>
+<hr />
+<h2 id="i-connecting-everything-back-to-bob"><strong>i. Connecting everything back to Bob</strong></h2>
+<hr />
+<p>The <strong>Model Context Protocol (MCP)</strong> is what connects IBM Bob to the rest of your business and the systems your organization spans: a standardized interface that lets LLM-powered applications reach external tools, services, and data sources through one consistent integration layer. Any external service that can provide an MCP server can potentially serve as another endpoint for Bob to work with. This is the final (and most consequential) step in scaling Bob across an enterprise- making Bob a participant in the systems your teams already use —and serves as an effective capstone to the work you've performed thus far.</p>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCDRFd2HQdRc3G4WB866f2HHVQCG">Chapter 5.1: MCP [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the Model Context Protocol (MCP) and how it relates to Bob. <em>[5 min]</em></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">THE FULL JOURNEY ALONG THE AI MATURITY CURVE</p>
+<p>This final module completes your journey along the <strong>AI Maturity Curve</strong>. Before continuing on, step back and look at the shape of what you've done:
+- You began with Bob finishing your lines and predicting your next edit <a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank"><strong>(Module 1 | Assist)</strong></a>
+- You handed Bob whole features to build from an approved plan <a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank"><strong>(Module 2 | Delegate)</strong></a>
+- You taught Bob about your project structure and your organization's standards, reinforcing that learning until Bob behaved like a teammate <a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank"><strong>(Module 3 | Tailor)</strong></a>
+- Finally, you made Made reliable at scale and connected to the systems your enterprise already runs <a href="https://ibm.github.io/bob-l3/scale/4-1/" target="_blank"><strong>(Module 4 | Scale &amp; Extend)</strong></a></p>
+<p>A common thread across all of these modules and discussions has been the core value that <strong>the developer stays in control.</strong> Only the stakes changed (and escalated) across the journey from the nascent phases to the right-most portions of the curve. At <strong>Assist</strong>, control was apparent — the user (you) accepting each suggestion in sequence with a high degree of oversight. At <strong>Delegate</strong>, it was approving the plans that Bob put in place and trusting it to carry on the work beyond that point. At <strong>Tailor</strong>, it was encoding the rules and committing them to repositories that would ensure Bob adhered to your coding and organizational standards. Currently, at the <strong>Scale &amp; Extend</strong> phase, trust becomes more about governing context, credentials, and tool access.</p>
+<p>Follow this progression with any conversation or demonstration you have with clients about IBM Bob. Don't limit your planning to only a parade of features. Build out the storyline presented here to demonstrate a trustworthy path by which a team grows into working with an AI partner, without ever feeling like they've relinquished control or made shortcuts to their organization's established ways of winning.</p>
+</div>
+<h2 id="ii-what-is-mcp"><strong>ii. What is MCP?</strong></h2>
+<hr />
+<p>The <strong>Model Context Protocol (MCP)</strong> defines an open standards interface for connecting large language model (LLM) applications to external systems. Before it existed, wiring an LLM to an external tool meant building a custom connection layer for each potential endpoint — a significant, inconsistent level of effort that varied across teams and organizations. MCP replaces those old methods with a single protocol, both-sides implementation: <em>once a service offers an MCP server, any MCP-compatible client (Bob included) can connect to it immediately, with no custom integration work.</em></p>
+<p>MCP originated at Anthropic and has since been transferred to the <strong>Linux Foundation</strong>, making it a vendor-neutral, <em>openly governed standard</em>. This governance, more than anything else, is what has accelerated its widespread adoption across the industry. Most major external services and developer tools now ship MCP servers, creating an extensive ecosystem of ready-to-use integrations.</p>
+<hr />
+<p>MCP servers are configured in Bob's settings through a JSON configuration file.</p>
+<p>The simplified flow is as follows:</p>
+<ol>
+<li>Open Bob settings via the three-dot menu (<strong>⋯</strong>),</li>
+<li>Navigate to <strong>MCP Servers</strong></li>
+<li>Add the server configuration in JSON</li>
+<li>Supply credentials as required</li>
+</ol>
+<p>Most services publish their own configuration snippets within their official documentation. Furthermore, Bob itself can insert the JSON for you, handling indentation and brackets automatically.</p>
+<p>How you handle credentials is a governance decision in itself:</p>
+<table>
+<thead>
+<tr>
+<th>METHOD</th>
+<th>DESCRIPTION</th>
+<th>USE CASE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inline with config</strong></td>
+<td>Personal access token written directly in the JSON file</td>
+<td>Quick setup, local development only</td>
+</tr>
+<tr>
+<td><strong>Environment variable</strong></td>
+<td>Token stored as an OS environment variable, referenced in config</td>
+<td>Cleaner setup, avoids token in config file</td>
+</tr>
+<tr>
+<td><strong>Context forage</strong></td>
+<td>Open source MCP gateway for managing complex, multi-server setups</td>
+<td>Teams, production environments, multiple credentials</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title">USING MCP TOOLS</p>
+<p><strong>MCP tools</strong> are available only in Bob's <strong>Advanced Mode</strong>. With Advanced Mode active, Bob automatically recognizes the tools exposed by every configured server and invokes them in response to natural-language requests.</p>
+<p>No special syntax is quired required. Bob simply decides which MCP tools to call based on the task you describe.</p>
+<p>The GitHub MCP server shows how much a single integration can add:</p>
+<ul>
+<li><em>Configuration:</em> paste GitHub's configuration snippet into the JSON config, then add a personal access token whose permissions match the operations Bob will perform (reading issues, creating commits, adding comments, closing issues)</li>
+<li><em>Advanced Mode capabilities enabled:</em> with Advanced Mode active, Bob can list and read issues, create commits and push changes, add comments, close issues, and link commits to issues</li>
+<li><em>Testing:</em> a token with insufficient permissions will simply cause the affected operation to fail and Bob will report the permission error so that you know to update the token</li>
+</ul>
+<p>Strung together, Bob's Advanced Mode capabilities make a complete <strong>issue-resolution loop</strong> possible entirely through natural language expressions. A full development cycle— from issue to closed resolution —is possible, without ever leaving the Bob interface:</p>
+<ul>
+<li><em>Ask</em> Bob to list open issues (Bob will call the GitHub MCP tool to retrieve them)</li>
+<li><em>Describe</em> the one issue to fix (Bob reads the relevant code and implements the change)</li>
+<li><em>Instruct</em> Bob to commit and push the fixed code (Bob calls the right MCP tools and git commands)</li>
+<li><em>Comment</em> (via Bob, at your behest) on the issue with a link to the commit and close the issue.</li>
+</ul>
+<p>And GitHub is just one server in a fast-growing ecosystem that already spans version control and code review platforms, project management and issue-tracking tools, databases and data services, cloud infrastructure providers, and internal enterprise systems. In practice, most of the external integrations a development team relies upon can be connected to Bob through MCP, with no custom development required.</p>
+</div>
+<hr />
+<h2 id="iii-hands-on-optional-the-github-mcp-server"><strong>iii. Hands-on (optional): the GitHub MCP server</strong></h2>
+<hr />
+<div class="admonition warning">
+<p class="admonition-title">OPTIONAL MATERIAL</p>
+<p>The following section is <strong>NOT</strong> required to complete accreditation for the Level 3 hands-on material. However, it is nevertheless valuable to understand the workings of and recommended as worthy of your time.</p>
+</div>
+<blockquote>
+<p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCDRFd2HQdRc3G4WB866f2HHVQCG">Chapter 5.1: MCP [IBM Bob L3]</a></p>
+</blockquote>
+<p>The following walkthrough connects the GitHub MCP server end to end. Note that it is <strong>entirely optional</strong> — you're welcome to simply read through it rather than perform the steps, especially since it involves creating a credential.</p>
+<hr />
+<ol>
+<li>
+<p>The <code>GitHub MCP Server</code> repository that this <strong>optional</strong> module is built upon is subject to frequent and continuous change. Validate the current GitHub MCP server steps (via the latest product and provider documentation) before attempting to implement this with clients.</p>
+<p>Navigate to the following page:</p>
+<div class="admonition warning">
+<p><strong>URL:</strong> <a href="https://github.com/github/github-mcp-server">https://github.com/github/github-mcp-server</a></p>
+</div>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7f7316c1-4e88-4f49-8401-3a5ed8eeae79/File_6a95a696ca1c4a6c8819bb3f654145e1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7f7316c1-4e88-4f49-8401-3a5ed8eeae79/File_6a95a696ca1c4a6c8819bb3f654145e1_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="2">
+<li>
+<p>Scroll down to the <strong>"Local GitHub MCP Server"</strong> section and click the hyperlink labelled: <a href="https://github.com/settings/personal-access-tokens/new" target="_blank"><code>Create a GitHub Personal Access Token</code></a></p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c31181e4-28eb-4146-a307-9e59304fec8f/File_b35b736ef39a45bdbf45643c473abaa9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c31181e4-28eb-4146-a307-9e59304fec8f/File_b35b736ef39a45bdbf45643c473abaa9_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>Create a GitHub account (or sign in with an existing account).</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9fc0ef6d-3a4d-4ed9-8c3a-8f83bff3fab3/File_5403de329aed4ea997e7b2fc61fc2ed6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9fc0ef6d-3a4d-4ed9-8c3a-8f83bff3fab3/File_5403de329aed4ea997e7b2fc61fc2ed6_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="4">
+<li>
+<p>After signing in, your browser will be redirected to the <strong>Token Creation</strong> page.</p>
+<p>Assign the token any name you like. For example, <code>IBM BOB</code>.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/96e4968a-d657-4f40-b49a-92ae56a7a8ab/File_273b7558ca644224a41f7ecbf3bb3b6a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/96e4968a-d657-4f40-b49a-92ae56a7a8ab/File_273b7558ca644224a41f7ecbf3bb3b6a_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="5">
+<li>
+<p>Keep the other fields as their default inputs and scroll down the page until you locate the <strong>Generate Token</strong> button. Click it to continue.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/eb260f0f-6d1a-444b-96ce-35f016b1e14c/File_bd9264e8d21749bf8d5357beff6d81f0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/eb260f0f-6d1a-444b-96ce-35f016b1e14c/File_bd9264e8d21749bf8d5357beff6d81f0_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>
+<p>Click <strong>Generate Token</strong> again on the pop-up panel that appears.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ad66d49d-e881-44ca-be47-a39331a294e1/File_f9e9af3edaa346dbaa6a5688b5efc3d0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ad66d49d-e881-44ca-be47-a39331a294e1/File_f9e9af3edaa346dbaa6a5688b5efc3d0_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>Your browser will load a new panel with your <strong>Access Token</strong>. Record these details to a notepad for reference later.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5aaa2966-11a2-4547-8acb-6c0b91324ae1/File_e98281ce735b4901a11272e7f867a15f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5aaa2966-11a2-4547-8acb-6c0b91324ae1/File_e98281ce735b4901a11272e7f867a15f_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>Click the three dots (<strong>...</strong>) in the top corner of the agentic sidebar.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e462850-21fd-43fd-933d-c87ecb6f4918/File_590ebab65325437d82deff5f5d001e17_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e462850-21fd-43fd-933d-c87ecb6f4918/File_590ebab65325437d82deff5f5d001e17_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>
+<p>Click <strong>MCP Servers</strong>.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/06f371b4-dfeb-40e9-96a5-99b75238eae0/File_8e2a78feb0a946d089848ee59c5d5252_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/06f371b4-dfeb-40e9-96a5-99b75238eae0/File_8e2a78feb0a946d089848ee59c5d5252_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="10">
+<li>
+<p>Click <strong>Open</strong> next to Project MCPs.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/48134e27-f04d-40a3-960e-52012c3894d9/File_ad150565d6b44c2c8ae99348be6411b1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/48134e27-f04d-40a3-960e-52012c3894d9/File_ad150565d6b44c2c8ae99348be6411b1_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="11">
+<li>
+<p>Expand the <strong>Modes</strong> button.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b16bdbb-b2de-4de8-8c25-5051b105a89c/File_d7316e331fd24246940a10a69ca94ea2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b16bdbb-b2de-4de8-8c25-5051b105a89c/File_d7316e331fd24246940a10a69ca94ea2_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="12">
+<li>
+<p>Under modes, select <strong>Advanced</strong> to unlock IBM Bob's set of MCP tools.</p>
+<p>You will be able to configure the MCP server directly from the agentic sidebar.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcc29cfb-02e8-40d7-80ec-ccf0cd32858c/File_ed48e74df3db442d8a37db58f93f6e1c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcc29cfb-02e8-40d7-80ec-ccf0cd32858c/File_ed48e74df3db442d8a37db58f93f6e1c_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="13">
+<li>
+<p>Copy and paste the following prompt into a <strong>text editor</strong> (<em>not</em> the IBM Bob console), as you will need to perform some modifications before setting Bob to work with it.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">[Modify this code before use!]</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Add</span> <span class="n">this</span> <span class="n">to</span> <span class="n">my</span> <span class="n">local</span> <span class="n">MCP</span> <span class="n">servers</span><span class="o">.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="s2">&quot;mcpServers&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="s2">&quot;github&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;npx&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="s2">&quot;-y&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="s2">&quot;@modelcontextprotocol/server-github&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">],</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="s2">&quot;GITHUB_PERSONAL_ACCESS_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="hll"><span class="n">Replace</span> <span class="n">the</span> <span class="n">placeholder</span> <span class="k">with</span> <span class="n">my</span> <span class="n">PAT</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">github_pat_123456789</span><span class="o">&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p><strong>Instructions to modify:</strong>
+- <em>Line 18:</em> Replace <code>&lt;github_pat_123456789&gt;</code> string with your true <strong>Access Token</strong> details recorded in <strong>Step 7</strong>
+- Copy and paste the modified prompt into Bob's Agentic Sidebar (ensure that Advanced Mode is active)
+- Click <strong>Send</strong> to execute the instruction set
+- <strong>Approve</strong> requests from Bob as it works its way through the task
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd6d1436-d9d2-4b48-991e-db71514bf2eb/File_90d413dcbdf6426aaf1994207dedf7f3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd6d1436-d9d2-4b48-991e-db71514bf2eb/File_90d413dcbdf6426aaf1994207dedf7f3_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="14">
+<li>
+<p>Once the task has completed, the <code>mcp.json</code> file will now reflect the data from your prompt.</p>
+<ul>
+<li>The screenshot (below) denotes the removed lines of code (in red text) and the intended MCP configuration (in highlighted text) that has been added</li>
+<li>Delete the commented line <code>// Made with Bob</code> should you wish to do further clean-up
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b4d51bb5-0ee2-4bc7-a3f7-edf33dd22ffb/File_c168e76e57be4e63b738ba646fa7806a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b4d51bb5-0ee2-4bc7-a3f7-edf33dd22ffb/File_c168e76e57be4e63b738ba646fa7806a_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8be45777-f6d5-4839-a7fa-0ee4ff39a06a/File_a5182378d8c449c5b84170923d3773c3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8be45777-f6d5-4839-a7fa-0ee4ff39a06a/File_a5182378d8c449c5b84170923d3773c3_text_export.jpeg" alt="" width="600" /></a>
+</p></li>
+</ul>
+</li>
+</ol>
+<hr />
+<ol start="15">
+<li>
+<p>Send a follow-up prompt so that Bob can verify the configuration.</p>
+<p>Copy and paste the following prompt into the Agentic Sidebar, then press <strong>Send</strong> to execute.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Test if the MCP server is working
+</code></pre></div>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cfba462-c930-419b-9904-2dd0bf508063/File_1804af2b62de44aa8068b88e3b13022f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cfba462-c930-419b-9904-2dd0bf508063/File_1804af2b62de44aa8068b88e3b13022f_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6ab18626-5a9e-4539-abb7-3a8ed153e568/File_d0eeec2453ee4e65b441c575c629ad50_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6ab18626-5a9e-4539-abb7-3a8ed153e568/File_d0eeec2453ee4e65b441c575c629ad50_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="16">
+<li>
+<p>Click the <strong>X</strong> icon to close the open <code>mcp.json</code> file. <strong>Save</strong> changes if prompted to do so.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2bf86074-cb9a-41b0-9463-7496e7f425a6/File_37b4f1d11930401893c7e9658d6a61c9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2bf86074-cb9a-41b0-9463-7496e7f425a6/File_37b4f1d11930401893c7e9658d6a61c9_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4bf778bd-deb7-4051-a5f6-5f5e8b4a7742/File_ef837abf65b64b129f1c5f15b08a6610_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4bf778bd-deb7-4051-a5f6-5f5e8b4a7742/File_ef837abf65b64b129f1c5f15b08a6610_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="17">
+<li>
+<p>Restart the Bob IDE so the changes take effect.</p>
+<p>Fully quit and exit the Bob IDE application, then re-open the application.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ca31c1f-2664-487c-86d0-3acbba7deb53/File_18323b9e0ac243c78de9d5717115578f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ca31c1f-2664-487c-86d0-3acbba7deb53/File_18323b9e0ac243c78de9d5717115578f_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="18">
+<li>
+<p>Now test the new MCP server configuration.</p>
+<ul>
+<li>Ensure that Bob is still in <strong>Advanced</strong> mode</li>
+<li>When ready, copy and paste the following prompt into the Agentic Sidebar and press <strong>Send</strong> to execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>List all issues from github for this repo
+</code></pre></div></li>
+</ul>
+<div class="admonition warning">
+<p>Take note that, as part of the usual approval and permissions granting process, Bob now asks for access to a tool on the GitHub MCP server.</p>
+</div>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cf8efc10-3001-4ce3-bf93-5e5914a0ddbf/File_c316bd6bd3cc463eb91181ce7b71a7c4_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cf8efc10-3001-4ce3-bf93-5e5914a0ddbf/File_c316bd6bd3cc463eb91181ce7b71a7c4_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/84f94ce7-c076-43d5-ae30-29e26ff4024a/File_4cce8ca861684dbd835c9f7b27e25d9d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/84f94ce7-c076-43d5-ae30-29e26ff4024a/File_4cce8ca861684dbd835c9f7b27e25d9d_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d42cb54e-be1b-424e-96a5-e02152e993b0/File_6de1027474524c53a3eea62794aa9692_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d42cb54e-be1b-424e-96a5-e02152e993b0/File_6de1027474524c53a3eea62794aa9692_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<ol start="19">
+<li>
+<p>After completing the workflow, Bob will list all the GitHub issues for <code>galaxium-travels</code> repository we began with. There's more work for the team (you) to do before that application is ready for primetime ... but that's for another day!</p>
+<p>Congratulations on making it this far — that concludes the hands-on materials for this exploration of the <strong>AI Maturity Curve</strong> using IBM Bob.</p>
+<p>Bob is continuously evolving, so expect to see the same from the supporting hands-on labs and demos available for the offering.
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/76ef923c-1d13-4919-bacb-8867d4abaed9/File_c2043fc8b9a14d8086efdc79160a0c3e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/76ef923c-1d13-4919-bacb-8867d4abaed9/File_c2043fc8b9a14d8086efdc79160a0c3e_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
+</ol>
+<hr />
+<h2 id="iv-key-takeaways"><strong>iv. Key takeaways</strong></h2>
+<hr />
+<ul>
+<li>MCP (Model Context Protocol) is a standardized interface for connecting Bob to external tools and services</li>
+<li>Originated at Anthropic and is now governed by the Linux Foundation as a vendor-neutral standard</li>
+<li>Primary value is coordination: a shared standard eliminates custom integration work</li>
+<li>MCP servers are configured in Bob's settings as JSON (credentials can be inline, environment variables, or managed through Context Forage)</li>
+<li>MCP tools require IBM Bob's <strong>Advanced Mode</strong> to be enabled</li>
+<li>GitHub MCP server allows Bob to list issues, create commits, push changes, add comments, and close issues through natural language prompts</li>
+</ul>
+<p>From here, it's time to make Bob your own. Run these workflows against a codebase that you actually know and work with today, in front of the kind of client you actually serve. Apply the <strong>AI Maturity Curve</strong> <em>lens</em> to ensure your demonstration resonates and speaks to value with those audiences.</p>
+<hr />
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../4-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bob Shell | Moving beyond the IDE" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Bob Shell | Moving beyond the IDE
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/hide-toc-nav.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
