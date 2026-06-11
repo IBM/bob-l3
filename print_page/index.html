@@ -732,7 +732,8 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <h2 id="index-iii-bob-across-the-sdlc"><strong>iii. Bob across the SDLC</strong></h2>
 <hr />
-<p>A core distinction between IBM Bob and other AI-assisted code generation tools, particular as it relates to the <strong>software development lifecycle (SDLC)</strong>, is <em>scope</em>. Where a traditional AI assistant is anchored to the moment of writing or fixing code, Bob is designed to support the full lifecycle around it. It helps plan features before implementation begins, understands the full context of a project before making changes, and keeps the developer in control at every step. Bob augments the way your teams already work; it does not replace their judgment. Keep ahold of that last point as you work your way through the remainder of the hands-on material, as it is the thread that weaves together so many of Bob's strengths and its value to IBM clients.</p>
+<p>A core distinction between IBM Bob and other AI-assisted code generation tools, particular as it relates to the <strong>software development lifecycle (SDLC)</strong>, is <em>scope</em>. Where a traditional AI assistant is anchored to the moment of writing or fixing code, Bob is designed to support the full lifecycle around it. It helps plan features before implementation begins, understands the full context of a project before making changes, and keeps the developer in control at every step.</p>
+<p>Bob augments the way your teams already work; it does not replace their judgment. Keep ahold of that last point as you work your way through the remainder of the hands-on material, as it is the thread that weaves together so many of Bob's strengths and its value to IBM clients.</p>
 <hr />
 <h2 id="index-iv-bob-ide-and-bob-shell"><strong>iv. Bob IDE and Bob Shell</strong></h2>
 <hr />
@@ -781,9 +782,9 @@ At its core, Bob does three things exceptionally well:</p>
 </div>
 <p>As you move through the curriculum, you will continuously add new features to the application. The order of operations in adding these new capabilities is iterative and deliberate, with each building on the features of the previous function:</p>
 <ul>
-<li><strong>Email validation</strong> — Module 1.1, Next Edit Prediction</li>
-<li><strong>Retry logic for API calls</strong> — Module 1.2, Literate Coding</li>
-<li><strong>Seat-class tiers</strong> (Economy, Business, Galaxium) — Module 2, the Agentic Sidebar</li>
+<li><strong>Email validation</strong> — Module 1 | Next Edit Prediction</li>
+<li><strong>Retry logic for API calls</strong> — Module 1 | Literate Coding</li>
+<li><strong>Seat-class tiers</strong> (Economy, Business, Galaxium) — Module 2 | The Agentic Sidebar</li>
 </ul>
 <hr />
 <h2 id="index-vi-next-steps"><strong>vi. Next steps</strong></h2>
@@ -824,7 +825,10 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <h2 id="assist-1-1-i-bob-in-your-workflow"><strong>i. Bob in your workflow</strong></h2>
 <hr />
-<p>This is the first (and most gentle) stage of the AI maturity curve, and therefore a natural sweet spot for building your understanding of IBM Bob. Across this module, you'll work shoulder to shoulder with Bob from the perspective of a software developer paired with the Bob editor. As you work, Bob will be anticipating the next keystroke, drafting the next few lines, and making targeted edits upon your request — all the while keeping the developer (<em>you</em>) in control of accepting or rejecting every AI-generated proposed change.</p>
+<p><a class="glightbox" href="../assist/_attachments/Module-1-Assist.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../assist/_attachments/Module-1-Assist.png" /></a></p>
+<div class="admonition note">
+<p>This is the first (and most gentle) stage of the <strong>AI Maturity Curve</strong>, and therefore a natural sweet spot for building your understanding of IBM Bob. Across this module, you'll work shoulder to shoulder with Bob from the perspective of a software developer paired with the Bob editor. As you work, Bob will be anticipating the next keystroke, drafting the next few lines, and making targeted edits upon your request — all the while keeping the developer (<em>you</em>) in control of accepting or rejecting every AI-generated proposed change.</p>
+</div>
 <p>The value that IBM Bob provides in this will be apparenty right from the onset: teams can move faster without breaking their train of thought, and nothing lands in the codebase that they did not explicitly choose to include. It is the most logical on-ramp to working with an AI partner, and it pays off from the very first session.</p>
 <blockquote>
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
@@ -1133,9 +1137,9 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li><strong>Quick, targeted modifications</strong> to a single function without disturbing the broader structure</li>
 </ul>
 <p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
+<p><a class="glightbox" href="../assist/_attachments/Module-1-Assist.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../assist/_attachments/Module-1-Assist.png" /></a></p>
 <div class="admonition note">
-<p class="admonition-title">AI MATURITY CURVE</p>
-<p>Literate Coding is a prime example of where the <em>control</em> that the human in the loop retains with IBM Bob — as part of the <strong>early Assist stage along the AI maturity curve</strong> — becomes tangible and truly valuable. IBM Bob never silently rewrites your files or codebase. Instead, it presents every change in a <em>diff</em> view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide on whether to implement the suggestion or disregard it. Nothing is committed until you say so.</p>
+<p>Literate Coding is a prime example of where the <em>control</em> that the human in the loop retains with IBM Bob — as part of the <strong>early Assist stage along the AI Maturity Curve</strong> — becomes tangible and truly valuable. IBM Bob never silently rewrites your files or codebase. Instead, it presents every change in a <em>diff</em> view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide on whether to implement the suggestion or disregard it. Nothing is committed until you say so.</p>
 </div>
 <p><strong>How it works</strong></p>
 <p>The workflow is deliberately simple:</p>
@@ -1292,6 +1296,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <h2 id="delegate-2-1-i-from-assistant-to-partner"><strong>i. From assistant to partner</strong></h2>
 <hr />
 <p>In the previous <strong>Assist</strong> module, you engaged with IBM Bob in its most "manual" and "hands-on" form: it finished lines of code for you, predicted the next set of edits to be performed, and made surgical changes (with your approval) sequentially throughout a codebase. From the end-user (your) perspective, the experience thus far has felt closely watched and tightly chaperoned. Every action Bob has taken has been directly instrumented by you, or at the very least required your direct sign-off at every step in the sequence, to ensure no changes were made to the code base without your expressed permission.</p>
+<p><a class="glightbox" href="../delegate/_attachments/Module-2-Delegate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../delegate/_attachments/Module-2-Delegate.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">AI MATURITY CURVE</p>
 <p>This makes sense when viewed through the lens of the <strong>AI Maturity Curve</strong> that was discussed previously. Where you are currently in your journey with IBM Bob— progressing from the nascent <strong>Assist</strong> stage on the left-most portion of the curve, moving further to the right into the <strong>Delegate</strong> phase —is at a point where trust in the AI technology <em>should</em> be low. Coordinating code changes with IBM Bob with a healthy degree of skepticism is a valid way to safely vet the AI partner's capabilities, build trust in its ability to deliver the results you seek, and gradually begin delegating more responsibility to that agent.</p>
@@ -1444,8 +1449,8 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </blockquote>
 <p>It's now time to apply the full <strong>Plan → review → new conversation → Code</strong> workflow towards a set of Galaxium Travels features that cut across the frontend, the backend, and the database of the application. A truly comprehensive cross-section of the application architecture will need to be modified — and thankfully, IBM Bob is up to the challenge.</p>
 <p>You are going to give Galaxium Travels end-users three <em>tiers</em> of seating options to select from with booking their extraplanetary tours: <strong>Economy, Business, and Galaxium class.</strong> Throughout this process, take note of two things: first, the increased weighting placed on IBM Bob for <em>execution</em> of the requested tasks; and second, the heightened importance for the user (you) in <em>understanding and reviewing the plan of action</em> that Bob's agentic AI processes will act upon.</p>
+<p><a class="glightbox" href="../delegate/_attachments/Module-2-Delegate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../delegate/_attachments/Module-2-Delegate.png" /></a></p>
 <div class="admonition note">
-<p class="admonition-title">AI MATURITY CURVE</p>
 <p>This mirrors where you are along your journeing in shifting right along the <strong>AI Maturity Curve</strong>. By the <strong>Delegate</strong> phase, your trust in the capacity of these AI systems to carry out work as asked will have increased from the nascent <strong>Assist</strong> entrypoint. Nevertheless, human-in-the-loop review and unambiguous execution plans remain of paramount importance as planned jobs become more automated (and sophisticated.)</p>
 </div>
 <h2 id="delegate-2-2-ii-hands-on-implementing-seat-classes-in-galaxium-travels"><strong>ii. Hands-on: Implementing seat classes in Galaxium Travels</strong></h2>
@@ -1924,8 +1929,8 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>Encode the standards Bob must always follow (so quality and conventions are enforced without needing to be re-typed)</li>
 <li>Shape Bob's behavior to fit each role on your team (so a product manager and a senior engineer each get the specialized version of Bob that they need).</li>
 </ol>
+<p><a class="glightbox" href="../tailor/_attachments/Module-3-Tailor.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../tailor/_attachments/Module-3-Tailor.png" /></a></p>
 <div class="admonition note">
-<p class="admonition-title">AI MATURITY CURVE</p>
 <p>Notice where control lives at this stage in the <strong>AI Maturity Curve</strong>. Whereas in <strong>Modules 1 and 2</strong> you approved Bob's work as it happened, here in <strong>Module 3</strong> you <em>write the rules down</em>— commit them to the repository —and have them applied automatically, every time, for everyone. Viewed another way: Bob, at this stage in your jouney, has progressed beyond delegated work towards tailored work. Bob's behaviors, capabilities, and understanding are now being attuned specifically to the workflow and personas engaging with it.</p>
 </div>
 <h2 id="tailor-3-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
@@ -2154,8 +2159,8 @@ In the chapter ahead, you will examine strategies for encoding your organization
 </tr>
 </tbody>
 </table>
+<p><a class="glightbox" href="../tailor/_attachments/Module-3-Tailor.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../tailor/_attachments/Module-3-Tailor.png" /></a></p>
 <div class="admonition note">
-<p class="admonition-title">AI MATURITY CURVE</p>
 <p><strong>Rules are committed to the repository.</strong> This is the heart of the <strong><em>Tailor</em></strong> stage in your progression towards the right-side of the <strong>AI Maturity Curve</strong>.</p>
 <p>Project-level rules in <strong><code>.bob/rules/</code></strong> are version-controlled, much in the same way as the actual project code. This means that Bob Rules that you define will automatically:</p>
 <ul>
@@ -2771,6 +2776,8 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <hr />
 <h2 id="tailor-3-3-vi-key-takeaways"><strong>vi. Key takeaways</strong></h2>
 <hr />
+<p><a class="glightbox" href="../tailor/_attachments/Module-3-Tailor.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../tailor/_attachments/Module-3-Tailor.png" /></a></p>
+<div class="admonition note">
 <p>As the <strong>Tailor</strong> module wraps up, take a moment to trace back through your progression along the <strong>AI Maturity Curve</strong>: from conceptualizing IBM Bob as an <strong>Assistant</strong>; to being able to fully <strong>Delegate</strong> critical workloads to Bob; to now fully customizing a <strong>Tailored</strong> Bob workflow that adapts to users and use cases.</p>
 <ul>
 <li>Custom Modes combine non-deterministic instructions with deterministic tool constraints</li>
@@ -2779,8 +2786,8 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <li>Modes are created either through the UI or by editing <code>.bobmodes</code> directly</li>
 <li>Project-scoped Modes are stored in <code>.bobmodes</code> and are committed to a repository</li>
 </ul>
-<p></br>
-The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/scale/4-1.md" target="_blank">Module 4 | Scale &amp; Extend</a></strong> —awaits.</p>
+</div>
+<p>The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/scale/4-1.md" target="_blank">Module 4 | Scale &amp; Extend</a></strong> —awaits.</p>
 <hr /></section><h1 class='nav-section-title-end'>Ended: 3. Tailor</h1>
                         <h1 class='nav-section-title' id='section-4-scale-extend'>
                             4. Scale & Extend <a class='headerlink' href='#section-4-scale-extend' title='Permanent link'>↵</a>
@@ -2797,8 +2804,8 @@ The final step in the journey— <strong><a href="https://ibm.github.io/bob-l3/s
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC4hp8R9Pm8mTGcFWTGGBRhjXqGG">Chapter 4.1: Context Window [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the details of Bob's context window. <em>[4 min]</em></p>
 </blockquote>
+<p><a class="glightbox" href="../scale/_attachments/Module-4-Scale.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../scale/_attachments/Module-4-Scale.png" /></a></p>
 <div class="admonition note">
-<p class="admonition-title">AI MATURITY CURVE</p>
 <p>By the end of <a href="https://ibm.github.io/bob-l3/tailor/3-3/" target="_blank"><strong>Module 3 | Tailor</strong></a>, IBM Bob knew nearly every facet about your project, adhered to your organization's coding standards, and had adapted itself to each role on your team — and all of that was committed to the repository, shared, and automatically enforced. The final stage along the <strong>AI Maturity Curve</strong> journey reflects the two things that separate a <em>promising demo</em> from a <em>dependable enterprise partner</em>: staying <em>reliable</em> on the largest, longest-running workloads; ultimately, <em>connecting</em> to everything else that your organization already runs today.</p>
 <p>In other words, addressing the enterprise challenges of <strong>Scale and Extensibility</strong>.</p>
 </div>
@@ -3300,6 +3307,7 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCDRFd2HQdRc3G4WB866f2HHVQCG">Chapter 5.1: MCP [IBM Bob L3]</a></p>
 <p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the Model Context Protocol (MCP) and how it relates to Bob. <em>[5 min]</em></p>
 </blockquote>
+<p><a class="glightbox" href="../scale/_attachments/Module-4-Scale.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../scale/_attachments/Module-4-Scale.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">THE FULL JOURNEY ALONG THE AI MATURITY CURVE</p>
 <p>This final module completes your journey along the <strong>AI Maturity Curve</strong>. Before continuing on, step back and look at the shape of what you've done:
