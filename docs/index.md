@@ -6,7 +6,7 @@
 
 ---
 
-The four modules constituting the hands-on work ahead with **IBM Bob** trace the **AI Maturity Curve** — as you shift right along it, you will progressively hand Bob more responsibility, with Bob earning that trust by keeping you (the human) in command the entire way.
+The four modules constituting the hands-on work ahead with **IBM Bob** trace the **AI Maturity Curve** — as you shift right along it, you will progressively hand Bob more responsibility, with Bob earning that trust by keeping you (the human-in-the-loop) in command the entire way.
 
 ![](_attachments/AI-Maturity-Curve.png)
 
@@ -102,7 +102,7 @@ Galaxium Travels follows a familiar full-stack shape:
 
 As you move through the curriculum, you will continuously add new features to the application. The order of operations in adding these new capabilities is iterative and deliberate, with each building on the features of the previous function:
 
-- **Email validation** — Module 1 | Next Edit Prediction
+- **Email validation** — Module 1 | Tab Completion & Next Edit Prediction
 - **Retry logic for API calls** — Module 1 | Literate Coding
 - **Seat-class tiers** (Economy, Business, Galaxium) — Module 2 | The Agentic Sidebar
 
