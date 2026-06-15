@@ -1,0 +1,1745 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM Bob Level 3">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Setup - IBM Bob Level 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../styles/override-print.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reserving-and-preparing-your-environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM Bob Level 3" class="md-header__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM Bob Level 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM Bob Level 3" class="md-nav__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM Bob Level 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup.md" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          1. Assist
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1. Assist" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1. Assist
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-1/" class="md-nav__link">
+        Tab Completion & Next Edit Prediction | Bob in your workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assist/1-2/" class="md-nav__link">
+        Literate Coding | Editing with intent
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          2. Delegate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Delegate" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2. Delegate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-1/" class="md-nav__link">
+        The Agentic Sidebar | From assistant to partner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delegate/2-2/" class="md-nav__link">
+        Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3. Tailor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3. Tailor" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3. Tailor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-1/" class="md-nav__link">
+        init & agents.md | Teaching Bob your codebase
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-2/" class="md-nav__link">
+        Bob Rules | Encoding your standards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tailor/3-3/" class="md-nav__link">
+        Custom Modes | Shaping Bob to every role
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          4. Scale & Extend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4. Scale & Extend" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4. Scale & Extend
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-1/" class="md-nav__link">
+        The Context Window | Keeping Bob reliable at scale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-2/" class="md-nav__link">
+        Bob Shell | Moving beyond the IDE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scale/4-3/" class="md-nav__link">
+        Extending with MCP | Connecting Bob to everything
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-ibm-bob-registration-approval-process" class="md-nav__link">
+    i. IBM Bob Registration &amp; Approval Process
+  </a>
+  
+    <nav class="md-nav" aria-label="i. IBM Bob Registration &amp; Approval Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-chapter-01-trial" class="md-nav__link">
+    OPTIONAL Chapter 0.1 : Trial
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-chapter-02-internal-registration-local-machine" class="md-nav__link">
+    OPTIONAL Chapter 0.2 : Internal Registration (Local Machine)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><strong>MODULE 0 | SETUP</strong></p>
+<h1 id="reserving-and-preparing-your-environment"><strong>RESERVING AND PREPARING YOUR ENVIRONMENT</strong></h1>
+<hr />
+<h2 id="i-ibm-bob-registration-approval-process"><strong>i. IBM Bob Registration &amp; Approval Process</strong></h2>
+<hr />
+<p><strong>There are currently two primary methods to acquire authentication for IBM Bob. Each have their pros and cons...</strong></p>
+<p><strong>Trial Version</strong></p>
+<ul>
+<li>Skip to <strong>OPTIONAL Chapter 0.1 - Trial</strong> (and disregard Optional chapters 0.2 and 0.4)</li>
+<li>Approval takes under 10 minutes.</li>
+<li>Must use a NON-IBM email address to register (<strong>IBMers can still use the Trial version, just use a personal address)</strong></li>
+<li>40 Bobcoins (more than enough for this lab)</li>
+</ul>
+<p><strong>Internal Version</strong></p>
+<ul>
+<li>Skip to <strong>OPTIONAL Chapter 0.2 : Internal Registration (Local Machine)</strong> (and disregard Optional chapters 0.1 and 0.4)</li>
+<li>Approval takes 24+ hours.</li>
+<li>Lasts indefinitely</li>
+<li>100 Bobcoins (linked to your w3id, so if you hit your balance limit doing other tasks outside of this lab, the restriction still applies - <em>devs who hit their limit can register for the Trial version with a personal emai</em>l)</li>
+</ul>
+<p><strong>I already have IBM Bob</strong></p>
+<ul>
+<li>Skip to <strong>Chapter 0.3 : Access Galaxium Travels Demo App Locally</strong> and ignore the Optional chapters. If you jump here, this assumes you have already installed and authenticated IBM Bob before this L3 course.</li>
+</ul>
+<p>To summarize:</p>
+<ul>
+<li>if you are under <strong>time constraints, have previously maxed your Bobcoin balance, and/or are a Business Partner, get the Trial version.</strong> (<em>IBMers can use the Trial version too, although the Internal version is the official reccomendation)</em></li>
+<li>If you <strong>aren't in any rush, want to do additional exploration with Bob outside of this lab content, and/or are an IBMer</strong>, use the Internal version.</li>
+<li>If you've <strong>already used IBM Bob before, your account is likely already created and you can proceed with it. - jump to Chapter 0.3</strong></li>
+</ul>
+<p><strong>If you want to complete this Level 3 course as quickly as possible, I suggest you just use the Trial version to avoid having to wait for manual approval.</strong></p>
+<h4 id="optional-chapter-01-trial">OPTIONAL Chapter 0.1 : Trial</h4>
+<p><strong>The Trial version provides fast access, a fresh balance of 40 Bobcoins, and is accessible to a wider audience (Business Partners), but you will lose access after 1 month (more than enough time to complete this L3 - if you want to retry or experiment for longer, simply create another Trial account)</strong></p>
+<ol>
+<li>We start at the Free Trial signup page: <a href="https://bob.ibm.com/trial?utm_source=skills_network&amp;utm_content=in_lab_content_link&amp;utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986">Free Trial | IBM Bob</a></li>
+</ol>
+<p>Fill out your details on this form and press <strong>Next</strong>.</p>
+<p><strong>NOTE:</strong>
+Your email address will become your w3id. IBMers will not be able to complete this form with their IBM email, and likewise, BPs who did a similar process before for different tasks may also encounter difficulties.</p>
+<p><em>A quick workaround is to create a new email adress (Outlook, Gmail, etc.) and sign up here. IBMers - open a private window to do this. Sorry for any inconvenience caused by this - this authentication and install process will be refined over time.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9699a649-967f-4cee-bf00-fb8886593230/File_5fab9c0e6ec844468d55bc0fbb6068a0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9699a649-967f-4cee-bf00-fb8886593230/File_5fab9c0e6ec844468d55bc0fbb6068a0_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Check the email you used to submit this form - you should recieve it nearly instantly.</li>
+</ol>
+<p><strong>Copy the 7 digit verification code</strong> and return back to the open IBM Bob Free Trial tab.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/da3da06a-332e-4cff-9210-132d57bb5105/File_c6e3f07a4b53461eb544c15fe97d481e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/da3da06a-332e-4cff-9210-132d57bb5105/File_c6e3f07a4b53461eb544c15fe97d481e_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>Input <strong>the 7 digit verification code</strong> and press <strong>Submit</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/db9a2037-191d-460d-b878-0c85c4e47a48/File_97578b7fa56a4200a1e0a5b24d72a532_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/db9a2037-191d-460d-b878-0c85c4e47a48/File_97578b7fa56a4200a1e0a5b24d72a532_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>After submission, you will be redirected to a page like so. Wait a few seconds until "Your trial is ready!" appears, and press <strong>Access your trial now.</strong></li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c68a3a22-c0bc-438a-8e34-d4104f28a63a/File_f1514396a0b34233a1373d266940ebad_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c68a3a22-c0bc-438a-8e34-d4104f28a63a/File_f1514396a0b34233a1373d266940ebad_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>You will be redirected to this "Download Bob" page. Download IBM Bob for your respective OS. </li>
+</ol>
+<p><em>It follows a simple GUI based install process that you would expect with most products.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/a3344aac-2163-47ac-bba8-c461fe475d3c/File_64dccede130d413ab4870fb9697e9fb4_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/a3344aac-2163-47ac-bba8-c461fe475d3c/File_64dccede130d413ab4870fb9697e9fb4_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>Once IBM Bob has finished installing, if it's not already open -  <strong>open IBM Bob</strong>...</li>
+</ol>
+<p>Afterwards, press <strong>Log in to Bob</strong>.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/823f4c70-03dd-4452-b24b-50480c73112c/File_880f1ea2136e4d1b96c1f5c9f3f9b39d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/823f4c70-03dd-4452-b24b-50480c73112c/File_880f1ea2136e4d1b96c1f5c9f3f9b39d_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>Press <strong>Allow</strong> on the pop up window.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3d0178cf-b6e7-430d-83b0-c743985dac0e/File_6ed4e34559254ec1ba55dbbde5ff524b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3d0178cf-b6e7-430d-83b0-c743985dac0e/File_6ed4e34559254ec1ba55dbbde5ff524b_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="8">
+<li>Next, press <strong>Open</strong> on the subsequent pop-up window that appears.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/84967b1a-441e-4566-a534-259aadd68ed3/File_a13363f84f5f4e62bc077b0703d5227e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/84967b1a-441e-4566-a534-259aadd68ed3/File_a13363f84f5f4e62bc077b0703d5227e_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="9">
+<li>Expand the "Choose an option" drop down on the IBM Verify Sign in page, and press <strong>IBMid.</strong></li>
+</ol>
+<p><em>Be careful - if you are an IBMer trying this Trial method, and you are signed into your actual IBM email account (rather than a temp one you set up for Trial access) and try proceed here, IBM Bob will attempt to sign in with that account. If you haven't authenticated your main IBMid account with Internal Registration, this will lead to issues...</em></p>
+<p><em>To remedy this and proceed with Trial version as an IBMer, sign out of any w3id accounts you don't intend to use, then open this "Sign in" link in a private browsing window. You may have to re-log/sign into your temporary IBM Trial email  you made again, in the new private window.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/78b54a7a-6edf-417f-b14a-e4f7407858aa/File_8ba4dc1789ee451f867f3ec45530e014_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/78b54a7a-6edf-417f-b14a-e4f7407858aa/File_8ba4dc1789ee451f867f3ec45530e014_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>You should be redirected to this "Authentication Successful!" screen.</li>
+</ol>
+<p>After, <strong>return to the tab with IBM Bob open.</strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/568d1073-3c7e-422a-92f8-1a0a015e3d3a/File_15d119df77ee4384a003ea73832c2588_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/568d1073-3c7e-422a-92f8-1a0a015e3d3a/File_15d119df77ee4384a003ea73832c2588_text_export.jpeg" width="600" /></a>
+</p>
+
+<p>11. Press <strong>Open</strong> on the new window that appeared on the IBM Bob screen.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/08b3f0b4-6d25-4191-b130-7b16f68b5857/File_eb57339049244ac58cf539fcd8ec5b7e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/08b3f0b4-6d25-4191-b130-7b16f68b5857/File_eb57339049244ac58cf539fcd8ec5b7e_text_export.jpeg" width="600" /></a>
+</p>
+
+<p>12. Look at the Agentic sidebar - the window to input prompts has opened! At this point, you have succesfuly accessed your authenticated IBM Bob account...</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/bed46d69-8811-430c-88ee-4f4582357f13/File_d1a0c6a0088b4f448fbeb1f3cfd4c67e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/bed46d69-8811-430c-88ee-4f4582357f13/File_d1a0c6a0088b4f448fbeb1f3cfd4c67e_text_export.jpeg" width="600" /></a>
+</p>
+
+<p>Now, we can proceed to get the demo app installed... if you made it to this point, <strong>scroll down &amp; skip directly to Chapter 0.3: Access Galaxium Travels Demo App Locally and disregard the other Optional chapters (0.2 and 0.4)</strong></p>
+<h4 id="optional-chapter-02-internal-registration-local-machine">OPTIONAL Chapter 0.2 : Internal Registration (Local Machine)</h4>
+<p><strong>THIS IS THE INTERNAL REGISTRATION PATH - FOR IBMers ONLY, WHO DO NOT HAVE IBM BOB YET.</strong></p>
+<p><strong>The internal version provides slower access, a larger, persistent Bobcoin balance of 100 Bobcoins across your w3id (resets monthly), does not expire, but is accessible to a narrower audience (IBM Internal).</strong></p>
+<p><strong>NEED FAST ACCESS AND/OR ARE A BUSINESS PARTNER? DO THE TRIAL METHOD TO ACCESS IBM BOB, IN CHAPTER 0.1, AND SKIP THIS SECTION.</strong></p>
+<ol>
+<li>We start at the <a href="https://techzone.ibm.com/collection/bob-enterprise-sales-assets?utm_source=skills_network&amp;utm_content=in_lab_content_link&amp;utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986">Bob Enterprise Sales Assets</a> page.</li>
+</ol>
+<p>Once here, click <strong>Technical Resources</strong> in the left sidebar.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1d0512a3-74ec-4966-a60a-4cd915eefa0b/File_705a7ec7b47d4063bd3697b014acdeca_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1d0512a3-74ec-4966-a60a-4cd915eefa0b/File_705a7ec7b47d4063bd3697b014acdeca_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Click <strong>See it</strong> under the "Internal Bob Sign Up" tile.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/36c44874-1556-4f85-9b90-8ba5f6835e94/File_ba381dc286c8467bb8abed6b80058b12_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/36c44874-1556-4f85-9b90-8ba5f6835e94/File_ba381dc286c8467bb8abed6b80058b12_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>You will be redirected to a signup form.</li>
+</ol>
+<p>Input all the requested information, and press <strong>Submit.</strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/a5d2e76c-db00-4e5d-b75a-b65f86d3fbf9/File_143f2f1efb8c47cfb6d866b59049f330_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/a5d2e76c-db00-4e5d-b75a-b65f86d3fbf9/File_143f2f1efb8c47cfb6d866b59049f330_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>If you'd like, review your responses - and finally, confirm by clicking <strong>Submit</strong> once again in the pop-up window.</li>
+</ol>
+<p><em>Another "Thank you" pop up message appears after, you can simply ignore it.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4fc5d0de-8f9b-4eb1-ab6c-c17d0d10948c/File_ab69dfd08dca499ab13b35b9312a56ed_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4fc5d0de-8f9b-4eb1-ab6c-c17d0d10948c/File_ab69dfd08dca499ab13b35b9312a56ed_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>After submission, you will receive a confirmation email...</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/49a4367e-c2f0-4585-84b6-af492cdb22fc/File_ed5104c3e87f43d6bd79e38e049c32ac_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/49a4367e-c2f0-4585-84b6-af492cdb22fc/File_ed5104c3e87f43d6bd79e38e049c32ac_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>At this point, you have to wait. As mentioned, approval will likely take at least 24 hours.</li>
+</ol>
+<p><strong>Remember, this internal method is the officially reccomended method for IBMers - but if you are in a time crunch, Trial approval is much faster. Refer to Section 0.1 if you don't have time to wait for access.</strong> </p>
+<p>When you are approved, you will get this email (or something similar)...</p>
+<p>In the email, follow the <strong>Download Bob</strong> hyperlink.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8e26be94-86ba-44ab-a83d-69a898034360/File_45274e091e044c659a06287f4f3e78c8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8e26be94-86ba-44ab-a83d-69a898034360/File_45274e091e044c659a06287f4f3e78c8_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>The <em>Download Bob</em> link redirects you to a Box folder with the download links for various operating systems. Locate the version appropriate for your OS and click on it.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8ee0de1a-b454-4165-88ee-356ec779dad2/File_8a50d5cc42f8497b9d498c4592146cfb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8ee0de1a-b454-4165-88ee-356ec779dad2/File_8a50d5cc42f8497b9d498c4592146cfb_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="8">
+<li>Click on the appropriate file in the folder.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c81a2bd3-595a-479b-b13e-75cec4834134/File_a27e4ee65cd943c69e13bb16639f88a6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c81a2bd3-595a-479b-b13e-75cec4834134/File_a27e4ee65cd943c69e13bb16639f88a6_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="9">
+<li>Click <strong>Download</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/327193c8-2743-4f10-823d-c6e3dae79462/File_77fa6591724e409a9638a6740255af79_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/327193c8-2743-4f10-823d-c6e3dae79462/File_77fa6591724e409a9638a6740255af79_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>Review the License Agreement, accept, it, and press <strong>Next.</strong></li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/fd7401d9-7536-4a27-89ce-f7db88419302/File_1794fb5a883e4b82b49e05bf57265902_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/fd7401d9-7536-4a27-89ce-f7db88419302/File_1794fb5a883e4b82b49e05bf57265902_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="11">
+<li>Continue the typical GUI-based install process for most softwares - review the instructions on each Setup page to configure Bob to your liking, and <strong>press Next</strong> to proceed.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/f9bd3856-b8d2-47c8-8720-fab795288223/File_c124b68a8eaa4a6e93c2666806448470_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/f9bd3856-b8d2-47c8-8720-fab795288223/File_c124b68a8eaa4a6e93c2666806448470_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="12">
+<li>Installation should take 5-10 minutes.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/833b9873-b0e1-4b25-88c8-429782aa18f8/File_a83e04e2329548f1904ad5b49db17b0d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/833b9873-b0e1-4b25-88c8-429782aa18f8/File_a83e04e2329548f1904ad5b49db17b0d_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="13">
+<li>You will get this pop-up window upon completion. Check off <strong>Launch IBM Bob</strong> (if it's not already checked) and press Finish.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8d756d03-291f-4285-903d-c535f79a0ba3/File_a4cfd88bff4549429e103dec4813cf8a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8d756d03-291f-4285-903d-c535f79a0ba3/File_a4cfd88bff4549429e103dec4813cf8a_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="14">
+<li>IBM Bob opens! Click <strong>Log in to Bob</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/fd276b7f-8468-4b6f-a0b1-03d64b813f2e/File_001a881981d14a70b38b2223dffea141_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/fd276b7f-8468-4b6f-a0b1-03d64b813f2e/File_001a881981d14a70b38b2223dffea141_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="15">
+<li>Click <strong>Allow.</strong></li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8a52554d-ef2b-4d99-901b-4dac4f33c1d5/File_8137ffa47ce14472ab686b4aaee6fe4d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8a52554d-ef2b-4d99-901b-4dac4f33c1d5/File_8137ffa47ce14472ab686b4aaee6fe4d_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="16">
+<li>Check off the <em>"Always allow [...]"</em> box, and press <strong>Open</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b1fbbdef-7b01-4aa3-be35-92400b32e00d/File_6fab1c18f7e74aa1bed098110381b9e5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b1fbbdef-7b01-4aa3-be35-92400b32e00d/File_6fab1c18f7e74aa1bed098110381b9e5_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="17">
+<li>Switch back to IBM Bob.</li>
+</ol>
+<p>A pop up window with <em>"Allow 'IBM Bob' extension to open this URL"</em> appears. Click <strong>Open</strong>.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/2f051d98-b692-454f-91b4-d7e0a193308f/File_a0044af67ea74f1a8caef21821ea6658_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/2f051d98-b692-454f-91b4-d7e0a193308f/File_a0044af67ea74f1a8caef21821ea6658_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="18">
+<li>We can see that a window to type prompts has been opened in our IBM Bob agentic sidebar. </li>
+</ol>
+<p>Now, we can proceed to get the demo app installed... if you made it to this point, <strong>skip directly to Chapter 0.3: Access Galaxium Travels Demo App Locally (the next chapter) - disregard the other Optional chapters (0.1 and 0.4)</strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3733e39b-285c-44ae-a13a-3e4e74c28b97/File_cf25c4f8c6aa4b00a92a8f90ec5fd563_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3733e39b-285c-44ae-a13a-3e4e74c28b97/File_cf25c4f8c6aa4b00a92a8f90ec5fd563_text_export.jpeg" width="600" /></a>
+</p>
+
+<h1 id="install-ibm-bob-and-access-demo-app">Install IBM Bob and Access Demo App</h1>
+<h4 id="chapter-03-install-galaxium-travels-demo-app">Chapter 0.3: Install Galaxium Travels Demo App</h4>
+<ol>
+<li>If you don't already have them, download Python and Node.js.</li>
+</ol>
+<ul>
+<li><strong>Python 3.8+</strong> - <a href="https://www.python.org/downloads/">Download</a></li>
+<li><strong>Node.js 18+</strong> - <a href="https://nodejs.org/">Download</a></li>
+<li><strong>npm</strong> (comes with Node.js)</li>
+</ul>
+<ol start="2">
+<li>Open a terminal window and paste the command:</li>
+</ol>
+<p>git clone -b bob-learning-path-branch https://github.com/IBM/galaxium-travels</p>
+<p>...and execute it.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/befab27e-07c8-402a-953d-4d34982cd57b/File_889fd34093454cd19d281579d5a89981_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/befab27e-07c8-402a-953d-4d34982cd57b/File_889fd34093454cd19d281579d5a89981_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>In a Terminal window, move to the galaxium travels directory.</li>
+</ol>
+<p><strong>On Windows, paste:</strong></p>
+<p>cd $HOME\galaxium-travels</p>
+<p><strong>On Mac, paste:</strong></p>
+<p>cd ~/galaxium-travels</p>
+<p>...and execute it.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5e131b35-8c00-4d46-8496-fd56cde3e001/File_c6124a39396d48b78966d1d2d18745e9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5e131b35-8c00-4d46-8496-fd56cde3e001/File_c6124a39396d48b78966d1d2d18745e9_text_export.jpeg" width="600" /></a>
+</p>
+
+<h4 id="chapter-031-access-galaxium-travels-on-mac-or-linux-locally">Chapter 0.3.1: Access Galaxium Travels on Mac or Linux Locally</h4>
+<p>Starting up the app is simple on Mac and Linux machines...</p>
+<ol>
+<li><strong>On Mac or Linux, paste:</strong></li>
+</ol>
+<p>./start.sh</p>
+<p>...in the terminal window, and press Enter.</p>
+<p><strong>One-line startup above not working?</strong>\
+Here is the manual process. Execute each command separately, and open a new terminal window when directed (for frontend startup).</p>
+<p><strong>Start Backend:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cd booking_system_backend
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python -m venv .venv
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip install -r requirements.txt
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python server.py
+</code></pre></div>
+<p><strong>Start Frontend (in a new terminal):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cd booking_system_frontend
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>npm install
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>npm run dev
+</code></pre></div>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1170cd60-aed5-44d4-ab3f-490bffc3e99d/File_5d37b5900a0b4ebd86f4c995cf83c40d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1170cd60-aed5-44d4-ab3f-490bffc3e99d/File_5d37b5900a0b4ebd86f4c995cf83c40d_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>We can see that the app has successfully started. To access it, let's copy the URL so we can access the frontend- it should look like:</li>
+</ol>
+<p><a href="http://localhost:5173/">http://localhost:5173</a></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/793d7562-1515-4044-b064-3bfdff2720ca/File_67f1e49b46dc48c99f86a90e51e2adae_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/793d7562-1515-4044-b064-3bfdff2720ca/File_67f1e49b46dc48c99f86a90e51e2adae_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>Return to your web browser.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/571e9b65-db2e-414d-ade5-eb7179b4fe98/File_ef9f4d8f12d040ec877b25fea04c1aa4_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/571e9b65-db2e-414d-ade5-eb7179b4fe98/File_ef9f4d8f12d040ec877b25fea04c1aa4_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>Paste the address we just copied in the search bar:</li>
+</ol>
+<p><a href="http://localhost:5173/">http://localhost:5173</a></p>
+<p>...and press Enter</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5fa648e3-7945-45ba-ba8b-38072be0980c/File_3834d144499e45fc98bd28445eff1b94_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5fa648e3-7945-45ba-ba8b-38072be0980c/File_3834d144499e45fc98bd28445eff1b94_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>We have now successfully accessed the front end of the demo application, Galaxium Travels. </li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e166dd8b-4ca1-4d63-9df1-86652d6739bd/File_2adcd32f1351430dba2682e9677b54f7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e166dd8b-4ca1-4d63-9df1-86652d6739bd/File_2adcd32f1351430dba2682e9677b54f7_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>Return to IBM Bob and click <strong>Explorer</strong> (<em>or press Ctrl+Shift+E</em>)</li>
+</ol>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/de154c20-20a2-49e5-93cb-eefa77a7af31/user_cropped_screenshot_0936fd4f0be24f48a2ec583fbe59ec78_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<ol start="7">
+<li>Click <strong>Open Folder.</strong></li>
+</ol>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/8a6cff90-c8bf-4ca8-96ca-8119371c3135/user_cropped_screenshot_805399a9e17647b1b1381037dff84bbe_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<ol start="8">
+<li>Navigate to the location of the galaxium-travels folder...</li>
+</ol>
+<p><em>This is whatever directory you were in when you ran the git clone [...] command — most likely your home/user profile directory</em></p>
+<p>... and <strong>select galaxium-travels</strong>.</p>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/559f074a-b846-4f29-91cd-f16fd5afcf06/user_cropped_screenshot_aaf0f2a9525c4a4bb3ecc1e05a733145_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<ol start="9">
+<li>Now, our galaxium-travels folder is open. Expand the drop down arrow.</li>
+</ol>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/b7c1825b-047f-4114-a619-377049dc4c0c/user_cropped_screenshot_e9baad11800a426e8627d70fb7bd8bab_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<ol start="10">
+<li>Here, we can see the various subfolders associated with this web app — this is where we will make modifications to the code to demonstrate IBM Bob's capabilities.</li>
+</ol>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/47cedba3-a755-4fe8-a59b-67ee37ac344d/user_cropped_screenshot_ea052cc85461418eb96a1e4dec58e69c_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<p>We are now finished with setup and ready to proceed with the actual course work.
+<strong>Proceed to the Lab Guide here:</strong></p>
+<p><a href="https://cf-courses-data.static.labs.skills.network/qs0iGAPCTuC5dbOKNiCKKA/IBM%20Bob%20Level%203%20Demo%20Guide%20-%20v1.md.html?t=1778267426">Demonstration Guide - Bob L3
+</a></p>
+<p><strong>IF YOU ALREADY MADE IT HERE, PLEASE DO NOT DO:</strong></p>
+<p><strong>OPTIONAL Chapter 0.4 : TechZone/Remote Desktop - Setup</strong> (or 0.3.2, the Windows setup)</p>
+<p><strong>SKIP PAST THAT PART! THERE IS NO NEED TO ACCESS THE REMOTE DESKTOP IF BOB AND THE DEMO APP ARE WORKING LOCALLY FOR YOU!</strong></p>
+<h4 id="chapter-032-access-galaxium-travels-on-windows-locally">Chapter 0.3.2: Access Galaxium Travels on Windows Locally</h4>
+<p>If you are on Windows, unfortunately, opening the demo app takes a bit more manual work.</p>
+<p><em>This content is undergoing improvements - at the time you take it, perhaps the setup has been fixed. You can try running start.bat to verify this - if you get an error, proceed with this manual method.</em></p>
+<ol>
+<li><strong>WINDOWS MANUAL SETUP</strong>\
+In a terminal window, paste each of these commands - one by one (so separately, pressing enter after you pasted each line):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cd $HOME\galaxium-travels
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cd booking_system_backend
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python -m venv .venv
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>.venv\Scripts\activate
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip install -r requirements.txt 
+</code></pre></div>
+<p>Overall, the flow will look like the attached screenshot of the Terminal window.</p>
+<p>After pasting the pip install command, you will see all the requirements start installing. This will take around 5 - 10 minutes to complete.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/809e914e-21ab-4a71-a6b7-b93b8fc55490/user_cropped_screenshot_7d23eabf5ac14724a375dda1b9c0e5f0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/809e914e-21ab-4a71-a6b7-b93b8fc55490/user_cropped_screenshot_7d23eabf5ac14724a375dda1b9c0e5f0_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="2">
+<li><strong>WINDOWS MANUAL SETUP</strong></li>
+</ol>
+<p>Finally, in the same terminal window, paste and execute the command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python server.py
+</code></pre></div>
+<p>Afterwards, <strong>open a new terminal window by pressing the Plus (+) button.</strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/0887d894-f833-424c-b5dc-98e07508640d/user_cropped_screenshot_9e209def5d2e42cc8940ed86d4280db6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/0887d894-f833-424c-b5dc-98e07508640d/user_cropped_screenshot_9e209def5d2e42cc8940ed86d4280db6_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="3">
+<li><strong>WINDOWS MANUAL SETUP</strong></li>
+</ol>
+<p>In a new terminal window, run the commands</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cd $HOME\galaxium-travels
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cd booking_system_frontend
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>npm install
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>npm run dev
+</code></pre></div>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c9e3344f-aedf-424f-91b5-cf87e5a9af7f/user_cropped_screenshot_6d24558a7eb84ab89c9bcf2b0826fdcc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c9e3344f-aedf-424f-91b5-cf87e5a9af7f/user_cropped_screenshot_6d24558a7eb84ab89c9bcf2b0826fdcc_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>After running the commands (./start.sh or the manual Windows steps above), you will see Vite - ready in ___ ms...</li>
+</ol>
+<p>You will also see a localhost URL - most likely http://localhost:5173/. <strong>Copy this link.</strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/ad2c22a2-9d6a-4a7a-9930-0ca264fb7e56/user_cropped_screenshot_aadbbb8e361140f48d26fca41a10e2d5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/ad2c22a2-9d6a-4a7a-9930-0ca264fb7e56/user_cropped_screenshot_aadbbb8e361140f48d26fca41a10e2d5_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>Open the web browser and paste the URL you saw - as mentioned, this is likely http://localhost:5173/ (unless you have another instance of Vite running).</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/f2497a00-6a44-4b46-8441-89e45066dc13/user_cropped_screenshot_0d54a0a48ff6425abc4cdbeb6811f18c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/f2497a00-6a44-4b46-8441-89e45066dc13/user_cropped_screenshot_0d54a0a48ff6425abc4cdbeb6811f18c_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>Congratulations! We are now successfully connected to the Galaxium Travels demo app.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4792bc88-f701-4fed-9e81-7aa6fbed878c/screenshot_bfb9b7c0ab0d42dd816f97bcb064991d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4792bc88-f701-4fed-9e81-7aa6fbed878c/screenshot_bfb9b7c0ab0d42dd816f97bcb064991d_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>Return to IBM Bob and click <strong>Explorer</strong> (<em>or press Ctrl+Shift+E</em>)</li>
+</ol>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/de154c20-20a2-49e5-93cb-eefa77a7af31/user_cropped_screenshot_0936fd4f0be24f48a2ec583fbe59ec78_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<ol start="8">
+<li>Click <strong>Open Folder.</strong></li>
+</ol>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/8a6cff90-c8bf-4ca8-96ca-8119371c3135/user_cropped_screenshot_805399a9e17647b1b1381037dff84bbe_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<ol start="9">
+<li>Navigate to the location of the galaxium-travels folder...</li>
+</ol>
+<p><em>This is whatever directory you were in when you ran the git clone [...] command — most likely your home/user profile directory</em></p>
+<p>... and <strong>select galaxium-travels</strong>.</p>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/559f074a-b846-4f29-91cd-f16fd5afcf06/user_cropped_screenshot_aaf0f2a9525c4a4bb3ecc1e05a733145_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<ol start="10">
+<li>Now, our galaxium-travels folder is open. Expand the drop down arrow.</li>
+</ol>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/b7c1825b-047f-4114-a619-377049dc4c0c/user_cropped_screenshot_e9baad11800a426e8627d70fb7bd8bab_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<ol start="11">
+<li>Here, we can see the various subfolders associated with this web app — this is where we will make modifications to the code to demonstrate IBM Bob's capabilities.</li>
+</ol>
+<p align="center">
+  <img
+    src="https://colony-recorder.s3.amazonaws.com/files/2026-05-08/47cedba3-a755-4fe8-a59b-67ee37ac344d/user_cropped_screenshot_ea052cc85461418eb96a1e4dec58e69c_text_export.jpeg"
+    width="600"
+    style="height:auto;"
+  />
+</p>
+
+<p>We are now finished with setup and ready to proceed with the actual course work.</p>
+<p>At this point, we can proceed with the actual course work. Move to Chapter 1: Demo Application: Galaxium Travels.</p>
+<p><strong>Proceed to the Lab Guide here:</strong></p>
+<p><a href="https://cf-courses-data.static.labs.skills.network/qs0iGAPCTuC5dbOKNiCKKA/IBM%20Bob%20Level%203%20Demo%20Guide%20-%20v1.md.html?t=1778267426">Demonstration Guide - Bob L3
+</a></p>
+<p><strong>IF YOU ALREADY MADE IT HERE, PLEASE DO NOT DO:</strong></p>
+<p><strong>OPTIONAL Chapter 0.4 : TechZone/Remote Desktop - Setup</strong></p>
+<p><strong>SKIP PAST THAT PART! THERE IS NO NEED TO ACCESS THE REMOTE DESKTOP IF BOB AND THE DEMO APP ARE WORKING LOCALLY FOR YOU!</strong></p>
+<h1 id="optional-ibm-bob-remote-desktop-setup">OPTIONAL IBM Bob Remote Desktop Setup</h1>
+<h4 id="optional-chapter-04-techzoneremote-desktop-setup">OPTIONAL Chapter 0.4 : TechZone/Remote Desktop - Setup</h4>
+<p><strong>REMEMBER, THIS IS THE OPTIONAL TECHZONE / REMOTE DESKTOP SETUP FLOW - THIS IS NOT REQUIRED IF OTHER ACCESS METHODS WORK FOR YOU AND YOU INSTALLED IBM BOB LOCALLY.</strong></p>
+<p><strong>THIS METHOD HAS ADDITIONAL TEDIOUS SETUP TO GET THE DEMO APP WORKING ON THE REMOTE DESKTOP.</strong></p>
+<p><strong>IF YOU CAN RUN IBM BOB LOCALLY BY FOLLOWING THE OTHER OPTIONAL INSTRUCTIONS - PLEASE DO - YOU WILL SAVE YOURSELF A LOT OF HEADACHE.</strong></p>
+<p><strong>You must complete either the Trial or Internal signup methods to access IBM Bob on the remote desktop...</strong></p>
+<ol>
+<li>We start at the <a href="https://techzone.ibm.com/collection/bob-enterprise-sales-assets?utm_source=skills_network&amp;utm_content=in_lab_content_link&amp;utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986">Bob Enterprise Sales Assets</a> page.</li>
+</ol>
+<p>Once here, click <strong>Technical Resources</strong> in the left sidebar.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/22bf98c8-00e5-4b1b-b906-ce4b15ec56a4/File_4440a8403ac94863987ac23e108559c6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/22bf98c8-00e5-4b1b-b906-ce4b15ec56a4/File_4440a8403ac94863987ac23e108559c6_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="2">
+<li>Click "Reserve it" under the "<strong>IBM Cloud VPC VSI - Bob IDE (IBM-Bob-linux-x64-1.109.5+bob1.0.1) - IBMID</strong>" tile.</li>
+</ol>
+<p><em>Mind the title and descriptions of the environment you reserve - for this lab, we do not need the version that supports API key access.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b72f9e84-f845-4f82-87f7-359bfc6340f6/File_3f73fd8298b2401b993cb13602a3fbef_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b72f9e84-f845-4f82-87f7-359bfc6340f6/File_3f73fd8298b2401b993cb13602a3fbef_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="3">
+<li>Click the <strong>Name</strong> field and type out a name for this Level 3 Lab.</li>
+</ol>
+<p><em>The name does not matter - for example, we will use the name "IBM Bob Level 3".</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/824c19a2-0725-4264-af4b-7b20e458c62d/File_6d5478bd73eb459b94ead959ea627e0a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/824c19a2-0725-4264-af4b-7b20e458c62d/File_6d5478bd73eb459b94ead959ea627e0a_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="4">
+<li>Click the <strong>Description</strong> field and type out a description for this Level 3 Lab.</li>
+</ol>
+<p><em>Similarly, the description does not matter - for our example, we will use the description "IBM Bob Level 3 course".</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5565ee23-1d3a-422f-9c6d-9b5c1f4e0950/File_b1c092e9d66e4aebafd0f1612b929f17_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5565ee23-1d3a-422f-9c6d-9b5c1f4e0950/File_b1c092e9d66e4aebafd0f1612b929f17_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="5">
+<li>After the name and description fields have been filled, click <strong>Next</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/7bba1e24-c208-42d9-b9da-080fdc55769c/File_16f1ddbd7c0c4a4b8496c8f7942ccac6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/7bba1e24-c208-42d9-b9da-080fdc55769c/File_16f1ddbd7c0c4a4b8496c8f7942ccac6_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="6">
+<li>Under Purpose, select <strong>Education</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/afe6e474-827c-41b1-bfa9-f60667bdb635/File_493d6fddca5a411082fedfbe3e7400be_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/afe6e474-827c-41b1-bfa9-f60667bdb635/File_493d6fddca5a411082fedfbe3e7400be_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="7">
+<li>Click <strong>Next</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/6cf28f4c-49f3-4226-b64b-1269fd183972/File_0a7b1f9770b6483dbb9b6787e3bb0e6a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/6cf28f4c-49f3-4226-b64b-1269fd183972/File_0a7b1f9770b6483dbb9b6787e3bb0e6a_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="8">
+<li><strong>Select your preferred geography</strong> (whichever location is nearest to you).</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/74eb8711-64ae-4329-a575-f5bf611ce461/File_174dd422c36c4bf88f74c8fc62917bfd_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/74eb8711-64ae-4329-a575-f5bf611ce461/File_174dd422c36c4bf88f74c8fc62917bfd_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="9">
+<li>Click <strong>Next</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/f488b428-a98a-4c77-84d0-4f9d78a8a4da/File_ffc70eacf3ba4c56ac88e7bb59a317bb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/f488b428-a98a-4c77-84d0-4f9d78a8a4da/File_ffc70eacf3ba4c56ac88e7bb59a317bb_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>On the Scheduling Page, you can see that your initial reservation will last 48 hours (and afterwards you have the option to extend it).</li>
+</ol>
+<p><strong>Choose your preferred start date for when you would like to access IBM Bob.</strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c89b3f4a-1aee-4fa2-b60e-05d6f7ac1e31/File_8a9879e63ae4428d9407151faa314681_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c89b3f4a-1aee-4fa2-b60e-05d6f7ac1e31/File_8a9879e63ae4428d9407151faa314681_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="10">
+<li>Click <strong>Next</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/db77c2f7-ad4f-4567-8038-4d6e350fbbc7/File_866cb499a99f453ba93ef8e1bb5b75dc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/db77c2f7-ad4f-4567-8038-4d6e350fbbc7/File_866cb499a99f453ba93ef8e1bb5b75dc_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="11">
+<li>Click <strong>Review</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5697d2c7-1672-4037-bd04-03b455dd70dc/File_9ad413a1ae4f4cdf890c228180ec215c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5697d2c7-1672-4037-bd04-03b455dd70dc/File_9ad413a1ae4f4cdf890c228180ec215c_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="12">
+<li>Review the details. After confirming that they are correct, click "<strong>I agree to IBM Technology Zone's terms &amp; conditions and user security policies.</strong>"</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/527531ce-9692-4415-9be5-a9ea74ebbd47/File_0beefb7dd9c24953a6d4ad3c93d7edce_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/527531ce-9692-4415-9be5-a9ea74ebbd47/File_0beefb7dd9c24953a6d4ad3c93d7edce_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="13">
+<li>Finally, click <strong>Submit</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/759667ea-b31c-4f45-b7ca-76b8f77263fa/File_8a6d03ea094649029aa530611eee1d35_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/759667ea-b31c-4f45-b7ca-76b8f77263fa/File_8a6d03ea094649029aa530611eee1d35_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="14">
+<li>Click <strong>Track my request</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5188dfc0-305c-4f02-b4c0-5f2f2f118109/File_1647ac62895b4894b67251023bbd49d2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5188dfc0-305c-4f02-b4c0-5f2f2f118109/File_1647ac62895b4894b67251023bbd49d2_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="15">
+<li>Please wait for the reservation status to change from <strong>Scheduled &gt; Provisioning &gt; Ready.</strong> This usually takes roughly 30 minutes to complete.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/cd208846-e9b7-46d1-81a7-91bca307a3d4/File_f93a685ddb1d45bc8eddc11b35f92ca9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/cd208846-e9b7-46d1-81a7-91bca307a3d4/File_f93a685ddb1d45bc8eddc11b35f92ca9_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="16">
+<li>We can see that the reservation has successfully completed when the Status changes to <strong>Ready</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5464b0be-f58a-42d2-a583-7f06532b4c98/File_a0054da2b8044bf38c55bc3c9ebf094e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5464b0be-f58a-42d2-a583-7f06532b4c98/File_a0054da2b8044bf38c55bc3c9ebf094e_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="17">
+<li>Next, check your email for an IBM Cloud account invitation - when it arrives, click on the <strong>Join now</strong> hyperlink.</li>
+</ol>
+<p><em>Even if you have done this process of creating an IBM Cloud account previously for other labs (or even past iterations of this same Level 3 course), </em><em>you must complete this step</em><em>! You will not be able to connect to the remote desktop otherwise.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1ac6c410-4bc8-45a7-a90e-0f477994a361/File_c8cdd0dc1ffe434284dd9f60564605b1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1ac6c410-4bc8-45a7-a90e-0f477994a361/File_c8cdd0dc1ffe434284dd9f60564605b1_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="18">
+<li>Review your account and personal information. Next, review the Terms and Conditions.</li>
+</ol>
+<p>If everything looks acceptable, click "<strong>I accept the product Terms and Conditions of this registration form.</strong>"</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/d5d67694-6ef3-4f43-9f13-e0407f7ee55e/File_ebe7f01de72d4663a42b96a672377a1f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/d5d67694-6ef3-4f43-9f13-e0407f7ee55e/File_ebe7f01de72d4663a42b96a672377a1f_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="19">
+<li>Next, click <strong>Join account</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/7228726a-8ba4-4541-9e5f-cece0c4dd454/File_6b0d2cfa9b0e4e2783f57a0bcff0083b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/7228726a-8ba4-4541-9e5f-cece0c4dd454/File_6b0d2cfa9b0e4e2783f57a0bcff0083b_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="20">
+<li>You may be prompted to switch to a new account - if so, simply click <strong>Proceed</strong>. Otherwise, ignore this step and move on to the next one.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4648c3a6-062e-462b-8d18-d553c3fa784c/File_fc6e810fe5a24675b8ad9eb3474bcbd1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4648c3a6-062e-462b-8d18-d553c3fa784c/File_fc6e810fe5a24675b8ad9eb3474bcbd1_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="21">
+<li>Now, we can see that we have successfully connected to IBM Cloud.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b79dd404-a3e6-400f-bb7c-230590d9669f/File_c80e6754faaa49de9a0bde53dad8b0f6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b79dd404-a3e6-400f-bb7c-230590d9669f/File_c80e6754faaa49de9a0bde53dad8b0f6_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="22">
+<li>Return to the original IBM Enterprise Sales Assets page from before: <a href="https://techzone.ibm.com/collection/bob-enterprise-sales-assets?utm_source=skills_network&amp;utm_content=in_lab_content_link&amp;utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986">Bob Enterprise Sales Assets</a></li>
+</ol>
+<p>Expand the <strong>My TechZone</strong> drop-down in the header, and click <strong>My requests.</strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/d66f3678-dec6-4269-9e6a-355e7156a937/File_8fd8b132348d4a4ca0399ebd8764a8cc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/d66f3678-dec6-4269-9e6a-355e7156a937/File_8fd8b132348d4a4ca0399ebd8764a8cc_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="23">
+<li>Click <strong>Open it</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8a2ba966-f400-4337-8e6f-332176a1058c/File_29a874efc53f45019562fdd0d935cb83_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8a2ba966-f400-4337-8e6f-332176a1058c/File_29a874efc53f45019562fdd0d935cb83_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="24">
+<li><strong>Expand the drop-down</strong> for your IBM Bob environment.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/95f46fe9-955a-4162-bfe2-0c1901ea9114/File_937a320291ea43c39c655b954e5a8799_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/95f46fe9-955a-4162-bfe2-0c1901ea9114/File_937a320291ea43c39c655b954e5a8799_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="25">
+<li>Click on the <a href="https://vdi.cloud.techzone.ibm.com/guacamole?utm_source=skills_network&amp;utm_content=in_lab_content_link&amp;utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986">https://vdi.cloud.techzone.ibm.com/guacamole</a> link. This will allow us to connect to the Red Hat Enterprise Linux 9 remote desktop with IBM Bob preinstalled.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/04b8c972-8a67-46c5-b1cb-83fe4a4158b2/File_a2622bc8f4da40da961d42d32a7e84a7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/04b8c972-8a67-46c5-b1cb-83fe4a4158b2/File_a2622bc8f4da40da961d42d32a7e84a7_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="26">
+<li><strong>Expand the IBM Cloud dropdown</strong> by pressing the "plus" button.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/19bd5b75-34e6-4411-bc63-b85466ca5128/File_a2c6b50cc14d41dba992868d107b38b4_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/19bd5b75-34e6-4411-bc63-b85466ca5128/File_a2c6b50cc14d41dba992868d107b38b4_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="27">
+<li>Next, <strong>expand the Environment dropdown</strong> by pressing the "plus" button.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5ab3801c-d593-4a28-9720-4a4fa3bf3bde/File_397c60afda66488b93b7ee01955d1214_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5ab3801c-d593-4a28-9720-4a4fa3bf3bde/File_397c60afda66488b93b7ee01955d1214_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="28">
+<li>Click <strong>VNC Desktop</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b7634111-2e3d-4f98-bac0-9709dfa64a2f/File_9ec9924a639147acb5a7d97e931ef554_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b7634111-2e3d-4f98-bac0-9709dfa64a2f/File_9ec9924a639147acb5a7d97e931ef554_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="29">
+<li>Great work! At this point, we are on our remote desktop with IBM Bob preinstalled.</li>
+</ol>
+<p>Click on the <strong>Activities</strong> button in the top left (<em>next to the Red Hat logo</em>)</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1b2df963-0d19-443c-a4fa-378efe040604/File_44354256e64641b5b6136f60d0e16dfc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1b2df963-0d19-443c-a4fa-378efe040604/File_44354256e64641b5b6136f60d0e16dfc_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="30">
+<li>Click on the <strong>Show Applications</strong> icon.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/40278dc1-84a2-4e6a-a11a-eafa04199a36/File_13e2d49b1a6c4add98438f47abd1cc8f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/40278dc1-84a2-4e6a-a11a-eafa04199a36/File_13e2d49b1a6c4add98438f47abd1cc8f_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="31">
+<li>Click on <strong>IBM Bob</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3b0818ca-c2f2-486b-a510-44f171e263d0/File_d3f4317adb7c4d64889b9e73759b2450_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3b0818ca-c2f2-486b-a510-44f171e263d0/File_d3f4317adb7c4d64889b9e73759b2450_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="32">
+<li>Upon opening IBM Bob, a prompt may appear to "Choose password for new keyring".</li>
+</ol>
+<p>This isn't needed for this lab - you can simply press <strong>Cancel</strong>.</p>
+<p><em>This "Choose password [...] prompt may appear multiple times - keep pressing Cancel until it lets you proceed.</em></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/a6a028aa-0d44-4a31-b967-33fac7ca9578/File_5a35547ba5d5486b80ea8455e98c448b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/a6a028aa-0d44-4a31-b967-33fac7ca9578/File_5a35547ba5d5486b80ea8455e98c448b_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="33">
+<li>To provide additional customizability to users, settings can be imported from other editors. For now, let's just proceed with the defaults. Press <strong>Skip for now.</strong></li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/147f675e-6533-441a-9c07-6b93a2a7cb7f/File_9010239d130b4c909d93a6e713a3916b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/147f675e-6533-441a-9c07-6b93a2a7cb7f/File_9010239d130b4c909d93a6e713a3916b_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="34">
+<li>We are greeted with the IBM Bob welcome page. If you'd like, you can change your theme and explore tutorials, amongst other things.</li>
+</ol>
+<p>Feel free to explore this walkthrough if you'd like. For now, let's move on. Click on the blue <strong>Log in to Bob</strong> button on the right sidebar.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/d42259c0-ecec-4939-99a2-7fd3e0f2f9c5/File_54f7e49f051b4aeca944cb16752afa71_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/d42259c0-ecec-4939-99a2-7fd3e0f2f9c5/File_54f7e49f051b4aeca944cb16752afa71_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="35">
+<li>This opens the IBMid sign in page in a new tab.</li>
+</ol>
+<p><em>If you aren't automatically redirected, go to Activities&gt;Firefox.</em></p>
+<p>Complete the usual authentication steps to sign into your IBMid account.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1919a73d-7409-4e76-9e62-41bb142b5908/File_e3cd5ab4db5740cc83b172b133871b6e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1919a73d-7409-4e76-9e62-41bb142b5908/File_e3cd5ab4db5740cc83b172b133871b6e_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="36">
+<li>After logging in with your IBMid and password (or Passkey), you will be redirected to this "Authentication Succesful!" page. </li>
+</ol>
+<p>Click on the <strong>Activities</strong> button once again.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/be24d35f-580e-44ea-af1b-a6f8be2a133c/File_d5132665330c4de2a50ec5848bf10f1f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/be24d35f-580e-44ea-af1b-a6f8be2a133c/File_d5132665330c4de2a50ec5848bf10f1f_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="37">
+<li>Click on the (already open) IBM Bob editor window.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/16daba8a-b438-408c-b4a2-da91facedd81/File_fcbb353870ef4d9e9693593a68ec8aef_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/16daba8a-b438-408c-b4a2-da91facedd81/File_fcbb353870ef4d9e9693593a68ec8aef_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="38">
+<li>A window opens with the text "<em>Allow 'IBM Bob' extension to open this URL?</em>"</li>
+</ol>
+<p>Press <strong>Open</strong>.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5e9b508f-8374-4c8e-945a-0283523ad3d7/File_9bd6c7b6a1914db488d17b9aa1da627b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5e9b508f-8374-4c8e-945a-0283523ad3d7/File_9bd6c7b6a1914db488d17b9aa1da627b_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="39">
+<li>At this point, we can see that we have succesfuly connected to IBM Bob.</li>
+</ol>
+<p>The window to send our prompts has opened. Furthermore, in the bottom right corner, we see our plan name (<em>currently IBM internal plan</em>), and in the top right we see our Bobcoin balance (<em>in terms of percentage)</em>.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/47e9370f-ff17-4094-abb9-0affc3434660/File_ea294f16d93e4313a36ca26c07f96059_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/47e9370f-ff17-4094-abb9-0affc3434660/File_ea294f16d93e4313a36ca26c07f96059_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="40">
+<li>At this stage, we have successfully connected to the remote desktop and we have accessed and logged in to IBM Bob.</li>
+</ol>
+<p>Before we dive in, we need to install newer versions of some prerequisite software on our Red Hat Enterprise Linux 9 machine so we can work with the demo application used for the duration of this course.</p>
+<ul>
+<li>Python</li>
+<li>Node.js</li>
+<li>npm</li>
+</ul>
+<p>Doing this on the RHEL 9 remote dekstop is a bit more involved than on Mac or Windows...
+Let's get started...</p>
+<ol start="41">
+<li>Click on the <strong>Activities</strong> button.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1b2536b5-0083-4c17-a976-f9b6c31ac301/File_9ba40d7d808241c2aed1964e3ce48a0a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1b2536b5-0083-4c17-a976-f9b6c31ac301/File_9ba40d7d808241c2aed1964e3ce48a0a_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="42">
+<li>Open the <strong>Terminal</strong>.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9cccc375-d8c9-4bdc-9624-8dfbd0590430/File_aaa2373f154d4972889a8718d37d4f27_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9cccc375-d8c9-4bdc-9624-8dfbd0590430/File_aaa2373f154d4972889a8718d37d4f27_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="43">
+<li>The Terminal window opens.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4d6319cf-1c3e-4d19-823d-e7813b04913f/File_29a0268cd5f7458fa2ccfdfe00cc3eb2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4d6319cf-1c3e-4d19-823d-e7813b04913f/File_29a0268cd5f7458fa2ccfdfe00cc3eb2_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="44">
+<li>First, let's clone the Galaxium Travels demo code that we will use throughout this lab. The clone command also checks out the bob-learning-path-branch that contains the code you use in the tutorials.</li>
+</ol>
+<p>Paste the following command:</p>
+<p>git clone -b bob-learning-path-branch https://github.com/IBM/galaxium-travels\</p>
+<p>...in a Terminal window, and press Enter.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1c25e55d-b881-4e15-9013-dc7d77fbd23e/File_4c26b2f918ff45c89c89ca633f6a52d9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1c25e55d-b881-4e15-9013-dc7d77fbd23e/File_4c26b2f918ff45c89c89ca633f6a52d9_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="45">
+<li>Click on the <strong>Activities</strong> button.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5c714d5c-f9d1-42f0-b066-b244b77c52ac/File_b1a89270c9474fffaa640a00dee0cc01_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5c714d5c-f9d1-42f0-b066-b244b77c52ac/File_b1a89270c9474fffaa640a00dee0cc01_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="46">
+<li>Open <strong>Firefox.</strong></li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e7f4b2db-322d-4ca7-acba-2bf5759013c6/File_ad93bcd0613143539ee6c5b775678ec3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e7f4b2db-322d-4ca7-acba-2bf5759013c6/File_ad93bcd0613143539ee6c5b775678ec3_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="47">
+<li>Navigate to the following Github page :</li>
+</ol>
+<p>https://github.com/Phillips-Quintin/IBM-Bob-L3-Bootstrap</p>
+<p>Here, you'll find two scripts that will simplify this install process.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b1d7640e-e1d4-4698-b69c-6efecf68703d/File_a1204fca599e4ad4825d98d0bdf830e7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b1d7640e-e1d4-4698-b69c-6efecf68703d/File_a1204fca599e4ad4825d98d0bdf830e7_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="48">
+<li>Click on one of the files (in this example, bootstrap_backend.sh).</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/43cb93b0-5d87-4a36-af9d-fcecea87eb39/File_5ad4b63264cb48ebb3e2fd5c905ff879_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/43cb93b0-5d87-4a36-af9d-fcecea87eb39/File_5ad4b63264cb48ebb3e2fd5c905ff879_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="49">
+<li>Click on <strong>Download raw file</strong>...</li>
+</ol>
+<p>Repeat this simple download process for the other file, bootstrap_frontend.sh -  <strong>we need to download both</strong>.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/258b8c41-c053-4e86-b5b3-0dd796f3ae10/File_4ddf06c054074a59be4c6ab84cf8a67f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/258b8c41-c053-4e86-b5b3-0dd796f3ae10/File_4ddf06c054074a59be4c6ab84cf8a67f_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="50">
+<li>After you've downloaded both the frontend and backend bootstrap file, click on the <strong>Activities</strong> button once again.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/39905a10-38c3-4d94-9079-5c6c0e3d3773/File_c7c75aa6f64645d1bd9e9ebbe43ca4ef_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/39905a10-38c3-4d94-9079-5c6c0e3d3773/File_c7c75aa6f64645d1bd9e9ebbe43ca4ef_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="51">
+<li>Click on the <strong>Files</strong> button.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/06124638-656a-4683-8fed-ad0122e3e38c/File_0056c77304ac4f189be2fa673f1361be_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/06124638-656a-4683-8fed-ad0122e3e38c/File_0056c77304ac4f189be2fa673f1361be_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="52">
+<li>We need to move our two shell files we just downloaded from the Downloads folder into the galaxium-travels folder...</li>
+</ol>
+<p>Start by <strong>navigating to the Downloads folder.</strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/00a843e5-41be-4287-8b87-79d302a58590/File_fa855075623944d5bf9282e9f446fbef_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/00a843e5-41be-4287-8b87-79d302a58590/File_fa855075623944d5bf9282e9f446fbef_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="53">
+<li>Highlight both files and right click - you should see the "<strong>Move to</strong>" option here.</li>
+</ol>
+<p>Click on <strong>"Move to"</strong>.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b432fbde-b245-4ca1-a496-a9590d538a0e/File_a9bc207b9bb3447a8ba39865237bc7c9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b432fbde-b245-4ca1-a496-a9590d538a0e/File_a9bc207b9bb3447a8ba39865237bc7c9_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="54">
+<li>Navigate to the <strong>Home</strong> folder (this is where our Galaxium Travels app currently resides).</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/7a68bf3b-e7df-472a-8eb4-0bdfe6d29b79/File_c094d671fdad4e3a9cb69ad2e740a69b_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/7a68bf3b-e7df-472a-8eb4-0bdfe6d29b79/File_c094d671fdad4e3a9cb69ad2e740a69b_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="55">
+<li>Click on the galaxium-travels folder so it's highlighted, and then press <strong>Select</strong> to finish moving the files.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c7c6fe74-4aaa-4a6e-96f3-ae10b58ac89f/File_b86cbc096a0a48028cd2441122531050_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c7c6fe74-4aaa-4a6e-96f3-ae10b58ac89f/File_b86cbc096a0a48028cd2441122531050_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="56">
+<li>Click on the <strong>Activities</strong> button.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/961bc68c-8acf-4f05-baa0-664cdb039b81/File_ca0c15bc2c6442d8999d3d2945c03d31_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/961bc68c-8acf-4f05-baa0-664cdb039b81/File_ca0c15bc2c6442d8999d3d2945c03d31_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="57">
+<li>Open the <strong>Terminal</strong> window.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/97aca272-d5c6-4f4f-a09b-e1742a00705a/File_69594cbcdab2480f914afe0e865f6353_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/97aca272-d5c6-4f4f-a09b-e1742a00705a/File_69594cbcdab2480f914afe0e865f6353_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="58">
+<li>First, lets make the backend bootstrap file executable by pasting the command:</li>
+</ol>
+<p>chmod +x ~/galaxium-travels/bootstrap_backend.sh</p>
+<p>...in the Terminal window, and pressing Enter.</p>
+<p><strong><em>Be mindful when copying and executing these commands! Occasionally when copying these commands, an unnecessary slash "\" is included before the tilde "~"- this will result in a "No such file or directory" error message. If you encounter this, remove the unnecessary left slash next to the tilde (so, ensure your command is exactly formatted as above) and try again.</em></strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/48b1742c-5d76-4187-84ff-074e544dcdcf/File_1c296e925ea34ca2b6b4ae81e5c9f773_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/48b1742c-5d76-4187-84ff-074e544dcdcf/File_1c296e925ea34ca2b6b4ae81e5c9f773_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="59">
+<li>Next, run the backend bootstrap script by pasting:</li>
+</ol>
+<p>~/galaxium-travels/bootstrap_backend.sh</p>
+<p>...in the Terminal window, and pressing Enter.</p>
+<p><strong>If upon running the script, you see no output, paste and execute this command again.</strong></p>
+<p><strong><em>Be mindful when copying and executing these commands! Occasionally when copying these commands, an unnecessary slash "\" is included before the tilde "~"- this will result in a "No such file or directory" error message. If you encounter this, remove the unnecessary left slash next to the tilde (so, ensure your command is exactly formatted as above) and try again.</em></strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/07f8679c-b92e-4bd6-a25a-b88114800d6c/File_c2786a5deebd4bbd952deb9ce5ccfc7d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/07f8679c-b92e-4bd6-a25a-b88114800d6c/File_c2786a5deebd4bbd952deb9ce5ccfc7d_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="60">
+<li>This should take around 5-10 minutes to install the backend prerequisites. You will see the install progress of each program in the terminal window.</li>
+</ol>
+<p>Upon completion, you will see "==&gt; Backend setup complete."</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b96d53b4-19e0-4dc4-a987-6374bfed29c4/File_a06ea96c494641c89725098b4e49af58_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b96d53b4-19e0-4dc4-a987-6374bfed29c4/File_a06ea96c494641c89725098b4e49af58_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="61">
+<li>Likewise, make the frontend bootstrap file executable by pasting the command:</li>
+</ol>
+<p>chmod +x ~/galaxium-travels/bootstrap_frontend.sh</p>
+<p>...in the Terminal window, and pressing Enter.</p>
+<p><strong><em>Be mindful when copying and executing these commands! Occasionally when copying these commands, an unnecessary slash "\" is included before the tilde "~"- this will result in a "No such file or directory" error message. If you encounter this, remove the unnecessary left slash next to the tilde (so, ensure your command is exactly formatted as above) and try again.</em></strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/eec77e06-2987-4ede-b803-f4d285ed1fac/File_1b04adfc0f1b48cfaadfdc39a1055b11_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/eec77e06-2987-4ede-b803-f4d285ed1fac/File_1b04adfc0f1b48cfaadfdc39a1055b11_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="62">
+<li>Finally, run the frontend bootstrap script by pasting:</li>
+</ol>
+<p>~/galaxium-travels/bootstrap_frontend.sh</p>
+<p>...in the Terminal window, and pressing Enter.</p>
+<p><strong>If upon running the script, you see no output, paste and execute this command again.</strong></p>
+<p><strong><em>Be mindful when copying and executing these commands! Occasionally when copying these commands, an unnecessary slash "\" is included before the tilde "~"- this will result in a "No such file or directory" error message. If you encounter this, remove the unnecessary left slash next to the tilde (so, ensure your command is exactly formatted as above) and try again.</em></strong></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/d8a47a44-90d1-44c2-b7ef-42ce6b95008f/File_3c2cc8b625134263b3b65bcd30d07f7c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/d8a47a44-90d1-44c2-b7ef-42ce6b95008f/File_3c2cc8b625134263b3b65bcd30d07f7c_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="63">
+<li>Upon completion, we will see a "==&gt; Frontend setup complete." message...</li>
+</ol>
+<p>At this point, we have downloaded our project directory and all necessary prerequisites.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/90eae087-c447-4eed-8986-a10001ce30a1/File_5d7e8b3077164dabb5e411aea3ecdb32_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/90eae087-c447-4eed-8986-a10001ce30a1/File_5d7e8b3077164dabb5e411aea3ecdb32_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="64">
+<li>We have completed installing all of the prerequisites. At this point, we can access the demo application. 
+First, <strong>open a new Terminal window</strong> by pressing the plus button at the top left of the already-open Terminal.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/cb84a568-0173-4f05-91b6-c06b324bc0b0/File_41cdf8125d04453388c69399f9a2ed5d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/cb84a568-0173-4f05-91b6-c06b324bc0b0/File_41cdf8125d04453388c69399f9a2ed5d_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="65">
+<li>If you aren't already there, you need to navigate to the galaxium-travels directory.</li>
+</ol>
+<p>Paste:</p>
+<p>cd galaxium-travels </p>
+<p>...in the terminal window, and press Enter..</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5168d9b0-7a23-407f-8dc3-959787576e96/File_68492a16967342f38a8235d9fc454fc6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5168d9b0-7a23-407f-8dc3-959787576e96/File_68492a16967342f38a8235d9fc454fc6_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="66">
+<li>Finally, lets start up the Galaxium Travels demo app.</li>
+</ol>
+<p>Paste:</p>
+<p>./start.sh</p>
+<p>...in the terminal window, and press Enter.</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1170cd60-aed5-44d4-ab3f-490bffc3e99d/File_5d37b5900a0b4ebd86f4c995cf83c40d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1170cd60-aed5-44d4-ab3f-490bffc3e99d/File_5d37b5900a0b4ebd86f4c995cf83c40d_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="67">
+<li>We can see that the app has successfully started. To access it, let's copy the URL so we can access the frontend- it should look like:</li>
+</ol>
+<p><a href="http://localhost:5173/">http://localhost:5173</a></p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/793d7562-1515-4044-b064-3bfdff2720ca/File_67f1e49b46dc48c99f86a90e51e2adae_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/793d7562-1515-4044-b064-3bfdff2720ca/File_67f1e49b46dc48c99f86a90e51e2adae_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="68">
+<li>Click on the <strong>Activities</strong> button.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1abbafe6-3973-4268-8a0f-241a4e938ff1/File_72b6965652d046debfc153f02fbf8d7c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1abbafe6-3973-4268-8a0f-241a4e938ff1/File_72b6965652d046debfc153f02fbf8d7c_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="69">
+<li>Return to the Firefox web browser.</li>
+</ol>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/571e9b65-db2e-414d-ade5-eb7179b4fe98/File_ef9f4d8f12d040ec877b25fea04c1aa4_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/571e9b65-db2e-414d-ade5-eb7179b4fe98/File_ef9f4d8f12d040ec877b25fea04c1aa4_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="70">
+<li>Paste the address we just copied in the search bar:</li>
+</ol>
+<p><a href="http://localhost:5173/">http://localhost:5173</a></p>
+<p>...and press Enter</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5fa648e3-7945-45ba-ba8b-38072be0980c/File_3834d144499e45fc98bd28445eff1b94_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/5fa648e3-7945-45ba-ba8b-38072be0980c/File_3834d144499e45fc98bd28445eff1b94_text_export.jpeg" width="600" /></a>
+</p>
+
+<ol start="71">
+<li>We have now successfully accessed the demo application, Galaxium Travels. </li>
+</ol>
+<p>Now, let's see what IBM Bob can do...</p>
+<p align="center">
+  <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e166dd8b-4ca1-4d63-9df1-86652d6739bd/File_2adcd32f1351430dba2682e9677b54f7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e166dd8b-4ca1-4d63-9df1-86652d6739bd/File_2adcd32f1351430dba2682e9677b54f7_text_export.jpeg" width="600" /></a>
+</p>
+
+<p><strong>Proceed to the Lab Guide here:</strong></p>
+<p><a href="https://cf-courses-data.static.labs.skills.network/qs0iGAPCTuC5dbOKNiCKKA/IBM%20Bob%20Level%203%20Demo%20Guide%20-%20v1.md.html?t=1778267426">Demonstration Guide - Bob L3
+</a></p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/hide-toc-nav.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
