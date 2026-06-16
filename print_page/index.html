@@ -1154,7 +1154,8 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <ol start="15">
 <li>
-<p>Click <strong>Allow</strong> to continue.</p>
+<p>When prompted <em>The extension IBM Bob wants to sign in using Bob.</em>, click <strong>Allow</strong> to launch a web browser for authentication.</p>
+<p>Log in within the browser using your <em>IBMid</em> and <em>password</em> - those which are linked to the IBM Bob account you registered for in the previous steps.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8a52554d-ef2b-4d99-901b-4dac4f33c1d5/File_8137ffa47ce14472ab686b4aaee6fe4d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8a52554d-ef2b-4d99-901b-4dac4f33c1d5/File_8137ffa47ce14472ab686b4aaee6fe4d_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1163,25 +1164,12 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <ol start="16">
 <li>
-<p>Tick the <em>"Always allow [...]"</em> box and press <strong>Open</strong>.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b1fbbdef-7b01-4aa3-be35-92400b32e00d/File_6fab1c18f7e74aa1bed098110381b9e5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b1fbbdef-7b01-4aa3-be35-92400b32e00d/File_6fab1c18f7e74aa1bed098110381b9e5_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="17">
-<li>
-<p>Switch back to the Bob IDE. A pop-up reading <em>"Allow 'IBM Bob' extension to open this URL"</em> appears — click <strong>Open</strong>.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/2f051d98-b692-454f-91b4-d7e0a193308f/File_a0044af67ea74f1a8caef21821ea6658_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/2f051d98-b692-454f-91b4-d7e0a193308f/File_a0044af67ea74f1a8caef21821ea6658_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="18">
-<li>
-<p>The prompt window has opened in your IBM Bob Agentic Sidebar — your environment is now authenticated and ready.</p>
+<p>A few additional prompts may arise before authentication can complete:</p>
+<ul>
+<li>If asked <em>"Do you want to allow this website to open IBM Bob?"</em>, click <strong>Yes</strong></li>
+<li>Wait until the web browser refreshes to read <em>Authentication Successful!</em> before closing the browser window</li>
+<li>Return to the Bob IDE, which has now been successfully authenticated and connected to the IBM Bob service</li>
+</ul>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3733e39b-285c-44ae-a13a-3e4e74c28b97/File_cf25c4f8c6aa4b00a92a8f90ec5fd563_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3733e39b-285c-44ae-a13a-3e4e74c28b97/File_cf25c4f8c6aa4b00a92a8f90ec5fd563_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1214,7 +1202,7 @@ At its core, Bob does three things exceptionally well:</p>
 <p>Next, move into the <code>galaxium-travels</code> directory by copying &amp; pasting into the Terminal console the command that <strong>matches your operating system</strong>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
 <details class="quote">
 <summary>MAC OR LINUX</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#setup-__codelineno-1-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#setup-__codelineno-1-1"></a><span class="nb">cd</span> ~/galaxium-travels
 </code></pre></div>
 </details>
 <details class="quote">
@@ -1237,7 +1225,7 @@ At its core, Bob does three things exceptionally well:</p>
 <p>Starting the application on macOS and Linux is straightforward: a single script brings up both the backend and the frontend.</p>
 <ol>
 <li>
-<p>From within the <code>galaxium-travels</code> directory, run the start-up script and press <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
+<p>Within the Terminal, copy and paste the following start-up script and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#setup-__codelineno-3-1"></a>./start.sh
 </code></pre></div>
 <details class="warning">
