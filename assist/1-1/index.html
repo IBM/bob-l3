@@ -687,6 +687,8 @@
 <ol start="2">
 <li>
 <p>From the Setup module, the Bob IDE should already be open to the <code>galaxium-travels</code> directory.</p>
+<details class="quote">
+<summary>CAN'T LOCATE THE DIRECTORY?</summary>
 <p>If this is not the case:</p>
 <ul>
 <li>Click <strong>Open Folder</strong> to expose the <em>File Explorer</em> view</li>
@@ -698,14 +700,15 @@
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50787f12-e1dd-410b-89f0-145df966f8c8/File_68c498ba382f4b529983a0a0980f01ab_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50787f12-e1dd-410b-89f0-145df966f8c8/File_68c498ba382f4b529983a0a0980f01ab_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
+</details>
 </li>
 </ol>
 <hr />
 <ol start="3">
 <li>
-<p>Locate the <strong>UserIdentification.tsx</strong> file and double-click to open the contents.</p>
+<p>Locate the <code>UserIdentification.tsx</code> file and <strong>double-click</strong> it to open the contents.</p>
 <p>It will be nestled inside the following directory hierarchy:</p>
-<div class="admonition warning">
+<div class="admonition note">
 <p class="admonition-title"><strong>Filepath:</strong></p>
 <p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>components</code><strong>/</strong><code>user</code><strong>/</strong><code>UserIdentification.tsx</code></p>
 </div>
@@ -728,13 +731,13 @@
 </ol>
 <hr />
 <p>In order to demonstrate IBM Bob's ability to generate functional application code based on basic, natural language specifications, we'll begin with a simple one-liner comment that describes the work we'd like the application to perform. In this example, that will be validation of email addresses to ensure that users signing up for the Galaxium service are supplying compliant email addresses that follow the expected formatting.</p>
-<hr />
 <ol start="5">
 <li>
-<p>Begin by moving the cursor to <strong>line 19</strong> of the file, then copy &amp; paste the following comment line — including the forward-slash (<code>//</code>) characters:</p>
+<p>Begin by moving the cursor to <strong>Line 19</strong> of the file (just after the <code>UserIdentification</code> definition).</p>
+<p>Copy &amp; paste the following comment onto <strong>Line 19</strong>, including the forward-slash (<code>//</code>) characters:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// validate email addresses
 </code></pre></div>
-<p>Then add a blank (empty) line <em>before</em> and <em>after</em> this commented line. The result should appear as the following:</p>
+<p>Make sure to include the blank (empty) lines <em>before</em> and <em>after</em> the <code>// validate email addresses</code> comment. The result should appear as the following:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">UserIdentification.tsx</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -764,18 +767,26 @@
 </ol>
 <hr />
 <ol start="6">
-<li>Ensure that <strong>Literate Coding Mode</strong> is <code>ENABLED</code> by either toggling on the <strong>magic wand tool</strong> in the top-right corner of the <code>UserIdentification.tsx</code> editor (shown below) <em>or</em> by pressing the <span class="keys"><kbd class="key-command">Cmd</kbd></span> + ++I++ shortcut.</li>
+<li>
+<p>Ensure that <strong>Literate Coding Mode</strong> is <code>ENABLED</code> by either toggling on the <strong>magic wand tool</strong> in the top-right corner of the <code>UserIdentification.tsx</code> editor (shown below).</p>
+<p>Alternatively, you can engage Literate Coding by pressing the <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span> keyboard shortcut.</p>
+</li>
 </ol>
 <hr />
 <ol start="7">
 <li>
 <p>After enabling Literate Coding Mode, move your cursor to the <strong>end</strong> of the newly-created <code>// validate email addresses</code> comment on <strong>Line 19</strong> (or highlight all of Line 19)</p>
 <p>Towards the bottom-center of the Bob IDE interface, click the blue <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to execute</p>
-<div class="admonition note">
-<p class="admonition-title">LITERATE CODING MODE</p>
-<p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
-</div>
-<p>IBM Bob will generate two new blocks of code within the <code>UserIdentification.tsx</code> file across <strong>Lines 20-23</strong> (<code>isValidEmail</code> function) and <strong>Lines 33-37</strong> (<code>if(!isValidEmail ...</code> logic), respectively. </p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>IBM Bob will generate two new blocks of code within the <code>UserIdentification.tsx</code> file:</p>
+<ul>
+<li>Across <strong>Lines 20-23</strong> (<code>isValidEmail</code> function)</li>
+<li>Across <strong>Lines 33-37</strong> (<code>if(!isValidEmail ...</code> logic)</li>
+</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">UserIdentification.tsx</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -832,7 +843,7 @@
 </li>
 </ol>
 <hr />
-<ol start="8">
+<ol start="9">
 <li>
 <p>Click <strong>Accept All</strong> (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to confirm the changes to the code.</p>
 <p>Alternatively, you could click <em>Undo All</em> to reverse the changes, or use the up and down arrows to review the two new code blocks manually.
@@ -842,7 +853,7 @@
 </li>
 </ol>
 <hr />
-<ol start="9">
+<ol start="10">
 <li>
 <p>You will need to <strong>reboot</strong> the <em>Galaxium Travels</em> web app service for the changes to take effect. To do so:</p>
 <ul>
@@ -856,7 +867,7 @@
 </li>
 </ol>
 <hr />
-<ol start="10">
+<ol start="11">
 <li>
 <p>The commands to be issued to the Terminal console vary according to the operating system your machine is running upon.</p>
 <p>From the expandable options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows). After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
@@ -923,7 +934,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="11">
+<ol start="12">
 <li>
 <p>Open a web browser on your local machine and visit the following URL to access the Galaxium Travels application:</p>
 <div class="admonition warning">
@@ -936,7 +947,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="12">
+<ol start="13">
 <li>
 <p>Once the Galaxium Travels site has loaded, click on <strong>Flights</strong>.</p>
 <p><p align="left">
@@ -945,7 +956,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="13">
+<ol start="14">
 <li>
 <p>Click the <strong>Book Now</strong> button under any of the listed flights to test its functionality.</p>
 <p><p align="left">
@@ -954,7 +965,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="14">
+<ol start="15">
 <li>
 <p>The web page will redirect to a <strong>Sign In</strong> panel. From this panel, we will be able to confirm (or troubleshoot) that the Bob-suggested email validation functionality is performing its intended job.</p>
 <ul>
