@@ -314,8 +314,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-hands-on-adding-email-validation-with-next-edit-prediction" class="md-nav__link">
-    iii. Hands-on: adding email validation with Next Edit Prediction
+  <a href="#iii-hands-on-adding-email-validation-checks" class="md-nav__link">
+    iii. Hands-on: adding email validation checks
   </a>
   
 </li>
@@ -604,8 +604,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-hands-on-adding-email-validation-with-next-edit-prediction" class="md-nav__link">
-    iii. Hands-on: adding email validation with Next Edit Prediction
+  <a href="#iii-hands-on-adding-email-validation-checks" class="md-nav__link">
+    iii. Hands-on: adding email validation checks
   </a>
   
 </li>
@@ -641,7 +641,6 @@
 <p class="admonition-title">AI MATURITY CURVE</p>
 <p>Literate Coding is a prime example of where the <em>control</em> that the human in the loop retains with IBM Bob — as part of the <strong>early Assist stage along the AI Maturity Curve</strong> — becomes tangible and truly valuable. IBM Bob never silently rewrites your files or codebase. Instead, it presents every change in a <em>diff</em> view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide on whether to implement the suggestion or disregard it. Nothing is committed until you say so.</p>
 </div>
-<hr />
 <h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
 <p>Literate coding is at its best for focused, in-place work:</p>
@@ -651,7 +650,6 @@
 <li><strong>Quick, targeted modifications</strong> to a single function without disturbing the broader structure</li>
 </ul>
 <p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
-<hr />
 <p><strong>How it works</strong></p>
 <p>The workflow is deliberately simple:</p>
 <ol>
@@ -661,20 +659,17 @@
 <li>For changes that span several places, add an instruction line at each location</li>
 <li>Click generate to produce the modifications (across one or many instructions)</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">GOING FURTHER</p>
+<p>For sweeping, multi-file changes or architectural restructuring, you will instead want to reach for IBM Bob's <strong>Code mode</strong>. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>Module 2 | Delegate</strong></a>, which follows this section.</p>
+</div>
+<h2 id="iii-hands-on-adding-email-validation-checks"><strong>iii. Hands-on: adding email validation checks</strong></h2>
 <hr />
-<p><strong>Going further</strong></p>
-<p>For sweeping, multi-file changes or architectural restructuring, you will instead want to reach for IBM Bob's <strong>Code mode</strong>. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>, which follows this section.</p>
-<h2 id="iii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>iii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
-<hr />
-<blockquote>
-<p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
-</blockquote>
+<p>Let's begin by adding to <em>Galaxium Travels</em>' set of capabilities a new feature that's currently missing: validation of email addresses that a user types when they sign in.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
 <p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
 </div>
-<p>Let's begin by adding to <em>Galaxium Travels</em>' set of capabilities a new feature that's currently missing: validation of email addresses that a user types when they sign in.</p>
-<hr />
 <ol>
 <li>
 <p>In the Visual Studio Code (VS Code) activity bar, click <strong>Explorer</strong>.</p>
@@ -686,7 +681,7 @@
 <hr />
 <ol start="2">
 <li>
-<p>From the Setup module, the Bob IDE should already be open to the <code>galaxium-travels</code> directory.</p>
+<p>From the Setup module, the <code>galaxium-travels</code> directory should already be open inside the <em>Explorer</em> tab.</p>
 <details class="quote">
 <summary>CAN'T LOCATE THE DIRECTORY?</summary>
 <p>If this is not the case:</p>
@@ -730,7 +725,9 @@
 </li>
 </ol>
 <hr />
+<div class="admonition quote">
 <p>In order to demonstrate IBM Bob's ability to generate functional application code based on basic, natural language specifications, we'll begin with a simple one-liner comment that describes the work we'd like the application to perform. In this example, that will be validation of email addresses to ensure that users signing up for the Galaxium service are supplying compliant email addresses that follow the expected formatting.</p>
+</div>
 <ol start="5">
 <li>
 <p>Begin by moving the cursor to <strong>Line 19</strong> of the file (just after the <code>UserIdentification</code> definition).</p>
