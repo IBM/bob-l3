@@ -1509,6 +1509,7 @@ At its core, Bob does three things exceptionally well:</p>
 <li><strong>Quick, targeted modifications</strong> to a single function without disturbing the broader structure</li>
 </ul>
 <p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
+<hr />
 <p><strong>How it works</strong></p>
 <p>The workflow is deliberately simple:</p>
 <ol>
@@ -1519,7 +1520,7 @@ At its core, Bob does three things exceptionally well:</p>
 <li>Click generate to produce the modifications (across one or many instructions)</li>
 </ol>
 <hr />
-<h2 id="assist-1-1-iii-adding-email-validation-checks"><strong>iii. Adding email validation checks</strong></h2>
+<h2 id="assist-1-1-iii-adding-email-address-validation-checks"><strong>iii. Adding email address validation checks</strong></h2>
 <hr />
 <p>Let's begin by adding to <em>Galaxium Travels</em>' set of capabilities a new feature that's currently missing: validation of email addresses that a user types when they sign in.</p>
 <hr />
@@ -1618,15 +1619,18 @@ At its core, Bob does three things exceptionally well:</p>
 </li>
 </ol>
 <hr />
+<div class="admonition warning">
+<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong><p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
+</p>
+</div>
 <ol start="6">
 <li>
 <p>After enabling Literate Coding Mode, move your cursor to the <strong>end</strong> of the newly-created <code>// validate email addresses</code> comment on <strong>Line 19</strong> (or highlight all of Line 19)</p>
 <p>Towards the bottom-center of the Bob IDE interface, click the blue <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to execute.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
-<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
-</div>
 </li>
+</ol>
+<hr />
+<ol start="7">
 <li>
 <p>IBM Bob will generate two new blocks of code within the <code>UserIdentification.tsx</code> file:</p>
 <ul>
@@ -1679,14 +1683,18 @@ At its core, Bob does three things exceptionally well:</p>
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p>At this stage, the code suggestion is still <em>only</em> a suggestion: you, as the operator at the helm, have the option to: accept; modify; or reject and move on. As a reminder, because Bob's suggestions are non-deterministic, your generated function may look slightly different from the code documented. If the generated code does not compile, first compare the inserted function with the example shown in the lab documentation.</p>
-<p>Note the colored highlighting, denoting IBM Bob's <strong>diff</strong> view:
-- Green-highlighted text represents <em>new additions</em> to the code
-- Red-highlighted text represents lines that have been <em>marked for removal</em> from the code
-- The comment <code>// validate email address</code> that was used as a natural language instruction for Bob will be <em>removed</em> if the generation recommendations are accepted</p>
-</div>
 </li>
+</ol>
+<hr />
+<p>At this stage, the code suggestion is still <em>only</em> a suggestion: you, as the operator at the helm, have the option to: accept; modify; or reject and move on. As a reminder, because Bob's suggestions are non-deterministic, your generated function may look slightly different from the code documented. If the generated code does not compile, first compare the inserted function with the example shown in the lab documentation.</p>
+<p>Note the colored highlighting, denoting IBM Bob's <strong>diff</strong> view:</p>
+<ul>
+<li>Green-highlighted text represents <em>new additions</em> to the code</li>
+<li>Red-highlighted text represents lines that have been <em>marked for removal</em> from the code</li>
+<li>The comment <code>// validate email address</code> that was used as a natural language instruction for Bob will be <em>removed</em> if the generation recommendations are accepted</li>
+</ul>
+<hr />
+<ol start="8">
 <li>
 <p>Click <strong>Accept All</strong> (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to confirm the changes to the code.</p>
 <p>Alternatively, you could click <em>Undo All</em> to reverse the changes, or use the up and down arrows to review the two new code blocks manually.
