@@ -1531,6 +1531,7 @@ At its core, Bob does three things exceptionally well:</p>
 <li><strong>Quick, targeted modifications</strong> to a single function without disturbing the broader structure</li>
 </ul>
 <p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
+<hr />
 <p><strong>How it works</strong></p>
 <p>The workflow is deliberately simple:</p>
 <ol>
@@ -1543,10 +1544,6 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <p><strong>Going further</strong></p>
 <p>For sweeping, multi-file changes or architectural restructuring, you will instead want to reach for IBM Bob's <strong>Code mode</strong>. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>, which follows this section.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
-<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
-</div>
 <h2 id="assist-1-1-iii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>iii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
 <hr />
 <blockquote>
@@ -1571,9 +1568,9 @@ At its core, Bob does three things exceptionally well:</p>
 <li>
 <p>From the Setup module, the Bob IDE should already be open to the <code>galaxium-travels</code> directory.</p>
 <p>If this is not the case:
-    - Click <strong>Open Folder</strong> to expose the <em>File Explorer</em> view
-    - Drill down into the <code>galaxium-travels</code> folder</p>
-<p><p align="left">
+- Click <strong>Open Folder</strong> to expose the <em>File Explorer</em> view
+- Drill down into the <code>galaxium-travels</code> folder
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50832c90-ba15-40ca-b57c-2611e7902f6f/File_ad5aec0080304e5d9114f804aa079dd2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50832c90-ba15-40ca-b57c-2611e7902f6f/File_ad5aec0080304e5d9114f804aa079dd2_text_export.jpeg" alt="" width="600" /></a>
 </p>
 <p align="left">
@@ -1584,7 +1581,7 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <ol start="3">
 <li>
-<p>Drill down into <code>galaxium-travels</code> folder contents and locate the <strong>UserIdentification.tsx</strong> file.</p>
+<p>Locate the <strong>UserIdentification.tsx</strong> file and double-click to open the contents within the Bob IDE.</p>
 <p>It will be nestled inside the following directory hierarchy:</p>
 <div class="admonition warning">
 <p class="admonition-title"><strong>Filepath:</strong></p>
@@ -1592,22 +1589,16 @@ At its core, Bob does three things exceptionally well:</p>
 </div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/688b5e85-07db-4269-bb3c-8dca639c135e/File_3ee96a2bb1684cfb9017cc440c241a21_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/688b5e85-07db-4269-bb3c-8dca639c135e/File_3ee96a2bb1684cfb9017cc440c241a21_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/01d1cb46-0ae0-4f02-872d-62824119a3ae/File_f9ca68765fed45b8a4af0d9a7ad8ec53_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/01d1cb46-0ae0-4f02-872d-62824119a3ae/File_f9ca68765fed45b8a4af0d9a7ad8ec53_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
 <ol start="4">
 <li>
-<p>Double-click on <code>UserIdentification.tsx</code> to open the contents within the Bob IDE.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/01d1cb46-0ae0-4f02-872d-62824119a3ae/File_f9ca68765fed45b8a4af0d9a7ad8ec53_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/01d1cb46-0ae0-4f02-872d-62824119a3ae/File_f9ca68765fed45b8a4af0d9a7ad8ec53_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="5">
-<li>
-<p>Navigate to the <code>UserIdentification</code> function, located on <strong>line 19</strong>.</p>
+<p>Within the file editor (the center panel of the Bob IDE), scroll down to the <code>UserIdentification</code> located on <strong>line 13</strong>.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/74243ab6-12d1-48ad-a204-8a51bdc1911e/File_004b5c8a04414381ab2c503aff811b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/74243ab6-12d1-48ad-a204-8a51bdc1911e/File_004b5c8a04414381ab2c503aff811b0c_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1616,7 +1607,7 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <p>In order to demonstrate IBM Bob's ability to generate functional application code based on basic, natural language specifications, we'll begin with a simple one-liner comment that describes the work we'd like the application to perform. In this example, that will be validation of email addresses to ensure that users signing up for the Galaxium service are supplying compliant email addresses that follow the expected formatting.</p>
 <hr />
-<ol start="6">
+<ol start="5">
 <li>
 <p>Begin by moving the cursor to <strong>line 19</strong> of the file, then copy &amp; paste the following comment line — including the forward-slash (<code>//</code>) characters:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#assist-1-1-__codelineno-0-1"></a>// validate email addresses
@@ -1650,11 +1641,11 @@ At its core, Bob does three things exceptionally well:</p>
 </li>
 </ol>
 <hr />
-<ol start="7">
+<ol start="6">
 <li>Ensure that <strong>Literate Coding Mode</strong> is <code>ENABLED</code> by either toggling on the <strong>magic wand tool</strong> in the top-right corner of the <code>UserIdentification.tsx</code> editor (shown below) <em>or</em> by pressing the <span class="keys"><kbd class="key-command">Cmd</kbd></span> + ++I++ shortcut.</li>
 </ol>
 <hr />
-<ol start="8">
+<ol start="7">
 <li>
 <p>After enabling Literate Coding Mode, move your cursor to the <strong>end</strong> of the newly-created <code>// validate email addresses</code> comment on <strong>Line 19</strong> (or highlight all of Line 19)</p>
 <p>Towards the bottom-center of the Bob IDE interface, click the blue <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to execute</p>
@@ -1719,7 +1710,7 @@ At its core, Bob does three things exceptionally well:</p>
 </li>
 </ol>
 <hr />
-<ol start="9">
+<ol start="8">
 <li>
 <p>Click <strong>Accept All</strong> (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to confirm the changes to the code.</p>
 <p>Alternatively, you could click <em>Undo All</em> to reverse the changes, or use the up and down arrows to review the two new code blocks manually.
@@ -1729,7 +1720,7 @@ At its core, Bob does three things exceptionally well:</p>
 </li>
 </ol>
 <hr />
-<ol start="10">
+<ol start="9">
 <li>
 <p>You will need to <strong>reboot</strong> the <em>Galaxium Travels</em> web app service for the changes to take effect. To do so:</p>
 <ul>
@@ -1743,7 +1734,7 @@ At its core, Bob does three things exceptionally well:</p>
 </li>
 </ol>
 <hr />
-<ol start="11">
+<ol start="10">
 <li>
 <p>The commands to be issued to the Terminal console vary according to the operating system your machine is running upon.</p>
 <p>From the expandable options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows). After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
@@ -1810,7 +1801,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="12">
+<ol start="11">
 <li>
 <p>Open a web browser on your local machine and visit the following URL to access the Galaxium Travels application:</p>
 <div class="admonition warning">
@@ -1823,7 +1814,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="13">
+<ol start="12">
 <li>
 <p>Once the Galaxium Travels site has loaded, click on <strong>Flights</strong>.</p>
 <p><p align="left">
@@ -1832,7 +1823,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="14">
+<ol start="13">
 <li>
 <p>Click the <strong>Book Now</strong> button under any of the listed flights to test its functionality.</p>
 <p><p align="left">
@@ -1841,7 +1832,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="15">
+<ol start="14">
 <li>
 <p>The web page will redirect to a <strong>Sign In</strong> panel. From this panel, we will be able to confirm (or troubleshoot) that the Bob-suggested email validation functionality is performing its intended job.</p>
 <ul>
