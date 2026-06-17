@@ -173,10 +173,10 @@ The Trial path provides fast access, a fresh balance of 40 Bobcoins, and is open
 
 The Internal path is reserved for **IBMers who do not yet have IBM Bob**. It provides slower access but a larger, persistent balance of 100 Bobcoins across your w3id (resetting monthly), and it does not expire.
 
-!!! quote "BUSINESS PARTNER?"
+!!! note "BUSINESS PARTNER?"
     Business Partners should refer back to section <a href="https://ibm.github.io/bob-l3/setup/#iii-path-a-free-trial-registration" target="_blank">**iii. Path A: Free Trial registration**</a> for their registration path.
 
-1. Begin at the **[Bob Enterprise Sales Assets]**(https://techzone.ibm.com/collection/bob-enterprise-sales-assets?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986) page.
+1. Begin at the [**Bob Enterprise Sales Assets**](https://techzone.ibm.com/collection/bob-enterprise-sales-assets?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986) page.
 
     Once there, click **Technical Resources** in the left sidebar.
 
@@ -204,7 +204,7 @@ The Internal path is reserved for **IBMers who do not yet have IBM Bob**. It pro
 
 4. Review your responses if you like, then confirm by clicking **Submit** once more in the pop-up window.
 
-    *A "Thank you" pop-up appears afterward; you can simply dismiss it.*
+    There will be a *"Thank you"* pop-up that appears afterward — you can simply dismiss it.
 
     <p align="left">
     <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4fc5d0de-8f9b-4eb1-ab6c-c17d0d10948c/File_ab69dfd08dca499ab13b35b9312a56ed_text_export.jpeg" alt="" width="600" />
@@ -222,7 +222,7 @@ The Internal path is reserved for **IBMers who do not yet have IBM Bob**. It pro
 
 6. At this point you will need to wait — as noted, approval typically takes at least 24 hours.
 
-    Once approved, you will receive an email (or something similar). Follow the **Download Bob** hyperlink within it.
+    Once approved, you will receive an email — follow the **Download Bob** hyperlink within it.
 
     <p align="left">
     <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8e26be94-86ba-44ab-a83d-69a898034360/File_45274e091e044c659a06287f4f3e78c8_text_export.jpeg" alt="" width="600" />
@@ -254,7 +254,7 @@ The Internal path is reserved for **IBMers who do not yet have IBM Bob**. It pro
 
 ---
 
-10. Review the License Agreement, accept it, and press **Next.**
+10. Review the License Agreement, and if you accept its terms and conditions, toggle `I accept the agreement` and press **Next.**
 
     <p align="left">
     <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/fd7401d9-7536-4a27-89ce-f7db88419302/File_1794fb5a883e4b82b49e05bf57265902_text_export.jpeg" alt="" width="600" />
@@ -295,7 +295,9 @@ The Internal path is reserved for **IBMers who do not yet have IBM Bob**. It pro
 
 ---
 
-15. Click **Allow.**
+15. When prompted *The extension IBM Bob wants to sign in using Bob.*, click **Allow** to launch a web browser for authentication.
+
+    Log in within the browser using your *IBMid* and *password* - those which are linked to the IBM Bob account you registered for in the previous steps.
 
     <p align="left">
     <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/8a52554d-ef2b-4d99-901b-4dac4f33c1d5/File_8137ffa47ce14472ab686b4aaee6fe4d_text_export.jpeg" alt="" width="600" />
@@ -303,23 +305,11 @@ The Internal path is reserved for **IBMers who do not yet have IBM Bob**. It pro
 
 ---
 
-16. Tick the *"Always allow \[...\]"* box and press **Open**.
+16. A few additional prompts may arise before authentication can complete:
 
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/b1fbbdef-7b01-4aa3-be35-92400b32e00d/File_6fab1c18f7e74aa1bed098110381b9e5_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-17. Switch back to the Bob IDE. A pop-up reading *"Allow 'IBM Bob' extension to open this URL"* appears — click **Open**.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/2f051d98-b692-454f-91b4-d7e0a193308f/File_a0044af67ea74f1a8caef21821ea6658_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-18. The prompt window has opened in your IBM Bob Agentic Sidebar — you are authenticated and ready.
+    - If asked *"Do you want to allow this website to open IBM Bob?"*, click **Yes**
+    - Wait until the web browser refreshes to read *Authentication Successful!* before closing the browser window
+    - Return to the Bob IDE, which has now been successfully authenticated and connected to the IBM Bob service
 
     <p align="left">
     <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3733e39b-285c-44ae-a13a-3e4e74c28b97/File_cf25c4f8c6aa4b00a92a8f90ec5fd563_text_export.jpeg" alt="" width="600" />
@@ -355,7 +345,7 @@ With IBM Bob authenticated, the final piece of setup is a local copy of the *Gal
 
     ??? quote "MAC OR LINUX"
         ``` bash
-        cd \~/galaxium-travels
+        cd ~/galaxium-travels
         ```
     ??? quote "WINDOWS OS"
         ``` bash
@@ -379,7 +369,7 @@ From the expandable options below, follow and execute the instructions aligned t
 ??? quote "MAC OR LINUX"
     Starting the application on macOS and Linux is straightforward: a single script brings up both the backend and the frontend.
 
-    1. From within the `galaxium-travels` directory, run the start-up script and press ++enter++:
+    1. Within the Terminal, copy and paste the following start-up script and press ++enter++ to execute:
 
         ``` bash
         ./start.sh
@@ -445,6 +435,8 @@ From the expandable options below, follow and execute the instructions aligned t
 
     5. You have now successfully reached the frontend of the *Galaxium Travels* demo application.
 
+        !!! warning "KEEP THIS WINDOW OR TAB OPEN"
+            You will return to the *Galaxium Travels* application within the web browser frequently during these lab exercises.
         <p align="left">
         <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e166dd8b-4ca1-4d63-9df1-86652d6739bd/File_2adcd32f1351430dba2682e9677b54f7_text_export.jpeg" alt="" width="600" />
         </p>
@@ -601,6 +593,8 @@ From the expandable options below, follow and execute the instructions aligned t
 
     6. You are now successfully connected to the *Galaxium Travels* demo app.
 
+        !!! warning "KEEP THIS WINDOW OR TAB OPEN"
+            You will return to the *Galaxium Travels* application within the web browser frequently during these lab exercises.
         <p align="left">
         <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4792bc88-f701-4fed-9e81-7aa6fbed878c/screenshot_bfb9b7c0ab0d42dd816f97bcb064991d_text_export.jpeg" alt="" width="600" />
         </p>

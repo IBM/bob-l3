@@ -118,7 +118,7 @@ The following Table of Contents summarizes the modules, sub-chapters, and topics
 
 | MODULE | SECTION |
 | - | - |
-| <a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank">**1. Assist**</a> | <a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank">1. Tab Completion & Next Edit Prediction</a></br><a href="https://ibm.github.io/bob-l3/assist/1-2/" target="_blank">2. Literate Coding</a></br> |
+| <a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank">**1. Assist**</a> | <a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank">1. Literate Coding</a></br> |
 | <a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank">**2. Delegate**</a> | <a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank">1. The Agentic Sidebar</a></br><a href="https://ibm.github.io/bob-l3/delegate/2-2/" target="_blank">2. Applying Agentic Modes</a> |
 | <a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank">**3. Tailor**</a> | <a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank">1. init & agents.md</a></br><a href="https://ibm.github.io/bob-l3/tailor/3-2/" target="_blank">2. Bob Rules</a></br><a href="https://ibm.github.io/bob-l3/tailor/3-3/" target="_blank">3. Custom Modes</a> |
 | <a href="https://ibm.github.io/bob-l3/scale/4-1/" target="_blank">**4. Scale & Extend**</a> | <a href="https://ibm.github.io/bob-l3/scale/4-1/" target="_blank">1. The Context Window</a></br><a href="https://ibm.github.io/bob-l3/scale/4-2/" target="_blank">2. Bob Shell</a></br><a href="https://ibm.github.io/bob-l3/scale/4-3/" target="_blank">3. Custom Modes</a></br><a href="https://ibm.github.io/bob-l3/scale/4-4/" target="_blank">4. Extending with MCP</a> |

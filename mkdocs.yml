@@ -14,8 +14,7 @@ nav:
   - Introduction: 'index.md'
   - Setup: 'setup.md'
   - 1. Assist:
-    - Tab Completion & Next Edit Prediction | Bob in your workflow: assist/1-1.md
-    - Literate Coding | Editing with intent: assist/1-2.md
+    - Literate Coding | Editing with intent: assist/1-1.md
   - 2. Delegate:
     - The Agentic Sidebar | From assistant to partner: delegate/2-1.md
     - Applying Agentic Modes | Implementing seat classes in Galaxium Travels: delegate/2-2.md
