@@ -289,47 +289,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Literate Coding | Editing with intent
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Literate Coding | Editing with intent
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#iii-hands-on-adding-retry-logic-with-literate-coding" class="md-nav__link">
-    iii. Hands-on: adding retry logic with Literate Coding
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iv-key-takeaways" class="md-nav__link">
-    iv. Key takeaways
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -576,28 +538,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#iii-hands-on-adding-retry-logic-with-literate-coding" class="md-nav__link">
-    iii. Hands-on: adding retry logic with Literate Coding
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iv-key-takeaways" class="md-nav__link">
-    iv. Key takeaways
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -614,136 +554,6 @@
 <h1 id="literate-coding"><strong>LITERATE CODING</strong></h1>
 <hr />
 <hr />
-<h2 id="iii-hands-on-adding-retry-logic-with-literate-coding"><strong>iii. Hands-on: adding retry logic with Literate Coding</strong></h2>
-<hr />
-<blockquote>
-<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
-</blockquote>
-<p>Galaxium's backend can be slow to respond when fetching flight information. If you test on this, you'll discover that occasional timeouts are often the result. This underforming feature is an ideal candidate for showcasing the small, surgical fixes that literate coding excels at.</p>
-<p>In the following section, you will apply literate coding to wrap the flight-fetching call in <code>retry</code> logic — and do so with minimal coding work on your part.</p>
-<hr />
-<ol>
-<li>
-<p>Within the Bob IDE, open the <strong>Flights.tsx</strong> file by navigating to the following directory location:</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>Filepath:</strong></p>
-<p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>pages</code><strong>/</strong> <code>Flights.tsx</code></p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="2">
-<li>
-<p>Click the <strong>magic wand icon</strong> near the top of the editor (or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span>) to activate literate coding mode.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="3">
-<li>
-<p>A bar will at the bottom-center of the UI with two arrows, <strong>Clear All</strong> and <strong>Generate</strong>, to indicate that you have now activated literate coding mode. Treat the visible mode state and the Generate button as your primary indicators, since the exact highlight color can vary by release.</p>
-<ul>
-<li>
-<p>On <strong>line 43</strong> of <code>Flights.tsx</code>, copy and paste the following statement:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>the backend is unreliable at times. We need a retry logic here
-</code></pre></div>
-</li>
-<li>
-<p>The text should highlight to show that the literate coding mode is active.</p>
-</li>
-<li>
-<p>Unlike the Tab Completion feature showcased in the previous section, with Literate Coding there is no need to <em>"comment out"</em> the instruction sets.</p>
-</li>
-</ul>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="4">
-<li>
-<p>With the instruction set now inserted at the desired location, click the <strong>Generate</strong> button.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="5">
-<li>
-<p>A <strong><em>diff</em> view</strong> will render in-line at the insertion point.</p>
-<ul>
-<li>
-<p>Code that IBM Bob is proposing to <em>remove</em> will be highlighted in red.</p>
-</li>
-<li>
-<p>Code that IBM Bob is proposing to <em>add</em> will be highlighted in a contrasting color. With some builds of the Bob IDE it may be highlighted in yellow, in other versions it may show as green — the key thing is that it is <em>not</em> red.</p>
-</li>
-<li>
-<p>Review the on-screen <em>diff</em> carefully before <strong>accepting</strong> the proposed changes. Note that your generated code may differ slightly from the code documented here.</p>
-</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Flights.tsx</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-57">57</a></span>
-<span class="normal"><a href="#__codelineno-1-58">58</a></span>
-<span class="normal"><a href="#__codelineno-1-59">59</a></span>
-<span class="normal"><a href="#__codelineno-1-60">60</a></span>
-<span class="normal"><a href="#__codelineno-1-61">61</a></span>
-<span class="normal"><a href="#__codelineno-1-62">62</a></span>
-<span class="normal"><a href="#__codelineno-1-63">63</a></span>
-<span class="normal"><a href="#__codelineno-1-64">64</a></span>
-<span class="normal"><a href="#__codelineno-1-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-57" name="__codelineno-1-57"></a>if (retryCount &lt; MAX_RETRIES) {
-<a id="__codelineno-1-58" name="__codelineno-1-58"></a>    // Retry after delay
-<a id="__codelineno-1-59" name="__codelineno-1-59"></a>    toast.error(&#39;Failed to load flights. Retrying... (${retryCount + 1}/${MAX_RETRIES})&#39;);
-<a id="__codelineno-1-60" name="__codelineno-1-60"></a>    await new Promise(resolve =&gt; setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
-<a id="__codelineno-1-61" name="__codelineno-1-61"></a>    return loadFlights(retryCount + 1);
-<a id="__codelineno-1-62" name="__codelineno-1-62"></a>} else {
-<a id="__codelineno-1-63" name="__codelineno-1-63"></a>    toast.error(&#39;Failed to load flights after multiple attempts&#39;);
-<a id="__codelineno-1-64" name="__codelineno-1-64"></a>    console.error(error);
-<a id="__codelineno-1-65" name="__codelineno-1-65"></a>}
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="6">
-<li>
-<p>If everything looks fine, press <strong>Accept All</strong> to confirm the proposed code changes.</p>
-<ul>
-<li>
-<p>All red lines are automatically removed and the new (color-highlighted) lines are written into the file.</p>
-</li>
-<li>
-<p>This particular change may not produce anything visible within the running app — and that is by design. The point is to watch targeted code generation happen <em>in context</em> against real code.</p>
-</li>
-</ul>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<h2 id="iv-key-takeaways"><strong>iv. Key takeaways</strong></h2>
-<hr />
-<ul>
-<li>Literate coding turns plain-language instructions, written in place, into precise code change.</li>
-<li>The <em>diff</em> view keeps you in full control, allowing you to inspect and understand every change before it is committed to code.</li>
-<li>The literate coding mode is most effective for focused, single-file modifications.</li>
-<li>For multi-file or architectural changes, Code mode is the more appropriate tool for the job — and the topic you'll explore next.</li>
-</ul>
 
 
 

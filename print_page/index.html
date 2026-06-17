@@ -1539,17 +1539,14 @@ At its core, Bob does three things exceptionally well:</p>
 <li>For changes that span several places, add an instruction line at each location</li>
 <li>Click generate to produce the modifications (across one or many instructions)</li>
 </ol>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">GOING FURTHER</p>
 <p>For sweeping, multi-file changes or architectural restructuring, you will instead want to reach for IBM Bob's <strong>Code mode</strong>. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>Module 2 | Delegate</strong></a>, which follows this section.</p>
 </div>
 <h2 id="assist-1-1-iii-hands-on-adding-email-validation-checks"><strong>iii. Hands-on: adding email validation checks</strong></h2>
 <hr />
 <p>Let's begin by adding to <em>Galaxium Travels</em>' set of capabilities a new feature that's currently missing: validation of email addresses that a user types when they sign in.</p>
-<div class="admonition note">
-<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
-<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
-</div>
+<hr />
 <ol>
 <li>
 <p>In the Visual Studio Code (VS Code) activity bar, click <strong>Explorer</strong>.</p>
@@ -1583,8 +1580,7 @@ At its core, Bob does three things exceptionally well:</p>
 <li>
 <p>Locate the <code>UserIdentification.tsx</code> file and <strong>double-click</strong> it to open the contents.</p>
 <p>It will be nestled inside the following directory hierarchy:</p>
-<div class="admonition note">
-<p class="admonition-title"><strong>Filepath:</strong></p>
+<div class="admonition warning">
 <p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>components</code><strong>/</strong><code>user</code><strong>/</strong><code>UserIdentification.tsx</code></p>
 </div>
 <p><p align="left">
@@ -1605,9 +1601,9 @@ At its core, Bob does three things exceptionally well:</p>
 </li>
 </ol>
 <hr />
-<div class="admonition quote">
-<p>In order to demonstrate IBM Bob's ability to generate functional application code based on basic, natural language specifications, we'll begin with a simple one-liner comment that describes the work we'd like the application to perform. In this example, that will be validation of email addresses to ensure that users signing up for the Galaxium service are supplying compliant email addresses that follow the expected formatting.</p>
-</div>
+<p>In order to demonstrate IBM Bob's ability to generate functional application code based on basic, natural language specifications, we'll begin with a simple one-liner comment that describes the work we'd like the application to perform.</p>
+<p>For this example, that will be validation of email addresses to ensure that users signing up for the Galaxium service are supplying compliant email addresses that follow the expected formatting.</p>
+<hr />
 <ol start="5">
 <li>
 <p>Begin by moving the cursor to <strong>Line 19</strong> of the file (just after the <code>UserIdentification</code> definition).</p>
@@ -1653,7 +1649,11 @@ At its core, Bob does three things exceptionally well:</p>
 <ol start="7">
 <li>
 <p>After enabling Literate Coding Mode, move your cursor to the <strong>end</strong> of the newly-created <code>// validate email addresses</code> comment on <strong>Line 19</strong> (or highlight all of Line 19)</p>
-<p>Towards the bottom-center of the Bob IDE interface, click the blue <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to execute</p>
+<p>Towards the bottom-center of the Bob IDE interface, click the blue <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to execute.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
+<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
+</div>
 </li>
 </ol>
 <hr />
@@ -1661,8 +1661,8 @@ At its core, Bob does three things exceptionally well:</p>
 <li>
 <p>IBM Bob will generate two new blocks of code within the <code>UserIdentification.tsx</code> file:</p>
 <ul>
-<li>Across <strong>Lines 20-23</strong> (<code>isValidEmail</code> function)</li>
-<li>Across <strong>Lines 33-37</strong> (<code>if(!isValidEmail ...</code> logic)</li>
+<li>Across <strong>Lines 20-22</strong> (<code>isValidEmail</code> function)</li>
+<li>Across <strong>Lines 33-35</strong> (<code>if(!isValidEmail ...</code> logic)</li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="assist-1-1-__tabbed_2_1" name="assist-1-1-__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="assist-1-1-__tabbed_2_1">UserIdentification.tsx</label></div>
 <div class="tabbed-content">
@@ -1710,7 +1710,7 @@ At its core, Bob does three things exceptionally well:</p>
 </div>
 </div>
 </div>
-<div class="admonition warning">
+<div class="admonition note">
 <p>At this stage, the code suggestion is still <em>only</em> a suggestion: you, as the operator at the helm, have the option to: accept; modify; or reject and move on. As a reminder, because Bob's suggestions are non-deterministic, your generated function may look slightly different from the code documented. If the generated code does not compile, first compare the inserted function with the example shown in the lab documentation.</p>
 <p>Note the colored highlighting, denoting IBM Bob's <strong>diff</strong> view:
     - Green-highlighted text represents <em>new additions</em> to the code
@@ -1732,15 +1732,14 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <ol start="10">
 <li>
-<p>You will need to <strong>reboot</strong> the <em>Galaxium Travels</em> web app service for the changes to take effect. To do so:</p>
-<ul>
-<li>To open a new Terminal window by click the <strong>Terminal</strong> button in the bottom-center portion of the Bob IDE interface <em>or</em> navigate using the top menu bar into <strong>Terminal</strong> &gt; <strong>New Terminal</strong></li>
-<li>Within the Terminal window, locate and click the <strong>+</strong> icon, along the right-hand side of the Terminal window</li>
-<li>This will launch a new Terminal connection into which you will next input additional commands
+<p>You will need to <strong>reboot</strong> the <em>Galaxium Travels</em> web app service for the changes to take effect.</p>
+<p>To do so:
+- To open a new Terminal window by click the <strong>Terminal</strong> button in the bottom-center portion of the Bob IDE interface <em>or</em> navigate using the top menu bar into <strong>Terminal</strong> &gt; <strong>New Terminal</strong>
+- Within the Terminal window, locate and click the <strong>+</strong> icon, along the right-hand side of the Terminal window
+- This will launch a new Terminal connection into which you will next input additional commands
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
+</p></p>
 </li>
 </ol>
 <hr />
@@ -1861,15 +1860,10 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/efd525be-3acb-48c8-b0d6-1a80e5d48281/File_a3f80360cff646edae6a7bf64fc34b5f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/efd525be-3acb-48c8-b0d6-1a80e5d48281/File_a3f80360cff646edae6a7bf64fc34b5f_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
-</ol></section><section class="print-page" id="assist-1-2"><p><strong>MODULE 1 | ASSIST</strong></p>
-<h1 id="assist-1-2-literate-coding"><strong>LITERATE CODING</strong></h1>
+</ol>
 <hr />
+<h2 id="assist-1-1-iv-hands-on-adding-retry-logic"><strong>iv. Hands-on: adding retry logic</strong></h2>
 <hr />
-<h2 id="assist-1-2-iii-hands-on-adding-retry-logic-with-literate-coding"><strong>iii. Hands-on: adding retry logic with Literate Coding</strong></h2>
-<hr />
-<blockquote>
-<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
-</blockquote>
 <p>Galaxium's backend can be slow to respond when fetching flight information. If you test on this, you'll discover that occasional timeouts are often the result. This underforming feature is an ideal candidate for showcasing the small, surgical fixes that literate coding excels at.</p>
 <p>In the following section, you will apply literate coding to wrap the flight-fetching call in <code>retry</code> logic — and do so with minimal coding work on your part.</p>
 <hr />
@@ -1877,7 +1871,6 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <li>
 <p>Within the Bob IDE, open the <strong>Flights.tsx</strong> file by navigating to the following directory location:</p>
 <div class="admonition warning">
-<p class="admonition-title"><strong>Filepath:</strong></p>
 <p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>pages</code><strong>/</strong> <code>Flights.tsx</code></p>
 </div>
 <p><p align="left">
@@ -1901,7 +1894,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <ul>
 <li>
 <p>On <strong>line 43</strong> of <code>Flights.tsx</code>, copy and paste the following statement:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#assist-1-2-__codelineno-0-1"></a>the backend is unreliable at times. We need a retry logic here
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#assist-1-1-__codelineno-13-1"></a>the backend is unreliable at times. We need a retry logic here
 </code></pre></div>
 </li>
 <li>
@@ -1940,26 +1933,26 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p>Review the on-screen <em>diff</em> carefully before <strong>accepting</strong> the proposed changes. Note that your generated code may differ slightly from the code documented here.</p>
 </li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="assist-1-2-__tabbed_1_1" name="assist-1-2-__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="assist-1-2-__tabbed_1_1">Flights.tsx</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="assist-1-1-__tabbed_3_1" name="assist-1-1-__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="assist-1-1-__tabbed_3_1">Flights.tsx</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-2-__codelineno-1-57">57</a></span>
-<span class="normal"><a href="#assist-1-2-__codelineno-1-58">58</a></span>
-<span class="normal"><a href="#assist-1-2-__codelineno-1-59">59</a></span>
-<span class="normal"><a href="#assist-1-2-__codelineno-1-60">60</a></span>
-<span class="normal"><a href="#assist-1-2-__codelineno-1-61">61</a></span>
-<span class="normal"><a href="#assist-1-2-__codelineno-1-62">62</a></span>
-<span class="normal"><a href="#assist-1-2-__codelineno-1-63">63</a></span>
-<span class="normal"><a href="#assist-1-2-__codelineno-1-64">64</a></span>
-<span class="normal"><a href="#assist-1-2-__codelineno-1-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-57" name="__codelineno-1-57"></a>if (retryCount &lt; MAX_RETRIES) {
-<a id="__codelineno-1-58" name="__codelineno-1-58"></a>    // Retry after delay
-<a id="__codelineno-1-59" name="__codelineno-1-59"></a>    toast.error(&#39;Failed to load flights. Retrying... (${retryCount + 1}/${MAX_RETRIES})&#39;);
-<a id="__codelineno-1-60" name="__codelineno-1-60"></a>    await new Promise(resolve =&gt; setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
-<a id="__codelineno-1-61" name="__codelineno-1-61"></a>    return loadFlights(retryCount + 1);
-<a id="__codelineno-1-62" name="__codelineno-1-62"></a>} else {
-<a id="__codelineno-1-63" name="__codelineno-1-63"></a>    toast.error(&#39;Failed to load flights after multiple attempts&#39;);
-<a id="__codelineno-1-64" name="__codelineno-1-64"></a>    console.error(error);
-<a id="__codelineno-1-65" name="__codelineno-1-65"></a>}
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-1-__codelineno-14-57">57</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-14-58">58</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-14-59">59</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-14-60">60</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-14-61">61</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-14-62">62</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-14-63">63</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-14-64">64</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-14-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-57" name="__codelineno-14-57"></a>if (retryCount &lt; MAX_RETRIES) {
+<a id="__codelineno-14-58" name="__codelineno-14-58"></a>    // Retry after delay
+<a id="__codelineno-14-59" name="__codelineno-14-59"></a>    toast.error(&#39;Failed to load flights. Retrying... (${retryCount + 1}/${MAX_RETRIES})&#39;);
+<a id="__codelineno-14-60" name="__codelineno-14-60"></a>    await new Promise(resolve =&gt; setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
+<a id="__codelineno-14-61" name="__codelineno-14-61"></a>    return loadFlights(retryCount + 1);
+<a id="__codelineno-14-62" name="__codelineno-14-62"></a>} else {
+<a id="__codelineno-14-63" name="__codelineno-14-63"></a>    toast.error(&#39;Failed to load flights after multiple attempts&#39;);
+<a id="__codelineno-14-64" name="__codelineno-14-64"></a>    console.error(error);
+<a id="__codelineno-14-65" name="__codelineno-14-65"></a>}
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1987,14 +1980,17 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<h2 id="assist-1-2-iv-key-takeaways"><strong>iv. Key takeaways</strong></h2>
+<h2 id="assist-1-1-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>
 <li>Literate coding turns plain-language instructions, written in place, into precise code change.</li>
 <li>The <em>diff</em> view keeps you in full control, allowing you to inspect and understand every change before it is committed to code.</li>
 <li>The literate coding mode is most effective for focused, single-file modifications.</li>
 <li>For multi-file or architectural changes, Code mode is the more appropriate tool for the job — and the topic you'll explore next.</li>
-</ul></section><h1 class='nav-section-title-end'>Ended: 1. Assist</h1>
+</ul></section><section class="print-page" id="assist-1-2"><p><strong>MODULE 1 | ASSIST</strong></p>
+<h1 id="assist-1-2-literate-coding"><strong>LITERATE CODING</strong></h1>
+<hr />
+<hr /></section><h1 class='nav-section-title-end'>Ended: 1. Assist</h1>
                         <h1 class='nav-section-title' id='section-2-delegate'>
                             2. Delegate <a class='headerlink' href='#section-2-delegate' title='Permanent link'>↵</a>
                         </h1>
