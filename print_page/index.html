@@ -1288,6 +1288,10 @@ At its core, Bob does three things exceptionally well:</p>
 <ol start="5">
 <li>
 <p>You have now successfully reached the frontend of the <em>Galaxium Travels</em> demo application.</p>
+<div class="admonition warning">
+<p class="admonition-title">KEEP THIS WINDOW OR TAB OPEN</p>
+<p>You will return to the <em>Galaxium Travels</em> application within the web browser frequently during these lab exercises.</p>
+</div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e166dd8b-4ca1-4d63-9df1-86652d6739bd/File_2adcd32f1351430dba2682e9677b54f7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/e166dd8b-4ca1-4d63-9df1-86652d6739bd/File_2adcd32f1351430dba2682e9677b54f7_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1431,6 +1435,10 @@ At its core, Bob does three things exceptionally well:</p>
 <ol start="6">
 <li>
 <p>You are now successfully connected to the <em>Galaxium Travels</em> demo app.</p>
+<div class="admonition warning">
+<p class="admonition-title">KEEP THIS WINDOW OR TAB OPEN</p>
+<p>You will return to the <em>Galaxium Travels</em> application within the web browser frequently during these lab exercises.</p>
+</div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4792bc88-f701-4fed-9e81-7aa6fbed878c/screenshot_bfb9b7c0ab0d42dd816f97bcb064991d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/4792bc88-f701-4fed-9e81-7aa6fbed878c/screenshot_bfb9b7c0ab0d42dd816f97bcb064991d_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1497,45 +1505,48 @@ At its core, Bob does three things exceptionally well:</p>
                             1. Assist <a class='headerlink' href='#section-1-assist' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="assist-1-1"><p><strong>MODULE 1 | ASSIST</strong></p>
-<h1 id="assist-1-1-tab-completion-next-edit-prediction"><strong>TAB COMPLETION &amp; NEXT EDIT PREDICTION</strong></h1>
+<h1 id="assist-1-1-literate-coding"><strong>LITERATE CODING</strong></h1>
 <hr />
-<h2 id="assist-1-1-i-bob-in-your-workflow"><strong>i. Bob in your workflow</strong></h2>
+<h2 id="assist-1-1-i-editing-with-intent"><strong>i. Editing with intent</strong></h2>
 <hr />
+<p>Much of a developer's day is spent making precise, surgical change to code that already exists. <strong>Literate Coding</strong> allows developer and users to annotate their code— using plain, natural language instructions —directly inside and inline the files they are working with. Bob then takes care of the heavy lifting by ensuring that every change is accounted for and that no instructions are missed. </p>
+<p>IBM Bob reads the instruction in place and produces a targeted, localized modification. The developer is still describing intent in plain language; the difference is that here you are pointing at a specific spot and saying "change <em>this</em>." Think of it like annotating changes in a collaborative Word document, where you can delegate the modifications to a trusted colleague who will shoulder the workload.</p>
+<blockquote>
+<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
+<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's literate coding capabilities. <em>[2 min]</em></p>
+</blockquote>
 <p>This is the first (and most gentle) stage of the <strong>AI Maturity Curve</strong>, and therefore a natural sweet spot for building your understanding of IBM Bob. Across this module, you'll work shoulder to shoulder with Bob from the perspective of a software developer paired with the Bob editor. As you work, Bob will be anticipating the next keystroke, drafting the next few lines, and making targeted edits upon your request — all the while keeping the developer (<em>you</em>) in control of accepting or rejecting every AI-generated proposed change.</p>
 <p><a class="glightbox" href="../assist/_attachments/Module-1-Assist.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../assist/_attachments/Module-1-Assist.png" /></a></p>
 <div class="admonition note">
-<p>The value that IBM Bob provides in climbing the <strong>AI Maturity Curve</strong> will be apparenty right from the onset: teams can move faster without breaking their train of thought, and nothing lands in the codebase that they did not explicitly choose to include. It is the most logical on-ramp to working with an AI partner, and it pays off from the very first session.</p>
+<p class="admonition-title">AI MATURITY CURVE</p>
+<p>Literate Coding is a prime example of where the <em>control</em> that the human in the loop retains with IBM Bob — as part of the <strong>early Assist stage along the AI Maturity Curve</strong> — becomes tangible and truly valuable. IBM Bob never silently rewrites your files or codebase. Instead, it presents every change in a <em>diff</em> view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide on whether to implement the suggestion or disregard it. Nothing is committed until you say so.</p>
 </div>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCjDg6FMhPF2Q8CWfg2qf4jbmCh8">Chapter 2.1: Next Edit Prediction and Tab Completion [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's tab completion and next edit predictions. <em>[1 min]</em></p>
-</blockquote>
 <hr />
 <h2 id="assist-1-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<p>The quickest way to lose a developer's confidence in an AI tool is to pull them out of their workflow.</p>
-<p>Bob's first two capabilities are designed to do precisely the opposite: it keeps a developer <em>in</em> the work, while quietly removing friction from the process. These two features are:</p>
-<ol>
-<li><strong>Tab completion</strong></li>
-<li><strong>Next edit prediction</strong></li>
-</ol>
-<p>The two capabilities operate as a unified pair: the first suggests code from context; the second anticipates where you will need to go next.</p>
-<hr />
-<p><strong>How tab completion works</strong></p>
-<p>Tab completion is a familiar idea executed unusually well. Where conventional autocomplete reacts to the few characters you have just typed, Bob reads the surrounding context to make a genuinely informed suggestion — drawing on the comments describing your intent, the patterns and structure already present in the code, your project's conventions and style, and related code in other files. The result feels less like word-completion and more like a colleague finishing your thought.</p>
-<hr />
-<p><strong>Accepting suggestions</strong></p>
-<p>When Bob offers a suggestion, the human in the loop retains control and has the last word on what is implemented:</p>
+<p>Literate coding is at its best for focused, in-place work:</p>
 <ul>
-<li>Press <strong>Tab</strong> to accept it</li>
-<li>Keep typing to override the AI-generated suggestions</li>
-<li>Watch it update dynamically as you continue your train of thought</li>
+<li><strong>Wrapping logic</strong> around existing code — retry mechanisms, error handling, or logging</li>
+<li><strong>Refactoring a specific block</strong> while leaving the surrounding logic untouched</li>
+<li><strong>Quick, targeted modifications</strong> to a single function without disturbing the broader structure</li>
 </ul>
+<p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
+<p><strong>How it works</strong></p>
+<p>The workflow is deliberately simple:</p>
+<ol>
+<li>Position your cursor within the codebase where the change belongs</li>
+<li>Click the magic wand icon to enter literate coding mode</li>
+<li>Type a natural-language instruction describing the change you want to implement</li>
+<li>For changes that span several places, add an instruction line at each location</li>
+<li>Click generate to produce the modifications (across one or many instructions)</li>
+</ol>
 <hr />
-<p><strong>Next edit predictions</strong></p>
-<p>Real code changes are rarely confined to a single line within the codebase. Add a new field or variable to the code, and you'll oftentime find yourself needing to use it again elsewhere; introduce a function, and something downstream will need to call it. <strong>Next edit prediction</strong> is built around that practical reality: after you accept an AI-generated suggestion, Bob anticipates the <em>related</em> edit you are likely to need as a follow-up and moves you there.</p>
-<p>You can conceptualize this as a <em>rhythm</em> between the developer and their AI partner. The developer describes what they want in a comment, allows Bob to suggest the code fix, presses <strong>Tab</strong> to accept the suggestion, and presses <strong>Tab</strong> again to jump to the next predicted location — where Bob positions the cursor exactly where the new code needs to be invoked.</p>
-<hr />
+<p><strong>Going further</strong></p>
+<p>For sweeping, multi-file changes or architectural restructuring, you will instead want to reach for IBM Bob's <strong>Code mode</strong>. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>, which follows this section.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
+<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
+</div>
 <h2 id="assist-1-1-iii-hands-on-adding-email-validation-with-next-edit-prediction"><strong>iii. Hands-on: adding email validation with Next Edit Prediction</strong></h2>
 <hr />
 <blockquote>
@@ -1558,25 +1569,23 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <ol start="2">
 <li>
-<p>Click <strong>Open Folder</strong>.</p>
+<p>From the Setup module, the Bob IDE should already be open to the <code>galaxium-travels</code> directory.</p>
+<p>If this is not the case:
+    - Click <strong>Open Folder</strong> to expose the <em>File Explorer</em> view
+    - Drill down into the <code>galaxium-travels</code> folder</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50832c90-ba15-40ca-b57c-2611e7902f6f/File_ad5aec0080304e5d9114f804aa079dd2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50832c90-ba15-40ca-b57c-2611e7902f6f/File_ad5aec0080304e5d9114f804aa079dd2_text_export.jpeg" alt="" width="600" /></a>
+</p>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50787f12-e1dd-410b-89f0-145df966f8c8/File_68c498ba382f4b529983a0a0980f01ab_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50787f12-e1dd-410b-89f0-145df966f8c8/File_68c498ba382f4b529983a0a0980f01ab_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
 <ol start="3">
 <li>
-<p>From the <em>File Explorer</em> view, highlight the <code>galaxium-travels</code> folder and select the folder.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50787f12-e1dd-410b-89f0-145df966f8c8/File_68c498ba382f4b529983a0a0980f01ab_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/50787f12-e1dd-410b-89f0-145df966f8c8/File_68c498ba382f4b529983a0a0980f01ab_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="4">
-<li>
-<p>Drill down into <code>galaxium-travels</code> folder contents and locate the <strong>UserIdentification.tsx</strong> file. It will be nestled inside the following directory hierarchy:</p>
+<p>Drill down into <code>galaxium-travels</code> folder contents and locate the <strong>UserIdentification.tsx</strong> file.</p>
+<p>It will be nestled inside the following directory hierarchy:</p>
 <div class="admonition warning">
 <p class="admonition-title"><strong>Filepath:</strong></p>
 <p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>components</code><strong>/</strong><code>user</code><strong>/</strong><code>UserIdentification.tsx</code></p>
@@ -1587,28 +1596,29 @@ At its core, Bob does three things exceptionally well:</p>
 </li>
 </ol>
 <hr />
-<ol start="5">
+<ol start="4">
 <li>
-<p>Double-click on <code>UserIdentification.tsx</code> to open the contents within the IDE.</p>
+<p>Double-click on <code>UserIdentification.tsx</code> to open the contents within the Bob IDE.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/01d1cb46-0ae0-4f02-872d-62824119a3ae/File_f9ca68765fed45b8a4af0d9a7ad8ec53_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/01d1cb46-0ae0-4f02-872d-62824119a3ae/File_f9ca68765fed45b8a4af0d9a7ad8ec53_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="6">
+<ol start="5">
 <li>
-<p>Navigate to the <code>UserIdentification</code> function (<strong>line 19</strong> of <code>UserIdentification.tsx</code>).</p>
+<p>Navigate to the <code>UserIdentification</code> function, located on <strong>line 19</strong>.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/74243ab6-12d1-48ad-a204-8a51bdc1911e/File_004b5c8a04414381ab2c503aff811b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/74243ab6-12d1-48ad-a204-8a51bdc1911e/File_004b5c8a04414381ab2c503aff811b0c_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="7">
-<li>
 <p>In order to demonstrate IBM Bob's ability to generate functional application code based on basic, natural language specifications, we'll begin with a simple one-liner comment that describes the work we'd like the application to perform. In this example, that will be validation of email addresses to ensure that users signing up for the Galaxium service are supplying compliant email addresses that follow the expected formatting.</p>
-<p>Begin by moving the cursor to <strong>line 19</strong> of the file (within the <code>UserIdentification</code> function) and type the following, including the forward-slash (<code>/</code>) characters:</p>
+<hr />
+<ol start="6">
+<li>
+<p>Begin by moving the cursor to <strong>line 19</strong> of the file, then copy &amp; paste the following comment line — including the forward-slash (<code>//</code>) characters:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#assist-1-1-__codelineno-0-1"></a>// validate email addresses
 </code></pre></div>
 <p>Then add a blank (empty) line <em>before</em> and <em>after</em> this commented line. The result should appear as the following:</p>
@@ -1640,13 +1650,14 @@ At its core, Bob does three things exceptionally well:</p>
 </li>
 </ol>
 <hr />
+<ol start="7">
+<li>Ensure that <strong>Literate Coding Mode</strong> is <code>ENABLED</code> by either toggling on the <strong>magic wand tool</strong> in the top-right corner of the <code>UserIdentification.tsx</code> editor (shown below) <em>or</em> by pressing the <span class="keys"><kbd class="key-command">Cmd</kbd></span> + ++I++ shortcut.</li>
+</ol>
+<hr />
 <ol start="8">
 <li>
-<p>Ensure that <strong>Literate Coding Mode</strong> is <code>ENABLED</code> by either toggling on the magic wand tool in the top-right corner of the <code>UserIdentification.tsx</code> editor (shown below) <em>or</em> by pressing the <span class="keys"><kbd class="key-command">Cmd</kbd></span> + ++I++ shortcut.</p>
-<ul>
-<li>After enabling Literate Coding Mode, move your cursor to the <strong>end</strong> of the newly-created <code>// validate email addresses</code> comment on <strong>line 19</strong></li>
-<li>Towards the bottom-middle of the Bob IDE interface, click the blue <strong>Generate</strong> button or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute</li>
-</ul>
+<p>After enabling Literate Coding Mode, move your cursor to the <strong>end</strong> of the newly-created <code>// validate email addresses</code> comment on <strong>Line 19</strong> (or highlight all of Line 19)</p>
+<p>Towards the bottom-center of the Bob IDE interface, click the blue <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to execute</p>
 <div class="admonition note">
 <p class="admonition-title">LITERATE CODING MODE</p>
 <p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
@@ -1705,27 +1716,34 @@ At its core, Bob does three things exceptionally well:</p>
     - Red-highlighted text represents lines that have been <em>marked for removal</em> from the code
     - The comment <code>// validate email address</code> that was used as a natural language instruction for Bob will be <em>removed</em> if the generation recommendations are accepted</p>
 </div>
-<p>Click <strong>Accept All</strong> (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to confirm the changes to the code. Alternatively, you could click <em>Undo All</em> to reverse the changes, or use the up and down arrows to review the two new code blocks manually.
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>
+<p>Click <strong>Accept All</strong> (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to confirm the changes to the code.</p>
+<p>Alternatively, you could click <em>Undo All</em> to reverse the changes, or use the up and down arrows to review the two new code blocks manually.
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="9">
+<ol start="10">
 <li>
-<p>Now let's return to the Galaxium Travels web app and confirm the change took effect. To do so, you will first need to reboot the web app service.</p>
+<p>You will need to <strong>reboot</strong> the <em>Galaxium Travels</em> web app service for the changes to take effect. To do so:</p>
 <ul>
-<li>To open a Terminal window, click the <strong>Terminal</strong> button at the bottom-center portion of the Bob IDE interface <em>or</em> navigate using the top menu bar into <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (which will open a fresh Terminal screen at the bottom-center portion of the UI).</li>
-<li>Within the Terminal window, locate and click the <strong>+</strong> icon, along the right-hand side of the Terminal window. This will launch a new Terminal connection into which you will next input additional commands.</li>
-</ul>
-<p><p align="left">
+<li>To open a new Terminal window by click the <strong>Terminal</strong> button in the bottom-center portion of the Bob IDE interface <em>or</em> navigate using the top menu bar into <strong>Terminal</strong> &gt; <strong>New Terminal</strong></li>
+<li>Within the Terminal window, locate and click the <strong>+</strong> icon, along the right-hand side of the Terminal window</li>
+<li>This will launch a new Terminal connection into which you will next input additional commands
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f3278573-5318-4443-b3d2-bc66c4a12015/File_35bca18c4b89427dbb017b9958d89dc0_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+</p></li>
+</ul>
 </li>
 </ol>
 <hr />
-<ol start="10">
+<ol start="11">
 <li>
 <p>The commands to be issued to the Terminal console vary according to the operating system your machine is running upon.</p>
 <p>From the expandable options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows). After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
@@ -1792,7 +1810,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="11">
+<ol start="12">
 <li>
 <p>Open a web browser on your local machine and visit the following URL to access the Galaxium Travels application:</p>
 <div class="admonition warning">
@@ -1805,7 +1823,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="12">
+<ol start="13">
 <li>
 <p>Once the Galaxium Travels site has loaded, click on <strong>Flights</strong>.</p>
 <p><p align="left">
@@ -1814,7 +1832,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="13">
+<ol start="14">
 <li>
 <p>Click the <strong>Book Now</strong> button under any of the listed flights to test its functionality.</p>
 <p><p align="left">
@@ -1823,7 +1841,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="14">
+<ol start="15">
 <li>
 <p>The web page will redirect to a <strong>Sign In</strong> panel. From this panel, we will be able to confirm (or troubleshoot) that the Bob-suggested email validation functionality is performing its intended job.</p>
 <ul>
@@ -1845,44 +1863,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </ol></section><section class="print-page" id="assist-1-2"><p><strong>MODULE 1 | ASSIST</strong></p>
 <h1 id="assist-1-2-literate-coding"><strong>LITERATE CODING</strong></h1>
 <hr />
-<h2 id="assist-1-2-i-editing-with-intent"><strong>i. Editing with intent</strong></h2>
 <hr />
-<p>Tab completion and next edit prediction shine while you are writing <em>new</em> code. But much of a developer's day is spent making precise, surgical change to code that already exists. To that end, <strong>literate coding</strong> is the tool of choice. It lets you annotate— using plain, natural language instructions — direct inside of a file where you needed the changes to occur. Bob then takes care of the heavy lifting by ensuring that every change is accounted for and that no instructions are missed. </p>
-<p>IBM Bob reads the instruction in place and produces a targeted, localized modification. The developer is still describing intent in plain language; the difference is that here you are pointing at a specific spot and saying "change <em>this</em>." Think of it like annotating changes in a collaborative Word document, where you can delegate the modifications to a trusted colleague who will shoulder the workload.</p>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's literate coding capabilities. <em>[2 min]</em></p>
-</blockquote>
-<hr />
-<h2 id="assist-1-2-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
-<hr />
-<p>Literate coding is at its best for focused, in-place work:</p>
-<ul>
-<li><strong>Wrapping logic</strong> around existing code — retry mechanisms, error handling, or logging</li>
-<li><strong>Refactoring a specific block</strong> while leaving the surrounding logic untouched</li>
-<li><strong>Quick, targeted modifications</strong> to a single function without disturbing the broader structure</li>
-</ul>
-<p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
-<p><a class="glightbox" href="../assist/_attachments/Module-1-Assist.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../assist/_attachments/Module-1-Assist.png" /></a></p>
-<div class="admonition note">
-<p>Literate Coding is a prime example of where the <em>control</em> that the human in the loop retains with IBM Bob — as part of the <strong>early Assist stage along the AI Maturity Curve</strong> — becomes tangible and truly valuable. IBM Bob never silently rewrites your files or codebase. Instead, it presents every change in a <em>diff</em> view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide on whether to implement the suggestion or disregard it. Nothing is committed until you say so.</p>
-</div>
-<p><strong>How it works</strong></p>
-<p>The workflow is deliberately simple:</p>
-<ol>
-<li>Position your cursor within the codebase where the change belongs</li>
-<li>Click the magic wand icon to enter literate coding mode</li>
-<li>Type a natural-language instruction describing the change you want to implement</li>
-<li>For changes that span several places, add an instruction line at each location</li>
-<li>Click generate to produce the modifications (across one or many instructions)</li>
-</ol>
-<hr />
-<p><strong>Going further</strong></p>
-<p>For sweeping, multi-file changes or architectural restructuring, you will instead want to reach for IBM Bob's <strong>Code mode</strong>. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>, which follows this section.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
-<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
-</div>
 <h2 id="assist-1-2-iii-hands-on-adding-retry-logic-with-literate-coding"><strong>iii. Hands-on: adding retry logic with Literate Coding</strong></h2>
 <hr />
 <blockquote>

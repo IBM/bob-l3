@@ -314,20 +314,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#i-editing-with-intent" class="md-nav__link">
-    i. Editing with intent
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ii-why-this-matters" class="md-nav__link">
-    ii. Why this matters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#iii-hands-on-adding-retry-logic-with-literate-coding" class="md-nav__link">
     iii. Hands-on: adding retry logic with Literate Coding
   </a>
@@ -597,20 +583,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#i-editing-with-intent" class="md-nav__link">
-    i. Editing with intent
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ii-why-this-matters" class="md-nav__link">
-    ii. Why this matters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#iii-hands-on-adding-retry-logic-with-literate-coding" class="md-nav__link">
     iii. Hands-on: adding retry logic with Literate Coding
   </a>
@@ -641,44 +613,7 @@
 <p><strong>MODULE 1 | ASSIST</strong></p>
 <h1 id="literate-coding"><strong>LITERATE CODING</strong></h1>
 <hr />
-<h2 id="i-editing-with-intent"><strong>i. Editing with intent</strong></h2>
 <hr />
-<p>Tab completion and next edit prediction shine while you are writing <em>new</em> code. But much of a developer's day is spent making precise, surgical change to code that already exists. To that end, <strong>literate coding</strong> is the tool of choice. It lets you annotate— using plain, natural language instructions — direct inside of a file where you needed the changes to occur. Bob then takes care of the heavy lifting by ensuring that every change is accounted for and that no instructions are missed. </p>
-<p>IBM Bob reads the instruction in place and produces a targeted, localized modification. The developer is still describing intent in plain language; the difference is that here you are pointing at a specific spot and saying "change <em>this</em>." Think of it like annotating changes in a collaborative Word document, where you can delegate the modifications to a trusted colleague who will shoulder the workload.</p>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCC8CVWmQWGbc8hJ36j3qJ48XfB3">Chapter 2.2: Literate Coding [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> demonstrates Bob's literate coding capabilities. <em>[2 min]</em></p>
-</blockquote>
-<hr />
-<h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
-<hr />
-<p>Literate coding is at its best for focused, in-place work:</p>
-<ul>
-<li><strong>Wrapping logic</strong> around existing code — retry mechanisms, error handling, or logging</li>
-<li><strong>Refactoring a specific block</strong> while leaving the surrounding logic untouched</li>
-<li><strong>Quick, targeted modifications</strong> to a single function without disturbing the broader structure</li>
-</ul>
-<p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
-<p><a class="glightbox" href="../_attachments/Module-1-Assist.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/Module-1-Assist.png" /></a></p>
-<div class="admonition note">
-<p>Literate Coding is a prime example of where the <em>control</em> that the human in the loop retains with IBM Bob — as part of the <strong>early Assist stage along the AI Maturity Curve</strong> — becomes tangible and truly valuable. IBM Bob never silently rewrites your files or codebase. Instead, it presents every change in a <em>diff</em> view that shows the added code, the removed code, and enough surrounding context to understand the scope of what is changing. You review, then you decide on whether to implement the suggestion or disregard it. Nothing is committed until you say so.</p>
-</div>
-<p><strong>How it works</strong></p>
-<p>The workflow is deliberately simple:</p>
-<ol>
-<li>Position your cursor within the codebase where the change belongs</li>
-<li>Click the magic wand icon to enter literate coding mode</li>
-<li>Type a natural-language instruction describing the change you want to implement</li>
-<li>For changes that span several places, add an instruction line at each location</li>
-<li>Click generate to produce the modifications (across one or many instructions)</li>
-</ol>
-<hr />
-<p><strong>Going further</strong></p>
-<p>For sweeping, multi-file changes or architectural restructuring, you will instead want to reach for IBM Bob's <strong>Code mode</strong>. The topic is covered extensively within <a href="https://ibm.github.io/bob-l3/delegate/2-1.md" target="_blank"><strong>MODULE 2 | DELEGATE</strong></a>, which follows this section.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
-<p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
-</div>
 <h2 id="iii-hands-on-adding-retry-logic-with-literate-coding"><strong>iii. Hands-on: adding retry logic with Literate Coding</strong></h2>
 <hr />
 <blockquote>
