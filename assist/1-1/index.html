@@ -737,7 +737,7 @@
 <li>
 <p>In order to demonstrate IBM Bob's ability to generate functional application code based on basic, natural language specifications, we'll begin with a simple one-liner comment that describes the work we'd like the application to perform. In this example, that will be validation of email addresses to ensure that users signing up for the Galaxium service are supplying compliant email addresses that follow the expected formatting.</p>
 <p>Begin by moving the cursor to <strong>line 19</strong> of the file (within the <code>UserIdentification</code> function) and type the following, including the forward-slash (<code>/</code>) characters:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>//validate email addresses
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// validate email addresses
 </code></pre></div>
 <p>Then add a blank (empty) line <em>before</em> and <em>after</em> this commented line. The result should appear as the following:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">UserIdentification.tsx</label></div>
@@ -753,7 +753,7 @@
 <span class="normal"><a href="#__codelineno-1-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-17" name="__codelineno-1-17"></a>const [isLoading, setIsLoading] = useState(false);
 <a id="__codelineno-1-18" name="__codelineno-1-18"></a>const [isNewUser, setIsNewUser] = useState(false);
 <a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="hll">
-</span><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="hll">//validate email addresses
+</span><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="hll">// validate email addresses
 </span><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="hll">
 </span><a id="__codelineno-1-22" name="__codelineno-1-22"></a>const handleSubmit = async (e: React.FormEvent) =&gt; {
 <a id="__codelineno-1-23" name="__codelineno-1-23"></a>    e.preventDefaut();
@@ -770,12 +770,25 @@
 <hr />
 <ol start="8">
 <li>
-<p>Move your cursor to the <strong>end</strong> of the newly-created <code>//validate email addresses</code> comment on <strong>line 19</strong>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> followed by <span class="keys"><kbd class="key-tab">Tab</kbd></span> to invoke Bob's <em>Tab Completion</em> feature.</p>
+<p>Ensure that <strong>Literate Coding Mode</strong> is <code>ENABLED</code> by either toggling on the magic wand tool in the top-right corner of the <code>UserIdentification.tsx</code> editor (shown below) <em>or</em> by pressing the <span class="keys"><kbd class="key-command">Cmd</kbd></span> + ++I++ shortcut.</p>
+<ul>
+<li>After enabling Literate Coding Mode, move your cursor to the <strong>end</strong> of the newly-created <code>// validate email addresses</code> comment on <strong>line 19</strong></li>
+<li>Towards the bottom-middle of the Bob IDE interface, click the blue <strong>Generate</strong> button or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">LITERATE CODING MODE</p>
+<p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
+</div>
+<p>IBM Bob will generate two new blocks of code within the <code>UserIdentification.tsx</code> file across <strong>Lines 20-23</strong> (<code>isValidEmail</code> function) and <strong>Lines 33-37</strong> (<code>if(!isValidEmail ...</code> logic), respectively. </p>
+<ul>
+<li>At this stage, the code suggestion is still <em>only</em> a suggestion: you, as the operator at the helm, have the option to: accept; modify; or reject and move on</li>
+<li>Note the colored highlighting, denoting IBM Bob's <em>diff</em> view: green-highlighted text represents new additions to the code and red-highlighted text represents lines that will be removed</li>
+<li>The comment <code>// validate email address</code> that was used as a natural language instruction for Bob will be <em>removed</em> if the generation recommendations are accepted</li>
+</ul>
+<p>Click <strong>Accept All</strong> (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to confirm the changes to the code. Alternatively, you could click <em>Undo All</em> to reverse the changes, or use the up and down arrows to review the two new code blocks manually.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
-<p><strong>Tab Completion</strong> will immediately insert greyed-out, italicized text — this represents the AI-suggested code completion based on the natural language "validate email addresses" comment.</p>
-<p>At this stage, the code suggestion is still <em>only</em> a suggestion: you, as the operator at the helm, have the option to: accept; modify; or reject and move on.</p>
 </li>
 </ol>
 <hr />
