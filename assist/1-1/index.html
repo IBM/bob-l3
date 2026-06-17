@@ -780,30 +780,67 @@
 <p>IBM Bob users engage the literate coding mode through the magic wand icon in the Bob IDE (you'll see exactly how this is performed in a few moments.) Once active, it allows those users to write natural-language instructions at a precise code location. They can target the exact section of code where changes are to be made; alternatively, they can queue up several instructions in sequence, across multiple locations of a single file.</p>
 </div>
 <p>IBM Bob will generate two new blocks of code within the <code>UserIdentification.tsx</code> file across <strong>Lines 20-23</strong> (<code>isValidEmail</code> function) and <strong>Lines 33-37</strong> (<code>if(!isValidEmail ...</code> logic), respectively. </p>
-<ul>
-<li>At this stage, the code suggestion is still <em>only</em> a suggestion: you, as the operator at the helm, have the option to: accept; modify; or reject and move on</li>
-<li>Note the colored highlighting, denoting IBM Bob's <em>diff</em> view: green-highlighted text represents new additions to the code and red-highlighted text represents lines that will be removed</li>
-<li>The comment <code>// validate email address</code> that was used as a natural language instruction for Bob will be <em>removed</em> if the generation recommendations are accepted</li>
-</ul>
-<p>Click <strong>Accept All</strong> (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to confirm the changes to the code. Alternatively, you could click <em>Undo All</em> to reverse the changes, or use the up and down arrows to review the two new code blocks manually.</p>
-<p><p align="left">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">UserIdentification.tsx</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-18" name="__codelineno-2-18"></a>const [isNewUser, setIsNewUser] = useState(false);
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="hll">const isValidEmail = (value: string): boolean =&gt; {
+</span><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="hll">    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+</span><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="hll">};
+</span><a id="__codelineno-2-23" name="__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>const handleSubmit = async (e: React.FormEvent) =&gt; {
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>    e.preventDefault();
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>    if (!name.trim() || !email.trim()) {
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>        toast.error(&#39;Please fill in all fields&#39;);
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>        return;
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>    }
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="hll">    if (!isValidEmail(email.trim())) {
+</span><a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="hll">        toast.error(&#39;Please enter a valid email address&#39;);
+</span><a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="hll">        return;
+</span><a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="hll">    }
+</span><a id="__codelineno-2-36" name="__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a>    setIsLoading(true); 
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p>At this stage, the code suggestion is still <em>only</em> a suggestion: you, as the operator at the helm, have the option to: accept; modify; or reject and move on. As a reminder, because Bob's suggestions are non-deterministic, your generated function may look slightly different from the code documented. If the generated code does not compile, first compare the inserted function with the example shown in the lab documentation.</p>
+<p>Note the colored highlighting, denoting IBM Bob's <strong>diff</strong> view:
+    - Green-highlighted text represents <em>new additions</em> to the code
+    - Red-highlighted text represents lines that have been <em>marked for removal</em> from the code
+    - The comment <code>// validate email address</code> that was used as a natural language instruction for Bob will be <em>removed</em> if the generation recommendations are accepted</p>
+</div>
+<p>Click <strong>Accept All</strong> (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to confirm the changes to the code. Alternatively, you could click <em>Undo All</em> to reverse the changes, or use the up and down arrows to review the two new code blocks manually.
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95e8af72-1dd7-494a-94f3-cae6fbea8da6/File_47d4f100cd6e4cf895e77a24d0f4f440_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
 <ol start="9">
-<li>
-<p>Press the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key once again to <strong>accept</strong> the suggested code. Note that the grey italics are replaced by <em>normal</em> characters after accepting the suggestion. This denotes that the AI-suggested code has been committed to your file as working code.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ac7f40b-63ae-4f97-82c1-524d9d2f2dd2/File_9f963909fc9c4cf48bda0a1f83bd114d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ac7f40b-63ae-4f97-82c1-524d9d2f2dd2/File_9f963909fc9c4cf48bda0a1f83bd114d_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-<p>As a reminder, because Bob's suggestions are non-deterministic, your generated function may look slightly different from the code documented. If the generated code does not compile, first compare the inserted function with the example shown in the lab documentation.</p>
-<p>You may either manually correct the function by hand to make the documented solution, or delete the generated code and repeat the prediction step (using <span class="keys"><kbd class="key-tab">Tab</kbd></span> as before) again.</p>
-</li>
-</ol>
-<hr />
-<ol start="10">
 <li>
 <p>Now let's return to the Galaxium Travels web app and confirm the change took effect. To do so, you will first need to reboot the web app service.</p>
 <ul>
@@ -816,7 +853,7 @@
 </li>
 </ol>
 <hr />
-<ol start="11">
+<ol start="10">
 <li>
 <p>The commands to be issued to the Terminal console vary according to the operating system your machine is running upon.</p>
 <p>From the expandable options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows). After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
@@ -824,10 +861,10 @@
 <summary>MAC OR LINUX</summary>
 <p>On macOS or Linux, run the following commands one at a time.</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
 </code></pre></div></p>
 <p><strong>Step 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./start.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./start.sh
 </code></pre></div></p>
 <p>You should see a <em>"Galaxium Travels is running!"</em> prompt returned to the console (amongst other messages) once the application has deployed successfully.</p>
 <p></br>
@@ -839,19 +876,19 @@
 <summary>WINDOWS OS</summary>
 <p>On Windows, run the following commands one at a time.</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
 </code></pre></div></p>
 <p><strong>Step 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span> booking_system_backend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span> booking_system_backend
 </code></pre></div></p>
 <p><strong>Step 3:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python -m venv .venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python -m venv .venv
 </code></pre></div></p>
 <p><strong>Step 4:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </code></pre></div></p>
 <p><strong>Step 5:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python server.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python server.py
 </code></pre></div></p>
 <div class="admonition warning">
 <p class="admonition-title">DO NOT CLOSE THE TERMINAL WINDOW</p>
@@ -867,13 +904,13 @@ After having completed all of <strong>Steps 1-5</strong>, open a new Terminal wi
 </p></p>
 <p><strong>Step 7:</strong>
 Within the new Terminal window, execute the following commands one-by-one in sequence:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
 <p><strong>Step 8:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cd booking_system_frontend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>cd booking_system_frontend
 </code></pre></div></p>
 <p><strong>Step 9:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>npm run dev
 </code></pre></div></p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" alt="" width="600" /></a>
@@ -883,7 +920,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="12">
+<ol start="11">
 <li>
 <p>Open a web browser on your local machine and visit the following URL to access the Galaxium Travels application:</p>
 <div class="admonition warning">
@@ -896,7 +933,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="13">
+<ol start="12">
 <li>
 <p>Once the Galaxium Travels site has loaded, click on <strong>Flights</strong>.</p>
 <p><p align="left">
@@ -905,7 +942,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="14">
+<ol start="13">
 <li>
 <p>Click the <strong>Book Now</strong> button under any of the listed flights to test its functionality.</p>
 <p><p align="left">
@@ -914,7 +951,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="15">
+<ol start="14">
 <li>
 <p>The web page will redirect to a <strong>Sign In</strong> panel. From this panel, we will be able to confirm (or troubleshoot) that the Bob-suggested email validation functionality is performing its intended job.</p>
 <ul>
