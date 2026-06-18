@@ -642,10 +642,6 @@
 </div>
 <h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCQWPcGR9g87mG9FWcPXR6TfpChj">Chapter 3.1: init Command [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how Bob's init command summarizes a large, complex codebase. <em>[2 min]</em></p>
-</blockquote>
 <p>Large language models (LLM) are <strong>stateless</strong> and therefore every new conversation, without intervening strategies or techniques, will begin with no memory of the last interaction. Left to its own devices, Bob would need to rediscover your codebase from scratch at the start of each interaction — an inefficient approach for a small project and an impractically cumbersome approach for a large one.</p>
 <p>The <strong><code>/init</code></strong> command solves this challenge. It scans your project and generates a structured summary that Bob loads as <em>persistent context</em> for every new conversation. The <code>/init</code> command thus becomes the primary mechanism for giving Bob durable knowledge of your project's structure, conventions, and code. All without needing to re-read every file with each new invocation.</p>
 <hr />

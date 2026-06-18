@@ -746,10 +746,6 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <h2 id="index-v-environment-galaxium-travels"><strong>v. Environment: Galaxium Travels</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCB6f2CRCCpcJ8TMpgH8Dd33T8D3">Chapter 1: Demo Application: Galaxium Travels [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> walks through the demo scenario that ties the hands-on modules together. <em>[2 min]</em></p>
-</blockquote>
 <p>For the purposes of the hands-on materials and your untaking in building trust with IBM Bob, you'll be making use of the <strong>Galaxium Travels</strong> application and code base: a fictional, luxury space-travel booking system whose source code is publicly available on GitHub. Rather than show Bob as throwaway snippets and discrete feature demonstration, it's important to realize the full end-to-end journey that a customer will experience in working with the service. Therefore, this hands-on material will put you to work using a unified, production-style codebase from start to finish. It is the consistent backdrop against which each stage of the AI maturity curve comes to life.</p>
 <p>Galaxium Travels follows a familiar full-stack shape:</p>
 <ul>
@@ -1979,10 +1975,6 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <h2 id="delegate-2-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCJFMppc4M7DPG7TC3h73QpdmB3j">Chapter 2.3: The Agentic Sidebar [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> showcases how to work with Bob's agentic chat. <em>[5 min]</em></p>
-</blockquote>
 <p>All work you have performed across the hands-on lab so far has been <em>inline</em> coding modifications: IBM Bob performing work at the exact spot your cursor sits. Bob's <strong>Agentic Sidebar</strong> functionality is a different proposition altogether. It is the primary interface for complex, multi-step work. It also enables Bob to:</p>
 <ul>
 <li>Read through files</li>
@@ -2608,10 +2600,6 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </div>
 <h2 id="tailor-3-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCQWPcGR9g87mG9FWcPXR6TfpChj">Chapter 3.1: init Command [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how Bob's init command summarizes a large, complex codebase. <em>[2 min]</em></p>
-</blockquote>
 <p>Large language models (LLM) are <strong>stateless</strong> and therefore every new conversation, without intervening strategies or techniques, will begin with no memory of the last interaction. Left to its own devices, Bob would need to rediscover your codebase from scratch at the start of each interaction — an inefficient approach for a small project and an impractically cumbersome approach for a large one.</p>
 <p>The <strong><code>/init</code></strong> command solves this challenge. It scans your project and generates a structured summary that Bob loads as <em>persistent context</em> for every new conversation. The <code>/init</code> command thus becomes the primary mechanism for giving Bob durable knowledge of your project's structure, conventions, and code. All without needing to re-read every file with each new invocation.</p>
 <hr />
@@ -2774,10 +2762,6 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <hr />
 <h2 id="tailor-3-2-i-encoding-bob-with-your-standards"><strong>i. Encoding Bob with your standards</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how defined rule sets enforce consistency and cut down on repeated instructions. <em>[3 min]</em></p>
-</blockquote>
 <p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>.</p>
 <p>Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
 <hr />
@@ -2845,11 +2829,6 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <p>The control that you manually exercised in <strong><em>Assist</em></strong>— which you then later entrusted with more autonomy to Bob in the <strong><em>Delegate</em></strong> phase —now becomes a durable, shared, and reviewable artifact in the <strong><em>Tailor</em></strong> phase of the journey.</p>
 </div>
 <h2 id="tailor-3-2-iv-hands-on-setting-standards-with-bob-rules"><strong>iv. Hands-on: setting standards with Bob Rules</strong></h2>
-<hr />
-<blockquote>
-<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
-</blockquote>
-<p>In the steps ahead, you will create a rules file for <em>Galaxium Travels</em> and configure a set three standing rules. Afterwards, you will test and validate the efficacy of these rules by initiating a fresh conversation with Bob.</p>
 <hr />
 <ol>
 <li>
@@ -3092,10 +3071,6 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <hr />
 <h2 id="tailor-3-3-i-shaping-bob-to-every-role"><strong>i. Shaping Bob to every role</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC46497j6QjGF8QTV4HDB3fgWJ4G">Chapter 3.3: Custom Modes [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how to use Bob's Modes for custom workflows. <em>[4 min]</em></p>
-</blockquote>
 <p>IBM Bob's standardized, built-in Modes— <em>Code</em>, <em>Plan</em>, <em>Ask</em>, and <em>Advanced</em> —cover the most commonly found workflows and use cases that IBM's clients will encounter. But when pushing new frontiers and working at the scale of enterprise, there will inevitably be edge cases and bespoke cases requiring a tailored solution.</p>
 <p><strong>Custom Modes</strong> allow clients to define their own specialized agentic workflows with Bob: it combines a role definition, behavioral instructions, and a deterministic set of permitted tools. The net result for Bob clients is that, regardless of whether the end-user happens to be a product manager or a senior engineer, the Custom Mode "version" (persona) of Bob they interact with has been pre-tuned and shaped to how they actually work.</p>
 <hr />
@@ -3474,12 +3449,9 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <p>Across this module, you will first look under the hood at the <strong>context window</strong> mechanics that make Bob tick. Arguably, the context window might be the single biggest factor in keeping Bob's output at the highest quality across the most ambitious tasks. The habits and best practices that developers (you) adopt in maximizing the utility of this resource can have tremendous impacts on the quality of work that Bob is able to perform.</p>
 <p>Afterwards, you'll take Bob out of the IDE entirely and into the Terminal console: <strong>Bob Shell</strong>. This programmatic interface for Bob unlocks automation, scripting, and parallelized workstreams.</p>
 <p>Finally, you will experiment with connecting Bob to your existing systems through <strong>Model Context Protocol <em>(MCP)</em></strong>, the open source standard that lets Bob interact directly with the external tools your teams use daily. <em>Governance</em> remains paramount at this stage. As the human-in-the-loop and final arbiter of control, you must decide what context Bob carries, what credentials it holds, and which tools it is permissioned to reach.</p>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC4hp8R9Pm8mTGcFWTGGBRhjXqGG">Chapter 4.1: Context Window [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the details of Bob's context window. <em>[4 min]</em></p>
-</blockquote>
 <p><a class="glightbox" href="../scale/_attachments/Module-4-Scale.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../scale/_attachments/Module-4-Scale.png" /></a></p>
 <div class="admonition note">
+<p class="admonition-title">AI MATURITY CURVE</p>
 <p>By the end of <a href="https://ibm.github.io/bob-l3/tailor/3-3/" target="_blank"><strong>Module 3 | Tailor</strong></a>, IBM Bob knew nearly every facet about your project, adhered to your organization's coding standards, and had adapted itself to each role on your team — and all of that was committed to the repository, shared, and automatically enforced. The final stage along the <strong>AI Maturity Curve</strong> journey reflects the two things that separate a <em>promising demo</em> from a <em>dependable enterprise partner</em>: staying <em>reliable</em> on the largest, longest-running workloads; ultimately, <em>connecting</em> to everything else that your organization already runs today.</p>
 <p>In other words, addressing the enterprise challenges of <strong>Scale and Extensibility</strong>.</p>
 </div>
@@ -3600,10 +3572,6 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <h2 id="scale-4-2-i-moving-beyond-the-ide"><strong>i. Moving beyond the IDE</strong></h2>
 <hr />
 <p>Everything so far has lived inside the IDE. <strong>Bob Shell</strong> brings the same core capabilities to a terminal — a keyboard-driven, command-line form factor installed separately from the VS Code extension and runnable in any standard terminal. For developers who live in the terminal, it unlocks workflows that are difficult or impossible in the IDE: headless automation, scripting, and running several Bob instances in parallel. This is what taking Bob to enterprise scale looks like in practice.</p>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCQ74Gg3VjCHmGCG7D4JDmXppWFj">Chapter 4.2: Bob Shell [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> showcases how to work with Bob's shell and shell commands. <em>[4 min]</em></p>
-</blockquote>
 <div class="admonition note">
 <p class="admonition-title">ADDITIONAL DOCUMENTATION</p>
 <p><strong>Heads-up:</strong> completing this lesson may require additional guidance from IBM Bob's full product documentation to install Bob Shell. Detailed documentation is available from <strong><a href="https://bob.ibm.com/docs/shell/getting-started/install-and-setup?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">IBM.com</a></strong></p>
@@ -3977,10 +3945,6 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <h2 id="scale-4-3-i-connecting-everything-back-to-bob"><strong>i. Connecting everything back to Bob</strong></h2>
 <hr />
 <p>The <strong>Model Context Protocol (MCP)</strong> is what connects IBM Bob to the rest of your business and the systems your organization spans: a standardized interface that lets LLM-powered applications reach external tools, services, and data sources through one consistent integration layer. Any external service that can provide an MCP server can potentially serve as another endpoint for Bob to work with. This is the final (and most consequential) step in scaling Bob across an enterprise- making Bob a participant in the systems your teams already use —and serves as an effective capstone to the work you've performed thus far.</p>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCDRFd2HQdRc3G4WB866f2HHVQCG">Chapter 5.1: MCP [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the Model Context Protocol (MCP) and how it relates to Bob. <em>[5 min]</em></p>
-</blockquote>
 <p><a class="glightbox" href="../scale/_attachments/Module-4-Scale.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../scale/_attachments/Module-4-Scale.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">THE FULL JOURNEY ALONG THE AI MATURITY CURVE</p>
