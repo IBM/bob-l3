@@ -2322,7 +2322,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="5">
 <li>
-<p>With <strong>Plan mode</strong> active and auto-approval enabled, <strong>type</strong> the following task into the agentic sidebar chat window:</p>
+<p>With <strong>Plan mode</strong> active and auto-approval enabled, <strong>copy and paste</strong> the following task into the Agentic Sidebar session window:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-2-__codelineno-0-1"></a>I want different classes of seats for Galaxium Travels.
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#delegate-2-2-__codelineno-0-2"></a>There is supposed to be an Economy class, a Business class, and a Galaxium class.
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#delegate-2-2-__codelineno-0-3"></a>Help me make a plan to implement this.
@@ -2343,40 +2343,84 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </ol>
 <hr />
 <ol start="7">
-<li>
-<p>Bob will now undertake the job of planning how to implement the requested features. It may ask follow-up questions to pin down exactly what you want.</p>
-<p>In this example, Bob wants to better understand how pricing according to seat classes should be structured.</p>
-<div class="admonition warning">
-<p>Bob's responses are <strong>non-deterministic</strong>, so questions posed to you within your Bob IDE may differ from those shown here. It's also possible you may receive no clarifying questions at all.</p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/756e5047-4de2-4e58-b870-a5703c162688/File_608f202a495e498ca6757a7b8eb59b11_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/756e5047-4de2-4e58-b870-a5703c162688/File_608f202a495e498ca6757a7b8eb59b11_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
+<li>Bob will first execute the <code>create-plan</code> <strong>Skill</strong> and begin to research the codebase to understand the existing structure, before asking clarifying questions of the user (you).</li>
 </ol>
 <hr />
 <ol start="8">
-<li>Choose the pricing approach you want for the seat classes. In this case, recommend the following:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#delegate-2-2-__codelineno-1-1"></a>Each class has different pricing (Economy = base, Business = 1.5x, Galaxium = 2.5x) and separate seat counts per class.
-</code></pre></div>
-    <p align="left">
-    <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/37ffe459-0a9a-48cc-82bf-fa24d39b345b/File_d0d641fa5fe747bcab97a899c3a75800_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/37ffe459-0a9a-48cc-82bf-fa24d39b345b/File_d0d641fa5fe747bcab97a899c3a75800_text_export.jpeg" alt="" width="600" /></a>
-    </p></li>
+<li>
+<p>The first point of clarification asked for by Bob: <em>Should the three seat classes (Economy, Business, Galaxium) have different pricing, and if so, how should prices be calculated — a fixed price per class per flight, or a multiplier on the base flight price?</em></p>
+<ul>
+<li>This questioning is accompanied by three recommended (and click-able) responses</li>
+<li>You can always enter your own response at the bottom of the chat session, as well</li>
+<li>Select the <em>"Use a multiplier on the base price (e.g. Economy = 1x, Business = 1.5x, Galaxium = 2.5x)"</em> option to construct a range of seat classes with varying associated price rates</li>
+</ul>
+<div class="admonition warning">
+<p>Bob's responses are <strong>non-deterministic</strong>, so questions posed to you within your Bob IDE may differ from those shown here. It's also possible you may receive no clarifying questions at all.</p>
+</div>
+</li>
 </ol>
 <hr />
 <ol start="9">
 <li>
-<p>Inspect and review the plans that Bob creates based on your requested workflow. Bob can generate one or more Markdown (<code>.md</code>) plan files, with various potential names that will be specific to <em>your</em> project.</p>
-<div class="admonition warning">
-<p>For example, Bob might generate Markdown files such as <code>SEAT_CLASSES_IMPLEMENTATION_PLAN.md</code>, <code>implementation-checklist.md</code>, <code>seat-classes-architecture.md</code>, or <code>seat-classes-implementation-plan.md</code>.</p>
+<p>A second follow-up question: <em>"Should each seat class have its own separate seat availability count per flight (e.g. 10 economy seats, 5 business seats, 2 Galaxium seats), or should all classes draw from one shared pool of seats?"</em></p>
+<p>Select the <em>"Each class has its own seat count per flight (separate availability tracking per class)"</em> option.</p>
+</li>
+</ol>
+<hr />
+<ol start="10">
+<li>
+<p>A third follow-up question: <em>"Where in the UI should the user choose their seat class? Should they pick it when browsing flights (on the FlightCard), or when they confirm the booking (inside the BookingModal)?"</em></p>
+<p>Select the <em>"In the BookingModal — the user picks a class as part of confirming the booking"</em> option.</p>
+</li>
+</ol>
+<hr />
+<ol start="11">
+<li>
+<p>A fourth follow-up question: <em>"Should the booked seat class be visible in the user's booking history (MyBookings page and BookingCard)?"</em></p>
+<p>Select the <em>"Yes — show the seat class on each booking in the history"</em> option.</p>
+</li>
+</ol>
+<hr />
+<ol start="12">
+<li>
+<p>A fifth follow-up question: <em>"Should the FlightCard display per-class seat availability (e.g. "Economy: 8 seats, Business: 4 seats, Galaxium: 2 seats"), or just show the lowest/most relevant availability as it does now?"</em></p>
+<p>Select the <em>"Show per-class availability on the FlightCard (e.g. a small breakdown for each class)"</em> option.</p>
+</li>
+</ol>
+<hr />
+<p>Bob will then confirm it has all the clarifying details it requires of the user, and will begin carrying on the remainder of the work. It begins by exploring the various directories and files of the project in order to understand the full picture of the front-end and back-end components.</p>
+<div class="admonition note">
+<p class="admonition-title">PLAN MODE IS READ-ONLY</p>
+<p>Recall that IBM Bob's <em>Plan Mode</em> is a read-only mode. It is intended for design tasks, architecture analysis, technical specifications, and breaking down problems into sequential workflows — all performed <strong>without</strong> making any code changes.</p>
 </div>
-<ul>
-<li><strong>Open</strong> (double-click) each of generated plan <code>.md</code> files and review them before implementation</li>
-<li>If you don't see these files generated yet, continue answering Bob's questions in the Agentic Sidebar until you Bob has sufficient context to generate the requested <code>.md</code> files for the execution plan</li>
-</ul>
-<p>Once the implementation plan document(s) appear, the <strong>Plan mode</strong> phase is essentially complete. Bob might pose a final question to you— essentially <em>"Are you happy with these results, or do you wish to revise things further?"</em> —to which you may answer (if you agree):</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#delegate-2-2-__codelineno-2-1"></a>The plan looks great.
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#delegate-2-2-__codelineno-2-2"></a>Let&#39;s switch to Agent mode and start implementing the seat classes.
+<ol start="13">
+<li>
+<p>Inspect and review the plans that Bob creates based on your requested workflow. Bob will generate a <code>seat-classes-plan.md</code> Markdown file which can be inspected in-line within the chat session, or double-clicked to open within the Bob IDE editor (center panel).</p>
+<div class="admonition quote">
+<p>Bob can generate one or more Markdown (<code>.md</code>) plan files, with various potential names that will be specific to <em>your</em> project. For example, Bob might generate Markdown files such as <code>SEAT_CLASSES_IMPLEMENTATION_PLAN.md</code>, <code>implementation-checklist.md</code>, <code>seat-classes-architecture.md</code>, or <code>seat-classes-implementation-plan.md</code>.</p>
+</div>
+<p>The plan includes a complete summary of proposed changes to the application stack, including:
+- Database
+- Backend service
+- API schema
+- Frontend types
+- UI components</p>
+<p>Additionally, the Plan Mode outlines the <strong>key decisions baked into the plan</strong> itself: pricing, seat availability, where Class is chosen, FlightCard display, DB migration, and more.</p>
+</li>
+</ol>
+<hr />
+<ol start="14">
+<li>
+<p>Once the implementation plan document(s) appear, the <strong>Plan mode</strong> phase is essentially complete.</p>
+<p>Bob will potentially follow-up the summary of the <em>Plan Mode</em> actions with <strong>additional clarifying questions</strong>, which you can answer or <strong>ignore</strong> for now (recommended).</p>
+</li>
+</ol>
+<hr />
+<ol start="15">
+<li>
+<p>When ready to move from <em>planning</em> (<strong>Plan Mode</strong>) to <em>implementation</em> (<strong>Agent Mode</strong>), copy and paste the following statement into the chat window and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#delegate-2-2-__codelineno-1-1"></a>The plan looks great.
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#delegate-2-2-__codelineno-1-2"></a>Let&#39;s switch to Agent mode and start implementing the seat classes.
 </code></pre></div>
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/655e06ad-5c53-4538-8bd5-a067aea2fc70/File_a716739de322423fb1707939ce765752_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/655e06ad-5c53-4538-8bd5-a067aea2fc70/File_a716739de322423fb1707939ce765752_text_export.jpeg" alt="" width="600" /></a>
@@ -2456,7 +2500,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <ol start="15">
 <li>
 <p>In the <strong>Agentic Sidebar</strong> chat window, type the following:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#delegate-2-2-__codelineno-3-1"></a>Build this feature based on @
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#delegate-2-2-__codelineno-2-1"></a>Build this feature based on @
 </code></pre></div>
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a94fba3b-8e1a-4494-b914-2e2a3761342a/File_6e0031243c99429f97e8520051ee8bc1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a94fba3b-8e1a-4494-b914-2e2a3761342a/File_6e0031243c99429f97e8520051ee8bc1_text_export.jpeg" alt="" width="600" /></a>
@@ -2544,7 +2588,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <ul>
 <li>After aborting the command execution, Bob should resume the workflow automatically</li>
 <li>If Bob refuss to automatically restart the workflow, simply send a prompt such as the following within the chat interface:
- <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#delegate-2-2-__codelineno-4-1"></a>Your work was interrupted, please proceed.
+ <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#delegate-2-2-__codelineno-3-1"></a>Your work was interrupted, please proceed.
 </code></pre></div>
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/035e0543-efae-4fcb-9e4c-c80bc2dfda1f/File_519c1a2773e04b01a6d5337768b8176f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/035e0543-efae-4fcb-9e4c-c80bc2dfda1f/File_519c1a2773e04b01a6d5337768b8176f_text_export.jpeg" alt="" width="600" /></a>
@@ -2587,10 +2631,10 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <summary>MAC OR LINUX</summary>
 <p>On macOS or Linux, run the following commands one at a time.</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#delegate-2-2-__codelineno-5-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#delegate-2-2-__codelineno-4-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
 </code></pre></div></p>
 <p><strong>Step 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#delegate-2-2-__codelineno-6-1"></a>./start.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#delegate-2-2-__codelineno-5-1"></a>./start.sh
 </code></pre></div></p>
 <p>You should see a <em>"Galaxium Travels is running!"</em> prompt returned to the console (amongst other messages) once the application has deployed successfully.</p>
 <p></br>
@@ -2602,19 +2646,19 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <summary>WINDOWS OS</summary>
 <p>On Windows, run the following commands one at a time.</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#delegate-2-2-__codelineno-7-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#delegate-2-2-__codelineno-6-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
 </code></pre></div></p>
 <p><strong>Step 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#delegate-2-2-__codelineno-8-1"></a><span class="nb">cd</span> booking_system_backend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#delegate-2-2-__codelineno-7-1"></a><span class="nb">cd</span> booking_system_backend
 </code></pre></div></p>
 <p><strong>Step 3:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#delegate-2-2-__codelineno-9-1"></a>python -m venv .venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#delegate-2-2-__codelineno-8-1"></a>python -m venv .venv
 </code></pre></div></p>
 <p><strong>Step 4:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#delegate-2-2-__codelineno-10-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#delegate-2-2-__codelineno-9-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </code></pre></div></p>
 <p><strong>Step 5:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#delegate-2-2-__codelineno-11-1"></a>python server.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#delegate-2-2-__codelineno-10-1"></a>python server.py
 </code></pre></div></p>
 <div class="admonition warning">
 <p class="admonition-title">DO NOT CLOSE THE TERMINAL WINDOW</p>
@@ -2630,13 +2674,13 @@ After having completed all of <strong>Steps 1-5</strong>, open a new Terminal wi
 </p></p>
 <p><strong>Step 7:</strong>
 Within the new Terminal window, execute the following commands one-by-one in sequence:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#delegate-2-2-__codelineno-12-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#delegate-2-2-__codelineno-11-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
 <p><strong>Step 8:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#delegate-2-2-__codelineno-13-1"></a>cd booking_system_frontend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#delegate-2-2-__codelineno-12-1"></a>cd booking_system_frontend
 </code></pre></div></p>
 <p><strong>Step 9:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#delegate-2-2-__codelineno-14-1"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#delegate-2-2-__codelineno-13-1"></a>npm run dev
 </code></pre></div></p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" alt="" width="600" /></a>
