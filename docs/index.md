@@ -78,10 +78,6 @@ You will spend most of this course in the Bob IDE, where the Visual Studio Code-
 
 ---
 
-> **Watch first:** [Chapter 1: Demo Application: Galaxium Travels \[IBM Bob L3\]](https://ibm.seismic.com/Link/Content/DCB6f2CRCCpcJ8TMpgH8Dd33T8D3)
->
-> Maximilian Jesch *(Outbound Product Manager — IBM Bob)* walks through the demo scenario that ties the hands-on modules together. *\[2 min\]*
-
 For the purposes of the hands-on materials and your untaking in building trust with IBM Bob, you'll be making use of the **Galaxium Travels** application and code base: a fictional, luxury space-travel booking system whose source code is publicly available on GitHub. Rather than show Bob as throwaway snippets and discrete feature demonstration, it's important to realize the full end-to-end journey that a customer will experience in working with the service. Therefore, this hands-on material will put you to work using a unified, production-style codebase from start to finish. It is the consistent backdrop against which each stage of the AI maturity curve comes to life.
 
 Galaxium Travels follows a familiar full-stack shape:

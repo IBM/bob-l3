@@ -746,10 +746,6 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <h2 id="index-v-environment-galaxium-travels"><strong>v. Environment: Galaxium Travels</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCB6f2CRCCpcJ8TMpgH8Dd33T8D3">Chapter 1: Demo Application: Galaxium Travels [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> walks through the demo scenario that ties the hands-on modules together. <em>[2 min]</em></p>
-</blockquote>
 <p>For the purposes of the hands-on materials and your untaking in building trust with IBM Bob, you'll be making use of the <strong>Galaxium Travels</strong> application and code base: a fictional, luxury space-travel booking system whose source code is publicly available on GitHub. Rather than show Bob as throwaway snippets and discrete feature demonstration, it's important to realize the full end-to-end journey that a customer will experience in working with the service. Therefore, this hands-on material will put you to work using a unified, production-style codebase from start to finish. It is the consistent backdrop against which each stage of the AI maturity curve comes to life.</p>
 <p>Galaxium Travels follows a familiar full-stack shape:</p>
 <ul>
@@ -1840,10 +1836,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol>
 <li>
-<p>Within the Bob IDE, open the <strong>Flights.tsx</strong> file by navigating to the following directory location:</p>
-<div class="admonition warning">
-<p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>pages</code><strong>/</strong> <code>Flights.tsx</code></p>
-</div>
+<p>Within the Bob IDE, click the <strong>Explorer</strong> tab as you did previously to open the <code>galaxium-travels</code> project directory.</p>
+<ul>
+<li>Drill down into the following directory: <strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>pages</code><strong>/</strong> <code>Flights.tsx</code></li>
+<li>Double-click on the <strong>Flights.tsx</strong> file to open it within the editor</li>
+</ul>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1852,104 +1849,225 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="2">
 <li>
-<p>Click the <strong>magic wand icon</strong> near the top of the editor (or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span>) to activate literate coding mode.</p>
+<p>Scroll down the contents of <code>Flights.tsx</code> until you reach <strong>Line 43</strong>, which an empty newline before the <code>loadFlights</code> function definition.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="assist-1-1-__tabbed_3_1" name="assist-1-1-__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="assist-1-1-__tabbed_3_1">Flights.tsx <em>(Unmodified)</em></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-1-__codelineno-13-35">35</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-36">36</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-37">37</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-38">38</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-39">39</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-40">40</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-41">41</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-42">42</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-43">43</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-44">44</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-45">45</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-46">46</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-47">47</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-48">48</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-49">49</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-50">50</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-51">51</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-52">52</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-53">53</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-54">54</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-55">55</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-13-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-35" name="__codelineno-13-35"></a>    const term = searchTerm.toLowerCase();
+<a id="__codelineno-13-36" name="__codelineno-13-36"></a>    const filtered = flights.filter(
+<a id="__codelineno-13-37" name="__codelineno-13-37"></a>    (flight) =&gt;
+<a id="__codelineno-13-38" name="__codelineno-13-38"></a>        flight.origin.toLowerCase().includes(term) ||
+<a id="__codelineno-13-39" name="__codelineno-13-39"></a>        flight.destination.toLowerCase().includes(term)
+<a id="__codelineno-13-40" name="__codelineno-13-40"></a>    );
+<a id="__codelineno-13-41" name="__codelineno-13-41"></a>    setFilteredFlights(filtered);
+<a id="__codelineno-13-42" name="__codelineno-13-42"></a>}, [searchTerm, flights]);
+<a id="__codelineno-13-43" name="__codelineno-13-43"></a><span class="hll">
+</span><a id="__codelineno-13-44" name="__codelineno-13-44"></a>const loadFlights = async () =&gt; {
+<a id="__codelineno-13-45" name="__codelineno-13-45"></a>    setIsLoading(true);
+<a id="__codelineno-13-46" name="__codelineno-13-46"></a>    try {
+<a id="__codelineno-13-47" name="__codelineno-13-47"></a>    const data = await getFlights();
+<a id="__codelineno-13-48" name="__codelineno-13-48"></a>    setFlights(data);
+<a id="__codelineno-13-49" name="__codelineno-13-49"></a>    setFilteredFlights(data);
+<a id="__codelineno-13-50" name="__codelineno-13-50"></a>    } catch (error: any) {
+<a id="__codelineno-13-51" name="__codelineno-13-51"></a>    toast.error(&#39;Failed to load flights&#39;);
+<a id="__codelineno-13-52" name="__codelineno-13-52"></a>    console.error(error);
+<a id="__codelineno-13-53" name="__codelineno-13-53"></a>    } finally {
+<a id="__codelineno-13-54" name="__codelineno-13-54"></a>    setIsLoading(false);
+<a id="__codelineno-13-55" name="__codelineno-13-55"></a>    }
+<a id="__codelineno-13-56" name="__codelineno-13-56"></a>};
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>Place your cursor at the beginning of the empty <strong>Line 43</strong> and then click the <strong>magic wand icon</strong> near the top of the editor (or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span>) to activate <em>Literate Coding</em> mode.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="3">
-<li>
-<p>A bar will at the bottom-center of the UI with two arrows, <strong>Clear All</strong> and <strong>Generate</strong>, to indicate that you have now activated literate coding mode. Treat the visible mode state and the Generate button as your primary indicators, since the exact highlight color can vary by release.</p>
-<ul>
-<li>
-<p>On <strong>line 43</strong> of <code>Flights.tsx</code>, copy and paste the following statement:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#assist-1-1-__codelineno-13-1"></a>the backend is unreliable at times. We need a retry logic here
-</code></pre></div>
-</li>
-<li>
-<p>The text should highlight to show that the literate coding mode is active.</p>
-</li>
-<li>
-<p>Unlike the Tab Completion feature showcased in the previous section, with Literate Coding there is no need to <em>"comment out"</em> the instruction sets.</p>
-</li>
-</ul>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
 <ol start="4">
-<li>
-<p>With the instruction set now inserted at the desired location, click the <strong>Generate</strong> button.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
+<li>Next, copy and paste the following statement directly into <strong>Line 43</strong> (be sure to include the empty lines before and after as well):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#assist-1-1-__codelineno-14-1"></a>// The backend is unreliable at times. We need a retry logic here.
+</code></pre></div></li>
 </ol>
 <hr />
 <ol start="5">
 <li>
-<p>A <strong><em>diff</em> view</strong> will render in-line at the insertion point.</p>
+<p>Yellow-highlighted text will appear in-line with the code after pasting. Take note of the two Literate Coding options that have now appeared just below the highlighted text:</p>
 <ul>
-<li>
-<p>Code that IBM Bob is proposing to <em>remove</em> will be highlighted in red.</p>
-</li>
-<li>
-<p>Code that IBM Bob is proposing to <em>add</em> will be highlighted in a contrasting color. With some builds of the Bob IDE it may be highlighted in yellow, in other versions it may show as green — the key thing is that it is <em>not</em> red.</p>
-</li>
-<li>
-<p>Review the on-screen <em>diff</em> carefully before <strong>accepting</strong> the proposed changes. Note that your generated code may differ slightly from the code documented here.</p>
-</li>
+<li><strong>Clear All</strong>: selecting this option will disable Literate Coding on this code insert</li>
+<li><strong>Generate</strong>: selecting this option will pass the instruction to IBM Bob for code generation and modification</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="assist-1-1-__tabbed_3_1" name="assist-1-1-__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="assist-1-1-__tabbed_3_1">Flights.tsx</label></div>
+<p>Click the <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> as a shortcut).</p>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>
+<p>A <strong><em>diff</em> view</strong> will render in-line at the code insertion point.</p>
+<ul>
+<li>Code that IBM Bob is proposing to <em>remove</em> will be highlighted in red</li>
+<li>Code that IBM Bob is proposing to <em>add</em> will be highlighted in green</li>
+</ul>
+<p>You may use the <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> and <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> arrows to cycle through all proposed code block changes. In this example, there are two such code blocks. You may inspect them and modify them individually, or even revert back all changes by clicking the <em>Undo All</em> button.</p>
+<p>Click the <strong>Accept All</strong> button to confirm Bob's recommendations and modify the <code>Flights.tsx</code> file.</p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>After confirming the <em>Literate Coding</em> generative AI recommendations, the file should look similar to the following.</p>
+<p>Cycle through the two tabs within this documentation to compare the <em>Modified</em> and <em>Unmodified</em> versions of the same relative code blocks.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="assist-1-1-__tabbed_4_1" name="assist-1-1-__tabbed_4" type="radio" /><input id="assist-1-1-__tabbed_4_2" name="assist-1-1-__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="assist-1-1-__tabbed_4_1">Flights.tsx <em>(Modified)</em></label><label for="assist-1-1-__tabbed_4_2">Flights.tsx <em>(Unmodified)</em></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-1-__codelineno-14-57">57</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-14-58">58</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-14-59">59</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-14-60">60</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-14-61">61</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-14-62">62</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-14-63">63</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-14-64">64</a></span>
-<span class="normal"><a href="#assist-1-1-__codelineno-14-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-57" name="__codelineno-14-57"></a>if (retryCount &lt; MAX_RETRIES) {
-<a id="__codelineno-14-58" name="__codelineno-14-58"></a>    // Retry after delay
-<a id="__codelineno-14-59" name="__codelineno-14-59"></a>    toast.error(&#39;Failed to load flights. Retrying... (${retryCount + 1}/${MAX_RETRIES})&#39;);
-<a id="__codelineno-14-60" name="__codelineno-14-60"></a>    await new Promise(resolve =&gt; setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
-<a id="__codelineno-14-61" name="__codelineno-14-61"></a>    return loadFlights(retryCount + 1);
-<a id="__codelineno-14-62" name="__codelineno-14-62"></a>} else {
-<a id="__codelineno-14-63" name="__codelineno-14-63"></a>    toast.error(&#39;Failed to load flights after multiple attempts&#39;);
-<a id="__codelineno-14-64" name="__codelineno-14-64"></a>    console.error(error);
-<a id="__codelineno-14-65" name="__codelineno-14-65"></a>}
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-1-__codelineno-15-35">35</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-36">36</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-37">37</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-38">38</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-39">39</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-40">40</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-41">41</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-42">42</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-43">43</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-44">44</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-45">45</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-46">46</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-47">47</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-48">48</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-49">49</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-50">50</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-51">51</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-52">52</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-53">53</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-54">54</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-55">55</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-56">56</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-57">57</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-58">58</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-59">59</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-60">60</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-61">61</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-15-62">62</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-35" name="__codelineno-15-35"></a>    const term = searchTerm.toLowerCase();
+<a id="__codelineno-15-36" name="__codelineno-15-36"></a>    const filtered = flights.filter(
+<a id="__codelineno-15-37" name="__codelineno-15-37"></a>    (flight) =&gt;
+<a id="__codelineno-15-38" name="__codelineno-15-38"></a>        flight.origin.toLowerCase().includes(term) ||
+<a id="__codelineno-15-39" name="__codelineno-15-39"></a>        flight.destination.toLowerCase().includes(term)
+<a id="__codelineno-15-40" name="__codelineno-15-40"></a>    );
+<a id="__codelineno-15-41" name="__codelineno-15-41"></a>    setFilteredFlights(filtered);
+<a id="__codelineno-15-42" name="__codelineno-15-42"></a>}, [searchTerm, flights]);
+<a id="__codelineno-15-43" name="__codelineno-15-43"></a>
+<a id="__codelineno-15-44" name="__codelineno-15-44"></a><span class="hll">const loadFlightsWithRetry = async (retries: number = 3, delay: number = 1000): Promise&lt;Flight[]&gt; =&gt; {
+</span><a id="__codelineno-15-45" name="__codelineno-15-45"></a><span class="hll">    try {
+</span><a id="__codelineno-15-46" name="__codelineno-15-46"></a><span class="hll">    return await getFlights();
+</span><a id="__codelineno-15-47" name="__codelineno-15-47"></a><span class="hll">    } catch (error: any) {
+</span><a id="__codelineno-15-48" name="__codelineno-15-48"></a><span class="hll">    if (retries &lt;= 1) {
+</span><a id="__codelineno-15-49" name="__codelineno-15-49"></a><span class="hll">        throw error;
+</span><a id="__codelineno-15-50" name="__codelineno-15-50"></a><span class="hll">    }
+</span><a id="__codelineno-15-51" name="__codelineno-15-51"></a><span class="hll">    await new Promise((resolve) =&gt; setTimeout(resolve, delay));
+</span><a id="__codelineno-15-52" name="__codelineno-15-52"></a><span class="hll">    return loadFlightsWithRetry(retries - 1, delay * 2);
+</span><a id="__codelineno-15-53" name="__codelineno-15-53"></a><span class="hll">    }
+</span><a id="__codelineno-15-54" name="__codelineno-15-54"></a><span class="hll">};
+</span><a id="__codelineno-15-55" name="__codelineno-15-55"></a>
+<a id="__codelineno-15-56" name="__codelineno-15-56"></a>const loadFlights = async () =&gt; {
+<a id="__codelineno-15-57" name="__codelineno-15-57"></a>    setIsLoading(true);
+<a id="__codelineno-15-58" name="__codelineno-15-58"></a>    try {
+<a id="__codelineno-15-59" name="__codelineno-15-59"></a><span class="hll">    const data = await loadFlightsWithRetry();
+</span><a id="__codelineno-15-60" name="__codelineno-15-60"></a>    setFlights(data);
+<a id="__codelineno-15-61" name="__codelineno-15-61"></a>    setFilteredFlights(data);
+<a id="__codelineno-15-62" name="__codelineno-15-62"></a>    } catch (error: any) {
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#assist-1-1-__codelineno-16-35">35</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-36">36</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-37">37</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-38">38</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-39">39</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-40">40</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-41">41</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-42">42</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-43">43</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-44">44</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-45">45</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-46">46</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-47">47</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-48">48</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-49">49</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-50">50</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-51">51</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-52">52</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-53">53</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-54">54</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-55">55</a></span>
+<span class="normal"><a href="#assist-1-1-__codelineno-16-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-35" name="__codelineno-16-35"></a>    const term = searchTerm.toLowerCase();
+<a id="__codelineno-16-36" name="__codelineno-16-36"></a>    const filtered = flights.filter(
+<a id="__codelineno-16-37" name="__codelineno-16-37"></a>    (flight) =&gt;
+<a id="__codelineno-16-38" name="__codelineno-16-38"></a>        flight.origin.toLowerCase().includes(term) ||
+<a id="__codelineno-16-39" name="__codelineno-16-39"></a>        flight.destination.toLowerCase().includes(term)
+<a id="__codelineno-16-40" name="__codelineno-16-40"></a>    );
+<a id="__codelineno-16-41" name="__codelineno-16-41"></a>    setFilteredFlights(filtered);
+<a id="__codelineno-16-42" name="__codelineno-16-42"></a>}, [searchTerm, flights]);
+<a id="__codelineno-16-43" name="__codelineno-16-43"></a><span class="hll">
+</span><a id="__codelineno-16-44" name="__codelineno-16-44"></a>const loadFlights = async () =&gt; {
+<a id="__codelineno-16-45" name="__codelineno-16-45"></a>    setIsLoading(true);
+<a id="__codelineno-16-46" name="__codelineno-16-46"></a>    try {
+<a id="__codelineno-16-47" name="__codelineno-16-47"></a>    const data = await getFlights();
+<a id="__codelineno-16-48" name="__codelineno-16-48"></a>    setFlights(data);
+<a id="__codelineno-16-49" name="__codelineno-16-49"></a>    setFilteredFlights(data);
+<a id="__codelineno-16-50" name="__codelineno-16-50"></a>    } catch (error: any) {
+<a id="__codelineno-16-51" name="__codelineno-16-51"></a>    toast.error(&#39;Failed to load flights&#39;);
+<a id="__codelineno-16-52" name="__codelineno-16-52"></a>    console.error(error);
+<a id="__codelineno-16-53" name="__codelineno-16-53"></a>    } finally {
+<a id="__codelineno-16-54" name="__codelineno-16-54"></a>    setIsLoading(false);
+<a id="__codelineno-16-55" name="__codelineno-16-55"></a>    }
+<a id="__codelineno-16-56" name="__codelineno-16-56"></a>};
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="6">
-<li>
-<p>If everything looks fine, press <strong>Accept All</strong> to confirm the proposed code changes.</p>
-<ul>
-<li>
-<p>All red lines are automatically removed and the new (color-highlighted) lines are written into the file.</p>
-</li>
-<li>
-<p>This particular change may not produce anything visible within the running app — and that is by design. The point is to watch targeted code generation happen <em>in context</em> against real code.</p>
-</li>
-</ul>
-<p><p align="left">
+</p>
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
+<hr />
+<p>This particular change will not produce anything visible within the running application that you can test via the mocked-up website.</p>
+<p>The point is to watch <strong>targeted code generation</strong> happen <em>in context</em> against real code, at which Bob has performed brilliantly.</p>
+<div class="admonition tip">
+<p class="admonition-title">BEFORE YOU MOVE ON</p>
+<p>You can continue to tinker with this if you wish— but be mindful that changes you make and redeploy within the application will impact the website we are building. If you make changes, don't save them to the project directory code (and always be mindful of how many Bob tokens you are consuming and have remaining. Your account's token budget will only reset monthly for IBMers. Trial accounts will expire once the token budget is exhausted.</p>
+</div>
 <h2 id="assist-1-1-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>
@@ -1979,10 +2097,6 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <h2 id="delegate-2-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCJFMppc4M7DPG7TC3h73QpdmB3j">Chapter 2.3: The Agentic Sidebar [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> showcases how to work with Bob's agentic chat. <em>[5 min]</em></p>
-</blockquote>
 <p>All work you have performed across the hands-on lab so far has been <em>inline</em> coding modifications: IBM Bob performing work at the exact spot your cursor sits. Bob's <strong>Agentic Sidebar</strong> functionality is a different proposition altogether. It is the primary interface for complex, multi-step work. It also enables Bob to:</p>
 <ul>
 <li>Read through files</li>
@@ -1993,15 +2107,36 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <h2 id="delegate-2-1-iii-the-agentic-sidebar"><strong>iii. The Agentic Sidebar</strong></h2>
 <hr />
-<p>Where the Next Edit Prediction and Literate Coding assist functionality that was showcased in the previous module required your direct input— keystroke by keystroke —the <strong>Agentic Sidebar</strong> allows you hand over and delegate entire objectives (and very complex workflows) with a single request. It is the most productive way to work with Bob. The point at which you have sufficient trust and confidence in Bob to faithfully execute this work is where the AI partnership truly begins, further progressing you along the AI Maturity Curve journey.</p>
-<div class="admonition note">
-<p class="admonition-title">UNDERSTANDING THE VARIOUS <em>MODES</em></p>
-<p>The agentic sidebar offers several <strong>modes</strong>, each tuned for a specific phase of development and code lifecycle management.</p>
-<p>For substantial feature work, the recommended workflow is a deliberate sequence:
-</br><strong>Plan mode</strong> → <strong>review</strong> → <strong>new conversation</strong> → <strong>Code mode</strong></p>
-</div>
-<p>Each step of this sequence (from plan, review, converse, and code) exists deliberately as part of a methodical workflow. Before going hands-on with the agentic sidebar, it's worth taking a moment first to explore the "sweet spot" use cases for each mode.</p>
+<p>Unlike the <em>Literate Coding</em> functionality that was showcased in the previous module (which required your direct input - keystroke by keystroke), the <strong>Agentic Sidebar</strong> allows you hand over and delegate entire objectives (and very complex workflows) with a single request. It is the most productive way to work with Bob. The point at which you have sufficient trust and confidence in Bob to faithfully execute this work is where the AI partnership truly begins, further progressing you along the AI Maturity Curve journey.</p>
 <hr />
+<p><strong>UNDERSTANDING THE VARIOUS MODES</strong></p>
+<p>The agentic sidebar offers several <strong>modes</strong>, each tuned for a specific phase of development and code lifecycle management.</p>
+<table>
+<thead>
+<tr>
+<th>MODE</th>
+<th>PURPOSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Plan Mode</strong></td>
+<td>Design, architecture, technical specifications, and breaking down problems into sequential workflows — all performed <strong>without</strong> making any code changes.</td>
+</tr>
+<tr>
+<td><strong>Agent Mode</strong></td>
+<td>Writing, modifying, and refactoring code; implementation of new features; and fixing bugs. This mode <strong>will</strong> actively make code changes (with your approval.)</td>
+</tr>
+<tr>
+<td><strong>Ask Mode</strong></td>
+<td>A read-only, explanation-focused mode best suited for understanding code, answering questions, and performing analysis <strong>without</strong> making any code changes.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">IBM BOB v2.0</p>
+<p>Previous versions (before the release of v2.0) offered a <em>Code mode</em> and <em>Advanced mode</em> — these two have now been consolidated into a single <em>Agent mode</em>, which covers all code writing and modification work within a single mode. The <em>Ask mode</em> is a brand new addition post-v2.0 with features and capabilities that are still under development at the time of this publication.</p>
+</div>
 <h2 id="delegate-2-1-iv-plan-mode"><strong>iv. Plan Mode</strong></h2>
 <hr />
 <p><strong>THINK BEFORE BUILDING</strong></p>
@@ -2017,19 +2152,19 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p class="admonition-title">RESPONSIBILITY AS A DEVELOPER AND END-USER</p>
 <p><strong>Read the plans.</strong> To re-emphasize (and this is true across all LLMs): human-in-the-loop review is the single most important quality gate in any agentic workflow. The quality of the final implementation is directly tied to the quality of the plan you approve.</p>
 </div>
-<h2 id="delegate-2-1-vi-code-mode"><strong>vi. Code Mode</strong></h2>
+<h2 id="delegate-2-1-vi-agent-mode"><strong>vi. Agent Mode</strong></h2>
 <hr />
 <p><strong>IMPLEMENT APPROVED PLANS</strong></p>
-<p>In <strong>Code mode</strong>, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
-<p>Once the plan is reviewed and approved, the implementation happens withinin a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions.</p>
+<p>In <strong>Agent mode</strong>, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
+<p>Once the plan is reviewed and approved, the implementation happens within a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions.</p>
 <p>For example, the following two <em>paths</em> specify contextual details about a (hypothethical) implementation and architecture plan.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#delegate-2-1-__codelineno-0-1"></a>@/path/to/implementation-plan.md
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#delegate-2-1-__codelineno-0-2"></a>@/path/to/architecture-plan.md
 </code></pre></div>
-<p>The process for "switching" into Code mode is straightforward and simple— and you'll have the opportunity to practice this yourself in the following hands-on steps — for reference:</p>
+<p>The process for "switching" into Agent mode is straightforward and simple— and you'll have the opportunity to practice this yourself in the following hands-on steps —but for shorthand reference:</p>
 <ul>
-<li>Start a new conversation</li>
-<li>Select <strong>Code</strong> from the mode selector</li>
+<li>Open the Agentic Sidebar</li>
+<li>Select <strong>Agent</strong> from the mode selector</li>
 <li><em>Optionally</em> reference any relevant planning documents or context with <code>@/path/to/file</code></li>
 <li>Send the implementation request to Bob, which will carry out the task</li>
 </ul>
@@ -2065,10 +2200,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </tbody>
 </table>
 <p>The convenience of full auto-approval comes at the trade-off of escalating exposure risk. If autonomy is dialed up to the highest degree, Bob will be able to run arbitrary Terminal commands without human review — reducing the management overhead on human users, but potentially introducing mistakes into a plan that can propagate unchecked. For most work, a hybrid and balanced posture is the sensible default — auto-approve file reads and writes, but require confirmation before command execution.</p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">AUTO-APPROVE PERMISSIONS</p>
 <p>Set auto-approval in Bob's settings panel according to the sensitivity of the project and the trust you place in the approved plan.</p>
-</blockquote>
-<hr />
+<p><strong>Auto-approve Permissions</strong> can be set for specific functions and features, including: Read, Edit, Execute, MCP, Skill, Todo, Subtask, Subagent, and Mode switching.</p>
+</div>
 <h2 id="delegate-2-1-viii-referencing-files"><strong>viii. Referencing files</strong></h2>
 <hr />
 <p><strong>CONTEXTUALIZED MENTIONS</strong></p>
@@ -2104,22 +2240,19 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <h2 id="delegate-2-1-ix-key-takeaways"><strong>ix. Key takeaways</strong></h2>
 <hr />
 <ul>
-<li>The agentic sidebar is Bob's most capable interface for complex, multi-file features.</li>
+<li>IBM Bob's Agentic Sidebar is the service's most capable interface for complex, multi-file features.</li>
 <li>Always begin substantial work in <strong>Plan mode</strong> to define a specification before any code is written.</li>
 <li><strong>Read the generated plans in full</strong>, as these define exactly what Bob will build.</li>
-<li>Start a <strong>new conversation</strong> before switching to Code mode, to keep the context window clean and focused.</li>
+<li>Start a <strong>new conversation</strong> before switching to Agent mode, to keep the context window clean and focused.</li>
 <li>Use <strong>context mentions</strong> (<code>@/path/to/file</code>) to carry the planning documents into the implementation conversation.</li>
 <li>Set <strong>auto-approval</strong> deliberately, according to the sensitivity of the project and the complexity of the task.</li>
-<li><strong>Plan → review → new conversation → Code</strong> is the standard pattern for feature development with Bob and a discipline that ensures AI delegation remains safe.</li>
+<li><strong>Plan → review → new conversation → Agent</strong> is the standard pattern for feature development with Bob and a discipline that ensures AI delegation remains safe.</li>
 </ul>
 <p>In the following section, you will apply this deeper understanding of the agentic sidebar using Bob to further enrich the Galaxium Travels application.</p></section><section class="print-page" id="delegate-2-2"><p><strong>MODULE 2 | DELEGATE</strong></p>
 <h1 id="delegate-2-2-applying-agentic-modes"><strong>APPLYING AGENTIC MODES</strong></h1>
 <hr />
 <h2 id="delegate-2-2-i-why-this-matters"><strong>i. Why this matters</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCJFMppc4M7DPG7TC3h73QpdmB3j">Chapter 2.3: The Agentic Sidebar [IBM Bob L3]</a></p>
-</blockquote>
 <p>It's now time to apply the full <strong>Plan → review → new conversation → Code</strong> workflow towards a set of Galaxium Travels features that cut across the frontend, the backend, and the database of the application. A truly comprehensive cross-section of the application architecture will need to be modified — and thankfully, IBM Bob is up to the challenge.</p>
 <p>You are going to give Galaxium Travels end-users three <em>tiers</em> of seating options to select from with booking their extraplanetary tours: <strong>Economy, Business, and Galaxium class.</strong> Throughout this process, take note of two things: first, the increased weighting placed on IBM Bob for <em>execution</em> of the requested tasks; and second, the heightened importance for the user (you) in <em>understanding and reviewing the plan of action</em> that Bob's agentic AI processes will act upon.</p>
 <p><a class="glightbox" href="../delegate/_attachments/Module-2-Delegate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../delegate/_attachments/Module-2-Delegate.png" /></a></p>
@@ -2133,12 +2266,16 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p>As discussed already, the <strong>agentic sidebar</strong> is Bob's most capable interface: the place it can read files, reason across the whole codebase, ask clarifying questions, and implement a new feature end-to-end.</p>
 <p>You will use multiple modes when creating new features in the Galaxium Travels application. Each mode is designed for a specific phase of development. Let's put it to work adding seat classes to Galaxium Travels.</p>
 <ul>
-<li>Begin, as always, by <em>planning</em>: letting Bob draft the implementation plan with us before any code is written.</li>
-<li>Near the bottom of the agentic sidebar, expand the mode pop-up by pressing the blue <strong>Code</strong> button.
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1a91fba1-bd5b-4376-8691-c66e0777ece5/File_ef068e8eed30440bb7413bb30658d940_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1a91fba1-bd5b-4376-8691-c66e0777ece5/File_ef068e8eed30440bb7413bb30658d940_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
+<li>Begin, as always, by <em>planning</em>: letting Bob draft the implementation plan with us before any code is written</li>
+<li>Near the bottom of the agentic sidebar, expand the mode pop-up by pressing the <strong>Mode</strong> toggle</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">HOW TO TOGGLE DIFFERENT AGENTIC MODES</p>
+<p>The label assigned to the <strong>Mode toggle</strong> button will change to reflect the name of the mode that the Agentic Sidebar currently has active. For example, if in the <em>Agent</em> mode, the toggle button will read as <em>Agent</em>. For the sake of clarity, when instructing you to change the Agentic Mode type, this documentation will refer to this toggle button as the <strong>Mode toggle</strong>.</p>
+</div>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1a91fba1-bd5b-4376-8691-c66e0777ece5/File_ef068e8eed30440bb7413bb30658d940_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1a91fba1-bd5b-4376-8691-c66e0777ece5/File_ef068e8eed30440bb7413bb30658d940_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
 </li>
 </ol>
 <hr />
@@ -2194,10 +2331,12 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </ol>
 <hr />
 <ol start="6">
-<li>With the prompt entered, press <strong>Send message</strong> (the purple button with the arrow).
-    <p align="left">
-    <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/114f53e0-4b87-46ab-8af7-a5e9ed4ddeac/File_c24398a8d46849ae89d36809e1527b6d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/114f53e0-4b87-46ab-8af7-a5e9ed4ddeac/File_c24398a8d46849ae89d36809e1527b6d_text_export.jpeg" alt="" width="600" /></a>
-    </p></li>
+<li>
+<p>With the prompt entered, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> or press the <strong>Send</strong> button to the right of the chat interface.</p>
+<p><p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/114f53e0-4b87-46ab-8af7-a5e9ed4ddeac/File_c24398a8d46849ae89d36809e1527b6d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/114f53e0-4b87-46ab-8af7-a5e9ed4ddeac/File_c24398a8d46849ae89d36809e1527b6d_text_export.jpeg" alt="" width="600" /></a>
+</p></p>
+</li>
 </ol>
 <hr />
 <ol start="7">
@@ -2276,8 +2415,12 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="12">
 <li>
-<p>Click the <strong>Mode</strong> button again.</p>
-<p>In the documented screenshot below, the project has already engaged <strong>Code mode</strong> (Bob automatically switched it for us after concluding the <strong>Plan mode</strong> phase).</p>
+<p>Click the <strong>Mode</strong> toggle again.</p>
+<p>In the documented screenshot below, the project has already engaged <strong>Agent mode</strong> (Bob automatically switched it for us after concluding the <strong>Plan mode</strong> phase).</p>
+<details class="quote">
+<summary>HOW TO TOGGLE DIFFERENT AGENTIC MODES</summary>
+<p>The label assigned to the <strong>Mode toggle</strong> button will change to reflect the name of the mode that the Agentic Sidebar currently has active. For example, if in the <em>Agent</em> mode, the toggle button will read as <em>Agent</em>. For the sake of clarity, when instructing you to change the Agentic Mode type, this documentation will refer to this toggle button as the <strong>Mode toggle</strong>.</p>
+</details>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/718e49aa-a1a7-46e0-a4d5-2010b154dd36/File_e31b89200b6b470e861ede8e287d9b84_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/718e49aa-a1a7-46e0-a4d5-2010b154dd36/File_e31b89200b6b470e861ede8e287d9b84_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -2296,7 +2439,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="14">
 <li>
-<p>Click the <strong>Code mode</strong> button to confirm that the Bob IDE has indeed activated the appropriate mode.</p>
+<p>Verify that the Agentic Sidebar has been set to <strong>Agent mode</strong> before continuing.</p>
+<details class="quote">
+<summary>HOW TO TOGGLE DIFFERENT AGENTIC MODES</summary>
+<p>The label assigned to the <strong>Mode toggle</strong> button will change to reflect the name of the mode that the Agentic Sidebar currently has active. For example, if in the <em>Agent</em> mode, the toggle button will read as <em>Agent</em>. For the sake of clarity, when instructing you to change the Agentic Mode type, this documentation will refer to this toggle button as the <strong>Mode toggle</strong>.</p>
+</details>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/18ffaefc-b92f-4601-bb8e-6be039421a1f/File_f3f8d23ba1d9428982df4c5df8a221f1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/18ffaefc-b92f-4601-bb8e-6be039421a1f/File_f3f8d23ba1d9428982df4c5df8a221f1_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -2305,7 +2452,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="15">
 <li>
-<p>In the <strong>Chat</strong> window, type the following:</p>
+<p>In the <strong>Agentic Sidebar</strong> chat window, type the following:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#delegate-2-2-__codelineno-3-1"></a>Build this feature based on @
 </code></pre></div>
 <p align="left">
@@ -2347,7 +2494,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="19">
 <li>
-<p>With the prompt now complete, <strong>click</strong> the purple arrow button (<strong>Send message</strong>).</p>
+<p>With the prompt now complete, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> or press <strong>Send</strong>.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c04fb26d-57c4-4ee1-8b77-7687c9c2ed1a/File_85917d33b36240fa94315a43ae4da16e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c04fb26d-57c4-4ee1-8b77-7687c9c2ed1a/File_85917d33b36240fa94315a43ae4da16e_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -2585,7 +2732,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <h2 id="delegate-2-2-iii-key-takeaways"><strong>iii. Key takeaways</strong></h2>
 <hr />
-<p>It appears like the new feature implementations were successfully implemented by Bob's agentic sidebar! Fully in accordance with the full <strong>Plan → review → new conversation → Code</strong> workflow best practices we established earlier.</p>
+<p>It appears like the new feature implementations were successfully implemented by Bob's agentic sidebar! Fully in accordance with the full <strong>Plan → review → new conversation → Agent</strong> workflow best practices we established earlier.</p>
 <p>In the following section (<a href="https://ibm.github.io/bob-l3/tailor/3-1.md" target="_blank"><strong>Module 3 | Tailor</strong></a>), you will explore and go hands-on with topics covering ways to "teach" Bob your organization's particular codebase, encode that understanding with an organization's standards and rules, and shape Bob's behavior using Custom Modes.</p></section><h1 class='nav-section-title-end'>Ended: 2. Delegate</h1>
                         <h1 class='nav-section-title' id='section-3-tailor'>
                             3. Tailor <a class='headerlink' href='#section-3-tailor' title='Permanent link'>↵</a>
@@ -2608,10 +2755,6 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </div>
 <h2 id="tailor-3-1-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCQWPcGR9g87mG9FWcPXR6TfpChj">Chapter 3.1: init Command [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how Bob's init command summarizes a large, complex codebase. <em>[2 min]</em></p>
-</blockquote>
 <p>Large language models (LLM) are <strong>stateless</strong> and therefore every new conversation, without intervening strategies or techniques, will begin with no memory of the last interaction. Left to its own devices, Bob would need to rediscover your codebase from scratch at the start of each interaction — an inefficient approach for a small project and an impractically cumbersome approach for a large one.</p>
 <p>The <strong><code>/init</code></strong> command solves this challenge. It scans your project and generates a structured summary that Bob loads as <em>persistent context</em> for every new conversation. The <code>/init</code> command thus becomes the primary mechanism for giving Bob durable knowledge of your project's structure, conventions, and code. All without needing to re-read every file with each new invocation.</p>
 <hr />
@@ -2774,10 +2917,6 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <hr />
 <h2 id="tailor-3-2-i-encoding-bob-with-your-standards"><strong>i. Encoding Bob with your standards</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how defined rule sets enforce consistency and cut down on repeated instructions. <em>[3 min]</em></p>
-</blockquote>
 <p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>.</p>
 <p>Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
 <hr />
@@ -2845,11 +2984,6 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <p>The control that you manually exercised in <strong><em>Assist</em></strong>— which you then later entrusted with more autonomy to Bob in the <strong><em>Delegate</em></strong> phase —now becomes a durable, shared, and reviewable artifact in the <strong><em>Tailor</em></strong> phase of the journey.</p>
 </div>
 <h2 id="tailor-3-2-iv-hands-on-setting-standards-with-bob-rules"><strong>iv. Hands-on: setting standards with Bob Rules</strong></h2>
-<hr />
-<blockquote>
-<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCGHgh4QqJPWVGf2cgGpgM3hp6Md">Chapter 3.2: Bob Rules [IBM Bob L3]</a></p>
-</blockquote>
-<p>In the steps ahead, you will create a rules file for <em>Galaxium Travels</em> and configure a set three standing rules. Afterwards, you will test and validate the efficacy of these rules by initiating a fresh conversation with Bob.</p>
 <hr />
 <ol>
 <li>
@@ -3092,10 +3226,6 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <hr />
 <h2 id="tailor-3-3-i-shaping-bob-to-every-role"><strong>i. Shaping Bob to every role</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC46497j6QjGF8QTV4HDB3fgWJ4G">Chapter 3.3: Custom Modes [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> shows how to use Bob's Modes for custom workflows. <em>[4 min]</em></p>
-</blockquote>
 <p>IBM Bob's standardized, built-in Modes— <em>Code</em>, <em>Plan</em>, <em>Ask</em>, and <em>Advanced</em> —cover the most commonly found workflows and use cases that IBM's clients will encounter. But when pushing new frontiers and working at the scale of enterprise, there will inevitably be edge cases and bespoke cases requiring a tailored solution.</p>
 <p><strong>Custom Modes</strong> allow clients to define their own specialized agentic workflows with Bob: it combines a role definition, behavioral instructions, and a deterministic set of permitted tools. The net result for Bob clients is that, regardless of whether the end-user happens to be a product manager or a senior engineer, the Custom Mode "version" (persona) of Bob they interact with has been pre-tuned and shaped to how they actually work.</p>
 <hr />
@@ -3474,12 +3604,9 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <p>Across this module, you will first look under the hood at the <strong>context window</strong> mechanics that make Bob tick. Arguably, the context window might be the single biggest factor in keeping Bob's output at the highest quality across the most ambitious tasks. The habits and best practices that developers (you) adopt in maximizing the utility of this resource can have tremendous impacts on the quality of work that Bob is able to perform.</p>
 <p>Afterwards, you'll take Bob out of the IDE entirely and into the Terminal console: <strong>Bob Shell</strong>. This programmatic interface for Bob unlocks automation, scripting, and parallelized workstreams.</p>
 <p>Finally, you will experiment with connecting Bob to your existing systems through <strong>Model Context Protocol <em>(MCP)</em></strong>, the open source standard that lets Bob interact directly with the external tools your teams use daily. <em>Governance</em> remains paramount at this stage. As the human-in-the-loop and final arbiter of control, you must decide what context Bob carries, what credentials it holds, and which tools it is permissioned to reach.</p>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DC4hp8R9Pm8mTGcFWTGGBRhjXqGG">Chapter 4.1: Context Window [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the details of Bob's context window. <em>[4 min]</em></p>
-</blockquote>
 <p><a class="glightbox" href="../scale/_attachments/Module-4-Scale.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../scale/_attachments/Module-4-Scale.png" /></a></p>
 <div class="admonition note">
+<p class="admonition-title">AI MATURITY CURVE</p>
 <p>By the end of <a href="https://ibm.github.io/bob-l3/tailor/3-3/" target="_blank"><strong>Module 3 | Tailor</strong></a>, IBM Bob knew nearly every facet about your project, adhered to your organization's coding standards, and had adapted itself to each role on your team — and all of that was committed to the repository, shared, and automatically enforced. The final stage along the <strong>AI Maturity Curve</strong> journey reflects the two things that separate a <em>promising demo</em> from a <em>dependable enterprise partner</em>: staying <em>reliable</em> on the largest, longest-running workloads; ultimately, <em>connecting</em> to everything else that your organization already runs today.</p>
 <p>In other words, addressing the enterprise challenges of <strong>Scale and Extensibility</strong>.</p>
 </div>
@@ -3600,10 +3727,6 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <h2 id="scale-4-2-i-moving-beyond-the-ide"><strong>i. Moving beyond the IDE</strong></h2>
 <hr />
 <p>Everything so far has lived inside the IDE. <strong>Bob Shell</strong> brings the same core capabilities to a terminal — a keyboard-driven, command-line form factor installed separately from the VS Code extension and runnable in any standard terminal. For developers who live in the terminal, it unlocks workflows that are difficult or impossible in the IDE: headless automation, scripting, and running several Bob instances in parallel. This is what taking Bob to enterprise scale looks like in practice.</p>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCQ74Gg3VjCHmGCG7D4JDmXppWFj">Chapter 4.2: Bob Shell [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> showcases how to work with Bob's shell and shell commands. <em>[4 min]</em></p>
-</blockquote>
 <div class="admonition note">
 <p class="admonition-title">ADDITIONAL DOCUMENTATION</p>
 <p><strong>Heads-up:</strong> completing this lesson may require additional guidance from IBM Bob's full product documentation to install Bob Shell. Detailed documentation is available from <strong><a href="https://bob.ibm.com/docs/shell/getting-started/install-and-setup?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">IBM.com</a></strong></p>
@@ -3977,10 +4100,6 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <h2 id="scale-4-3-i-connecting-everything-back-to-bob"><strong>i. Connecting everything back to Bob</strong></h2>
 <hr />
 <p>The <strong>Model Context Protocol (MCP)</strong> is what connects IBM Bob to the rest of your business and the systems your organization spans: a standardized interface that lets LLM-powered applications reach external tools, services, and data sources through one consistent integration layer. Any external service that can provide an MCP server can potentially serve as another endpoint for Bob to work with. This is the final (and most consequential) step in scaling Bob across an enterprise- making Bob a participant in the systems your teams already use —and serves as an effective capstone to the work you've performed thus far.</p>
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCDRFd2HQdRc3G4WB866f2HHVQCG">Chapter 5.1: MCP [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> digs into the Model Context Protocol (MCP) and how it relates to Bob. <em>[5 min]</em></p>
-</blockquote>
 <p><a class="glightbox" href="../scale/_attachments/Module-4-Scale.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../scale/_attachments/Module-4-Scale.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">THE FULL JOURNEY ALONG THE AI MATURITY CURVE</p>

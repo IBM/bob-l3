@@ -383,8 +383,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vi-code-mode" class="md-nav__link">
-    vi. Code Mode
+  <a href="#vi-agent-mode" class="md-nav__link">
+    vi. Agent Mode
   </a>
   
 </li>
@@ -653,8 +653,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vi-code-mode" class="md-nav__link">
-    vi. Code Mode
+  <a href="#vi-agent-mode" class="md-nav__link">
+    vi. Agent Mode
   </a>
   
 </li>
@@ -710,10 +710,6 @@
 <hr />
 <h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Watch first:</strong> <a href="https://ibm.seismic.com/Link/Content/DCJFMppc4M7DPG7TC3h73QpdmB3j">Chapter 2.3: The Agentic Sidebar [IBM Bob L3]</a></p>
-<p>Maximilian Jesch <em>(Outbound Product Manager — IBM Bob)</em> showcases how to work with Bob's agentic chat. <em>[5 min]</em></p>
-</blockquote>
 <p>All work you have performed across the hands-on lab so far has been <em>inline</em> coding modifications: IBM Bob performing work at the exact spot your cursor sits. Bob's <strong>Agentic Sidebar</strong> functionality is a different proposition altogether. It is the primary interface for complex, multi-step work. It also enables Bob to:</p>
 <ul>
 <li>Read through files</li>
@@ -724,15 +720,36 @@
 <hr />
 <h2 id="iii-the-agentic-sidebar"><strong>iii. The Agentic Sidebar</strong></h2>
 <hr />
-<p>Where the Next Edit Prediction and Literate Coding assist functionality that was showcased in the previous module required your direct input— keystroke by keystroke —the <strong>Agentic Sidebar</strong> allows you hand over and delegate entire objectives (and very complex workflows) with a single request. It is the most productive way to work with Bob. The point at which you have sufficient trust and confidence in Bob to faithfully execute this work is where the AI partnership truly begins, further progressing you along the AI Maturity Curve journey.</p>
-<div class="admonition note">
-<p class="admonition-title">UNDERSTANDING THE VARIOUS <em>MODES</em></p>
-<p>The agentic sidebar offers several <strong>modes</strong>, each tuned for a specific phase of development and code lifecycle management.</p>
-<p>For substantial feature work, the recommended workflow is a deliberate sequence:
-</br><strong>Plan mode</strong> → <strong>review</strong> → <strong>new conversation</strong> → <strong>Code mode</strong></p>
-</div>
-<p>Each step of this sequence (from plan, review, converse, and code) exists deliberately as part of a methodical workflow. Before going hands-on with the agentic sidebar, it's worth taking a moment first to explore the "sweet spot" use cases for each mode.</p>
+<p>Unlike the <em>Literate Coding</em> functionality that was showcased in the previous module (which required your direct input - keystroke by keystroke), the <strong>Agentic Sidebar</strong> allows you hand over and delegate entire objectives (and very complex workflows) with a single request. It is the most productive way to work with Bob. The point at which you have sufficient trust and confidence in Bob to faithfully execute this work is where the AI partnership truly begins, further progressing you along the AI Maturity Curve journey.</p>
 <hr />
+<p><strong>UNDERSTANDING THE VARIOUS MODES</strong></p>
+<p>The agentic sidebar offers several <strong>modes</strong>, each tuned for a specific phase of development and code lifecycle management.</p>
+<table>
+<thead>
+<tr>
+<th>MODE</th>
+<th>PURPOSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Plan Mode</strong></td>
+<td>Design, architecture, technical specifications, and breaking down problems into sequential workflows — all performed <strong>without</strong> making any code changes.</td>
+</tr>
+<tr>
+<td><strong>Agent Mode</strong></td>
+<td>Writing, modifying, and refactoring code; implementation of new features; and fixing bugs. This mode <strong>will</strong> actively make code changes (with your approval.)</td>
+</tr>
+<tr>
+<td><strong>Ask Mode</strong></td>
+<td>A read-only, explanation-focused mode best suited for understanding code, answering questions, and performing analysis <strong>without</strong> making any code changes.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">IBM BOB v2.0</p>
+<p>Previous versions (before the release of v2.0) offered a <em>Code mode</em> and <em>Advanced mode</em> — these two have now been consolidated into a single <em>Agent mode</em>, which covers all code writing and modification work within a single mode. The <em>Ask mode</em> is a brand new addition post-v2.0 with features and capabilities that are still under development at the time of this publication.</p>
+</div>
 <h2 id="iv-plan-mode"><strong>iv. Plan Mode</strong></h2>
 <hr />
 <p><strong>THINK BEFORE BUILDING</strong></p>
@@ -748,19 +765,19 @@
 <p class="admonition-title">RESPONSIBILITY AS A DEVELOPER AND END-USER</p>
 <p><strong>Read the plans.</strong> To re-emphasize (and this is true across all LLMs): human-in-the-loop review is the single most important quality gate in any agentic workflow. The quality of the final implementation is directly tied to the quality of the plan you approve.</p>
 </div>
-<h2 id="vi-code-mode"><strong>vi. Code Mode</strong></h2>
+<h2 id="vi-agent-mode"><strong>vi. Agent Mode</strong></h2>
 <hr />
 <p><strong>IMPLEMENT APPROVED PLANS</strong></p>
-<p>In <strong>Code mode</strong>, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
-<p>Once the plan is reviewed and approved, the implementation happens withinin a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions.</p>
+<p>In <strong>Agent mode</strong>, Bob has full access to file operations and command execution. It can create, modify, and run code across an entire codebase.</p>
+<p>Once the plan is reviewed and approved, the implementation happens within a <strong>new conversation</strong>. That detail is not incidental. Starting fresh clears Bob's context window, which keeps the implementation focused, prevents the earlier planning discussion from eating into the token budget, and reduces the chance of Bob conflating <em>strategizing</em> plans with <em>implementing</em> instructions. To carry the specification into the new conversation, you will need to reference the planning documents with context mentions.</p>
 <p>For example, the following two <em>paths</em> specify contextual details about a (hypothethical) implementation and architecture plan.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@/path/to/implementation-plan.md
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>@/path/to/architecture-plan.md
 </code></pre></div>
-<p>The process for "switching" into Code mode is straightforward and simple— and you'll have the opportunity to practice this yourself in the following hands-on steps — for reference:</p>
+<p>The process for "switching" into Agent mode is straightforward and simple— and you'll have the opportunity to practice this yourself in the following hands-on steps —but for shorthand reference:</p>
 <ul>
-<li>Start a new conversation</li>
-<li>Select <strong>Code</strong> from the mode selector</li>
+<li>Open the Agentic Sidebar</li>
+<li>Select <strong>Agent</strong> from the mode selector</li>
 <li><em>Optionally</em> reference any relevant planning documents or context with <code>@/path/to/file</code></li>
 <li>Send the implementation request to Bob, which will carry out the task</li>
 </ul>
@@ -796,10 +813,11 @@
 </tbody>
 </table>
 <p>The convenience of full auto-approval comes at the trade-off of escalating exposure risk. If autonomy is dialed up to the highest degree, Bob will be able to run arbitrary Terminal commands without human review — reducing the management overhead on human users, but potentially introducing mistakes into a plan that can propagate unchecked. For most work, a hybrid and balanced posture is the sensible default — auto-approve file reads and writes, but require confirmation before command execution.</p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">AUTO-APPROVE PERMISSIONS</p>
 <p>Set auto-approval in Bob's settings panel according to the sensitivity of the project and the trust you place in the approved plan.</p>
-</blockquote>
-<hr />
+<p><strong>Auto-approve Permissions</strong> can be set for specific functions and features, including: Read, Edit, Execute, MCP, Skill, Todo, Subtask, Subagent, and Mode switching.</p>
+</div>
 <h2 id="viii-referencing-files"><strong>viii. Referencing files</strong></h2>
 <hr />
 <p><strong>CONTEXTUALIZED MENTIONS</strong></p>
@@ -835,13 +853,13 @@
 <h2 id="ix-key-takeaways"><strong>ix. Key takeaways</strong></h2>
 <hr />
 <ul>
-<li>The agentic sidebar is Bob's most capable interface for complex, multi-file features.</li>
+<li>IBM Bob's Agentic Sidebar is the service's most capable interface for complex, multi-file features.</li>
 <li>Always begin substantial work in <strong>Plan mode</strong> to define a specification before any code is written.</li>
 <li><strong>Read the generated plans in full</strong>, as these define exactly what Bob will build.</li>
-<li>Start a <strong>new conversation</strong> before switching to Code mode, to keep the context window clean and focused.</li>
+<li>Start a <strong>new conversation</strong> before switching to Agent mode, to keep the context window clean and focused.</li>
 <li>Use <strong>context mentions</strong> (<code>@/path/to/file</code>) to carry the planning documents into the implementation conversation.</li>
 <li>Set <strong>auto-approval</strong> deliberately, according to the sensitivity of the project and the complexity of the task.</li>
-<li><strong>Plan → review → new conversation → Code</strong> is the standard pattern for feature development with Bob and a discipline that ensures AI delegation remains safe.</li>
+<li><strong>Plan → review → new conversation → Agent</strong> is the standard pattern for feature development with Bob and a discipline that ensures AI delegation remains safe.</li>
 </ul>
 <p>In the following section, you will apply this deeper understanding of the agentic sidebar using Bob to further enrich the Galaxium Travels application.</p>
 

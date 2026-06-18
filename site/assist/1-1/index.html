@@ -995,10 +995,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol>
 <li>
-<p>Within the Bob IDE, open the <strong>Flights.tsx</strong> file by navigating to the following directory location:</p>
-<div class="admonition warning">
-<p><strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>pages</code><strong>/</strong> <code>Flights.tsx</code></p>
-</div>
+<p>Within the Bob IDE, click the <strong>Explorer</strong> tab as you did previously to open the <code>galaxium-travels</code> project directory.</p>
+<ul>
+<li>Drill down into the following directory: <strong>/</strong><code>booking_system_frontend</code><strong>/</strong><code>src</code><strong>/</strong><code>pages</code><strong>/</strong> <code>Flights.tsx</code></li>
+<li>Double-click on the <strong>Flights.tsx</strong> file to open it within the editor</li>
+</ul>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/47057405-de4e-4a16-b733-add7692b5acb/File_2c52e62792b84d49b1699cd7054f488e_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1007,104 +1008,225 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <ol start="2">
 <li>
-<p>Click the <strong>magic wand icon</strong> near the top of the editor (or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span>) to activate literate coding mode.</p>
+<p>Scroll down the contents of <code>Flights.tsx</code> until you reach <strong>Line 43</strong>, which an empty newline before the <code>loadFlights</code> function definition.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Flights.tsx <em>(Unmodified)</em></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-35">35</a></span>
+<span class="normal"><a href="#__codelineno-13-36">36</a></span>
+<span class="normal"><a href="#__codelineno-13-37">37</a></span>
+<span class="normal"><a href="#__codelineno-13-38">38</a></span>
+<span class="normal"><a href="#__codelineno-13-39">39</a></span>
+<span class="normal"><a href="#__codelineno-13-40">40</a></span>
+<span class="normal"><a href="#__codelineno-13-41">41</a></span>
+<span class="normal"><a href="#__codelineno-13-42">42</a></span>
+<span class="normal"><a href="#__codelineno-13-43">43</a></span>
+<span class="normal"><a href="#__codelineno-13-44">44</a></span>
+<span class="normal"><a href="#__codelineno-13-45">45</a></span>
+<span class="normal"><a href="#__codelineno-13-46">46</a></span>
+<span class="normal"><a href="#__codelineno-13-47">47</a></span>
+<span class="normal"><a href="#__codelineno-13-48">48</a></span>
+<span class="normal"><a href="#__codelineno-13-49">49</a></span>
+<span class="normal"><a href="#__codelineno-13-50">50</a></span>
+<span class="normal"><a href="#__codelineno-13-51">51</a></span>
+<span class="normal"><a href="#__codelineno-13-52">52</a></span>
+<span class="normal"><a href="#__codelineno-13-53">53</a></span>
+<span class="normal"><a href="#__codelineno-13-54">54</a></span>
+<span class="normal"><a href="#__codelineno-13-55">55</a></span>
+<span class="normal"><a href="#__codelineno-13-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-35" name="__codelineno-13-35"></a>    const term = searchTerm.toLowerCase();
+<a id="__codelineno-13-36" name="__codelineno-13-36"></a>    const filtered = flights.filter(
+<a id="__codelineno-13-37" name="__codelineno-13-37"></a>    (flight) =&gt;
+<a id="__codelineno-13-38" name="__codelineno-13-38"></a>        flight.origin.toLowerCase().includes(term) ||
+<a id="__codelineno-13-39" name="__codelineno-13-39"></a>        flight.destination.toLowerCase().includes(term)
+<a id="__codelineno-13-40" name="__codelineno-13-40"></a>    );
+<a id="__codelineno-13-41" name="__codelineno-13-41"></a>    setFilteredFlights(filtered);
+<a id="__codelineno-13-42" name="__codelineno-13-42"></a>}, [searchTerm, flights]);
+<a id="__codelineno-13-43" name="__codelineno-13-43"></a><span class="hll">
+</span><a id="__codelineno-13-44" name="__codelineno-13-44"></a>const loadFlights = async () =&gt; {
+<a id="__codelineno-13-45" name="__codelineno-13-45"></a>    setIsLoading(true);
+<a id="__codelineno-13-46" name="__codelineno-13-46"></a>    try {
+<a id="__codelineno-13-47" name="__codelineno-13-47"></a>    const data = await getFlights();
+<a id="__codelineno-13-48" name="__codelineno-13-48"></a>    setFlights(data);
+<a id="__codelineno-13-49" name="__codelineno-13-49"></a>    setFilteredFlights(data);
+<a id="__codelineno-13-50" name="__codelineno-13-50"></a>    } catch (error: any) {
+<a id="__codelineno-13-51" name="__codelineno-13-51"></a>    toast.error(&#39;Failed to load flights&#39;);
+<a id="__codelineno-13-52" name="__codelineno-13-52"></a>    console.error(error);
+<a id="__codelineno-13-53" name="__codelineno-13-53"></a>    } finally {
+<a id="__codelineno-13-54" name="__codelineno-13-54"></a>    setIsLoading(false);
+<a id="__codelineno-13-55" name="__codelineno-13-55"></a>    }
+<a id="__codelineno-13-56" name="__codelineno-13-56"></a>};
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>Place your cursor at the beginning of the empty <strong>Line 43</strong> and then click the <strong>magic wand icon</strong> near the top of the editor (or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span>) to activate <em>Literate Coding</em> mode.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="3">
-<li>
-<p>A bar will at the bottom-center of the UI with two arrows, <strong>Clear All</strong> and <strong>Generate</strong>, to indicate that you have now activated literate coding mode. Treat the visible mode state and the Generate button as your primary indicators, since the exact highlight color can vary by release.</p>
-<ul>
-<li>
-<p>On <strong>line 43</strong> of <code>Flights.tsx</code>, copy and paste the following statement:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>the backend is unreliable at times. We need a retry logic here
-</code></pre></div>
-</li>
-<li>
-<p>The text should highlight to show that the literate coding mode is active.</p>
-</li>
-<li>
-<p>Unlike the Tab Completion feature showcased in the previous section, with Literate Coding there is no need to <em>"comment out"</em> the instruction sets.</p>
-</li>
-</ul>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5432d099-5b11-47f9-a082-51d3b091d26b/File_785d53ed61c64f91ab8f23c788b93847_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
 <ol start="4">
-<li>
-<p>With the instruction set now inserted at the desired location, click the <strong>Generate</strong> button.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/fe0914c5-7e42-49c1-8105-8ecdd2848ab0/File_5cc62eeb2b7f4944a980d4077d2916eb_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
+<li>Next, copy and paste the following statement directly into <strong>Line 43</strong> (be sure to include the empty lines before and after as well):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>// The backend is unreliable at times. We need a retry logic here.
+</code></pre></div></li>
 </ol>
 <hr />
 <ol start="5">
 <li>
-<p>A <strong><em>diff</em> view</strong> will render in-line at the insertion point.</p>
+<p>Yellow-highlighted text will appear in-line with the code after pasting. Take note of the two Literate Coding options that have now appeared just below the highlighted text:</p>
 <ul>
-<li>
-<p>Code that IBM Bob is proposing to <em>remove</em> will be highlighted in red.</p>
-</li>
-<li>
-<p>Code that IBM Bob is proposing to <em>add</em> will be highlighted in a contrasting color. With some builds of the Bob IDE it may be highlighted in yellow, in other versions it may show as green — the key thing is that it is <em>not</em> red.</p>
-</li>
-<li>
-<p>Review the on-screen <em>diff</em> carefully before <strong>accepting</strong> the proposed changes. Note that your generated code may differ slightly from the code documented here.</p>
-</li>
+<li><strong>Clear All</strong>: selecting this option will disable Literate Coding on this code insert</li>
+<li><strong>Generate</strong>: selecting this option will pass the instruction to IBM Bob for code generation and modification</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Flights.tsx</label></div>
+<p>Click the <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> as a shortcut).</p>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>
+<p>A <strong><em>diff</em> view</strong> will render in-line at the code insertion point.</p>
+<ul>
+<li>Code that IBM Bob is proposing to <em>remove</em> will be highlighted in red</li>
+<li>Code that IBM Bob is proposing to <em>add</em> will be highlighted in green</li>
+</ul>
+<p>You may use the <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> and <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> arrows to cycle through all proposed code block changes. In this example, there are two such code blocks. You may inspect them and modify them individually, or even revert back all changes by clicking the <em>Undo All</em> button.</p>
+<p>Click the <strong>Accept All</strong> button to confirm Bob's recommendations and modify the <code>Flights.tsx</code> file.</p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>After confirming the <em>Literate Coding</em> generative AI recommendations, the file should look similar to the following.</p>
+<p>Cycle through the two tabs within this documentation to compare the <em>Modified</em> and <em>Unmodified</em> versions of the same relative code blocks.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Flights.tsx <em>(Modified)</em></label><label for="__tabbed_4_2">Flights.tsx <em>(Unmodified)</em></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-57">57</a></span>
-<span class="normal"><a href="#__codelineno-14-58">58</a></span>
-<span class="normal"><a href="#__codelineno-14-59">59</a></span>
-<span class="normal"><a href="#__codelineno-14-60">60</a></span>
-<span class="normal"><a href="#__codelineno-14-61">61</a></span>
-<span class="normal"><a href="#__codelineno-14-62">62</a></span>
-<span class="normal"><a href="#__codelineno-14-63">63</a></span>
-<span class="normal"><a href="#__codelineno-14-64">64</a></span>
-<span class="normal"><a href="#__codelineno-14-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-57" name="__codelineno-14-57"></a>if (retryCount &lt; MAX_RETRIES) {
-<a id="__codelineno-14-58" name="__codelineno-14-58"></a>    // Retry after delay
-<a id="__codelineno-14-59" name="__codelineno-14-59"></a>    toast.error(&#39;Failed to load flights. Retrying... (${retryCount + 1}/${MAX_RETRIES})&#39;);
-<a id="__codelineno-14-60" name="__codelineno-14-60"></a>    await new Promise(resolve =&gt; setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
-<a id="__codelineno-14-61" name="__codelineno-14-61"></a>    return loadFlights(retryCount + 1);
-<a id="__codelineno-14-62" name="__codelineno-14-62"></a>} else {
-<a id="__codelineno-14-63" name="__codelineno-14-63"></a>    toast.error(&#39;Failed to load flights after multiple attempts&#39;);
-<a id="__codelineno-14-64" name="__codelineno-14-64"></a>    console.error(error);
-<a id="__codelineno-14-65" name="__codelineno-14-65"></a>}
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-35">35</a></span>
+<span class="normal"><a href="#__codelineno-15-36">36</a></span>
+<span class="normal"><a href="#__codelineno-15-37">37</a></span>
+<span class="normal"><a href="#__codelineno-15-38">38</a></span>
+<span class="normal"><a href="#__codelineno-15-39">39</a></span>
+<span class="normal"><a href="#__codelineno-15-40">40</a></span>
+<span class="normal"><a href="#__codelineno-15-41">41</a></span>
+<span class="normal"><a href="#__codelineno-15-42">42</a></span>
+<span class="normal"><a href="#__codelineno-15-43">43</a></span>
+<span class="normal"><a href="#__codelineno-15-44">44</a></span>
+<span class="normal"><a href="#__codelineno-15-45">45</a></span>
+<span class="normal"><a href="#__codelineno-15-46">46</a></span>
+<span class="normal"><a href="#__codelineno-15-47">47</a></span>
+<span class="normal"><a href="#__codelineno-15-48">48</a></span>
+<span class="normal"><a href="#__codelineno-15-49">49</a></span>
+<span class="normal"><a href="#__codelineno-15-50">50</a></span>
+<span class="normal"><a href="#__codelineno-15-51">51</a></span>
+<span class="normal"><a href="#__codelineno-15-52">52</a></span>
+<span class="normal"><a href="#__codelineno-15-53">53</a></span>
+<span class="normal"><a href="#__codelineno-15-54">54</a></span>
+<span class="normal"><a href="#__codelineno-15-55">55</a></span>
+<span class="normal"><a href="#__codelineno-15-56">56</a></span>
+<span class="normal"><a href="#__codelineno-15-57">57</a></span>
+<span class="normal"><a href="#__codelineno-15-58">58</a></span>
+<span class="normal"><a href="#__codelineno-15-59">59</a></span>
+<span class="normal"><a href="#__codelineno-15-60">60</a></span>
+<span class="normal"><a href="#__codelineno-15-61">61</a></span>
+<span class="normal"><a href="#__codelineno-15-62">62</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-35" name="__codelineno-15-35"></a>    const term = searchTerm.toLowerCase();
+<a id="__codelineno-15-36" name="__codelineno-15-36"></a>    const filtered = flights.filter(
+<a id="__codelineno-15-37" name="__codelineno-15-37"></a>    (flight) =&gt;
+<a id="__codelineno-15-38" name="__codelineno-15-38"></a>        flight.origin.toLowerCase().includes(term) ||
+<a id="__codelineno-15-39" name="__codelineno-15-39"></a>        flight.destination.toLowerCase().includes(term)
+<a id="__codelineno-15-40" name="__codelineno-15-40"></a>    );
+<a id="__codelineno-15-41" name="__codelineno-15-41"></a>    setFilteredFlights(filtered);
+<a id="__codelineno-15-42" name="__codelineno-15-42"></a>}, [searchTerm, flights]);
+<a id="__codelineno-15-43" name="__codelineno-15-43"></a>
+<a id="__codelineno-15-44" name="__codelineno-15-44"></a><span class="hll">const loadFlightsWithRetry = async (retries: number = 3, delay: number = 1000): Promise&lt;Flight[]&gt; =&gt; {
+</span><a id="__codelineno-15-45" name="__codelineno-15-45"></a><span class="hll">    try {
+</span><a id="__codelineno-15-46" name="__codelineno-15-46"></a><span class="hll">    return await getFlights();
+</span><a id="__codelineno-15-47" name="__codelineno-15-47"></a><span class="hll">    } catch (error: any) {
+</span><a id="__codelineno-15-48" name="__codelineno-15-48"></a><span class="hll">    if (retries &lt;= 1) {
+</span><a id="__codelineno-15-49" name="__codelineno-15-49"></a><span class="hll">        throw error;
+</span><a id="__codelineno-15-50" name="__codelineno-15-50"></a><span class="hll">    }
+</span><a id="__codelineno-15-51" name="__codelineno-15-51"></a><span class="hll">    await new Promise((resolve) =&gt; setTimeout(resolve, delay));
+</span><a id="__codelineno-15-52" name="__codelineno-15-52"></a><span class="hll">    return loadFlightsWithRetry(retries - 1, delay * 2);
+</span><a id="__codelineno-15-53" name="__codelineno-15-53"></a><span class="hll">    }
+</span><a id="__codelineno-15-54" name="__codelineno-15-54"></a><span class="hll">};
+</span><a id="__codelineno-15-55" name="__codelineno-15-55"></a>
+<a id="__codelineno-15-56" name="__codelineno-15-56"></a>const loadFlights = async () =&gt; {
+<a id="__codelineno-15-57" name="__codelineno-15-57"></a>    setIsLoading(true);
+<a id="__codelineno-15-58" name="__codelineno-15-58"></a>    try {
+<a id="__codelineno-15-59" name="__codelineno-15-59"></a><span class="hll">    const data = await loadFlightsWithRetry();
+</span><a id="__codelineno-15-60" name="__codelineno-15-60"></a>    setFlights(data);
+<a id="__codelineno-15-61" name="__codelineno-15-61"></a>    setFilteredFlights(data);
+<a id="__codelineno-15-62" name="__codelineno-15-62"></a>    } catch (error: any) {
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-35">35</a></span>
+<span class="normal"><a href="#__codelineno-16-36">36</a></span>
+<span class="normal"><a href="#__codelineno-16-37">37</a></span>
+<span class="normal"><a href="#__codelineno-16-38">38</a></span>
+<span class="normal"><a href="#__codelineno-16-39">39</a></span>
+<span class="normal"><a href="#__codelineno-16-40">40</a></span>
+<span class="normal"><a href="#__codelineno-16-41">41</a></span>
+<span class="normal"><a href="#__codelineno-16-42">42</a></span>
+<span class="normal"><a href="#__codelineno-16-43">43</a></span>
+<span class="normal"><a href="#__codelineno-16-44">44</a></span>
+<span class="normal"><a href="#__codelineno-16-45">45</a></span>
+<span class="normal"><a href="#__codelineno-16-46">46</a></span>
+<span class="normal"><a href="#__codelineno-16-47">47</a></span>
+<span class="normal"><a href="#__codelineno-16-48">48</a></span>
+<span class="normal"><a href="#__codelineno-16-49">49</a></span>
+<span class="normal"><a href="#__codelineno-16-50">50</a></span>
+<span class="normal"><a href="#__codelineno-16-51">51</a></span>
+<span class="normal"><a href="#__codelineno-16-52">52</a></span>
+<span class="normal"><a href="#__codelineno-16-53">53</a></span>
+<span class="normal"><a href="#__codelineno-16-54">54</a></span>
+<span class="normal"><a href="#__codelineno-16-55">55</a></span>
+<span class="normal"><a href="#__codelineno-16-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-35" name="__codelineno-16-35"></a>    const term = searchTerm.toLowerCase();
+<a id="__codelineno-16-36" name="__codelineno-16-36"></a>    const filtered = flights.filter(
+<a id="__codelineno-16-37" name="__codelineno-16-37"></a>    (flight) =&gt;
+<a id="__codelineno-16-38" name="__codelineno-16-38"></a>        flight.origin.toLowerCase().includes(term) ||
+<a id="__codelineno-16-39" name="__codelineno-16-39"></a>        flight.destination.toLowerCase().includes(term)
+<a id="__codelineno-16-40" name="__codelineno-16-40"></a>    );
+<a id="__codelineno-16-41" name="__codelineno-16-41"></a>    setFilteredFlights(filtered);
+<a id="__codelineno-16-42" name="__codelineno-16-42"></a>}, [searchTerm, flights]);
+<a id="__codelineno-16-43" name="__codelineno-16-43"></a><span class="hll">
+</span><a id="__codelineno-16-44" name="__codelineno-16-44"></a>const loadFlights = async () =&gt; {
+<a id="__codelineno-16-45" name="__codelineno-16-45"></a>    setIsLoading(true);
+<a id="__codelineno-16-46" name="__codelineno-16-46"></a>    try {
+<a id="__codelineno-16-47" name="__codelineno-16-47"></a>    const data = await getFlights();
+<a id="__codelineno-16-48" name="__codelineno-16-48"></a>    setFlights(data);
+<a id="__codelineno-16-49" name="__codelineno-16-49"></a>    setFilteredFlights(data);
+<a id="__codelineno-16-50" name="__codelineno-16-50"></a>    } catch (error: any) {
+<a id="__codelineno-16-51" name="__codelineno-16-51"></a>    toast.error(&#39;Failed to load flights&#39;);
+<a id="__codelineno-16-52" name="__codelineno-16-52"></a>    console.error(error);
+<a id="__codelineno-16-53" name="__codelineno-16-53"></a>    } finally {
+<a id="__codelineno-16-54" name="__codelineno-16-54"></a>    setIsLoading(false);
+<a id="__codelineno-16-55" name="__codelineno-16-55"></a>    }
+<a id="__codelineno-16-56" name="__codelineno-16-56"></a>};
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="6">
-<li>
-<p>If everything looks fine, press <strong>Accept All</strong> to confirm the proposed code changes.</p>
-<ul>
-<li>
-<p>All red lines are automatically removed and the new (color-highlighted) lines are written into the file.</p>
-</li>
-<li>
-<p>This particular change may not produce anything visible within the running app — and that is by design. The point is to watch targeted code generation happen <em>in context</em> against real code.</p>
-</li>
-</ul>
-<p><p align="left">
+</p>
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
+<hr />
+<p>This particular change will not produce anything visible within the running application that you can test via the mocked-up website.</p>
+<p>The point is to watch <strong>targeted code generation</strong> happen <em>in context</em> against real code, at which Bob has performed brilliantly.</p>
+<div class="admonition tip">
+<p class="admonition-title">BEFORE YOU MOVE ON</p>
+<p>You can continue to tinker with this if you wish— but be mindful that changes you make and redeploy within the application will impact the website we are building. If you make changes, don't save them to the project directory code (and always be mindful of how many Bob tokens you are consuming and have remaining. Your account's token budget will only reset monthly for IBMers. Trial accounts will expire once the token budget is exhausted.</p>
+</div>
 <h2 id="v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>
