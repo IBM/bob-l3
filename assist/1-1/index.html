@@ -730,7 +730,14 @@
 <hr />
 <ol start="4">
 <li>
-<p>Begin by moving the cursor to <strong>Line 19</strong> of the file (just after the <code>UserIdentification</code> definition).</p>
+<p>Ensure that <strong>Literate Coding Mode</strong> is <code>ENABLED</code> by either toggling on the <strong>magic wand tool</strong> in the top-right corner of the <code>UserIdentification.tsx</code> editor (shown below).</p>
+<p>Alternatively, you can engage Literate Coding by pressing the <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span> keyboard shortcut.</p>
+</li>
+</ol>
+<hr />
+<ol start="5">
+<li>
+<p>Within the <code>UserIdentification.tsx</code> file, place your cursor on <strong>Line 19</strong> of the file (just after the <code>UserIdentification</code> definition).</p>
 <p>Copy &amp; paste the following comment onto <strong>Line 19</strong>, including the forward-slash (<code>//</code>) characters:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// validate email addresses
 </code></pre></div>
@@ -763,17 +770,14 @@
 </li>
 </ol>
 <hr />
-<ol start="5">
-<li>
-<p>Ensure that <strong>Literate Coding Mode</strong> is <code>ENABLED</code> by either toggling on the <strong>magic wand tool</strong> in the top-right corner of the <code>UserIdentification.tsx</code> editor (shown below).</p>
-<p>Alternatively, you can engage Literate Coding by pressing the <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span> keyboard shortcut.</p>
-</li>
-</ol>
-<hr />
 <ol start="6">
 <li>
-<p>After enabling Literate Coding Mode, move your cursor to the <strong>end</strong> of the newly-created <code>// validate email addresses</code> comment on <strong>Line 19</strong> (or highlight all of Line 19)</p>
-<p>Towards the bottom-center of the Bob IDE interface, click the blue <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to execute.</p>
+<p>After pasting the 3 new lines, look towards the bottom-center of the Bob IDE interface. Green and red-highlighted text will appear in-line with the code after pasting. Take note of the two Literate Coding options that have now appeared just below the highlighted text:</p>
+<ul>
+<li><strong>Clear All</strong>: selecting this option will disable Literate Coding on this code insert</li>
+<li><strong>Generate</strong>: selecting this option will pass the instruction to IBM Bob for code generation and modification</li>
+</ul>
+<p>Click the blue <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span>) to execute.</p>
 <div class="admonition warning">
 <p class="admonition-title"><strong>EXPECT SOME VARIABILITY</strong></p>
 <p>Generative AI is <em>non-deterministic</em> and as such your results may differ from what you see here. If an output diverges, consider further refining the prompt, following up with another prompt, or adjusting the code by hand. Iteration and further precision are often the best remedies.</p>
@@ -1065,6 +1069,12 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <ol start="3">
 <li>
 <p>Place your cursor at the beginning of the empty <strong>Line 43</strong> and then click the <strong>magic wand icon</strong> near the top of the editor (or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span>) to activate <em>Literate Coding</em> mode.</p>
+<details class="warning">
+<summary>DEBUGGING: Failed to generate code from literate text.</summary>
+<p>Some users have reported an error when attempting to generate code from literate text:
+<code>Failed to generate code from literate text. Please try again. Error: Each edit must have oldString and newString</code></p>
+<p>In such instances, try deleting the lines of text you added or inserted. Then either paste the code back in or type the code in again manually. Make sure that the Literate Coding mode is active before doing so. Click the <strong>Generate</strong> button again when ready to proceed.</p>
+</details>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1078,14 +1088,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </ol>
 <hr />
 <ol start="5">
-<li>
-<p>Yellow-highlighted text will appear in-line with the code after pasting. Take note of the two Literate Coding options that have now appeared just below the highlighted text:</p>
-<ul>
-<li><strong>Clear All</strong>: selecting this option will disable Literate Coding on this code insert</li>
-<li><strong>Generate</strong>: selecting this option will pass the instruction to IBM Bob for code generation and modification</li>
-</ul>
-<p>Click the <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> as a shortcut).</p>
-</li>
+<li>Click the <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> as a shortcut).</li>
 </ol>
 <hr />
 <ol start="6">
