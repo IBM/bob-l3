@@ -1157,16 +1157,14 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </span><a id="__codelineno-15-55" name="__codelineno-15-55"></a>
 <a id="__codelineno-15-56" name="__codelineno-15-56"></a>const loadFlights = async () =&gt; {
 <a id="__codelineno-15-57" name="__codelineno-15-57"></a>    setIsLoading(true);
-<a id="__codelineno-15-58" name="__codelineno-15-58"></a><span class="hll">    try {
-</span><a id="__codelineno-15-59" name="__codelineno-15-59"></a>    const data = await loadFlightsWithRetry();
-<a id="__codelineno-15-60" name="__codelineno-15-60"></a>    setFlights(data);
+<a id="__codelineno-15-58" name="__codelineno-15-58"></a>    try {
+<a id="__codelineno-15-59" name="__codelineno-15-59"></a><span class="hll">    const data = await loadFlightsWithRetry();
+</span><a id="__codelineno-15-60" name="__codelineno-15-60"></a>    setFlights(data);
 <a id="__codelineno-15-61" name="__codelineno-15-61"></a>    setFilteredFlights(data);
 <a id="__codelineno-15-62" name="__codelineno-15-62"></a>    } catch (error: any) {
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-35">35</a></span>
 <span class="normal"><a href="#__codelineno-16-36">36</a></span>
 <span class="normal"><a href="#__codelineno-16-37">37</a></span>
@@ -1211,6 +1209,9 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <a id="__codelineno-16-55" name="__codelineno-16-55"></a>    }
 <a id="__codelineno-16-56" name="__codelineno-16-56"></a>};
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
 </p>
