@@ -674,44 +674,36 @@
 </thead>
 <tbody>
 <tr>
-<td><code>.bob/agents.md</code></td>
-<td>All conversations (global project context)</td>
+<td><code>.bob/rules-agent/AGENTS.md</code></td>
+<td>Agent mode (<em>formerly Code and Advanced modes</em>)</td>
 </tr>
 <tr>
-<td><code>.bob/agents-code.md</code></td>
-<td>Code mode</td>
-</tr>
-<tr>
-<td><code>.bob/agents-plan.md</code></td>
-<td>Plan mode</td>
-</tr>
-<tr>
-<td><code>.bob/agents-ask.md</code></td>
+<td><code>.bob/rules-ask/AGENTS.md</code></td>
 <td>Ask mode</td>
 </tr>
 <tr>
-<td><code>.bob/agents-advanced.md</code></td>
-<td>Advanced mode</td>
+<td><code>.bob/rules-plan/AGENTS.md</code></td>
+<td>Plan mode</td>
 </tr>
 </tbody>
 </table>
-<p>Each mode-specific file extends the base context with what matters most for the successful operations of a given Mode. Context for <strong>Plan mode</strong> might emphasize architectural conventions, while <strong>Code mode</strong> context would benefit from highlighting file structure and naming patterns.</p>
+<p>Each mode-specific file extends the base context with what matters most for the successful operations of a given Mode. Context for <strong>Plan mode</strong> might emphasize architectural conventions, while <strong>Agent mode</strong> context would benefit from highlighting file structure and naming patterns.</p>
 <hr />
 <h2 id="iii-hands-on-generating-your-project-context"><strong>iii. Hands-on: generating your project context</strong></h2>
 <hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCQWPcGR9g87mG9FWcPXR6TfpChj">Chapter 3.1: init Command [IBM Bob L3]</a></p>
 </blockquote>
-<p>The larger your codebase, the more valuable a well-maintained <code>agents.md</code> asset becomes. On a small project, Bob could conceivably read every file each conversation; even so, having a pre-defined <code>agents.md</code> is still more efficient than the read-everything alternative. On a large project, an <code>agents.md</code> manifest becomes the backbone of the entire workflow. It provides detailed guidance for how Bob should navigate the codebase, without exhausting the context window on file reads. </p>
+<p>The larger your codebase, the more valuable a well-maintained <code>AGENTS.md</code> asset becomes. On a small project, Bob could conceivably read every file each conversation; even so, having a pre-defined <code>AGENTS.md</code> is still more efficient than the read-everything alternative. On a large project, an <code>AGENTS.md</code> manifest becomes the backbone of the entire workflow. It provides detailed guidance for how Bob should navigate the codebase, without exhausting the context window on file reads. </p>
 <div class="admonition note">
 <p class="admonition-title">TIPS FOR <code>/INIT</code> AND <code>AGENTS.MD</code></p>
 <p>Execute the <code>/init</code> command after significant changes to ensure Bob picks up on any new modules or services, restructured directory trees, new framework, and so on. If there are instances where you (the administrator) want to capture context without performing an automated scan— or believe that an automated scan might miss some key elements, such as business rules or deployment conventions —then you may also edit the <code>agents.md</code> asset by-hand.</p>
 </div>
-<p>Let's give Bob durable knowledge of the Galaxium Travels codebase by running the <code>/init</code> command and generating its <code>agents.md</code> files.</p>
+<p>Let's give Bob durable knowledge of the Galaxium Travels codebase by running the <code>/init</code> command and generating its <code>AGENTS.md</code> files.</p>
 <hr />
 <ol>
 <li>
-<p>First, ensure that Bob has enabled <strong>Code mode</strong> within the Agentic Sidebar.</p>
+<p>First, ensure that Bob has enabled <strong>Agent mode</strong> within the Agentic Sidebar.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/67994ed5-5ca6-47b8-a761-bcef314be887/File_3482e2636a044434aad1271bbe9995ac_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/67994ed5-5ca6-47b8-a761-bcef314be887/File_3482e2636a044434aad1271bbe9995ac_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -723,70 +715,51 @@
 <p>Within the Agentic Sidebar, type the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/init
 </code></pre></div>
-<p>Once you have finished typing, you will be presented with a <strong>Bob Commands</strong> window pop-up with the <code>/init</code> command displayed.</p>
+<div class="admonition warning">
+<p>You may need to click <strong>Approve once</strong> (once or <em>several</em> times...) to permission access to the <code>agents.md</code> file before this summary appears.</p>
+</div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2e118cae-8753-428a-bc7a-46aa2598a699/File_14efc00e01474f7798ecba20874d902f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2e118cae-8753-428a-bc7a-46aa2598a699/File_14efc00e01474f7798ecba20874d902f_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="3">
-<li>
-<p>Click <strong>Send message</strong> (the purple button with the arrow) to execute the instruction.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c3fc54e8-0605-424e-b9ff-bcda373b0ffd/File_b3028b8125d0461ab46fed60e0e55afc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c3fc54e8-0605-424e-b9ff-bcda373b0ffd/File_b3028b8125d0461ab46fed60e0e55afc_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="4">
-<li>
-<p>Bob will now outline its plan of acton. Review the proposed steps, then click <strong>Approve</strong> to continue.</p>
-<p>If you enabled <em>auto-approval</em> in <strong>Module 2</strong>, this workflow may complete on its own with no further intervention required on your part.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d5062072-7ff2-49ec-a449-57bda0649519/File_fa7cda3ac7bb429fb98d4de5410bb0a1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d5062072-7ff2-49ec-a449-57bda0649519/File_fa7cda3ac7bb429fb98d4de5410bb0a1_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="5">
-<li>
-<p>As expected, a <strong>To-Do</strong> list will appear as Bob begins executing the workflow. Review the steps it proposes be undertaken and press <strong>Approve</strong> to proceed.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c1e99762-a82f-49b3-823b-b78fd04ff9f8/File_8717c2d590a84654b3beaba805d27538_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c1e99762-a82f-49b3-823b-b78fd04ff9f8/File_8717c2d590a84654b3beaba805d27538_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="6">
-<li>
-<p>Bob may ask you to approve commands such as <code>mkdir</code>, which is necessary in order to create the directories its <code>agents.md</code> file will require.</p>
-<p>Press the blue <strong>Run</strong> button to grant such permissions and carry on with the workflow.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3ab450cd-ae82-49a9-89d6-2d197dd6f85e/File_274a9e06decf4006bfdad0d0c1aeb2e6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3ab450cd-ae82-49a9-89d6-2d197dd6f85e/File_274a9e06decf4006bfdad0d0c1aeb2e6_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="7">
-<li>
-<p>Likewise, as Bob creates or edits the protected <code>agents.md</code> and related configuration files, you may be asked for further approvals. Press the blue <strong>Approve</strong> button if prompted to do so.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8ac7cee2-7ed8-4a39-bf27-9169f5e2da10/File_c7b00c35834c49f4a57fc8cfcbe8e872_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8ac7cee2-7ed8-4a39-bf27-9169f5e2da10/File_c7b00c35834c49f4a57fc8cfcbe8e872_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="8">
-<li>
-<p>Once Bob has completed the requested workflow, you'll be presented with an <strong><code>"All tasks completed!"</code></strong> message within the agentic sidebar along with several newly-created files:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>The /init <span class="nb">command</span> successfully created a main AGENTS.md file <span class="k">in</span> the project root and mode-specific files <span class="k">in</span> .bob.
-</code></pre></div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8aad8b00-707e-4e43-ada7-ae3495f61552/user_cropped_screenshot_46e83a0827ed46899a0e32120d80b470_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8aad8b00-707e-4e43-ada7-ae3495f61552/user_cropped_screenshot_46e83a0827ed46899a0e32120d80b470_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
+<p><strong>AGENTS OF <em>GALAXIUM TRAVELS</em></strong></p>
+<p>After execution of the <strong><code>/init</code></strong> command, Bob's <em>Agent mode</em> will examine key front-end and back-end (service) files within the Project directory, ultimately writing a total of four files.</p>
+<div class="admonition quote">
+<p class="admonition-title"><code>AGENTS.md</code> — General guidance</p>
+<ul>
+<li>Commands require running from specific subdirectories (<code>pytest</code> from <code>booking_system_backend/</code>, <code>npm</code> from <code>booking_system_frontend/</code>)</li>
+<li>Single-test syntax with full pytest class path</li>
+<li>The dual REST+MCP architecture on a single port</li>
+</ul>
+</div>
+<div class="admonition quote">
+<p class="admonition-title"><code>.bob/rules-agent/AGENTS.md</code> — Coding gotchas</p>
+<ul>
+<li>No <code>seats_available</code> column — test fixtures in the repo use an old column name that no longer exists in the model; discovered only by reading both <code>models.py</code> and the tests</li>
+<li>MCP tools bypass FastAPI DI — they call <code>SessionLocal()</code> directly, so tests must patch two places</li>
+<li><code>verbatimModuleSyntax</code> enforces <code>import type</code> for type-only imports</li>
+<li>Cancellation is <code>POST</code>, not <code>DELETE</code></li>
+</ul>
+</div>
+<div class="admonition quote">
+<p class="admonition-title"><code>.bob/rules-ask/AGENTS.md</code> — Context for questions</p>
+<ul>
+<li>Backend tests are partially outdated (use the old seat model)</li>
+<li>Frontend has zero tests</li>
+<li><code>booking_time</code> has no timezone suffix despite being UTC</li>
+</ul>
+</div>
+<div class="admonition quote">
+<p class="admonition-title"><code>.bob/rules-plan/AGENTS.md</code> — Architecture constraints</p>
+<ul>
+<li>Price multipliers are frontend-only — backend stores only the economy base price</li>
+<li>SQLite with no migration framework (no Alembic)</li>
+<li><code>seed.py</code> runs on every startup — not safe for multi-worker deployments</li>
+<li>No update endpoint for bookings — cancel+rebook is the only flow</li>
+</ul>
+</div>
 <hr />
 <h2 id="iv-key-takeaways"><strong>iv. Key takeaways</strong></h2>
 <hr />
