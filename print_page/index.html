@@ -2455,12 +2455,13 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<p><strong>Sub-Task 1 Extend the backend data model (models.py, seed.py)</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 1: Extend the backend data model (models.py, seed.py)</p>
 <p>The current database schema stores a single integer <code>seats_available</code> on the <code>Flight</code> table, which treats all seats as interchangeable. To support three distinct seat classes, we need to split this into three independent columns — <code>economy_seats</code>, <code>business_seats</code>, and <code>galaxium_seats</code> — each tracking its own count. This is a deliberate database design choice: storing them as separate columns (rather than a related table) keeps queries simple, since we always need all three counts together and they have a fixed, known set.</p>
 <p>On the <code>Booking</code> side, we add a <code>seat_class</code> string column so every booking permanently records which class was reserved. This is critical for the cancel flow — when a booking is cancelled, the system needs to know which column to increment back.</p>
 <p>In <code>models.py</code> we swap out the old <code>seats_available</code> column for the three new ones on the <code>Flight</code> ORM class, and add <code>seat_class</code> to <code>Booking</code>.</p>
 <p>In <code>seed.py</code> we update all 10 demo flight records to use the new column names with realistic space-travel seat counts (Economy: 5–10, Business: 3–5, Galaxium: 1–2), and update the 20 demo bookings to each include a randomly assigned <code>seat_class</code>. Because the app uses SQLite and recreates the schema from scratch on every server start via <code>init_db</code> + <code>seed</code>, no migration tooling is needed — the old <code>booking.db</code> is simply dropped and rebuilt.</p>
-<hr />
+</div>
 <ol start="4">
 <li>
 <p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 1. Shall I go ahead?</em></p>
@@ -2480,12 +2481,13 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<p><strong>Sub-Task 2 Update backend schemas and booking service (schemas.py, services/booking.py, server.py)</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 2: Update backend schemas and booking service (schemas.py, services/booking.py, server.py)</p>
 <p>The database model is now correct, but the three layers above it — Pydantic schemas, the booking service, and the FastAPI/MCP server — still reference the old <code>seats_available</code> field and know nothing about <code>seat_class</code>. This sub-task threads the new fields all the way up to the API boundary.</p>
 <p>In <code>schemas.py</code> we swap <code>seats_available</code> for the three new seat fields on <code>FlightOut</code> (so the API response carries per-class counts), and add seat_class to both <code>BookingRequest</code> (what the client sends) and <code>BookingOut</code> (what the server returns).</p>
 <p>In <code>services/booking.py</code> we update <code>book_flight</code> to accept <code>seat_class</code>, validate it against the three allowed values, look up the correct column (using a small <code>SEAT_CLASS_MAP</code> dict), check that class has seats, decrement only that column, and store <code>seat_class</code> on the new <code>Booking</code> record. We also update <code>cancel_booking</code> to read the booking's <code>seat_class</code> and increment the matching column — without this, cancellations would silently not restore the right class's count.</p>
 <p>In <code>server.py</code> we pass <code>request.seat_class</code> through to the service on the REST endpoint, and add <code>seat_class: str</code> to the MCP tool signature so AI agents can also book with a class.</p>
-<hr />
+</div>
 <ol start="6">
 <li>
 <p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 2. Shall I go ahead?</em></p>
@@ -2506,12 +2508,13 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<p><strong>Sub-Task 3 Update frontend types and API service (types/index.ts, utils/seatClasses.ts, services/api.ts)</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 3: Update frontend types and API service (types/index.ts, utils/seatClasses.ts, services/api.ts)</p>
 <p>The backend now speaks a new contract — three seat columns on flights, <code>seat_class</code> on bookings — but the frontend's TypeScript types still describe the old world. Until we fix that, every component that references flight.<code>seats_available</code> or <code>booking.seat_class</code> will have a type error, and nothing will compile correctly.</p>
 <p>In <code>types/index.ts</code> we replace <code>seats_available</code>: number with <code>economy_seats</code>, <code>business_seats</code>, and <code>galaxium_seats</code> on the <code>Flight</code> interface, and add <code>seat_class</code> to both <code>Booking</code> and <code>BookingRequest</code>. This makes the type system enforce the new shape everywhere downstream — any component that hasn't been updated yet will immediately surface a compile error rather than a silent runtime bug.</p>
 <p>We then create a brand-new utility file, <code>utils/seatClasses.ts</code>. This file is the single source of truth for all seat-class logic on the frontend: the <code>SeatClass</code> type alias, human-readable labels (<code>SEAT_CLASS_LABELS</code>), price multipliers (<code>SEAT_CLASS_MULTIPLIERS</code>), an ordered array (<code>SEAT_CLASSES</code>) for rendering options in a consistent sequence, and a <code>getSeatClassPrice(basePrice, seatClass)</code> helper that applies the multiplier. Centralising this means Sub-Tasks 4, 5, and 6 all import from one place — there's no risk of the multipliers drifting out of sync between components.</p>
 <p>Finally, we verify <code>services/api.ts</code> — the <code>bookFlight</code> call already spreads the full <code>BookingRequest</code> object into the POST body, so once <code>BookingRequest</code> gains <code>seat_class</code> in the type definition, the API call will automatically include it with no code change needed.</p>
-<hr />
+</div>
 <ol start="8">
 <li>
 <p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 3. Shall I go ahead?</em></p>
@@ -2532,11 +2535,12 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<p><strong>Sub-Task 4 Add seat class selector to BookingModal</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 4: Add seat class selector to BookingModal</p>
 <p>This is the core user-facing change. Right now the <code>BookingModal</code> shows a static price and a single "Confirm Booking" button — there's no concept of class. We need to insert a class selector so the user can choose Economy, Business, or Galaxium before confirming.</p>
 <p>We'll add a <code>selectedClass</code> state variable (defaulting to <code>'economy'</code>) and render three clickable option cards — one per class — in a "Select Seat Class" section above the price summary. Each card shows the class label, the number of seats remaining for that class (pulled from <code>flight.economy_seats</code> etc.), and the calculated price using <code>getSeatClassPrice</code>. Cards where that class has 0 seats will be visually dimmed and pointer-events disabled so they can't be selected. The "Total Price" display will reactively update as the user switches class. When the user hits "Confirm Booking", the <code>bookFlight</code> call will include <code>seat_class: selectedClass</code>.</p>
 <p>The default selection logic also needs one nuance: if Economy is sold out on open, we should default to the first available class rather than leaving the user on a disabled option. We'll handle this with a <code>useMemo</code> that picks the first class with seats when the modal opens.</p>
-<hr />
+</div>
 <ol start="10">
 <li>
 <p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 4. Shall I go ahead?</em></p>
@@ -2561,11 +2565,12 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<p><strong>Sub-Task 5 Update FlightCard to show per-class availability</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 5: Update FlightCard to show per-class availability</p>
 <p>The <code>FlightCard</code> is currently built around a single <code>seats_available</code> field that no longer exists on the <code>Flight</code> type — so right now it would fail to compile. We need to replace it with a compact three-row breakdown showing how many seats each class has on that flight.</p>
 <p>The key design decisions here are: (1) "Sold Out" should only apply when all <em>three</em> classes are at zero, not just one; (2) the low-seat warning (the <code>solar-orange</code> colour) should apply per-class so users can see at a glance when a particular class is nearly full; and (3) the displayed price should gain a "from" label, since the actual price depends on the class selected during booking.</p>
 <p>We'll import <code>SEAT_CLASSES</code>, <code>SEAT_CLASS_LABELS</code>, and <code>getSeatClassPrice</code> from <code>utils/seatClasses.ts</code> and render the availability rows as a small loop rather than hardcoding each one, keeping the component clean.</p>
-<hr />
+</div>
 <ol start="12">
 <li>
 <p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 5. Shall I go ahead?</em></p>
@@ -2588,10 +2593,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<p><strong>Sub-Task 6 Show seat class in booking history (BookingCard.tsx)</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 6 Show seat class in booking history (BookingCard.tsx)</p>
 <p>This is the final piece. Once a booking is made with a seat class, users visiting the "My Bookings" page should be able to see which class they booked, and the price shown should reflect what they actually paid (base price × multiplier) rather than the raw base price.</p>
 <p>In <code>BookingCard.tsx</code> we'll import <code>SEAT_CLASS_LABELS</code> and <code>getSeatClassPrice</code> from <code>utils/seatClasses.ts</code>. We'll add a small coloured badge next to the booking status showing the seat class label (e.g. "Business", "Galaxium Class"). Where the price row is rendered, we'll replace <code>flight.price</code> with <code>getSeatClassPrice(flight.price, booking.seat_class)</code> — guarded by the existing <code>flight</code> optional check — so the history accurately reflects the class-adjusted price.</p>
-<hr />
+</div>
 <ol start="14">
 <li>
 <p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 6. Shall I go ahead?</em></p>
