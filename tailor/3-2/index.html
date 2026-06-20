@@ -762,9 +762,6 @@
 <ol start="5">
 <li>
 <p>The file should automatically open within the Bob IDE, exposing its contents (which are empty for the time being.)</p>
-<div class="admonition note">
-<p>Bob supports several <em>"priority levels"</em> of rules. You may configure them by hand by copy and pasting directly into the Markdown file; alternatively, and more simply, you can also configure them through Bob's <strong>Agentic Sidebar</strong>.</p>
-</div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -781,7 +778,7 @@
 <hr />
 <ol start="8">
 <li>
-<p>When ready, copy &amp; paste the entire contents of the prompt below <strong>into the Agentic Sidebar</strong> abd press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
+<p>When ready, copy &amp; paste the entire contents of the prompt below <strong>into the Agentic Sidebar</strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="hll">Please add the following rules to @/.bob/rules/basic_rules.md and configure them so they work:
 </span><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>- Always include concise JSDoc strings for every public function.
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>- Be very concise in your wording.
@@ -923,8 +920,8 @@
 <a id="__codelineno-5-11" name="__codelineno-5-11"></a>    <span class="k">-</span> <span class="gs">**Backend**</span>: Python/FastAPI + SQLAlchemy (SQLite) + FastMCP. Entry point: <span class="sb">`booking_system_backend/server.py`</span>, run via <span class="sb">`python server.py`</span>.
 <a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="k">-</span> <span class="gs">**Frontend**</span>: React 19 + TypeScript + Vite + Tailwind CSS. Run via <span class="sb">`npm run dev`</span> (from <span class="sb">`booking_system_frontend/`</span>).
 <a id="__codelineno-5-13" name="__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>    ## Commands
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="hll">    ## Commands
+</span><a id="__codelineno-5-15" name="__codelineno-5-15"></a>
 <a id="__codelineno-5-16" name="__codelineno-5-16"></a>    ### Backend (run from <span class="sb">`booking_system_backend/`</span>, with <span class="sb">`.venv`</span> active)
 <a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="sb">    ```bash</span>
 <a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="c1"># Setup</span>
@@ -955,8 +952,8 @@
 <a id="__codelineno-5-43" name="__codelineno-5-43"></a>    ./start.sh
 <a id="__codelineno-5-44" name="__codelineno-5-44"></a><span class="sb">    ```</span>
 <a id="__codelineno-5-45" name="__codelineno-5-45"></a>
-<a id="__codelineno-5-46" name="__codelineno-5-46"></a>    ## Critical Backend Patterns
-<a id="__codelineno-5-47" name="__codelineno-5-47"></a>
+<a id="__codelineno-5-46" name="__codelineno-5-46"></a><span class="hll">    ## Critical Backend Patterns
+</span><a id="__codelineno-5-47" name="__codelineno-5-47"></a>
 <a id="__codelineno-5-48" name="__codelineno-5-48"></a>    ### Error handling: return ErrorResponse, don&#39;t raise
 <a id="__codelineno-5-49" name="__codelineno-5-49"></a>    Service functions return <span class="sb">`BookingOut | ErrorResponse`</span> (or similar). <span class="gs">**Never raise exceptions**</span> from service layer — return an <span class="sb">`ErrorResponse`</span> instance instead. REST endpoints return these directly; MCP tools convert them to <span class="sb">`raise Exception(result.details or result.error)`</span>.
 <a id="__codelineno-5-50" name="__codelineno-5-50"></a>
@@ -972,8 +969,8 @@
 <a id="__codelineno-5-60" name="__codelineno-5-60"></a>    ### Tests use in-memory SQLite + monkeypatching
 <a id="__codelineno-5-61" name="__codelineno-5-61"></a>    <span class="sb">`conftest.py`</span> patches both <span class="sb">`db.SessionLocal`</span> and <span class="sb">`server.SessionLocal`</span> (the MCP tools use <span class="sb">`SessionLocal`</span> directly, bypassing FastAPI dependency injection). Each test gets a fresh DB; <span class="sb">`seed()`</span> is patched to a no-op.
 <a id="__codelineno-5-62" name="__codelineno-5-62"></a>
-<a id="__codelineno-5-63" name="__codelineno-5-63"></a>    ## Critical Frontend Patterns
-<a id="__codelineno-5-64" name="__codelineno-5-64"></a>
+<a id="__codelineno-5-63" name="__codelineno-5-63"></a><span class="hll">    ## Critical Frontend Patterns
+</span><a id="__codelineno-5-64" name="__codelineno-5-64"></a>
 <a id="__codelineno-5-65" name="__codelineno-5-65"></a>    ### API base URL from env
 <a id="__codelineno-5-66" name="__codelineno-5-66"></a>    Configure <span class="sb">`VITE_API_URL`</span> in <span class="sb">`.env`</span> (see <span class="sb">`.env.example`</span>). Defaults to <span class="sb">`http://localhost:8080`</span>.
 <a id="__codelineno-5-67" name="__codelineno-5-67"></a>
@@ -989,16 +986,16 @@
 <a id="__codelineno-5-77" name="__codelineno-5-77"></a>    ### Tailwind custom tokens
 <a id="__codelineno-5-78" name="__codelineno-5-78"></a>    Use project-specific color tokens: <span class="sb">`space-dark`</span>, <span class="sb">`space-blue`</span>, <span class="sb">`cosmic-purple`</span>, <span class="sb">`nebula-pink`</span>, <span class="sb">`alien-green`</span>, <span class="sb">`solar-orange`</span>, <span class="sb">`star-white`</span>. Backgrounds: <span class="sb">`bg-space-gradient`</span>, <span class="sb">`bg-cosmic-gradient`</span>.
 <a id="__codelineno-5-79" name="__codelineno-5-79"></a>
-<a id="__codelineno-5-80" name="__codelineno-5-80"></a>    ## Coding Standards
-<a id="__codelineno-5-81" name="__codelineno-5-81"></a>
+<a id="__codelineno-5-80" name="__codelineno-5-80"></a><span class="hll">    ## Coding Standards
+</span><a id="__codelineno-5-81" name="__codelineno-5-81"></a>
 <a id="__codelineno-5-82" name="__codelineno-5-82"></a>    ### JSDoc for every public function
 <a id="__codelineno-5-83" name="__codelineno-5-83"></a>    Always include a concise JSDoc comment on every public function (frontend TypeScript) and a one-line docstring on every public function (backend Python). Keep wording brief — one sentence is enough.
 <a id="__codelineno-5-84" name="__codelineno-5-84"></a>
 <a id="__codelineno-5-85" name="__codelineno-5-85"></a>    ### Concise wording
 <a id="__codelineno-5-86" name="__codelineno-5-86"></a>    Be very concise in all code comments, docstrings, and prose. Prefer short, direct sentences.
 <a id="__codelineno-5-87" name="__codelineno-5-87"></a>
-<a id="__codelineno-5-88" name="__codelineno-5-88"></a>    ## Interaction Logging
-<a id="__codelineno-5-89" name="__codelineno-5-89"></a>
+<a id="__codelineno-5-88" name="__codelineno-5-88"></a><span class="hll">    ## Interaction Logging
+</span><a id="__codelineno-5-89" name="__codelineno-5-89"></a>
 <a id="__codelineno-5-90" name="__codelineno-5-90"></a>    After every interaction, write a summary Markdown file to the <span class="sb">`internal-monologue/`</span> folder in the repo root.
 <a id="__codelineno-5-91" name="__codelineno-5-91"></a>    <span class="k">-</span> Filename format: <span class="sb">`YYYY-MM-DD_concise-description.md`</span> (e.g. <span class="sb">`2026-01-15_update-readme.md`</span>).
 <a id="__codelineno-5-92" name="__codelineno-5-92"></a>    <span class="k">-</span> Content: a brief summary of what was requested and what was done.
