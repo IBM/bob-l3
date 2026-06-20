@@ -813,17 +813,44 @@
 </li>
 <li>
 <p>Once Bob has activated Agent mode, it will generate an <em>Update Todo List</em> with the following (or similar) sub-tasks:</p>
-<ul>
-<li>Sub-Task 1 Extend the backend data model (models.py, seed.py)</li>
-<li>Sub-Task 2 Update backend schemas and booking service (schemas.py, services/booking.py, server.py)</li>
-<li>Sub-Task 3 Update frontend types and API service (types/index.ts, utils/seatClasses.ts, services/api.ts)</li>
-<li>Sub-Task 4 Add seat class selector to BookingModal</li>
-<li>Sub-Task 5 Update FlightCard to show per-class availability</li>
-<li>Sub-Task 6 Show seat class in booking history (BookingCard.tsx)</li>
-</ul>
-<p>Ahead, you will examine in detail what each Sub-Task is performing and understand the rationale for the change. With your approval, Bob will then go ahead and implement the work on your behalf.</p>
 </li>
 </ol>
+<table>
+<thead>
+<tr>
+<th>TASK</th>
+<th>OBJECTIVES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sub-Task 1</strong></td>
+<td>Extend the backend data model (<code>models.py</code>, <code>seed.py</code>)</td>
+</tr>
+<tr>
+<td><strong>Sub-Task 2</strong></td>
+<td>Update backend schemas and booking service (<code>schemas.py</code>, <code>services/booking.py</code>, <code>server.py</code>)</td>
+</tr>
+<tr>
+<td><strong>Sub-Task 3</strong></td>
+<td>Update frontend types and API service (<code>types/index.ts</code>, <code>utils/seatClasses.ts</code>, <code>services/api.ts</code>)</td>
+</tr>
+<tr>
+<td><strong>Sub-Task 4</strong></td>
+<td>Add seat class selector to <code>BookingModal</code></td>
+</tr>
+<tr>
+<td><strong>Sub-Task 5</strong></td>
+<td>Update <code>FlightCard</code> to show per-class availability</td>
+</tr>
+<tr>
+<td><strong>Sub-Task 6</strong></td>
+<td>Show seat class in booking history (<code>BookingCard.tsx</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>In the steps ahead, you will examine in detail what each <em>Sub-Task</em> is performing and understand the rationale for the change. With your approval, Bob will then go ahead and implement the work on your behalf.</p>
 <div class="admonition tip">
 <p class="admonition-title">Sub-Task 1: Extend the backend data model (models.py, seed.py)</p>
 <p>The current database schema stores a single integer <code>seats_available</code> on the <code>Flight</code> table, which treats all seats as interchangeable. To support three distinct seat classes, we need to split this into three independent columns — <code>economy_seats</code>, <code>business_seats</code>, and <code>galaxium_seats</code> — each tracking its own count. This is a deliberate database design choice: storing them as separate columns (rather than a related table) keeps queries simple, since we always need all three counts together and they have a fixed, known set.</p>
