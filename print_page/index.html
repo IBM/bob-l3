@@ -2994,7 +2994,7 @@ rm -f booking_system_backend/booking.db
 <hr />
 <p><strong>AGENTS OF <em>GALAXIUM TRAVELS</em></strong></p>
 <p>After execution of the <strong><code>/init</code></strong> command, Bob's <em>Agent mode</em> will examine key front-end and back-end (service) files within the Project directory, ultimately writing a total of four files.</p>
-<div class="admonition tip">
+<div class="admonition quote">
 <p class="admonition-title"><code>AGENTS.md</code> — General guidance</p>
 <ul>
 <li>Commands require running from specific subdirectories (<code>pytest</code> from <code>booking_system_backend/</code>, <code>npm</code> from <code>booking_system_frontend/</code>)</li>
@@ -3002,7 +3002,7 @@ rm -f booking_system_backend/booking.db
 <li>The dual REST+MCP architecture on a single port</li>
 </ul>
 </div>
-<div class="admonition tip">
+<div class="admonition quote">
 <p class="admonition-title"><code>.bob/rules-agent/AGENTS.md</code> — Coding gotchas</p>
 <ul>
 <li>No <code>seats_available</code> column — test fixtures in the repo use an old column name that no longer exists in the model; discovered only by reading both <code>models.py</code> and the tests</li>
@@ -3011,7 +3011,7 @@ rm -f booking_system_backend/booking.db
 <li>Cancellation is <code>POST</code>, not <code>DELETE</code></li>
 </ul>
 </div>
-<div class="admonition tip">
+<div class="admonition quote">
 <p class="admonition-title"><code>.bob/rules-ask/AGENTS.md</code> — Context for questions</p>
 <ul>
 <li>Backend tests are partially outdated (use the old seat model)</li>
@@ -3019,7 +3019,7 @@ rm -f booking_system_backend/booking.db
 <li><code>booking_time</code> has no timezone suffix despite being UTC</li>
 </ul>
 </div>
-<div class="admonition tip">
+<div class="admonition quote">
 <p class="admonition-title"><code>.bob/rules-plan/AGENTS.md</code> — Architecture constraints</p>
 <ul>
 <li>Price multipliers are frontend-only — backend stores only the economy base price</li>
@@ -3044,8 +3044,8 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <hr />
 <h2 id="tailor-3-2-i-encoding-bob-with-your-standards"><strong>i. Encoding Bob with your standards</strong></h2>
 <hr />
-<p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>.</p>
-<p>Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
+<p>If <code>AGENTS.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>.</p>
+<p>Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Agent, Plan, Ask, and any custom modes you create.)</p>
 <hr />
 <h2 id="tailor-3-2-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
@@ -3175,7 +3175,7 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <ol start="7">
 <li>
 <p>Double left-click on <strong><code>basic_rules.md</code></strong> to expose its contents (which for now are empty).</p>
-<div class="admonition warning">
+<div class="admonition note">
 <p>Bob supports several <em>"priority levels"</em> of rules. You may configure them by hand by copy and pasting directly into the Markdown file; alternatively, and more simply, you can also configure them through Bob's <strong>Agentic Sidebar</strong>.</p>
 </div>
 <p><p align="left">
@@ -3185,158 +3185,249 @@ In the chapter ahead, you will examine strategies for encoding your organization
 </ol>
 <hr />
 <ol start="8">
-<li>
-<p>First, verify that Bob's Agentic Sidebar is still set to <strong>Code mode</strong>. When ready, <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-c">C</kbd></span> and <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-v">V</kbd></span> the entire contents of the prompt below into the Agentic Sidebar, then press <strong>Send</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#tailor-3-2-__codelineno-4-1"></a><span class="hll">Please add the following rules to @/.bob/rules/basic_rules.md and configure them so they work:
-</span><a id="__codelineno-4-2" name="__codelineno-4-2" href="#tailor-3-2-__codelineno-4-2"></a>- Always include concise JSDoc strings for every public function.
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#tailor-3-2-__codelineno-4-3"></a>- Be very concise in your wording.
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#tailor-3-2-__codelineno-4-4"></a>- Write a summary of every interaction into the folder `internal-monologue/`.Name the file starting with a timestamp, followed by a concise description of the interaction. Example: 2026-01-15_update-readme.md
-</code></pre></div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
+<li>First, verify that Bob's Agentic Sidebar is still set to <strong>Agent mode</strong>.</li>
 </ol>
 <hr />
 <ol start="9">
-<li>
-<p>If prompted by Bob along the way, click the blue <strong>Approve</strong> button to keep things moving.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
+<li>Next, create a new session of the <strong>Agentic Sidebar</strong> to clear all previous context. Use the <strong>New Task</strong> (<span class="keys"><kbd class="key-plus">+</kbd></span>) button in the top-right corner of the Agentic Sidebar to do so.</li>
 </ol>
 <hr />
 <ol start="10">
 <li>
-<p>As before, Bob will generate a <em>Todo List</em> as it sets to work.</p>
-<p>Continue selecting <strong>Approve All</strong> when prompted to allow Bob to carry on with the work until complete.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" alt="" width="600" /></a>
+<p>When ready, copy &amp; paste the entire contents of the prompt below <strong>into the Agentic Sidebar</strong> abd press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#tailor-3-2-__codelineno-4-1"></a><span class="hll">Please add the following rules to @/.bob/rules/basic_rules.md and configure them so they work:
+</span><a id="__codelineno-4-2" name="__codelineno-4-2" href="#tailor-3-2-__codelineno-4-2"></a>- Always include concise JSDoc strings for every public function.
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#tailor-3-2-__codelineno-4-3"></a>- Be very concise in your wording.
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#tailor-3-2-__codelineno-4-4"></a>- Write a summary of every interaction into the folder `internal-monologue/`.Name the file starting with a timestamp, followed by a concise description of the interaction. Example: 2026-01-15_update-readme.md
+</code></pre></div>
+<p align="left">
+<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
 <ol start="11">
 <li>
-<p>Bob will ask for permission to edit the protected configuration file you made earlier <strong>Step 6</strong> (the empty <code>basic_rules.md</code> file).</p>
-<p><strong>Grant</strong> Bob permission to do so, if prompted.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+<p>Bob will prompt you for permission to execute on several different tasks, including the ability to write a file within <code>.bob/rules/basic_rules.md</code> Markdown document.</p>
+<p><strong>Approve</strong> these requests. We will examine the contents shortly once all work on the original request has completed and these files have been fully updated.</p>
 </li>
 </ol>
 <hr />
 <ol start="12">
 <li>
-<p>Continue progressing (approving Bob's requests) through the workflow. As you do so, you'll watch <code>basic_rules.md</code> fill with the rules you requested and reformat itself automatically.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+<p>Bob will ask to construct three new rules for an <code>internal-monologue/</code> folder, consisting of the following:</p>
+<ul>
+<li><strong>JSDoc / docstrings</strong> | new <code>## Coding Standards</code> section requiring a concise JSDoc on every public TS function and a one-line docstring on every public Python function.</li>
+<li><strong>Concise wording</strong> | rule to keep all comments, docstrings, and prose brief.</li>
+<li><strong>Interaction logging</strong> | new <code>## Interaction Logging</code> section instructing the agent to write a timestamped summary to internal-monologue/ after every interaction.</li>
+</ul>
+<p>Take note that these rules are in alignment with the earlier instruction given via the Agentic Sidebar request.</p>
 </li>
 </ol>
 <hr />
 <ol start="13">
 <li>
-<p>On completion of the workflow, Bob will return a <strong><code>Task Completed</code></strong> message to the console.</p>
-<ul>
-<li>With this message received, it's now time for you to test the rules with a new Bob conversation, free of any previous context</li>
-<li>Press the <strong>X</strong> in the top corner to close the current Bob session
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
+<p>The workflow is complete once the Agentic Sidebar reports back the following (or something similar): <strong><em>The <code>internal-monologue/</code> folder was created with <code>2026-06-20_add-coding-rules.md</code> as the first log entry.</em></strong></p>
+<p>At this point, you should inspect the contents of the <code>.bob/rules/basic_rules.md</code> to validate the generative steps taken by Bob. You may do so by: clicking the file shortcut directly within the Agentic Sidebar session; via the <strong>Explorer</strong> tab project directory tree; or by clicking on the expandable tab within the documentation below.</p>
+<details class="quote">
+<summary><code>.bob/rules/basic_rules.md</code></summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#tailor-3-2-__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-26">26</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-27">27</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-28">28</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-29">29</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-30">30</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-31">31</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-32">32</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-33">33</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-34">34</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-35">35</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-36">36</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-37">37</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-38">38</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-39">39</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-40">40</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-41">41</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-42">42</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-43">43</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-44">44</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-45">45</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-46">46</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-47">47</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-48">48</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-49">49</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-50">50</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-51">51</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-52">52</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-53">53</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-54">54</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-55">55</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-56">56</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-57">57</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-58">58</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-59">59</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-60">60</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-61">61</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-62">62</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-63">63</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-64">64</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-65">65</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-66">66</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-67">67</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-68">68</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-69">69</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-70">70</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-71">71</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-72">72</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-73">73</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-74">74</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-75">75</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-76">76</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-77">77</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-78">78</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-79">79</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-80">80</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-81">81</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-82">82</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-83">83</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-84">84</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-85">85</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-86">86</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-87">87</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-88">88</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-89">89</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-90">90</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-91">91</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-92">92</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-93">93</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>    # Project Instructions (AGENTS.md)
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>    # AGENTS.md
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>    This file provides guidance to agents when working with code in this repository.
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>    ## Project Overview
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>    Galaxium Travels — an interplanetary flight booking system. The backend also exposes an <span class="gs">**MCP server**</span> (mounted at <span class="sb">`/mcp`</span>) alongside the REST API, both served from the same FastAPI process on port 8080.
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>    ## Stack
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>    <span class="k">-</span> <span class="gs">**Backend**</span>: Python/FastAPI + SQLAlchemy (SQLite) + FastMCP. Entry point: <span class="sb">`booking_system_backend/server.py`</span>, run via <span class="sb">`python server.py`</span>.
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="k">-</span> <span class="gs">**Frontend**</span>: React 19 + TypeScript + Vite + Tailwind CSS. Run via <span class="sb">`npm run dev`</span> (from <span class="sb">`booking_system_frontend/`</span>).
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>    ## Commands
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>    ### Backend (run from <span class="sb">`booking_system_backend/`</span>, with <span class="sb">`.venv`</span> active)
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="sb">    ```bash</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="c1"># Setup</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    python3 -m venv .venv <span class="o">&amp;&amp;</span> <span class="nb">source</span> .venv/bin/activate <span class="o">&amp;&amp;</span> pip install -r requirements.txt
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>    <span class="c1"># Run server</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>    python server.py   <span class="c1"># http://localhost:8080, Swagger at /docs, MCP at /mcp</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="c1"># Run all tests</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    pytest
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a>    <span class="c1"># Run a single test function</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a>    pytest tests/test_services.py::TestBookingService::test_book_flight_success -v
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a>    <span class="c1"># Run a single test file</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a>    pytest tests/test_rest.py -v
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="sb">    ```</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34"></a>    ### Frontend (run from <span class="sb">`booking_system_frontend/`</span>)
+<a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="sb">    ```bash</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36"></a>    npm run dev      <span class="c1"># http://localhost:5173</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37"></a>    npm run build    <span class="c1"># tsc -b &amp;&amp; vite build</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38"></a>    npm run lint     <span class="c1"># eslint .</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39"></a><span class="sb">    ```</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40"></a>
+<a id="__codelineno-5-41" name="__codelineno-5-41"></a>    ### Start both together (from repo root)
+<a id="__codelineno-5-42" name="__codelineno-5-42"></a><span class="sb">    ```bash</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43"></a>    ./start.sh
+<a id="__codelineno-5-44" name="__codelineno-5-44"></a><span class="sb">    ```</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45"></a>
+<a id="__codelineno-5-46" name="__codelineno-5-46"></a>    ## Critical Backend Patterns
+<a id="__codelineno-5-47" name="__codelineno-5-47"></a>
+<a id="__codelineno-5-48" name="__codelineno-5-48"></a>    ### Error handling: return ErrorResponse, don&#39;t raise
+<a id="__codelineno-5-49" name="__codelineno-5-49"></a>    Service functions return <span class="sb">`BookingOut | ErrorResponse`</span> (or similar). <span class="gs">**Never raise exceptions**</span> from service layer — return an <span class="sb">`ErrorResponse`</span> instance instead. REST endpoints return these directly; MCP tools convert them to <span class="sb">`raise Exception(result.details or result.error)`</span>.
+<a id="__codelineno-5-50" name="__codelineno-5-50"></a>
+<a id="__codelineno-5-51" name="__codelineno-5-51"></a>    ### Seat classes: exactly three, specific names
+<a id="__codelineno-5-52" name="__codelineno-5-52"></a>    Valid seat classes are <span class="sb">`&quot;economy&quot;`</span>, <span class="sb">`&quot;business&quot;`</span>, <span class="sb">`&quot;galaxium&quot;`</span>. The Flight model has three separate seat columns (<span class="sb">`economy_seats`</span>, <span class="sb">`business_seats`</span>, <span class="sb">`galaxium_seats`</span>). There is no generic <span class="sb">`seats_available`</span> column — the <span class="sb">`SEAT_CLASS_MAP`</span> in <span class="sb">`services/booking.py`</span> maps class names to column names.
+<a id="__codelineno-5-53" name="__codelineno-5-53"></a>
+<a id="__codelineno-5-54" name="__codelineno-5-54"></a>    ### Timestamps are ISO strings, stored as String columns
+<a id="__codelineno-5-55" name="__codelineno-5-55"></a>    Both <span class="sb">`departure_time`</span>/<span class="sb">`arrival_time`</span> on Flight and <span class="sb">`booking_time`</span> on Booking are <span class="sb">`String`</span> columns (not DateTime). <span class="sb">`booking_time`</span> is written as <span class="sb">`datetime.utcnow().isoformat()`</span>.
+<a id="__codelineno-5-56" name="__codelineno-5-56"></a>
+<a id="__codelineno-5-57" name="__codelineno-5-57"></a>    ### Pydantic schemas use <span class="sb">`model_validate()`</span>, not <span class="sb">`from_orm()`</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58"></a>    All schemas that wrap ORM models use <span class="sb">`class Config: from_attributes = True`</span>. Construct them with <span class="sb">`BookingOut.model_validate(obj)`</span>, not <span class="sb">`.from_orm()`</span>.
+<a id="__codelineno-5-59" name="__codelineno-5-59"></a>
+<a id="__codelineno-5-60" name="__codelineno-5-60"></a>    ### Tests use in-memory SQLite + monkeypatching
+<a id="__codelineno-5-61" name="__codelineno-5-61"></a>    <span class="sb">`conftest.py`</span> patches both <span class="sb">`db.SessionLocal`</span> and <span class="sb">`server.SessionLocal`</span> (the MCP tools use <span class="sb">`SessionLocal`</span> directly, bypassing FastAPI dependency injection). Each test gets a fresh DB; <span class="sb">`seed()`</span> is patched to a no-op.
+<a id="__codelineno-5-62" name="__codelineno-5-62"></a>
+<a id="__codelineno-5-63" name="__codelineno-5-63"></a>    ## Critical Frontend Patterns
+<a id="__codelineno-5-64" name="__codelineno-5-64"></a>
+<a id="__codelineno-5-65" name="__codelineno-5-65"></a>    ### API base URL from env
+<a id="__codelineno-5-66" name="__codelineno-5-66"></a>    Configure <span class="sb">`VITE_API_URL`</span> in <span class="sb">`.env`</span> (see <span class="sb">`.env.example`</span>). Defaults to <span class="sb">`http://localhost:8080`</span>.
+<a id="__codelineno-5-67" name="__codelineno-5-67"></a>
+<a id="__codelineno-5-68" name="__codelineno-5-68"></a>    ### Error detection: check <span class="sb">`response.success === false`</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69"></a>    Use the <span class="sb">`isErrorResponse(response)`</span> helper from <span class="sb">`src/services/api.ts`</span> to distinguish <span class="sb">`ErrorResponse`</span> from success types. It checks <span class="sb">`response.success === false`</span>.
+<a id="__codelineno-5-70" name="__codelineno-5-70"></a>
+<a id="__codelineno-5-71" name="__codelineno-5-71"></a>    ### Seat class utilities: use <span class="sb">`src/utils/seatClasses.ts`</span>
+<a id="__codelineno-5-72" name="__codelineno-5-72"></a>    Use <span class="sb">`getSeatClassPrice(basePrice, seatClass)`</span> for price with multipliers (economy ×1, business ×1.5, galaxium ×2.5) and <span class="sb">`getSeatCount(flight, seatClass)`</span> to read per-class seat counts. <span class="gs">**Price is stored as an integer (cents/whole units)**</span>; <span class="sb">`formatCurrency`</span> in <span class="sb">`src/utils/formatters.ts`</span> formats it as USD.
+<a id="__codelineno-5-73" name="__codelineno-5-73"></a>
+<a id="__codelineno-5-74" name="__codelineno-5-74"></a>    ### TypeScript strictness
+<a id="__codelineno-5-75" name="__codelineno-5-75"></a>    <span class="sb">`tsconfig.app.json`</span> enables <span class="sb">`strict`</span>, <span class="sb">`noUnusedLocals`</span>, <span class="sb">`noUnusedParameters`</span>, and <span class="sb">`verbatimModuleSyntax`</span>. All types live in <span class="sb">`src/types/index.ts`</span>.
+<a id="__codelineno-5-76" name="__codelineno-5-76"></a>
+<a id="__codelineno-5-77" name="__codelineno-5-77"></a>    ### Tailwind custom tokens
+<a id="__codelineno-5-78" name="__codelineno-5-78"></a>    Use project-specific color tokens: <span class="sb">`space-dark`</span>, <span class="sb">`space-blue`</span>, <span class="sb">`cosmic-purple`</span>, <span class="sb">`nebula-pink`</span>, <span class="sb">`alien-green`</span>, <span class="sb">`solar-orange`</span>, <span class="sb">`star-white`</span>. Backgrounds: <span class="sb">`bg-space-gradient`</span>, <span class="sb">`bg-cosmic-gradient`</span>.
+<a id="__codelineno-5-79" name="__codelineno-5-79"></a>
+<a id="__codelineno-5-80" name="__codelineno-5-80"></a>    ## Coding Standards
+<a id="__codelineno-5-81" name="__codelineno-5-81"></a>
+<a id="__codelineno-5-82" name="__codelineno-5-82"></a>    ### JSDoc for every public function
+<a id="__codelineno-5-83" name="__codelineno-5-83"></a>    Always include a concise JSDoc comment on every public function (frontend TypeScript) and a one-line docstring on every public function (backend Python). Keep wording brief — one sentence is enough.
+<a id="__codelineno-5-84" name="__codelineno-5-84"></a>
+<a id="__codelineno-5-85" name="__codelineno-5-85"></a>    ### Concise wording
+<a id="__codelineno-5-86" name="__codelineno-5-86"></a>    Be very concise in all code comments, docstrings, and prose. Prefer short, direct sentences.
+<a id="__codelineno-5-87" name="__codelineno-5-87"></a>
+<a id="__codelineno-5-88" name="__codelineno-5-88"></a>    ## Interaction Logging
+<a id="__codelineno-5-89" name="__codelineno-5-89"></a>
+<a id="__codelineno-5-90" name="__codelineno-5-90"></a>    After every interaction, write a summary Markdown file to the <span class="sb">`internal-monologue/`</span> folder in the repo root.
+<a id="__codelineno-5-91" name="__codelineno-5-91"></a>    <span class="k">-</span> Filename format: <span class="sb">`YYYY-MM-DD_concise-description.md`</span> (e.g. <span class="sb">`2026-01-15_update-readme.md`</span>).
+<a id="__codelineno-5-92" name="__codelineno-5-92"></a>    <span class="k">-</span> Content: a brief summary of what was requested and what was done.
+<a id="__codelineno-5-93" name="__codelineno-5-93"></a>    <span class="k">-</span> Create the <span class="sb">`internal-monologue/`</span> folder if it does not exist.
+</code></pre></div></td></tr></table></div>
+</details>
 </li>
 </ol>
 <hr />
-<ol start="14">
-<li>
-<p>Create a new Chat session and enter the following prompt:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#tailor-3-2-__codelineno-5-1"></a>Update the readme
-</code></pre></div>
-<p>Afterwards, press the <strong>Send</strong> button.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="15">
-<li>
-<p>As before, Bob will generate a <em>Todo List</em> as it sets to work.</p>
-<div class="admonition warning">
-<p>Take note that the <em>Todo List</em> now includes the creation of an internal-monologue summary — a telltale sign that your new ruleset is being adhered to.</p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="16">
-<li>
-<p>Continue selecting <strong>Approve All</strong> when prompted to allow Bob to carry on with the work until complete.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="17">
-<li>
-<p>Continue through the Agentic Sidebar workflow as you would during a typical interaction.</p>
-<div class="admonition warning">
-<p>From time to time, a prompt may appear requesting a text response (rather than one of the blue action buttons.) For example, Bob may ask for additional details about how the <code>README</code> file should be updated.</p>
-<p>If you receive a prompt such as this, the specific response you provide is <strong>not</strong> consequential for this lab, so feel free to enter any option or details you prefer.</p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="18">
-<li>
-<p>Eventually, a <em>diff view</em> will appear containing the proposed changes to the <code>README</code> file.</p>
-<ul>
-<li>Red text indicates content that is now scheduled to be removed</li>
-<li>Color-highlighed text indicates new content that is scheduled to be added
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-</li>
-</ol>
-<hr />
-<ol start="19">
-<li>
-<p>An internal-monologue (<strong><code># Interaction Summary</code></strong>) entry is also created within the <code>basic_rules.md</code> file, exactly to the specifications requested in the new ruleset.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="20">
-<li>
-<p>On completion of the workflow, Bob will return a <strong><code>Task Completed</code></strong> message to the console.</p>
-<ul>
-<li>As requested by the "update the <code>README</code>" prompt, the <code>README</code> file has been modified as an internal-monologue document</li>
-<li>Note that this new <code>.md</code> file adheres to the <code>yyyy-mm-dd_NAME.md</code> naming format that was specified in the new ruleset
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">DEBUGGING RULESETS</p>
+<p><strong>DEBUGGING RULESETS</strong></p>
 <p>Recall that IBM Bob supports two rule scopes— <strong>Global</strong> and <strong>Workspace</strong> —and within each, mode-specific rules can also be applied. Bob may occasionally overlook Workspace-level rules. Global rules and agent-specific project rules tend to be followed more strictly.</p>
 <p>If your rules aren't being honored as expected, send a prompt to the <em>Agentic Sidebar</em> such as the following:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#tailor-3-2-__codelineno-6-1"></a>My project level rules in @/.bob/rules/basic_rules.md are not being listened to, please configure them properly
-</code></pre></div>
-Submit the prompt and then proceed through the workflow. Bob may add the rules to each <code>agents.md</code> file, apply them for a single instance, or take another approach.</p>
-</div>
-</li>
-</ol>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#tailor-3-2-__codelineno-6-1"></a>My project level rules in @/.bob/rules/basic_rules.md are not being listened to, please configure them properly
+</code></pre></div></p>
+<p>Submit the prompt and then proceed through the workflow. Bob may add the rules to each <code>AGENTS.md</code> file, apply them for a single instance, or take another approach.</p>
+<hr />
 <h2 id="tailor-3-2-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>

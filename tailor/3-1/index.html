@@ -726,7 +726,7 @@
 <hr />
 <p><strong>AGENTS OF <em>GALAXIUM TRAVELS</em></strong></p>
 <p>After execution of the <strong><code>/init</code></strong> command, Bob's <em>Agent mode</em> will examine key front-end and back-end (service) files within the Project directory, ultimately writing a total of four files.</p>
-<div class="admonition tip">
+<div class="admonition quote">
 <p class="admonition-title"><code>AGENTS.md</code> — General guidance</p>
 <ul>
 <li>Commands require running from specific subdirectories (<code>pytest</code> from <code>booking_system_backend/</code>, <code>npm</code> from <code>booking_system_frontend/</code>)</li>
@@ -734,7 +734,7 @@
 <li>The dual REST+MCP architecture on a single port</li>
 </ul>
 </div>
-<div class="admonition tip">
+<div class="admonition quote">
 <p class="admonition-title"><code>.bob/rules-agent/AGENTS.md</code> — Coding gotchas</p>
 <ul>
 <li>No <code>seats_available</code> column — test fixtures in the repo use an old column name that no longer exists in the model; discovered only by reading both <code>models.py</code> and the tests</li>
@@ -743,7 +743,7 @@
 <li>Cancellation is <code>POST</code>, not <code>DELETE</code></li>
 </ul>
 </div>
-<div class="admonition tip">
+<div class="admonition quote">
 <p class="admonition-title"><code>.bob/rules-ask/AGENTS.md</code> — Context for questions</p>
 <ul>
 <li>Backend tests are partially outdated (use the old seat model)</li>
@@ -751,7 +751,7 @@
 <li><code>booking_time</code> has no timezone suffix despite being UTC</li>
 </ul>
 </div>
-<div class="admonition tip">
+<div class="admonition quote">
 <p class="admonition-title"><code>.bob/rules-plan/AGENTS.md</code> — Architecture constraints</p>
 <ul>
 <li>Price multipliers are frontend-only — backend stores only the economy base price</li>
