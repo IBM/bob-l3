@@ -824,7 +824,6 @@
 <p>Ahead, you will examine in detail what each Sub-Task is performing and understand the rationale for the change. With your approval, Bob will then go ahead and implement the work on your behalf.</p>
 </li>
 </ol>
-<hr />
 <div class="admonition tip">
 <p class="admonition-title">Sub-Task 1: Extend the backend data model (models.py, seed.py)</p>
 <p>The current database schema stores a single integer <code>seats_available</code> on the <code>Flight</code> table, which treats all seats as interchangeable. To support three distinct seat classes, we need to split this into three independent columns — <code>economy_seats</code>, <code>business_seats</code>, and <code>galaxium_seats</code> — each tracking its own count. This is a deliberate database design choice: storing them as separate columns (rather than a related table) keeps queries simple, since we always need all three counts together and they have a fixed, known set.</p>
@@ -834,14 +833,14 @@
 </div>
 <ol start="4">
 <li>
-<p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 1. Shall I go ahead?</em></p>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 1. Shall I go ahead?</code></em></p>
 <p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 1</strong> execution.</p>
 </li>
 </ol>
 <hr />
 <ol start="5">
 <li>
-<p>Continue approving any additional requests related to Sub-Task 1 until the Agentic Sidebar chat has reported back with a summary of <em>Sub-Task 1 is done. Here's what has changed.</em></p>
+<p>Continue approving any additional requests related to Sub-Task 1 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 1 is done. Here's what has changed.</code></em></p>
 <div class="admonition quote">
 <ul>
 <li><code>models.py</code>: seats_available replaced with <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code> on <code>Flight</code>; <code>seat_class</code> added to <code>Booking</code></li>
@@ -850,7 +849,6 @@
 </div>
 </li>
 </ol>
-<hr />
 <div class="admonition tip">
 <p class="admonition-title">Sub-Task 2: Update backend schemas and booking service (schemas.py, services/booking.py, server.py)</p>
 <p>The database model is now correct, but the three layers above it — Pydantic schemas, the booking service, and the FastAPI/MCP server — still reference the old <code>seats_available</code> field and know nothing about <code>seat_class</code>. This sub-task threads the new fields all the way up to the API boundary.</p>
@@ -860,14 +858,14 @@
 </div>
 <ol start="6">
 <li>
-<p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 2. Shall I go ahead?</em></p>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 2. Shall I go ahead?</code></em></p>
 <p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 2</strong> execution.</p>
 </li>
 </ol>
 <hr />
 <ol start="7">
 <li>
-<p>Continue approving any additional requests related to Sub-Task 2 until the Agentic Sidebar chat has reported back with a summary of <em>Sub-Task 2 is done. Here's what has changed.</em></p>
+<p>Continue approving any additional requests related to Sub-Task 2 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 2 is done. Here's what has changed.</code></em></p>
 <div class="admonition quote">
 <ul>
 <li><code>schemas.py</code>: <code>FlightOut</code> now exposes <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code>; <code>BookingRequest</code> and <code>BookingOut</code> both carry <code>seat_class</code></li>
@@ -877,7 +875,6 @@
 </div>
 </li>
 </ol>
-<hr />
 <div class="admonition tip">
 <p class="admonition-title">Sub-Task 3: Update frontend types and API service (types/index.ts, utils/seatClasses.ts, services/api.ts)</p>
 <p>The backend now speaks a new contract — three seat columns on flights, <code>seat_class</code> on bookings — but the frontend's TypeScript types still describe the old world. Until we fix that, every component that references flight.<code>seats_available</code> or <code>booking.seat_class</code> will have a type error, and nothing will compile correctly.</p>
@@ -887,14 +884,14 @@
 </div>
 <ol start="8">
 <li>
-<p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 3. Shall I go ahead?</em></p>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 3. Shall I go ahead?</code></em></p>
 <p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 3</strong> execution.</p>
 </li>
 </ol>
 <hr />
 <ol start="9">
 <li>
-<p>Continue approving any additional requests related to Sub-Task 3 until the Agentic Sidebar chat has reported back with a summary of <em>Sub-Task 3 is done. Here's what has changed.</em></p>
+<p>Continue approving any additional requests related to Sub-Task 3 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 3 is done. Here's what has changed.</code></em></p>
 <div class="admonition quote">
 <ul>
 <li><code>types/index.ts</code>: Flight now has <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code> instead of <code>seats_available</code>. <code>Booking</code> and <code>BookingRequest</code> both carry <code>seat_class</code> as a typed literal union</li>
@@ -904,7 +901,6 @@
 </div>
 </li>
 </ol>
-<hr />
 <div class="admonition tip">
 <p class="admonition-title">Sub-Task 4: Add seat class selector to BookingModal</p>
 <p>This is the core user-facing change. Right now the <code>BookingModal</code> shows a static price and a single "Confirm Booking" button — there's no concept of class. We need to insert a class selector so the user can choose Economy, Business, or Galaxium before confirming.</p>
@@ -913,14 +909,14 @@
 </div>
 <ol start="10">
 <li>
-<p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 4. Shall I go ahead?</em></p>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 4. Shall I go ahead?</code></em></p>
 <p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 4</strong> execution.</p>
 </li>
 </ol>
 <hr />
 <ol start="11">
 <li>
-<p>Continue approving any additional requests related to Sub-Task 4 until the Agentic Sidebar chat has reported back with a summary of <em>Sub-Task 4 is done. Here's what has changed.</em></p>
+<p>Continue approving any additional requests related to Sub-Task 4 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 4 is done. Here's what has changed.</code></em></p>
 <div class="admonition quote">
 <ul>
 <li>The following changes were implemented within <code>BookingModal.tsx</code></li>
@@ -934,7 +930,6 @@
 </div>
 </li>
 </ol>
-<hr />
 <div class="admonition tip">
 <p class="admonition-title">Sub-Task 5: Update FlightCard to show per-class availability</p>
 <p>The <code>FlightCard</code> is currently built around a single <code>seats_available</code> field that no longer exists on the <code>Flight</code> type — so right now it would fail to compile. We need to replace it with a compact three-row breakdown showing how many seats each class has on that flight.</p>
@@ -943,14 +938,14 @@
 </div>
 <ol start="12">
 <li>
-<p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 5. Shall I go ahead?</em></p>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 5. Shall I go ahead?</code></em></p>
 <p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 5</strong> execution.</p>
 </li>
 </ol>
 <hr />
 <ol start="13">
 <li>
-<p>Continue approving any additional requests related to Sub-Task 5 until the Agentic Sidebar chat has reported back with a summary of <em>Sub-Task 5 is done. Here's what has changed.</em></p>
+<p>Continue approving any additional requests related to Sub-Task 5 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 5 is done. Here's what has changed.</code></em></p>
 <div class="admonition quote">
 <ul>
 <li>The following changes were implemented within <code>FlightCard.tsx</code></li>
@@ -962,7 +957,6 @@
 </div>
 </li>
 </ol>
-<hr />
 <div class="admonition tip">
 <p class="admonition-title">Sub-Task 6 Show seat class in booking history (BookingCard.tsx)</p>
 <p>This is the final piece. Once a booking is made with a seat class, users visiting the "My Bookings" page should be able to see which class they booked, and the price shown should reflect what they actually paid (base price × multiplier) rather than the raw base price.</p>
@@ -970,14 +964,14 @@
 </div>
 <ol start="14">
 <li>
-<p>Within the Agentic Sidebar, you will be prompted with the following: <em>Ready to implement Sub-Task 6. Shall I go ahead?</em></p>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 6. Shall I go ahead?</code></em></p>
 <p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 6</strong> execution.</p>
 </li>
 </ol>
 <hr />
 <ol start="15">
 <li>
-<p>Continue approving any additional requests related to Sub-Task 6 until the Agentic Sidebar chat has reported back with a summary of <em>Sub-Task 6 is done. Here's what has changed.</em></p>
+<p>Continue approving any additional requests related to Sub-Task 6 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 6 is done. Here's what has changed.</code></em></p>
 <div class="admonition quote">
 <ul>
 <li>The following changes were implemented within <code>BookingCard.tsx</code></li>
