@@ -657,7 +657,7 @@
 <hr />
 <h2 id="i-shaping-bob-to-every-role"><strong>i. Shaping Bob to every role</strong></h2>
 <hr />
-<p>IBM Bob's standardized, built-in Modes— <em>Code</em>, <em>Plan</em>, <em>Ask</em>, and <em>Advanced</em> —cover the most commonly found workflows and use cases that IBM's clients will encounter. But when pushing new frontiers and working at the scale of enterprise, there will inevitably be edge cases and bespoke cases requiring a tailored solution.</p>
+<p>IBM Bob's standardized, built-in Modes— <em>Agent</em>, <em>Plan</em>, and <em>Ask</em> —cover the most commonly found workflows and use cases that IBM's clients will encounter. But when pushing new frontiers and working at the scale of enterprise, there will inevitably be edge cases and bespoke cases requiring a tailored solution.</p>
 <p><strong>Custom Modes</strong> allow clients to define their own specialized agentic workflows with Bob: it combines a role definition, behavioral instructions, and a deterministic set of permitted tools. The net result for Bob clients is that, regardless of whether the end-user happens to be a product manager or a senior engineer, the Custom Mode "version" (persona) of Bob they interact with has been pre-tuned and shaped to how they actually work.</p>
 <hr />
 <h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
@@ -719,13 +719,17 @@
 <p>Custom Modes are created through the Mode settings panel in Bob IDE. You will have plenty of opportunity to try this yourself shortly in the hands-on materials. For reference, however:</p>
 <hr />
 <ol>
-<li>Click the <strong>gear icon</strong> in the Mode selector to open Mode settings</li>
-<li>Select the <strong>Custom Modes</strong> tab</li>
-<li>Click the <strong>+</strong> icon to create a new Mode</li>
+<li>Click the <strong>Mode toggle</strong> button (may be labelled as <em>Agent</em>, <em>Plan</em>, or <em>Ask</em> at this time)</li>
+<li>From the expanded options, click the <strong>cog</strong> shaped icon to access <strong>Mode Settings</strong></li>
+<li>The <em>Bob Settings</em> panel will open, make sure the <strong>Modes</strong> tab (left) is selected</li>
+<li>Click the <span class="keys"><kbd class="key-plus">+</kbd></span> icon (top-right of the table of existing Modes) to <strong>Create new mode</strong></li>
 <li>Fill in the slug, name, scope, custom instructions, and tool permissions</li>
 <li>Save the Mode</li>
 </ol>
-<hr />
+<details class="quote">
+<summary>HOW TO TOGGLE DIFFERENT AGENTIC MODES</summary>
+<p>The label assigned to the <strong>Mode toggle</strong> button will change to reflect the name of the mode that the Agentic Sidebar currently has active. For example, if in the <em>Agent</em> mode, the toggle button will read as <em>Agent</em>. For the sake of clarity, when instructing you to change the Agentic Mode type, this documentation will refer to this toggle button as the <strong>Mode toggle</strong>.</p>
+</details>
 <p>You can scope a Mode to a single <strong>Project</strong>-level (stored in <code>.bobmodes</code>), or make it <strong>Global</strong>-level across all Bob projects and interactions. Creating a Mode through the UI generates a <code>.bobmodes</code> YAML file in the project root, which you can edit directly, commit to the repository so the whole team shares the same Modes, or use as a starting point for asking Bob to generate further Modes.</p>
 <hr />
 <h2 id="iv-a-sample-custom-mode"><strong>iv. A sample Custom Mode</strong></h2>
@@ -771,14 +775,15 @@
 <hr />
 <h2 id="v-hands-on-building-a-product-manager-custom-mode"><strong>v. Hands-on: Building a Product Manager Custom Mode</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DC46497j6QjGF8QTV4HDB3fgWJ4G">Chapter 3.3: Custom Modes [IBM Bob L3]</a></p>
-</blockquote>
 <p>In the following steps, you will implement a real-world <em>Product Manager</em> Custom Mode end-to-end with Bob. To do so, you'll need to define its persona, grant it a deliberate set of tools to work with, and then put it to work against a real product manager scenario.</p>
 <hr />
 <ol>
 <li>
-<p>Click the Mode button (which at this point is likely set to <strong>Code</strong> Mode).</p>
+<p>Click the <strong>Mode toggle</strong> button (which at this point is likely set to <em>Agent</em> mode.)</p>
+<details class="quote">
+<summary>HOW TO TOGGLE DIFFERENT AGENTIC MODES</summary>
+<p>The label assigned to the <strong>Mode toggle</strong> button will change to reflect the name of the mode that the Agentic Sidebar currently has active. For example, if in the <em>Agent</em> mode, the toggle button will read as <em>Agent</em>. For the sake of clarity, when instructing you to change the Agentic Mode type, this documentation will refer to this toggle button as the <strong>Mode toggle</strong>.</p>
+</details>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1dd5e0aa-6af3-4703-935e-eb0de99eac1a/File_dfc2a31c66c14cfd9aed3e9503b937c1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/1dd5e0aa-6af3-4703-935e-eb0de99eac1a/File_dfc2a31c66c14cfd9aed3e9503b937c1_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -787,7 +792,7 @@
 <hr />
 <ol start="2">
 <li>
-<p>Click the gear icon to expose <strong>Mode Settings</strong>.</p>
+<p>Click the <strong>cog icon</strong> to expose <strong>Mode Settings</strong>.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/75ce2a06-0dc1-43ec-abbd-f4823397402f/File_2b9ee6170f574158a272681f87edf8c5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/75ce2a06-0dc1-43ec-abbd-f4823397402f/File_2b9ee6170f574158a272681f87edf8c5_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -796,7 +801,7 @@
 <hr />
 <ol start="3">
 <li>
-<p>Click <strong>Open</strong> next to Project Modes.</p>
+<p>The <em>Bob Settings</em> panel will open. Ensure that the <strong>Modes</strong> tab (left) is selected.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d740b7a0-c762-4f0b-b0a9-69dc192c52a0/File_49dabdb09359462fbaa529b68bb3a800_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d740b7a0-c762-4f0b-b0a9-69dc192c52a0/File_49dabdb09359462fbaa529b68bb3a800_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -805,7 +810,8 @@
 <hr />
 <ol start="4">
 <li>
-<p>A new <strong>Create new Mode</strong> panel will open within the Bob IDE.</p>
+<p>Click the <span class="keys"><kbd class="key-plus">+</kbd></span> icon (top-right of the table of existing Modes) to <strong>Create new mode</strong>.</p>
+<p>A new <strong>Create new mode</strong> panel will open within the Bob IDE.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0410da9b-d5c1-4f4b-9dc0-284735e2f3a5/File_01b405c48621457f8bfc9a9286ceb060_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/0410da9b-d5c1-4f4b-9dc0-284735e2f3a5/File_01b405c48621457f8bfc9a9286ceb060_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -825,7 +831,7 @@
 <hr />
 <ol start="6">
 <li>
-<p>For the <strong>Name</strong> field, enter the following:</p>
+<p>For the <strong>Name</strong> field, also enter the same details:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>product-manager
 </code></pre></div>
 <p><p align="left">
@@ -847,10 +853,8 @@
 <hr />
 <ol start="8">
 <li>
-<p>For the <strong>Scope</strong> field, check the box next to <code>Project</code>.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8977aca4-62c6-4d16-ae28-f99f9d875282/File_f4c970e5d14b4bf69f6529711da72037_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8977aca4-62c6-4d16-ae28-f99f9d875282/File_f4c970e5d14b4bf69f6529711da72037_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+<p>For the <strong>Scope</strong> field, click the drop-down menu to expose more options. By default this value is set to <code>Global</code>.</p>
+<p><strong>Change</strong> the value to the <code>galaxium-travels</code> project.</p>
 </li>
 </ol>
 <hr />
@@ -905,12 +909,13 @@
 <ol start="12">
 <li>
 <p>Now comes the point where you can set limitations on which <strong>Tools</strong> that Bob (and the Custom Mode) are authorized to use.</p>
+<p><strong>Toggle <em>ON</em></strong> the following from the list of <em>Available Tools</em>. All other Tools should be left <em>off</em> (default).</p>
 <ul>
-<li>Select <strong>Read files</strong></li>
-<li>Then select <strong>Edit files</strong></li>
-<li>And finally select <strong>Use MCP</strong></li>
+<li><code>Read</code>: Allows Bob to read files in the workspace for this task</li>
+<li><code>Edit</code>: Allows Bob to edit files in the workspace for this task</li>
+<li><code>MCP</code>: Allows Bob to use MCP Server tools for this task</li>
 </ul>
-<p>Collectively, these permissions grant the Custom Mode the ability to read files within the project directory, edit those files, and utilize the open-source Model Context Protocol (MCP).
+<p>Collectively, these permissions grant the new <code>product-manager</code> Custom Mode the ability to read files within the project directory, edit those files, and utilize the open-source Model Context Protocol (MCP).
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9409e892-f7d0-45a1-8e7e-9918b6c5fd99/File_bf32696ce7bb4c5baf1d26792c9561c9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9409e892-f7d0-45a1-8e7e-9918b6c5fd99/File_bf32696ce7bb4c5baf1d26792c9561c9_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -919,7 +924,7 @@
 <hr />
 <ol start="13">
 <li>
-<p>Finally, press the blue <strong>Save</strong> button to finish defining the <code>product-manager</code> Custom Mode.</p>
+<p>Finally, press the blue <strong>Save</strong> button (bottom-right corner) to finish defining the <code>product-manager</code> Custom Mode.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/313ed214-5b99-4d72-a18a-7bafdbc83615/File_9e3fea1d8fcf480f99548811ee8bb9cb_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/313ed214-5b99-4d72-a18a-7bafdbc83615/File_9e3fea1d8fcf480f99548811ee8bb9cb_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -928,20 +933,22 @@
 <hr />
 <ol start="14">
 <li>
-<p>After saving, you'll be returned to the Modes sub-menu of the <em>Settings</em> interface.</p>
-<ul>
-<li>Take note of the new tile for the <code>product-manager</code> Custom Mode that has appeared from the list of Modes</li>
-<li>Press the <strong>All</strong> button next to Search Modes
-<p align="left">
+<p>After saving, you'll be returned to the Modes sub-menu of the <em>Bob Settings</em> interface.</p>
+<p>Take note of the new tile for the <code>product-manager</code> Custom Mode that has appeared from the list of Modes.</p>
+<div class="admonition note">
+<p class="admonition-title">Connect to IBM VPN to access the marketplace</p>
+<p>Connection to the Bob Marketplace opens the doors to a tremendous amount of IBM and IBMer-publised Modes, Skills, and more tools that Bob can directly integrate with as part of its workflow. In order to view and access the Marketplace, ensure that your VPN connection to the IBM intranet is active.</p>
+</div>
+<p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b7560696-ee53-4dea-a06e-6e439335fae5/File_e966e2e1660c4a358a462e69cacfc50f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b7560696-ee53-4dea-a06e-6e439335fae5/File_e966e2e1660c4a358a462e69cacfc50f_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
+</p></p>
 </li>
 </ol>
 <hr />
 <ol start="15">
 <li>
-<p>From the drop-down options, select <strong>Project Modes</strong>.</p>
+<p>To the right of the search bar labeled <em>Search Modes</em>, click the drop-down marked as <strong>All</strong>.</p>
+<p>From the drop-down options, filter by <strong>Workspace modes</strong>.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a81d942b-94e3-4be7-8a3d-ca94a81bcbbb/File_a1f4877925d9422c92cdf2cdf7844e43_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a81d942b-94e3-4be7-8a3d-ca94a81bcbbb/File_a1f4877925d9422c92cdf2cdf7844e43_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -950,7 +957,7 @@
 <hr />
 <ol start="16">
 <li>
-<p>In the <strong>Project Modes</strong> view, the <code>product-manager</code> tile appears with its description, confirming that the new Custom Mode was successfully created.</p>
+<p>Within the <strong>Workspace modes</strong> list, the <code>product-manager</code> Modes appears alongside its description, confirming that the new Custom Mode was successfully created. These filters can be particularly useful when your Bob project space has accumulated multiple Modes — either ones you've authored yourself, or those that have been installed via the Bob Marketplace.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ec5feed5-9f3b-405b-bf89-c3337bfad468/File_9e3f0404d5fb4f84b183bcce55942bf0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ec5feed5-9f3b-405b-bf89-c3337bfad468/File_9e3f0404d5fb4f84b183bcce55942bf0_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -959,9 +966,9 @@
 <hr />
 <ol start="17">
 <li>
-<p>Activate the <strong>product-manager</strong> Custom Mode in the same manner as how you activated the Code and Plan Modes previously.</p>
-<p>Click the <strong>Modes</strong> button within the Agentic Sidebar to expose the available Modes.
-<p align="left">
+<p>Return your attention to the <strong>Agentic Sidebar</strong> session on the right side of the Bob IDE.</p>
+<p>Using the <strong>Mode toggle</strong> button, switch into the newly-defined <code>product-manager</code> mode.</p>
+<p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e4357c8-49fd-49f6-b294-39718acaf92f/File_a88dc03207924d828bcf2ff0d5c4289c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e4357c8-49fd-49f6-b294-39718acaf92f/File_a88dc03207924d828bcf2ff0d5c4289c_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
@@ -969,16 +976,7 @@
 <hr />
 <ol start="18">
 <li>
-<p>From the exposed Modes options, select <strong><code>product-manager</code></strong>.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cc605df-68d7-4be8-861c-d811aef2da1a/File_83a74378475843e4a54eec469f2471cc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cc605df-68d7-4be8-861c-d811aef2da1a/File_83a74378475843e4a54eec469f2471cc_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="19">
-<li>
-<p>With the <code>product-manager</code> mode engaged, copy and paste the following prompt into the chat session to test (press <strong>Send</strong> to execute):</p>
+<p>With the <code>product-manager</code> mode activated, copy &amp; paste the following prompt into the session and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>What feature should we build next?
 </code></pre></div>
 <p align="left">
@@ -987,27 +985,45 @@
 </li>
 </ol>
 <hr />
-<ol start="20">
-<li>
-<p>Proceed through the workflow as Bob gets to work, clicking <strong>Approve</strong> as necessary to advance the task.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/93160a09-90e2-471b-b9c6-4cb9d33db776/File_ff2b0a13b78a4cd2a5ccfcd0accd1063_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/93160a09-90e2-471b-b9c6-4cb9d33db776/File_ff2b0a13b78a4cd2a5ccfcd0accd1063_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="21">
-<li>
-<p>Finally, recall the Workspace-level rules you defined earlier. Verify that they apply to the new <code>product-manager</code> Custom Mode, as well.</p>
-<div class="admonition warning">
-<p>Bob can occasionally get muddled about rules, especially across permission levels.</p>
-<p>If your Workspace-level rules are not behaving as expected, a quick follow-up like <em><code>"Listen to the rules in .bob/rules/basic_rules.md"</code></em> will often remedy the situation.</p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f459f265-6d26-46c0-bbd3-75c9bf5abda6/File_3e7b9654ae4845c7b3bc8a72b50bf7ca_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f459f265-6d26-46c0-bbd3-75c9bf5abda6/File_3e7b9654ae4845c7b3bc8a72b50bf7ca_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
+<p><strong>THROUGH THE LENS OF A PRODUCT MANAGER</strong></p>
+<p>As IBM Bob executes upon this ask and does so within the lens of the <code>product-manager</code> Mode you just defined, it will generate a detailed report about the current state of the <em>Galaxium Travels</em> project. It will first summarize the various functions and purpose of the application, identifying what has been built so far, and what Bob reckons (against its own understanding of such applications and coding best practices) remains missing from a robust and complete version of the service.</p>
+<p><strong><em>Summary</em></strong>
+Galaxium Travels is a working interplanetary booking app (React + FastAPI + MCP). The last major feature — seat classes (Economy / Business / Galaxium) — was fully shipped across all 6 sub-tasks. The product can now browse flights, register users, book seats by class, cancel, and view history.</p>
+<p><strong><em>MVP Card</em></strong>
+IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give travelers a complete post-booking experience — confirmation, trip summary, and smarter flight discovery"</em> —and then reason out what components of that work should be treated as <strong>In Scope</strong> and <strong>Out of Scope</strong>. The purpose here is defining the immediate, low-hanging opportunities with immediate-to-short-term impacts on users (the <strong>Now</strong> and <strong>Next</strong> categories in the following table, respectively) versus those with longer-term-but-out-of-scope impacts (<strong>Later</strong>).</p>
+<table>
+<thead>
+<tr>
+<th>NOW</th>
+<th>NEXT</th>
+<th>LATER</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Booking confirmation screen (high visibility, low effort)</td>
+<td>Flight search &amp; filter (origin/destination)</td>
+<td>Email / notification on booking</td>
+</tr>
+<tr>
+<td>"My Trip" detail expand in MyBookings</td>
+<td>Date-range filtering</td>
+<td>User profile page</td>
+</tr>
+<tr>
+<td>Backend query params for flight filtering</td>
+<td>Fare comparison across seat classes (matrix view)</td>
+<td>Payment integration</td>
+</tr>
+<tr>
+<td>Seat class badge in nav</td>
+<td>Saved/favourite routes</td>
+<td>Multi-passenger booking</td>
+</tr>
+</tbody>
+</table>
+<p>Additional categories like <strong><em>Top 5 User Stories</em></strong>, <strong><em>Success Metrics</em></strong>, <strong><em>Risks &amp; Open Questions</em></strong>, and  <strong><em>Recommended Next Decisions</em></strong> are also captured within the <code>product-manager</code> Mode summary. All of these categories and metrics, of course, are particularly suited to an individual tasked with a Product Manager role in this context!</p>
+<p>Continue exploring these details and asking additional prompts within the Agentic Sidebar if you wish, then proceed with the lab guide as we close out with <strong>Module 4</strong>.</p>
 <hr />
 <h2 id="vi-key-takeaways"><strong>vi. Key takeaways</strong></h2>
 <hr />

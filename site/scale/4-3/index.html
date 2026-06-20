@@ -684,15 +684,15 @@
 </table>
 <div class="admonition quote">
 <p class="admonition-title">USING MCP TOOLS</p>
-<p><strong>MCP tools</strong> are available only in Bob's <strong>Advanced Mode</strong>. With Advanced Mode active, Bob automatically recognizes the tools exposed by every configured server and invokes them in response to natural-language requests.</p>
+<p><strong>MCP tools</strong> are available only in Bob's <strong>Agent Mode</strong>. With Agent Mode active, Bob automatically recognizes the tools exposed by every configured server and invokes them in response to natural-language requests.</p>
 <p>No special syntax is quired required. Bob simply decides which MCP tools to call based on the task you describe.</p>
 <p>The GitHub MCP server shows how much a single integration can add:</p>
 <ul>
 <li><em>Configuration:</em> paste GitHub's configuration snippet into the JSON config, then add a personal access token whose permissions match the operations Bob will perform (reading issues, creating commits, adding comments, closing issues)</li>
-<li><em>Advanced Mode capabilities enabled:</em> with Advanced Mode active, Bob can list and read issues, create commits and push changes, add comments, close issues, and link commits to issues</li>
+<li><em>Agent Mode capabilities enabled:</em> with Agent Mode active, Bob can list and read issues, create commits and push changes, add comments, close issues, and link commits to issues</li>
 <li><em>Testing:</em> a token with insufficient permissions will simply cause the affected operation to fail and Bob will report the permission error so that you know to update the token</li>
 </ul>
-<p>Strung together, Bob's Advanced Mode capabilities make a complete <strong>issue-resolution loop</strong> possible entirely through natural language expressions. A full development cycle— from issue to closed resolution —is possible, without ever leaving the Bob interface:</p>
+<p>Strung together, Bob's Agent Mode capabilities make a complete <strong>issue-resolution loop</strong> possible entirely through natural language expressions. A full development cycle— from issue to closed resolution —is possible, without ever leaving the Bob interface:</p>
 <ul>
 <li><em>Ask</em> Bob to list open issues (Bob will call the GitHub MCP tool to retrieve them)</li>
 <li><em>Describe</em> the one issue to fix (Bob reads the relevant code and implements the change)</li>
@@ -809,7 +809,7 @@
 <hr />
 <ol start="11">
 <li>
-<p>Expand the <strong>Modes</strong> button.</p>
+<p>Toggle the <strong>Modes</strong> switch button.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b16bdbb-b2de-4de8-8c25-5051b105a89c/File_d7316e331fd24246940a10a69ca94ea2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b16bdbb-b2de-4de8-8c25-5051b105a89c/File_d7316e331fd24246940a10a69ca94ea2_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -818,7 +818,7 @@
 <hr />
 <ol start="12">
 <li>
-<p>Under modes, select <strong>Advanced</strong> to unlock IBM Bob's set of MCP tools.</p>
+<p>Under modes, select <strong>Agent</strong> to unlock IBM Bob's set of MCP tools.</p>
 <p>You will be able to configure the MCP server directly from the agentic sidebar.
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcc29cfb-02e8-40d7-80ec-ccf0cd32858c/File_ed48e74df3db442d8a37db58f93f6e1c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcc29cfb-02e8-40d7-80ec-ccf0cd32858c/File_ed48e74df3db442d8a37db58f93f6e1c_text_export.jpeg" alt="" width="600" /></a>
@@ -871,12 +871,16 @@
 </div>
 </div>
 </div>
-<p><strong>Instructions to modify:</strong>
-- <em>Line 18:</em> Replace <code>&lt;github_pat_123456789&gt;</code> string with your true <strong>Access Token</strong> details recorded in <strong>Step 7</strong>
-- Copy and paste the modified prompt into Bob's Agentic Sidebar (ensure that Advanced Mode is active)
-- Click <strong>Send</strong> to execute the instruction set
-- <strong>Approve</strong> requests from Bob as it works its way through the task
-<p align="left">
+<div class="admonition warning">
+<p class="admonition-title">INSTRUCTIONS TO MODIFY FOR YOUR MACHINE</p>
+<p>The following elements require modification and further customization depending on your particular account and machine.</p>
+<div class="highlight"><pre><span></span><code>- **Line 18**: Replace `&lt;github_pat_123456789&gt;` string with your true **Access Token** details recorded in **Step 7**
+- Copy and paste the modified prompt into Bob&#39;s Agentic Sidebar (ensure that *Agent mode* is active)
+- Click **Send** to execute the instruction set
+- **Approve** requests from Bob as it works its way through the task
+</code></pre></div>
+</div>
+<p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd6d1436-d9d2-4b48-991e-db71514bf2eb/File_90d413dcbdf6426aaf1994207dedf7f3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd6d1436-d9d2-4b48-991e-db71514bf2eb/File_90d413dcbdf6426aaf1994207dedf7f3_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
@@ -939,7 +943,7 @@
 <li>
 <p>Now test the new MCP server configuration.</p>
 <ul>
-<li>Ensure that Bob is still in <strong>Advanced</strong> mode</li>
+<li>Ensure that Bob is still in <strong>Agent</strong> mode</li>
 <li>When ready, copy and paste the following prompt into the Agentic Sidebar and press <strong>Send</strong> to execute:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>List all issues from github for this repo
 </code></pre></div></li>
@@ -977,7 +981,7 @@
 <li>Originated at Anthropic and is now governed by the Linux Foundation as a vendor-neutral standard</li>
 <li>Primary value is coordination: a shared standard eliminates custom integration work</li>
 <li>MCP servers are configured in Bob's settings as JSON (credentials can be inline, environment variables, or managed through Context Forage)</li>
-<li>MCP tools require IBM Bob's <strong>Advanced Mode</strong> to be enabled</li>
+<li>MCP tools require IBM Bob's <strong>Agent Mode</strong> to be enabled</li>
 <li>GitHub MCP server allows Bob to list issues, create commits, push changes, add comments, and close issues through natural language prompts</li>
 </ul>
 <p></br></p>
