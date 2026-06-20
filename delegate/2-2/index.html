@@ -1086,7 +1086,7 @@
 <summary>MAC OR LINUX</summary>
 <p>On macOS or Linux, run the following commands one at a time.</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span> ~/galaxium-travels
 </code></pre></div></p>
 <p><strong>Step 2:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./start.sh
@@ -1144,6 +1144,32 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </details>
 </li>
 </ol>
+<hr />
+<p><strong>DEBUGGING WITH IBM BOB</strong></p>
+<p>You may discover that your application fails to start, owing to an error! Ours did.</p>
+<div class="highlight"><pre><span></span><code>!!! warning &quot;&quot;
+    ```
+    ERROR:    Application startup failed. Exiting.
+    🎨 Starting Frontend Server...
+    ✅ Frontend started on http://localhost:5173
+    ```
+</code></pre></div>
+<p>The web service will still launch on <code>localhost</code>, but you may find features that were just adjusted (like Seat Classes) are failing to render. One tremendously useful feature of IBM Bob is being able to diagnose and remedy application troubles directly within the Agentic Sidebar, much in the same way that you previously asked Bob to generate new code.</p>
+<p>In our example, we copied the full log from the Terminal console (143 lines) after attempting to run the <code>./start.sh</code> script along with the statement: <em><code>I got an error! Here's the log from console.</code></em></p>
+<p>Bob, in turn, replied back with the following details about the source of the error and its plan (pending user approval) to rectify it:</p>
+<div class="admonition quote">
+<p>The problem is a stale <code>booking.db</code> file on disk. SQLAlchemy's <code>create_all</code> only adds missing tables. It never alters existing ones. So the old <code>flights</code> table (with <code>seats_available</code>) is still there from a previous run, and the new columns don't exist in it.</p>
+<p>The fix is to drop the old database file before the server starts. Let me do that now.</p>
+</div>
+<p>The recommendation from Bob is to execute the following command, which you can approve via the Agentic Sidebar by clicking the <strong>Approve once</strong> button (or execute yourself within the Terminal console):</p>
+<div class="highlight"><pre><span></span><code>``` bash
+rm -f booking_system_backend/booking.db
+```
+</code></pre></div>
+<p>With the fix in place, all future executions of <code>./start.sh</code> will instruct <code>init_db</code> to call <code>create_all</code> against a clean slate, building the correct schema with <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code>, and <code>seat_class</code> from scratch. It will subsequently apply the <code>seed()</code> function to populate it with fresh demo data.</p>
+<div class="admonition warning">
+<p>If you applied this fix (or other fixes), <strong>close</strong> your Terminal and follow <strong>Step 18</strong> again. Then proceed to <strong>Step 19</strong> below.</p>
+</div>
 <hr />
 <ol start="19">
 <li>
