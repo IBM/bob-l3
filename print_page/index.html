@@ -3564,7 +3564,7 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <hr />
 <ol start="2">
 <li>
-<p>Click the <span class="keys"><kbd class="key-plus">+</kbd></span> <strong>cog</strong> icon to expose <strong>Mode Settings</strong>.</p>
+<p>Click the <strong>cog icon</strong> to expose <strong>Mode Settings</strong>.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/75ce2a06-0dc1-43ec-abbd-f4823397402f/File_2b9ee6170f574158a272681f87edf8c5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/75ce2a06-0dc1-43ec-abbd-f4823397402f/File_2b9ee6170f574158a272681f87edf8c5_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -3603,7 +3603,7 @@ IBM Bob is endlessly malleable. You can tailor it behave the way you want, accor
 <hr />
 <ol start="6">
 <li>
-<p>For the <strong>Name</strong> field, enter the following:</p>
+<p>For the <strong>Name</strong> field, also enter the same details:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#tailor-3-3-__codelineno-1-1"></a>product-manager
 </code></pre></div>
 <p><p align="left">
@@ -3855,7 +3855,7 @@ IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give
 <tr>
 <td>2</td>
 <td>Mode description</td>
-<td>The definition of the currently active Bob Mode (<em>Code</em>, <em>Plan</em>, <em>Custom</em>, etc.)</td>
+<td>The definition of the currently active Bob Mode (<em>Agent</em>, <em>Plan</em>, <em>Ask</em>, etc.)</td>
 </tr>
 <tr>
 <td>3</td>
@@ -3945,7 +3945,8 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <hr />
 <h2 id="scale-4-2-i-moving-beyond-the-ide"><strong>i. Moving beyond the IDE</strong></h2>
 <hr />
-<p>Everything so far has lived inside the IDE. <strong>Bob Shell</strong> brings the same core capabilities to a terminal — a keyboard-driven, command-line form factor installed separately from the VS Code extension and runnable in any standard terminal. For developers who live in the terminal, it unlocks workflows that are difficult or impossible in the IDE: headless automation, scripting, and running several Bob instances in parallel. This is what taking Bob to enterprise scale looks like in practice.</p>
+<p>Everything so far has lived inside the IDE. <strong>Bob Shell</strong> brings the same core capabilities to a terminal — a keyboard-driven, command-line form factor installed separately from the VS Code extension and runnable in any standard terminal. For developers who live in the terminal, it unlocks workflows that are difficult or impossible in the IDE: headless automation, scripting, and running several Bob instances in parallel.</p>
+<p>This is what taking Bob to enterprise scale looks like in practice.</p>
 <div class="admonition note">
 <p class="admonition-title">ADDITIONAL DOCUMENTATION</p>
 <p><strong>Heads-up:</strong> completing this lesson may require additional guidance from IBM Bob's full product documentation to install Bob Shell. Detailed documentation is available from <strong><a href="https://bob.ibm.com/docs/shell/getting-started/install-and-setup?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">IBM.com</a></strong></p>
@@ -4373,15 +4374,15 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 </table>
 <div class="admonition quote">
 <p class="admonition-title">USING MCP TOOLS</p>
-<p><strong>MCP tools</strong> are available only in Bob's <strong>Advanced Mode</strong>. With Advanced Mode active, Bob automatically recognizes the tools exposed by every configured server and invokes them in response to natural-language requests.</p>
+<p><strong>MCP tools</strong> are available only in Bob's <strong>Agent Mode</strong>. With Agent Mode active, Bob automatically recognizes the tools exposed by every configured server and invokes them in response to natural-language requests.</p>
 <p>No special syntax is quired required. Bob simply decides which MCP tools to call based on the task you describe.</p>
 <p>The GitHub MCP server shows how much a single integration can add:</p>
 <ul>
 <li><em>Configuration:</em> paste GitHub's configuration snippet into the JSON config, then add a personal access token whose permissions match the operations Bob will perform (reading issues, creating commits, adding comments, closing issues)</li>
-<li><em>Advanced Mode capabilities enabled:</em> with Advanced Mode active, Bob can list and read issues, create commits and push changes, add comments, close issues, and link commits to issues</li>
+<li><em>Agent Mode capabilities enabled:</em> with Agent Mode active, Bob can list and read issues, create commits and push changes, add comments, close issues, and link commits to issues</li>
 <li><em>Testing:</em> a token with insufficient permissions will simply cause the affected operation to fail and Bob will report the permission error so that you know to update the token</li>
 </ul>
-<p>Strung together, Bob's Advanced Mode capabilities make a complete <strong>issue-resolution loop</strong> possible entirely through natural language expressions. A full development cycle— from issue to closed resolution —is possible, without ever leaving the Bob interface:</p>
+<p>Strung together, Bob's Agent Mode capabilities make a complete <strong>issue-resolution loop</strong> possible entirely through natural language expressions. A full development cycle— from issue to closed resolution —is possible, without ever leaving the Bob interface:</p>
 <ul>
 <li><em>Ask</em> Bob to list open issues (Bob will call the GitHub MCP tool to retrieve them)</li>
 <li><em>Describe</em> the one issue to fix (Bob reads the relevant code and implements the change)</li>
@@ -4498,7 +4499,7 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <hr />
 <ol start="11">
 <li>
-<p>Expand the <strong>Modes</strong> button.</p>
+<p>Toggle the <strong>Modes</strong> switch button.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b16bdbb-b2de-4de8-8c25-5051b105a89c/File_d7316e331fd24246940a10a69ca94ea2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b16bdbb-b2de-4de8-8c25-5051b105a89c/File_d7316e331fd24246940a10a69ca94ea2_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -4507,7 +4508,7 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <hr />
 <ol start="12">
 <li>
-<p>Under modes, select <strong>Advanced</strong> to unlock IBM Bob's set of MCP tools.</p>
+<p>Under modes, select <strong>Agent</strong> to unlock IBM Bob's set of MCP tools.</p>
 <p>You will be able to configure the MCP server directly from the agentic sidebar.
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcc29cfb-02e8-40d7-80ec-ccf0cd32858c/File_ed48e74df3db442d8a37db58f93f6e1c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcc29cfb-02e8-40d7-80ec-ccf0cd32858c/File_ed48e74df3db442d8a37db58f93f6e1c_text_export.jpeg" alt="" width="600" /></a>
@@ -4560,12 +4561,16 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 </div>
 </div>
 </div>
-<p><strong>Instructions to modify:</strong>
-- <em>Line 18:</em> Replace <code>&lt;github_pat_123456789&gt;</code> string with your true <strong>Access Token</strong> details recorded in <strong>Step 7</strong>
-- Copy and paste the modified prompt into Bob's Agentic Sidebar (ensure that Advanced Mode is active)
-- Click <strong>Send</strong> to execute the instruction set
-- <strong>Approve</strong> requests from Bob as it works its way through the task
-<p align="left">
+<div class="admonition warning">
+<p class="admonition-title">INSTRUCTIONS TO MODIFY FOR YOUR MACHINE</p>
+<p>The following elements require modification and further customization depending on your particular account and machine.</p>
+<div class="highlight"><pre><span></span><code>- **Line 18**: Replace `&lt;github_pat_123456789&gt;` string with your true **Access Token** details recorded in **Step 7**
+- Copy and paste the modified prompt into Bob&#39;s Agentic Sidebar (ensure that *Agent mode* is active)
+- Click **Send** to execute the instruction set
+- **Approve** requests from Bob as it works its way through the task
+</code></pre></div>
+</div>
+<p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd6d1436-d9d2-4b48-991e-db71514bf2eb/File_90d413dcbdf6426aaf1994207dedf7f3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd6d1436-d9d2-4b48-991e-db71514bf2eb/File_90d413dcbdf6426aaf1994207dedf7f3_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
@@ -4628,7 +4633,7 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <li>
 <p>Now test the new MCP server configuration.</p>
 <ul>
-<li>Ensure that Bob is still in <strong>Advanced</strong> mode</li>
+<li>Ensure that Bob is still in <strong>Agent</strong> mode</li>
 <li>When ready, copy and paste the following prompt into the Agentic Sidebar and press <strong>Send</strong> to execute:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#scale-4-3-__codelineno-2-1"></a>List all issues from github for this repo
 </code></pre></div></li>
@@ -4666,7 +4671,7 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <li>Originated at Anthropic and is now governed by the Linux Foundation as a vendor-neutral standard</li>
 <li>Primary value is coordination: a shared standard eliminates custom integration work</li>
 <li>MCP servers are configured in Bob's settings as JSON (credentials can be inline, environment variables, or managed through Context Forage)</li>
-<li>MCP tools require IBM Bob's <strong>Advanced Mode</strong> to be enabled</li>
+<li>MCP tools require IBM Bob's <strong>Agent Mode</strong> to be enabled</li>
 <li>GitHub MCP server allows Bob to list issues, create commits, push changes, add comments, and close issues through natural language prompts</li>
 </ul>
 <p></br></p>
