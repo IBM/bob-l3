@@ -2393,7 +2393,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <div class="admonition note">
 <p>Recall that IBM Bob's <em>Plan Mode</em> is a <strong>read-only</strong> mode. It is intended for design tasks, architecture analysis, technical specifications, and breaking down problems into sequential workflows — all performed <strong>without</strong> making any code changes.</p>
 </div>
-<p>Bob will potentially follow-up the summary of the <em>Plan Mode</em> actions with <strong>additional clarifying questions</strong>, which you can answer or <strong>ignore</strong> for now (recommended). Inspect and review the plans that Bob creates based on your requested workflow. Bob will generate a <code>seat-classes-plan.md</code> Markdown file which can be inspected in-line within the chat session, or double-clicked to open within the Bob IDE editor (center panel).</p>
+<p>Bob will potentially follow-up the summary of the <em>Plan Mode</em> actions with <strong>additional clarifying questions</strong>, which you can answer or <strong>ignore</strong> for now (recommended).</p>
 <div class="admonition note">
 <p>Bob can generate one or more Markdown (<code>.md</code>) plan files, with various potential names that will be specific to <em>your</em> project. For example, Bob might generate Markdown files such as <code>SEAT_CLASSES_IMPLEMENTATION_PLAN.md</code>, <code>implementation-checklist.md</code>, <code>seat-classes-architecture.md</code>, or <code>seat-classes-implementation-plan.md</code>.</p>
 </div>
@@ -2409,10 +2409,11 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <h2 id="delegate-2-2-iii-hands-on-implementing-seat-class-changes-agent-mode"><strong>iii. Hands-on: Implementing seat class changes (Agent Mode)</strong></h2>
 <hr />
-<p>Once the implementation plan document(s) appear, the <strong>Plan mode</strong> phase is essentially complete.</p>
+<p>Once the implementation plan document(s) appear, the <strong>Plan mode</strong> phase is essentially complete. Inspect and review the plans that Bob has created based on your requested workflow. Bob will have generated a <code>seat-classes-plan.md</code> Markdown file which can be inspected in-line within the chat session, or double-clicked to open within the Bob IDE editor (center panel).</p>
+<hr />
 <ol>
 <li>
-<p>When ready to move from <em>planning</em> (<strong>Plan Mode</strong>) to <em>implementation</em> (<strong>Agent Mode</strong>), copy and paste the following statement into the chat window and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
+<p>When ready to move from <em>planning</em> (<strong>Plan mode</strong>) to <em>implementation</em> (<strong>Agent mode</strong>), copy and paste the following statement into the chat window and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#delegate-2-2-__codelineno-1-1"></a>The plan looks great.
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#delegate-2-2-__codelineno-1-2"></a>Let&#39;s switch to Agent mode and start implementing the seat classes.
 </code></pre></div>
@@ -2432,148 +2433,290 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/718e49aa-a1a7-46e0-a4d5-2010b154dd36/File_e31b89200b6b470e861ede8e287d9b84_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/718e49aa-a1a7-46e0-a4d5-2010b154dd36/File_e31b89200b6b470e861ede8e287d9b84_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
+<div class="admonition note">
+<p class="admonition-title">CHANGES AWAITING APPROVAL</p>
+<p>You may have noticed that with the change to Agent mode, Bob is once again providing more permission "checkpoints" in the process — asking for your direct approval of actions before carrying them out, keeping you in control of the process. If you had set the previous Plan mode permissions to auto-approval (which this lab guide had recommended), this will be particularly evident. This is partly because of the switch within the Agentic Sidebar <em>Mode</em> from Plan to Agent — previous permission settings that were applied to Plan mode do not carry over automatically (by design) to Agent mode. However, this is also owing to the need for greater scrutiny and permissions-awareness when graduating from a <em>read-only</em> agent (Plan) to an agent with <em>write and execute</em> capabilities (Agent).</p>
+</div>
+</li>
+<li>
+<p>Once Bob has activated Agent mode, it will generate an <em>Update Todo List</em> with the following (or similar) sub-tasks:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>TASK</th>
+<th>OBJECTIVES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sub-Task 1</strong></td>
+<td>Extend the backend data model (<code>models.py</code>, <code>seed.py</code>)</td>
+</tr>
+<tr>
+<td><strong>Sub-Task 2</strong></td>
+<td>Update backend schemas and booking service (<code>schemas.py</code>, <code>services/booking.py</code>, <code>server.py</code>)</td>
+</tr>
+<tr>
+<td><strong>Sub-Task 3</strong></td>
+<td>Update frontend types and API service (<code>types/index.ts</code>, <code>utils/seatClasses.ts</code>, <code>services/api.ts</code>)</td>
+</tr>
+<tr>
+<td><strong>Sub-Task 4</strong></td>
+<td>Add seat class selector to <code>BookingModal</code></td>
+</tr>
+<tr>
+<td><strong>Sub-Task 5</strong></td>
+<td>Update <code>FlightCard</code> to show per-class availability</td>
+</tr>
+<tr>
+<td><strong>Sub-Task 6</strong></td>
+<td>Show seat class in booking history (<code>BookingCard.tsx</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>SEQUENCING THE SUB-TASKS</strong></p>
+<p>In the steps ahead, you will examine in detail what each <em>Sub-Task</em> is performing and understand the rationale for the change. With your approval, Bob will then go ahead and implement the work on your behalf.</p>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 1: Extend the backend data model (models.py, seed.py)</p>
+<p>The current database schema stores a single integer <code>seats_available</code> on the <code>Flight</code> table, which treats all seats as interchangeable. To support three distinct seat classes, we need to split this into three independent columns — <code>economy_seats</code>, <code>business_seats</code>, and <code>galaxium_seats</code> — each tracking its own count. This is a deliberate database design choice: storing them as separate columns (rather than a related table) keeps queries simple, since we always need all three counts together and they have a fixed, known set.</p>
+<p>On the <code>Booking</code> side, we add a <code>seat_class</code> string column so every booking permanently records which class was reserved. This is critical for the cancel flow — when a booking is cancelled, the system needs to know which column to increment back.</p>
+<p>In <code>models.py</code> we swap out the old <code>seats_available</code> column for the three new ones on the <code>Flight</code> ORM class, and add <code>seat_class</code> to <code>Booking</code>.</p>
+<p>In <code>seed.py</code> we update all 10 demo flight records to use the new column names with realistic space-travel seat counts (Economy: 5–10, Business: 3–5, Galaxium: 1–2), and update the 20 demo bookings to each include a randomly assigned <code>seat_class</code>. Because the app uses SQLite and recreates the schema from scratch on every server start via <code>init_db</code> + <code>seed</code>, no migration tooling is needed — the old <code>booking.db</code> is simply dropped and rebuilt.</p>
+</div>
+<ol start="4">
+<li>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 1. Shall I go ahead?</code></em></p>
+<p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 1</strong> execution.</p>
 </li>
 </ol>
 <hr />
+<ol start="5">
+<li>
+<p>Continue approving any additional requests related to Sub-Task 1 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 1 is done. Here's what has changed.</code></em></p>
+<div class="admonition quote">
+<ul>
+<li><code>models.py</code>: seats_available replaced with <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code> on <code>Flight</code>; <code>seat_class</code> added to <code>Booking</code></li>
+<li><code>seed.py</code>: All 10 demo flights now carry per-class seat counts. The booking loop picks a random <code>seat_class</code> for each of the 20 demo bookings</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 2: Update backend schemas and booking service (schemas.py, services/booking.py, server.py)</p>
+<p>The database model is now correct, but the three layers above it — Pydantic schemas, the booking service, and the FastAPI/MCP server — still reference the old <code>seats_available</code> field and know nothing about <code>seat_class</code>. This sub-task threads the new fields all the way up to the API boundary.</p>
+<p>In <code>schemas.py</code> we swap <code>seats_available</code> for the three new seat fields on <code>FlightOut</code> (so the API response carries per-class counts), and add seat_class to both <code>BookingRequest</code> (what the client sends) and <code>BookingOut</code> (what the server returns).</p>
+<p>In <code>services/booking.py</code> we update <code>book_flight</code> to accept <code>seat_class</code>, validate it against the three allowed values, look up the correct column (using a small <code>SEAT_CLASS_MAP</code> dict), check that class has seats, decrement only that column, and store <code>seat_class</code> on the new <code>Booking</code> record. We also update <code>cancel_booking</code> to read the booking's <code>seat_class</code> and increment the matching column — without this, cancellations would silently not restore the right class's count.</p>
+<p>In <code>server.py</code> we pass <code>request.seat_class</code> through to the service on the REST endpoint, and add <code>seat_class: str</code> to the MCP tool signature so AI agents can also book with a class.</p>
+</div>
+<ol start="6">
+<li>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 2. Shall I go ahead?</code></em></p>
+<p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 2</strong> execution.</p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>Continue approving any additional requests related to Sub-Task 2 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 2 is done. Here's what has changed.</code></em></p>
+<div class="admonition quote">
+<ul>
+<li><code>schemas.py</code>: <code>FlightOut</code> now exposes <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code>; <code>BookingRequest</code> and <code>BookingOut</code> both carry <code>seat_class</code></li>
+<li><code>services/booking.py</code>: <code>book_flight</code> now accepts <code>seat_class</code>, validates it against <code>VALID_SEAT_CLASSES</code>, checks the right column for availability, decrements that column, and stores <code>seat_class</code> on the booking. <code>cancel_booking</code> uses <code>SEAT_CLASS_MAP</code> to restore the correct column</li>
+<li><code>server.py</code>: Both the REST endpoint and MCP tool pass <code>seat_class</code> through to the service. The MCP docstring is updated to document the new parameter</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 3: Update frontend types and API service (types/index.ts, utils/seatClasses.ts, services/api.ts)</p>
+<p>The backend now speaks a new contract — three seat columns on flights, <code>seat_class</code> on bookings — but the frontend's TypeScript types still describe the old world. Until we fix that, every component that references flight.<code>seats_available</code> or <code>booking.seat_class</code> will have a type error, and nothing will compile correctly.</p>
+<p>In <code>types/index.ts</code> we replace <code>seats_available</code>: number with <code>economy_seats</code>, <code>business_seats</code>, and <code>galaxium_seats</code> on the <code>Flight</code> interface, and add <code>seat_class</code> to both <code>Booking</code> and <code>BookingRequest</code>. This makes the type system enforce the new shape everywhere downstream — any component that hasn't been updated yet will immediately surface a compile error rather than a silent runtime bug.</p>
+<p>We then create a brand-new utility file, <code>utils/seatClasses.ts</code>. This file is the single source of truth for all seat-class logic on the frontend: the <code>SeatClass</code> type alias, human-readable labels (<code>SEAT_CLASS_LABELS</code>), price multipliers (<code>SEAT_CLASS_MULTIPLIERS</code>), an ordered array (<code>SEAT_CLASSES</code>) for rendering options in a consistent sequence, and a <code>getSeatClassPrice(basePrice, seatClass)</code> helper that applies the multiplier. Centralising this means Sub-Tasks 4, 5, and 6 all import from one place — there's no risk of the multipliers drifting out of sync between components.</p>
+<p>Finally, we verify <code>services/api.ts</code> — the <code>bookFlight</code> call already spreads the full <code>BookingRequest</code> object into the POST body, so once <code>BookingRequest</code> gains <code>seat_class</code> in the type definition, the API call will automatically include it with no code change needed.</p>
+</div>
+<ol start="8">
+<li>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 3. Shall I go ahead?</code></em></p>
+<p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 3</strong> execution.</p>
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>
+<p>Continue approving any additional requests related to Sub-Task 3 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 3 is done. Here's what has changed.</code></em></p>
+<div class="admonition quote">
+<ul>
+<li><code>types/index.ts</code>: Flight now has <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code> instead of <code>seats_available</code>. <code>Booking</code> and <code>BookingRequest</code> both carry <code>seat_class</code> as a typed literal union</li>
+<li><code>utils/seatClasses.ts</code>: New utility file — the single source of truth for all seat-class logic. Exports <code>SeatClass</code> type, <code>SEAT_CLASSES</code> ordering array, <code>SEAT_CLASS_LABELS</code>, <code>SEAT_CLASS_MULTIPLIERS</code>, <code>getSeatClassPrice()</code>, and <code>getSeatCount()</code></li>
+<li><code>services/api.ts</code>: No changes needed — <code>bookFlight</code> already posts the full <code>BookingRequest</code> object, so <code>seat_class</code> will flow through automatically now that the type is updated</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 4: Add seat class selector to BookingModal</p>
+<p>This is the core user-facing change. Right now the <code>BookingModal</code> shows a static price and a single "Confirm Booking" button — there's no concept of class. We need to insert a class selector so the user can choose Economy, Business, or Galaxium before confirming.</p>
+<p>We'll add a <code>selectedClass</code> state variable (defaulting to <code>'economy'</code>) and render three clickable option cards — one per class — in a "Select Seat Class" section above the price summary. Each card shows the class label, the number of seats remaining for that class (pulled from <code>flight.economy_seats</code> etc.), and the calculated price using <code>getSeatClassPrice</code>. Cards where that class has 0 seats will be visually dimmed and pointer-events disabled so they can't be selected. The "Total Price" display will reactively update as the user switches class. When the user hits "Confirm Booking", the <code>bookFlight</code> call will include <code>seat_class: selectedClass</code>.</p>
+<p>The default selection logic also needs one nuance: if Economy is sold out on open, we should default to the first available class rather than leaving the user on a disabled option. We'll handle this with a <code>useMemo</code> that picks the first class with seats when the modal opens.</p>
+</div>
+<ol start="10">
+<li>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 4. Shall I go ahead?</code></em></p>
+<p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 4</strong> execution.</p>
+</li>
+</ol>
+<hr />
+<ol start="11">
+<li>
+<p>Continue approving any additional requests related to Sub-Task 4 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 4 is done. Here's what has changed.</code></em></p>
+<div class="admonition quote">
+<ul>
+<li>The following changes were implemented within <code>BookingModal.tsx</code></li>
+<li>Imports <code>useMemo</code>, <code>SEAT_CLASSES</code>, <code>SEAT_CLASS_LABELS</code>, <code>getSeatClassPrice</code>, <code>getSeatCount</code>, and the <code>SeatClass</code> type from the new utility</li>
+<li>A <code>defaultClass</code> memo picks the first class with seats when the flight changes (falls back to <code>'economy'</code>)</li>
+<li><code>selectedClass</code> state drives the UI, and resets whenever a new flight is passed in</li>
+<li>A new <strong>"Select Seat Class"</strong> section renders three buttons — each showing the label, seat count, and per-class price Zero-seat options are dimmed and disabled</li>
+<li>The <strong>Total Price</strong> banner now shows <code>getSeatClassPrice(flight.price, selectedClass)</code> so it updates in real time as the user toggles</li>
+<li>The <code>bookFlight</code> call includes <code>seat_class: selectedClass</code></li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 5: Update FlightCard to show per-class availability</p>
+<p>The <code>FlightCard</code> is currently built around a single <code>seats_available</code> field that no longer exists on the <code>Flight</code> type — so right now it would fail to compile. We need to replace it with a compact three-row breakdown showing how many seats each class has on that flight.</p>
+<p>The key design decisions here are: (1) "Sold Out" should only apply when all <em>three</em> classes are at zero, not just one; (2) the low-seat warning (the <code>solar-orange</code> colour) should apply per-class so users can see at a glance when a particular class is nearly full; and (3) the displayed price should gain a "from" label, since the actual price depends on the class selected during booking.</p>
+<p>We'll import <code>SEAT_CLASSES</code>, <code>SEAT_CLASS_LABELS</code>, and <code>getSeatClassPrice</code> from <code>utils/seatClasses.ts</code> and render the availability rows as a small loop rather than hardcoding each one, keeping the component clean.</p>
+</div>
+<ol start="12">
+<li>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 5. Shall I go ahead?</code></em></p>
+<p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 5</strong> execution.</p>
+</li>
+</ol>
+<hr />
+<ol start="13">
+<li>
+<p>Continue approving any additional requests related to Sub-Task 5 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 5 is done. Here's what has changed.</code></em></p>
+<div class="admonition quote">
+<ul>
+<li>The following changes were implemented within <code>FlightCard.tsx</code></li>
+<li>Imports <code>SEAT_CLASSES</code>, <code>SEAT_CLASS_LABELS</code>, <code>getSeatClassPrice</code>, and <code>getSeatCount</code> from <code>utils/seatClasses.ts</code></li>
+<li><code>isLowSeats/isSoldOut</code> based on the old <code>seats_available</code> field removed, <code>isSoldOut</code> now only triggers when all three class counts are zero</li>
+<li>The price label changes from "per seat" to <strong>"from"</strong>, since Economy is always the lowest multiplier (1×), the displayed base price is the true minimum</li>
+<li>The single seats row is replaced by a three-row loop— one per class —with per-class low-seat warnings in <code>solar-orange</code> and faded text for sold-out classes</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Sub-Task 6 Show seat class in booking history (BookingCard.tsx)</p>
+<p>This is the final piece. Once a booking is made with a seat class, users visiting the "My Bookings" page should be able to see which class they booked, and the price shown should reflect what they actually paid (base price × multiplier) rather than the raw base price.</p>
+<p>In <code>BookingCard.tsx</code> we'll import <code>SEAT_CLASS_LABELS</code> and <code>getSeatClassPrice</code> from <code>utils/seatClasses.ts</code>. We'll add a small coloured badge next to the booking status showing the seat class label (e.g. "Business", "Galaxium Class"). Where the price row is rendered, we'll replace <code>flight.price</code> with <code>getSeatClassPrice(flight.price, booking.seat_class)</code> — guarded by the existing <code>flight</code> optional check — so the history accurately reflects the class-adjusted price.</p>
+</div>
+<ol start="14">
+<li>
+<p>Within the Agentic Sidebar, you will be prompted with the following: <em><code>Ready to implement Sub-Task 6. Shall I go ahead?</code></em></p>
+<p>If you agree with the changes, type <code>Yes</code> and <span class="keys"><kbd class="key-enter">Enter</kbd></span> to approve <strong>Sub-Task 6</strong> execution.</p>
+</li>
+</ol>
 <hr />
 <ol start="15">
 <li>
-<p>In the <strong>Agentic Sidebar</strong> chat window, type the following:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#delegate-2-2-__codelineno-2-1"></a>Build this feature based on @
-</code></pre></div>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a94fba3b-8e1a-4494-b914-2e2a3761342a/File_6e0031243c99429f97e8520051ee8bc1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a94fba3b-8e1a-4494-b914-2e2a3761342a/File_6e0031243c99429f97e8520051ee8bc1_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+<p>Continue approving any additional requests related to Sub-Task 6 until the Agentic Sidebar chat has reported back with a summary of <em><code>Sub-Task 6 is done. Here's what has changed.</code></em></p>
+<div class="admonition quote">
+<ul>
+<li>The following changes were implemented within <code>BookingCard.tsx</code></li>
+<li>Imports <code>SEAT_CLASS_LABELS</code> and <code>getSeatClassPrice</code> from <code>utils/seatClasses.ts</code></li>
+<li>A small pill badge (purple, matching the app's cosmic palette) now sits next to the booking status showing "Economy", "Business", or "Galaxium Class"</li>
+<li>The price row uses <code>getSeatClassPrice(flight.price, booking.seat_class)</code> so it shows the actual class-adjusted price the passenger paid, not the base</li>
+</ul>
+</div>
 </li>
 </ol>
 <hr />
 <ol start="16">
 <li>
-<p>As soon as you type <strong><code>@</code></strong>, a pop-up window will appear. Click <strong>Add File</strong>.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9b6b42fe-d981-4ebc-970f-af62fec55f9c/File_06afbbaa16904e93a64ba44b08c8acd5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9b6b42fe-d981-4ebc-970f-af62fec55f9c/File_06afbbaa16904e93a64ba44b08c8acd5_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+<p>That <strong>concludes the execution of all six Sub-Tasks</strong>, originally outlined in Bob's <em>Plan mode</em> and implemented via <em>Agent mode</em>. Within the Agentic Sidebar, you should see a similar summary report of the full surface area modified across the Project codebase:</p>
+<table>
+<thead>
+<tr>
+<th>FILE</th>
+<th>WHAT CHANGED</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>models.py</code></td>
+<td><code>seats_available</code> → 3 seat columns; <code>seat_class</code> on <code>Booking</code></td>
+</tr>
+<tr>
+<td><code>seed.py</code></td>
+<td>All flights use 3-column seats; bookings get a random <code>seat_class</code></td>
+</tr>
+<tr>
+<td><code>schemas.py</code></td>
+<td><code>FlightOut</code>, <code>BookingRequest</code>, <code>BookingOut</code> all updated</td>
+</tr>
+<tr>
+<td><code>services/booking.py</code></td>
+<td>Validates class, decrements/increments the right column, stores <code>seat_class</code></td>
+</tr>
+<tr>
+<td><code>server.py</code></td>
+<td>REST endpoint + MCP tool both thread <code>seat_class</code> through</td>
+</tr>
+<tr>
+<td><code>types/index.ts</code></td>
+<td><code>Flight</code>, <code>Booking</code>, <code>BookingRequest</code> all updated</td>
+</tr>
+<tr>
+<td><code>utils/seatClasses.ts</code></td>
+<td>New <code>SeatClass</code> type, labels, multipliers, <code>getSeatClassPrice</code>, <code>getSeatCount</code></td>
+</tr>
+<tr>
+<td><code>BookingModal.tsx</code></td>
+<td>3-option class selector; dynamic price; <code>seat_class</code> in API call</td>
+</tr>
+<tr>
+<td><code>FlightCard.tsx</code></td>
+<td>Per-class seat breakdown; "from" price label; sold-out only when all 3 are 0</td>
+</tr>
+<tr>
+<td><code>BookingCard.tsx</code></td>
+<td>Seat class badge; class-adjusted price in history</td>
+</tr>
+<tr>
+<td><code>seat-classes-plan.md</code></td>
+<td>All 6 sub-tasks marked <code>done</code></td>
+</tr>
+</tbody>
+</table>
 </li>
 </ol>
 <hr />
 <ol start="17">
 <li>
-<p>Scroll the down list of files and find the implementation plan that was generated in <strong>Step 9</strong>.</p>
-<ul>
-<li>Upon locating the <code>.md</code> file, <strong>double-click</strong> to select it</li>
-<li>In the documented case below, a file called <code>SEAT_CLASSES_IMPLEMENTATION_PLAN.md</code> was selected
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3b31ce07-6c0b-4d9b-a904-bee8c836f241/File_d35140c272794604a25336e8103087b3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3b31ce07-6c0b-4d9b-a904-bee8c836f241/File_d35140c272794604a25336e8103087b3_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
+<p>Time to test the new application.</p>
+<p>Before doing so, <strong>close</strong> any previously opened Terminal consoles which are running the <strong><code>galaxium-travels</code></strong> (<code>start.sh</code>) service.</p>
 </li>
 </ol>
 <hr />
 <ol start="18">
 <li>
-<p>Notice that <code>@/SEAT_CLASSES_IMPLEMENTATION_PLAN</code> now appears in the chat window with a grey highlight. Bob is treating it as a <em>file reference</em> rather than <em>plain text</em>, which indicates to you that Bob knows exactly what you're pointing it at (an implementation file, specifically.)</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/89809bf1-6114-4f22-b746-cd1772742b4e/File_f5a1022d8d5e4fa0b74bc5978dd92938_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/89809bf1-6114-4f22-b746-cd1772742b4e/File_f5a1022d8d5e4fa0b74bc5978dd92938_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="19">
-<li>
-<p>With the prompt now complete, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> or press <strong>Send</strong>.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c04fb26d-57c4-4ee1-8b77-7687c9c2ed1a/File_85917d33b36240fa94315a43ae4da16e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c04fb26d-57c4-4ee1-8b77-7687c9c2ed1a/File_85917d33b36240fa94315a43ae4da16e_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="20">
-<li>
-<p>Bob will immediately get to work. It will first construct for itself a <em>Todo List</em> in order to track execution of the implementation plan.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d1e55cad-e951-4388-b33b-b209088fd1a0/File_9542ddde991b467cbd0dd2bac32d0b0f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d1e55cad-e951-4388-b33b-b209088fd1a0/File_9542ddde991b467cbd0dd2bac32d0b0f_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="21">
-<li>
-<p>As ever, the non-deterministic workflow means your run may differ from the documented lab guide. In the example below, Bob hit an <strong>error</strong>. To showcase how you might work through a similar close:</p>
-<ul>
-<li>Note that Bob begins debugging on its own (in this case, asking first for permission to do so)</li>
-<li>Should you encounter an error or debugging question yourself, simply press <strong>Run</strong> to continue
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f9aa58b2-9143-4bbb-985e-69a4f839bf2b/File_ce941fcbcfbc488e835c3433d9662d08_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/f9aa58b2-9143-4bbb-985e-69a4f839bf2b/File_ce941fcbcfbc488e835c3433d9662d08_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-</li>
-</ol>
-<hr />
-<ol start="22">
-<li>
-<p>Carry on within the agentic sidebar, pressing <strong>Run</strong> when prompted to do so.</p>
-<ul>
-<li>If Bob hits an error, it will likely diagnose (and potentially even fix) the error on its own
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/745dee44-f43d-46ad-8e99-8f410b96e249/File_d93eb4f854ad4af681edbe6d3a021ea8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/745dee44-f43d-46ad-8e99-8f410b96e249/File_d93eb4f854ad4af681edbe6d3a021ea8_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-</li>
-</ol>
-<hr />
-<ol start="23">
-<li>
-<p>On rare occasions, Bob may get stuck running a command. If that happens, <strong>wait</strong> a minute and then press the <span class="keys"><kbd class="key-x">X</kbd></span> inside the octagon (as shown) to invoke the <strong>Abort</strong> command.</p>
-<ul>
-<li>After aborting the command execution, Bob should resume the workflow automatically</li>
-<li>If Bob refuss to automatically restart the workflow, simply send a prompt such as the following within the chat interface:
- <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#delegate-2-2-__codelineno-3-1"></a>Your work was interrupted, please proceed.
-</code></pre></div>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/035e0543-efae-4fcb-9e4c-c80bc2dfda1f/File_519c1a2773e04b01a6d5337768b8176f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/035e0543-efae-4fcb-9e4c-c80bc2dfda1f/File_519c1a2773e04b01a6d5337768b8176f_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-</li>
-</ol>
-<hr />
-<ol start="24">
-<li>
-<p>Continue pressing <strong>Run</strong> until Bob has completed the workflow. When ready, Bob will return a similar message to the one documented below.</p>
-<ul>
-<li>Once a confirmation of the plan's full execution has been returned to the chat interface, you will want to restart the application</li>
-<li>Open a new <strong>Terminal</strong> window
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd7b3fc2-dfcb-4fee-a37b-8b4e5e891a53/File_164540959fdf4d2998f6ae514d6b941f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd7b3fc2-dfcb-4fee-a37b-8b4e5e891a53/File_164540959fdf4d2998f6ae514d6b941f_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-</li>
-</ol>
-<hr />
-<ol start="25">
-<li>
-<p>Close all the previously open Terminal windows (such as those from <strong>Module 1</strong>, if you hadn't previously terminated those.)</p>
-<div class="admonition warning">
-<p>Depending on your operating system, closing those tabs may warn you that a process will be terminated.</p>
-<p>Such warnings are expected and can be safely ignored.</p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b6011550-20df-4fa9-9126-235c2ac8ffd1/File_65089c18bc604186ba329d3ca3a1615d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b6011550-20df-4fa9-9126-235c2ac8ffd1/File_65089c18bc604186ba329d3ca3a1615d_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="26">
-<li>
-<p>The commands to be issued to the Terminal console depending on the operating system your machine is running upon.</p>
-<p>From the expandable options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows). After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
+<p>Open a new Terminal console (<strong>Terminal</strong> &gt; <strong>New Terminal</strong> or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-tilde">~</kbd></span>).</p>
+<p>From the expandable options below, follow and execute the instructions aligned to your machine's OS (either Mac/Linux or Windows) in order to <strong>redeploy the Galaxium Travels application</strong>. After completing the instructions within the appropriate tab, proceed to the next step in the lab guide.</p>
 <details class="quote">
 <summary>MAC OR LINUX</summary>
 <p>On macOS or Linux, run the following commands one at a time.</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#delegate-2-2-__codelineno-4-1"></a><span class="nb">cd</span> <span class="se">\~</span>/galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#delegate-2-2-__codelineno-2-1"></a><span class="nb">cd</span> ~/galaxium-travels
 </code></pre></div></p>
 <p><strong>Step 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#delegate-2-2-__codelineno-5-1"></a>./start.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#delegate-2-2-__codelineno-3-1"></a>./start.sh
 </code></pre></div></p>
 <p>You should see a <em>"Galaxium Travels is running!"</em> prompt returned to the console (amongst other messages) once the application has deployed successfully.</p>
 <p></br>
@@ -2585,19 +2728,19 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <summary>WINDOWS OS</summary>
 <p>On Windows, run the following commands one at a time.</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#delegate-2-2-__codelineno-6-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#delegate-2-2-__codelineno-4-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
 </code></pre></div></p>
 <p><strong>Step 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#delegate-2-2-__codelineno-7-1"></a><span class="nb">cd</span> booking_system_backend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#delegate-2-2-__codelineno-5-1"></a><span class="nb">cd</span> booking_system_backend
 </code></pre></div></p>
 <p><strong>Step 3:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#delegate-2-2-__codelineno-8-1"></a>python -m venv .venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#delegate-2-2-__codelineno-6-1"></a>python -m venv .venv
 </code></pre></div></p>
 <p><strong>Step 4:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#delegate-2-2-__codelineno-9-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#delegate-2-2-__codelineno-7-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </code></pre></div></p>
 <p><strong>Step 5:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#delegate-2-2-__codelineno-10-1"></a>python server.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#delegate-2-2-__codelineno-8-1"></a>python server.py
 </code></pre></div></p>
 <div class="admonition warning">
 <p class="admonition-title">DO NOT CLOSE THE TERMINAL WINDOW</p>
@@ -2613,13 +2756,13 @@ After having completed all of <strong>Steps 1-5</strong>, open a new Terminal wi
 </p></p>
 <p><strong>Step 7:</strong>
 Within the new Terminal window, execute the following commands one-by-one in sequence:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#delegate-2-2-__codelineno-11-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#delegate-2-2-__codelineno-9-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
 <p><strong>Step 8:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#delegate-2-2-__codelineno-12-1"></a>cd booking_system_frontend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#delegate-2-2-__codelineno-10-1"></a>cd booking_system_frontend
 </code></pre></div></p>
 <p><strong>Step 9:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#delegate-2-2-__codelineno-13-1"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#delegate-2-2-__codelineno-11-1"></a>npm run dev
 </code></pre></div></p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/71540f93-ddab-4d54-bbba-4969a73da839/File_fd8e7412a078428aaeada831be555aa8_text_export.jpeg" alt="" width="600" /></a>
@@ -2629,7 +2772,33 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="27">
+<p><strong>DEBUGGING WITH IBM BOB</strong></p>
+<p>You may discover that your application fails to start, owing to an error! Ours did.</p>
+<div class="highlight"><pre><span></span><code>!!! warning &quot;&quot;
+    ```
+    ERROR:    Application startup failed. Exiting.
+    🎨 Starting Frontend Server...
+    ✅ Frontend started on http://localhost:5173
+    ```
+</code></pre></div>
+<p>The web service will still launch on <code>localhost</code>, but you may find features that were just adjusted (like Seat Classes) are failing to render. One tremendously useful feature of IBM Bob is being able to diagnose and remedy application troubles directly within the Agentic Sidebar, much in the same way that you previously asked Bob to generate new code.</p>
+<p>In our example, we copied the full log from the Terminal console (143 lines) after attempting to run the <code>./start.sh</code> script along with the statement: <em><code>I got an error! Here's the log from console.</code></em></p>
+<p>Bob, in turn, replied back with the following details about the source of the error and its plan (pending user approval) to rectify it:</p>
+<div class="admonition quote">
+<p>The problem is a stale <code>booking.db</code> file on disk. SQLAlchemy's <code>create_all</code> only adds missing tables. It never alters existing ones. So the old <code>flights</code> table (with <code>seats_available</code>) is still there from a previous run, and the new columns don't exist in it.</p>
+<p>The fix is to drop the old database file before the server starts. Let me do that now.</p>
+</div>
+<p>The recommendation from Bob is to execute the following command, which you can approve via the Agentic Sidebar by clicking the <strong>Approve once</strong> button (or execute yourself within the Terminal console):</p>
+<div class="highlight"><pre><span></span><code>``` bash
+rm -f booking_system_backend/booking.db
+```
+</code></pre></div>
+<p>With the fix in place, all future executions of <code>./start.sh</code> will instruct <code>init_db</code> to call <code>create_all</code> against a clean slate, building the correct schema with <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code>, and <code>seat_class</code> from scratch. It will subsequently apply the <code>seed()</code> function to populate it with fresh demo data.</p>
+<div class="admonition warning">
+<p>If you applied this fix (or other fixes), <strong>close</strong> your Terminal and follow <strong>Step 18</strong> again. Then proceed to <strong>Step 19</strong> below.</p>
+</div>
+<hr />
+<ol start="19">
 <li>
 <p>Open a web browser on your local machine and visit the following URL to access the Galaxium Travels application:</p>
 <div class="admonition warning">
@@ -2642,7 +2811,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="28">
+<ol start="20">
 <li>
 <p>On the Galaxium Travels page, click <strong>Flights</strong>.</p>
 <p><p align="left">
@@ -2651,7 +2820,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="29">
+<ol start="21">
 <li>
 <p>Notice that each flight now shows <strong>Seat Counts</strong> for the respective <strong>Seating Class</strong>.</p>
 <p>To test further, click the <strong>Book Now</strong> button under any listed flight.
@@ -2661,7 +2830,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="30">
+<ol start="22">
 <li>
 <p>Let's further test out the process of creating a new account.</p>
 <p>Click the <strong>"Don't have an account? Register"</strong> button to continue.
@@ -2671,7 +2840,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="31">
+<ol start="23">
 <li>
 <p>Register for a new account using placeholder details. For example, under <strong>Name</strong> input <code>IBM Bob</code> and for <strong>Email</strong> input <code>test@email.com</code>, or other variables of your choosing. It should work so long as it respects the valid email address formatting rule that Bob generated in <strong>Module 1</strong>.</p>
 <p><p align="left">
@@ -2680,7 +2849,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="32">
+<ol start="24">
 <li>
 <p>The seat class selector is now in place and Bob has styled it to match the rest of the application. To test, try picking any seat class from the options presented. Note that your version may differ slightly in terms of pricing numbers and so on.</p>
 <p><p align="left">
@@ -2689,7 +2858,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="33">
+<ol start="25">
 <li>
 <p>With a seat selected, press the confirmation button. For example, this might be a <strong>"Confirm Booking"</strong> button or something similar. Your results may vary.</p>
 <p><p align="left">
@@ -2698,7 +2867,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="34">
+<ol start="26">
 <li>
 <p>Once the booking is placed, a new tab will appear at the top of the website. In the documented case here, it reads <strong>"My Bookings"</strong>. Click to drill down into more details.</p>
 <p><p align="left">
@@ -2707,7 +2876,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </li>
 </ol>
 <hr />
-<ol start="35">
+<ol start="27">
 <li>
 <p>A summary should render with details about the booked flight and— most critically —new key details on seat class, pricing, location, and dates.</p>
 <p><p align="left">
@@ -2773,44 +2942,36 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </thead>
 <tbody>
 <tr>
-<td><code>.bob/agents.md</code></td>
-<td>All conversations (global project context)</td>
+<td><code>.bob/rules-agent/AGENTS.md</code></td>
+<td>Agent mode (<em>formerly Code and Advanced modes</em>)</td>
 </tr>
 <tr>
-<td><code>.bob/agents-code.md</code></td>
-<td>Code mode</td>
-</tr>
-<tr>
-<td><code>.bob/agents-plan.md</code></td>
-<td>Plan mode</td>
-</tr>
-<tr>
-<td><code>.bob/agents-ask.md</code></td>
+<td><code>.bob/rules-ask/AGENTS.md</code></td>
 <td>Ask mode</td>
 </tr>
 <tr>
-<td><code>.bob/agents-advanced.md</code></td>
-<td>Advanced mode</td>
+<td><code>.bob/rules-plan/AGENTS.md</code></td>
+<td>Plan mode</td>
 </tr>
 </tbody>
 </table>
-<p>Each mode-specific file extends the base context with what matters most for the successful operations of a given Mode. Context for <strong>Plan mode</strong> might emphasize architectural conventions, while <strong>Code mode</strong> context would benefit from highlighting file structure and naming patterns.</p>
+<p>Each mode-specific file extends the base context with what matters most for the successful operations of a given Mode. Context for <strong>Plan mode</strong> might emphasize architectural conventions, while <strong>Agent mode</strong> context would benefit from highlighting file structure and naming patterns.</p>
 <hr />
 <h2 id="tailor-3-1-iii-hands-on-generating-your-project-context"><strong>iii. Hands-on: generating your project context</strong></h2>
 <hr />
 <blockquote>
 <p><strong>Follow the video</strong> for a full walkthrough: <a href="https://ibm.seismic.com/Link/Content/DCQWPcGR9g87mG9FWcPXR6TfpChj">Chapter 3.1: init Command [IBM Bob L3]</a></p>
 </blockquote>
-<p>The larger your codebase, the more valuable a well-maintained <code>agents.md</code> asset becomes. On a small project, Bob could conceivably read every file each conversation; even so, having a pre-defined <code>agents.md</code> is still more efficient than the read-everything alternative. On a large project, an <code>agents.md</code> manifest becomes the backbone of the entire workflow. It provides detailed guidance for how Bob should navigate the codebase, without exhausting the context window on file reads. </p>
+<p>The larger your codebase, the more valuable a well-maintained <code>AGENTS.md</code> asset becomes. On a small project, Bob could conceivably read every file each conversation; even so, having a pre-defined <code>AGENTS.md</code> is still more efficient than the read-everything alternative. On a large project, an <code>AGENTS.md</code> manifest becomes the backbone of the entire workflow. It provides detailed guidance for how Bob should navigate the codebase, without exhausting the context window on file reads. </p>
 <div class="admonition note">
 <p class="admonition-title">TIPS FOR <code>/INIT</code> AND <code>AGENTS.MD</code></p>
 <p>Execute the <code>/init</code> command after significant changes to ensure Bob picks up on any new modules or services, restructured directory trees, new framework, and so on. If there are instances where you (the administrator) want to capture context without performing an automated scan— or believe that an automated scan might miss some key elements, such as business rules or deployment conventions —then you may also edit the <code>agents.md</code> asset by-hand.</p>
 </div>
-<p>Let's give Bob durable knowledge of the Galaxium Travels codebase by running the <code>/init</code> command and generating its <code>agents.md</code> files.</p>
+<p>Let's give Bob durable knowledge of the Galaxium Travels codebase by running the <code>/init</code> command and generating its <code>AGENTS.md</code> files.</p>
 <hr />
 <ol>
 <li>
-<p>First, ensure that Bob has enabled <strong>Code mode</strong> within the Agentic Sidebar.</p>
+<p>First, ensure that Bob has enabled <strong>Agent mode</strong> within the Agentic Sidebar.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/67994ed5-5ca6-47b8-a761-bcef314be887/File_3482e2636a044434aad1271bbe9995ac_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/67994ed5-5ca6-47b8-a761-bcef314be887/File_3482e2636a044434aad1271bbe9995ac_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -2822,79 +2983,59 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p>Within the Agentic Sidebar, type the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#tailor-3-1-__codelineno-0-1"></a>/init
 </code></pre></div>
-<p>Once you have finished typing, you will be presented with a <strong>Bob Commands</strong> window pop-up with the <code>/init</code> command displayed.</p>
+<div class="admonition warning">
+<p>You may need to click <strong>Approve once</strong> (once or <em>several</em> times...) to permission access to the <code>agents.md</code> file before this summary appears.</p>
+</div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2e118cae-8753-428a-bc7a-46aa2598a699/File_14efc00e01474f7798ecba20874d902f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2e118cae-8753-428a-bc7a-46aa2598a699/File_14efc00e01474f7798ecba20874d902f_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="3">
-<li>
-<p>Click <strong>Send message</strong> (the purple button with the arrow) to execute the instruction.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c3fc54e8-0605-424e-b9ff-bcda373b0ffd/File_b3028b8125d0461ab46fed60e0e55afc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c3fc54e8-0605-424e-b9ff-bcda373b0ffd/File_b3028b8125d0461ab46fed60e0e55afc_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="4">
-<li>
-<p>Bob will now outline its plan of acton. Review the proposed steps, then click <strong>Approve</strong> to continue.</p>
-<p>If you enabled <em>auto-approval</em> in <strong>Module 2</strong>, this workflow may complete on its own with no further intervention required on your part.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d5062072-7ff2-49ec-a449-57bda0649519/File_fa7cda3ac7bb429fb98d4de5410bb0a1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d5062072-7ff2-49ec-a449-57bda0649519/File_fa7cda3ac7bb429fb98d4de5410bb0a1_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="5">
-<li>
-<p>As expected, a <strong>To-Do</strong> list will appear as Bob begins executing the workflow. Review the steps it proposes be undertaken and press <strong>Approve</strong> to proceed.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c1e99762-a82f-49b3-823b-b78fd04ff9f8/File_8717c2d590a84654b3beaba805d27538_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c1e99762-a82f-49b3-823b-b78fd04ff9f8/File_8717c2d590a84654b3beaba805d27538_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="6">
-<li>
-<p>Bob may ask you to approve commands such as <code>mkdir</code>, which is necessary in order to create the directories its <code>agents.md</code> file will require.</p>
-<p>Press the blue <strong>Run</strong> button to grant such permissions and carry on with the workflow.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3ab450cd-ae82-49a9-89d6-2d197dd6f85e/File_274a9e06decf4006bfdad0d0c1aeb2e6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3ab450cd-ae82-49a9-89d6-2d197dd6f85e/File_274a9e06decf4006bfdad0d0c1aeb2e6_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="7">
-<li>
-<p>Likewise, as Bob creates or edits the protected <code>agents.md</code> and related configuration files, you may be asked for further approvals. Press the blue <strong>Approve</strong> button if prompted to do so.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8ac7cee2-7ed8-4a39-bf27-9169f5e2da10/File_c7b00c35834c49f4a57fc8cfcbe8e872_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8ac7cee2-7ed8-4a39-bf27-9169f5e2da10/File_c7b00c35834c49f4a57fc8cfcbe8e872_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="8">
-<li>
-<p>Once Bob has completed the requested workflow, you'll be presented with an <strong><code>"All tasks completed!"</code></strong> message within the agentic sidebar along with several newly-created files:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#tailor-3-1-__codelineno-1-1"></a>The /init <span class="nb">command</span> successfully created a main AGENTS.md file <span class="k">in</span> the project root and mode-specific files <span class="k">in</span> .bob.
-</code></pre></div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8aad8b00-707e-4e43-ada7-ae3495f61552/user_cropped_screenshot_46e83a0827ed46899a0e32120d80b470_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8aad8b00-707e-4e43-ada7-ae3495f61552/user_cropped_screenshot_46e83a0827ed46899a0e32120d80b470_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
+<p><strong>AGENTS OF <em>GALAXIUM TRAVELS</em></strong></p>
+<p>After execution of the <strong><code>/init</code></strong> command, Bob's <em>Agent mode</em> will examine key front-end and back-end (service) files within the Project directory, ultimately writing a total of four files.</p>
+<div class="admonition quote">
+<p class="admonition-title"><code>AGENTS.md</code> — General guidance</p>
+<ul>
+<li>Commands require running from specific subdirectories (<code>pytest</code> from <code>booking_system_backend/</code>, <code>npm</code> from <code>booking_system_frontend/</code>)</li>
+<li>Single-test syntax with full pytest class path</li>
+<li>The dual REST+MCP architecture on a single port</li>
+</ul>
+</div>
+<div class="admonition quote">
+<p class="admonition-title"><code>.bob/rules-agent/AGENTS.md</code> — Coding gotchas</p>
+<ul>
+<li>No <code>seats_available</code> column — test fixtures in the repo use an old column name that no longer exists in the model; discovered only by reading both <code>models.py</code> and the tests</li>
+<li>MCP tools bypass FastAPI DI — they call <code>SessionLocal()</code> directly, so tests must patch two places</li>
+<li><code>verbatimModuleSyntax</code> enforces <code>import type</code> for type-only imports</li>
+<li>Cancellation is <code>POST</code>, not <code>DELETE</code></li>
+</ul>
+</div>
+<div class="admonition quote">
+<p class="admonition-title"><code>.bob/rules-ask/AGENTS.md</code> — Context for questions</p>
+<ul>
+<li>Backend tests are partially outdated (use the old seat model)</li>
+<li>Frontend has zero tests</li>
+<li><code>booking_time</code> has no timezone suffix despite being UTC</li>
+</ul>
+</div>
+<div class="admonition quote">
+<p class="admonition-title"><code>.bob/rules-plan/AGENTS.md</code> — Architecture constraints</p>
+<ul>
+<li>Price multipliers are frontend-only — backend stores only the economy base price</li>
+<li>SQLite with no migration framework (no Alembic)</li>
+<li><code>seed.py</code> runs on every startup — not safe for multi-worker deployments</li>
+<li>No update endpoint for bookings — cancel+rebook is the only flow</li>
+</ul>
+</div>
 <h2 id="tailor-3-1-iv-key-takeaways"><strong>iv. Key takeaways</strong></h2>
 <hr />
 <ul>
 <li>LLMs are stateless by default: every conversation starts fresh, with no memory of the last session or chat</li>
 <li>The <strong><code>/init</code></strong> command scans your project(s) and generates <strong><code>agents.md</code></strong> documentation, a context file that will subsequently be included with every new Bob conversation</li>
-<li><code>agents.md</code> functions like onboarding documentation: a structured summary that Bob utilizes to navigate your project(s)</li>
-<li>Mode-specific <code>agents.md</code> files give targeted context for IBM Bob's <strong>Code</strong>, <strong>Plan</strong>, <strong>Ask</strong>, and <strong>Advanced</strong> modes</li>
-<li>For large-scale projects, <code>agents.md</code> is essential: Bob cannot feasibly read every file at the start of each conversation without exhausting its (sizeable) context window</li>
+<li><code>AGENTS.md</code> functions like onboarding documentation: a structured summary that Bob utilizes to navigate your project(s)</li>
+<li>Mode-specific <code>AGENTS.md</code> files give targeted context for IBM Bob's <strong>Agent</strong>, <strong>Plan</strong>, and <strong>Ask</strong> modes</li>
+<li>For large-scale projects, <code>AGENTS.md</code> is essential: Bob cannot feasibly read every file at the start of each conversation without exhausting its (sizeable) context window</li>
 <li>Re-run the <code>/init</code> command after major changes to capture the latest context for project(s)</li>
 </ul>
 <p></br>
@@ -2903,8 +3044,8 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <hr />
 <h2 id="tailor-3-2-i-encoding-bob-with-your-standards"><strong>i. Encoding Bob with your standards</strong></h2>
 <hr />
-<p>If <code>agents.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>.</p>
-<p>Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Code, Plan, Ask, Advanced, and any custom modes you create.)</p>
+<p>If <code>AGENTS.md</code> can teach Bob <em>what your project is</em>, <strong>Rules</strong> teach Bob <em>how you expect it to behave</em>.</p>
+<p>Rules are plain-text files containing instructions that apply to every conversation between users and Bob. Rules, therefore, provide a way for teams and individuals to enforce coding standards, communication preferences, workflow constraints, and custom behaviors — without requiring them to be reintroduced with every new chat prompt. Every file in the Rules folder is automatically injected into each conversation, across all Bob Modes (Agent, Plan, Ask, and any custom modes you create.)</p>
 <hr />
 <h2 id="tailor-3-2-ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
 <hr />
@@ -2987,23 +3128,17 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <ol start="2">
 <li>
 <p>From the drop-down menu, select <strong>New Folder...</strong> to proceed.</p>
+<p>Name the folder <strong><code>rules</code></strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to continue.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a0ba5618-ddcc-47a3-98e8-ba71a27c4ebd/File_df520dc508134826bfa49942c9002c11_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/a0ba5618-ddcc-47a3-98e8-ba71a27c4ebd/File_df520dc508134826bfa49942c9002c11_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="3">
-<li>
-<p>A text box will appear waiting for input.</p>
-<p>Name the folder <strong><code>rules</code></strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to continue.
+</p>
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d655cad1-a84c-481a-b32a-33d0fc826511/File_26e0960ca1eb4e8e86fe8383b57b4c1a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d655cad1-a84c-481a-b32a-33d0fc826511/File_26e0960ca1eb4e8e86fe8383b57b4c1a_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="4">
+<ol start="3">
 <li>
 <p>Right-click the newly-created <strong><code>rules</code></strong> folder.</p>
 <p><p align="left">
@@ -3012,46 +3147,45 @@ In the chapter ahead, you will examine strategies for encoding your organization
 </li>
 </ol>
 <hr />
-<ol start="5">
+<ol start="4">
 <li>
 <p>Click <strong>New File...</strong> from the drop-down options.</p>
+<p>Name the file <strong><code>basic_rules.md</code></strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to continue.</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2558d5e0-59c1-4705-8389-7934b8a54c4c/File_13ca10714474430eb308eb7dbda798a3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2558d5e0-59c1-4705-8389-7934b8a54c4c/File_13ca10714474430eb308eb7dbda798a3_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="6">
-<li>
-<p>A text box will appear waiting for input.</p>
-<p>Name the file <strong><code>basic_rules.md</code></strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to continue.
+</p>
 <p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4b4c4622-7db1-46d6-875d-4c1521dd9717/File_59fd165de9c2408fa3d26057f380ced5_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4b4c4622-7db1-46d6-875d-4c1521dd9717/File_59fd165de9c2408fa3d26057f380ced5_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
-<ol start="7">
+<ol start="5">
 <li>
-<p>Double left-click on <strong><code>basic_rules.md</code></strong> to expose its contents (which for now are empty).</p>
-<div class="admonition warning">
-<p>Bob supports several <em>"priority levels"</em> of rules. You may configure them by hand by copy and pasting directly into the Markdown file; alternatively, and more simply, you can also configure them through Bob's <strong>Agentic Sidebar</strong>.</p>
-</div>
+<p>The file should automatically open within the Bob IDE, exposing its contents (which are empty for the time being.)</p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/95110a8b-e5ae-4de1-8f0f-24d9c756b02d/File_0907433e1a024b21b3f8ce6ec495c8d7_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
 </ol>
 <hr />
+<ol start="6">
+<li>First, verify that Bob's Agentic Sidebar is still set to <strong>Agent mode</strong>.</li>
+</ol>
+<hr />
+<ol start="7">
+<li>Next, create a new session of the <strong>Agentic Sidebar</strong> to clear all previous context. Use the <strong>New Task</strong> (<span class="keys"><kbd class="key-plus">+</kbd></span>) button in the top-right corner of the Agentic Sidebar to do so.</li>
+</ol>
+<hr />
 <ol start="8">
 <li>
-<p>First, verify that Bob's Agentic Sidebar is still set to <strong>Code mode</strong>. When ready, <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-c">C</kbd></span> and <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-v">V</kbd></span> the entire contents of the prompt below into the Agentic Sidebar, then press <strong>Send</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#tailor-3-2-__codelineno-4-1"></a><span class="hll">Please add the following rules to @/.bob/rules/basic_rules.md and configure them so they work:
+<p>When ready, copy &amp; paste the entire contents of the prompt below <strong>into the Agentic Sidebar</strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#tailor-3-2-__codelineno-4-1"></a><span class="hll">Please add the following rules to @/.bob/rules/basic_rules.md and configure them so they work:
 </span><a id="__codelineno-4-2" name="__codelineno-4-2" href="#tailor-3-2-__codelineno-4-2"></a>- Always include concise JSDoc strings for every public function.
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#tailor-3-2-__codelineno-4-3"></a>- Be very concise in your wording.
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#tailor-3-2-__codelineno-4-4"></a>- Write a summary of every interaction into the folder `internal-monologue/`.Name the file starting with a timestamp, followed by a concise description of the interaction. Example: 2026-01-15_update-readme.md
 </code></pre></div>
-<p><p align="left">
+<p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcd84857-f15c-47df-87de-5e1105e3b8c3/File_779ae0f32b484039a7e987da3d487459_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
 </li>
@@ -3059,143 +3193,226 @@ In the chapter ahead, you will examine strategies for encoding your organization
 <hr />
 <ol start="9">
 <li>
-<p>If prompted by Bob along the way, click the blue <strong>Approve</strong> button to keep things moving.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5a06f529-94ee-410b-a83e-48009d638655/File_2ee884987f794cf8bb8059fbca063b54_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+<p>Bob will prompt you for permission to execute on several different tasks, including the ability to write a file within <code>.bob/rules/basic_rules.md</code> Markdown document.</p>
+<p><strong>Approve</strong> these requests. We will examine the contents shortly once all work on the original request has completed and these files have been fully updated.</p>
 </li>
 </ol>
 <hr />
 <ol start="10">
 <li>
-<p>As before, Bob will generate a <em>Todo List</em> as it sets to work.</p>
-<p>Continue selecting <strong>Approve All</strong> when prompted to allow Bob to carry on with the work until complete.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7acab303-869c-47ec-84b6-959a8ef7acfc/File_d3bce5a034f84f4d8833eb57b5cf1774_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
+<p>Bob will ask to construct three new rules for an <code>internal-monologue/</code> folder, consisting of the following:</p>
+<ul>
+<li><strong>JSDoc / docstrings</strong> | new <code>## Coding Standards</code> section requiring a concise JSDoc on every public TS function and a one-line docstring on every public Python function.</li>
+<li><strong>Concise wording</strong> | rule to keep all comments, docstrings, and prose brief.</li>
+<li><strong>Interaction logging</strong> | new <code>## Interaction Logging</code> section instructing the agent to write a timestamped summary to internal-monologue/ after every interaction.</li>
+</ul>
+<p>Take note that these rules are in alignment with the earlier instruction given via the Agentic Sidebar request.</p>
 </li>
 </ol>
 <hr />
 <ol start="11">
 <li>
-<p>Bob will ask for permission to edit the protected configuration file you made earlier <strong>Step 6</strong> (the empty <code>basic_rules.md</code> file).</p>
-<p><strong>Grant</strong> Bob permission to do so, if prompted.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2cd8be18-0921-4fc6-8050-fe287bbd53f9/File_a2e099ed8eac4b4dbdcd52386375e399_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="12">
-<li>
-<p>Continue progressing (approving Bob's requests) through the workflow. As you do so, you'll watch <code>basic_rules.md</code> fill with the rules you requested and reformat itself automatically.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3de5d5f6-9fc4-47b2-b6f7-af058fa5e4e1/File_87f64a6c90af437d9f7443e62dda4029_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="13">
-<li>
-<p>On completion of the workflow, Bob will return a <strong><code>Task Completed</code></strong> message to the console.</p>
-<ul>
-<li>With this message received, it's now time for you to test the rules with a new Bob conversation, free of any previous context</li>
-<li>Press the <strong>X</strong> in the top corner to close the current Bob session
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/afac3270-4d11-45a4-a35b-89913dbb4d58/File_9f722d26201b4f929f7d3b67cf24a3e3_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-</li>
-</ol>
-<hr />
-<ol start="14">
-<li>
-<p>Create a new Chat session and enter the following prompt:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#tailor-3-2-__codelineno-5-1"></a>Update the readme
-</code></pre></div>
-<p>Afterwards, press the <strong>Send</strong> button.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/44e4beb2-d060-4837-99ea-04bb4f3c9334/File_ce416d9d38924c72bcd9cc5c17ccb495_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="15">
-<li>
-<p>As before, Bob will generate a <em>Todo List</em> as it sets to work.</p>
-<div class="admonition warning">
-<p>Take note that the <em>Todo List</em> now includes the creation of an internal-monologue summary — a telltale sign that your new ruleset is being adhered to.</p>
+<p>The workflow is complete once the Agentic Sidebar reports back the following (or something similar): <strong><em>The <code>internal-monologue/</code> folder was created with <code>2026-06-20_add-coding-rules.md</code> as the first log entry.</em></strong></p>
+<p>At this point, you should inspect the contents of the <code>.bob/rules/basic_rules.md</code> to validate the generative steps taken by Bob. You may do so by: clicking the file shortcut directly within the Agentic Sidebar session; via the <strong>Explorer</strong> tab project directory tree; or review within the documentation below.</p>
+<div class="admonition quote">
+<p class="admonition-title"><code>.bob/rules/basic_rules.md</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#tailor-3-2-__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-26">26</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-27">27</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-28">28</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-29">29</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-30">30</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-31">31</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-32">32</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-33">33</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-34">34</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-35">35</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-36">36</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-37">37</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-38">38</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-39">39</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-40">40</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-41">41</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-42">42</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-43">43</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-44">44</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-45">45</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-46">46</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-47">47</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-48">48</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-49">49</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-50">50</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-51">51</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-52">52</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-53">53</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-54">54</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-55">55</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-56">56</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-57">57</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-58">58</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-59">59</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-60">60</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-61">61</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-62">62</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-63">63</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-64">64</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-65">65</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-66">66</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-67">67</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-68">68</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-69">69</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-70">70</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-71">71</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-72">72</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-73">73</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-74">74</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-75">75</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-76">76</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-77">77</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-78">78</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-79">79</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-80">80</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-81">81</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-82">82</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-83">83</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-84">84</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-85">85</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-86">86</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-87">87</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-88">88</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-89">89</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-90">90</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-91">91</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-92">92</a></span>
+<span class="normal"><a href="#tailor-3-2-__codelineno-5-93">93</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>    # Project Instructions (AGENTS.md)
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>    # AGENTS.md
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>    This file provides guidance to agents when working with code in this repository.
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>    ## Project Overview
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>    Galaxium Travels — an interplanetary flight booking system. The backend also exposes an <span class="gs">**MCP server**</span> (mounted at <span class="sb">`/mcp`</span>) alongside the REST API, both served from the same FastAPI process on port 8080.
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>    ## Stack
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>    <span class="k">-</span> <span class="gs">**Backend**</span>: Python/FastAPI + SQLAlchemy (SQLite) + FastMCP. Entry point: <span class="sb">`booking_system_backend/server.py`</span>, run via <span class="sb">`python server.py`</span>.
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="k">-</span> <span class="gs">**Frontend**</span>: React 19 + TypeScript + Vite + Tailwind CSS. Run via <span class="sb">`npm run dev`</span> (from <span class="sb">`booking_system_frontend/`</span>).
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="hll">    ## Commands
+</span><a id="__codelineno-5-15" name="__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>    ### Backend (run from <span class="sb">`booking_system_backend/`</span>, with <span class="sb">`.venv`</span> active)
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="sb">    ```bash</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="c1"># Setup</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    python3 -m venv .venv <span class="o">&amp;&amp;</span> <span class="nb">source</span> .venv/bin/activate <span class="o">&amp;&amp;</span> pip install -r requirements.txt
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>    <span class="c1"># Run server</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>    python server.py   <span class="c1"># http://localhost:8080, Swagger at /docs, MCP at /mcp</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="c1"># Run all tests</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    pytest
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a>    <span class="c1"># Run a single test function</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a>    pytest tests/test_services.py::TestBookingService::test_book_flight_success -v
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a>    <span class="c1"># Run a single test file</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a>    pytest tests/test_rest.py -v
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="sb">    ```</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34"></a>    ### Frontend (run from <span class="sb">`booking_system_frontend/`</span>)
+<a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="sb">    ```bash</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36"></a>    npm run dev      <span class="c1"># http://localhost:5173</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37"></a>    npm run build    <span class="c1"># tsc -b &amp;&amp; vite build</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38"></a>    npm run lint     <span class="c1"># eslint .</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39"></a><span class="sb">    ```</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40"></a>
+<a id="__codelineno-5-41" name="__codelineno-5-41"></a>    ### Start both together (from repo root)
+<a id="__codelineno-5-42" name="__codelineno-5-42"></a><span class="sb">    ```bash</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43"></a>    ./start.sh
+<a id="__codelineno-5-44" name="__codelineno-5-44"></a><span class="sb">    ```</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45"></a>
+<a id="__codelineno-5-46" name="__codelineno-5-46"></a><span class="hll">    ## Critical Backend Patterns
+</span><a id="__codelineno-5-47" name="__codelineno-5-47"></a>
+<a id="__codelineno-5-48" name="__codelineno-5-48"></a>    ### Error handling: return ErrorResponse, don&#39;t raise
+<a id="__codelineno-5-49" name="__codelineno-5-49"></a>    Service functions return <span class="sb">`BookingOut | ErrorResponse`</span> (or similar). <span class="gs">**Never raise exceptions**</span> from service layer — return an <span class="sb">`ErrorResponse`</span> instance instead. REST endpoints return these directly; MCP tools convert them to <span class="sb">`raise Exception(result.details or result.error)`</span>.
+<a id="__codelineno-5-50" name="__codelineno-5-50"></a>
+<a id="__codelineno-5-51" name="__codelineno-5-51"></a>    ### Seat classes: exactly three, specific names
+<a id="__codelineno-5-52" name="__codelineno-5-52"></a>    Valid seat classes are <span class="sb">`&quot;economy&quot;`</span>, <span class="sb">`&quot;business&quot;`</span>, <span class="sb">`&quot;galaxium&quot;`</span>. The Flight model has three separate seat columns (<span class="sb">`economy_seats`</span>, <span class="sb">`business_seats`</span>, <span class="sb">`galaxium_seats`</span>). There is no generic <span class="sb">`seats_available`</span> column — the <span class="sb">`SEAT_CLASS_MAP`</span> in <span class="sb">`services/booking.py`</span> maps class names to column names.
+<a id="__codelineno-5-53" name="__codelineno-5-53"></a>
+<a id="__codelineno-5-54" name="__codelineno-5-54"></a>    ### Timestamps are ISO strings, stored as String columns
+<a id="__codelineno-5-55" name="__codelineno-5-55"></a>    Both <span class="sb">`departure_time`</span>/<span class="sb">`arrival_time`</span> on Flight and <span class="sb">`booking_time`</span> on Booking are <span class="sb">`String`</span> columns (not DateTime). <span class="sb">`booking_time`</span> is written as <span class="sb">`datetime.utcnow().isoformat()`</span>.
+<a id="__codelineno-5-56" name="__codelineno-5-56"></a>
+<a id="__codelineno-5-57" name="__codelineno-5-57"></a>    ### Pydantic schemas use <span class="sb">`model_validate()`</span>, not <span class="sb">`from_orm()`</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58"></a>    All schemas that wrap ORM models use <span class="sb">`class Config: from_attributes = True`</span>. Construct them with <span class="sb">`BookingOut.model_validate(obj)`</span>, not <span class="sb">`.from_orm()`</span>.
+<a id="__codelineno-5-59" name="__codelineno-5-59"></a>
+<a id="__codelineno-5-60" name="__codelineno-5-60"></a>    ### Tests use in-memory SQLite + monkeypatching
+<a id="__codelineno-5-61" name="__codelineno-5-61"></a>    <span class="sb">`conftest.py`</span> patches both <span class="sb">`db.SessionLocal`</span> and <span class="sb">`server.SessionLocal`</span> (the MCP tools use <span class="sb">`SessionLocal`</span> directly, bypassing FastAPI dependency injection). Each test gets a fresh DB; <span class="sb">`seed()`</span> is patched to a no-op.
+<a id="__codelineno-5-62" name="__codelineno-5-62"></a>
+<a id="__codelineno-5-63" name="__codelineno-5-63"></a><span class="hll">    ## Critical Frontend Patterns
+</span><a id="__codelineno-5-64" name="__codelineno-5-64"></a>
+<a id="__codelineno-5-65" name="__codelineno-5-65"></a>    ### API base URL from env
+<a id="__codelineno-5-66" name="__codelineno-5-66"></a>    Configure <span class="sb">`VITE_API_URL`</span> in <span class="sb">`.env`</span> (see <span class="sb">`.env.example`</span>). Defaults to <span class="sb">`http://localhost:8080`</span>.
+<a id="__codelineno-5-67" name="__codelineno-5-67"></a>
+<a id="__codelineno-5-68" name="__codelineno-5-68"></a>    ### Error detection: check <span class="sb">`response.success === false`</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69"></a>    Use the <span class="sb">`isErrorResponse(response)`</span> helper from <span class="sb">`src/services/api.ts`</span> to distinguish <span class="sb">`ErrorResponse`</span> from success types. It checks <span class="sb">`response.success === false`</span>.
+<a id="__codelineno-5-70" name="__codelineno-5-70"></a>
+<a id="__codelineno-5-71" name="__codelineno-5-71"></a>    ### Seat class utilities: use <span class="sb">`src/utils/seatClasses.ts`</span>
+<a id="__codelineno-5-72" name="__codelineno-5-72"></a>    Use <span class="sb">`getSeatClassPrice(basePrice, seatClass)`</span> for price with multipliers (economy ×1, business ×1.5, galaxium ×2.5) and <span class="sb">`getSeatCount(flight, seatClass)`</span> to read per-class seat counts. <span class="gs">**Price is stored as an integer (cents/whole units)**</span>; <span class="sb">`formatCurrency`</span> in <span class="sb">`src/utils/formatters.ts`</span> formats it as USD.
+<a id="__codelineno-5-73" name="__codelineno-5-73"></a>
+<a id="__codelineno-5-74" name="__codelineno-5-74"></a>    ### TypeScript strictness
+<a id="__codelineno-5-75" name="__codelineno-5-75"></a>    <span class="sb">`tsconfig.app.json`</span> enables <span class="sb">`strict`</span>, <span class="sb">`noUnusedLocals`</span>, <span class="sb">`noUnusedParameters`</span>, and <span class="sb">`verbatimModuleSyntax`</span>. All types live in <span class="sb">`src/types/index.ts`</span>.
+<a id="__codelineno-5-76" name="__codelineno-5-76"></a>
+<a id="__codelineno-5-77" name="__codelineno-5-77"></a>    ### Tailwind custom tokens
+<a id="__codelineno-5-78" name="__codelineno-5-78"></a>    Use project-specific color tokens: <span class="sb">`space-dark`</span>, <span class="sb">`space-blue`</span>, <span class="sb">`cosmic-purple`</span>, <span class="sb">`nebula-pink`</span>, <span class="sb">`alien-green`</span>, <span class="sb">`solar-orange`</span>, <span class="sb">`star-white`</span>. Backgrounds: <span class="sb">`bg-space-gradient`</span>, <span class="sb">`bg-cosmic-gradient`</span>.
+<a id="__codelineno-5-79" name="__codelineno-5-79"></a>
+<a id="__codelineno-5-80" name="__codelineno-5-80"></a><span class="hll">    ## Coding Standards
+</span><a id="__codelineno-5-81" name="__codelineno-5-81"></a>
+<a id="__codelineno-5-82" name="__codelineno-5-82"></a>    ### JSDoc for every public function
+<a id="__codelineno-5-83" name="__codelineno-5-83"></a>    Always include a concise JSDoc comment on every public function (frontend TypeScript) and a one-line docstring on every public function (backend Python). Keep wording brief — one sentence is enough.
+<a id="__codelineno-5-84" name="__codelineno-5-84"></a>
+<a id="__codelineno-5-85" name="__codelineno-5-85"></a>    ### Concise wording
+<a id="__codelineno-5-86" name="__codelineno-5-86"></a>    Be very concise in all code comments, docstrings, and prose. Prefer short, direct sentences.
+<a id="__codelineno-5-87" name="__codelineno-5-87"></a>
+<a id="__codelineno-5-88" name="__codelineno-5-88"></a><span class="hll">    ## Interaction Logging
+</span><a id="__codelineno-5-89" name="__codelineno-5-89"></a>
+<a id="__codelineno-5-90" name="__codelineno-5-90"></a>    After every interaction, write a summary Markdown file to the <span class="sb">`internal-monologue/`</span> folder in the repo root.
+<a id="__codelineno-5-91" name="__codelineno-5-91"></a>    <span class="k">-</span> Filename format: <span class="sb">`YYYY-MM-DD_concise-description.md`</span> (e.g. <span class="sb">`2026-01-15_update-readme.md`</span>).
+<a id="__codelineno-5-92" name="__codelineno-5-92"></a>    <span class="k">-</span> Content: a brief summary of what was requested and what was done.
+<a id="__codelineno-5-93" name="__codelineno-5-93"></a>    <span class="k">-</span> Create the <span class="sb">`internal-monologue/`</span> folder if it does not exist.
+</code></pre></div></td></tr></table></div>
 </div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dfabbdcd-2c45-4df4-9370-2d3682a7a321/File_d36c5da8fb604ed489c4e9093c649e34_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
 </li>
 </ol>
 <hr />
-<ol start="16">
-<li>
-<p>Continue selecting <strong>Approve All</strong> when prompted to allow Bob to carry on with the work until complete.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5f53c73d-f430-4316-84c6-f8cb5601ed45/File_85750bb93ae64f54b63470414f2c4bb2_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="17">
-<li>
-<p>Continue through the Agentic Sidebar workflow as you would during a typical interaction.</p>
-<div class="admonition warning">
-<p>From time to time, a prompt may appear requesting a text response (rather than one of the blue action buttons.) For example, Bob may ask for additional details about how the <code>README</code> file should be updated.</p>
-<p>If you receive a prompt such as this, the specific response you provide is <strong>not</strong> consequential for this lab, so feel free to enter any option or details you prefer.</p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/665720e9-5405-42e0-802c-5dc0c0574d00/File_af7621fa44d04c2080f10fd88d0b14b9_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="18">
-<li>
-<p>Eventually, a <em>diff view</em> will appear containing the proposed changes to the <code>README</code> file.</p>
-<ul>
-<li>Red text indicates content that is now scheduled to be removed</li>
-<li>Color-highlighed text indicates new content that is scheduled to be added
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/62da11f6-0d99-4cb6-a198-917ffb96e0cf/File_97f76d2f384149b0909ecb90504fcc4d_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-</li>
-</ol>
-<hr />
-<ol start="19">
-<li>
-<p>An internal-monologue (<strong><code># Interaction Summary</code></strong>) entry is also created within the <code>basic_rules.md</code> file, exactly to the specifications requested in the new ruleset.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cb4f1a7f-684e-418c-943f-2fdc5f7746f7/File_26fe84529d364f8fa16f3f2321226d87_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="20">
-<li>
-<p>On completion of the workflow, Bob will return a <strong><code>Task Completed</code></strong> message to the console.</p>
-<ul>
-<li>As requested by the "update the <code>README</code>" prompt, the <code>README</code> file has been modified as an internal-monologue document</li>
-<li>Note that this new <code>.md</code> file adheres to the <code>yyyy-mm-dd_NAME.md</code> naming format that was specified in the new ruleset
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/023f1b1c-6f32-4364-bc84-ec14247ff96f/File_d0e6c029d36e4d029beaf9b2d2aa383e_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">DEBUGGING RULESETS</p>
+<p><strong>DEBUGGING RULESETS</strong></p>
 <p>Recall that IBM Bob supports two rule scopes— <strong>Global</strong> and <strong>Workspace</strong> —and within each, mode-specific rules can also be applied. Bob may occasionally overlook Workspace-level rules. Global rules and agent-specific project rules tend to be followed more strictly.</p>
 <p>If your rules aren't being honored as expected, send a prompt to the <em>Agentic Sidebar</em> such as the following:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#tailor-3-2-__codelineno-6-1"></a>My project level rules in @/.bob/rules/basic_rules.md are not being listened to, please configure them properly
-</code></pre></div>
-Submit the prompt and then proceed through the workflow. Bob may add the rules to each <code>agents.md</code> file, apply them for a single instance, or take another approach.</p>
-</div>
-</li>
-</ol>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#tailor-3-2-__codelineno-6-1"></a>My project level rules in @/.bob/rules/basic_rules.md are not being listened to, please configure them properly
+</code></pre></div></p>
+<p>Submit the prompt and then proceed through the workflow. Bob may add the rules to each <code>AGENTS.md</code> file, apply them for a single instance, or take another approach.</p>
+<hr />
 <h2 id="tailor-3-2-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>
