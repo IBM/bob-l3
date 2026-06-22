@@ -1154,9 +1154,9 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p>The fix is to drop the old database file before the server starts. Let me do that now.</p>
 </div>
 <p>The recommendation from Bob is to execute the following command, which you can approve via the Agentic Sidebar by clicking the <strong>Approve once</strong> button (or execute yourself within the Terminal console):</p>
+<div class="admonition warning">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>rm -f booking_system_backend/booking.db
 </code></pre></div>
-<div class="admonition warning">
 <p>If you applied this fix (or other fixes), <strong>close</strong> your Terminal and follow <strong>Step 18</strong> again. Then proceed to <strong>Step 19</strong> below.</p>
 </div>
 <p>With the fix in place, all future executions of <code>./start.sh</code> will instruct <code>init_db</code> to call <code>create_all</code> against a clean slate, building the correct schema with <code>economy_seats</code>, <code>business_seats</code>, <code>galaxium_seats</code>, and <code>seat_class</code> from scratch. It will subsequently apply the <code>seed()</code> function to populate it with fresh demo data.</p>
