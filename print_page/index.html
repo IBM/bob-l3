@@ -2767,7 +2767,7 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <hr />
 <p><strong>DEBUGGING WITH IBM BOB</strong></p>
 <p>You may discover that your application fails to start, owing to an error! Ours did.</p>
-<div class="admonition warning">
+<div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#delegate-2-2-__codelineno-12-1"></a>ERROR:    Application startup failed. Exiting.
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#delegate-2-2-__codelineno-12-2"></a>🎨 Starting Frontend Server...
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#delegate-2-2-__codelineno-12-3"></a>✅ Frontend started on http://localhost:5173
@@ -2776,12 +2776,12 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <p>The web service will still launch on <code>localhost</code>, but you may find features that were just adjusted (like Seat Classes) are failing to render. One tremendously useful feature of IBM Bob is being able to diagnose and remedy application troubles directly within the Agentic Sidebar, much in the same way that you previously asked Bob to generate new code.</p>
 <p>In our example, we copied the full log from the Terminal console (143 lines) after attempting to run the <code>./start.sh</code> script along with the statement: <em><code>I got an error! Here's the log from console.</code></em></p>
 <p>Bob, in turn, replied back with the following details about the source of the error and its plan (pending user approval) to rectify it:</p>
-<div class="admonition quote">
+<div class="admonition note">
 <p>The problem is a stale <code>booking.db</code> file on disk. SQLAlchemy's <code>create_all</code> only adds missing tables. It never alters existing ones. So the old <code>flights</code> table (with <code>seats_available</code>) is still there from a previous run, and the new columns don't exist in it.</p>
 <p>The fix is to drop the old database file before the server starts. Let me do that now.</p>
 </div>
 <p>The recommendation from Bob is to execute the following command, which you can approve via the Agentic Sidebar by clicking the <strong>Approve once</strong> button (or execute yourself within the Terminal console):</p>
-<div class="admonition warning">
+<div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#delegate-2-2-__codelineno-13-1"></a>rm -f booking_system_backend/booking.db
 </code></pre></div>
 <p>If you applied this fix (or other fixes), <strong>close</strong> your Terminal and follow <strong>Step 18</strong> again. Then proceed to <strong>Step 19</strong> below.</p>
