@@ -766,7 +766,7 @@
 </div>
 <details class="warning">
 <summary>DEBUGGING: Error...</summary>
-<p>If IBM Bob returns an error when clicking <strong>Generate</strong> while Literate  Coding mode is activated, double-check that your instruction comment <code>validate email addresses</code> does <em>NOT</em> include "comment out" annotations like double <code>//</code> or <code>#</code> lines. Recent iterations of Bob's LLMs have been documented generating errors (related to newString and oldString) when encountering these comment lines. </p>
+<p>If IBM Bob returns an error when clicking <strong>Generate</strong> while <em>Literate Coding</em> mode is activated, double-check that your instruction comment <code>validate email addresses</code> does <em>NOT</em> include "comment out" annotations like double <code>//</code> or <code>#</code> lines. Recent iterations of Bob's LLMs have been documented generating errors (related to newString and oldString) when encountering these comment lines. </p>
 </details>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa00fc56-debe-4660-9560-de00400ed10e/File_b68b1ec47df44292a1c7397c8c71dbef_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa00fc56-debe-4660-9560-de00400ed10e/File_b68b1ec47df44292a1c7397c8c71dbef_text_export.jpeg" alt="" width="600" /></a>
@@ -1073,12 +1073,6 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 <ol start="3">
 <li>
 <p>Place your cursor at the beginning of the empty <strong>Line 43</strong> and then click the <strong>magic wand icon</strong> near the top of the editor (or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-i">I</kbd></span>) to activate <em>Literate Coding</em> mode.</p>
-<details class="warning">
-<summary>DEBUGGING: Failed to generate code from literate text.</summary>
-<p>Some users have reported an error when attempting to generate code from literate text:
-<code>Failed to generate code from literate text. Please try again. Error: Each edit must have oldString and newString</code></p>
-<p>In such instances, try deleting the lines of text you added or inserted. Then either paste the code back in or type the code in again manually. Make sure that the Literate Coding mode is active before doing so. Click the <strong>Generate</strong> button again when ready to proceed.</p>
-</details>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/541203d9-0a20-4ac7-a8dd-9a60d2334373/File_70a4346deb6344bc9763d181f6527c5a_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -1092,7 +1086,16 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </ol>
 <hr />
 <ol start="5">
-<li>Click the <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> as a shortcut).</li>
+<li>
+<p>Click the <strong>Generate</strong> button (or press <span class="keys"><kbd class="key-command">Cmd</kbd></span> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> as a shortcut).</p>
+<details class="warning">
+<summary>DEBUGGING: Failed to generate code from literate text.</summary>
+<p>Some users have reported an error when attempting to generate code from literate text:
+<code>Failed to generate code from literate text. Please try again. Error: Each edit must have oldString and newString</code></p>
+<p>In such instances, try deleting the lines of text you added or inserted. Then either paste the code back in or type the code in again manually. Make sure that the Literate Coding mode is active before doing so. Click the <strong>Generate</strong> button again when ready to proceed.</p>
+<p>Double-check that your instruction comment <code>validate email addresses</code> does <em>NOT</em> include "comment out" annotations like double <code>//</code> or <code>#</code> lines. Recent iterations of Bob's LLMs have been documented generating errors (related to newString and oldString) when encountering these comment lines. </p>
+</details>
+</li>
 </ol>
 <hr />
 <ol start="6">
@@ -1219,12 +1222,6 @@ Within the new Terminal window, execute the following commands one-by-one in seq
 </div>
 </div>
 </div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/45350cda-c2c2-4510-ae2f-97d0d781697e/File_797886930dc94807af2f42b9a63b4b0c_text_export.jpeg" alt="" width="600" /></a>
-</p>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4ef4a490-d834-4a35-bc3c-9e05d7837ac2/File_cafa1952f83648459de15ff4d8cca923_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
 </li>
 </ol>
 <hr />
