@@ -528,15 +528,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-hands-on-optional-the-github-mcp-server" class="md-nav__link">
-    iii. Hands-on (optional): the GitHub MCP server
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iv-key-takeaways" class="md-nav__link">
-    iv. Key takeaways
+  <a href="#iii-key-takeaways" class="md-nav__link">
+    iii. Key takeaways
   </a>
   
 </li>
@@ -597,15 +590,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-hands-on-optional-the-github-mcp-server" class="md-nav__link">
-    iii. Hands-on (optional): the GitHub MCP server
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iv-key-takeaways" class="md-nav__link">
-    iv. Key takeaways
+  <a href="#iii-key-takeaways" class="md-nav__link">
+    iii. Key takeaways
   </a>
   
 </li>
@@ -701,282 +687,15 @@
 </ul>
 <p>And GitHub is just one server in a fast-growing ecosystem that already spans version control and code review platforms, project management and issue-tracking tools, databases and data services, cloud infrastructure providers, and internal enterprise systems. In practice, most of the external integrations a development team relies upon can be connected to Bob through MCP, with no custom development required.</p>
 </div>
-<h2 id="iii-hands-on-optional-the-github-mcp-server"><strong>iii. Hands-on (optional): the GitHub MCP server</strong></h2>
 <hr />
-<blockquote>
-<p><strong>Follow the video</strong> for a full walkthrough of this scenario: <a href="https://ibm.seismic.com/Link/Content/DCDRFd2HQdRc3G4WB866f2HHVQCG">Chapter 5.1: MCP [IBM Bob L3]</a></p>
-</blockquote>
-<div class="admonition warning">
-<p class="admonition-title">OPTIONAL MATERIAL</p>
-<p>The following section is <strong>NOT</strong> required to complete accreditation for the Level 3 hands-on material. However, it is nevertheless valuable to understand the workings of and recommended as worthy of your time.</p>
+<h2 id="iii-key-takeaways"><strong>iii. Key takeaways</strong></h2>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">WANT TO GO HANDS-ON WITH MCP?</p>
+<p>IBM Bob's <strong>Model Context Protocol</strong> capabilities are extensive and worth a proper deep dive. To that end, the IBM Enablement team has been hard at work crafting a separate Level 3 series of hands-on labs dedicated exclusively to MCP, the IBM Bob Marketplace, and the synergies of such a technology stack with other parts of IBM's portfolio (including IBM Technology Zone custom demos.)</p>
+<p>Once published, the Level 3 courseware will be linked directly from here — as well as other IBM Bob-related sales enablement channels. Stay tuned.</p>
 </div>
-<p>The following <strong>optional</strong> walkthrough connects the GitHub MCP server end-to-end with Bob.</p>
-<hr />
-<ol>
-<li>
-<p>The <code>GitHub MCP Server</code> repository is subject to frequent and continuous change. Validate the current GitHub MCP server steps (via the latest product and provider documentation) before attempting to implement this with clients.</p>
-<p>Navigate to the following page:</p>
-<div class="admonition warning">
-<p><strong>URL:</strong> <a href="https://github.com/github/github-mcp-server">https://github.com/github/github-mcp-server</a></p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7f7316c1-4e88-4f49-8401-3a5ed8eeae79/File_6a95a696ca1c4a6c8819bb3f654145e1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7f7316c1-4e88-4f49-8401-3a5ed8eeae79/File_6a95a696ca1c4a6c8819bb3f654145e1_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="2">
-<li>
-<p>Scroll down to the <strong>"Local GitHub MCP Server"</strong> section and click the hyperlink labelled: <a href="https://github.com/settings/personal-access-tokens/new" target="_blank"><code>Create a GitHub Personal Access Token</code></a></p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c31181e4-28eb-4146-a307-9e59304fec8f/File_b35b736ef39a45bdbf45643c473abaa9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/c31181e4-28eb-4146-a307-9e59304fec8f/File_b35b736ef39a45bdbf45643c473abaa9_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="3">
-<li>
-<p>Create a GitHub account (or sign in with an existing account).</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9fc0ef6d-3a4d-4ed9-8c3a-8f83bff3fab3/File_5403de329aed4ea997e7b2fc61fc2ed6_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/9fc0ef6d-3a4d-4ed9-8c3a-8f83bff3fab3/File_5403de329aed4ea997e7b2fc61fc2ed6_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="4">
-<li>
-<p>After signing in, your browser will be redirected to the <strong>Token Creation</strong> page.</p>
-<p>Assign the token any name you like. For example, <code>IBM BOB</code>.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/96e4968a-d657-4f40-b49a-92ae56a7a8ab/File_273b7558ca644224a41f7ecbf3bb3b6a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/96e4968a-d657-4f40-b49a-92ae56a7a8ab/File_273b7558ca644224a41f7ecbf3bb3b6a_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="5">
-<li>
-<p>Keep the other fields as their default inputs and scroll down the page until you locate the <strong>Generate Token</strong> button. Click it to continue.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/eb260f0f-6d1a-444b-96ce-35f016b1e14c/File_bd9264e8d21749bf8d5357beff6d81f0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/eb260f0f-6d1a-444b-96ce-35f016b1e14c/File_bd9264e8d21749bf8d5357beff6d81f0_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="6">
-<li>
-<p>Click <strong>Generate Token</strong> again on the pop-up panel that appears.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ad66d49d-e881-44ca-be47-a39331a294e1/File_f9e9af3edaa346dbaa6a5688b5efc3d0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/ad66d49d-e881-44ca-be47-a39331a294e1/File_f9e9af3edaa346dbaa6a5688b5efc3d0_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="7">
-<li>
-<p>Your browser will load a new panel with your <strong>Access Token</strong>. Record these details to a notepad for reference later.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5aaa2966-11a2-4547-8acb-6c0b91324ae1/File_e98281ce735b4901a11272e7f867a15f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5aaa2966-11a2-4547-8acb-6c0b91324ae1/File_e98281ce735b4901a11272e7f867a15f_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="8">
-<li>
-<p>Click the three dots (<strong>...</strong>) in the top corner of the agentic sidebar.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e462850-21fd-43fd-933d-c87ecb6f4918/File_590ebab65325437d82deff5f5d001e17_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6e462850-21fd-43fd-933d-c87ecb6f4918/File_590ebab65325437d82deff5f5d001e17_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="9">
-<li>
-<p>Click <strong>MCP Servers</strong>.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/06f371b4-dfeb-40e9-96a5-99b75238eae0/File_8e2a78feb0a946d089848ee59c5d5252_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/06f371b4-dfeb-40e9-96a5-99b75238eae0/File_8e2a78feb0a946d089848ee59c5d5252_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="10">
-<li>
-<p>Click <strong>Open</strong> next to Project MCPs.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/48134e27-f04d-40a3-960e-52012c3894d9/File_ad150565d6b44c2c8ae99348be6411b1_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/48134e27-f04d-40a3-960e-52012c3894d9/File_ad150565d6b44c2c8ae99348be6411b1_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="11">
-<li>
-<p>Toggle the <strong>Modes</strong> switch button.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b16bdbb-b2de-4de8-8c25-5051b105a89c/File_d7316e331fd24246940a10a69ca94ea2_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/5b16bdbb-b2de-4de8-8c25-5051b105a89c/File_d7316e331fd24246940a10a69ca94ea2_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="12">
-<li>
-<p>Under modes, select <strong>Agent</strong> to unlock IBM Bob's set of MCP tools.</p>
-<p>You will be able to configure the MCP server directly from the agentic sidebar.
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcc29cfb-02e8-40d7-80ec-ccf0cd32858c/File_ed48e74df3db442d8a37db58f93f6e1c_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dcc29cfb-02e8-40d7-80ec-ccf0cd32858c/File_ed48e74df3db442d8a37db58f93f6e1c_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="13">
-<li>
-<p>Copy and paste the following prompt into a <strong>text editor</strong> (<em>not</em> the IBM Bob console), as you will need to perform some modifications before setting Bob to work with it.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">[Modify this code before use!]</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Add</span> <span class="n">this</span> <span class="n">to</span> <span class="n">my</span> <span class="n">local</span> <span class="n">MCP</span> <span class="n">servers</span><span class="o">.</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="s2">&quot;mcpServers&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="s2">&quot;github&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;npx&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="s2">&quot;-y&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="s2">&quot;@modelcontextprotocol/server-github&quot;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">],</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="s2">&quot;GITHUB_PERSONAL_ACCESS_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">}</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="p">}</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">}</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="hll"><span class="n">Replace</span> <span class="n">the</span> <span class="n">placeholder</span> <span class="k">with</span> <span class="n">my</span> <span class="n">PAT</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">github_pat_123456789</span><span class="o">&gt;</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">INSTRUCTIONS TO MODIFY FOR YOUR MACHINE</p>
-<p>The following elements require modification and further customization depending on your particular account and machine.</p>
-<ul>
-<li>Replace <code>&lt;github_pat_123456789&gt;</code> on <strong>Line 18</strong> with your true <strong>Access Token</strong> details recorded in <strong>Step 7</strong></li>
-<li>Copy and paste the modified prompt into Bob's Agentic Sidebar (ensure that <em>Agent mode</em> is active)</li>
-<li>Press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the instruction set</li>
-<li><strong>Approve</strong> requests from Bob as it works its way through the task</li>
-</ul>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd6d1436-d9d2-4b48-991e-db71514bf2eb/File_90d413dcbdf6426aaf1994207dedf7f3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/dd6d1436-d9d2-4b48-991e-db71514bf2eb/File_90d413dcbdf6426aaf1994207dedf7f3_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="14">
-<li>
-<p>Once the task has completed, the <code>mcp.json</code> file will now reflect the data from your prompt.</p>
-<ul>
-<li>The screenshot (below) denotes the removed lines of code (in red text) and the intended MCP configuration (in highlighted text) that has been added</li>
-<li>Delete the commented line <code>// Made with Bob</code> should you wish to do further clean-up
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b4d51bb5-0ee2-4bc7-a3f7-edf33dd22ffb/File_c168e76e57be4e63b738ba646fa7806a_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/b4d51bb5-0ee2-4bc7-a3f7-edf33dd22ffb/File_c168e76e57be4e63b738ba646fa7806a_text_export.jpeg" alt="" width="600" /></a>
-</p>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8be45777-f6d5-4839-a7fa-0ee4ff39a06a/File_a5182378d8c449c5b84170923d3773c3_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/8be45777-f6d5-4839-a7fa-0ee4ff39a06a/File_a5182378d8c449c5b84170923d3773c3_text_export.jpeg" alt="" width="600" /></a>
-</p></li>
-</ul>
-</li>
-</ol>
-<hr />
-<ol start="15">
-<li>
-<p>Send a follow-up prompt so that Bob can verify the configuration.</p>
-<p>Copy &amp; paste the following prompt into the Agentic Sidebar, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Test if the MCP server is working
-</code></pre></div>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cfba462-c930-419b-9904-2dd0bf508063/File_1804af2b62de44aa8068b88e3b13022f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/3cfba462-c930-419b-9904-2dd0bf508063/File_1804af2b62de44aa8068b88e3b13022f_text_export.jpeg" alt="" width="600" /></a>
-</p>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6ab18626-5a9e-4539-abb7-3a8ed153e568/File_d0eeec2453ee4e65b441c575c629ad50_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/6ab18626-5a9e-4539-abb7-3a8ed153e568/File_d0eeec2453ee4e65b441c575c629ad50_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="16">
-<li>
-<p>Click the <strong>X</strong> icon to close the open <code>mcp.json</code> file. <strong>Save</strong> changes if prompted to do so.</p>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2bf86074-cb9a-41b0-9463-7496e7f425a6/File_37b4f1d11930401893c7e9658d6a61c9_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/2bf86074-cb9a-41b0-9463-7496e7f425a6/File_37b4f1d11930401893c7e9658d6a61c9_text_export.jpeg" alt="" width="600" /></a>
-</p>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4bf778bd-deb7-4051-a5f6-5f5e8b4a7742/File_ef837abf65b64b129f1c5f15b08a6610_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/4bf778bd-deb7-4051-a5f6-5f5e8b4a7742/File_ef837abf65b64b129f1c5f15b08a6610_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="17">
-<li>
-<p>Restart the Bob IDE so the changes take effect.</p>
-<p>Fully quit and exit the Bob IDE application, then re-open the application.
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ca31c1f-2664-487c-86d0-3acbba7deb53/File_18323b9e0ac243c78de9d5717115578f_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/7ca31c1f-2664-487c-86d0-3acbba7deb53/File_18323b9e0ac243c78de9d5717115578f_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="18">
-<li>
-<p>Now test the new MCP server configuration.</p>
-<ul>
-<li>Ensure that Bob is still in <strong>Agent</strong> mode</li>
-<li>When ready, copy and paste the following prompt into the Agentic Sidebar and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>List all issues from github for this repo
-</code></pre></div></li>
-</ul>
-<div class="admonition warning">
-<p>Take note that, as part of the usual approval and permissions granting process, Bob now asks for access to a tool on the GitHub MCP server.</p>
-</div>
-<p><p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cf8efc10-3001-4ce3-bf93-5e5914a0ddbf/File_c316bd6bd3cc463eb91181ce7b71a7c4_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/cf8efc10-3001-4ce3-bf93-5e5914a0ddbf/File_c316bd6bd3cc463eb91181ce7b71a7c4_text_export.jpeg" alt="" width="600" /></a>
-</p>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/84f94ce7-c076-43d5-ae30-29e26ff4024a/File_4cce8ca861684dbd835c9f7b27e25d9d_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/84f94ce7-c076-43d5-ae30-29e26ff4024a/File_4cce8ca861684dbd835c9f7b27e25d9d_text_export.jpeg" alt="" width="600" /></a>
-</p>
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d42cb54e-be1b-424e-96a5-e02152e993b0/File_6de1027474524c53a3eea62794aa9692_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/d42cb54e-be1b-424e-96a5-e02152e993b0/File_6de1027474524c53a3eea62794aa9692_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<ol start="19">
-<li>
-<p>After completing the workflow, Bob will list all the GitHub issues for <code>galaxium-travels</code> repository we began with. There's more work for the team (you) to do before that application is ready for primetime ... but that's for another day!</p>
-<p>Congratulations on making it this far — that concludes the hands-on materials for this exploration of the <strong>AI Maturity Curve</strong> using IBM Bob.</p>
-<p>Bob is continuously evolving, so expect to see the same from the supporting hands-on labs and demos available for the offering.
-<p align="left">
-<a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/76ef923c-1d13-4919-bacb-8867d4abaed9/File_c2043fc8b9a14d8086efdc79160a0c3e_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/76ef923c-1d13-4919-bacb-8867d4abaed9/File_c2043fc8b9a14d8086efdc79160a0c3e_text_export.jpeg" alt="" width="600" /></a>
-</p></p>
-</li>
-</ol>
-<hr />
-<h2 id="iv-key-takeaways"><strong>iv. Key takeaways</strong></h2>
-<hr />
+<p>Let's review some key concepts:</p>
 <ul>
 <li>MCP (Model Context Protocol) is a standardized interface for connecting Bob to external tools and services</li>
 <li>Originated at Anthropic and is now governed by the Linux Foundation as a vendor-neutral standard</li>
