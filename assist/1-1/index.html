@@ -738,10 +738,10 @@
 <ol start="5">
 <li>
 <p>Within the <code>UserIdentification.tsx</code> file, place your cursor on <strong>Line 19</strong> of the file (just after the <code>UserIdentification</code> definition).</p>
-<p>Copy &amp; paste the following comment onto <strong>Line 19</strong>, including the forward-slash (<code>//</code>) characters:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// validate email addresses
+<p>Copy &amp; paste the following comment onto <strong>Line 19</strong>. Make sure to include the blank (empty) lines <em>before</em> and <em>after</em> the <code>validate email addresses</code> comment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>validate email addresses
 </code></pre></div>
-<p>Make sure to include the blank (empty) lines <em>before</em> and <em>after</em> the <code>// validate email addresses</code> comment. The result should appear as the following:</p>
+<p>Before you click Generate, the setup within the file should appear as the following:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">UserIdentification.tsx</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -755,7 +755,7 @@
 <span class="normal"><a href="#__codelineno-1-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-17" name="__codelineno-1-17"></a>const [isLoading, setIsLoading] = useState(false);
 <a id="__codelineno-1-18" name="__codelineno-1-18"></a>const [isNewUser, setIsNewUser] = useState(false);
 <a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="hll">
-</span><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="hll">// validate email addresses
+</span><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="hll">validate email addresses
 </span><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="hll">
 </span><a id="__codelineno-1-22" name="__codelineno-1-22"></a>const handleSubmit = async (e: React.FormEvent) =&gt; {
 <a id="__codelineno-1-23" name="__codelineno-1-23"></a>    e.preventDefaut();
@@ -764,6 +764,10 @@
 </div>
 </div>
 </div>
+<details class="warning">
+<summary>DEBUGGING: Error...</summary>
+<p>If IBM Bob returns an error when clicking <strong>Generate</strong> while Literate  Coding mode is activated, double-check that your instruction comment <code>validate email addresses</code> does <em>NOT</em> include "comment out" annotations like double <code>//</code> or <code>#</code> lines. Recent iterations of Bob's LLMs have been documented generating errors (related to newString and oldString) when encountering these comment lines. </p>
+</details>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa00fc56-debe-4660-9560-de00400ed10e/File_b68b1ec47df44292a1c7397c8c71dbef_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-06-01/aa00fc56-debe-4660-9560-de00400ed10e/File_b68b1ec47df44292a1c7397c8c71dbef_text_export.jpeg" alt="" width="600" /></a>
 </p></p>
@@ -846,7 +850,7 @@
 <ul>
 <li>Green-highlighted text represents <em>new additions</em> to the code</li>
 <li>Red-highlighted text represents lines that have been <em>marked for removal</em> from the code</li>
-<li>The comment <code>// validate email address</code> that was used as a natural language instruction for Bob will be <em>removed</em> if the generation recommendations are accepted</li>
+<li>The comment <code>validate email address</code> that was used as a natural language instruction for Bob will be <em>removed</em> if the generation recommendations are accepted</li>
 </ul>
 <hr />
 <ol start="8">
