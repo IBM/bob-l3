@@ -3824,7 +3824,7 @@ IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give
 </div>
 <h2 id="scale-4-1-iv-what-happens-when-the-context-window-is-full"><strong>iv. What happens when the context window is full?</strong></h2>
 <hr />
-<p>Reaching the 200,000-token limit doesn't stop Bob or throw an error. Instead, a new conversation starts automatically in the background.</p>
+<p>Reaching the 270,000-token limit doesn't stop Bob or throw an error. Instead, a new conversation starts automatically in the background.</p>
 <p>Bob generates a summary of the previous conversation or session, and then that summary is pre-pended as context to the new conversation. Bob will carry on its responses and workflow seamlessly. The process is invisible to you — but it has real consequences for quality and cost, and that is precisely why it's worth understanding how to govern this resource allocation in detail.</p>
 <p>The first cost: <strong>summarization is lossy.</strong> When a conversation overflows the context window size and needs to be summarized, the precision and fidelity of the original conversation are compromised. Specific technical details, intermediate reasoning, and nuanced context can be lost within the new Bob conversation. If a critical constraint or edge case was discussed early on, it may not persist into the summary or new conversation's memory, and as such implementation quality can suffer.</p>
 <p>The second cost: <strong>quality degrades above roughly 100,000 tokens.</strong> Models don't hold uniform quality across the full range; as the window fills, responses noticeably decline, particularly past the ~100,000-token mark. A conversation using 50,000 tokens will generally produce better output than one using 180,000, all other things being equal. And because tokens are the unit of consumption (measured in <em>Bob Coins</em>), longer conversations and larger file reads also simply cost more of the finite context window. Less context used equates both <em>better output</em> and <em>lower costs</em>.</p>
@@ -3856,7 +3856,7 @@ IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give
 </tr>
 </tbody>
 </table>
-<p>The implementation conversation consumed just <strong>88,000 of 200,000 tokens</strong>— comfortably within the high quality range —because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
+<p>The implementation conversation consumed just <strong>88,000 of 270,000 tokens</strong>— comfortably within the high quality range —because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
 <div class="admonition note">
 <p class="admonition-title">CONTEXT WINDOW GUIDELINES</p>
 <p>Several practical guidelines to keep in mind as you work with Bob's (and any other LLM's) context window:</p>
@@ -3870,7 +3870,7 @@ IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give
 <h2 id="scale-4-1-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>
-<li>As of June 2026, Bob's context window is 200,000 tokens (~150,000 words) and every new conversation starts with a full allocation of this 200K capacity</li>
+<li>As of June 2026, Bob's context window is 270,000 tokens and every new conversation starts with a full allocation of this 270K capacity</li>
 <li>Context fills according to a hierarchy: <strong>system prompts → mode description → rules → MCP tools → messages → file reads/writes</strong></li>
 <li>When the context window is exhausted, Bob auto-summarizes and seamlessly creates a new conversation under the covers (but summarization can be lossy)</li>
 <li>Quality noticeably degrades beyond ~100,000 tokens</li>
