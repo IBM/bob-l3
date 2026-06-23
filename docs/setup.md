@@ -334,10 +334,7 @@ With IBM Bob authenticated, the final piece of setup is a local copy of the *Gal
     ``` bash
     git clone -b bob-learning-path-branch https://github.com/IBM/galaxium-travels
     ```
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/befab27e-07c8-402a-953d-4d34982cd57b/File_889fd34093454cd19d281579d5a89981_text_export.jpeg" alt="" width="600" />
-    </p>
+    ![](_attachments/setup-v-1.png)
 
 ---
 
@@ -397,9 +394,7 @@ From the expandable options below, follow and execute the instructions aligned t
 
             ```
 
-        <p align="left">
-        <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/1170cd60-aed5-44d4-ab3f-490bffc3e99d/File_5d37b5900a0b4ebd86f4c995cf83c40d_text_export.jpeg" alt="" width="600" />
-        </p>
+        ![](_attachments/setup-v-1.png)
 
     ---
 
