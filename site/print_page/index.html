@@ -866,12 +866,9 @@ At its core, Bob does three things exceptionally well:</p>
 <hr />
 <ol>
 <li>
-<p>Begin at the Free Trial sign-up page: <strong>[Free Trial | IBM Bob]</strong>(https://bob.ibm.com/trial?utm_source=skills_network&amp;utm_content=in_lab_content_link&amp;utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986)</p>
-<p>Fill out your details on the form and press <strong>Next</strong>.</p>
-<div class="admonition warning">
-<p class="admonition-title">YOUR EMAIL BECOMES YOUR w3id</p>
-<p>The email address you supply here will become your w3id. IBMers will <strong>not</strong> be able to complete this form with their IBM email, and Business Partners who completed a similar process previously may encounter the same difficulty.</p>
-<p><em>The quick workaround is to register with a fresh personal email address (Outlook, Gmail, and the like). IBMers should open a private browsing window to do this. This authentication and install process is expected to be refined over time.</em></p>
+<p>Begin at the <strong>Free Trial</strong> sign-up page:</p>
+<div class="admonition note">
+<p><strong><a href="https://bob.ibm.com/trial?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">https://bob.ibm.com/trial?utm_source=skills_network&amp;utm_content=in_lab_content_link&amp;utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986</a></strong></p>
 </div>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9699a649-967f-4cee-bf00-fb8886593230/File_5fab9c0e6ec844468d55bc0fbb6068a0_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9699a649-967f-4cee-bf00-fb8886593230/File_5fab9c0e6ec844468d55bc0fbb6068a0_text_export.jpeg" alt="" width="600" /></a>
@@ -3778,7 +3775,7 @@ IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give
 <hr />
 <h2 id="scale-4-1-iii-what-is-a-context-window"><strong>iii. What is a context window?</strong></h2>
 <hr />
-<p>The models powering Bob offer a context window of <strong>200,000 tokens</strong> — roughly <strong>150,000 words</strong>, about the length of <em>The Fellowship of the Ring</em>. Every conversation begins with that full capacity available, and it holds <em>everything</em>: instructions, file contents, conversation history, and Bob's own responses. Once the window fills, the oldest content within the context window has to either be dropped from memory or summarized to make room.</p>
+<p>The models powering Bob offer a context window of <strong>270,000 tokens</strong> — and this number is continuing to expand with new releases. Every conversation begins with that full capacity available, and it holds <em>everything</em>: instructions, file contents, conversation history, and Bob's own responses. Once the window fills, the oldest content within the context window has to either be dropped from memory or summarized to make room.</p>
 <p>At the start of every conversation, content loads in a predictable sequence:</p>
 <table>
 <thead>
@@ -3827,7 +3824,7 @@ IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give
 </div>
 <h2 id="scale-4-1-iv-what-happens-when-the-context-window-is-full"><strong>iv. What happens when the context window is full?</strong></h2>
 <hr />
-<p>Reaching the 200,000-token limit doesn't stop Bob or throw an error. Instead, a new conversation starts automatically in the background.</p>
+<p>Reaching the 270,000-token limit doesn't stop Bob or throw an error. Instead, a new conversation starts automatically in the background.</p>
 <p>Bob generates a summary of the previous conversation or session, and then that summary is pre-pended as context to the new conversation. Bob will carry on its responses and workflow seamlessly. The process is invisible to you — but it has real consequences for quality and cost, and that is precisely why it's worth understanding how to govern this resource allocation in detail.</p>
 <p>The first cost: <strong>summarization is lossy.</strong> When a conversation overflows the context window size and needs to be summarized, the precision and fidelity of the original conversation are compromised. Specific technical details, intermediate reasoning, and nuanced context can be lost within the new Bob conversation. If a critical constraint or edge case was discussed early on, it may not persist into the summary or new conversation's memory, and as such implementation quality can suffer.</p>
 <p>The second cost: <strong>quality degrades above roughly 100,000 tokens.</strong> Models don't hold uniform quality across the full range; as the window fills, responses noticeably decline, particularly past the ~100,000-token mark. A conversation using 50,000 tokens will generally produce better output than one using 180,000, all other things being equal. And because tokens are the unit of consumption (measured in <em>Bob Coins</em>), longer conversations and larger file reads also simply cost more of the finite context window. Less context used equates both <em>better output</em> and <em>lower costs</em>.</p>
@@ -3859,7 +3856,7 @@ IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give
 </tr>
 </tbody>
 </table>
-<p>The implementation conversation consumed just <strong>88,000 of 200,000 tokens</strong>— comfortably within the high quality range —because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
+<p>The implementation conversation consumed just <strong>88,000 of 270,000 tokens</strong>— comfortably within the high quality range —because the two-conversation split kept the planning discussion from competing with the implementation for space.</p>
 <div class="admonition note">
 <p class="admonition-title">CONTEXT WINDOW GUIDELINES</p>
 <p>Several practical guidelines to keep in mind as you work with Bob's (and any other LLM's) context window:</p>
@@ -3873,7 +3870,7 @@ IBM Bob will define an over-arching goal of the work yet to be done— <em>"Give
 <h2 id="scale-4-1-v-key-takeaways"><strong>v. Key takeaways</strong></h2>
 <hr />
 <ul>
-<li>As of June 2026, Bob's context window is 200,000 tokens (~150,000 words) and every new conversation starts with a full allocation of this 200K capacity</li>
+<li>As of June 2026, Bob's context window is 270,000 tokens and every new conversation starts with a full allocation of this 270K capacity</li>
 <li>Context fills according to a hierarchy: <strong>system prompts → mode description → rules → MCP tools → messages → file reads/writes</strong></li>
 <li>When the context window is exhausted, Bob auto-summarizes and seamlessly creates a new conversation under the covers (but summarization can be lossy)</li>
 <li>Quality noticeably degrades beyond ~100,000 tokens</li>
@@ -4177,7 +4174,7 @@ In the following section, you will step away from theory (and the Bob IDE altoge
 <li>
 <p>Prefixing any input into the <em>Bob Shell</em> console with an exclamation mark <span class="keys"><kbd class="key-exclam">!</kbd></span> drops <em>Bob Shell</em> into <strong>shell mode</strong> (akin to a <code>bash</code> shell), where you can run ordinary shell commands.</p>
 <p>Test this by copy and pasting the following command into the Terminal console, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#scale-4-2-__codelineno-10-1"></a>!cat readme
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#scale-4-2-__codelineno-10-1"></a>!cat README.md
 </code></pre></div></p>
 <div class="admonition quote"></div>
 <p>The <strong><code>cat</code></strong> (concatenate) command is used to view, create, and combine file contents directly from the console.

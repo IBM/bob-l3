@@ -47,15 +47,10 @@ The Trial path provides fast access, a fresh balance of 40 Bobcoins, and is open
 
 ---
 
-1. Begin at the Free Trial sign-up page: **[Free Trial | IBM Bob]**(https://bob.ibm.com/trial?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986)
+1. Begin at the **Free Trial** sign-up page:
 
-    Fill out your details on the form and press **Next**.
-
-    !!! warning "YOUR EMAIL BECOMES YOUR w3id"
-
-        The email address you supply here will become your w3id. IBMers will **not** be able to complete this form with their IBM email, and Business Partners who completed a similar process previously may encounter the same difficulty.
-
-        *The quick workaround is to register with a fresh personal email address (Outlook, Gmail, and the like). IBMers should open a private browsing window to do this. This authentication and install process is expected to be refined over time.*
+    !!! note ""
+        **<a href="https://bob.ibm.com/trial?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">https://bob.ibm.com/trial?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986</a>**
 
     <p align="left">
     <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9699a649-967f-4cee-bf00-fb8886593230/File_5fab9c0e6ec844468d55bc0fbb6068a0_text_export.jpeg" alt="" width="600" />
