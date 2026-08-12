@@ -5,19 +5,11 @@
 
 ## **i. Before you begin**
 
----
-
 Before diving into the hands-on modules, complete the following registration and setup steps to prepare your machine with an authenticated **IBM Bob** account and a local copy of the *Galaxium Travels* demo application, which every module in this Level 3 courseware builds upon. Afterwards, you will be ready to begin **Module 1 | Assist**.
 
-!!! note "**A WORD ON WORKING WITH GENERATIVE AI**"
-
-    IBM Bob is powered by generative AI and LLMs, and a defining trait of these systems is that they are *non-deterministic* — unlike the *deterministic* tools most developers are accustomed to. In practice, that means the same prompt can produce different code from one run to the next. This is both a strength and a quirk of the technology, and it is something to work *with* rather than against.
-
-    **Precision is what tips the odds in your favor.** The more clearly you describe what you want, the more closely Bob's output will mirror your intent; conversely, the smallest change in wording can meaningfully change the generated code. Throughout this lab, your results may differ from the solutions shown — and that is expected, not a defect. Whenever an output diverges, you have three good options: refine the prompt and try again, edit the generated code by hand, or simply proceed if the variation still compiles and runs. Human review remains essential at every step, and never more so than while you are still learning the tool.
+---
 
 ## **ii. Choosing how to access Bob**
-
----
 
 Before installing the demo application, you need an authenticated **IBM Bob account**. There are two registration paths to obtain one— as well as a shortcut if you already have access —and the few minutes you spend now, choosing the right one, can save you a great deal of time later.
 
@@ -29,147 +21,24 @@ Before installing the demo application, you need an authenticated **IBM Bob acco
 | **Bobcoin balance** | 40 Bobcoins | 100 Bobcoins (tied to your w3id) |
 | **Registration email** | Must use a **non-IBM** email address | Your IBM w3id |
 
-!!! note "WHICH PATH SHOULD I CHOOSE?"
+!!! warning "WHICH PATH SHOULD I CHOOSE?"
 
-    - **Trial**: the right choice if you are under time constraints, are a Business Partner, or have previously maxed out your Bobcoin balance. *(IBMers may use the Trial as well, though Internal is the official recommendation.)* Its 40 Bobcoins are more than enough to complete this lab, and access lasts a month — ample time, and easily renewed by creating another Trial account.
-    - **Internal**: the right choice if you are an IBMer, aren't in a rush, and would like to keep exploring Bob beyond this lab. Note that the 100-Bobcoin balance is tied to your w3id, so if you have exhausted it elsewhere, that limit still applies here.
-    - **Already have IBM Bob?** Skip both registration paths entirely and jump ahead to *Installing the Galaxium Travels demo app*. This assumes you have already installed and authenticated IBM Bob prior to this course.
-
-!!! tip "IN A HURRY?"
-
-    If your sole aim is to complete this Level 3 course as quickly as possible, take the **Trial** path and avoid waiting on manual approval altogether.
-
-## **iii. Path A: Free Trial registration (Business Partners)**
-
----
-
-The Trial path provides fast access, a fresh balance of 40 Bobcoins, and is open to the widest audience (**Business Partners included**). Access lapses after one month, which is more than enough time to complete this lab.
+    - **IBM REGULAR EMPLOYEES: <a href="https://pages.github.ibm.com/cdbienko/bob-cobol-java/setup/#iii-ibmers-internal-registration" target="_blank">"Internal" registration</a>**
+    - **BUSINESS PARTNERS: <a href="https://pages.github.ibm.com/cdbienko/bob-cobol-java/setup/#iv-business-partners-trial-registration" target="_blank">"Trial" registration</a>**
+    
+    **Trial account registration** is the right choice if you are under time constraints, are a Business Partner, or have previously maxed out your Bobcoin balance. *(IBMers may use the Trial as well, though Internal is the official recommendation.)* Its 40 Bobcoins are more than enough to complete this lab, and access lasts a month — ample time, and easily renewed by creating another Trial account.
+    
+    **Internal account registration** is the right choice if you are an IBMer, aren't in a rush, and would like to keep exploring Bob beyond this lab. Note that the 100-Bobcoin balance is tied to your w3id, so if you have exhausted it elsewhere, that limit still applies here.
+    
+    **Already have IBM Bob?** Skip both registration paths entirely and jump ahead to *Installing the COBOL demo app*. This assumes you have already installed and authenticated IBM Bob prior to this course.
 
 ---
 
-1. Begin at the **Free Trial** sign-up page:
+## **iii. IBMers: Internal registration**
 
-    !!! note ""
-        **<a href="https://bob.ibm.com/trial?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">https://bob.ibm.com/trial?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986</a>**
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9699a649-967f-4cee-bf00-fb8886593230/File_5fab9c0e6ec844468d55bc0fbb6068a0_text_export.jpeg" alt="" width="600" />
-    </p>
+The Internal registration path is the appropriate route for IBM regular employees to register for IBM Bob access.
 
 ---
-
-2. Check the inbox of the email you registered with, which should arrive nearly instantly.
-
-    **Copy the 7-digit verification code** and return to the open IBM Bob Free Trial tab.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/da3da06a-332e-4cff-9210-132d57bb5105/File_c6e3f07a4b53461eb544c15fe97d481e_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-3. Enter the **7-digit verification code** and press **Submit**.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/db9a2037-191d-460d-b878-0c85c4e47a48/File_97578b7fa56a4200a1e0a5b24d72a532_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-4. After submitting, you will be redirected to a confirmation page. Wait a few seconds until *"Your trial is ready!"* appears, then press **Access your trial now.**
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c68a3a22-c0bc-438a-8e34-d4104f28a63a/File_f1514396a0b34233a1373d266940ebad_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-5. You will land on the *"Download Bob"* page. Download IBM Bob for your respective operating system.
-
-    It follows the simple GUI-based install process you would expect of most desktop applications.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/a3344aac-2163-47ac-bba8-c461fe475d3c/File_64dccede130d413ab4870fb9697e9fb4_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-6. Once IBM Bob has finished installing, **open IBM Bob** (if it has not opened already).
-
-    Then press **Log in to Bob**.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/823f4c70-03dd-4452-b24b-50480c73112c/File_880f1ea2136e4d1b96c1f5c9f3f9b39d_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-7. Press **Allow** on the pop-up window.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3d0178cf-b6e7-430d-83b0-c743985dac0e/File_6ed4e34559254ec1ba55dbbde5ff524b_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-8. Press **Open** on the subsequent pop-up window.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/84967b1a-441e-4566-a534-259aadd68ed3/File_a13363f84f5f4e62bc077b0703d5227e_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-9. On the IBM Verify sign-in page, expand the *"Choose an option"* drop-down and press **IBMid.**
-
-    !!! warning "IBMers TAKING THE TRIAL PATH"
-
-        If you are an IBMer attempting the Trial method while signed in to your actual IBM account (rather than the temporary one you created for Trial access), IBM Bob will try to sign in with that account — and if your primary IBMid has not been authenticated via Internal Registration, this will lead to problems.
-
-        *To avoid this, sign out of any w3id accounts you do not intend to use, then open the sign-in link in a private browsing window. You may need to sign in again with your temporary IBM Trial email in that new window.*
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/78b54a7a-6edf-417f-b14a-e4f7407858aa/File_8ba4dc1789ee451f867f3ec45530e014_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-10. You should be redirected to an **"Authentication Successful!"** screen.
-
-    Afterward, **return to the tab with IBM Bob open.**
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/568d1073-3c7e-422a-92f8-1a0a015e3d3a/File_15d119df77ee4384a003ea73832c2588_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-11. Press **Open** on the new window that has appeared on the IBM Bob screen.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/08b3f0b4-6d25-4191-b130-7b16f68b5857/File_eb57339049244ac58cf539fcd8ec5b7e_text_export.jpeg" alt="" width="600" />
-    </p>
-
----
-
-12. Look to the Agentic Sidebar — the window for entering prompts has opened. You have now successfully accessed your authenticated IBM Bob account.
-
-    <p align="left">
-    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/bed46d69-8811-430c-88ee-4f4582357f13/File_d1a0c6a0088b4f448fbeb1f3cfd4c67e_text_export.jpeg" alt="" width="600" />
-    </p>
-
-    !!! warning "NEXT STEP"
-
-        With Bob authenticated, skip ahead to section <a href="https://ibm.github.io/bob-l3/setup/#v-installing-the-galaxium-travels-demo-app" target="_blank">**v. — *Installing the Galaxium Travels demo app***</a> and disregard the Internal path.
-
-## **iv. Path B: Internal registration (IBMers)**
-
----
-
-The Internal path is reserved for **IBMers who do not yet have IBM Bob**. It provides slower access but a larger, persistent balance of 100 Bobcoins across your w3id (resetting monthly), and it does not expire.
-
-!!! note "BUSINESS PARTNER?"
-    Business Partners should refer back to section <a href="https://ibm.github.io/bob-l3/setup/#iii-path-a-free-trial-registration" target="_blank">**iii. Path A: Free Trial registration**</a> for their registration path.
 
 1. Begin at the [**Bob Enterprise Sales Assets**](https://techzone.ibm.com/collection/bob-enterprise-sales-assets?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986) page.
 
@@ -310,14 +179,124 @@ The Internal path is reserved for **IBMers who do not yet have IBM Bob**. It pro
     <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3733e39b-285c-44ae-a13a-3e4e74c28b97/File_cf25c4f8c6aa4b00a92a8f90ec5fd563_text_export.jpeg" alt="" width="600" />
     </p>
 
+---
 
-## **v. Installing the Galaxium Travels demo app**
+## **iv. Business Partners: Trial registration**
+
+The Trial path provides fast access, a fresh balance of 40 Bobcoins, and is open to the widest audience (**Business Partners included**). Access lapses after one month, which is more than enough time to complete this lab.
 
 ---
 
+1. Begin at the **Free Trial** sign-up page:
+
+    !!! note ""
+        **<a href="https://bob.ibm.com/trial?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986" target="_blank">https://bob.ibm.com/trial?utm_source=skills_network&utm_content=in_lab_content_link&utm_id=Lab-Demonstration+Guide+%5BBob+L3%5D-v1_1777325986</a>**
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/9699a649-967f-4cee-bf00-fb8886593230/File_5fab9c0e6ec844468d55bc0fbb6068a0_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+2. Check the inbox of the email you registered with, which should arrive nearly instantly.
+
+    **Copy the 7-digit verification code** and return to the open IBM Bob Free Trial tab.
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/da3da06a-332e-4cff-9210-132d57bb5105/File_c6e3f07a4b53461eb544c15fe97d481e_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+3. Enter the **7-digit verification code** and press **Submit**.
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/db9a2037-191d-460d-b878-0c85c4e47a48/File_97578b7fa56a4200a1e0a5b24d72a532_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+4. After submitting, you will be redirected to a confirmation page. Wait a few seconds until *"Your trial is ready!"* appears, then press **Access your trial now.**
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c68a3a22-c0bc-438a-8e34-d4104f28a63a/File_f1514396a0b34233a1373d266940ebad_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+5. You will land on the *"Download Bob"* page. **Download** IBM Bob for your respective operating system. It follows the simple GUI-based install process you would expect of most desktop applications.
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/a3344aac-2163-47ac-bba8-c461fe475d3c/File_64dccede130d413ab4870fb9697e9fb4_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+6. Once IBM Bob has finished installing, **open IBM Bob** (if it has not opened already).
+
+    Then press **Log in to Bob**.
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/823f4c70-03dd-4452-b24b-50480c73112c/File_880f1ea2136e4d1b96c1f5c9f3f9b39d_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+7. Press **Allow** on the pop-up window.
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/3d0178cf-b6e7-430d-83b0-c743985dac0e/File_6ed4e34559254ec1ba55dbbde5ff524b_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+8. Press **Open** on the subsequent pop-up window.
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/84967b1a-441e-4566-a534-259aadd68ed3/File_a13363f84f5f4e62bc077b0703d5227e_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+9. On the IBM Verify sign-in page, expand the *"Choose an option"* drop-down and press **IBMid.**
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/78b54a7a-6edf-417f-b14a-e4f7407858aa/File_8ba4dc1789ee451f867f3ec45530e014_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+10. You should be redirected to an **"Authentication Successful!"** screen.
+
+    Afterward, **return to the tab with IBM Bob open.**
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/568d1073-3c7e-422a-92f8-1a0a015e3d3a/File_15d119df77ee4384a003ea73832c2588_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+11. Press **Open** on the new window that has appeared on the IBM Bob screen.
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/08b3f0b4-6d25-4191-b130-7b16f68b5857/File_eb57339049244ac58cf539fcd8ec5b7e_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+12. Look to the Agentic Sidebar — the window for entering prompts has opened. You have now successfully accessed your authenticated IBM Bob account.
+
+    <p align="left">
+    <img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/bed46d69-8811-430c-88ee-4f4582357f13/File_d1a0c6a0088b4f448fbeb1f3cfd4c67e_text_export.jpeg" alt="" width="600" />
+    </p>
+
+---
+
+## **v. Download the lab assets**
+
 With IBM Bob authenticated, the final piece of setup is a local copy of the *Galaxium Travels* codebase — the single, production-style application that every module in this lab builds upon.
 
-!!! note "PREREQUISITES"
+!!! success "PREREQUISITES"
 
     If you do not already have them installed, you will need the following. **npm** is bundled with Node.js.
 
@@ -350,9 +329,7 @@ With IBM Bob authenticated, the final piece of setup is a local copy of the *Gal
 
 ---
 
-## **vi. Starting the Galaxium Travels application**
-
----
+## **vi. Launch the application**
 
 The commands to be issued to the Terminal console, in order to start the Galaxium Travels application, vary according to the operating system your machine is running upon.
 
@@ -637,11 +614,9 @@ From the expandable options below, follow and execute the instructions aligned t
 
 ---
 
-## **viii. You're ready to proceed**
+## **viii. Next steps**
 
----
-
-Setup is complete: IBM Bob is authenticated, the *Galaxium Travels* application is running locally, and the project is open within the Bob IDE. You are ready to begin the hands-on work and watch Bob operate inside a production-style codebase, exactly as it would within a client's real project.
+**Setup is complete:** IBM Bob is authenticated, the *Galaxium Travels* application is running locally, and the project is open within the Bob IDE. You are ready to begin the hands-on work and watch Bob operate inside a production-style codebase, exactly as it would within a client's real project.
 
 Onward to **<a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank">Module 1 | Assist</a>**, where you'll begin at the gentlest stage of the **AI Maturity Curve**: Bob working shoulder to shoulder with you inside the editor.
 
