@@ -1003,10 +1003,36 @@
 <li><strong>Node.js 18+</strong> — <a href="https://nodejs.org/" target="_blank">Download</a></li>
 </ul>
 </div>
+<details class="warning">
+<summary>TROUBLESHOOTING: Node.js Installation on Windows</summary>
+<p>Some users have reported challenges with installing Node.js on Windows operating system machines, particularly with regards to admin-level system access. Should you encounter such difficulties, try the following instructions within a PowerShell or VS Code terminal console:</p>
+<ol>
+<li>
+<p>Set the policy (if it asks Y/N, type <span class="keys"><kbd class="key-y">Y</kbd></span> and <span class="keys"><kbd class="key-enter">Enter</kbd></span>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+</code></pre></div>
+</li>
+<li>
+<p>Install Scoop:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+</code></pre></div>
+</li>
+<li>
+<p>Install Node:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>scoop install nodejs
+</code></pre></div>
+</li>
+<li>
+<p>Verify that Node.js is now installed and operational:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>node -v
+</code></pre></div>
+</li>
+</ol>
+</details>
 <ol>
 <li>
 <p>Open a <strong>Terminal</strong> window, then copy and paste the following command and execute it to clone the project (along with the <code>bob-learning-path-branch</code> that contains the tutorial code):</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone -b bob-learning-path-branch https://github.com/IBM/galaxium-travels
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git clone -b bob-learning-path-branch https://github.com/IBM/galaxium-travels
 </code></pre></div>
 <a class="glightbox" href="../_attachments/setup-v-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/setup-v-1.png" /></a></p>
 </li>
@@ -1017,12 +1043,12 @@
 <p>Next, move into the <code>galaxium-travels</code> directory by copying &amp; pasting into the Terminal console the command that <strong>matches your operating system</strong>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
 <details class="quote">
 <summary>MAC OR LINUX</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span> ~/galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span> ~/galaxium-travels
 </code></pre></div>
 </details>
 <details class="quote">
 <summary>WINDOWS OS</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span><span class="se">\g</span>alaxium-travels
 </code></pre></div>
 </details>
 <p><p align="left">
@@ -1040,22 +1066,22 @@
 <ol>
 <li>
 <p>Within the Terminal, copy and paste the following start-up script and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./start.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./start.sh
 </code></pre></div>
 <details class="warning">
 <summary>ONE-LINE STARTUP NOT WORKING? (MANUAL PROCESS)</summary>
 <p>Execute each command separately, opening a new Terminal window where directed (for the frontend start-up).</p>
 <p><strong>Start the backend:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cd booking_system_backend
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python -m venv .venv
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>pip install -r requirements.txt
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>python server.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cd booking_system_backend
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>python -m venv .venv
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>pip install -r requirements.txt
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>python server.py
 </code></pre></div></p>
 <p><strong>Start the frontend (in a new Terminal window):</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cd booking_system_frontend
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>npm install
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cd booking_system_frontend
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>npm install
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>npm run dev
 </code></pre></div></p>
 </details>
 <p><a class="glightbox" href="../_attachments/setup-v-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/setup-v-1.png" /></a></p>
@@ -1171,19 +1197,19 @@
 <li>
 <p>In a <strong>Terminal</strong> window, paste and execute each of the following commands <strong>one at a time</strong>, pressing <span class="keys"><kbd class="key-enter">Enter</kbd></span> after each:</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
 <strong>Step 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cd booking_system_backend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>cd booking_system_backend
 </code></pre></div>
 <strong>Step 3:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python -m venv .venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>python -m venv .venv
 </code></pre></div>
 <strong>Step 4:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>.venv\Scripts\activate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>.venv\Scripts\activate
 </code></pre></div>
 <strong>Step 5:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>pip install -r requirements.txt
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>pip install -r requirements.txt
 </code></pre></div></p>
 <p>After the <code>pip install</code> command, the requirements will begin installing — this takes roughly 5–10 minutes to complete.</p>
 <p><p align="left">
@@ -1195,7 +1221,7 @@
 <ol start="2">
 <li>
 <p>In the <strong>same</strong> Terminal window, paste and execute:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>python server.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python server.py
 </code></pre></div>
 <p>Afterward, <strong>open a new Terminal window by pressing the Plus (+) button.</strong></p>
 <p><p align="left">
@@ -1208,16 +1234,16 @@
 <li>
 <p>In the new Terminal window, run the following commands in sequence:</p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cd $HOME\galaxium-travels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>cd $HOME\galaxium-travels
 </code></pre></div>
 <strong>Step 2:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cd booking_system_frontend
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>cd booking_system_frontend
 </code></pre></div>
 <strong>Step 3:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>npm install
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>npm install
 </code></pre></div>
 <strong>Step 4:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>npm run dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>npm run dev
 </code></pre></div></p>
 <p><p align="left">
 <a class="glightbox" href="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c9e3344f-aedf-424f-91b5-cf87e5a9af7f/user_cropped_screenshot_6d24558a7eb84ab89c9bcf2b0826fdcc_text_export.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://colony-recorder.s3.amazonaws.com/files/2026-04-27/c9e3344f-aedf-424f-91b5-cf87e5a9af7f/user_cropped_screenshot_6d24558a7eb84ab89c9bcf2b0826fdcc_text_export.jpeg" alt="" width="600" /></a>
