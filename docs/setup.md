@@ -303,6 +303,34 @@ With IBM Bob authenticated, the final piece of setup is a local copy of the *Gal
     - **Python 3.8+** — <a href="https://www.python.org/downloads/" target="_blank">Download</a>
     - **Node.js 18+** — <a href="https://nodejs.org/" target="_blank">Download</a>
 
+??? warning "TROUBLESHOOTING: Node.js Installation on Windows"
+
+    Some users have reported challenges with installing Node.js on Windows operating system machines, particularly with regards to admin-level system access. Should you encounter such difficulties, try the following instructions within a PowerShell or VS Code terminal console:
+
+    1. Set the policy (if it asks Y/N, type ++y++ and ++return++):
+        
+        ```
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+        ```
+
+    2. Install Scoop:
+
+        ```
+        Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+        ```
+
+    3. Install Node:
+
+        ```
+        scoop install nodejs
+        ```
+
+    4. Verify that Node.js is now installed and operational:
+
+        ```
+        node -v
+        ```
+
 1. Open a **Terminal** window, then copy and paste the following command and execute it to clone the project (along with the `bob-learning-path-branch` that contains the tutorial code):
 
     ``` bash
