@@ -1,6 +1,6 @@
 # Project info
 site_name: IBM Bob Level 3
-site_description: IBM Bob Level 3
+site_description: Climbing the AI Maturity Curve with IBM Bob Level 3
 site_author: Christopher Bienko (cdbienko@us.ibm.com)
 copyright: Copyright &copy; 2026 IBM
 
@@ -38,7 +38,6 @@ theme:
     - navigation.footer
   palette:
       scheme: default
-  color_mode: auto
 
 plugins:
   - mkdocs-video:
@@ -49,7 +48,7 @@ plugins:
   - glightbox
   - print-site:
       add_to_navigation: false
-      print_page_title: 'IBM watsonx Code Assistant Level 4 Lab Guide'
+      print_page_title: 'Climbing the AI Maturity Curve with IBM Bob Level 3'
       add_print_site_banner: false
       # Table of contents
       add_table_of_contents: false
