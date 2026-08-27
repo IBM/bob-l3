@@ -341,7 +341,7 @@ With IBM Bob authenticated, the final piece of setup is a local copy of the <a h
     Copy and paste the following command into the Terminal console:
     
     ``` bash
-    gh repo clone github.ibm.com/kkamil-ibm/bobl3
+    git clone https://github.ibm.com/kkamil-ibm/bobl3.git
     ```
 
     Press ++return++ to clone the GitHub repository to your local machine. To view the contents within a Finder window, execute `open .` within the Terminal console.
