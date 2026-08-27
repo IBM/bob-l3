@@ -294,7 +294,7 @@ The Trial path provides fast access, a fresh balance of 40 Bobcoins, and is open
 
 ## **v. Download the lab assets**
 
-With IBM Bob authenticated, the final piece of setup is a local copy of the *Galaxium Travels* codebase — the single, production-style application that every module in this lab builds upon.
+With IBM Bob authenticated, the final piece of setup is a local copy of the <a href="https://github.ibm.com/kkamil-ibm/bobl3/tree/galaxy-travels" target="_blank">***Galaxium Travels***</a> repository — the single, production-style application that every module in this lab builds upon.
 
 !!! success "PREREQUISITES"
 
@@ -331,13 +331,21 @@ With IBM Bob authenticated, the final piece of setup is a local copy of the *Gal
         node -v
         ```
 
-1. Open a **Terminal** window, then copy and paste the following command and execute it to clone the project (along with the `bob-learning-path-branch` that contains the tutorial code):
+---
 
+1. Open a **Terminal** window by clicking **Terminal > New Terminal** from the menu at the top of the interface, or press ++ctrl+shift+grave++ as a shortcut.
+
+    !!! note ""
+        Before executing this instruction to clone the repository to your machine, you may want to use the `cd` command to move the Terminal pointer to a more familiar, readily accessible directory (e.g. `cd Desktop`).
+
+    Copy and paste the following command into the Terminal console:
+    
     ``` bash
-    git clone -b bob-learning-path-branch https://github.com/IBM/galaxium-travels
+    gh repo clone github.ibm.com/kkamil-ibm/bobl3
     ```
-    ![](_attachments/setup-v-1.png)
 
+    Press ++return++ to clone the GitHub repository to your local machine. To view the contents within a Finder window, execute `open .` within the Terminal console.
+    
 ---
 
 2. Next, move into the `galaxium-travels` directory by copying & pasting into the Terminal console the command that **matches your operating system**, then press ++enter++ to execute:
