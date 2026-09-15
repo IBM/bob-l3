@@ -346,6 +346,11 @@ With IBM Bob authenticated, the final piece of setup is a local copy of the <a h
 
     Press ++return++ to clone the GitHub repository to your local machine. To view the contents within a Finder window, execute `open .` within the Terminal console.
     
+    !!! warning "TROUBLESHOOTING: Unable to access GitHub"
+        If you are unable to clone the repository from GitHub, or want to skip linking your personal GitHub account to the IBM enterprise GitHub organization, you can download and extract the same assets from Seismic:
+
+        **URL: <a href="https://ibm.seismic.com/Link/Content/DCbdPFH42h9bp8HC9RH3jT6HWCCj" target="_blank">https://ibm.seismic.com/Link/Content/DCbdPFH42h9bp8HC9RH3jT6HWCCj</a>**
+
 ---
 
 2. Next, move into the `galaxium-travels` directory by copying & pasting into the Terminal console the command that **matches your operating system**, then press ++enter++ to execute:
