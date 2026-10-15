@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,43 +9,46 @@
         <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
       
       
+      
+        <link rel="prev" href="../../delegate/2-2/">
+      
+      
+        <link rel="next" href="../3-2/">
+      
+      
+        
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>init & agents.md | Teaching Bob your codebase - IBM Bob Level 3</title>
+        <title>init &amp; agents.md | Teaching Bob your codebase - IBM Bob Level 3</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-      
-      
-    
-    
-    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
-    
-      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
-    
-      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
-    
-      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
-    
-      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
     
       <link rel="stylesheet" href="../../css/print-site.css">
     
@@ -56,22 +56,23 @@
     
       <link rel="stylesheet" href="../../styles/override-print.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -79,9 +80,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -101,16 +101,19 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="IBM Bob Level 3" class="md-header__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -122,47 +125,57 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              init & agents.md | Teaching Bob your codebase
+              init &amp; agents.md | Teaching Bob your codebase
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -181,10 +194,11 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
@@ -192,24 +206,36 @@
     <a href="../.." title="IBM Bob Level 3" class="md-nav__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     IBM Bob Level 3
   </label>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Introduction
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
@@ -217,14 +243,26 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../setup/" class="md-nav__link">
-        Setup
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
@@ -232,166 +270,294 @@
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          1. Assist
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="1. Assist" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          1. Assist
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
           
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Assist
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Assist
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../assist/1-1/" class="md-nav__link">
-        Literate Coding | Editing with intent
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literate Coding | Editing with intent
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          2. Delegate
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="2. Delegate" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          2. Delegate
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
           
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Delegate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Delegate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../delegate/2-1/" class="md-nav__link">
-        The Agentic Sidebar | From assistant to partner
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Agentic Sidebar | From assistant to partner
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../delegate/2-2/" class="md-nav__link">
-        Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
     
   
   
+  
+    
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
-          3. Tailor
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="3. Tailor" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          3. Tailor
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
           
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Tailor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Tailor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
+                
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          init & agents.md | Teaching Bob your codebase
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    init &amp; agents.md | Teaching Bob your codebase
+  
+
+    
+  </span>
+  
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        init & agents.md | Teaching Bob your codebase
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    init &amp; agents.md | Teaching Bob your codebase
+  
+
+    
+  </span>
+  
+  
+
       </a>
       
         
@@ -407,32 +573,48 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#i-teaching-bob-your-codebase" class="md-nav__link">
-    i. Teaching Bob your codebase
+    <span class="md-ellipsis">
+      
+        i. Teaching Bob your codebase
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ii-why-this-matters" class="md-nav__link">
-    ii. Why this matters
+    <span class="md-ellipsis">
+      
+        ii. Why this matters
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#iii-hands-on-generating-your-project-context" class="md-nav__link">
-    iii. Hands-on: generating your project context
+    <span class="md-ellipsis">
+      
+        iii. Hands-on: generating your project context
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#iv-key-takeaways" class="md-nav__link">
-    iv. Key takeaways
+    <span class="md-ellipsis">
+      
+        iv. Key takeaways
+      
+    </span>
   </a>
   
 </li>
@@ -444,114 +626,205 @@
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../3-2/" class="md-nav__link">
-        Bob Rules | Encoding your standards
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob Rules | Encoding your standards
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../3-3/" class="md-nav__link">
-        Custom Modes | Shaping Bob to every role
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Modes | Shaping Bob to every role
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6">
-          4. Scale & Extend
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="4. Scale & Extend" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          4. Scale & Extend
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
           
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Scale &amp; Extend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Scale &amp; Extend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../scale/4-1/" class="md-nav__link">
-        The Context Window | Keeping Bob reliable at scale
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Context Window | Keeping Bob reliable at scale
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../scale/4-2/" class="md-nav__link">
-        Bob Shell | Moving beyond the IDE
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob Shell | Moving beyond the IDE
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../scale/4-3/" class="md-nav__link">
-        Extending with MCP | Connecting Bob to everything
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending with MCP | Connecting Bob to everything
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -564,7 +837,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -580,32 +853,48 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#i-teaching-bob-your-codebase" class="md-nav__link">
-    i. Teaching Bob your codebase
+    <span class="md-ellipsis">
+      
+        i. Teaching Bob your codebase
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ii-why-this-matters" class="md-nav__link">
-    ii. Why this matters
+    <span class="md-ellipsis">
+      
+        ii. Why this matters
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#iii-hands-on-generating-your-project-context" class="md-nav__link">
-    iii. Hands-on: generating your project context
+    <span class="md-ellipsis">
+      
+        iii. Hands-on: generating your project context
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#iv-key-takeaways" class="md-nav__link">
-    iv. Key takeaways
+    <span class="md-ellipsis">
+      
+        iv. Key takeaways
+      
+    </span>
   </a>
   
 </li>
@@ -618,17 +907,20 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
+          
+            <div class="md-content" data-md-component="content">
               
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<p><strong>MODULE 3 | TAILOR</strong></p>
+
+<div><p><strong>MODULE 3 | TAILOR</strong></p>
 <h1 id="init-and-agentsmd"><strong>/INIT AND AGENTS.MD</strong></h1>
-<hr />
+<hr>
 <h2 id="i-teaching-bob-your-codebase"><strong>i. Teaching Bob your codebase</strong></h2>
-<hr />
+<hr>
 <p>Across the first two modules (<a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank"><strong>Assist</strong></a> and <a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank"><strong>Delegate</strong></a>), Bob was put to work with minimal-to-no background or context about your codebase. Bob proved itself to be capable, but operating and working only from what it could read and infer based in the moment. Module 3 (<a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank"><strong>Tailor</strong></a>) will change that approach markedly. Here you will teach Bob about <em>your</em> project and <em>your</em> standards, so that Bob begins behaving like a teammate who already knows how your team works.</p>
 <p>There are three ways to tailor Bob which build on one another:</p>
 <ol>
@@ -636,17 +928,17 @@
 <li>Encode the standards Bob must always follow (so quality and conventions are enforced without needing to be re-typed)</li>
 <li>Shape Bob's behavior to fit each role on your team (so a product manager and a senior engineer each get the specialized version of Bob that they need).</li>
 </ol>
-<p><a class="glightbox" href="../_attachments/Module-3-Tailor.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/Module-3-Tailor.png" /></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/Module-3-Tailor.png" data-desc-position="bottom"><img alt="" src="../_attachments/Module-3-Tailor.png"></a></p>
 <div class="admonition note">
 <p>Notice where control lives at this stage in the <strong>AI Maturity Curve</strong>. Whereas in <strong>Modules 1 and 2</strong> you approved Bob's work as it happened, here in <strong>Module 3</strong> you <em>write the rules down</em>— commit them to the repository —and have them applied automatically, every time, for everyone. Viewed another way: Bob, at this stage in your jouney, has progressed beyond delegated work towards tailored work. Bob's behaviors, capabilities, and understanding are now being attuned specifically to the workflow and personas engaging with it.</p>
 </div>
 <h2 id="ii-why-this-matters"><strong>ii. Why this matters</strong></h2>
-<hr />
+<hr>
 <p>Large language models (LLM) are <strong>stateless</strong> and therefore every new conversation, without intervening strategies or techniques, will begin with no memory of the last interaction. Left to its own devices, Bob would need to rediscover your codebase from scratch at the start of each interaction — an inefficient approach for a small project and an impractically cumbersome approach for a large one.</p>
 <p>The <strong><code>/init</code></strong> command solves this challenge. It scans your project and generates a structured summary that Bob loads as <em>persistent context</em> for every new conversation. The <code>/init</code> command thus becomes the primary mechanism for giving Bob durable knowledge of your project's structure, conventions, and code. All without needing to re-read every file with each new invocation.</p>
-<hr />
+<hr>
 <p><strong>RUNNING <code>/init</code></strong></p>
-<hr />
+<hr>
 <p>Initializing a project's context takes seconds and requires no additional configuration. To do so using IBM Bob:</p>
 <ol>
 <li>Open the agentic sidebar in Bob IDE</li>
@@ -655,15 +947,15 @@
 <li>Bob generates the <code>agents.md</code> context file</li>
 </ol>
 <p>You'll have plenty of opportunities to practice this yourself when the hands-on portion of Module 3 kicks off. Beforehand, however, it's important to understand more about the complementary <strong><code>agents.md</code></strong> file.</p>
-<hr />
+<hr>
 <p><strong>THE <code>AGENTS.MD</code> FILE</strong></p>
-<hr />
+<hr>
 <p>The primary output of the <code>/init</code> command is <strong><code>agents.md</code></strong>: a plain-text Markdown file placed in the project root directory.</p>
 <p>Think of <code>agents.md</code> as onboarding documentation written for specifically for Bob. It provides a concise, actionable summary of everything Bob needs to understand about the project in order to work effectively with it. The documentation typically covers: the project's overview and purpose; its directory structure and key file locations; the technology stack and dependencies; architectural patterns and conventions; and development workflows.</p>
 <p>From the point it is first introduced and defined, <code>agents.md</code> is automatically prepended to every new conversation a user has with Bob, ensuring the LLM has immediate project context without requiring any manual file read efforts.</p>
-<hr />
+<hr>
 <p><strong>MODE-SPECIFIC CONTEXT FILES</strong></p>
-<hr />
+<hr>
 <p>Alongside the main <code>agents.md</code> Markdown documentation, the <code>/init</code> command also generates context files tuned to each one of Bob's built-in Modes (which we examined in <strong>Module 2</strong>):</p>
 <table>
 <thead>
@@ -688,23 +980,23 @@
 </tbody>
 </table>
 <p>Each mode-specific file extends the base context with what matters most for the successful operations of a given Mode. Context for <strong>Plan mode</strong> might emphasize architectural conventions, while <strong>Agent mode</strong> context would benefit from highlighting file structure and naming patterns.</p>
-<hr />
+<hr>
 <h2 id="iii-hands-on-generating-your-project-context"><strong>iii. Hands-on: generating your project context</strong></h2>
-<hr />
+<hr>
 <p>The larger your codebase, the more valuable a well-maintained <code>AGENTS.md</code> asset becomes. On a small project, Bob could conceivably read every file each conversation; even so, having a pre-defined <code>AGENTS.md</code> is still more efficient than the read-everything alternative. On a large project, an <code>AGENTS.md</code> manifest becomes the backbone of the entire workflow. It provides detailed guidance for how Bob should navigate the codebase, without exhausting the context window on file reads. </p>
 <div class="admonition note">
 <p class="admonition-title">TIPS FOR <code>/INIT</code> AND <code>AGENTS.MD</code></p>
 <p>Execute the <code>/init</code> command after significant changes to ensure Bob picks up on any new modules or services, restructured directory trees, new framework, and so on. If there are instances where you (the administrator) want to capture context without performing an automated scan— or believe that an automated scan might miss some key elements, such as business rules or deployment conventions —then you may also edit the <code>agents.md</code> asset by-hand.</p>
 </div>
 <p>Let's give Bob durable knowledge of the Galaxium Travels codebase by running the <code>/init</code> command and generating its <code>AGENTS.md</code> files.</p>
-<hr />
+<hr>
 <ol>
 <li>
 <p>First, ensure that Bob has enabled <strong>Agent mode</strong> within the Agentic Sidebar.</p>
-<p><a class="glightbox" href="../_attachments/init-iii-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/init-iii-1.png" /></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/init-iii-1.png" data-desc-position="bottom"><img alt="" src="../_attachments/init-iii-1.png"></a></p>
 </li>
 </ol>
-<hr />
+<hr>
 <ol start="2">
 <li>
 <p>Within the Agentic Sidebar, type the following and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute:</p>
@@ -713,15 +1005,15 @@
 <div class="admonition warning">
 <p>You may need to click <strong>Approve once</strong> (once or <em>several</em> times...) to permission access to the <code>agents.md</code> file before this summary appears.</p>
 </div>
-<p><a class="glightbox" href="../_attachments/init-iii-2a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/init-iii-2a.png" /></a>
-<a class="glightbox" href="../_attachments/init-iii-2b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/init-iii-2b.png" /></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/init-iii-2a.png" data-desc-position="bottom"><img alt="" src="../_attachments/init-iii-2a.png"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/init-iii-2b.png" data-desc-position="bottom"><img alt="" src="../_attachments/init-iii-2b.png"></a></p>
 <div class="admonition success">
 <p class="admonition-title">QUIZ QUESTION - IBM BOB LEVEL 4</p>
 <p>If you are planning to pursue <strong>IBM Bob Level 4</strong> accreditation, what is rendered on-screen or returned within a console as a result of this step are likely referenced as part of a multiple-choice question. It is strongly recommend that you record to a notebook (for reference later) the names and directory locaton of the three mode-specific context files inside <code>.bob</code> that are created as a result of running the <code>/init</code> command.</p>
 </div>
 </li>
 </ol>
-<hr />
+<hr>
 <p><strong>AGENTS OF <em>GALAXIUM TRAVELS</em></strong></p>
 <p>After execution of the <strong><code>/init</code></strong> command, Bob's <em>Agent mode</em> will examine key front-end and back-end (service) files within the Project directory, ultimately writing a total of four files.</p>
 <div class="admonition quote">
@@ -763,7 +1055,7 @@
 </ul>
 </div>
 <h2 id="iv-key-takeaways"><strong>iv. Key takeaways</strong></h2>
-<hr />
+<hr>
 <ul>
 <li>LLMs are stateless by default: every conversation starts fresh, with no memory of the last session or chat</li>
 <li>The <strong><code>/init</code></strong> command scans your project(s) and generates <strong><code>agents.md</code></strong> documentation, a context file that will subsequently be included with every new Bob conversation</li>
@@ -772,16 +1064,26 @@
 <li>For large-scale projects, <code>AGENTS.md</code> is essential: Bob cannot feasibly read every file at the start of each conversation without exhausting its (sizeable) context window</li>
 <li>Re-run the <code>/init</code> command after major changes to capture the latest context for project(s)</li>
 </ul>
-<p></br>
-In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p>
+<p>
+In the chapter ahead, you will examine strategies for encoding your organization's coding standards using <strong>Bob Rules</strong>.</p></div>
 
 
 
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -789,47 +1091,51 @@ In the chapter ahead, you will examine strategies for encoding your organization
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
-        <a href="../../delegate/2-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Applying Agentic Modes | Implementing seat classes in Galaxium Travels" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href="../../delegate/2-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Applying Agentic Modes | Implementing seat classes in Galaxium Travels">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
-              Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+              <div class="md-ellipsis">
+                Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+              </div>
             </div>
-          </div>
-        </a>
-      
-      
+          </a>
         
-        <a href="../3-2/" class="md-footer__link md-footer__link--next" aria-label="Next: Bob Rules | Encoding your standards" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="../3-2/" class="md-footer__link md-footer__link--next" aria-label="Next: Bob Rules | Encoding your standards">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              Bob Rules | Encoding your standards
+              <div class="md-ellipsis">
+                Bob Rules | Encoding your standards
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 IBM
+      Copyright © 2026 IBM
     </div>
   
   
@@ -849,15 +1155,21 @@ In the chapter ahead, you will examine strategies for encoding your organization
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/print-site.js"></script>
       
         <script src="../../_static/hide-toc-nav.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
