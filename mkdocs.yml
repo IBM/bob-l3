@@ -48,7 +48,7 @@ plugins:
   - glightbox
   - print-site:
       add_to_navigation: false
-      print_page_title: 'Climbing the AI Maturity Curve with IBM Bob Level 3'
+      print_page_title: 'IBM Bob Premium Package for Z Level 3'
       add_print_site_banner: false
       # Table of contents
       add_table_of_contents: false
@@ -65,7 +65,6 @@ plugins:
       enabled: true
 
 markdown_extensions:
-  - markdown_fenced_code_tabs
   - sane_lists
   - pymdownx.details
   - admonition
@@ -78,15 +77,14 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - def_list
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.critic
   - pymdownx.caret
-  - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
   - tables
+  - pymdownx.tabbed
 
 extra_css:
   - styles/override-print.css

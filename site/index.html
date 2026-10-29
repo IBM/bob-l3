@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,8 +9,16 @@
         <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
       
       
+      
+      
+        <link rel="next" href="setup/">
+      
+      
+        
+      
+      
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -21,34 +26,27 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
       
+      
+
+
+    
+    
       
     
     
-    
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="css/print-site-enum-headings2.css">
-    
-      <link rel="stylesheet" href="css/print-site-enum-headings3.css">
-    
-      <link rel="stylesheet" href="css/print-site-enum-headings4.css">
-    
-      <link rel="stylesheet" href="css/print-site-enum-headings5.css">
-    
-      <link rel="stylesheet" href="css/print-site-enum-headings6.css">
     
       <link rel="stylesheet" href="css/print-site.css">
     
@@ -56,22 +54,23 @@
     
       <link rel="stylesheet" href="styles/override-print.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -79,9 +78,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -101,16 +99,19 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="IBM Bob Level 3" class="md-header__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -129,40 +130,50 @@
       </div>
     </div>
     
+      
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -181,10 +192,11 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
@@ -192,38 +204,63 @@
     <a href="." title="IBM Bob Level 3" class="md-nav__button md-logo" aria-label="IBM Bob Level 3" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     IBM Bob Level 3
   </label>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
-      
-
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
-        Introduction
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
       </a>
       
         
@@ -239,46 +276,70 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#i-climbing-the-ai-maturity-curve" class="md-nav__link">
-    i. Climbing the AI Maturity Curve
+    <span class="md-ellipsis">
+      
+        i. Climbing the AI Maturity Curve
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ii-what-is-ibm-bob" class="md-nav__link">
-    ii. What is IBM Bob?
+    <span class="md-ellipsis">
+      
+        ii. What is IBM Bob?
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#iii-bob-across-the-sdlc" class="md-nav__link">
-    iii. Bob across the SDLC
+    <span class="md-ellipsis">
+      
+        iii. Bob across the SDLC
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#iv-bob-ide-and-bob-shell" class="md-nav__link">
-    iv. Bob IDE and Bob Shell
+    <span class="md-ellipsis">
+      
+        iv. Bob IDE and Bob Shell
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#v-environment-galaxium-travels" class="md-nav__link">
-    v. Environment: Galaxium Travels
+    <span class="md-ellipsis">
+      
+        v. Environment: Galaxium Travels
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#vi-next-steps" class="md-nav__link">
-    vi. Next steps
+    <span class="md-ellipsis">
+      
+        vi. Next steps
+      
+    </span>
   </a>
   
 </li>
@@ -293,14 +354,26 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="setup/" class="md-nav__link">
-        Setup
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
@@ -308,262 +381,468 @@
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          1. Assist
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="1. Assist" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          1. Assist
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
           
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Assist
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Assist
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="assist/1-1/" class="md-nav__link">
-        Literate Coding | Editing with intent
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literate Coding | Editing with intent
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          2. Delegate
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="2. Delegate" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          2. Delegate
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
           
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Delegate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Delegate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="delegate/2-1/" class="md-nav__link">
-        The Agentic Sidebar | From assistant to partner
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Agentic Sidebar | From assistant to partner
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="delegate/2-2/" class="md-nav__link">
-        Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Applying Agentic Modes | Implementing seat classes in Galaxium Travels
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
-          3. Tailor
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="3. Tailor" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          3. Tailor
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
           
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Tailor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Tailor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="tailor/3-1/" class="md-nav__link">
-        init & agents.md | Teaching Bob your codebase
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    init &amp; agents.md | Teaching Bob your codebase
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="tailor/3-2/" class="md-nav__link">
-        Bob Rules | Encoding your standards
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob Rules | Encoding your standards
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="tailor/3-3/" class="md-nav__link">
-        Custom Modes | Shaping Bob to every role
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Modes | Shaping Bob to every role
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6">
-          4. Scale & Extend
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="4. Scale & Extend" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          4. Scale & Extend
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
           
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Scale &amp; Extend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Scale &amp; Extend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="scale/4-1/" class="md-nav__link">
-        The Context Window | Keeping Bob reliable at scale
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Context Window | Keeping Bob reliable at scale
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="scale/4-2/" class="md-nav__link">
-        Bob Shell | Moving beyond the IDE
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bob Shell | Moving beyond the IDE
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="scale/4-3/" class="md-nav__link">
-        Extending with MCP | Connecting Bob to everything
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending with MCP | Connecting Bob to everything
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -576,7 +855,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -592,46 +871,70 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#i-climbing-the-ai-maturity-curve" class="md-nav__link">
-    i. Climbing the AI Maturity Curve
+    <span class="md-ellipsis">
+      
+        i. Climbing the AI Maturity Curve
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ii-what-is-ibm-bob" class="md-nav__link">
-    ii. What is IBM Bob?
+    <span class="md-ellipsis">
+      
+        ii. What is IBM Bob?
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#iii-bob-across-the-sdlc" class="md-nav__link">
-    iii. Bob across the SDLC
+    <span class="md-ellipsis">
+      
+        iii. Bob across the SDLC
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#iv-bob-ide-and-bob-shell" class="md-nav__link">
-    iv. Bob IDE and Bob Shell
+    <span class="md-ellipsis">
+      
+        iv. Bob IDE and Bob Shell
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#v-environment-galaxium-travels" class="md-nav__link">
-    v. Environment: Galaxium Travels
+    <span class="md-ellipsis">
+      
+        v. Environment: Galaxium Travels
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#vi-next-steps" class="md-nav__link">
-    vi. Next steps
+    <span class="md-ellipsis">
+      
+        vi. Next steps
+      
+    </span>
   </a>
   
 </li>
@@ -644,18 +947,21 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
+          
+            <div class="md-content" data-md-component="content">
               
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="ibm-bob-level-3"><strong>IBM Bob Level 3</strong></h1>
-<hr />
+
+<div><h1 id="ibm-bob-level-3"><strong>IBM Bob Level 3</strong></h1>
+<hr>
 <h2 id="i-climbing-the-ai-maturity-curve"><strong>i. Climbing the AI Maturity Curve</strong></h2>
-<hr />
+<hr>
 <p>The four modules constituting the hands-on work ahead with <strong>IBM Bob</strong> trace the <strong>AI Maturity Curve</strong> — as you shift right along it, you will progressively hand Bob more responsibility, with Bob earning that trust by keeping you (the human-in-the-loop) in command the entire way.</p>
-<p><a class="glightbox" href="_attachments/AI-Maturity-Curve.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/AI-Maturity-Curve.png" /></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="_attachments/AI-Maturity-Curve.png" data-desc-position="bottom"><img alt="" src="_attachments/AI-Maturity-Curve.png"></a></p>
 <table>
 <thead>
 <tr>
@@ -692,9 +998,9 @@
 <p>At the <em>Assist</em> stage, control is regulated as you choose to accept (or reject) each generative AI-suggested code recommendation, keystroke by keystroke. Within the <em>Delegate</em> module, control is maintained through approval of Bob-generated plans before a single line of AI-generated code is written. At <em>Tailor</em>, it means encoding the very rules Bob must adhere to. Within the <em>Scale &amp; Extend</em> module, it means governing context, credentials, and tool access.</p>
 </div>
 <p>As you and Bob together progress along the AI Maturity Curve, capabilities will expand as trust grows. This is <em>the</em> messaging to carry into a C-suite conversation: not "here are some features," but "here is how your teams grow into an AI partner without losing agency to an AI agent."</p>
-<hr />
+<hr>
 <h2 id="ii-what-is-ibm-bob"><strong>ii. What is IBM Bob?</strong></h2>
-<hr />
+<hr>
 <p><strong>IBM Bob is an AI-powered partner for the entire software development lifecycle (SDLC)</strong>, and it lives where developers already work: inside the development environment itself. It is tempting to file Bob alongside the many code-completion assistants that have flooded the marketplace since LLMs arrived, but that comparison sells it short. Bob is not simply a code generator; it is a partner for every step in your weekly workflow (for developers, sellers, and executives alike.)</p>
 <p>A code generator helps at the exact point in time that a function gets written. Bob is built to help across the whole arc of a project: planning a feature before a line of code exists, reasoning about an unfamiliar codebase, implementing changes, and automating the repetitive work that surrounds real development.</p>
 <div class="admonition note">
@@ -702,21 +1008,21 @@
 <p>IBM Bob is powered by generative AI and LLMs, and a defining trait of these systems is that they are <em>non-deterministic</em> — unlike the <em>deterministic</em> tools most developers are accustomed to. In practice, that means the same prompt can produce different code from one run to the next. This is both a strength and a quirk of the technology, and it is something to work <em>with</em> rather than against.</p>
 <p><strong>Precision is what tips the odds in your favor.</strong> The more clearly you describe what you want, the more closely Bob's output will mirror your intent; conversely, the smallest change in wording can meaningfully change the generated code. Throughout this lab, your results may differ from the solutions shown — and that is expected, not a defect. Whenever an output diverges, you have three good options: refine the prompt and try again, edit the generated code by hand, or simply proceed if the variation still compiles and runs. Human review remains essential at every step, and never more so than while you are still learning the tool.</p>
 </div>
-<p></br>
+<p>
 At its core, Bob does three things exceptionally well:</p>
 <ul>
 <li><strong>Writes and modifies code</strong> across an entire codebase, from natural language instructions</li>
 <li><strong>Understands codebases</strong> by reading and reasoning about complex project structures, dependencies, and architectural patterns</li>
 <li><strong>Automates the busy-work of development:</strong> from documentation, to commit messages, to test scaffolding</li>
 </ul>
-<hr />
+<hr>
 <h2 id="iii-bob-across-the-sdlc"><strong>iii. Bob across the SDLC</strong></h2>
-<hr />
+<hr>
 <p>A core distinction between IBM Bob and other AI-assisted code generation tools, particular as it relates to the <strong>software development lifecycle (SDLC)</strong>, is <em>scope</em>. Where a traditional AI assistant is anchored to the moment of writing or fixing code, Bob is designed to support the full lifecycle around it. It helps plan features before implementation begins, understands the full context of a project before making changes, and keeps the developer in control at every step.</p>
 <p>Bob augments the way your teams already work; it does not replace their judgment. Keep ahold of that last point as you work your way through the remainder of the hands-on material, as it is the thread that weaves together so many of Bob's strengths and its value to IBM clients.</p>
-<hr />
+<hr>
 <h2 id="iv-bob-ide-and-bob-shell"><strong>iv. Bob IDE and Bob Shell</strong></h2>
-<hr />
+<hr>
 <p>Bob comes in two form factors to meet developers where they are most productive:</p>
 <table>
 <thead>
@@ -737,9 +1043,9 @@ At its core, Bob does three things exceptionally well:</p>
 </tbody>
 </table>
 <p>You will spend most of this course in the Bob IDE, where the Visual Studio Code-like user interface of the Bob IDE will already feel at-home to many developers and users. In the final module of the hands-on lab, you'll have the opportunity to briefly touch upon the Bob Shell interface — where you will find that everything learned up to that point also applies programatically as well.</p>
-<hr />
+<hr>
 <h2 id="v-environment-galaxium-travels"><strong>v. Environment: Galaxium Travels</strong></h2>
-<hr />
+<hr>
 <p>For the purposes of the hands-on materials and your untaking in building trust with IBM Bob, you'll be making use of the <strong>Galaxium Travels</strong> application and code base: a fictional, luxury space-travel booking system whose source code is publicly available on GitHub. Rather than show Bob as throwaway snippets and discrete feature demonstration, it's important to realize the full end-to-end journey that a customer will experience in working with the service. Therefore, this hands-on material will put you to work using a unified, production-style codebase from start to finish. It is the consistent backdrop against which each stage of the AI maturity curve comes to life.</p>
 <p>Galaxium Travels follows a familiar full-stack shape:</p>
 <ul>
@@ -762,9 +1068,9 @@ At its core, Bob does three things exceptionally well:</p>
 <li><strong>Retry logic for API calls</strong> — Module 1 | Literate Coding</li>
 <li><strong>Seat-class tiers</strong> (Economy, Business, Galaxium) — Module 2 | The Agentic Sidebar</li>
 </ul>
-<hr />
+<hr>
 <h2 id="vi-next-steps"><strong>vi. Next steps</strong></h2>
-<hr />
+<hr>
 <p>Working within one continuous codebase lets you watch Bob operate in the same way it would behave inside a client's real project. Should you wish to fully explore the source code yourself, it is publicly available and supported on GitHub.</p>
 <p>The following Table of Contents summarizes the modules, sub-chapters, and topics to be covered across the scope of the Level 3 hands-on lab.</p>
 <table>
@@ -777,30 +1083,40 @@ At its core, Bob does three things exceptionally well:</p>
 <tbody>
 <tr>
 <td><a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank"><strong>1. Assist</strong></a></td>
-<td><a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank">1. Literate Coding</a></br></td>
+<td><a href="https://ibm.github.io/bob-l3/assist/1-1/" target="_blank">1. Literate Coding</a></td>
 </tr>
 <tr>
 <td><a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank"><strong>2. Delegate</strong></a></td>
-<td><a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank">1. The Agentic Sidebar</a></br><a href="https://ibm.github.io/bob-l3/delegate/2-2/" target="_blank">2. Applying Agentic Modes</a></td>
+<td><a href="https://ibm.github.io/bob-l3/delegate/2-1/" target="_blank">1. The Agentic Sidebar</a><a href="https://ibm.github.io/bob-l3/delegate/2-2/" target="_blank">2. Applying Agentic Modes</a></td>
 </tr>
 <tr>
 <td><a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank"><strong>3. Tailor</strong></a></td>
-<td><a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank">1. init &amp; agents.md</a></br><a href="https://ibm.github.io/bob-l3/tailor/3-2/" target="_blank">2. Bob Rules</a></br><a href="https://ibm.github.io/bob-l3/tailor/3-3/" target="_blank">3. Custom Modes</a></td>
+<td><a href="https://ibm.github.io/bob-l3/tailor/3-1/" target="_blank">1. init &amp; agents.md</a><a href="https://ibm.github.io/bob-l3/tailor/3-2/" target="_blank">2. Bob Rules</a><a href="https://ibm.github.io/bob-l3/tailor/3-3/" target="_blank">3. Custom Modes</a></td>
 </tr>
 <tr>
 <td><a href="https://ibm.github.io/bob-l3/scale/4-1/" target="_blank"><strong>4. Scale &amp; Extend</strong></a></td>
-<td><a href="https://ibm.github.io/bob-l3/scale/4-1/" target="_blank">1. The Context Window</a></br><a href="https://ibm.github.io/bob-l3/scale/4-2/" target="_blank">2. Bob Shell</a></br><a href="https://ibm.github.io/bob-l3/scale/4-3/" target="_blank">3. Custom Modes</a></br><a href="https://ibm.github.io/bob-l3/scale/4-4/" target="_blank">4. Extending with MCP</a></td>
+<td><a href="https://ibm.github.io/bob-l3/scale/4-1/" target="_blank">1. The Context Window</a><a href="https://ibm.github.io/bob-l3/scale/4-2/" target="_blank">2. Bob Shell</a><a href="https://ibm.github.io/bob-l3/scale/4-3/" target="_blank">3. Custom Modes</a><a href="https://ibm.github.io/bob-l3/scale/4-4/" target="_blank">4. Extending with MCP</a></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 
 
 
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -808,32 +1124,35 @@ At its core, Bob does three things exceptionally well:</p>
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
-      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
-        <a href="setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Setup" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Setup">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              Setup
+              <div class="md-ellipsis">
+                Setup
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 IBM
+      Copyright © 2026 IBM
     </div>
   
   
@@ -853,15 +1172,21 @@ At its core, Bob does three things exceptionally well:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="js/print-site.js"></script>
       
         <script src="_static/hide-toc-nav.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

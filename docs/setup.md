@@ -23,8 +23,8 @@ Before installing the demo application, you need an authenticated **IBM Bob acco
 
 !!! warning "WHICH PATH SHOULD I CHOOSE?"
 
-    - **IBM REGULAR EMPLOYEES: <a href="https://pages.github.ibm.com/cdbienko/bob-cobol-java/setup/#iii-ibmers-internal-registration" target="_blank">"Internal" registration</a>**
-    - **BUSINESS PARTNERS: <a href="https://pages.github.ibm.com/cdbienko/bob-cobol-java/setup/#iv-business-partners-trial-registration" target="_blank">"Trial" registration</a>**
+    - **IBM REGULAR EMPLOYEES: <a href="https://ibm.github.io/bob-l3/setup/#iii-ibmers-internal-registration" target="_blank">"Internal" registration</a>**
+    - **BUSINESS PARTNERS: <a href="https://ibm.github.io/bob-l3/setup/#iv-business-partners-trial-registration" target="_blank">"Trial" registration</a>**
     
     **Trial account registration** is the right choice if you are under time constraints, are a Business Partner, or have previously maxed out your Bobcoin balance. *(IBMers may use the Trial as well, though Internal is the official recommendation.)* Its 40 Bobcoins are more than enough to complete this lab, and access lasts a month — ample time, and easily renewed by creating another Trial account.
     
